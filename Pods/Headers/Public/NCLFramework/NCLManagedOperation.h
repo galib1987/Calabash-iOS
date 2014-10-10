@@ -1,0 +1,1 @@
+../../../NCLFramework/NCLFramework/NCLFramework/NCLManagedOperation.h
