@@ -36,6 +36,7 @@
 		6C57E05E19EEC8FB00D3FB00 /* NJVerticalTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E04D19EEC8FB00D3FB00 /* NJVerticalTabViewController.m */; };
 		6C57E06219EEC9EE00D3FB00 /* NJOPActionTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E06119EEC9EE00D3FB00 /* NJOPActionTile.m */; };
 		6C57E06519EECCD500D3FB00 /* NJOPSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E06419EECCD500D3FB00 /* NJOPSplitViewController.m */; };
+		6C57E06819EED4CE00D3FB00 /* NJOPBriefViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E06719EED4CE00D3FB00 /* NJOPBriefViewController.m */; };
 		6C9754F819EE90C1005DD1DF /* NJTileContainingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */; };
 		6C9754F919EE90C1005DD1DF /* NJAllFlightsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F719EE90C1005DD1DF /* NJAllFlightsHeader.xib */; };
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
@@ -111,6 +112,8 @@
 		6C57E06119EEC9EE00D3FB00 /* NJOPActionTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPActionTile.m; sourceTree = "<group>"; };
 		6C57E06319EECCD500D3FB00 /* NJOPSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSplitViewController.h; sourceTree = "<group>"; };
 		6C57E06419EECCD500D3FB00 /* NJOPSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSplitViewController.m; sourceTree = "<group>"; };
+		6C57E06619EED4CE00D3FB00 /* NJOPBriefViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPBriefViewController.h; sourceTree = "<group>"; };
+		6C57E06719EED4CE00D3FB00 /* NJOPBriefViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBriefViewController.m; sourceTree = "<group>"; };
 		6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJTileContainingTableViewCell.xib; sourceTree = "<group>"; };
 		6C9754F719EE90C1005DD1DF /* NJAllFlightsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJAllFlightsHeader.xib; sourceTree = "<group>"; };
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -300,6 +303,8 @@
 			children = (
 				6C57E04819EEC8FB00D3FB00 /* NJTraitOverrideViewController.h */,
 				6C57E04919EEC8FB00D3FB00 /* NJTraitOverrideViewController.m */,
+				6C57E06619EED4CE00D3FB00 /* NJOPBriefViewController.h */,
+				6C57E06719EED4CE00D3FB00 /* NJOPBriefViewController.m */,
 				6C57E04A19EEC8FB00D3FB00 /* NJVerticalTabCell.h */,
 				6C57E04B19EEC8FB00D3FB00 /* NJVerticalTabCell.m */,
 				6C57E04C19EEC8FB00D3FB00 /* NJVerticalTabViewController.h */,
@@ -511,6 +516,7 @@
 				6C57E04E19EEC8FB00D3FB00 /* AllFlightsViewController.m in Sources */,
 				6C57E05819EEC8FB00D3FB00 /* NJWeatherTile.m in Sources */,
 				6C57E06519EECCD500D3FB00 /* NJOPSplitViewController.m in Sources */,
+				6C57E06819EED4CE00D3FB00 /* NJOPBriefViewController.m in Sources */,
 				6C57E05119EEC8FB00D3FB00 /* NJCompactFlightTile.m in Sources */,
 				6C57E06219EEC9EE00D3FB00 /* NJOPActionTile.m in Sources */,
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,

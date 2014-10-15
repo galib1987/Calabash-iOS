@@ -10,27 +10,14 @@
 #import "SimpleDataSourceCollectionViewController.h"
 
 @class NJVerticalTabViewController;
-@protocol NJVerticalTabControllerDelegate <NSObject>
+@protocol JNOPVerticalTabViewControllerDelegate<NSObject>
 @optional
-- (BOOL)tabController:(NJVerticalTabViewController *)tabController shouldSelectViewController:(UIViewController *)viewController;
-- (void)tabController:(NJVerticalTabViewController *)tabController didSelectViewController:(UIViewController *)viewController;
 
-- (void)tabController:(NJVerticalTabViewController *)tabController willBeginCustomizingViewControllers:(NSArray *)viewControllers;
-- (void)tabController:(NJVerticalTabViewController *)tabController willEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed;
-- (void)tabController:(NJVerticalTabViewController *)tabController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed;
-
-- (NSUInteger)tabControllerSupportedInterfaceOrientations:(NJVerticalTabViewController *)tabController;
-- (UIInterfaceOrientation)tabControllerPreferredInterfaceOrientationForPresentation:(NJVerticalTabViewController *)tabController;
-
-- (id <UIViewControllerInteractiveTransitioning>)tabController:(NJVerticalTabViewController *)tabController
-											interactionControllerForAnimationController: (id <UIViewControllerAnimatedTransitioning>)animationController;
-
-- (id <UIViewControllerAnimatedTransitioning>)tabController:(NJVerticalTabViewController *)tabController
-						animationControllerForTransitionFromViewController:(UIViewController *)fromVC
-																							toViewController:(UIViewController *)toVC ;
-
+- (void)tabBarViewController:(NJVerticalTabViewController *)tabBar
+							 didSelectItemAtIndex:(NSUInteger)index; // called when a new view is selected by the user (but not programatically)
 @end
 
+
 @interface NJVerticalTabViewController : SimpleDataSourceCollectionViewController
-@property (nonatomic, weak)id<NJVerticalTabControllerDelegate>delegate;
+@property (nonatomic, weak)IBOutlet id<JNOPVerticalTabViewControllerDelegate>delegate;
 @end
