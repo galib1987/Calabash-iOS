@@ -14,6 +14,10 @@
 
 @implementation NJTraitOverrideViewController
 
+- (void)viewWillTransitionToSize:(CGSize)size
+			 withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator  {
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 }

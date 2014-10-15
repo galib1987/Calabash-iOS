@@ -16,8 +16,12 @@ NSString* const kSimpleDataSourceSectionsHeaderKey = @"SectionHeaderIdentifier";
 
 NSString* const kSimpleDataSourceCellIdentifierKey = @"CellIdentifierKey";
 NSString* const kSimpleDataSourceCellKeypaths = @"CellKeypaths";
+NSString* const kSimpleDataSourceCellItem = @"CellItem";
 NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 
+@interface SimpleDataSource ()
+@property (nonatomic, strong) NSDictionary* segues;
+@end
 @implementation SimpleDataSource
 
 #pragma mark Designated initializer
@@ -58,10 +62,57 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 
 }
 
+#pragma mark - Private 
+
+-(NSDictionary*)seguesFromSections:(NSArray*)sections {
+
+	__block NSMutableDictionary* mutable = nil;
+	[sections enumerateObjectsUsingBlock:^(NSDictionary* section, NSUInteger sectionIndex, BOOL *stop) {
+		[section[kSimpleDataSourceSectionCellsKey] enumerateObjectsUsingBlock:^(NSDictionary* cell, NSUInteger itemIndex, BOOL *stop) {
+			NSString* segueName = cell[kSimpleDataSourceCellSegueAction];
+			if (segueName) {
+				if (!mutable) {
+					mutable = [NSMutableDictionary new];
+				}
+				mutable[[NSIndexPath indexPathForItem:itemIndex inSection:sectionIndex]] = segueName;
+			}
+		}];
+	}];
+
+	return mutable.copy;
+}
+
+#pragma mark - Accessors 
+
+-(void)setSections:(NSArray *)sections {
+	if (![_sections isEqual:sections]) {
+		if (_sections) {
+			// remove all dependencies:
+			self.segues = nil;
+		}
+		_sections = sections;
+		if (_sections) {
+			self.segues = [self seguesFromSections:_sections];
+		}
+	}
+}
+
 #pragma mark - PUblic
 
 -(void)loadData {
 
+}
+
+-(id)itemForIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.item) {
+		return self.sections[indexPath.section][kSimpleDataSourceSectionCellsKey][indexPath.item][kSimpleDataSourceCellItem];
+	}
+	// no support for section item yet.
+	return nil;
+}
+
+-(id)segueForIndexPath:(NSIndexPath *)indexPath {
+	return self.segues ? self.segues[indexPath] : nil;
 }
 
 #pragma mark - Table view Delegate
@@ -96,15 +147,6 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 	return title;
 }
 
--(void (^)(UIViewController *, NSIndexPath *))onSelectBlock {
-	return ^(UIViewController *vc, NSIndexPath *indexPath) {
-		NSString* action = self.sections[indexPath.section][kSimpleDataSourceSectionCellsKey][indexPath.row][kSimpleDataSourceCellSegueAction];
-		if (action) {
-			[vc performSegueWithIdentifier:action sender:self];
-		}
-	};
-}
-
 #pragma mark UITable View DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -129,8 +171,8 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 		[cell setValue:obj forKeyPath:key];
 	}];
 
-	if (self.configureCell) {
-		self.configureCell(tableView, cell, identifier);
+	if (self.configureTableCell) {
+		self.configureTableCell(tableView, cell, identifier);
 	}
 
  return cell;

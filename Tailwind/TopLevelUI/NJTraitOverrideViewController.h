@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface NJTraitOverrideViewController : UIViewController
+@property (nonatomic, strong) IBOutletCollection(UIViewController) NSArray* viewControllers;
 @end
