@@ -71,7 +71,7 @@
         <!--Split View Controller-->
         <scene sceneID="TpW-iq-eEf">
             <objects>
-                <splitViewController id="RyC-6q-4Ww" customClass="NJOPSplitViewController" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="NJOPSplitViewController" id="RyC-6q-4Ww" customClass="NJOPSplitViewController" sceneMemberID="viewController">
                     <connections>
                         <segue destination="NaG-8R-JsJ" kind="relationship" relationship="masterViewController" id="j4C-pc-8Dp"/>
                         <segue destination="UQH-Bb-bFF" kind="relationship" relationship="detailViewController" id="Dyb-GY-ULo"/>
@@ -219,10 +219,10 @@
             </objects>
             <point key="canvasLocation" x="-1393" y="-407"/>
         </scene>
-        <!--View Controller-->
+        <!--Brief View Controller-->
         <scene sceneID="hZQ-wm-hFt">
             <objects>
-                <viewController id="d2M-JZ-ZXF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NJOPBriefViewController" id="d2M-JZ-ZXF" customClass="NJOPBriefViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="31u-FK-SAv"/>
                         <viewControllerLayoutGuide type="bottom" id="tj7-Tj-in7"/>
@@ -231,13 +231,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zeA-1y-fGa">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeA-1y-fGa">
                                 <rect key="frame" x="0.0" y="0.0" width="270" height="600"/>
                                 <connections>
                                     <segue destination="DXw-Hw-v7d" kind="embed" id="7xI-DC-520"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FYx-37-tN0">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYx-37-tN0">
                                 <rect key="frame" x="273" y="0.0" width="326" height="600"/>
                                 <connections>
                                     <segue destination="481-To-hnU" kind="embed" id="OcP-X8-BDs"/>
@@ -246,14 +246,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.38534605500000002" green="0.76321238280000003" blue="0.37215921280000003" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="FYx-37-tN0" firstAttribute="top" secondItem="31u-FK-SAv" secondAttribute="bottom" id="BkB-fn-lG5"/>
+                            <constraint firstItem="FYx-37-tN0" firstAttribute="top" secondItem="31u-FK-SAv" secondAttribute="bottom" constant="-20" id="BkB-fn-lG5"/>
                             <constraint firstItem="zeA-1y-fGa" firstAttribute="width" secondItem="T1S-ov-MuE" secondAttribute="width" multiplier="0.45" id="EMR-52-9CY"/>
                             <constraint firstItem="tj7-Tj-in7" firstAttribute="top" secondItem="FYx-37-tN0" secondAttribute="bottom" id="Grp-m3-pFW"/>
                             <constraint firstItem="zeA-1y-fGa" firstAttribute="leading" secondItem="T1S-ov-MuE" secondAttribute="leading" id="HDg-WZ-GKo"/>
                             <constraint firstItem="tj7-Tj-in7" firstAttribute="top" secondItem="zeA-1y-fGa" secondAttribute="bottom" id="YSf-x7-NzL"/>
-                            <constraint firstItem="FYx-37-tN0" firstAttribute="leading" secondItem="zeA-1y-fGa" secondAttribute="trailing" constant="4" id="icF-5B-vLU"/>
-                            <constraint firstItem="zeA-1y-fGa" firstAttribute="top" secondItem="31u-FK-SAv" secondAttribute="bottom" id="tQZ-fW-wGc"/>
-                            <constraint firstAttribute="trailing" secondItem="FYx-37-tN0" secondAttribute="trailing" id="zqT-nj-2qO"/>
+                            <constraint firstItem="FYx-37-tN0" firstAttribute="leading" secondItem="zeA-1y-fGa" secondAttribute="trailing" constant="3" id="icF-5B-vLU"/>
+                            <constraint firstItem="zeA-1y-fGa" firstAttribute="top" secondItem="31u-FK-SAv" secondAttribute="bottom" constant="-20" id="tQZ-fW-wGc"/>
+                            <constraint firstAttribute="trailing" secondItem="FYx-37-tN0" secondAttribute="trailing" constant="1" id="zqT-nj-2qO"/>
                         </constraints>
                     </view>
                 </viewController>

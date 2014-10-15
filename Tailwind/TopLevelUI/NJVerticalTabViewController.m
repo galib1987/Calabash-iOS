@@ -65,11 +65,8 @@
 	__weak NJVerticalTabViewController* wself = self;
 	[self.dataSource setDidSelectBlock:^(UIViewController *viewContrller, NSIndexPath *indexPath) {
 		if (wself && wself.delegate) {
-			UIViewController* viewConotroller = [wself viewControllerForItemAtIndexPath:indexPath];
-			if ([wself.delegate tabController:wself shouldSelectViewController:viewConotroller]) {
-				if ([wself.delegate respondsToSelector:@selector(tabController:animationControllerForTransitionFromViewController:toViewController:)]) {
-				}
-			}
+			[wself.delegate tabBarViewController:wself
+										 didSelectItemAtIndex:indexPath.item];
 		}
 	}];
 }
