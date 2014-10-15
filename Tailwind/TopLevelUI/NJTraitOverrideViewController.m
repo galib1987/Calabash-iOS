@@ -64,7 +64,7 @@
 - (void)tabBarViewController:(NJVerticalTabViewController *)tabBar
 				didSelectItemAtIndex:(NSUInteger)index {
 	UIViewController* toViewController = [self viewControllerAtIndex:index];
-	if (toViewController != self.currentViewContorller) {
+	if (toViewController && toViewController != self.currentViewContorller) {
 		if (!toViewController.parentViewController) {
 			[self addChildViewController:toViewController];
 		}
