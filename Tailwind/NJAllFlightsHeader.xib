@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A386b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AllFlightsHeader">
+            <rect key="frame" x="0.0" y="0.0" width="332" height="62"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-rh-GOg">
+                    <rect key="frame" x="0.0" y="0.0" width="332" height="62"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="316" placeholderIntrinsicHeight="21" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfj-yp-i97">
+                            <rect key="frame" x="8" y="21" width="316" height="21"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.181861043" green="0.20718048510000001" blue="0.21655987199999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="cfj-yp-i97" secondAttribute="centerX" id="VjK-6b-hdh"/>
+                        <constraint firstAttribute="bottom" secondItem="cfj-yp-i97" secondAttribute="bottom" constant="20" id="cdx-e6-Gei"/>
+                        <constraint firstItem="cfj-yp-i97" firstAttribute="top" secondItem="5Ed-rh-GOg" secondAttribute="top" constant="21" id="tSZ-Sw-21s"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="5Ed-rh-GOg" secondAttribute="bottom" id="IdX-uw-D6P"/>
+                <constraint firstItem="5Ed-rh-GOg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SwP-8H-BE9"/>
+                <constraint firstAttribute="trailing" secondItem="5Ed-rh-GOg" secondAttribute="trailing" id="cvZ-dd-XvQ"/>
+                <constraint firstItem="5Ed-rh-GOg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nYd-3s-60e"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLabel" destination="cfj-yp-i97" id="8B3-NC-7gA"/>
+            </connections>
+            <point key="canvasLocation" x="250" y="133"/>
+        </view>
+    </objects>
+</document>

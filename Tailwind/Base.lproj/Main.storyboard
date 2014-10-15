@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="-961" y="-1158"/>
         </scene>
-        <!--Vertival Tab View Controller-->
+        <!--Vertical Tab View Controller-->
         <scene sceneID="KFt-ZZ-IaC">
             <objects>
-                <collectionViewController id="ISj-qN-1mL" customClass="VertivalTabViewController" sceneMemberID="viewController">
+                <collectionViewController id="ISj-qN-1mL" customClass="NJVerticalTabViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="JEx-eU-Mne">
                         <rect key="frame" x="0.0" y="0.0" width="64" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,14 +93,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VertivalTabCell" id="TMs-GI-wgW" customClass="VertivalTabCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NJVerticalTabCell" id="TMs-GI-wgW" customClass="NJVerticalTabCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="60" height="104"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="infoImage" translatesAutoresizingMaskIntoConstraints="NO" id="AFA-BI-ycv">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infoImage" translatesAutoresizingMaskIntoConstraints="NO" id="AFA-BI-ycv">
                                             <rect key="frame" x="4" y="8" width="52" height="52"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYl-Zs-SwW">
@@ -125,11 +125,11 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8I8-8r-k0G">
-                            <rect key="frame" x="0.0" y="0.0" width="64" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </collectionReusableView>
                         <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HFn-Qq-KM3">
-                            <rect key="frame" x="0.0" y="0.0" width="64" height="50"/>
+                            <rect key="frame" x="0.0" y="148" width="64" height="104"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHI-m9-uTy">
@@ -141,7 +141,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="infoImage" translatesAutoresizingMaskIntoConstraints="NO" id="ycK-Z1-icN">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infoImage" translatesAutoresizingMaskIntoConstraints="NO" id="ycK-Z1-icN">
                                     <rect key="frame" x="6" y="8" width="52" height="52"/>
                                 </imageView>
                             </subviews>
@@ -201,6 +201,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="infoImage" width="33" height="34"/>
+        <image name="infoImage" width="51" height="52"/>
     </resources>
 </document>

@@ -1,0 +1,15 @@
+//
+//  NJVerticalTabCell.h
+//  TailWind
+//
+//  Created by Amos Elmaliah on 10/15/14.
+//  Copyright (c) 2014 Amos Elmaliah. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface NJVerticalTabCell : UICollectionViewCell
+@property (nonatomic, strong) IBOutlet UIImageView* mainImageView;
+@property (nonatomic, strong) IBOutlet UILabel* label;
+
+@end

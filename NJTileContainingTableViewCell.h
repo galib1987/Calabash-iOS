@@ -1,5 +1,5 @@
 //
-//  TraitOverrideViewController.h
+//  NJTileContainingTableViewCell.h
 //  TailWind
 //
 //  Created by Amos Elmaliah on 10/15/14.
@@ -8,5 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NJTraitOverrideViewController : UIViewController
+@interface NJTileContainingTableViewCell : UITableViewCell
+@property (nonatomic, strong) IBOutlet UIView* tile;
 @end
