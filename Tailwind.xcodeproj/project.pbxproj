@@ -10,7 +10,6 @@
 		2AD96D2C90B7446D90304928 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 		30A4737F19D9E41A0045D7AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4737E19D9E41A0045D7AF /* main.m */; };
 		30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4738119D9E41A0045D7AF /* AppDelegate.m */; };
-		30A4738519D9E41A0045D7AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4738419D9E41A0045D7AF /* ViewController.m */; };
 		30A4738819D9E41A0045D7AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738619D9E41A0045D7AF /* Main.storyboard */; };
 		30A4738A19D9E41A0045D7AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738919D9E41A0045D7AF /* Images.xcassets */; };
 		30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738B19D9E41A0045D7AF /* LaunchScreen.xib */; };
@@ -54,8 +53,6 @@
 		30A4737E19D9E41A0045D7AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		30A4738019D9E41A0045D7AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		30A4738119D9E41A0045D7AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		30A4738319D9E41A0045D7AF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		30A4738419D9E41A0045D7AF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		30A4738719D9E41A0045D7AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30A4738919D9E41A0045D7AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		30A4738C19D9E41A0045D7AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -161,8 +158,6 @@
 				55CA603519E7FD4A001E2FC6 /* views */,
 				30A4738019D9E41A0045D7AF /* AppDelegate.h */,
 				30A4738119D9E41A0045D7AF /* AppDelegate.m */,
-				30A4738319D9E41A0045D7AF /* ViewController.h */,
-				30A4738419D9E41A0045D7AF /* ViewController.m */,
 				30A4738619D9E41A0045D7AF /* Main.storyboard */,
 				6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */,
 				6C9754F719EE90C1005DD1DF /* NJAllFlightsHeader.xib */,
@@ -487,7 +482,6 @@
 				6C9754F519EE9093005DD1DF /* NJTileContainingTableViewCell.m in Sources */,
 				55CA603819E7FDC6001E2FC6 /* NJOPBlockStyleButton.m in Sources */,
 				6C9754F419EE9093005DD1DF /* NJInfoTile.m in Sources */,
-				30A4738519D9E41A0045D7AF /* ViewController.m in Sources */,
 				6C9754F019EE9093005DD1DF /* NJTailNumberTail.m in Sources */,
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
 				6C9754D819EE9011005DD1DF /* SimpleDataSourceCollectionViewController.m in Sources */,
