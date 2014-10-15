@@ -1,12 +1,12 @@
 //
-//  TraitOverrideViewController.h
+//  NJCompactFlightTile.m
 //  TailWind
 //
 //  Created by Amos Elmaliah on 10/15/14.
 //  Copyright (c) 2014 Amos Elmaliah. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "NJCompactFlightTile.h"
 
-@interface NJTraitOverrideViewController : UIViewController
+@implementation NJCompactFlightTile
 @end
