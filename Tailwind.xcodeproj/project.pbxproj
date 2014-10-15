@@ -17,22 +17,27 @@
 		5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ACA619E8064D002CA7D2 /* NJOPLeg.m */; };
 		55CA603819E7FDC6001E2FC6 /* NJOPBlockStyleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA603719E7FDC6001E2FC6 /* NJOPBlockStyleButton.m */; };
 		55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */; };
-		6C9754CE19EE8FD8005DD1DF /* NJTraitOverrideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754CD19EE8FD8005DD1DF /* NJTraitOverrideViewController.m */; };
-		6C9754D719EE9011005DD1DF /* SimpleDataSourceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754D219EE9011005DD1DF /* SimpleDataSourceTableViewController.m */; };
-		6C9754D819EE9011005DD1DF /* SimpleDataSourceCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754D419EE9011005DD1DF /* SimpleDataSourceCollectionViewController.m */; };
-		6C9754D919EE9011005DD1DF /* SimpleDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754D619EE9011005DD1DF /* SimpleDataSource.m */; };
-		6C9754DE19EE9031005DD1DF /* NJVerticalTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754DB19EE9031005DD1DF /* NJVerticalTabViewController.m */; };
-		6C9754DF19EE9031005DD1DF /* NJVerticalTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754DD19EE9031005DD1DF /* NJVerticalTabCell.m */; };
-		6C9754EF19EE9093005DD1DF /* NJAllFlightsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754E219EE9093005DD1DF /* NJAllFlightsHeader.m */; };
-		6C9754F019EE9093005DD1DF /* NJTailNumberTail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754E419EE9093005DD1DF /* NJTailNumberTail.m */; };
-		6C9754F119EE9093005DD1DF /* NJSingleFBOTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754E619EE9093005DD1DF /* NJSingleFBOTile.m */; };
-		6C9754F219EE9093005DD1DF /* NJWeatherTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754E819EE9093005DD1DF /* NJWeatherTile.m */; };
-		6C9754F319EE9093005DD1DF /* NJCompactFlightTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754EA19EE9093005DD1DF /* NJCompactFlightTile.m */; };
-		6C9754F419EE9093005DD1DF /* NJInfoTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754EC19EE9093005DD1DF /* NJInfoTile.m */; };
-		6C9754F519EE9093005DD1DF /* NJTileContainingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754EE19EE9093005DD1DF /* NJTileContainingTableViewCell.m */; };
+		6C57E04E19EEC8FB00D3FB00 /* AllFlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E02A19EEC8FB00D3FB00 /* AllFlightsViewController.m */; };
+		6C57E04F19EEC8FB00D3FB00 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E02C19EEC8FB00D3FB00 /* SummaryViewController.m */; };
+		6C57E05019EEC8FB00D3FB00 /* NJAllFlightsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E02F19EEC8FB00D3FB00 /* NJAllFlightsHeader.m */; };
+		6C57E05119EEC8FB00D3FB00 /* NJCompactFlightTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03119EEC8FB00D3FB00 /* NJCompactFlightTile.m */; };
+		6C57E05219EEC8FB00D3FB00 /* NJInfoTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03319EEC8FB00D3FB00 /* NJInfoTile.m */; };
+		6C57E05319EEC8FB00D3FB00 /* NJSingleFBOTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03519EEC8FB00D3FB00 /* NJSingleFBOTile.m */; };
+		6C57E05419EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03719EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m */; };
+		6C57E05519EEC8FB00D3FB00 /* NJTailNumberTail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03919EEC8FB00D3FB00 /* NJTailNumberTail.m */; };
+		6C57E05619EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03B19EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m */; };
+		6C57E05719EEC8FB00D3FB00 /* NJTodayTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03D19EEC8FB00D3FB00 /* NJTodayTile.m */; };
+		6C57E05819EEC8FB00D3FB00 /* NJWeatherTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03F19EEC8FB00D3FB00 /* NJWeatherTile.m */; };
+		6C57E05919EEC8FB00D3FB00 /* SimpleDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E04219EEC8FB00D3FB00 /* SimpleDataSource.m */; };
+		6C57E05A19EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E04419EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.m */; };
+		6C57E05B19EEC8FB00D3FB00 /* SimpleDataSourceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E04619EEC8FB00D3FB00 /* SimpleDataSourceTableViewController.m */; };
+		6C57E05C19EEC8FB00D3FB00 /* NJTraitOverrideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E04919EEC8FB00D3FB00 /* NJTraitOverrideViewController.m */; };
+		6C57E05D19EEC8FB00D3FB00 /* NJVerticalTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E04B19EEC8FB00D3FB00 /* NJVerticalTabCell.m */; };
+		6C57E05E19EEC8FB00D3FB00 /* NJVerticalTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E04D19EEC8FB00D3FB00 /* NJVerticalTabViewController.m */; };
+		6C57E06219EEC9EE00D3FB00 /* NJOPActionTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E06119EEC9EE00D3FB00 /* NJOPActionTile.m */; };
+		6C57E06519EECCD500D3FB00 /* NJOPSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E06419EECCD500D3FB00 /* NJOPSplitViewController.m */; };
 		6C9754F819EE90C1005DD1DF /* NJTileContainingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */; };
 		6C9754F919EE90C1005DD1DF /* NJAllFlightsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F719EE90C1005DD1DF /* NJAllFlightsHeader.xib */; };
-		6C9754FC19EE9195005DD1DF /* AllFlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754FB19EE9195005DD1DF /* AllFlightsViewController.m */; };
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -68,36 +73,46 @@
 		55CA603919E7FE22001E2FC6 /* NJOPValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPValueTransformer.h; sourceTree = "<group>"; };
 		55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPValueTransformer.m; sourceTree = "<group>"; };
 		6167B98AFA8D41C092D41CCC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C9754CC19EE8FD8005DD1DF /* NJTraitOverrideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTraitOverrideViewController.h; sourceTree = SOURCE_ROOT; };
-		6C9754CD19EE8FD8005DD1DF /* NJTraitOverrideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTraitOverrideViewController.m; sourceTree = SOURCE_ROOT; };
-		6C9754D119EE9011005DD1DF /* SimpleDataSourceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleDataSourceTableViewController.h; sourceTree = SOURCE_ROOT; };
-		6C9754D219EE9011005DD1DF /* SimpleDataSourceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleDataSourceTableViewController.m; sourceTree = SOURCE_ROOT; };
-		6C9754D319EE9011005DD1DF /* SimpleDataSourceCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleDataSourceCollectionViewController.h; sourceTree = SOURCE_ROOT; };
-		6C9754D419EE9011005DD1DF /* SimpleDataSourceCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleDataSourceCollectionViewController.m; sourceTree = SOURCE_ROOT; };
-		6C9754D519EE9011005DD1DF /* SimpleDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleDataSource.h; sourceTree = SOURCE_ROOT; };
-		6C9754D619EE9011005DD1DF /* SimpleDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleDataSource.m; sourceTree = SOURCE_ROOT; };
-		6C9754DA19EE9031005DD1DF /* NJVerticalTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NJVerticalTabViewController.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		6C9754DB19EE9031005DD1DF /* NJVerticalTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NJVerticalTabViewController.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		6C9754DC19EE9031005DD1DF /* NJVerticalTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NJVerticalTabCell.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		6C9754DD19EE9031005DD1DF /* NJVerticalTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NJVerticalTabCell.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		6C9754E119EE9093005DD1DF /* NJAllFlightsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJAllFlightsHeader.h; sourceTree = SOURCE_ROOT; };
-		6C9754E219EE9093005DD1DF /* NJAllFlightsHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJAllFlightsHeader.m; sourceTree = SOURCE_ROOT; };
-		6C9754E319EE9093005DD1DF /* NJTailNumberTail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTailNumberTail.h; sourceTree = SOURCE_ROOT; };
-		6C9754E419EE9093005DD1DF /* NJTailNumberTail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTailNumberTail.m; sourceTree = SOURCE_ROOT; };
-		6C9754E519EE9093005DD1DF /* NJSingleFBOTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSingleFBOTile.h; sourceTree = SOURCE_ROOT; };
-		6C9754E619EE9093005DD1DF /* NJSingleFBOTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJSingleFBOTile.m; sourceTree = SOURCE_ROOT; };
-		6C9754E719EE9093005DD1DF /* NJWeatherTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJWeatherTile.h; sourceTree = SOURCE_ROOT; };
-		6C9754E819EE9093005DD1DF /* NJWeatherTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJWeatherTile.m; sourceTree = SOURCE_ROOT; };
-		6C9754E919EE9093005DD1DF /* NJCompactFlightTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCompactFlightTile.h; sourceTree = SOURCE_ROOT; };
-		6C9754EA19EE9093005DD1DF /* NJCompactFlightTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCompactFlightTile.m; sourceTree = SOURCE_ROOT; };
-		6C9754EB19EE9093005DD1DF /* NJInfoTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJInfoTile.h; sourceTree = SOURCE_ROOT; };
-		6C9754EC19EE9093005DD1DF /* NJInfoTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJInfoTile.m; sourceTree = SOURCE_ROOT; };
-		6C9754ED19EE9093005DD1DF /* NJTileContainingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTileContainingTableViewCell.h; sourceTree = SOURCE_ROOT; };
-		6C9754EE19EE9093005DD1DF /* NJTileContainingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTileContainingTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		6C57E02919EEC8FB00D3FB00 /* AllFlightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllFlightsViewController.h; sourceTree = "<group>"; };
+		6C57E02A19EEC8FB00D3FB00 /* AllFlightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllFlightsViewController.m; sourceTree = "<group>"; };
+		6C57E02B19EEC8FB00D3FB00 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
+		6C57E02C19EEC8FB00D3FB00 /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
+		6C57E02E19EEC8FB00D3FB00 /* NJAllFlightsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJAllFlightsHeader.h; sourceTree = "<group>"; };
+		6C57E02F19EEC8FB00D3FB00 /* NJAllFlightsHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJAllFlightsHeader.m; sourceTree = "<group>"; };
+		6C57E03019EEC8FB00D3FB00 /* NJCompactFlightTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCompactFlightTile.h; sourceTree = "<group>"; };
+		6C57E03119EEC8FB00D3FB00 /* NJCompactFlightTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCompactFlightTile.m; sourceTree = "<group>"; };
+		6C57E03219EEC8FB00D3FB00 /* NJInfoTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJInfoTile.h; sourceTree = "<group>"; };
+		6C57E03319EEC8FB00D3FB00 /* NJInfoTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJInfoTile.m; sourceTree = "<group>"; };
+		6C57E03419EEC8FB00D3FB00 /* NJSingleFBOTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSingleFBOTile.h; sourceTree = "<group>"; };
+		6C57E03519EEC8FB00D3FB00 /* NJSingleFBOTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJSingleFBOTile.m; sourceTree = "<group>"; };
+		6C57E03619EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSummaryViewTopHeaderView.h; sourceTree = "<group>"; };
+		6C57E03719EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJSummaryViewTopHeaderView.m; sourceTree = "<group>"; };
+		6C57E03819EEC8FB00D3FB00 /* NJTailNumberTail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTailNumberTail.h; sourceTree = "<group>"; };
+		6C57E03919EEC8FB00D3FB00 /* NJTailNumberTail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTailNumberTail.m; sourceTree = "<group>"; };
+		6C57E03A19EEC8FB00D3FB00 /* NJTileContainingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTileContainingTableViewCell.h; sourceTree = "<group>"; };
+		6C57E03B19EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTileContainingTableViewCell.m; sourceTree = "<group>"; };
+		6C57E03C19EEC8FB00D3FB00 /* NJTodayTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTodayTile.h; sourceTree = "<group>"; };
+		6C57E03D19EEC8FB00D3FB00 /* NJTodayTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTodayTile.m; sourceTree = "<group>"; };
+		6C57E03E19EEC8FB00D3FB00 /* NJWeatherTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJWeatherTile.h; sourceTree = "<group>"; };
+		6C57E03F19EEC8FB00D3FB00 /* NJWeatherTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJWeatherTile.m; sourceTree = "<group>"; };
+		6C57E04119EEC8FB00D3FB00 /* SimpleDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleDataSource.h; sourceTree = "<group>"; };
+		6C57E04219EEC8FB00D3FB00 /* SimpleDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleDataSource.m; sourceTree = "<group>"; };
+		6C57E04319EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleDataSourceCollectionViewController.h; sourceTree = "<group>"; };
+		6C57E04419EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleDataSourceCollectionViewController.m; sourceTree = "<group>"; };
+		6C57E04519EEC8FB00D3FB00 /* SimpleDataSourceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleDataSourceTableViewController.h; sourceTree = "<group>"; };
+		6C57E04619EEC8FB00D3FB00 /* SimpleDataSourceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleDataSourceTableViewController.m; sourceTree = "<group>"; };
+		6C57E04819EEC8FB00D3FB00 /* NJTraitOverrideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTraitOverrideViewController.h; sourceTree = "<group>"; };
+		6C57E04919EEC8FB00D3FB00 /* NJTraitOverrideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTraitOverrideViewController.m; sourceTree = "<group>"; };
+		6C57E04A19EEC8FB00D3FB00 /* NJVerticalTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJVerticalTabCell.h; sourceTree = "<group>"; };
+		6C57E04B19EEC8FB00D3FB00 /* NJVerticalTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJVerticalTabCell.m; sourceTree = "<group>"; };
+		6C57E04C19EEC8FB00D3FB00 /* NJVerticalTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJVerticalTabViewController.h; sourceTree = "<group>"; };
+		6C57E04D19EEC8FB00D3FB00 /* NJVerticalTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJVerticalTabViewController.m; sourceTree = "<group>"; };
+		6C57E06019EEC9EE00D3FB00 /* NJOPActionTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPActionTile.h; sourceTree = "<group>"; };
+		6C57E06119EEC9EE00D3FB00 /* NJOPActionTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPActionTile.m; sourceTree = "<group>"; };
+		6C57E06319EECCD500D3FB00 /* NJOPSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSplitViewController.h; sourceTree = "<group>"; };
+		6C57E06419EECCD500D3FB00 /* NJOPSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSplitViewController.m; sourceTree = "<group>"; };
 		6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJTileContainingTableViewCell.xib; sourceTree = "<group>"; };
 		6C9754F719EE90C1005DD1DF /* NJAllFlightsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJAllFlightsHeader.xib; sourceTree = "<group>"; };
-		6C9754FA19EE9195005DD1DF /* AllFlightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllFlightsViewController.h; sourceTree = SOURCE_ROOT; };
-		6C9754FB19EE9195005DD1DF /* AllFlightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllFlightsViewController.m; sourceTree = SOURCE_ROOT; };
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
 		DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -153,8 +168,10 @@
 		30A4737B19D9E41A0045D7AF /* Tailwind */ = {
 			isa = PBXGroup;
 			children = (
+				6C57E04019EEC8FB00D3FB00 /* Simple */,
+				6C57E02819EEC8FB00D3FB00 /* MiddleLevelUI */,
+				6C57E04719EEC8FB00D3FB00 /* TopLevelUI */,
 				55CA603319E7FD4A001E2FC6 /* helpers */,
-				55CA603419E7FD4A001E2FC6 /* viewControllers */,
 				55CA603519E7FD4A001E2FC6 /* views */,
 				30A4738019D9E41A0045D7AF /* AppDelegate.h */,
 				30A4738119D9E41A0045D7AF /* AppDelegate.m */,
@@ -217,16 +234,6 @@
 			path = helpers;
 			sourceTree = "<group>";
 		};
-		55CA603419E7FD4A001E2FC6 /* viewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				6C9754D019EE900B005DD1DF /* Simple */,
-				6C9754CF19EE8FFA005DD1DF /* MiddleLevelUI */,
-				6C9754CB19EE8FC9005DD1DF /* TopLevelUI */,
-			);
-			path = viewControllers;
-			sourceTree = "<group>";
-		};
 		55CA603519E7FD4A001E2FC6 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,61 +243,71 @@
 			path = views;
 			sourceTree = "<group>";
 		};
-		6C9754CB19EE8FC9005DD1DF /* TopLevelUI */ = {
+		6C57E02819EEC8FB00D3FB00 /* MiddleLevelUI */ = {
 			isa = PBXGroup;
 			children = (
-				6C9754CC19EE8FD8005DD1DF /* NJTraitOverrideViewController.h */,
-				6C9754CD19EE8FD8005DD1DF /* NJTraitOverrideViewController.m */,
-				6C9754DA19EE9031005DD1DF /* NJVerticalTabViewController.h */,
-				6C9754DB19EE9031005DD1DF /* NJVerticalTabViewController.m */,
-				6C9754DC19EE9031005DD1DF /* NJVerticalTabCell.h */,
-				6C9754DD19EE9031005DD1DF /* NJVerticalTabCell.m */,
+				6C57E02919EEC8FB00D3FB00 /* AllFlightsViewController.h */,
+				6C57E02A19EEC8FB00D3FB00 /* AllFlightsViewController.m */,
+				6C57E02B19EEC8FB00D3FB00 /* SummaryViewController.h */,
+				6C57E02C19EEC8FB00D3FB00 /* SummaryViewController.m */,
+				6C57E02D19EEC8FB00D3FB00 /* Views */,
 			);
-			name = TopLevelUI;
+			path = MiddleLevelUI;
 			sourceTree = "<group>";
 		};
-		6C9754CF19EE8FFA005DD1DF /* MiddleLevelUI */ = {
+		6C57E02D19EEC8FB00D3FB00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6C9754FA19EE9195005DD1DF /* AllFlightsViewController.h */,
-				6C9754FB19EE9195005DD1DF /* AllFlightsViewController.m */,
-				6C9754E019EE908B005DD1DF /* Views */,
+				6C57E02E19EEC8FB00D3FB00 /* NJAllFlightsHeader.h */,
+				6C57E02F19EEC8FB00D3FB00 /* NJAllFlightsHeader.m */,
+				6C57E03019EEC8FB00D3FB00 /* NJCompactFlightTile.h */,
+				6C57E03119EEC8FB00D3FB00 /* NJCompactFlightTile.m */,
+				6C57E03219EEC8FB00D3FB00 /* NJInfoTile.h */,
+				6C57E03319EEC8FB00D3FB00 /* NJInfoTile.m */,
+				6C57E03419EEC8FB00D3FB00 /* NJSingleFBOTile.h */,
+				6C57E03519EEC8FB00D3FB00 /* NJSingleFBOTile.m */,
+				6C57E03619EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.h */,
+				6C57E03719EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m */,
+				6C57E03819EEC8FB00D3FB00 /* NJTailNumberTail.h */,
+				6C57E03919EEC8FB00D3FB00 /* NJTailNumberTail.m */,
+				6C57E03A19EEC8FB00D3FB00 /* NJTileContainingTableViewCell.h */,
+				6C57E03B19EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m */,
+				6C57E03C19EEC8FB00D3FB00 /* NJTodayTile.h */,
+				6C57E03D19EEC8FB00D3FB00 /* NJTodayTile.m */,
+				6C57E03E19EEC8FB00D3FB00 /* NJWeatherTile.h */,
+				6C57E03F19EEC8FB00D3FB00 /* NJWeatherTile.m */,
+				6C57E06019EEC9EE00D3FB00 /* NJOPActionTile.h */,
+				6C57E06119EEC9EE00D3FB00 /* NJOPActionTile.m */,
 			);
-			name = MiddleLevelUI;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		6C9754D019EE900B005DD1DF /* Simple */ = {
+		6C57E04019EEC8FB00D3FB00 /* Simple */ = {
 			isa = PBXGroup;
 			children = (
-				6C9754D119EE9011005DD1DF /* SimpleDataSourceTableViewController.h */,
-				6C9754D219EE9011005DD1DF /* SimpleDataSourceTableViewController.m */,
-				6C9754D319EE9011005DD1DF /* SimpleDataSourceCollectionViewController.h */,
-				6C9754D419EE9011005DD1DF /* SimpleDataSourceCollectionViewController.m */,
-				6C9754D519EE9011005DD1DF /* SimpleDataSource.h */,
-				6C9754D619EE9011005DD1DF /* SimpleDataSource.m */,
+				6C57E04119EEC8FB00D3FB00 /* SimpleDataSource.h */,
+				6C57E04219EEC8FB00D3FB00 /* SimpleDataSource.m */,
+				6C57E04319EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.h */,
+				6C57E04419EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.m */,
+				6C57E04519EEC8FB00D3FB00 /* SimpleDataSourceTableViewController.h */,
+				6C57E04619EEC8FB00D3FB00 /* SimpleDataSourceTableViewController.m */,
 			);
-			name = Simple;
+			path = Simple;
 			sourceTree = "<group>";
 		};
-		6C9754E019EE908B005DD1DF /* Views */ = {
+		6C57E04719EEC8FB00D3FB00 /* TopLevelUI */ = {
 			isa = PBXGroup;
 			children = (
-				6C9754E119EE9093005DD1DF /* NJAllFlightsHeader.h */,
-				6C9754E219EE9093005DD1DF /* NJAllFlightsHeader.m */,
-				6C9754E319EE9093005DD1DF /* NJTailNumberTail.h */,
-				6C9754E419EE9093005DD1DF /* NJTailNumberTail.m */,
-				6C9754E519EE9093005DD1DF /* NJSingleFBOTile.h */,
-				6C9754E619EE9093005DD1DF /* NJSingleFBOTile.m */,
-				6C9754E719EE9093005DD1DF /* NJWeatherTile.h */,
-				6C9754E819EE9093005DD1DF /* NJWeatherTile.m */,
-				6C9754E919EE9093005DD1DF /* NJCompactFlightTile.h */,
-				6C9754EA19EE9093005DD1DF /* NJCompactFlightTile.m */,
-				6C9754EB19EE9093005DD1DF /* NJInfoTile.h */,
-				6C9754EC19EE9093005DD1DF /* NJInfoTile.m */,
-				6C9754ED19EE9093005DD1DF /* NJTileContainingTableViewCell.h */,
-				6C9754EE19EE9093005DD1DF /* NJTileContainingTableViewCell.m */,
+				6C57E04819EEC8FB00D3FB00 /* NJTraitOverrideViewController.h */,
+				6C57E04919EEC8FB00D3FB00 /* NJTraitOverrideViewController.m */,
+				6C57E04A19EEC8FB00D3FB00 /* NJVerticalTabCell.h */,
+				6C57E04B19EEC8FB00D3FB00 /* NJVerticalTabCell.m */,
+				6C57E04C19EEC8FB00D3FB00 /* NJVerticalTabViewController.h */,
+				6C57E04D19EEC8FB00D3FB00 /* NJVerticalTabViewController.m */,
+				6C57E06319EECCD500D3FB00 /* NJOPSplitViewController.h */,
+				6C57E06419EECCD500D3FB00 /* NJOPSplitViewController.m */,
 			);
-			name = Views;
+			path = TopLevelUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,25 +496,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C9754F519EE9093005DD1DF /* NJTileContainingTableViewCell.m in Sources */,
+				6C57E05519EEC8FB00D3FB00 /* NJTailNumberTail.m in Sources */,
 				55CA603819E7FDC6001E2FC6 /* NJOPBlockStyleButton.m in Sources */,
-				6C9754F419EE9093005DD1DF /* NJInfoTile.m in Sources */,
-				6C9754F019EE9093005DD1DF /* NJTailNumberTail.m in Sources */,
+				6C57E05E19EEC8FB00D3FB00 /* NJVerticalTabViewController.m in Sources */,
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
-				6C9754D819EE9011005DD1DF /* SimpleDataSourceCollectionViewController.m in Sources */,
 				30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */,
-				6C9754F219EE9093005DD1DF /* NJWeatherTile.m in Sources */,
-				6C9754EF19EE9093005DD1DF /* NJAllFlightsHeader.m in Sources */,
-				6C9754FC19EE9195005DD1DF /* AllFlightsViewController.m in Sources */,
-				6C9754DE19EE9031005DD1DF /* NJVerticalTabViewController.m in Sources */,
-				6C9754D719EE9011005DD1DF /* SimpleDataSourceTableViewController.m in Sources */,
-				6C9754D919EE9011005DD1DF /* SimpleDataSource.m in Sources */,
-				6C9754F319EE9093005DD1DF /* NJCompactFlightTile.m in Sources */,
-				6C9754F119EE9093005DD1DF /* NJSingleFBOTile.m in Sources */,
-				6C9754DF19EE9031005DD1DF /* NJVerticalTabCell.m in Sources */,
+				6C57E05319EEC8FB00D3FB00 /* NJSingleFBOTile.m in Sources */,
+				6C57E05C19EEC8FB00D3FB00 /* NJTraitOverrideViewController.m in Sources */,
+				6C57E05019EEC8FB00D3FB00 /* NJAllFlightsHeader.m in Sources */,
+				6C57E05D19EEC8FB00D3FB00 /* NJVerticalTabCell.m in Sources */,
+				6C57E05419EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m in Sources */,
+				6C57E05A19EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.m in Sources */,
+				6C57E05219EEC8FB00D3FB00 /* NJInfoTile.m in Sources */,
+				6C57E04E19EEC8FB00D3FB00 /* AllFlightsViewController.m in Sources */,
+				6C57E05819EEC8FB00D3FB00 /* NJWeatherTile.m in Sources */,
+				6C57E06519EECCD500D3FB00 /* NJOPSplitViewController.m in Sources */,
+				6C57E05119EEC8FB00D3FB00 /* NJCompactFlightTile.m in Sources */,
+				6C57E06219EEC9EE00D3FB00 /* NJOPActionTile.m in Sources */,
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,
-				6C9754CE19EE8FD8005DD1DF /* NJTraitOverrideViewController.m in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */,
+				6C57E05619EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m in Sources */,
+				6C57E05B19EEC8FB00D3FB00 /* SimpleDataSourceTableViewController.m in Sources */,
+				6C57E04F19EEC8FB00D3FB00 /* SummaryViewController.m in Sources */,
+				6C57E05919EEC8FB00D3FB00 /* SimpleDataSource.m in Sources */,
+				6C57E05719EEC8FB00D3FB00 /* NJTodayTile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

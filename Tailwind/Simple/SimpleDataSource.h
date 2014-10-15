@@ -16,19 +16,24 @@ extern NSString *const kSimpleDataSourceSectionsHeaderIdentifierKey;
 extern NSString *const kSimpleDataSourceSectionsHeaderKeyapthsKey;
 extern NSString *const kSimpleDataSourceSectionsHeaderKey;
 extern NSString *const kSimpleDataSourceCellKeypaths;
+extern NSString *const kSimpleDataSourceCellItem;
 extern NSString *const kSimpleDataSourceCellSegueAction;
 
 @interface SimpleDataSource : NSObject <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, NSCoding>
 @property (nonatomic, copy) NSString* title;
 @property (nonatomic, strong) NSArray* headerFooterCellIdentifiers;
-@property (nonatomic, copy) void (^onSelectBlock)(UIViewController*,NSIndexPath*);
+@property (nonatomic, copy) void (^didSelectBlock)(UIViewController*,NSIndexPath*);
 @property (nonatomic, copy) void (^configureHeaderFooterViewBlock)(UIView*);
-@property (nonatomic, copy) void (^configureCell)(UITableView*, UITableViewCell *,NSString*);
+@property (nonatomic, copy) void (^configureTableCell)(UITableView*, UITableViewCell *,NSString*);
+
+-(id)segueForIndexPath:(NSIndexPath*)indexPath;
+-(id)itemForIndexPath:(NSIndexPath*)indexPath;
 +(instancetype)dataSourceWithSections:(NSArray*)sections;
 
 -(instancetype)initWithSections:(NSArray*)sections;
 
 @property (nonatomic, strong) NSArray* sections;
+@property (nonatomic, weak) UIViewController* controller;
 -(void)loadData;
 
 @end

@@ -89,9 +89,23 @@
 	return nil;
 }
 
+-(NSIndexPath*)tableView:(UITableView*)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+	return indexPath;
+}
+
 -(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (self.dataSource.onSelectBlock) {
-		self.dataSource.onSelectBlock(self, indexPath);
+
+	NSString* segue = nil;
+	if ([self.dataSource respondsToSelector:@selector(segueForIndexPath:)] &&
+			(segue = [self.dataSource segueForIndexPath:indexPath])) {
+		
+		[self performSegueWithIdentifier:segue sender:self];
+
+	}
+	else if (self.dataSource.didSelectBlock) {
+
+		self.dataSource.didSelectBlock(self, indexPath);
 	}
 }
 
