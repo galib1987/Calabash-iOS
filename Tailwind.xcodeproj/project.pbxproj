@@ -18,6 +18,7 @@
 		5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ACA619E8064D002CA7D2 /* NJOPLeg.m */; };
 		55CA603819E7FDC6001E2FC6 /* NJOPBlockStyleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA603719E7FDC6001E2FC6 /* NJOPBlockStyleButton.m */; };
 		55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */; };
+		6C9754CE19EE8FD8005DD1DF /* NJTraitOverrideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9754CD19EE8FD8005DD1DF /* NJTraitOverrideViewController.m */; };
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		55CA603919E7FE22001E2FC6 /* NJOPValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPValueTransformer.h; sourceTree = "<group>"; };
 		55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPValueTransformer.m; sourceTree = "<group>"; };
 		6167B98AFA8D41C092D41CCC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C9754CC19EE8FD8005DD1DF /* NJTraitOverrideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTraitOverrideViewController.h; sourceTree = SOURCE_ROOT; };
+		6C9754CD19EE8FD8005DD1DF /* NJTraitOverrideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTraitOverrideViewController.m; sourceTree = SOURCE_ROOT; };
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
 		DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -177,6 +180,7 @@
 		55CA603419E7FD4A001E2FC6 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6C9754CB19EE8FC9005DD1DF /* TopLevelViewController */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -188,6 +192,15 @@
 				55CA603719E7FDC6001E2FC6 /* NJOPBlockStyleButton.m */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		6C9754CB19EE8FC9005DD1DF /* TopLevelViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6C9754CC19EE8FD8005DD1DF /* NJTraitOverrideViewController.h */,
+				6C9754CD19EE8FD8005DD1DF /* NJTraitOverrideViewController.m */,
+			);
+			name = TopLevelViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +392,7 @@
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
 				30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */,
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,
+				6C9754CE19EE8FD8005DD1DF /* NJTraitOverrideViewController.m in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
