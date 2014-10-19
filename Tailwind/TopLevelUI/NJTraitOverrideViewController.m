@@ -20,6 +20,7 @@
 
 @implementation NJTraitOverrideViewController
 
+
 -(NJOPBriefViewController *)briefViewController {
 	if (!_briefViewController) {
 		_briefViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([NJOPBriefViewController class])];
@@ -29,10 +30,12 @@
 }
 - (void)viewWillTransitionToSize:(CGSize)size
 			 withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator  {
-
+	[super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
+
 	for (UIViewController*viewContorller in [self childViewControllers]) {
 		if ([viewContorller isKindOfClass:[NJVerticalTabViewController class]]) {
 			[(NJVerticalTabViewController*)viewContorller setDelegate:self];
@@ -61,8 +64,12 @@
 	return nil;
 }
 
+
 - (void)tabBarViewController:(NJVerticalTabViewController *)tabBar
 				didSelectItemAtIndex:(NSUInteger)index {
+
+	return;
+	/*TODO: write vertical tabbar implementation */
 	UIViewController* toViewController = [self viewControllerAtIndex:index];
 	if (toViewController && toViewController != self.currentViewContorller) {
 		if (!toViewController.parentViewController) {

@@ -8,5 +8,8 @@
 
 #import "NJInfoTile.h"
 
+@interface NJInfoTile ()
+@end
+
 @implementation NJInfoTile
 @end

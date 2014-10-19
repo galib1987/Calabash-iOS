@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Amos Elmaliah. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface NJSummaryViewTopHeaderView : UIView
 @property (nonatomic, strong) IBOutlet UILabel* topLabelView;

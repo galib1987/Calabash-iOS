@@ -17,9 +17,8 @@
 		5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ACA619E8064D002CA7D2 /* NJOPLeg.m */; };
 		55CA603819E7FDC6001E2FC6 /* NJOPBlockStyleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA603719E7FDC6001E2FC6 /* NJOPBlockStyleButton.m */; };
 		55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */; };
-		6C57E04E19EEC8FB00D3FB00 /* AllFlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E02A19EEC8FB00D3FB00 /* AllFlightsViewController.m */; };
 		6C57E04F19EEC8FB00D3FB00 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E02C19EEC8FB00D3FB00 /* SummaryViewController.m */; };
-		6C57E05019EEC8FB00D3FB00 /* NJAllFlightsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E02F19EEC8FB00D3FB00 /* NJAllFlightsHeader.m */; };
+		6C57E05019EEC8FB00D3FB00 /* NJOPAllFlightsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E02F19EEC8FB00D3FB00 /* NJOPAllFlightsHeader.m */; };
 		6C57E05119EEC8FB00D3FB00 /* NJCompactFlightTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03119EEC8FB00D3FB00 /* NJCompactFlightTile.m */; };
 		6C57E05219EEC8FB00D3FB00 /* NJInfoTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03319EEC8FB00D3FB00 /* NJInfoTile.m */; };
 		6C57E05319EEC8FB00D3FB00 /* NJSingleFBOTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03519EEC8FB00D3FB00 /* NJSingleFBOTile.m */; };
@@ -37,8 +36,25 @@
 		6C57E06219EEC9EE00D3FB00 /* NJOPActionTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E06119EEC9EE00D3FB00 /* NJOPActionTile.m */; };
 		6C57E06519EECCD500D3FB00 /* NJOPSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E06419EECCD500D3FB00 /* NJOPSplitViewController.m */; };
 		6C57E06819EED4CE00D3FB00 /* NJOPBriefViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E06719EED4CE00D3FB00 /* NJOPBriefViewController.m */; };
+		6C73F68A19F127C300A92BBE /* NJInfoTile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C73F68919F127C300A92BBE /* NJInfoTile.xib */; };
+		6C7C2BB919F29F480092F08D /* UIView+NJOPStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C2BB819F29F480092F08D /* UIView+NJOPStyle.m */; };
+		6C7C2BBC19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C2BBB19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m */; };
 		6C9754F819EE90C1005DD1DF /* NJTileContainingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */; };
-		6C9754F919EE90C1005DD1DF /* NJAllFlightsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F719EE90C1005DD1DF /* NJAllFlightsHeader.xib */; };
+		6C9754F919EE90C1005DD1DF /* NJOPAllFlightsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F719EE90C1005DD1DF /* NJOPAllFlightsHeader.xib */; };
+		6CA3922219F00292003FDCC8 /* iPadNJBriefTopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA3922119F00292003FDCC8 /* iPadNJBriefTopTableViewCell.xib */; };
+		6CBD545B19F021E50009077C /* NJSingleFBOTile-Left.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD545A19F021E50009077C /* NJSingleFBOTile-Left.xib */; };
+		6CBD546019F111670009077C /* NJOPNestedCollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD545F19F111670009077C /* NJOPNestedCollectionTableViewCell.m */; };
+		6CBD546719F1129E0009077C /* NJOPActionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD546619F1129E0009077C /* NJOPActionsViewController.m */; };
+		6CBD546A19F1139D0009077C /* NJOPTileContainingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD546919F1139D0009077C /* NJOPTileContainingCollectionViewCell.m */; };
+		6CC3D6AF19F151E70081A5BD /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CC3D6AE19F151E70081A5BD /* View.xib */; };
+		6CC3D6B219F152340081A5BD /* NJOPInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC3D6B119F152340081A5BD /* NJOPInfoCell.m */; };
+		6CC3D6B519F1546E0081A5BD /* NJOPCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC3D6B419F1546E0081A5BD /* NJOPCollectionViewFlowLayout.m */; };
+		6CC3D6B819F167130081A5BD /* NJOP3TilesLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC3D6B719F167130081A5BD /* NJOP3TilesLayoutTableViewCell.m */; };
+		6CC3D6BA19F171AA0081A5BD /* NJOPInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CC3D6B919F171AA0081A5BD /* NJOPInfoCell.xib */; };
+		6CC3D6BD19F173170081A5BD /* NJOPReservationCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC3D6BC19F173170081A5BD /* NJOPReservationCollectionViewController.m */; };
+		6CC3D6BF19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CC3D6BE19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib */; };
+		6CC3D6C219F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC3D6C119F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m */; };
+		6CCDC6E419F01D8B005339B4 /* NJSingleFBOTile-Right.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCDC6E319F01D8B005339B4 /* NJSingleFBOTile-Right.xib */; };
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -74,12 +90,10 @@
 		55CA603919E7FE22001E2FC6 /* NJOPValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPValueTransformer.h; sourceTree = "<group>"; };
 		55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPValueTransformer.m; sourceTree = "<group>"; };
 		6167B98AFA8D41C092D41CCC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C57E02919EEC8FB00D3FB00 /* AllFlightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllFlightsViewController.h; sourceTree = "<group>"; };
-		6C57E02A19EEC8FB00D3FB00 /* AllFlightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllFlightsViewController.m; sourceTree = "<group>"; };
 		6C57E02B19EEC8FB00D3FB00 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		6C57E02C19EEC8FB00D3FB00 /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
-		6C57E02E19EEC8FB00D3FB00 /* NJAllFlightsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJAllFlightsHeader.h; sourceTree = "<group>"; };
-		6C57E02F19EEC8FB00D3FB00 /* NJAllFlightsHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJAllFlightsHeader.m; sourceTree = "<group>"; };
+		6C57E02E19EEC8FB00D3FB00 /* NJOPAllFlightsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAllFlightsHeader.h; sourceTree = "<group>"; };
+		6C57E02F19EEC8FB00D3FB00 /* NJOPAllFlightsHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAllFlightsHeader.m; sourceTree = "<group>"; };
 		6C57E03019EEC8FB00D3FB00 /* NJCompactFlightTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCompactFlightTile.h; sourceTree = "<group>"; };
 		6C57E03119EEC8FB00D3FB00 /* NJCompactFlightTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCompactFlightTile.m; sourceTree = "<group>"; };
 		6C57E03219EEC8FB00D3FB00 /* NJInfoTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJInfoTile.h; sourceTree = "<group>"; };
@@ -96,7 +110,7 @@
 		6C57E03D19EEC8FB00D3FB00 /* NJTodayTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTodayTile.m; sourceTree = "<group>"; };
 		6C57E03E19EEC8FB00D3FB00 /* NJWeatherTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJWeatherTile.h; sourceTree = "<group>"; };
 		6C57E03F19EEC8FB00D3FB00 /* NJWeatherTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJWeatherTile.m; sourceTree = "<group>"; };
-		6C57E04119EEC8FB00D3FB00 /* SimpleDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleDataSource.h; sourceTree = "<group>"; };
+		6C57E04119EEC8FB00D3FB00 /* SimpleDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SimpleDataSource.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		6C57E04219EEC8FB00D3FB00 /* SimpleDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleDataSource.m; sourceTree = "<group>"; };
 		6C57E04319EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleDataSourceCollectionViewController.h; sourceTree = "<group>"; };
 		6C57E04419EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleDataSourceCollectionViewController.m; sourceTree = "<group>"; };
@@ -114,8 +128,35 @@
 		6C57E06419EECCD500D3FB00 /* NJOPSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSplitViewController.m; sourceTree = "<group>"; };
 		6C57E06619EED4CE00D3FB00 /* NJOPBriefViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPBriefViewController.h; sourceTree = "<group>"; };
 		6C57E06719EED4CE00D3FB00 /* NJOPBriefViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBriefViewController.m; sourceTree = "<group>"; };
+		6C73F68919F127C300A92BBE /* NJInfoTile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJInfoTile.xib; sourceTree = "<group>"; };
+		6C7C2BB719F29F480092F08D /* UIView+NJOPStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NJOPStyle.h"; sourceTree = "<group>"; };
+		6C7C2BB819F29F480092F08D /* UIView+NJOPStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NJOPStyle.m"; sourceTree = "<group>"; };
+		6C7C2BBA19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionReusableView+NJOPHelpers.h"; sourceTree = "<group>"; };
+		6C7C2BBB19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionReusableView+NJOPHelpers.m"; sourceTree = "<group>"; };
 		6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJTileContainingTableViewCell.xib; sourceTree = "<group>"; };
-		6C9754F719EE90C1005DD1DF /* NJAllFlightsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJAllFlightsHeader.xib; sourceTree = "<group>"; };
+		6C9754F719EE90C1005DD1DF /* NJOPAllFlightsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJOPAllFlightsHeader.xib; path = ../../NJOPAllFlightsHeader.xib; sourceTree = "<group>"; };
+		6CA3922119F00292003FDCC8 /* iPadNJBriefTopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPadNJBriefTopTableViewCell.xib; sourceTree = "<group>"; };
+		6CBD545A19F021E50009077C /* NJSingleFBOTile-Left.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "NJSingleFBOTile-Left.xib"; sourceTree = "<group>"; };
+		6CBD545E19F111670009077C /* NJOPNestedCollectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NJOPNestedCollectionTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		6CBD545F19F111670009077C /* NJOPNestedCollectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NJOPNestedCollectionTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		6CBD546519F1129E0009077C /* NJOPActionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPActionsViewController.h; sourceTree = "<group>"; };
+		6CBD546619F1129E0009077C /* NJOPActionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPActionsViewController.m; sourceTree = "<group>"; };
+		6CBD546819F1139D0009077C /* NJOPTileContainingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPTileContainingCollectionViewCell.h; sourceTree = "<group>"; };
+		6CBD546919F1139D0009077C /* NJOPTileContainingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPTileContainingCollectionViewCell.m; sourceTree = "<group>"; };
+		6CC3D6AE19F151E70081A5BD /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		6CC3D6B019F152340081A5BD /* NJOPInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPInfoCell.h; sourceTree = "<group>"; };
+		6CC3D6B119F152340081A5BD /* NJOPInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPInfoCell.m; sourceTree = "<group>"; };
+		6CC3D6B319F1546E0081A5BD /* NJOPCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		6CC3D6B419F1546E0081A5BD /* NJOPCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		6CC3D6B619F167130081A5BD /* NJOP3TilesLayoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOP3TilesLayoutTableViewCell.h; sourceTree = "<group>"; };
+		6CC3D6B719F167130081A5BD /* NJOP3TilesLayoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOP3TilesLayoutTableViewCell.m; sourceTree = "<group>"; };
+		6CC3D6B919F171AA0081A5BD /* NJOPInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPInfoCell.xib; sourceTree = "<group>"; };
+		6CC3D6BB19F173170081A5BD /* NJOPReservationCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPReservationCollectionViewController.h; sourceTree = "<group>"; };
+		6CC3D6BC19F173170081A5BD /* NJOPReservationCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPReservationCollectionViewController.m; sourceTree = "<group>"; };
+		6CC3D6BE19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJOPBriefTopCollectionViewCell.xib; path = ../NJOPBriefTopCollectionViewCell.xib; sourceTree = "<group>"; };
+		6CC3D6C019F176C90081A5BD /* NJOPBriefTopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPBriefTopCollectionViewCell.h; sourceTree = "<group>"; };
+		6CC3D6C119F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBriefTopCollectionViewCell.m; sourceTree = "<group>"; };
+		6CCDC6E319F01D8B005339B4 /* NJSingleFBOTile-Right.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "NJSingleFBOTile-Right.xib"; sourceTree = "<group>"; };
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
 		DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -178,9 +219,10 @@
 				55CA603519E7FD4A001E2FC6 /* views */,
 				30A4738019D9E41A0045D7AF /* AppDelegate.h */,
 				30A4738119D9E41A0045D7AF /* AppDelegate.m */,
+				6CC3D6AE19F151E70081A5BD /* View.xib */,
 				30A4738619D9E41A0045D7AF /* Main.storyboard */,
+				6CA3922119F00292003FDCC8 /* iPadNJBriefTopTableViewCell.xib */,
 				6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */,
-				6C9754F719EE90C1005DD1DF /* NJAllFlightsHeader.xib */,
 				30A4738919D9E41A0045D7AF /* Images.xcassets */,
 				30A4738B19D9E41A0045D7AF /* LaunchScreen.xib */,
 				30A4737C19D9E41A0045D7AF /* Supporting Files */,
@@ -229,10 +271,14 @@
 		55CA603319E7FD4A001E2FC6 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6C7C2BBA19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.h */,
+				6C7C2BBB19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m */,
 				55CA603919E7FE22001E2FC6 /* NJOPValueTransformer.h */,
 				55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */,
 				5559ACA519E8064D002CA7D2 /* NJOPLeg.h */,
 				5559ACA619E8064D002CA7D2 /* NJOPLeg.m */,
+				6C7C2BB719F29F480092F08D /* UIView+NJOPStyle.h */,
+				6C7C2BB819F29F480092F08D /* UIView+NJOPStyle.m */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -249,10 +295,16 @@
 		6C57E02819EEC8FB00D3FB00 /* MiddleLevelUI */ = {
 			isa = PBXGroup;
 			children = (
-				6C57E02919EEC8FB00D3FB00 /* AllFlightsViewController.h */,
-				6C57E02A19EEC8FB00D3FB00 /* AllFlightsViewController.m */,
 				6C57E02B19EEC8FB00D3FB00 /* SummaryViewController.h */,
 				6C57E02C19EEC8FB00D3FB00 /* SummaryViewController.m */,
+				6CBD546519F1129E0009077C /* NJOPActionsViewController.h */,
+				6CBD546619F1129E0009077C /* NJOPActionsViewController.m */,
+				6CC3D6BB19F173170081A5BD /* NJOPReservationCollectionViewController.h */,
+				6CC3D6BC19F173170081A5BD /* NJOPReservationCollectionViewController.m */,
+				6CC3D6C019F176C90081A5BD /* NJOPBriefTopCollectionViewCell.h */,
+				6CC3D6C119F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m */,
+				6CC3D6BE19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib */,
+				6CA8290419F141C80086280B /* Layout */,
 				6C57E02D19EEC8FB00D3FB00 /* Views */,
 			);
 			path = MiddleLevelUI;
@@ -261,26 +313,39 @@
 		6C57E02D19EEC8FB00D3FB00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6C57E02E19EEC8FB00D3FB00 /* NJAllFlightsHeader.h */,
-				6C57E02F19EEC8FB00D3FB00 /* NJAllFlightsHeader.m */,
+				6C57E02E19EEC8FB00D3FB00 /* NJOPAllFlightsHeader.h */,
+				6C57E02F19EEC8FB00D3FB00 /* NJOPAllFlightsHeader.m */,
+				6C9754F719EE90C1005DD1DF /* NJOPAllFlightsHeader.xib */,
 				6C57E03019EEC8FB00D3FB00 /* NJCompactFlightTile.h */,
 				6C57E03119EEC8FB00D3FB00 /* NJCompactFlightTile.m */,
+				6CC3D6B019F152340081A5BD /* NJOPInfoCell.h */,
+				6CC3D6B119F152340081A5BD /* NJOPInfoCell.m */,
+				6CC3D6B919F171AA0081A5BD /* NJOPInfoCell.xib */,
 				6C57E03219EEC8FB00D3FB00 /* NJInfoTile.h */,
 				6C57E03319EEC8FB00D3FB00 /* NJInfoTile.m */,
+				6C73F68919F127C300A92BBE /* NJInfoTile.xib */,
 				6C57E03419EEC8FB00D3FB00 /* NJSingleFBOTile.h */,
 				6C57E03519EEC8FB00D3FB00 /* NJSingleFBOTile.m */,
+				6CCDC6E319F01D8B005339B4 /* NJSingleFBOTile-Right.xib */,
+				6CBD545A19F021E50009077C /* NJSingleFBOTile-Left.xib */,
 				6C57E03619EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.h */,
 				6C57E03719EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m */,
 				6C57E03819EEC8FB00D3FB00 /* NJTailNumberTail.h */,
 				6C57E03919EEC8FB00D3FB00 /* NJTailNumberTail.m */,
 				6C57E03A19EEC8FB00D3FB00 /* NJTileContainingTableViewCell.h */,
 				6C57E03B19EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m */,
+				6CC3D6B619F167130081A5BD /* NJOP3TilesLayoutTableViewCell.h */,
+				6CC3D6B719F167130081A5BD /* NJOP3TilesLayoutTableViewCell.m */,
+				6CBD546819F1139D0009077C /* NJOPTileContainingCollectionViewCell.h */,
+				6CBD546919F1139D0009077C /* NJOPTileContainingCollectionViewCell.m */,
 				6C57E03C19EEC8FB00D3FB00 /* NJTodayTile.h */,
 				6C57E03D19EEC8FB00D3FB00 /* NJTodayTile.m */,
 				6C57E03E19EEC8FB00D3FB00 /* NJWeatherTile.h */,
 				6C57E03F19EEC8FB00D3FB00 /* NJWeatherTile.m */,
 				6C57E06019EEC9EE00D3FB00 /* NJOPActionTile.h */,
 				6C57E06119EEC9EE00D3FB00 /* NJOPActionTile.m */,
+				6CBD545E19F111670009077C /* NJOPNestedCollectionTableViewCell.h */,
+				6CBD545F19F111670009077C /* NJOPNestedCollectionTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +378,15 @@
 				6C57E06419EECCD500D3FB00 /* NJOPSplitViewController.m */,
 			);
 			path = TopLevelUI;
+			sourceTree = "<group>";
+		};
+		6CA8290419F141C80086280B /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				6CC3D6B319F1546E0081A5BD /* NJOPCollectionViewFlowLayout.h */,
+				6CC3D6B419F1546E0081A5BD /* NJOPCollectionViewFlowLayout.m */,
+			);
+			name = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,11 +476,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C9754F919EE90C1005DD1DF /* NJAllFlightsHeader.xib in Resources */,
+				6CA3922219F00292003FDCC8 /* iPadNJBriefTopTableViewCell.xib in Resources */,
+				6C9754F919EE90C1005DD1DF /* NJOPAllFlightsHeader.xib in Resources */,
 				30A4738819D9E41A0045D7AF /* Main.storyboard in Resources */,
 				30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */,
+				6CBD545B19F021E50009077C /* NJSingleFBOTile-Left.xib in Resources */,
+				6C73F68A19F127C300A92BBE /* NJInfoTile.xib in Resources */,
+				6CC3D6AF19F151E70081A5BD /* View.xib in Resources */,
 				30A4738A19D9E41A0045D7AF /* Images.xcassets in Resources */,
+				6CC3D6BF19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib in Resources */,
 				6C9754F819EE90C1005DD1DF /* NJTileContainingTableViewCell.xib in Resources */,
+				6CC3D6BA19F171AA0081A5BD /* NJOPInfoCell.xib in Resources */,
+				6CCDC6E419F01D8B005339B4 /* NJSingleFBOTile-Right.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,15 +588,21 @@
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
 				30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */,
 				6C57E05319EEC8FB00D3FB00 /* NJSingleFBOTile.m in Sources */,
+				6CC3D6B219F152340081A5BD /* NJOPInfoCell.m in Sources */,
+				6CC3D6BD19F173170081A5BD /* NJOPReservationCollectionViewController.m in Sources */,
+				6CC3D6B519F1546E0081A5BD /* NJOPCollectionViewFlowLayout.m in Sources */,
 				6C57E05C19EEC8FB00D3FB00 /* NJTraitOverrideViewController.m in Sources */,
-				6C57E05019EEC8FB00D3FB00 /* NJAllFlightsHeader.m in Sources */,
+				6C57E05019EEC8FB00D3FB00 /* NJOPAllFlightsHeader.m in Sources */,
 				6C57E05D19EEC8FB00D3FB00 /* NJVerticalTabCell.m in Sources */,
+				6CC3D6B819F167130081A5BD /* NJOP3TilesLayoutTableViewCell.m in Sources */,
+				6CBD546019F111670009077C /* NJOPNestedCollectionTableViewCell.m in Sources */,
 				6C57E05419EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m in Sources */,
 				6C57E05A19EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.m in Sources */,
 				6C57E05219EEC8FB00D3FB00 /* NJInfoTile.m in Sources */,
-				6C57E04E19EEC8FB00D3FB00 /* AllFlightsViewController.m in Sources */,
+				6CC3D6C219F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m in Sources */,
 				6C57E05819EEC8FB00D3FB00 /* NJWeatherTile.m in Sources */,
 				6C57E06519EECCD500D3FB00 /* NJOPSplitViewController.m in Sources */,
+				6C7C2BB919F29F480092F08D /* UIView+NJOPStyle.m in Sources */,
 				6C57E06819EED4CE00D3FB00 /* NJOPBriefViewController.m in Sources */,
 				6C57E05119EEC8FB00D3FB00 /* NJCompactFlightTile.m in Sources */,
 				6C57E06219EEC9EE00D3FB00 /* NJOPActionTile.m in Sources */,
@@ -523,9 +610,12 @@
 				5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */,
 				6C57E05619EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m in Sources */,
 				6C57E05B19EEC8FB00D3FB00 /* SimpleDataSourceTableViewController.m in Sources */,
+				6C7C2BBC19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m in Sources */,
+				6CBD546719F1129E0009077C /* NJOPActionsViewController.m in Sources */,
 				6C57E04F19EEC8FB00D3FB00 /* SummaryViewController.m in Sources */,
 				6C57E05919EEC8FB00D3FB00 /* SimpleDataSource.m in Sources */,
 				6C57E05719EEC8FB00D3FB00 /* NJTodayTile.m in Sources */,
+				6CBD546A19F1139D0009077C /* NJOPTileContainingCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
