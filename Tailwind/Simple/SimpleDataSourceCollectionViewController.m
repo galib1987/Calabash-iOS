@@ -21,7 +21,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 -(void)registerReusableViews {
-
+	
 }
 
 - (void)viewDidLoad {
@@ -57,7 +57,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	if ([self.dataSource respondsToSelector:_cmd]) {
-		return [self.dataSource collectionView:collectionView cellForItemAtIndexPath:indexPath];
+		UICollectionViewCell*cell = [self.dataSource collectionView:collectionView cellForItemAtIndexPath:indexPath];
+		[cell aapl_Xcode6OniOS7hotfix];
 	}
 	return nil;
 }
@@ -73,7 +74,19 @@ static NSString * const reuseIdentifier = @"Cell";
 	}
 }
 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+	if ([self.dataSource respondsToSelector:_cmd]) {
+		return [self.dataSource collectionView:collectionView viewForSupplementaryElementOfKind:kind atIndexPath:indexPath];
+	}
+	return nil;
+}
+
+
 #pragma mark <UICollectionViewDelegate>
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+	return [(UICollectionViewFlowLayout*)collectionViewLayout itemSize];
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

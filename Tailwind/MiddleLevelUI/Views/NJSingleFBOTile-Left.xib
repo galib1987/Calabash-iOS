@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="vvd-h9-mSz" customClass="NJSingleFBOTile">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="357"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="69" text="KTEB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvN-Z6-G2f">
+                    <rect key="frame" x="0.0" y="41" width="600" height="69"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="57"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="25.5" text="Landmark Aviation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqf-cM-gJW">
+                    <rect key="frame" x="0.0" y="193" width="600" height="25.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="26" text="12:45 EST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bb-LM-xhb">
+                    <rect key="frame" x="0.0" y="117" width="600" height="26"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="61" text="888.123.1234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cJ-Bu-mcT">
+                    <rect key="frame" x="0.0" y="246" width="600" height="61"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="33" placeholderIntrinsicHeight="34" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="mpa-UI-vS1">
+                    <rect key="frame" x="0.0" y="151" width="33" height="34"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="22.5" text="101 Charles LindBergh Dr." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXr-i6-rxl">
+                    <rect key="frame" x="0.0" y="221" width="600" height="22.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" placeholderIntrinsicWidth="559" placeholderIntrinsicHeight="25" text="Departing FBO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFL-gR-3Ug">
+                    <rect key="frame" x="41" y="160" width="559" height="25"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="25" text="Teteborough, NJ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24L-Wu-dd7">
+                    <rect key="frame" x="0.0" y="8" width="600" height="25"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9cJ-Bu-mcT" firstAttribute="leading" secondItem="vvd-h9-mSz" secondAttribute="leading" id="3ll-LM-Vaw"/>
+                <constraint firstItem="24L-Wu-dd7" firstAttribute="top" secondItem="vvd-h9-mSz" secondAttribute="top" constant="8" id="9NR-Lj-83W"/>
+                <constraint firstItem="24L-Wu-dd7" firstAttribute="leading" secondItem="vvd-h9-mSz" secondAttribute="leading" id="B98-p2-DWA"/>
+                <constraint firstAttribute="trailing" secondItem="4Bb-LM-xhb" secondAttribute="trailing" id="C0G-on-mIN"/>
+                <constraint firstItem="NXr-i6-rxl" firstAttribute="leading" secondItem="vvd-h9-mSz" secondAttribute="leading" id="Ckg-nb-geU"/>
+                <constraint firstAttribute="bottom" secondItem="9cJ-Bu-mcT" secondAttribute="bottom" constant="50" id="GWD-nY-NP4"/>
+                <constraint firstItem="JFL-gR-3Ug" firstAttribute="bottom" secondItem="mpa-UI-vS1" secondAttribute="bottom" id="O0d-EC-tJF"/>
+                <constraint firstAttribute="trailing" secondItem="JFL-gR-3Ug" secondAttribute="trailing" id="OKb-vm-TLh"/>
+                <constraint firstItem="4Bb-LM-xhb" firstAttribute="top" secondItem="rvN-Z6-G2f" secondAttribute="bottom" constant="7" id="Oh8-ow-hbq"/>
+                <constraint firstItem="rvN-Z6-G2f" firstAttribute="top" secondItem="24L-Wu-dd7" secondAttribute="bottom" constant="8" id="SjT-Rl-jvh"/>
+                <constraint firstItem="NXr-i6-rxl" firstAttribute="top" secondItem="Lqf-cM-gJW" secondAttribute="bottom" constant="2.5" id="UdT-Br-2CY"/>
+                <constraint firstItem="JFL-gR-3Ug" firstAttribute="leading" secondItem="mpa-UI-vS1" secondAttribute="trailing" constant="8" id="bDq-qB-LTJ"/>
+                <constraint firstItem="mpa-UI-vS1" firstAttribute="top" secondItem="4Bb-LM-xhb" secondAttribute="bottom" constant="8" id="bLL-sf-EgV"/>
+                <constraint firstAttribute="trailing" secondItem="24L-Wu-dd7" secondAttribute="trailing" id="dCy-I6-6GI"/>
+                <constraint firstItem="4Bb-LM-xhb" firstAttribute="leading" secondItem="vvd-h9-mSz" secondAttribute="leading" id="doc-ta-qJv"/>
+                <constraint firstItem="rvN-Z6-G2f" firstAttribute="leading" secondItem="vvd-h9-mSz" secondAttribute="leading" id="fuT-It-bm1"/>
+                <constraint firstAttribute="trailing" secondItem="rvN-Z6-G2f" secondAttribute="trailing" id="ggq-3T-yfw"/>
+                <constraint firstItem="9cJ-Bu-mcT" firstAttribute="top" secondItem="NXr-i6-rxl" secondAttribute="bottom" constant="2.5" id="ljG-Y7-07a"/>
+                <constraint firstAttribute="trailing" secondItem="NXr-i6-rxl" secondAttribute="trailing" id="mqa-Ss-W2q"/>
+                <constraint firstItem="Lqf-cM-gJW" firstAttribute="top" secondItem="mpa-UI-vS1" secondAttribute="bottom" constant="8" id="nlO-Yo-VM7"/>
+                <constraint firstItem="Lqf-cM-gJW" firstAttribute="leading" secondItem="vvd-h9-mSz" secondAttribute="leading" id="qxm-MZ-jN4"/>
+                <constraint firstItem="mpa-UI-vS1" firstAttribute="leading" secondItem="vvd-h9-mSz" secondAttribute="leading" id="uiA-NG-r1Q"/>
+                <constraint firstAttribute="trailing" secondItem="Lqf-cM-gJW" secondAttribute="trailing" id="zQS-3y-sW5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="484" y="225.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pin" width="33" height="34"/>
+    </resources>
+</document>

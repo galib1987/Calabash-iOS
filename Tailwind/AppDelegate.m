@@ -14,8 +14,13 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+#if DEBUG
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+	NSLog(@"%@", basePath);
+//	/Users/amoselmaliah/Library/Developer/CoreSimulator/Devices/FF95E9B1-6733-49C3-9AFB-184F6DC1A779/data/Containers/Bundle/Application
+#endif
     // Override point for customization after application launch.
     return YES;
 }

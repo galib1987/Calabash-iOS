@@ -1,6 +1,6 @@
 //
 //  SimpleDataSource.m
-//  HTabDemo
+//  Tailwind
 //
 //  Created by Amos Elmaliah on 10/13/14.
 //  Copyright (c) 2014 Amos Elmaliah. All rights reserved.
@@ -11,8 +11,8 @@
 NSString* const kSimpleDataSourceSectionCellsKey = @"SectionCellsKey";
 NSString* const kSimpleDataSourceSectionsTitleKey = @"SectionsTitleKey";
 NSString* const kSimpleDataSourceSectionsHeaderIdentifierKey = @"SectionsHeaderIdentifierKey";
+NSString* const kSimpleDataSourceSectionsFooterIdentifierKey = @"SectionsFooterIdentifierKey";
 NSString* const kSimpleDataSourceSectionsHeaderKeyapthsKey = @"SectionsHeaderKeyapthsKey";
-NSString* const kSimpleDataSourceSectionsHeaderKey = @"SectionHeaderIdentifier";
 
 NSString* const kSimpleDataSourceCellIdentifierKey = @"CellIdentifierKey";
 NSString* const kSimpleDataSourceCellKeypaths = @"CellKeypaths";
@@ -21,8 +21,26 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 
 @interface SimpleDataSource ()
 @property (nonatomic, strong) NSDictionary* segues;
+@property (nonatomic) BOOL hasHeadersOfFooters;
 @end
+
 @implementation SimpleDataSource
+
+#pragma mark -
+
+-(BOOL)respondsToSelector:(SEL)aSelector {
+	static SEL selector;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		selector = @selector(collectionView:viewForSupplementaryElementOfKind:atIndexPath:);
+	});
+
+	if (aSelector == selector) {
+		return [self hasHeadersOfFooters];
+	} else {
+		return [super respondsToSelector:aSelector];
+	}
+}
 
 #pragma mark Designated initializer
 
@@ -82,6 +100,36 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 	return mutable.copy;
 }
 
+-(BOOL)hasHeadersOfFootersForSections:(NSArray*)array {
+	if (array && array.count) {
+		for (id sectionInfo in array) {
+			if (sectionInfo[kSimpleDataSourceSectionsHeaderIdentifierKey] ||
+					sectionInfo[kSimpleDataSourceSectionsFooterIdentifierKey]) {
+				return YES;
+			}
+		}
+	}
+	return NO;
+}
+
+-(void)setKeyPaths:(NSDictionary*)keypaths object:(id)object {
+
+	[keypaths enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+		NSError* validationError = nil;
+		if ([object validateValue:&obj forKeyPath:key error:&validationError]) {
+			[object setValue:obj forKeyPath:key];
+		} else {
+#if DEBUG
+			[[NSException exceptionWithName:@"Invalid KVO"
+															 reason:@"KVO Validation Failed for cell"
+														 userInfo:nil] raise];
+#else
+
+#endif
+		}
+	}];
+}
+
 #pragma mark - Accessors 
 
 -(void)setSections:(NSArray *)sections {
@@ -93,6 +141,7 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 		_sections = sections;
 		if (_sections) {
 			self.segues = [self seguesFromSections:_sections];
+			self.hasHeadersOfFooters = [self hasHeadersOfFootersForSections:sections];
 		}
 	}
 }
@@ -114,21 +163,25 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 -(id)segueForIndexPath:(NSIndexPath *)indexPath {
 	return self.segues ? self.segues[indexPath] : nil;
 }
+#pragma mark - Private
+
+-(id)sectionInfoAtIndex:(NSInteger)sectionIndex {
+	id sectionInfo = self.sections[sectionIndex];
+	return sectionInfo;
+}
 
 #pragma mark - Table view Delegate
 
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
-	NSDictionary* sectionObj = self.sections[section];
-	NSString* identifier = sectionObj[kSimpleDataSourceSectionsHeaderIdentifierKey];
+	NSDictionary* sectionInfo = [self sectionInfoAtIndex:section];
+	NSString* identifier = sectionInfo[kSimpleDataSourceSectionsHeaderIdentifierKey];
 	if (identifier) {
 		UIView* headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
 		NSAssert(headerView, @"expected a view to be registered");
-		NSDictionary* keypaths = sectionObj[kSimpleDataSourceSectionsHeaderKeyapthsKey];
-		[keypaths enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-			[headerView setValue:obj forKeyPath:key];
-		}];
+		NSDictionary* keypaths = sectionInfo[kSimpleDataSourceSectionsHeaderKeyapthsKey];
+		[self setKeyPaths:keypaths object:headerView];
 		return headerView;
 	}
 	return nil;
@@ -143,7 +196,8 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	NSString *title = self.sections[section][kSimpleDataSourceSectionsTitleKey];
+	id sectionInfo = [self sectionInfoAtIndex:section];
+	NSString *title = sectionInfo[kSimpleDataSourceSectionsTitleKey];
 	return title;
 }
 
@@ -155,21 +209,26 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [self.sections[section][kSimpleDataSourceSectionCellsKey] count];
+	id sectionInfo = [self sectionInfoAtIndex:section];
+	NSArray* cells = sectionInfo[kSimpleDataSourceSectionCellsKey];
+	return cells ? cells.count : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSDictionary* cellData = self.sections[indexPath.section][kSimpleDataSourceSectionCellsKey][indexPath.row];
+
+	id sectionInfo = [self sectionInfoAtIndex:indexPath.section];
+	NSArray* cells = sectionInfo[kSimpleDataSourceSectionCellsKey];
+	NSAssert([cells isKindOfClass:[NSArray class]], @"sanity check failed, expected an arraygot something else");
+	NSDictionary* cellData = cells ? cells[indexPath.row] : nil;
 
 	NSString* identifier = cellData[kSimpleDataSourceCellIdentifierKey];
-	NSAssert(identifier, @"nil identifier");
+	NSAssert(identifier, @"nil identifier missing");
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier
 																													forIndexPath:indexPath];
+	NSAssert(cells, @"table view wasn't able to dequeue cell");
 	NSDictionary* keypaths = cellData[kSimpleDataSourceCellKeypaths];
 
-	[keypaths enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-		[cell setValue:obj forKeyPath:key];
-	}];
+	[self setKeyPaths:keypaths object:cell];
 
 	if (self.configureTableCell) {
 		self.configureTableCell(tableView, cell, identifier);
@@ -187,24 +246,64 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-	return [self.sections[section][kSimpleDataSourceSectionCellsKey] count];
+	id sectionInfo = [self sectionInfoAtIndex:section];
+	NSArray* cells = sectionInfo[kSimpleDataSourceSectionCellsKey];
+	return cells ? cells.count : 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-	NSDictionary* cellData = self.sections[indexPath.section][kSimpleDataSourceSectionCellsKey][indexPath.row];
-
+	id sectionInfo = [self sectionInfoAtIndex:indexPath.section];
+	NSArray* cells = sectionInfo[kSimpleDataSourceSectionCellsKey];
+	NSAssert([cells isKindOfClass:[NSArray class]], @"sanity check failed, expected an arraygot something else");
+	NSDictionary* cellData = cells ? cells[indexPath.row] : nil;
+	NSAssert(cellData, @"nil cell info");
 	NSString* identifier = cellData[kSimpleDataSourceCellIdentifierKey];
-	NSAssert(identifier, @"nil identifier");
+	NSAssert(identifier, @"nil identifier missing");
 	UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
 																																				 forIndexPath:indexPath];
+	NSAssert(cell, @"collection view wasn't able to dequeue cell");
+	[cell aapl_Xcode6OniOS7hotfix];
 
 	NSDictionary* keypaths = cellData[kSimpleDataSourceCellKeypaths];
 
-	[keypaths enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-		[cell setValue:obj forKeyPath:key];
-	}];
-	
+	[self setKeyPaths:keypaths object:cell];
+
  return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+
+	id sectionInfo = [self sectionInfoAtIndex:indexPath.section];
+	NSString* identifier;
+	if (kind == UICollectionElementKindSectionHeader) {
+		identifier = sectionInfo[kSimpleDataSourceSectionsHeaderIdentifierKey] ? : @"Header";
+	} else if(kind == UICollectionElementKindSectionFooter) {
+		identifier = sectionInfo[kSimpleDataSourceSectionsFooterIdentifierKey] ? : @"Footer";
+	} else {
+#if DEBUG
+		[[NSException exceptionWithName:@"Invalid Supplementary Element Kind"
+															reason:@"Not supporting this CollectionView Supplementary Element Kind "
+														userInfo:nil] raise];
+#endif
+		identifier = @"placeholder";
+	}
+
+	UICollectionReusableView* view = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+																																			withReuseIdentifier:identifier
+																																						 forIndexPath:indexPath];
+
+	NSDictionary* keypaths;
+	if (kind == UICollectionElementKindSectionHeader) {
+		keypaths = sectionInfo[kSimpleDataSourceSectionsHeaderKeyapthsKey];
+	} else if(kind == UICollectionElementKindSectionFooter) {
+		keypaths = sectionInfo[kSimpleDataSourceSectionsFooterIdentifierKey];
+	}
+
+	if (keypaths) {
+		[self setKeyPaths:keypaths object:view];
+	}
+
+	return view;
 }
 
 @end

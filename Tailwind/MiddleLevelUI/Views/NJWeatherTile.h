@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Amos Elmaliah. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface NJWeatherTile : UIView
 @property (nonatomic, weak) IBOutlet UILabel* dateLabel;

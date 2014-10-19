@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="NJOPInfoCell" id="gVI-rI-ZhG" customClass="NJOPInfoCell">
+            <rect key="frame" x="0.0" y="0.0" width="183" height="104"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="183" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="infoImage" translatesAutoresizingMaskIntoConstraints="NO" id="hAt-BF-Q1P">
+                        <rect key="frame" x="8" y="9" width="86" height="86"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="hAt-BF-Q1P" secondAttribute="height" multiplier="1:1" id="ca8-40-Txy"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dT-oa-Zms">
+                        <rect key="frame" x="102" y="35" width="73" height="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPp-4W-bBL">
+                        <rect key="frame" x="102" y="52" width="73" height="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="pPp-4W-bBL" secondAttribute="trailing" constant="8" id="2gD-xa-V8Q"/>
+                <constraint firstAttribute="trailing" secondItem="5dT-oa-Zms" secondAttribute="trailing" constant="8" id="867-OM-yvg"/>
+                <constraint firstItem="5dT-oa-Zms" firstAttribute="leading" secondItem="hAt-BF-Q1P" secondAttribute="trailing" constant="8" id="KHw-oy-oUY"/>
+                <constraint firstItem="5dT-oa-Zms" firstAttribute="bottom" secondItem="hAt-BF-Q1P" secondAttribute="centerY" id="Miy-X2-6DU"/>
+                <constraint firstAttribute="bottom" secondItem="hAt-BF-Q1P" secondAttribute="bottom" constant="9" id="Nl8-e7-9aU"/>
+                <constraint firstItem="hAt-BF-Q1P" firstAttribute="top" secondItem="gVI-rI-ZhG" secondAttribute="top" constant="9" id="bxc-Rv-1IF"/>
+                <constraint firstItem="pPp-4W-bBL" firstAttribute="leading" secondItem="hAt-BF-Q1P" secondAttribute="trailing" constant="8" id="ciE-N2-SB5"/>
+                <constraint firstItem="hAt-BF-Q1P" firstAttribute="leading" secondItem="gVI-rI-ZhG" secondAttribute="leadingMargin" id="dA5-gF-PkA"/>
+                <constraint firstItem="hAt-BF-Q1P" firstAttribute="centerY" secondItem="pPp-4W-bBL" secondAttribute="top" id="iZX-wB-PFJ"/>
+                <constraint firstItem="5dT-oa-Zms" firstAttribute="bottom" secondItem="hAt-BF-Q1P" secondAttribute="centerY" id="oSw-i4-ZRq"/>
+            </constraints>
+            <size key="customSize" width="183" height="104"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="4"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="detailLabel" destination="pPp-4W-bBL" id="yhP-qu-gvl"/>
+                <outlet property="imageView" destination="hAt-BF-Q1P" id="Cli-Sl-ck4"/>
+                <outlet property="label" destination="5dT-oa-Zms" id="mgv-Tq-BPf"/>
+                <outlet property="topLabel" destination="5dT-oa-Zms" id="rjH-OR-h02"/>
+            </connections>
+            <point key="canvasLocation" x="-196.5" y="50"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="infoImage" width="51" height="52"/>
+    </resources>
+</document>
