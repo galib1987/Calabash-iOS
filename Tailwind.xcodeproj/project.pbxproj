@@ -10,7 +10,7 @@
 		2AD96D2C90B7446D90304928 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 		30A4737F19D9E41A0045D7AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4737E19D9E41A0045D7AF /* main.m */; };
 		30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4738119D9E41A0045D7AF /* AppDelegate.m */; };
-		30A4738819D9E41A0045D7AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738619D9E41A0045D7AF /* Main.storyboard */; };
+		30A4738819D9E41A0045D7AF /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738619D9E41A0045D7AF /* Main_iPad.storyboard */; };
 		30A4738A19D9E41A0045D7AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738919D9E41A0045D7AF /* Images.xcassets */; };
 		30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738B19D9E41A0045D7AF /* LaunchScreen.xib */; };
 		30A4739919D9E41B0045D7AF /* TailwindTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4739819D9E41B0045D7AF /* TailwindTests.m */; };
@@ -75,7 +75,7 @@
 		30A4737E19D9E41A0045D7AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		30A4738019D9E41A0045D7AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		30A4738119D9E41A0045D7AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		30A4738719D9E41A0045D7AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		30A4738719D9E41A0045D7AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		30A4738919D9E41A0045D7AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		30A4738C19D9E41A0045D7AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		30A4739219D9E41B0045D7AF /* TailwindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TailwindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,7 +220,7 @@
 				30A4738019D9E41A0045D7AF /* AppDelegate.h */,
 				30A4738119D9E41A0045D7AF /* AppDelegate.m */,
 				6CC3D6AE19F151E70081A5BD /* View.xib */,
-				30A4738619D9E41A0045D7AF /* Main.storyboard */,
+				30A4738619D9E41A0045D7AF /* Main_iPad.storyboard */,
 				6CA3922119F00292003FDCC8 /* iPadNJBriefTopTableViewCell.xib */,
 				6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */,
 				30A4738919D9E41A0045D7AF /* Images.xcassets */,
@@ -518,7 +518,7 @@
 			files = (
 				6CA3922219F00292003FDCC8 /* iPadNJBriefTopTableViewCell.xib in Resources */,
 				6C9754F919EE90C1005DD1DF /* NJOPAllFlightsHeader.xib in Resources */,
-				30A4738819D9E41A0045D7AF /* Main.storyboard in Resources */,
+				30A4738819D9E41A0045D7AF /* Main_iPad.storyboard in Resources */,
 				30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */,
 				6CBD545B19F021E50009077C /* NJSingleFBOTile-Left.xib in Resources */,
 				6C73F68A19F127C300A92BBE /* NJInfoTile.xib in Resources */,
@@ -678,12 +678,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		30A4738619D9E41A0045D7AF /* Main.storyboard */ = {
+		30A4738619D9E41A0045D7AF /* Main_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				30A4738719D9E41A0045D7AF /* Base */,
 			);
-			name = Main.storyboard;
+			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		30A4738B19D9E41A0045D7AF /* LaunchScreen.xib */ = {
@@ -787,6 +787,7 @@
 				INFOPLIST_FILE = Tailwind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -801,6 +802,7 @@
 				INFOPLIST_FILE = Tailwind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Production;
 		};
@@ -898,6 +900,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Beta;
 		};
@@ -976,6 +979,7 @@
 				INFOPLIST_FILE = Tailwind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = QA;
 		};
