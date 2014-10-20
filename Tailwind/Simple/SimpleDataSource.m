@@ -132,6 +132,7 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 
 #pragma mark - Accessors 
 
+
 -(void)setSections:(NSArray *)sections {
 	if (![_sections isEqual:sections]) {
 		if (_sections) {
@@ -146,15 +147,24 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 	}
 }
 
-#pragma mark - PUblic
+#pragma mark - Public
 
 -(void)loadData {
 
 }
 
+-(NSInteger)numberOfSections {
+	return _sections ? _sections.count : 0;
+}
+
+-(NSArray*)cellsInfoInSection:(NSInteger)sectionIndex {
+	return [self sectionInfoAtIndex:sectionIndex][kSimpleDataSourceSectionCellsKey];
+}
+
 -(id)itemForIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.item) {
-		return self.sections[indexPath.section][kSimpleDataSourceSectionCellsKey][indexPath.item][kSimpleDataSourceCellItem];
+		NSArray *cellsInfo = [self cellsInfoInSection:indexPath.section];
+		return cellsInfo[indexPath.item][kSimpleDataSourceCellItem];
 	}
 	// no support for section item yet.
 	return nil;
@@ -209,15 +219,13 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	id sectionInfo = [self sectionInfoAtIndex:section];
-	NSArray* cells = sectionInfo[kSimpleDataSourceSectionCellsKey];
+	NSArray* cells = [self cellsInfoInSection:section];
 	return cells ? cells.count : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-	id sectionInfo = [self sectionInfoAtIndex:indexPath.section];
-	NSArray* cells = sectionInfo[kSimpleDataSourceSectionCellsKey];
+	NSArray* cells = [self cellsInfoInSection:indexPath.section];
 	NSAssert([cells isKindOfClass:[NSArray class]], @"sanity check failed, expected an arraygot something else");
 	NSDictionary* cellData = cells ? cells[indexPath.row] : nil;
 
@@ -246,14 +254,12 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-	id sectionInfo = [self sectionInfoAtIndex:section];
-	NSArray* cells = sectionInfo[kSimpleDataSourceSectionCellsKey];
+	NSArray* cells = [self cellsInfoInSection:section];
 	return cells ? cells.count : 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-	id sectionInfo = [self sectionInfoAtIndex:indexPath.section];
-	NSArray* cells = sectionInfo[kSimpleDataSourceSectionCellsKey];
+	NSArray* cells = [self cellsInfoInSection:indexPath.section];
 	NSAssert([cells isKindOfClass:[NSArray class]], @"sanity check failed, expected an arraygot something else");
 	NSDictionary* cellData = cells ? cells[indexPath.row] : nil;
 	NSAssert(cellData, @"nil cell info");
