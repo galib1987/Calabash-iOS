@@ -9,9 +9,16 @@
 @import UIKit;
 
 @interface NJWeatherTile : UIView
-@property (nonatomic, weak) IBOutlet UILabel* dateLabel;
-@property (nonatomic, weak) IBOutlet UILabel* firstLocationLabel;
-@property (nonatomic, weak) IBOutlet UILabel* firstTimeLabel;
-@property (nonatomic, weak) IBOutlet UILabel* firstTemperatureLabel;
-@property (nonatomic, weak) IBOutlet UIImageView* firstImageView;
+@property (nonatomic, weak) IBOutlet UILabel* leftDateLabel;
+@property (nonatomic, weak) IBOutlet UILabel* leftLocationLabel;
+@property (nonatomic, weak) IBOutlet UILabel* leftTimeLabel;
+@property (nonatomic, weak) IBOutlet UILabel* leftTemperatureLabel;
+@property (nonatomic, weak) IBOutlet UIImageView* leftImageView;
+
+@property (nonatomic, weak) IBOutlet UILabel* rightDateLabel;
+@property (nonatomic, weak) IBOutlet UILabel* rightLocationLabel;
+@property (nonatomic, weak) IBOutlet UILabel* rightTimeLabel;
+@property (nonatomic, weak) IBOutlet UILabel* rightTemperatureLabel;
+@property (nonatomic, weak) IBOutlet UIImageView* rightImageView;
+
 @end

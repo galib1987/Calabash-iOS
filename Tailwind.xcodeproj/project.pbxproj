@@ -41,7 +41,6 @@
 		6C7C2BBC19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C2BBB19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m */; };
 		6C9754F819EE90C1005DD1DF /* NJTileContainingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */; };
 		6C9754F919EE90C1005DD1DF /* NJOPAllFlightsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F719EE90C1005DD1DF /* NJOPAllFlightsHeader.xib */; };
-		6CA3922219F00292003FDCC8 /* iPadNJBriefTopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA3922119F00292003FDCC8 /* iPadNJBriefTopTableViewCell.xib */; };
 		6CBD545B19F021E50009077C /* NJSingleFBOTile-Left.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD545A19F021E50009077C /* NJSingleFBOTile-Left.xib */; };
 		6CBD546019F111670009077C /* NJOPNestedCollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD545F19F111670009077C /* NJOPNestedCollectionTableViewCell.m */; };
 		6CBD546719F1129E0009077C /* NJOPActionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD546619F1129E0009077C /* NJOPActionsViewController.m */; };
@@ -135,7 +134,6 @@
 		6C7C2BBB19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionReusableView+NJOPHelpers.m"; sourceTree = "<group>"; };
 		6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJTileContainingTableViewCell.xib; sourceTree = "<group>"; };
 		6C9754F719EE90C1005DD1DF /* NJOPAllFlightsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJOPAllFlightsHeader.xib; path = ../../NJOPAllFlightsHeader.xib; sourceTree = "<group>"; };
-		6CA3922119F00292003FDCC8 /* iPadNJBriefTopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPadNJBriefTopTableViewCell.xib; sourceTree = "<group>"; };
 		6CBD545A19F021E50009077C /* NJSingleFBOTile-Left.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "NJSingleFBOTile-Left.xib"; sourceTree = "<group>"; };
 		6CBD545E19F111670009077C /* NJOPNestedCollectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NJOPNestedCollectionTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		6CBD545F19F111670009077C /* NJOPNestedCollectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NJOPNestedCollectionTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -221,7 +219,6 @@
 				30A4738119D9E41A0045D7AF /* AppDelegate.m */,
 				6CC3D6AE19F151E70081A5BD /* View.xib */,
 				30A4738619D9E41A0045D7AF /* Main_iPad.storyboard */,
-				6CA3922119F00292003FDCC8 /* iPadNJBriefTopTableViewCell.xib */,
 				6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */,
 				30A4738919D9E41A0045D7AF /* Images.xcassets */,
 				30A4738B19D9E41A0045D7AF /* LaunchScreen.xib */,
@@ -516,7 +513,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CA3922219F00292003FDCC8 /* iPadNJBriefTopTableViewCell.xib in Resources */,
 				6C9754F919EE90C1005DD1DF /* NJOPAllFlightsHeader.xib in Resources */,
 				30A4738819D9E41A0045D7AF /* Main_iPad.storyboard in Resources */,
 				30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */,
