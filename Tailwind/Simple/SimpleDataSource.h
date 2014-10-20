@@ -20,6 +20,7 @@ extern NSString *const kSimpleDataSourceCellItem;
 extern NSString *const kSimpleDataSourceCellSegueAction;
 
 @interface SimpleDataSource : NSObject <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, NSCoding>
+
 @property (nonatomic, copy) NSString* title;
 @property (nonatomic, strong) NSArray* headerFooterCellIdentifiers;
 @property (nonatomic, copy) void (^didSelectBlock)(UIViewController*,NSIndexPath*);
@@ -28,6 +29,8 @@ extern NSString *const kSimpleDataSourceCellSegueAction;
 
 -(id)segueForIndexPath:(NSIndexPath*)indexPath;
 -(id)itemForIndexPath:(NSIndexPath*)indexPath;
+- (NSInteger)numberOfSections;
+
 +(instancetype)dataSourceWithSections:(NSArray*)sections;
 
 -(instancetype)initWithSections:(NSArray*)sections;
