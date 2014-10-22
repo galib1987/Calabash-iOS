@@ -15,9 +15,9 @@
                     <color key="backgroundColor" red="0.14923743903636932" green="0.16597336530685425" blue="0.18171408772468567" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmS-Vj-drP">
-                    <rect key="frame" x="8" y="8.5" width="432" height="20.5"/>
+                    <rect key="frame" x="8" y="8.5" width="432" height="38.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -30,7 +30,7 @@
                 <constraint firstAttribute="trailing" secondItem="lay-Fs-r9f" secondAttribute="trailing" id="MPq-76-Var"/>
                 <constraint firstAttribute="bottom" secondItem="lay-Fs-r9f" secondAttribute="bottom" id="Ucv-D5-38f"/>
                 <constraint firstItem="mmS-Vj-drP" firstAttribute="leading" secondItem="d6F-cw-UtH" secondAttribute="leading" constant="8" id="aro-bK-RYA"/>
-                <constraint firstAttribute="bottom" secondItem="mmS-Vj-drP" secondAttribute="bottom" constant="26.5" id="kdv-qK-hT6"/>
+                <constraint firstAttribute="bottom" secondItem="mmS-Vj-drP" secondAttribute="bottom" constant="8" id="kdv-qK-hT6"/>
                 <constraint firstItem="lay-Fs-r9f" firstAttribute="top" secondItem="d6F-cw-UtH" secondAttribute="top" id="lbS-ct-Vwl"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

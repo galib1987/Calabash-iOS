@@ -11,4 +11,6 @@
 @property (strong, nonatomic) IBOutlet UIView *leftTile;
 @property (strong, nonatomic) IBOutlet UIView *rightTile;
 @property (strong, nonatomic) IBOutlet UIView *middleTile;
+@property (strong, nonatomic) IBOutlet UIView *bottomTile;
+
 @end
