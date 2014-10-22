@@ -1,17 +1,14 @@
 //
-//  NJSingleFBOTile.h
-//  TailWind
+//  FBOCell.h
+//  NetJets
 //
-//  Created by Amos Elmaliah on 10/15/14.
-//  Copyright (c) 2014 NetJets. All rights reserved.
+//  Created by Amos Elmaliah on 9/30/14.
+//  Copyright (c) 2014 Amos Elmaliah. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
-IB_DESIGNABLE
-
-@interface NJSingleFBOTile : UIView
-@property (strong, nonatomic) IBOutlet UIImageView* tailImageView;
+@interface FBOCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *numberLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
@@ -19,4 +16,5 @@ IB_DESIGNABLE
 @property (strong, nonatomic) IBOutlet UILabel *airportNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *airportAddressLabel;
 @property (strong, nonatomic) IBOutlet UILabel *phoneNumberLabel;
+
 @end

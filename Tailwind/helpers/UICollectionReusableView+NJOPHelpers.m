@@ -1,6 +1,6 @@
 #import "UICollectionReusableView+NJOPHelpers.h"
 
-static inline BOOL AAPLCollectionViewSupportsConstraintsProperly()
+static inline BOOL NJOPCollectionViewSupportsConstraintsProperly()
 {
     static BOOL constraintsSupported;
     static dispatch_once_t onceToken;
@@ -24,7 +24,7 @@ static inline BOOL AAPLCollectionViewSupportsConstraintsProperly()
 
     CGSize size;
 
-    if (AAPLCollectionViewSupportsConstraintsProperly())
+    if (NJOPCollectionViewSupportsConstraintsProperly())
         size = [self systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     else {
         NSArray *constraints = @[
@@ -65,7 +65,7 @@ static inline BOOL AAPLCollectionViewSupportsConstraintsProperly()
 
     CGSize size;
 
-    if (AAPLCollectionViewSupportsConstraintsProperly()) {
+    if (NJOPCollectionViewSupportsConstraintsProperly()) {
         [self layoutSubviews];
         size = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     }
