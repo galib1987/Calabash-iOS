@@ -17,6 +17,21 @@
 		5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ACA619E8064D002CA7D2 /* NJOPLeg.m */; };
 		55CA603819E7FDC6001E2FC6 /* NJOPBlockStyleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA603719E7FDC6001E2FC6 /* NJOPBlockStyleButton.m */; };
 		55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */; };
+		6C08E46C19F5938A00119B84 /* NJOPNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C08E46B19F5938900119B84 /* NJOPNavigationTitleView.xib */; };
+		6C08E46F19F594E700119B84 /* NJOPParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E46E19F594E700119B84 /* NJOPParentViewController.m */; };
+		6C08E47219F5954B00119B84 /* NJOPNavigationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E47119F5954B00119B84 /* NJOPNavigationTitleView.m */; };
+		6C08E4AC19F7B05200119B84 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C08E4AB19F7B05200119B84 /* Main_iPhone.storyboard */; };
+		6C08E4B119F7B73900119B84 /* FlightDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E4B019F7B73900119B84 /* FlightDetailViewController.m */; };
+		6C08E4B519F7B77A00119B84 /* WeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E4B419F7B77A00119B84 /* WeatherCell.m */; };
+		6C08E4B819F7B78100119B84 /* FBOCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E4B719F7B78100119B84 /* FBOCell.m */; };
+		6C08E4BB19F7B78D00119B84 /* FlightDetailTopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E4BA19F7B78D00119B84 /* FlightDetailTopHeaderView.m */; };
+		6C08E4BF19F7B7AE00119B84 /* NJCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E4BE19F7B7AE00119B84 /* NJCellBackgroundView.m */; };
+		6C08E4C219F7B7D100119B84 /* TailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E4C119F7B7D100119B84 /* TailCell.m */; };
+		6C08E4C619F7B7F200119B84 /* ReservationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E4C419F7B7F200119B84 /* ReservationHeaderView.m */; };
+		6C08E4C719F7B7F200119B84 /* ReservationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C08E4C519F7B7F200119B84 /* ReservationHeaderView.xib */; };
+		6C08E4CB19F7B87F00119B84 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E4CA19F7B87F00119B84 /* InfoCell.m */; };
+		6C08E4CD19F7BE3F00119B84 /* NJOPFBOTile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C08E4CC19F7BE3F00119B84 /* NJOPFBOTile.xib */; };
+		6C08E4D019F7C1FB00119B84 /* NJOPFBOTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E4CF19F7C1FB00119B84 /* NJOPFBOTile.m */; };
 		6C57E04F19EEC8FB00D3FB00 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E02C19EEC8FB00D3FB00 /* SummaryViewController.m */; };
 		6C57E05019EEC8FB00D3FB00 /* NJOPAllFlightsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E02F19EEC8FB00D3FB00 /* NJOPAllFlightsHeader.m */; };
 		6C57E05119EEC8FB00D3FB00 /* NJCompactFlightTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03119EEC8FB00D3FB00 /* NJCompactFlightTile.m */; };
@@ -45,7 +60,6 @@
 		6CBD546019F111670009077C /* NJOPNestedCollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD545F19F111670009077C /* NJOPNestedCollectionTableViewCell.m */; };
 		6CBD546719F1129E0009077C /* NJOPActionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD546619F1129E0009077C /* NJOPActionsViewController.m */; };
 		6CBD546A19F1139D0009077C /* NJOPTileContainingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD546919F1139D0009077C /* NJOPTileContainingCollectionViewCell.m */; };
-		6CC3D6AF19F151E70081A5BD /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CC3D6AE19F151E70081A5BD /* View.xib */; };
 		6CC3D6B219F152340081A5BD /* NJOPInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC3D6B119F152340081A5BD /* NJOPInfoCell.m */; };
 		6CC3D6B519F1546E0081A5BD /* NJOPCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC3D6B419F1546E0081A5BD /* NJOPCollectionViewFlowLayout.m */; };
 		6CC3D6B819F167130081A5BD /* NJOP3TilesLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC3D6B719F167130081A5BD /* NJOP3TilesLayoutTableViewCell.m */; };
@@ -89,6 +103,32 @@
 		55CA603919E7FE22001E2FC6 /* NJOPValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPValueTransformer.h; sourceTree = "<group>"; };
 		55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPValueTransformer.m; sourceTree = "<group>"; };
 		6167B98AFA8D41C092D41CCC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C08E46B19F5938900119B84 /* NJOPNavigationTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJOPNavigationTitleView.xib; path = ../NJOPNavigationTitleView.xib; sourceTree = "<group>"; };
+		6C08E46D19F594E700119B84 /* NJOPParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPParentViewController.h; sourceTree = "<group>"; };
+		6C08E46E19F594E700119B84 /* NJOPParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPParentViewController.m; sourceTree = "<group>"; };
+		6C08E47019F5954B00119B84 /* NJOPNavigationTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPNavigationTitleView.h; sourceTree = "<group>"; };
+		6C08E47119F5954B00119B84 /* NJOPNavigationTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPNavigationTitleView.m; sourceTree = "<group>"; };
+		6C08E4AB19F7B05200119B84 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		6C08E4AF19F7B73900119B84 /* FlightDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightDetailViewController.h; sourceTree = "<group>"; };
+		6C08E4B019F7B73900119B84 /* FlightDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightDetailViewController.m; sourceTree = "<group>"; };
+		6C08E4B319F7B77A00119B84 /* WeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCell.h; sourceTree = "<group>"; };
+		6C08E4B419F7B77A00119B84 /* WeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCell.m; sourceTree = "<group>"; };
+		6C08E4B619F7B78100119B84 /* FBOCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBOCell.h; sourceTree = "<group>"; };
+		6C08E4B719F7B78100119B84 /* FBOCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBOCell.m; sourceTree = "<group>"; };
+		6C08E4B919F7B78D00119B84 /* FlightDetailTopHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightDetailTopHeaderView.h; sourceTree = "<group>"; };
+		6C08E4BA19F7B78D00119B84 /* FlightDetailTopHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightDetailTopHeaderView.m; sourceTree = "<group>"; };
+		6C08E4BD19F7B7AE00119B84 /* NJCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCellBackgroundView.h; sourceTree = "<group>"; };
+		6C08E4BE19F7B7AE00119B84 /* NJCellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCellBackgroundView.m; sourceTree = "<group>"; };
+		6C08E4C019F7B7D100119B84 /* TailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TailCell.h; sourceTree = "<group>"; };
+		6C08E4C119F7B7D100119B84 /* TailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TailCell.m; sourceTree = "<group>"; };
+		6C08E4C319F7B7F200119B84 /* ReservationHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationHeaderView.h; sourceTree = "<group>"; };
+		6C08E4C419F7B7F200119B84 /* ReservationHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationHeaderView.m; sourceTree = "<group>"; };
+		6C08E4C519F7B7F200119B84 /* ReservationHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReservationHeaderView.xib; sourceTree = "<group>"; };
+		6C08E4C919F7B87F00119B84 /* InfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
+		6C08E4CA19F7B87F00119B84 /* InfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCell.m; sourceTree = "<group>"; };
+		6C08E4CC19F7BE3F00119B84 /* NJOPFBOTile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPFBOTile.xib; sourceTree = "<group>"; };
+		6C08E4CE19F7C1FB00119B84 /* NJOPFBOTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFBOTile.h; sourceTree = "<group>"; };
+		6C08E4CF19F7C1FB00119B84 /* NJOPFBOTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFBOTile.m; sourceTree = "<group>"; };
 		6C57E02B19EEC8FB00D3FB00 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		6C57E02C19EEC8FB00D3FB00 /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
 		6C57E02E19EEC8FB00D3FB00 /* NJOPAllFlightsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAllFlightsHeader.h; sourceTree = "<group>"; };
@@ -141,7 +181,6 @@
 		6CBD546619F1129E0009077C /* NJOPActionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPActionsViewController.m; sourceTree = "<group>"; };
 		6CBD546819F1139D0009077C /* NJOPTileContainingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPTileContainingCollectionViewCell.h; sourceTree = "<group>"; };
 		6CBD546919F1139D0009077C /* NJOPTileContainingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPTileContainingCollectionViewCell.m; sourceTree = "<group>"; };
-		6CC3D6AE19F151E70081A5BD /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		6CC3D6B019F152340081A5BD /* NJOPInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPInfoCell.h; sourceTree = "<group>"; };
 		6CC3D6B119F152340081A5BD /* NJOPInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPInfoCell.m; sourceTree = "<group>"; };
 		6CC3D6B319F1546E0081A5BD /* NJOPCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCollectionViewFlowLayout.h; sourceTree = "<group>"; };
@@ -217,7 +256,7 @@
 				55CA603519E7FD4A001E2FC6 /* views */,
 				30A4738019D9E41A0045D7AF /* AppDelegate.h */,
 				30A4738119D9E41A0045D7AF /* AppDelegate.m */,
-				6CC3D6AE19F151E70081A5BD /* View.xib */,
+				6C08E4AB19F7B05200119B84 /* Main_iPhone.storyboard */,
 				30A4738619D9E41A0045D7AF /* Main_iPad.storyboard */,
 				6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */,
 				30A4738919D9E41A0045D7AF /* Images.xcassets */,
@@ -289,6 +328,77 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		6C08E4AD19F7B72500119B84 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				6C08E4BC19F7B79200119B84 /* Views */,
+				6C08E4AF19F7B73900119B84 /* FlightDetailViewController.h */,
+				6C08E4B019F7B73900119B84 /* FlightDetailViewController.m */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		6C08E4AE19F7B72A00119B84 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				6CA8290419F141C80086280B /* Layout */,
+				6C57E02D19EEC8FB00D3FB00 /* Views */,
+				6C08E46D19F594E700119B84 /* NJOPParentViewController.h */,
+				6C08E46E19F594E700119B84 /* NJOPParentViewController.m */,
+				6C08E47019F5954B00119B84 /* NJOPNavigationTitleView.h */,
+				6C08E47119F5954B00119B84 /* NJOPNavigationTitleView.m */,
+				6C08E46B19F5938900119B84 /* NJOPNavigationTitleView.xib */,
+				6C57E02B19EEC8FB00D3FB00 /* SummaryViewController.h */,
+				6C57E02C19EEC8FB00D3FB00 /* SummaryViewController.m */,
+				6CBD546519F1129E0009077C /* NJOPActionsViewController.h */,
+				6CBD546619F1129E0009077C /* NJOPActionsViewController.m */,
+				6CC3D6BB19F173170081A5BD /* NJOPReservationCollectionViewController.h */,
+				6CC3D6BC19F173170081A5BD /* NJOPReservationCollectionViewController.m */,
+				6CC3D6C019F176C90081A5BD /* NJOPBriefTopCollectionViewCell.h */,
+				6CC3D6C119F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m */,
+				6CC3D6BE19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		6C08E4B219F7B77200119B84 /* TableVIewCells */ = {
+			isa = PBXGroup;
+			children = (
+				6C08E4C919F7B87F00119B84 /* InfoCell.h */,
+				6C08E4CA19F7B87F00119B84 /* InfoCell.m */,
+				6C08E4C019F7B7D100119B84 /* TailCell.h */,
+				6C08E4C119F7B7D100119B84 /* TailCell.m */,
+				6C08E4BD19F7B7AE00119B84 /* NJCellBackgroundView.h */,
+				6C08E4BE19F7B7AE00119B84 /* NJCellBackgroundView.m */,
+				6C08E4B619F7B78100119B84 /* FBOCell.h */,
+				6C08E4B719F7B78100119B84 /* FBOCell.m */,
+				6C08E4B319F7B77A00119B84 /* WeatherCell.h */,
+				6C08E4B419F7B77A00119B84 /* WeatherCell.m */,
+			);
+			name = TableVIewCells;
+			sourceTree = "<group>";
+		};
+		6C08E4BC19F7B79200119B84 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6C08E4C819F7B7F400119B84 /* Headers */,
+				6C08E4B219F7B77200119B84 /* TableVIewCells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6C08E4C819F7B7F400119B84 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				6C08E4B919F7B78D00119B84 /* FlightDetailTopHeaderView.h */,
+				6C08E4BA19F7B78D00119B84 /* FlightDetailTopHeaderView.m */,
+				6C08E4C319F7B7F200119B84 /* ReservationHeaderView.h */,
+				6C08E4C419F7B7F200119B84 /* ReservationHeaderView.m */,
+				6C08E4C519F7B7F200119B84 /* ReservationHeaderView.xib */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
 		6C17599C19F3B85B000D4AA8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +434,9 @@
 				6C57E03819EEC8FB00D3FB00 /* NJTailNumberTail.h */,
 				6C57E03919EEC8FB00D3FB00 /* NJTailNumberTail.m */,
 				6C73F68919F127C300A92BBE /* NJInfoTile.xib */,
+				6C08E4CE19F7C1FB00119B84 /* NJOPFBOTile.h */,
+				6C08E4CF19F7C1FB00119B84 /* NJOPFBOTile.m */,
+				6C08E4CC19F7BE3F00119B84 /* NJOPFBOTile.xib */,
 				6C57E03419EEC8FB00D3FB00 /* NJSingleFBOTile.h */,
 				6C57E03519EEC8FB00D3FB00 /* NJSingleFBOTile.m */,
 				6CCDC6E319F01D8B005339B4 /* NJSingleFBOTile-Right.xib */,
@@ -361,17 +474,8 @@
 		6C57E02819EEC8FB00D3FB00 /* MiddleLevelUI */ = {
 			isa = PBXGroup;
 			children = (
-				6C57E02B19EEC8FB00D3FB00 /* SummaryViewController.h */,
-				6C57E02C19EEC8FB00D3FB00 /* SummaryViewController.m */,
-				6CBD546519F1129E0009077C /* NJOPActionsViewController.h */,
-				6CBD546619F1129E0009077C /* NJOPActionsViewController.m */,
-				6CC3D6BB19F173170081A5BD /* NJOPReservationCollectionViewController.h */,
-				6CC3D6BC19F173170081A5BD /* NJOPReservationCollectionViewController.m */,
-				6CC3D6C019F176C90081A5BD /* NJOPBriefTopCollectionViewCell.h */,
-				6CC3D6C119F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m */,
-				6CC3D6BE19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib */,
-				6CA8290419F141C80086280B /* Layout */,
-				6C57E02D19EEC8FB00D3FB00 /* Views */,
+				6C08E4AE19F7B72A00119B84 /* iPad */,
+				6C08E4AD19F7B72500119B84 /* iPhone */,
 			);
 			path = MiddleLevelUI;
 			sourceTree = "<group>";
@@ -513,17 +617,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C08E46C19F5938A00119B84 /* NJOPNavigationTitleView.xib in Resources */,
 				6C9754F919EE90C1005DD1DF /* NJOPAllFlightsHeader.xib in Resources */,
 				30A4738819D9E41A0045D7AF /* Main_iPad.storyboard in Resources */,
 				30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */,
 				6CBD545B19F021E50009077C /* NJSingleFBOTile-Left.xib in Resources */,
+				6C08E4C719F7B7F200119B84 /* ReservationHeaderView.xib in Resources */,
 				6C73F68A19F127C300A92BBE /* NJInfoTile.xib in Resources */,
-				6CC3D6AF19F151E70081A5BD /* View.xib in Resources */,
 				30A4738A19D9E41A0045D7AF /* Images.xcassets in Resources */,
+				6C08E4AC19F7B05200119B84 /* Main_iPhone.storyboard in Resources */,
 				6CC3D6BF19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib in Resources */,
 				6C9754F819EE90C1005DD1DF /* NJTileContainingTableViewCell.xib in Resources */,
 				6CC3D6BA19F171AA0081A5BD /* NJOPInfoCell.xib in Resources */,
 				6CCDC6E419F01D8B005339B4 /* NJSingleFBOTile-Right.xib in Resources */,
+				6C08E4CD19F7BE3F00119B84 /* NJOPFBOTile.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,20 +727,26 @@
 			files = (
 				6C57E05519EEC8FB00D3FB00 /* NJTailNumberTail.m in Sources */,
 				55CA603819E7FDC6001E2FC6 /* NJOPBlockStyleButton.m in Sources */,
+				6C08E4B519F7B77A00119B84 /* WeatherCell.m in Sources */,
 				6C57E05E19EEC8FB00D3FB00 /* NJVerticalTabViewController.m in Sources */,
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
 				30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */,
 				6C57E05319EEC8FB00D3FB00 /* NJSingleFBOTile.m in Sources */,
 				6CC3D6B219F152340081A5BD /* NJOPInfoCell.m in Sources */,
 				6CC3D6BD19F173170081A5BD /* NJOPReservationCollectionViewController.m in Sources */,
+				6C08E4CB19F7B87F00119B84 /* InfoCell.m in Sources */,
 				6CC3D6B519F1546E0081A5BD /* NJOPCollectionViewFlowLayout.m in Sources */,
 				6C57E05C19EEC8FB00D3FB00 /* NJTraitOverrideViewController.m in Sources */,
 				6C57E05019EEC8FB00D3FB00 /* NJOPAllFlightsHeader.m in Sources */,
 				6C57E05D19EEC8FB00D3FB00 /* NJVerticalTabCell.m in Sources */,
+				6C08E4C219F7B7D100119B84 /* TailCell.m in Sources */,
 				6CC3D6B819F167130081A5BD /* NJOP3TilesLayoutTableViewCell.m in Sources */,
+				6C08E4BB19F7B78D00119B84 /* FlightDetailTopHeaderView.m in Sources */,
 				6CBD546019F111670009077C /* NJOPNestedCollectionTableViewCell.m in Sources */,
 				6C57E05419EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m in Sources */,
 				6C57E05A19EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.m in Sources */,
+				6C08E47219F5954B00119B84 /* NJOPNavigationTitleView.m in Sources */,
+				6C08E4D019F7C1FB00119B84 /* NJOPFBOTile.m in Sources */,
 				6C57E05219EEC8FB00D3FB00 /* NJInfoTile.m in Sources */,
 				6CC3D6C219F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m in Sources */,
 				6C57E05819EEC8FB00D3FB00 /* NJWeatherTile.m in Sources */,
@@ -645,11 +758,16 @@
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */,
 				6C57E05619EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m in Sources */,
+				6C08E4B819F7B78100119B84 /* FBOCell.m in Sources */,
 				6C57E05B19EEC8FB00D3FB00 /* SimpleDataSourceTableViewController.m in Sources */,
 				6C7C2BBC19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m in Sources */,
+				6C08E4BF19F7B7AE00119B84 /* NJCellBackgroundView.m in Sources */,
 				6CBD546719F1129E0009077C /* NJOPActionsViewController.m in Sources */,
 				6C57E04F19EEC8FB00D3FB00 /* SummaryViewController.m in Sources */,
+				6C08E46F19F594E700119B84 /* NJOPParentViewController.m in Sources */,
+				6C08E4B119F7B73900119B84 /* FlightDetailViewController.m in Sources */,
 				6C57E05919EEC8FB00D3FB00 /* SimpleDataSource.m in Sources */,
+				6C08E4C619F7B7F200119B84 /* ReservationHeaderView.m in Sources */,
 				6C57E05719EEC8FB00D3FB00 /* NJTodayTile.m in Sources */,
 				6CBD546A19F1139D0009077C /* NJOPTileContainingCollectionViewCell.m in Sources */,
 			);
@@ -781,6 +899,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -796,6 +915,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -893,6 +1013,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -973,6 +1094,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
