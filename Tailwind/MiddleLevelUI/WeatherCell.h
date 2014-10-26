@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Amos Elmaliah. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "NJOPTableViewCell.h"
 
-@interface WeatherCell : UITableViewCell
+@interface WeatherCell : NJOPTableViewCell
 @property (nonatomic, weak) IBOutlet UILabel* dateLabel;
 @property (nonatomic, weak) IBOutlet UILabel* firstLocationLabel;
 @property (nonatomic, weak) IBOutlet UILabel* firstTimeLabel;

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Amos Elmaliah. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "NJOPTableViewCell.h"
 
-@interface InfoCell : UITableViewCell
+@interface InfoCell : NJOPTableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *topLabel;
 @property (strong, nonatomic) IBOutlet UILabel *detailLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *imgaeView;

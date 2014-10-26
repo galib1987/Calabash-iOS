@@ -70,13 +70,6 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 												}
 										},
 									@{
-										kCellIdentifierKey	: @"TailCell",
-										kCellKeypaths			 	: @{
-												@"tailNumberLabel.text" 					: @"N168QS",
-												@"estimatedTravelTimeLabel.text" 	: @" Est. Arrival: 2:45PM Non Stop",
-												}
-										},
-									@{
 										kCellIdentifierKey	: @"FBOCell",
 										kCellKeypaths			 	: @{
 												@"locationLabel.text" : @"Naples, FL",
@@ -208,10 +201,10 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 	NSString* identifier = cellData[kCellIdentifierKey];
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier
 																													forIndexPath:indexPath];
-	if (!cell.backgroundView) {
-		cell.backgroundView = [[NJCellBackgroundView alloc] initWithFrame:CGRectZero];
-	}
-	
+//	if (!cell.backgroundView) {
+//		cell.backgroundView = [[NJCellBackgroundView alloc] initWithFrame:CGRectZero];
+//	}
+
 	NSDictionary* keypaths = cellData[kCellKeypaths];
 	
 	[keypaths enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
