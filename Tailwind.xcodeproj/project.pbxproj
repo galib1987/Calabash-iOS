@@ -54,6 +54,7 @@
 		6C73F68A19F127C300A92BBE /* NJInfoTile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C73F68919F127C300A92BBE /* NJInfoTile.xib */; };
 		6C7C2BB919F29F480092F08D /* UIView+NJOPStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C2BB819F29F480092F08D /* UIView+NJOPStyle.m */; };
 		6C7C2BBC19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C2BBB19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m */; };
+		6C8045E419F9212700161C4E /* NJOPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8045E319F9212600161C4E /* NJOPTableViewCell.m */; };
 		6C9754F819EE90C1005DD1DF /* NJTileContainingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */; };
 		6C9754F919EE90C1005DD1DF /* NJOPAllFlightsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F719EE90C1005DD1DF /* NJOPAllFlightsHeader.xib */; };
 		6CBD545B19F021E50009077C /* NJSingleFBOTile-Left.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD545A19F021E50009077C /* NJSingleFBOTile-Left.xib */; };
@@ -68,6 +69,7 @@
 		6CC3D6BF19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CC3D6BE19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib */; };
 		6CC3D6C219F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC3D6C119F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m */; };
 		6CCDC6E419F01D8B005339B4 /* NJSingleFBOTile-Right.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCDC6E319F01D8B005339B4 /* NJSingleFBOTile-Right.xib */; };
+		6CF2289719F90A0800A68DF4 /* NJOPActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2289619F90A0800A68DF4 /* NJOPActionButton.m */; };
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +174,8 @@
 		6C7C2BB819F29F480092F08D /* UIView+NJOPStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NJOPStyle.m"; sourceTree = "<group>"; };
 		6C7C2BBA19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionReusableView+NJOPHelpers.h"; sourceTree = "<group>"; };
 		6C7C2BBB19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionReusableView+NJOPHelpers.m"; sourceTree = "<group>"; };
+		6C8045E219F9212600161C4E /* NJOPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPTableViewCell.h; path = MiddleLevelUI/Views/NJOPTableViewCell.h; sourceTree = "<group>"; };
+		6C8045E319F9212600161C4E /* NJOPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPTableViewCell.m; path = MiddleLevelUI/Views/NJOPTableViewCell.m; sourceTree = "<group>"; };
 		6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJTileContainingTableViewCell.xib; sourceTree = "<group>"; };
 		6C9754F719EE90C1005DD1DF /* NJOPAllFlightsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJOPAllFlightsHeader.xib; path = ../../NJOPAllFlightsHeader.xib; sourceTree = "<group>"; };
 		6CBD545A19F021E50009077C /* NJSingleFBOTile-Left.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "NJSingleFBOTile-Left.xib"; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 		6CC3D6C019F176C90081A5BD /* NJOPBriefTopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPBriefTopCollectionViewCell.h; sourceTree = "<group>"; };
 		6CC3D6C119F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBriefTopCollectionViewCell.m; sourceTree = "<group>"; };
 		6CCDC6E319F01D8B005339B4 /* NJSingleFBOTile-Right.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "NJSingleFBOTile-Right.xib"; sourceTree = "<group>"; };
+		6CF2289519F90A0800A68DF4 /* NJOPActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPActionButton.h; path = MiddleLevelUI/Views/NJOPActionButton.h; sourceTree = "<group>"; };
+		6CF2289619F90A0800A68DF4 /* NJOPActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPActionButton.m; path = MiddleLevelUI/Views/NJOPActionButton.m; sourceTree = "<group>"; };
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
 		DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -256,6 +262,10 @@
 				55CA603519E7FD4A001E2FC6 /* views */,
 				30A4738019D9E41A0045D7AF /* AppDelegate.h */,
 				30A4738119D9E41A0045D7AF /* AppDelegate.m */,
+				6C8045E219F9212600161C4E /* NJOPTableViewCell.h */,
+				6C8045E319F9212600161C4E /* NJOPTableViewCell.m */,
+				6CF2289519F90A0800A68DF4 /* NJOPActionButton.h */,
+				6CF2289619F90A0800A68DF4 /* NJOPActionButton.m */,
 				6C08E4AB19F7B05200119B84 /* Main_iPhone.storyboard */,
 				30A4738619D9E41A0045D7AF /* Main_iPad.storyboard */,
 				6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */,
@@ -758,7 +768,9 @@
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */,
 				6C57E05619EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m in Sources */,
+				6C8045E419F9212700161C4E /* NJOPTableViewCell.m in Sources */,
 				6C08E4B819F7B78100119B84 /* FBOCell.m in Sources */,
+				6CF2289719F90A0800A68DF4 /* NJOPActionButton.m in Sources */,
 				6C57E05B19EEC8FB00D3FB00 /* SimpleDataSourceTableViewController.m in Sources */,
 				6C7C2BBC19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m in Sources */,
 				6C08E4BF19F7B7AE00119B84 /* NJCellBackgroundView.m in Sources */,

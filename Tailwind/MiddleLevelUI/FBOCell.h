@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Amos Elmaliah. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "NJOPTableViewCell.h"
 
-@interface FBOCell : UITableViewCell
+@interface FBOCell : NJOPTableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *numberLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
@@ -16,5 +16,4 @@
 @property (strong, nonatomic) IBOutlet UILabel *airportNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *airportAddressLabel;
 @property (strong, nonatomic) IBOutlet UILabel *phoneNumberLabel;
-
 @end

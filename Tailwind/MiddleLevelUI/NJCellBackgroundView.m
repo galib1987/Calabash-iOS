@@ -9,6 +9,7 @@
 #import "NJCellBackgroundView.h"
 
 @interface NJCellBackgroundView ()
+@property (nonatomic) BOOL hasRadius;
 @property (nonatomic, strong) UIView* innerView;
 @end
 
@@ -22,10 +23,24 @@
 	return [UIColor clearColor];
 }
 
+-(void)setCornerRadius:(CGFloat)cornerRadius {
+	if (_cornerRadius != cornerRadius) {
+		_cornerRadius = cornerRadius;
+		_hasRadius = _cornerRadius;
+	}
+}
+
+-(void)setPadding:(CGSize)padding {
+	if (!CGSizeEqualToSize(_padding, padding)) {
+		_padding = padding;
+		[self setNeedsLayout];
+	}
+}
+
 -(UIView *)innerView {
 	if (!_innerView) {
 		_innerView = [[UIView alloc] initWithFrame:CGRectZero];
-		_innerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
+		_innerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:1.0];
 		[self addSubview:_innerView];
 	}
 	return _innerView;
@@ -33,8 +48,8 @@
 
 -(void)layoutSubviews {
 	[super layoutSubviews];
-	self.innerView.frame = CGRectInset(self.bounds, 10, 2);
-	self.innerView.layer.cornerRadius = DEFAULT_CELL_CORENER_RADIUS;
+	self.innerView.frame = CGRectInset(self.bounds, _padding.width, _padding.height);
+	self.innerView.layer.cornerRadius = _hasRadius ? _cornerRadius : DEFAULT_CELL_CORENER_RADIUS;
 }
 
 @end

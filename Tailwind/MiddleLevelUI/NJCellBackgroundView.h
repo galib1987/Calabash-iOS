@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface NJCellBackgroundView : UIView
-
+@property (nonatomic) CGSize padding;
+@property (nonatomic) CGFloat cornerRadius;
 @end
