@@ -26,7 +26,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-
+	self.title = self.dataSource.title ? : self.title;
 	[self loadDataSource];
 	[self registerReusableViews];
 

@@ -22,7 +22,7 @@
 
 	[self loadDataSource];
 	[self registerReusableViews];
-	
+	self.title = self.dataSource.title ? : self.title;
 	NSArray* headerFooters = [self.dataSource headerFooterCellIdentifiers];
 	if (headerFooters && headerFooters.count) {
 		for (NSString* identifier in headerFooters) {
