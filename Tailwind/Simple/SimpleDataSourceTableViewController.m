@@ -43,10 +43,6 @@
 			self.dataSource.configureHeaderFooterViewBlock(view);
 		}
 	}
-
-	if (!self.tableView.dataSource || self.tableView.dataSource == self) {
-		self.tableView.dataSource = self.dataSource;
-	}
 }
 
 -(void)loadDataSource {
@@ -57,8 +53,30 @@
 
 }
 
-#pragma mark - Table view Delegate
+#pragma mark - Table view DataSource
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	if ([self.dataSource respondsToSelector:_cmd]) {
+		return [self.dataSource numberOfSectionsInTableView:tableView];
+	};
+	return 0;
+}
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	if ([self.dataSource respondsToSelector:_cmd]) {
+		return [self.dataSource tableView:tableView numberOfRowsInSection:section];
+	}
+	return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if ([self.dataSource respondsToSelector:_cmd]) {
+		return [self.dataSource tableView:tableView cellForRowAtIndexPath:indexPath];
+	}
+	return nil;
+}
+
+#pragma mark - Table view Delegate
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
