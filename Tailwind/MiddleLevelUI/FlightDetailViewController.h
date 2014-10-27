@@ -6,12 +6,9 @@
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SimpleDataSourceTableViewController.h"
 
-@protocol UITableViewSectionedDataSource <NSObject>
-@end
-
-@interface FlightDetailViewController : UITableViewController
+@interface FlightDetailViewController : SimpleDataSourceTableViewController
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *shareButtonItem;
 - (IBAction)shareAction:(id)sender;
 @end
