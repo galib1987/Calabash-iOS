@@ -122,7 +122,7 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 #if DEBUG
 			[[NSException exceptionWithName:@"Invalid KVO"
 															 reason:@"KVO Validation Failed for cell"
-														 userInfo:nil] raise];
+														 userInfo:@{@"error" : validationError}] raise];
 #else
 
 #endif
@@ -182,7 +182,6 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 
 #pragma mark - Table view Delegate
 
-
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
 	NSDictionary* sectionInfo = [self sectionInfoAtIndex:section];
@@ -206,6 +205,12 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+
+	if ([tableView.delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)] &&
+			[tableView.delegate tableView:tableView viewForHeaderInSection:section]) {
+		return nil;
+	}
+
 	id sectionInfo = [self sectionInfoAtIndex:section];
 	NSString *title = sectionInfo[kSimpleDataSourceSectionsTitleKey];
 	return title;
