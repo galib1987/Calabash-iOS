@@ -15,6 +15,7 @@
 
 	CGRect superviewBounds = self.superview.bounds;
 
+	// TODO: layout this navigation titleView properly.
 	NSLog(@"frame:%@", NSStringFromCGRect(superviewBounds));
 	if (!CGRectEqualToRect(superviewBounds, CGRectZero) ) {
 		NSLog(@"%@", NSStringFromCGRect(self.superview.bounds));
