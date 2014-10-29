@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
-//#import <NCLFramework/NCLFramework.h>
+#import <NCLFramework/NCLFramework.h>
 #import <HockeySDK/HockeySDK.h>
 #import "UICollectionReusableView+NJOPHelpers.h"
 #import "UIView+NJOPStyle.h"
