@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+
 RESOURCES_TO_COPY=${PODS_ROOT}/resources-to-copy-${TARGETNAME}.txt
 > "$RESOURCES_TO_COPY"
 
@@ -41,9 +43,7 @@ install_resource()
       ;;
   esac
 }
-          install_resource "NCLFramework/NCLFramework/NCLFramework/close.png"
-                    install_resource "NCLFramework/NCLFramework/NCLFramework/close@2x.png"
-                    install_resource "NCLFramework/NCLFramework/NCLFramework/NCLAnalytics.xcdatamodeld"
+          install_resource "DateTools/DateTools/DateTools.bundle"
                     install_resource "${BUILT_PRODUCTS_DIR}/HockeySDKResources.bundle"
           
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
@@ -52,7 +52,7 @@ if [[ "${ACTION}" == "install" ]]; then
 fi
 rm -f "$RESOURCES_TO_COPY"
 
-if [[ -n "${WRAPPER_EXTENSION}" ]] && [ `xcrun --find actool` ] && [ `find . -name '*.xcassets' | wc -l` -ne 0 ]
+if [[ -n "${WRAPPER_EXTENSION}" ]] && [ "`xcrun --find actool`" ] && [ `find . -name '*.xcassets' | wc -l` -ne 0 ]
 then
   case "${TARGETED_DEVICE_FAMILY}" in
     1,2)
