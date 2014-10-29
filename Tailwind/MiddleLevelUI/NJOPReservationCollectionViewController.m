@@ -8,14 +8,15 @@
 
 #import "NJOPReservationCollectionViewController.h"
 
+#import "NJOPClient.h"
+#import "NJOPReservation.h"
+
 
 @interface NJOPReservationCollectionViewController ()
 @property (nonatomic, strong) NSDictionary*identifiers;
 @property (nonatomic) CGFloat width;
 @end
 
-static NSString* identifier = @"NJOPBriefTopCollectionViewCell";
-static NSString* headerIdentifier = @"NJOPAllFlightsHeader";
 @implementation NJOPReservationCollectionViewController
 
 #pragma mark - UIViewController 
@@ -32,6 +33,7 @@ static NSString* headerIdentifier = @"NJOPAllFlightsHeader";
 
 -(void)registerReusableViews {
 
+	NSString* identifier = @"NJOPBriefTopCollectionViewCell";
 	UINib* nib = [UINib nibWithNibName:identifier bundle:nil];
 	UICollectionViewCell* cell = [[nib instantiateWithOwner:nil options:nil] objectAtIndex:0];
 	NSAssert1(cell, @"missing or incorrect file:", identifier);
@@ -62,35 +64,59 @@ static NSString* headerIdentifier = @"NJOPAllFlightsHeader";
 }
 
 -(void)loadDataSource {
+
+	__weak NJOPReservationCollectionViewController* wself = self;
+
+	[NJOPClient GETReservationWithInfo:nil completion:^(NJOPReservation *reservation, NSError *error) {
+		[wself updateWithReservation:reservation];
+	}];
+}
+
+-(void)updateWithReservation:(NJOPReservation*)reservation {
+
+	//UIImage* image = [UIImage imageNamed:@"sun"];
+	NSDictionary* fboDictionary = @{
+																	@"NJOPAllFlightsHeader" 	: @{
+																			@"titleLabel.text" : [NSString stringWithFormat:@"Reservation: %@", reservation.reservationId]
+																			},
+																	@"NJOPBriefTopCollectionViewCell" : @{
+																			//@"topRightView.tailImageView.text"					: @"",
+																			@"topLeftView.locationLabel.text"         	: reservation.departureFboName,
+																			@"topLeftView.numberLabel.text"         		: reservation.departureAirportId,
+																			@"topLeftView.timeLabel.text"         			: reservation.departureTime,
+																			//@"topLeftView.directionLabel.text"					: @"",
+																			@"topLeftView.airportNameLabel.text"				: reservation.departureAirportCity,
+																			@"topLeftView.airportAddressLabel.text"		: @"Address:Not Availbel",
+																			@"topLeftView.phoneNumberLabel.text"				: @"",
+
+																			//@"topRightView.tailImageView.text"					: @"",
+																			@"topRightView.locationLabel.text"         : reservation.arrivalFboName,
+																			@"topRightView.numberLabel.text"         	: reservation.arrivalAirportId,
+																			@"topRightView.timeLabel.text"         		: reservation.arrivalTime,
+																			//@"topRightView.directionLabel.text"				: @"",
+																			@"topRightView.airportNameLabel.text"			: reservation.arrivalAirportCity,
+																			@"topRightView.airportAddressLabel.text"		: @"Address:Not Availbel",
+																			@"topRightView.phoneNumberLabel.text"			: @"",
+																			
+																			@"topMiddleView.tailNumberLabel.text"			: reservation.tailNumber,
+																			@"topMiddleView.estimatedTravelTimeLabel.text" : [@"Est. Travel:" stringByAppendingFormat:@"%@ %@", reservation.travelTime, reservation.stopsText],
+																			}
+																	};
+
 	NSArray* sections = @[
 												@{
-													kSimpleDataSourceSectionsHeaderIdentifierKey : headerIdentifier,
-													kSimpleDataSourceSectionsHeaderKeyapthsKey : @{
-															@"titleLabel.text" : @"Reservation"
-															},
+													kSimpleDataSourceSectionsHeaderIdentifierKey : @"NJOPAllFlightsHeader",
+													kSimpleDataSourceSectionsHeaderKeyapthsKey : fboDictionary[@"NJOPAllFlightsHeader"],
 													kSimpleDataSourceSectionCellsKey : @[
 															@{
-																kSimpleDataSourceCellIdentifierKey	: identifier,
-																kSimpleDataSourceCellKeypaths 			: @{
-																		}
+																kSimpleDataSourceCellIdentifierKey	: @"NJOPBriefTopCollectionViewCell",
+																kSimpleDataSourceCellKeypaths 			: fboDictionary[@"NJOPBriefTopCollectionViewCell"]
 																}
 															]
 													},
-												@{
-													kSimpleDataSourceSectionsHeaderIdentifierKey : headerIdentifier,
-													kSimpleDataSourceSectionsHeaderKeyapthsKey : @{
-															@"titleLabel.text" : @"Reservation"
-															},
-													kSimpleDataSourceSectionCellsKey : @[
-															@{
-																kSimpleDataSourceCellIdentifierKey	: identifier,
-																kSimpleDataSourceCellKeypaths 			: @{
-																		}
-																}
-															]
-													}
 												];
 	self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
+	self.dataSource.title = @"FLIGHT DETAILS";
 }
 
 -(NSString*)cellIdentifierAtIndexPath:(NSIndexPath*)indexPath {
