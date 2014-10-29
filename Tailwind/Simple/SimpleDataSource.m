@@ -157,6 +157,11 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 	return _sections ? _sections.count : 0;
 }
 
+-(NSInteger)numberOfRowsInSection:(NSInteger)section {
+	NSArray* cells = [self cellsInfoInSection:section];
+	return cells ? cells.count : 0;
+}
+
 -(NSArray*)cellsInfoInSection:(NSInteger)sectionIndex {
 	return [self sectionInfoAtIndex:sectionIndex][kSimpleDataSourceSectionCellsKey];
 }
@@ -224,8 +229,7 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	NSArray* cells = [self cellsInfoInSection:section];
-	return cells ? cells.count : 0;
+	return [self numberOfRowsInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
