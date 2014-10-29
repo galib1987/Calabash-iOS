@@ -8,8 +8,5 @@
 
 #import "NJOPReservation.h"
 
-@interface NJOPReservation ()
-@end
-
 @implementation NJOPReservation
 @end
