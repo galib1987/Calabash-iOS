@@ -24,3 +24,15 @@
 #define COCOAPODS_VERSION_MINOR_HockeySDK 6
 #define COCOAPODS_VERSION_PATCH_HockeySDK 1
 
+// NCLFramework
+#define COCOAPODS_POD_AVAILABLE_NCLFramework
+#define COCOAPODS_VERSION_MAJOR_NCLFramework 2
+#define COCOAPODS_VERSION_MINOR_NCLFramework 0
+#define COCOAPODS_VERSION_PATCH_NCLFramework 1
+
+// NCLFramework/no-arc
+#define COCOAPODS_POD_AVAILABLE_NCLFramework_no_arc
+#define COCOAPODS_VERSION_MAJOR_NCLFramework_no_arc 2
+#define COCOAPODS_VERSION_MINOR_NCLFramework_no_arc 0
+#define COCOAPODS_VERSION_PATCH_NCLFramework_no_arc 1
+
