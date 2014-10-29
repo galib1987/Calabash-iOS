@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BFTask.h"
 
 @protocol NSTransformable <NSObject>
 
