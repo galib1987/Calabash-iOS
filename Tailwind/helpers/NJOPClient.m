@@ -11,41 +11,6 @@
 #import "NJOPValueTransformer.h"
 #import "NSDate+NJOP.h"
 
-@interface NJOPReservation ()
-@property(nonatomic, strong) NSNumber* reservationId;
-
-@property(nonatomic, strong) NSTimeZone* departureTimeZone;
-@property(nonatomic, strong) NSDate* departureDate;
-@property(nonatomic, copy) NSString* departureTime;
-
-@property(nonatomic, strong) NSTimeZone* arrivalTimeZone;
-@property(nonatomic, strong) NSDate* arrivalDate;
-@property(nonatomic, copy) NSString* arrivalTime;
-
-@property(nonatomic, copy) NSString* departureDateString;
-@property(nonatomic, copy) NSString* arrivalDateString;
-
-@property(nonatomic, copy) NSString* arrivalAirportId;
-@property(nonatomic, copy) NSString* departureAirportId;
-
-@property(nonatomic, copy) NSString* tailNumber;
-
-@property(nonatomic, copy) NSString* departureFboName;
-@property(nonatomic, copy) NSString* arrivalFboName;
-
-@property(nonatomic, copy) NSString* departureAirportCity;
-@property(nonatomic, copy) NSString* arrivalAirportCity;
-
-@property(nonatomic, strong) NSNumber* estimatedTripTimeNumber;
-@property(nonatomic, strong) NSNumber* travelHours;
-@property(nonatomic, strong) NSNumber* travelMinutes;
-@property(nonatomic, copy) NSString* travelTime;
-
-@property(nonatomic, copy) NSString* travelTimeMessage;
-@property(nonatomic, strong) NSNumber* stops;
-@property(nonatomic, copy) NSString* stopsText;
-@end
-
 @interface NJOPClassDataTransformer : NJOPValueTransformer
 @end
 
