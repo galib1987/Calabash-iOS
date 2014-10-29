@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-69.333333333333329" y="290.62666666666667"/>
         </scene>
-        <!--Flight Detail View Controller-->
+        <!--Reservation Detail View Controller-->
         <scene sceneID="MhQ-nw-iG1">
             <objects>
-                <tableViewController id="bJO-uZ-sjV" customClass="FlightDetailViewController" sceneMemberID="viewController">
+                <tableViewController id="bJO-uZ-sjV" customClass="ReservationDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="127" sectionHeaderHeight="22" sectionFooterHeight="22" id="kv9-WC-yhu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +74,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" rowHeight="321" id="zsZ-cT-1AG" customClass="WeatherCell">
+                            <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableCell" rowHeight="321" id="zsZ-cT-1AG" customClass="WeatherTableCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zsZ-cT-1AG" id="lSd-rP-Xbc">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -214,15 +214,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="dateLabel" destination="Njq-hA-Uu1" id="uPH-gL-Bf0"/>
+                                    <outlet property="firstDateLabel" destination="Njq-hA-Uu1" id="Afo-Pt-5iJ"/>
                                     <outlet property="firstImageView" destination="D4r-jm-AQD" id="tUs-VO-orX"/>
                                     <outlet property="firstLocationLabel" destination="A7V-oX-qzT" id="Rdh-5Q-g5K"/>
                                     <outlet property="firstTemperatureLabel" destination="DXG-Ox-og4" id="fuy-o8-5L8"/>
                                     <outlet property="firstTimeLabel" destination="Xxi-Ls-gvr" id="Y4P-Mq-dL0"/>
+                                    <outlet property="secondDateLabel" destination="3dM-cK-cWS" id="IkK-Ma-JpG"/>
+                                    <outlet property="secondImageView" destination="stU-hh-oGP" id="4nB-Ze-FuL"/>
+                                    <outlet property="secondLocationLabel" destination="e81-D0-2wz" id="ZDx-ty-kdS"/>
+                                    <outlet property="secondTemperatureLabel" destination="tVt-8V-yM8" id="8tZ-hz-ZKZ"/>
+                                    <outlet property="secondTimeLabel" destination="Soo-wd-z06" id="C3c-1t-G3Y"/>
                                     <outlet property="tile" destination="RND-Qx-HnK" id="IYt-za-b8Z"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBOCell" rowHeight="541" id="Xf9-ul-yEp" customClass="FBOCell">
+                            <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBOTableCell" rowHeight="541" id="Xf9-ul-yEp" customClass="FBOTableCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xf9-ul-yEp" id="SYM-lA-hSe">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -419,7 +424,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <outlet property="arrivalLabel" destination="1NO-hL-Gzk" id="dO4-UM-Kud"/>
+                                    <outlet property="departureLabel" destination="mgR-KQ-bft" id="Ykn-ty-tPF"/>
+                                    <outlet property="fromFBOAirpotCodeLabel" destination="V4S-JK-wkO" id="d8K-RP-Mw4"/>
+                                    <outlet property="fromFBODateLabel" destination="rFZ-DV-ZcA" id="5Sm-g9-kxN"/>
+                                    <outlet property="fromFBOLocationLabel" destination="gAc-AR-fHi" id="EgU-qh-KXK"/>
+                                    <outlet property="fromFBOTailNumberLabel" destination="qwJ-Kb-oHv" id="AGE-3p-4KZ"/>
+                                    <outlet property="fromFBOTimeLabel" destination="ooa-Ht-dxp" id="Oir-TK-uCg"/>
                                     <outlet property="tile" destination="xb5-F4-pzA" id="aEa-dP-rM1"/>
+                                    <outlet property="toFBOAirpotCodeLabel" destination="I86-wW-JSd" id="fuH-aF-6ds"/>
+                                    <outlet property="toFBODateLabel" destination="Aak-Td-C9S" id="7jC-cy-Uss"/>
+                                    <outlet property="toFBOLocationLabel" destination="RCu-e1-tOF" id="7Y6-dx-3ja"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoCell" rowHeight="121" id="qye-TD-r5i" userLabel="InfoCell" customClass="InfoCell">
