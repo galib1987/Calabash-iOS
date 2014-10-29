@@ -30,6 +30,7 @@ extern NSString *const kSimpleDataSourceCellSegueAction;
 -(id)segueForIndexPath:(NSIndexPath*)indexPath;
 -(id)itemForIndexPath:(NSIndexPath*)indexPath;
 - (NSInteger)numberOfSections;
+- (NSInteger)numberOfRowsInSection:(NSInteger)section;
 
 +(instancetype)dataSourceWithSections:(NSArray*)sections;
 
