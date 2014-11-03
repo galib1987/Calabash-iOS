@@ -7,50 +7,78 @@
 //
 
 #import "NJOPReservationCollectionViewController.h"
-
+#import "NJOPCollectionViewFlowLayout.h"
 #import "NJOPClient.h"
 #import "NJOPReservation.h"
 
 
+static NSString * topHeaderIdentifier 		= @"NJOPNavigationTitleView";
+static NSString * cellIdentifier 					= @"NJOPBriefTopCollectionViewCell";
+static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
+
 @interface NJOPReservationCollectionViewController ()
 @property (nonatomic, strong) NSDictionary*identifiers;
 @property (nonatomic) CGFloat width;
+@property (nonatomic, strong) UINib *headerNib;
 @end
 
 @implementation NJOPReservationCollectionViewController
 
 #pragma mark - UIViewController 
 
+-(UINib *)headerNib {
+	if (!_headerNib) {
+		_headerNib = [UINib nibWithNibName:topHeaderIdentifier bundle:nil];
+#if DEBUG
+		NSAssert1([[_headerNib instantiateWithOwner:nil options:nil] objectAtIndex:0], @"missing or incorrect file:", topHeaderIdentifier);
+#endif
+	}
+	return _headerNib;
+}
+
 -(void)viewDidLoad {
 	[super viewDidLoad];
-	UICollectionViewFlowLayout* flowLayout = (UICollectionViewFlowLayout*)self.collectionViewLayout;
-	if ([flowLayout isKindOfClass:[UICollectionViewFlowLayout class]]) {
-//		flowLayout.headerReferenceSize = CGSizeZero;
-		flowLayout.footerReferenceSize = CGSizeZero;
+
+	NJOPCollectionViewFlowLayout *layout = (id)self.collectionViewLayout;
+
+	if ([layout isKindOfClass:[NJOPCollectionViewFlowLayout class]]) {
+		layout.parallaxHeaderReferenceSize = CGSizeMake(self.view.frame.size.width, 64);
+		layout.parallaxHeaderMinimumReferenceSize = CGSizeMake(self.view.frame.size.width, 44);
+		layout.itemSize = CGSizeMake(self.view.frame.size.width, layout.itemSize.height);
+		layout.parallaxHeaderAlwaysOnTop = YES;
+
+		// If we want to disable the sticky header effect
+		layout.disablePinnedHeaders = NO;
+		layout.footerReferenceSize = CGSizeZero;
 	}
 }
+
 #pragma mark -
 
 -(void)registerReusableViews {
 
-	NSString* identifier = @"NJOPBriefTopCollectionViewCell";
-	UINib* nib = [UINib nibWithNibName:identifier bundle:nil];
+	UINib* nib = [UINib nibWithNibName:cellIdentifier bundle:nil];
+
 	UICollectionViewCell* cell = [[nib instantiateWithOwner:nil options:nil] objectAtIndex:0];
-	NSAssert1(cell, @"missing or incorrect file:", identifier);
+	NSAssert1(cell, @"missing or incorrect file:", cellIdentifier);
 
 	[self.collectionView registerNib:nib
-				forCellWithReuseIdentifier:identifier];
+				forCellWithReuseIdentifier:cellIdentifier];
 
-	_identifiers = @{identifier : cell};
+	_identifiers = @{cellIdentifier : cell};
 
-	NSString* headerIdentifier = @"NJOPAllFlightsHeader";
-	nib = [UINib nibWithNibName:headerIdentifier bundle:nil];
+	nib = [UINib nibWithNibName:sectionHeaderIdentifier bundle:nil];
+#if DEBUG
 	UICollectionReusableView* view = [[nib instantiateWithOwner:nil options:nil] objectAtIndex:0];
-	NSAssert1(view, @"missing or incorrect file:", headerIdentifier);
+	NSAssert1(view, @"missing or incorrect file:", sectionHeaderIdentifier);
+#endif
 	[self.collectionView registerNib:nib
 				forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
-							 withReuseIdentifier:headerIdentifier];
+							 withReuseIdentifier:sectionHeaderIdentifier];
 
+	[self.collectionView registerNib:self.headerNib
+				forSupplementaryViewOfKind:NJOPCollectionPinnedParalaxHeaderIdentifier
+							 withReuseIdentifier:topHeaderIdentifier];
 }
 
 
@@ -116,6 +144,7 @@
 													},
 												];
 	self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
+	self.dataSource.reusableViewsKindsToIdentifiers = @{NJOPCollectionPinnedParalaxHeaderIdentifier : topHeaderIdentifier};
 	self.dataSource.title = @"FLIGHT DETAILS";
 }
 
@@ -147,6 +176,16 @@
 		return size;
 	}
 	return [(UICollectionViewFlowLayout*)collectionViewLayout itemSize];
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+
+	if ([kind isEqualToString:NJOPCollectionPinnedParalaxHeaderIdentifier]) {
+		UICollectionReusableView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:topHeaderIdentifier forIndexPath:indexPath];
+
+		return cell;
+	}
+	return [super collectionView:collectionView viewForSupplementaryElementOfKind:kind atIndexPath:indexPath];
 }
 
 
