@@ -31,11 +31,8 @@ static NSString * const reuseIdentifier = @"Cell";
 	[self registerReusableViews];
 
 	if (!self.collectionView.dataSource || self.collectionView.dataSource == self) {
-		self.dataSource.controller = self;
 		self.collectionView.dataSource = self.dataSource;
 	}
-
-
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -65,8 +62,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	NSString* segue = nil;
-	if ([self.dataSource respondsToSelector:@selector(segueForIndexPath:)] &&
-			(segue = [self.dataSource segueForIndexPath:indexPath])) {
+	if ([self.dataSource respondsToSelector:@selector(segueForCellAtIndexPath:)] &&
+			(segue = [self.dataSource segueForCellAtIndexPath:indexPath])) {
 		[self performSegueWithIdentifier:segue sender:self];
 		return;
 	} else  if (self.dataSource.didSelectBlock) {

@@ -23,12 +23,13 @@ extern NSString *const kSimpleDataSourceCellSegueAction;
 
 @property (nonatomic, copy) NSString* title;
 @property (nonatomic, strong) NSArray* headerFooterCellIdentifiers;
+@property (nonatomic, strong) NSDictionary* reusableViewsKindsToIdentifiers;
 @property (nonatomic, copy) void (^didSelectBlock)(UIViewController*,NSIndexPath*);
 @property (nonatomic, copy) void (^configureHeaderFooterViewBlock)(UIView*);
 @property (nonatomic, copy) void (^configureTableCell)(UITableView*, UITableViewCell *,NSString*);
 
--(id)segueForIndexPath:(NSIndexPath*)indexPath;
--(id)itemForIndexPath:(NSIndexPath*)indexPath;
+-(id)segueForCellAtIndexPath:(NSIndexPath*)indexPath;
+-(id)itemAtIndexPath:(NSIndexPath*)indexPath;
 - (NSInteger)numberOfSections;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 
@@ -37,7 +38,6 @@ extern NSString *const kSimpleDataSourceCellSegueAction;
 -(instancetype)initWithSections:(NSArray*)sections;
 
 @property (nonatomic, strong) NSArray* sections;
-@property (nonatomic, weak) UIViewController* controller;
 -(void)loadData;
 
 @end

@@ -7,38 +7,33 @@
 //
 
 #import "NJOPNavigationTitleView.h"
+#import "NJOPCollectionViewFlowLayout.h"
 
 @implementation NJOPNavigationTitleView
 
-
-- (void)setFrame:(CGRect)frame {
-
-	CGRect superviewBounds = self.superview.bounds;
-
-	// TODO: layout this navigation titleView properly.
-	NSLog(@"frame:%@", NSStringFromCGRect(superviewBounds));
-	if (!CGRectEqualToRect(superviewBounds, CGRectZero) ) {
-		NSLog(@"%@", NSStringFromCGRect(self.superview.bounds));
-		CGFloat left = frame.origin.x;;
-		CGFloat right = CGRectGetMaxX(frame);
-
-		for (UIView* subview in [self.superview subviews]) {
-			if (subview != self) {
-				CGFloat subviewRight = CGRectGetMaxX(subview.frame);
-				CGFloat subviewLeft = CGRectGetMinX(subview.frame);
-				if (subviewRight < left) {
-					left = subviewRight;
-				} else if(subviewLeft > right) {
-					right = subviewLeft;
-				}
-				NSLog(@"%@", NSStringFromCGRect(subview.frame));
-			}
-		}
-
-		CGRect adjustedFrame = CGRectMake(25, 0, self.superview.bounds.size.width, self.superview.bounds.size.height);
-		frame = adjustedFrame;
+-(id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super initWithCoder:aDecoder];
+	if (self) {
+		self.backgroundView = [UIView new];
+		self.backgroundView.backgroundColor = DARK_BACKGROUND_COLOR;
 	}
-	[super setFrame:frame];
+	return self;
+}
+
+- (void)applyLayoutAttributes:(NJOPCollectionViewFlowLayoutAttributes *)layoutAttributes {
+
+	[UIView beginAnimations:@"" context:nil];
+
+	if (layoutAttributes.progressiveness >= 0.58) {
+		self.leftTItle.alpha = 1;
+		self.rightTitle.alpha = 1;
+
+	} else {
+		self.leftTItle.alpha = 0;
+		self.rightTitle.alpha = 0;
+	}
+
+	[UIView commitAnimations];
 }
 
 @end

@@ -16,16 +16,17 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	UINib* nib = [UINib nibWithNibName:@"NJOPNavigationTitleView"
-															bundle:nil];
-
-	NJOPNavigationTitleView* titleView = (NJOPNavigationTitleView*)[nib instantiateWithOwner:nil
-																																									 options:nil][0];
-	[titleView setAutoresizingMask:UIViewAutoresizingFlexibleWidth| UIViewAutoresizingFlexibleHeight];
-	
-	[self.navigationController.navigationBar setBarTintColor:DARK_BACKGROUND_COLOR];
-	NSAssert([titleView isKindOfClass:[NJOPNavigationTitleView class]], @"expected a view");
-	[self.navigationItem setTitleView:titleView];
+	[self.navigationController setNavigationBarHidden:YES];
+//	UINib* nib = [UINib nibWithNibName:@"NJOPNavigationTitleView"
+//															bundle:nil];
+//
+//	NJOPNavigationTitleView* titleView = (NJOPNavigationTitleView*)[nib instantiateWithOwner:nil
+//																																									 options:nil][0];
+//	[titleView setAutoresizingMask:UIViewAutoresizingFlexibleWidth| UIViewAutoresizingFlexibleHeight];
+//	
+//	[self.navigationController.navigationBar setBarTintColor:DARK_BACKGROUND_COLOR];
+//	NSAssert([titleView isKindOfClass:[NJOPNavigationTitleView class]], @"expected a view");
+//	[self.navigationItem setTitleView:titleView];
 }
 
 @end

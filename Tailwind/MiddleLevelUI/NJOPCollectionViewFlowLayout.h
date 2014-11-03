@@ -8,10 +8,16 @@
 
 @import UIKit;
 
+extern NSString *const NJOPCollectionPinnedParalaxHeaderIdentifier;
+
 @class NJOPCollectionViewFlowLayout;
-@interface NJOPCollectionViewFlowLayoutAttribntes : UICollectionViewLayoutAttributes
-@property (weak, nonatomic) NJOPCollectionViewFlowLayout* flowLayout;
+@interface NJOPCollectionViewFlowLayoutAttributes : UICollectionViewLayoutAttributes
+@property (nonatomic) CGFloat progressiveness;
 @end
 
 @interface NJOPCollectionViewFlowLayout : UICollectionViewFlowLayout
+@property (nonatomic) CGSize parallaxHeaderReferenceSize;
+@property (nonatomic) CGSize parallaxHeaderMinimumReferenceSize;
+@property (nonatomic) BOOL parallaxHeaderAlwaysOnTop;
+@property (nonatomic) BOOL disablePinnedHeaders;
 @end

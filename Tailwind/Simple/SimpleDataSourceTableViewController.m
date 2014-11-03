@@ -45,6 +45,8 @@
 	}
 }
 
+#pragma mark - Subclass
+
 -(void)loadDataSource {
 	
 }
@@ -115,8 +117,8 @@
 -(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 	NSString* segue = nil;
-	if ([self.dataSource respondsToSelector:@selector(segueForIndexPath:)] &&
-			(segue = [self.dataSource segueForIndexPath:indexPath])) {
+	if ([self.dataSource respondsToSelector:@selector(segueForCellAtIndexPath:)] &&
+			(segue = [self.dataSource segueForCellAtIndexPath:indexPath])) {
 		
 		[self performSegueWithIdentifier:segue sender:self];
 
