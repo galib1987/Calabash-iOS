@@ -23,7 +23,6 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerY" secondItem="pa7-Z9-dTW" secondAttribute="centerY" constant="1" id="0Vx-Be-D45"/>
                 <constraint firstAttribute="trailing" secondItem="pa7-Z9-dTW" secondAttribute="trailing" constant="8" id="Lhi-g9-FkL"/>
@@ -37,7 +36,7 @@
                 <outlet property="leftTItle" destination="Yk9-UU-MrV" id="qOM-YI-hmN"/>
                 <outlet property="rightTitle" destination="pa7-Z9-dTW" id="PYQ-Mc-tdM"/>
             </connections>
-            <point key="canvasLocation" x="-268.5" y="63"/>
+            <point key="canvasLocation" x="-149.5" y="62"/>
         </view>
     </objects>
 </document>

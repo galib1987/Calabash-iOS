@@ -10,48 +10,33 @@
 #import "NJOPCollectionViewFlowLayout.h"
 #import "NJOPClient.h"
 #import "NJOPReservation.h"
+#import <objc/runtime.h>
 
-
-static NSString * topHeaderIdentifier 		= @"NJOPNavigationTitleView";
 static NSString * cellIdentifier 					= @"NJOPBriefTopCollectionViewCell";
 static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 
 @interface NJOPReservationCollectionViewController ()
 @property (nonatomic, strong) NSDictionary*identifiers;
-@property (nonatomic) CGFloat width;
-@property (nonatomic, strong) UINib *headerNib;
 @end
+
+#define USE_PARALAX_VIEW 0
+#if USE_PARALAX_VIEW
+@interface NJOPReservationCollectionViewController (ParalaxView)
+@property (nonatomic, readonly) NJOPCollectionParalaxViewInfo* paralaxViewInfo;
+-(void)configureForParalaxView;
+@end
+#endif //USE_PARALAX_VIEW
 
 @implementation NJOPReservationCollectionViewController
 
 #pragma mark - UIViewController 
 
--(UINib *)headerNib {
-	if (!_headerNib) {
-		_headerNib = [UINib nibWithNibName:topHeaderIdentifier bundle:nil];
-#if DEBUG
-		NSAssert1([[_headerNib instantiateWithOwner:nil options:nil] objectAtIndex:0], @"missing or incorrect file:", topHeaderIdentifier);
-#endif
-	}
-	return _headerNib;
-}
-
+#if USE_PARALAX_VIEW
 -(void)viewDidLoad {
 	[super viewDidLoad];
-
-	NJOPCollectionViewFlowLayout *layout = (id)self.collectionViewLayout;
-
-	if ([layout isKindOfClass:[NJOPCollectionViewFlowLayout class]]) {
-		layout.parallaxHeaderReferenceSize = CGSizeMake(self.view.frame.size.width, 64);
-		layout.parallaxHeaderMinimumReferenceSize = CGSizeMake(self.view.frame.size.width, 44);
-		layout.itemSize = CGSizeMake(self.view.frame.size.width, layout.itemSize.height);
-		layout.parallaxHeaderAlwaysOnTop = YES;
-
-		// If we want to disable the sticky header effect
-		layout.disablePinnedHeaders = NO;
-		layout.footerReferenceSize = CGSizeZero;
-	}
+	[self configureForParalaxView];
 }
+#endif //USE_PARALAX_VIEW
 
 #pragma mark -
 
@@ -76,9 +61,11 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 				forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
 							 withReuseIdentifier:sectionHeaderIdentifier];
 
-	[self.collectionView registerNib:self.headerNib
-				forSupplementaryViewOfKind:NJOPCollectionPinnedParalaxHeaderIdentifier
-							 withReuseIdentifier:topHeaderIdentifier];
+#if USE_PARALAX_VIEW
+	[self.collectionView registerNib:self.paralaxViewInfo.nib
+				forSupplementaryViewOfKind:self.paralaxViewInfo.kind
+							 withReuseIdentifier:self.paralaxViewInfo.identifier];
+#endif// USE_PARALAX_VIEW
 }
 
 
@@ -144,7 +131,9 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 													},
 												];
 	self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
-	self.dataSource.reusableViewsKindsToIdentifiers = @{NJOPCollectionPinnedParalaxHeaderIdentifier : topHeaderIdentifier};
+#if USE_PARALAX_VIEW
+	self.dataSource.reusableViewsKindsToIdentifiers = @{self.paralaxViewInfo.kind : self.paralaxViewInfo.identifier};
+#endif // USE_PARALAX_VIEW
 	self.dataSource.title = @"FLIGHT DETAILS";
 }
 
@@ -177,16 +166,54 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 	}
 	return [(UICollectionViewFlowLayout*)collectionViewLayout itemSize];
 }
+@end
+
+
+@implementation NJOPReservationCollectionViewController (ParalaxView)
+
+-(void)configureForParalaxView {
+	NJOPCollectionViewFlowLayout *layout = (id)self.collectionViewLayout;
+	if ([layout isKindOfClass:[NJOPCollectionViewFlowLayout class]]) {
+		[self configureFlowLayoutForParalaxView:layout];
+	}
+}
+-(NJOPCollectionParalaxViewInfo *)paralaxViewInfo {
+	NJOPCollectionParalaxViewInfo *paralaxViewInfo = objc_getAssociatedObject(self, _cmd);
+	if (!paralaxViewInfo) {
+		static NSString * Identifier 		= @"NJOPParalaxView";
+		UINib* nib = [UINib nibWithNibName:Identifier bundle:nil];
+		paralaxViewInfo = [NJOPCollectionParalaxViewInfo collectionViewInfoWithNib:nib kind:NJOPCollectionPinnedParalaxHeaderIdentifier identifier:Identifier];
+		paralaxViewInfo.alwaysOnTop = YES;
+		CGFloat width = self.collectionView.contentSize.width;
+		paralaxViewInfo.referenceSize = CGSizeMake(width, 64);
+		paralaxViewInfo.minimumReferenceSize = CGSizeMake(width, 0);
+		objc_setAssociatedObject(self, _cmd, paralaxViewInfo, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+	}
+	return paralaxViewInfo;
+}
+
+// this for a case we want to add a paralax view:
+-(void)configureFlowLayoutForParalaxView:(NJOPCollectionViewFlowLayout*)layout{
+
+	layout.parallaxHeaderReferenceSize = self.paralaxViewInfo.referenceSize;
+	layout.parallaxHeaderMinimumReferenceSize = self.paralaxViewInfo.minimumReferenceSize;
+	layout.parallaxHeaderAlwaysOnTop = self.paralaxViewInfo.alwaysOnTop;
+
+	// If we want to disable the sticky header effect
+	layout.disablePinnedHeaders = NO;
+	layout.footerReferenceSize = CGSizeZero;
+}
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
 
-	if ([kind isEqualToString:NJOPCollectionPinnedParalaxHeaderIdentifier]) {
-		UICollectionReusableView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:topHeaderIdentifier forIndexPath:indexPath];
 
+	if ([kind isEqualToString:self.paralaxViewInfo.kind]) {
+		UICollectionReusableView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+																																				withReuseIdentifier:self.paralaxViewInfo.identifier
+																																							 forIndexPath:indexPath];
 		return cell;
 	}
 	return [super collectionView:collectionView viewForSupplementaryElementOfKind:kind atIndexPath:indexPath];
 }
-
 
 @end

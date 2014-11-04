@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+#import "NJOPCollectionParalaxViewInfo.h"
 
 extern NSString *const NJOPCollectionPinnedParalaxHeaderIdentifier;
 
