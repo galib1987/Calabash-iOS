@@ -11,13 +11,10 @@
 
 @implementation NJOPNavigationTitleView
 
--(id)initWithCoder:(NSCoder *)aDecoder {
-	self = [super initWithCoder:aDecoder];
-	if (self) {
-		self.backgroundView = [UIView new];
-		self.backgroundView.backgroundColor = DARK_BACKGROUND_COLOR;
-	}
-	return self;
+-(CGSize)sizeThatFits:(CGSize)size {
+	CGSize fittedSize = [super sizeThatFits:size];
+	fittedSize.width = size.width;
+	return fittedSize;
 }
 
 - (void)applyLayoutAttributes:(NJOPCollectionViewFlowLayoutAttributes *)layoutAttributes {

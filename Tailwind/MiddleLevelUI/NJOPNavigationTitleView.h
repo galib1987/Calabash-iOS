@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NJOPNavigationTitleView : UICollectionViewCell
+@interface NJOPNavigationTitleView : UIView
 @property (strong, nonatomic) IBOutlet UILabel *leftTItle;
 @property (strong, nonatomic) IBOutlet UILabel *rightTitle;
 @end

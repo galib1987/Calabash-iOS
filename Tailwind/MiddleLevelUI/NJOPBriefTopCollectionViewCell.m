@@ -12,10 +12,10 @@
 
 -(void)layoutSubviews {
 	[super layoutSubviews];
-	[self.subviews enumerateObjectsUsingBlock:^(UIView* subview, NSUInteger idx, BOOL *stop) {
-		subview.layer.borderWidth = 1.0;
-		subview.layer.borderColor = [UIColor greenColor].CGColor;
-	}];
+//	[self.subviews enumerateObjectsUsingBlock:^(UIView* subview, NSUInteger idx, BOOL *stop) {
+//		subview.layer.borderWidth = 1.0;
+//		subview.layer.borderColor = [UIColor greenColor].CGColor;
+//	}];
 }
 //-(void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes {
 //
