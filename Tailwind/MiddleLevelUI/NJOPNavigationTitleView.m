@@ -7,38 +7,30 @@
 //
 
 #import "NJOPNavigationTitleView.h"
+#import "NJOPCollectionViewFlowLayout.h"
 
 @implementation NJOPNavigationTitleView
 
+-(CGSize)sizeThatFits:(CGSize)size {
+	CGSize fittedSize = [super sizeThatFits:size];
+	fittedSize.width = size.width;
+	return fittedSize;
+}
 
-- (void)setFrame:(CGRect)frame {
+- (void)applyLayoutAttributes:(NJOPCollectionViewFlowLayoutAttributes *)layoutAttributes {
 
-	CGRect superviewBounds = self.superview.bounds;
+	[UIView beginAnimations:@"" context:nil];
 
-	// TODO: layout this navigation titleView properly.
-	NSLog(@"frame:%@", NSStringFromCGRect(superviewBounds));
-	if (!CGRectEqualToRect(superviewBounds, CGRectZero) ) {
-		NSLog(@"%@", NSStringFromCGRect(self.superview.bounds));
-		CGFloat left = frame.origin.x;;
-		CGFloat right = CGRectGetMaxX(frame);
+	if (layoutAttributes.progressiveness >= 0.58) {
+		self.leftTItle.alpha = 1;
+		self.rightTitle.alpha = 1;
 
-		for (UIView* subview in [self.superview subviews]) {
-			if (subview != self) {
-				CGFloat subviewRight = CGRectGetMaxX(subview.frame);
-				CGFloat subviewLeft = CGRectGetMinX(subview.frame);
-				if (subviewRight < left) {
-					left = subviewRight;
-				} else if(subviewLeft > right) {
-					right = subviewLeft;
-				}
-				NSLog(@"%@", NSStringFromCGRect(subview.frame));
-			}
-		}
-
-		CGRect adjustedFrame = CGRectMake(25, 0, self.superview.bounds.size.width, self.superview.bounds.size.height);
-		frame = adjustedFrame;
+	} else {
+		self.leftTItle.alpha = 0;
+		self.rightTitle.alpha = 0;
 	}
-	[super setFrame:frame];
+
+	[UIView commitAnimations];
 }
 
 @end
