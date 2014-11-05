@@ -101,7 +101,7 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 																			@"topLeftView.timeLabel.text"         			: reservation.departureTime,
 																			//@"topLeftView.directionLabel.text"					: @"",
 																			@"topLeftView.airportNameLabel.text"				: reservation.departureAirportCity,
-																			@"topLeftView.airportAddressLabel.text"		: @"Address:Not Availbel",
+																			@"topLeftView.airportAddressLabel.text"		: @"Address:Not Available",
 																			@"topLeftView.phoneNumberLabel.text"				: @"",
 
 																			//@"topRightView.tailImageView.text"					: @"",
@@ -110,7 +110,7 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 																			@"topRightView.timeLabel.text"         		: reservation.arrivalTime,
 																			//@"topRightView.directionLabel.text"				: @"",
 																			@"topRightView.airportNameLabel.text"			: reservation.arrivalAirportCity,
-																			@"topRightView.airportAddressLabel.text"		: @"Address:Not Availbel",
+																			@"topRightView.airportAddressLabel.text"		: @"Address:Not Available",
 																			@"topRightView.phoneNumberLabel.text"			: @"",
 																			
 																			@"topMiddleView.tailNumberLabel.text"			: reservation.tailNumber,
