@@ -32,12 +32,17 @@
 		[activityController setCompletionWithItemsHandler:^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError) {
 
 		}];
-	} else if([activityController respondsToSelector:@selector(setCompletionHandler:)]) {
+
+	}
+#if  __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_8_0
+	else if([activityController respondsToSelector:@selector(setCompletionHandler:)]) {
 
 	 [activityController setCompletionHandler:^(NSString *activityType, BOOL completed) {
 
 		}];
  }
+#endif
+
 	[self presentViewController:activityController animated:YES completion:^{
 
 	}];
