@@ -161,7 +161,7 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 
 		CGSize fittingSize = CGSizeMake(columnWidth, UILayoutFittingExpandedSize.height);
 		CGSize size = [cell systemLayoutSizeFittingSize:fittingSize];
-		NSLog(@"%d:%@, %@",indexPath.item, NSStringFromCGSize(size), NSStringFromCGSize(self.collectionView.contentSize));
+		NSLog(@"%ld:%@, %@",indexPath.item, NSStringFromCGSize(size), NSStringFromCGSize(self.collectionView.contentSize));
 		return size;
 	}
 	return [(UICollectionViewFlowLayout*)collectionViewLayout itemSize];
