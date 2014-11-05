@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface NJOPNavigationTitleView : UIView
 @property (strong, nonatomic) IBOutlet UILabel *leftTItle;
 @property (strong, nonatomic) IBOutlet UILabel *rightTitle;
+@property (nonatomic,copy) CGSize (^fittedSizeForSize) (CGSize requiredSize,CGSize superFittedSize);
 @end

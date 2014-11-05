@@ -36,7 +36,7 @@
                 <outlet property="leftTItle" destination="Yk9-UU-MrV" id="qOM-YI-hmN"/>
                 <outlet property="rightTitle" destination="pa7-Z9-dTW" id="PYQ-Mc-tdM"/>
             </connections>
-            <point key="canvasLocation" x="-149.5" y="62"/>
+            <point key="canvasLocation" x="-310.5" y="11"/>
         </view>
     </objects>
 </document>

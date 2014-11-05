@@ -21,6 +21,12 @@
 
 	NJOPNavigationTitleView* titleView = (NJOPNavigationTitleView*)[nib instantiateWithOwner:nil
 																																									 options:nil][0];
+	titleView.fittedSizeForSize = ^(CGSize size, CGSize fittedSize) {
+		fittedSize.width = size.width;
+		return fittedSize;
+	};
+
+	
 	[titleView setAutoresizingMask:UIViewAutoresizingFlexibleWidth| UIViewAutoresizingFlexibleHeight];
 
 	[self.navigationController.navigationBar setBarTintColor:DARK_BACKGROUND_COLOR];

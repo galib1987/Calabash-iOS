@@ -7,11 +7,17 @@
 //
 
 #import "NJOPParalaxView.h"
+#import "NJOPCollectionViewFlowLayout.h"
 
 @implementation NJOPParalaxView
 
-- (void)awakeFromNib {
-    // Initialization code
+- (void)applyLayoutAttributes:(NJOPCollectionViewFlowLayoutAttributes *)layoutAttributes {
+#if 0
+	[UIView beginAnimations:@"" context:nil];
+	if (layoutAttributes.progressiveness >= 0.58) {
+	} else {
+	}
+#endif
 }
 
 @end
