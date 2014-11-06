@@ -37,6 +37,10 @@
                         <constraint firstAttribute="centerX" secondItem="J6x-Jg-Z0x" secondAttribute="centerX" constant="0.5" id="bn9-td-egr"/>
                         <constraint firstItem="icH-ke-Itu" firstAttribute="leading" secondItem="bM9-mT-hug" secondAttribute="leading" constant="8" id="nbc-1F-Xfb"/>
                     </constraints>
+                    <connections>
+                        <outlet property="centerLabel" destination="J6x-Jg-Z0x" id="hlh-Lo-usP"/>
+                        <outlet property="leftLabel" destination="icH-ke-Itu" id="sF0-Ua-FLz"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNI-VG-dTE" userLabel="Left FBO Tile" customClass="NJSingleFBOTile">
                     <rect key="frame" x="8" y="52" width="264" height="310.5"/>
@@ -370,6 +374,18 @@
                         <constraint firstItem="pMr-IC-ceF" firstAttribute="centerY" secondItem="Isg-zU-JY4" secondAttribute="centerY" id="txU-ss-Zrj"/>
                         <constraint firstAttribute="trailing" secondItem="naX-OK-pma" secondAttribute="trailing" constant="8.5" id="waS-yt-VHY"/>
                     </constraints>
+                    <connections>
+                        <outlet property="leftDateLabel" destination="eYm-zJ-6Va" id="x3i-ez-wM2"/>
+                        <outlet property="leftImageView" destination="pMr-IC-ceF" id="quC-tO-XMD"/>
+                        <outlet property="leftLocationLabel" destination="Vpj-Du-5lg" id="BgH-7Q-sEg"/>
+                        <outlet property="leftTemperatureLabel" destination="Isg-zU-JY4" id="Y04-4d-A1S"/>
+                        <outlet property="leftTimeLabel" destination="xzZ-yh-4Sg" id="RrG-nz-q6Z"/>
+                        <outlet property="rightDateLabel" destination="naX-OK-pma" id="YLV-9c-0YP"/>
+                        <outlet property="rightImageView" destination="UYz-SF-5qm" id="mFG-fZ-d2B"/>
+                        <outlet property="rightLocationLabel" destination="8rQ-tz-KVd" id="GCJ-aY-m50"/>
+                        <outlet property="rightTemperatureLabel" destination="e9U-CR-Z9U" id="g0z-sQ-fgl"/>
+                        <outlet property="rightTimeLabel" destination="Zxs-Xi-3Ci" id="oEx-Uw-ISa"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

@@ -95,6 +95,8 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 																			@"titleLabel.text" : [NSString stringWithFormat:@"Reservation: %@", reservation.reservationId]
 																			},
 																	@"NJOPBriefTopCollectionViewCell" : @{
+																			@"topTile.leftLabel.text" 									: @"Departure!!",
+																			@"topTile.centerLabel.text"									: @"",
 																			//@"topRightView.tailImageView.text"					: @"",
 																			@"topLeftView.locationLabel.text"         	: reservation.departureFboName,
 																			@"topLeftView.numberLabel.text"         		: reservation.departureAirportId,
@@ -115,7 +117,20 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 																			
 																			@"topMiddleView.tailNumberLabel.text"			: reservation.tailNumber,
 																			@"topMiddleView.estimatedTravelTimeLabel.text" : [@"Est. Travel:" stringByAppendingFormat:@"%@ %@", reservation.travelTime, reservation.stopsText],
+
+																			@"bottomView.leftDateLabel.text" : @"Mon Aug 28, 2014",
+																			@"bottomView.leftLocationLabel.text" : @"Teterboro, NJ",
+																			@"bottomView.leftTimeLabel.text" : @"12:00PM EST",
+																			@"bottomView.leftTemperatureLabel.text" : @"66º",
+																			//@"bottomView.leftImageView.image" : nil,
+
+																			@"bottomView.rightDateLabel.text" : @"Mon, Aug 28, 2014",
+																			@"bottomView.rightLocationLabel.text" : @"Naples, FL",
+																			@"bottomView.rightTimeLabel.text" : @"2:45PM EST",
+																			@"bottomView.rightTemperatureLabel.text" : @"81º",
+																			//@"bottomView.rightImageView.image" : nil
 																			}
+
 																	};
 
 	NSArray* sections = @[

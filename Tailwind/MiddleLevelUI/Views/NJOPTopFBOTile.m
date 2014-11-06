@@ -9,8 +9,4 @@
 #import "NJOPTopFBOTile.h"
 
 @implementation NJOPTopFBOTile
-
--(void)willMoveToSuperview:(UIView *)newSuperview {
-	[super willMoveToSuperview:newSuperview];
-}
 @end
