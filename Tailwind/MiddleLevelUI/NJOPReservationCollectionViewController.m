@@ -31,12 +31,12 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 
 #pragma mark - UIViewController 
 
-#if USE_PARALAX_VIEW
 -(void)viewDidLoad {
 	[super viewDidLoad];
+#if USE_PARALAX_VIEW
 	[self configureForParalaxView];
-}
 #endif //USE_PARALAX_VIEW
+}
 
 #pragma mark -
 
@@ -161,7 +161,6 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 
 		CGSize fittingSize = CGSizeMake(columnWidth, UILayoutFittingExpandedSize.height);
 		CGSize size = [cell systemLayoutSizeFittingSize:fittingSize];
-		NSLog(@"%ld:%@, %@",indexPath.item, NSStringFromCGSize(size), NSStringFromCGSize(self.collectionView.contentSize));
 		return size;
 	}
 	return [(UICollectionViewFlowLayout*)collectionViewLayout itemSize];

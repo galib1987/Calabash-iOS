@@ -368,9 +368,6 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="string" keyPath="text" value="text"/>
-            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="bottomView" destination="6Qy-QM-Dpw" id="Adm-wg-Myw"/>
                 <outlet property="topLeftView" destination="VNI-VG-dTE" id="vTR-bL-aGC"/>
