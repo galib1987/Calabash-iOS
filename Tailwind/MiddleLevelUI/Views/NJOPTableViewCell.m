@@ -27,8 +27,8 @@
 
 -(void)layoutSubviews {
 	[super layoutSubviews];
-	self.tile.layer.borderColor = [UIColor blackColor].CGColor;
-	self.tile.layer.borderWidth = 1.0;
+//	self.tile.layer.borderColor = [UIColor blackColor].CGColor;
+//	self.tile.layer.borderWidth = 1.0;
 	_tile.layer.cornerRadius  = _tileCornerRadius ? : DEFAULT_CELL_CORENER_RADIUS;
 	_tile.backgroundColor = _tileColor;
 

@@ -11,7 +11,7 @@
         <scene sceneID="ZGm-UV-PAX">
             <objects>
                 <navigationController id="SHY-Dd-sdH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JEo-3y-WOW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JEo-3y-WOW" customClass="NJOPNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -27,10 +27,9 @@
         <scene sceneID="MhQ-nw-iG1">
             <objects>
                 <tableViewController id="bJO-uZ-sjV" customClass="ReservationDetailViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="127" sectionHeaderHeight="22" sectionFooterHeight="22" id="kv9-WC-yhu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="127" sectionHeaderHeight="22" sectionFooterHeight="22" id="kv9-WC-yhu" customClass="NJOPTableView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="4gG-BL-wSG" customClass="FlightDetailTopHeaderView">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,7 +53,6 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.181861043" green="0.20718048510000001" blue="0.21655987199999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="ML3-zP-An0" secondAttribute="trailing" constant="8" id="06H-Wt-dwF"/>
                                 <constraint firstItem="9wc-gX-FT3" firstAttribute="top" secondItem="f7s-ab-fDY" secondAttribute="bottom" constant="8" id="EyV-3B-L85"/>

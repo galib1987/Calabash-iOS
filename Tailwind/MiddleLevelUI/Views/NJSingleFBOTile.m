@@ -22,8 +22,7 @@
 	return _locationLabel;
 }
 
--(void)layoutSubviews {
-	[super layoutSubviews];
+-(void)awakeFromNib {
 	self.backgroundColor = [UIColor clearColor];
 }
 

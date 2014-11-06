@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	[self.tableView setBackgroundColor:SCROLLVIEW_BACKGORUND_COLOR];
 	self.tableView.estimatedRowHeight = 44.0;
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
 	[self.navigationController  setNavigationBarHidden:YES];
