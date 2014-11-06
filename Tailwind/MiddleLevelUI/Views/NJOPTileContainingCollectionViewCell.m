@@ -13,20 +13,15 @@
 - (void)awakeFromNib {
 	self.backgroundColor = [UIColor clearColor];
 	self.cornerRadius = DEFAULT_CELL_CORENER_RADIUS;
+	self.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
+	self.backgroundView.backgroundColor = [UIColor whiteColor];
 }
 
 -(void)setCornerRadius:(CGFloat)cornerRadius {
 	if (_cornerRadius != cornerRadius) {
 		_cornerRadius = cornerRadius;
-		if (!self.backgroundView) {
-			self.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-			self.backgroundView.backgroundColor = [UIColor whiteColor];
-		}
-		self.backgroundView.layer.cornerRadius = _cornerRadius;
-		if (_cornerRadius != 0) {
-			[self.backgroundView setClipsToBounds:YES];
-		}
-		[self.contentView setNeedsDisplay];
+		self.layer.cornerRadius = _cornerRadius;
+		[self setClipsToBounds:!!_cornerRadius];
 	}
 }
 

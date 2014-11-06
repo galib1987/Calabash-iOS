@@ -72,6 +72,7 @@
 		6CC3D6C219F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC3D6C119F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m */; };
 		6CCDC6E419F01D8B005339B4 /* NJSingleFBOTile-Right.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCDC6E319F01D8B005339B4 /* NJSingleFBOTile-Right.xib */; };
 		6CD6F82419FD1B2C009D0812 /* mobile-api-reservations-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CD6F82319FD1B2C009D0812 /* mobile-api-reservations-response.json */; };
+		6CE31AF41A0BFA5A009A9710 /* NJOPTopFBOTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE31AF31A0BFA5A009A9710 /* NJOPTopFBOTile.m */; };
 		6CEDE58D1A0948D2002D2750 /* NJOPParalaxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEDE58B1A0948D2002D2750 /* NJOPParalaxView.m */; };
 		6CEDE58E1A0948D2002D2750 /* NJOPParalaxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CEDE58C1A0948D2002D2750 /* NJOPParalaxView.xib */; };
 		6CEDE5921A094BD9002D2750 /* NJOPCollectionParalaxViewInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEDE5911A094BD9002D2750 /* NJOPCollectionParalaxViewInfo.m */; };
@@ -212,6 +213,8 @@
 		6CC3D6C119F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPBriefTopCollectionViewCell.m; path = ../NJOPBriefTopCollectionViewCell.m; sourceTree = "<group>"; };
 		6CCDC6E319F01D8B005339B4 /* NJSingleFBOTile-Right.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "NJSingleFBOTile-Right.xib"; sourceTree = "<group>"; };
 		6CD6F82319FD1B2C009D0812 /* mobile-api-reservations-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mobile-api-reservations-response.json"; sourceTree = "<group>"; };
+		6CE31AF21A0BFA5A009A9710 /* NJOPTopFBOTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPTopFBOTile.h; sourceTree = "<group>"; };
+		6CE31AF31A0BFA5A009A9710 /* NJOPTopFBOTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPTopFBOTile.m; sourceTree = "<group>"; };
 		6CEDE58A1A0948D2002D2750 /* NJOPParalaxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPParalaxView.h; sourceTree = "<group>"; };
 		6CEDE58B1A0948D2002D2750 /* NJOPParalaxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPParalaxView.m; sourceTree = "<group>"; };
 		6CEDE58C1A0948D2002D2750 /* NJOPParalaxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPParalaxView.xib; sourceTree = "<group>"; };
@@ -480,6 +483,8 @@
 				6C57E03F19EEC8FB00D3FB00 /* NJWeatherTile.m */,
 				6C57E06019EEC9EE00D3FB00 /* NJOPActionTile.h */,
 				6C57E06119EEC9EE00D3FB00 /* NJOPActionTile.m */,
+				6CE31AF21A0BFA5A009A9710 /* NJOPTopFBOTile.h */,
+				6CE31AF31A0BFA5A009A9710 /* NJOPTopFBOTile.m */,
 			);
 			name = Tiles;
 			sourceTree = "<group>";
@@ -808,6 +813,7 @@
 				6C08E4B519F7B77A00119B84 /* WeatherTableCell.m in Sources */,
 				6C57E05E19EEC8FB00D3FB00 /* NJVerticalTabViewController.m in Sources */,
 				6C1F219519FFBD5F009F5436 /* NJOPClient.m in Sources */,
+				6CE31AF41A0BFA5A009A9710 /* NJOPTopFBOTile.m in Sources */,
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
 				30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */,
 				6C57E05319EEC8FB00D3FB00 /* NJSingleFBOTile.m in Sources */,
