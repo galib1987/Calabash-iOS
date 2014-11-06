@@ -64,7 +64,7 @@
         <scene sceneID="744-No-hUe">
             <objects>
                 <navigationController id="NaG-8R-JsJ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gw4-Eg-f0d">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gw4-Eg-f0d" customClass="NJOPNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -105,7 +105,6 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.3062838613986969" green="0.34146216511726379" blue="0.36445775628089905" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Isa-Yy-1E1" firstAttribute="top" secondItem="5AT-Ez-dnD" secondAttribute="bottom" constant="10" id="FIf-A1-A1r"/>
                             <constraint firstItem="5AT-Ez-dnD" firstAttribute="leading" secondItem="9rc-mn-HMI" secondAttribute="leading" id="Lub-W2-Bd9"/>

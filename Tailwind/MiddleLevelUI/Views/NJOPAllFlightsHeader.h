@@ -8,7 +8,9 @@
 
 @import UIKit;
 
+IB_DESIGNABLE
+
 @interface NJOPAllFlightsHeader : UICollectionReusableView
-@property (strong, nonatomic) IBOutlet UIView *backgroundView;
+@property (strong, nonatomic) UIView *backgroundView;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @end

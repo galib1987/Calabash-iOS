@@ -11,7 +11,7 @@
 @implementation ReservationHeaderView
 -(void)layoutSubviews {
 	[super layoutSubviews];
-	[self.backgroundView setBackgroundColor:LIGHT_BACKGROUND_COLOR];
+	self.contentView.backgroundColor = LIGHT_BACKGROUND_COLOR;
 }
 
 @end

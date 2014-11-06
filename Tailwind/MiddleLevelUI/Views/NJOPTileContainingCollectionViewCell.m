@@ -15,11 +15,6 @@
 	self.cornerRadius = DEFAULT_CELL_CORENER_RADIUS;
 }
 
-//-(void)layoutSubviews {
-//	[super layoutSubviews];
-//	self.label.text = [NSStringFromCGSize(self.frame.size) stringByAppendingString:NSStringFromCGSize([(UICollectionView*)self.superview contentSize])];
-//}
-
 -(void)setCornerRadius:(CGFloat)cornerRadius {
 	if (_cornerRadius != cornerRadius) {
 		_cornerRadius = cornerRadius;

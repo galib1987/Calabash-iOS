@@ -14,6 +14,11 @@
 
 @implementation NJVerticalTabViewController
 
+-(void)viewDidLoad {
+	[super viewDidLoad];
+	[self.collectionView setBackgroundColor:VERTICAL_TABBAR_BACKGORUND_COLOR];
+}
+
 -(void)registerReusableViews {
 
 }

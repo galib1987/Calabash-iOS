@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	self.view.backgroundColor = SCROLLVIEW_BACKGORUND_COLOR;
 	UINib* nib = [UINib nibWithNibName:@"NJOPNavigationTitleView"
 															bundle:nil];
 
@@ -29,7 +30,6 @@
 	
 	[titleView setAutoresizingMask:UIViewAutoresizingFlexibleWidth| UIViewAutoresizingFlexibleHeight];
 
-	[self.navigationController.navigationBar setBarTintColor:DARK_BACKGROUND_COLOR];
 	NSAssert([titleView isKindOfClass:[NJOPNavigationTitleView class]], @"expected a view");
 	[self.navigationItem setTitleView:titleView];
 }
