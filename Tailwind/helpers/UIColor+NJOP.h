@@ -18,5 +18,5 @@
 #define HEADER_BACKGORUND_COLOR 						[UIColor colorFromHexString:@"#636D74"]
 #define SCROLLVIEW_BACKGORUND_COLOR 				[UIColor colorFromHexString:@"#A1A8AE"]
 #define VERTICAL_TABBAR_BACKGORUND_COLOR 		[UIColor colorFromHexString:@"#37393B"]
-#define LIGHT_BACKGROUND_COLOR [UIColor colorFromHexString:@"#5B6165"]
-
+#define HAIRLINE_COLOR 											[UIColor colorWithWhite:204.0/255.0 alpha:1]
+#define LIGHT_BACKGROUND_COLOR 							[UIColor colorFromHexString:@"#5B6165"]
