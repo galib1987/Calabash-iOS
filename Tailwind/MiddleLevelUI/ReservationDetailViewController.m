@@ -18,7 +18,6 @@
 #import "NJOPReservation.h"
 
 @interface ReservationDetailViewController ()
-@property (nonatomic, strong) NSArray* sections;
 @end
 
 @implementation ReservationDetailViewController
