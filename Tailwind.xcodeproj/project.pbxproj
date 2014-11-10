@@ -73,6 +73,7 @@
 		6CCDC6E419F01D8B005339B4 /* NJSingleFBOTile-Right.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCDC6E319F01D8B005339B4 /* NJSingleFBOTile-Right.xib */; };
 		6CD6F82419FD1B2C009D0812 /* mobile-api-reservations-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CD6F82319FD1B2C009D0812 /* mobile-api-reservations-response.json */; };
 		6CE31AF41A0BFA5A009A9710 /* NJOPTopFBOTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE31AF31A0BFA5A009A9710 /* NJOPTopFBOTile.m */; };
+		6CD92E1A1A0F7D26000056F4 /* NJOPHorizontalHairlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD92E191A0F7D26000056F4 /* NJOPHorizontalHairlineView.m */; };
 		6CEDE58D1A0948D2002D2750 /* NJOPParalaxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEDE58B1A0948D2002D2750 /* NJOPParalaxView.m */; };
 		6CEDE58E1A0948D2002D2750 /* NJOPParalaxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CEDE58C1A0948D2002D2750 /* NJOPParalaxView.xib */; };
 		6CEDE5921A094BD9002D2750 /* NJOPCollectionParalaxViewInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEDE5911A094BD9002D2750 /* NJOPCollectionParalaxViewInfo.m */; };
@@ -215,6 +216,8 @@
 		6CD6F82319FD1B2C009D0812 /* mobile-api-reservations-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mobile-api-reservations-response.json"; sourceTree = "<group>"; };
 		6CE31AF21A0BFA5A009A9710 /* NJOPTopFBOTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPTopFBOTile.h; sourceTree = "<group>"; };
 		6CE31AF31A0BFA5A009A9710 /* NJOPTopFBOTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPTopFBOTile.m; sourceTree = "<group>"; };
+		6CD92E181A0F7D26000056F4 /* NJOPHorizontalHairlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPHorizontalHairlineView.h; sourceTree = "<group>"; };
+		6CD92E191A0F7D26000056F4 /* NJOPHorizontalHairlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPHorizontalHairlineView.m; sourceTree = "<group>"; };
 		6CEDE58A1A0948D2002D2750 /* NJOPParalaxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPParalaxView.h; sourceTree = "<group>"; };
 		6CEDE58B1A0948D2002D2750 /* NJOPParalaxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPParalaxView.m; sourceTree = "<group>"; };
 		6CEDE58C1A0948D2002D2750 /* NJOPParalaxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPParalaxView.xib; sourceTree = "<group>"; };
@@ -340,6 +343,7 @@
 		55CA603319E7FD4A001E2FC6 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6CD92E171A0F7D13000056F4 /* Views */,
 				6CD6F82519FD5D9C009D0812 /* DataSource */,
 				6C7C2BBA19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.h */,
 				6C7C2BBB19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m */,
@@ -600,6 +604,15 @@
 			name = DataSource;
 			sourceTree = "<group>";
 		};
+		6CD92E171A0F7D13000056F4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6CD92E181A0F7D26000056F4 /* NJOPHorizontalHairlineView.h */,
+				6CD92E191A0F7D26000056F4 /* NJOPHorizontalHairlineView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		6CEDE58F1A0948D8002D2750 /* ParalaxView(unused) */ = {
 			isa = PBXGroup;
 			children = (
@@ -846,6 +859,7 @@
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */,
 				6C57E05619EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m in Sources */,
+				6CD92E1A1A0F7D26000056F4 /* NJOPHorizontalHairlineView.m in Sources */,
 				6C8045E419F9212700161C4E /* NJOPTableViewCell.m in Sources */,
 				6C08E4B819F7B78100119B84 /* FBOTableCell.m in Sources */,
 				6CF2289719F90A0800A68DF4 /* NJOPActionButton.m in Sources */,

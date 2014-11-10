@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -47,7 +47,7 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Teteborough, NJ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="264" translatesAutoresizingMaskIntoConstraints="NO" id="ayj-0N-4K1">
                             <rect key="frame" x="0.0" y="8" width="264" height="25"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -284,7 +284,6 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecasted weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yN3-g7-abQ">
                             <rect key="frame" x="355" y="20" width="152.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon 28 Aug, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="120" translatesAutoresizingMaskIntoConstraints="NO" id="eYm-zJ-6Va">
@@ -320,7 +319,6 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teterboro, NJ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="120" translatesAutoresizingMaskIntoConstraints="NO" id="8rQ-tz-KVd">
                             <rect key="frame" x="764" y="70" width="90.5" height="17"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="641º" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9U-CR-Z9U">
@@ -387,16 +385,26 @@
                         <outlet property="rightTimeLabel" destination="Zxs-Xi-3Ci" id="oEx-Uw-ISa"/>
                     </connections>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcz-AT-EWz" userLabel="Hairline View" customClass="NJOPHorizontalHairlineView">
+                    <rect key="frame" x="30" y="370.5" width="819" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="qBC-gt-pVF"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Tcz-AT-EWz" secondAttribute="trailing" constant="30" id="2Lu-29-Eer"/>
                 <constraint firstItem="xfW-9e-xL7" firstAttribute="height" secondItem="VNI-VG-dTE" secondAttribute="height" id="316-B4-G2K"/>
                 <constraint firstItem="VNI-VG-dTE" firstAttribute="top" secondItem="xfW-9e-xL7" secondAttribute="top" id="5Fe-DV-WiG"/>
                 <constraint firstItem="xfW-9e-xL7" firstAttribute="leading" secondItem="VNI-VG-dTE" secondAttribute="trailing" constant="8" id="6st-Lu-38q"/>
+                <constraint firstItem="Tcz-AT-EWz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="7yI-aJ-Dig"/>
                 <constraint firstItem="6Qy-QM-Dpw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="8Fj-zi-DTQ"/>
                 <constraint firstItem="6Qy-QM-Dpw" firstAttribute="trailing" secondItem="Ot1-iT-wdR" secondAttribute="trailing" id="AJL-NC-i4l"/>
                 <constraint firstItem="VNI-VG-dTE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="AMH-e7-noK"/>
                 <constraint firstItem="xfW-9e-xL7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Dbh-OO-314"/>
+                <constraint firstItem="Tcz-AT-EWz" firstAttribute="top" secondItem="VNI-VG-dTE" secondAttribute="bottom" constant="8" symbolic="YES" id="GTL-f7-gd0"/>
                 <constraint firstItem="Ot1-iT-wdR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="IKv-MR-TZw"/>
                 <constraint firstItem="6Qy-QM-Dpw" firstAttribute="leading" secondItem="VNI-VG-dTE" secondAttribute="leading" id="JpT-OL-xh8"/>
                 <constraint firstItem="bM9-mT-hug" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LYX-CF-957"/>
