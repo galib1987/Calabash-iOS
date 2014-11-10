@@ -29,13 +29,16 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 #pragma mark -
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-	static SEL selector;
+	static NSArray* selectors;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		selector = @selector(collectionView:viewForSupplementaryElementOfKind:atIndexPath:);
+		selectors = @[NSStringFromSelector(@selector(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)),
+									NSStringFromSelector(@selector(tableView:titleForHeaderInSection:)),
+									NSStringFromSelector(@selector(tableView:titleForFooterInSection:)),
+									];
 	});
 
-	if (aSelector == selector) {
+	if ([selectors containsObject:NSStringFromSelector(aSelector)]) {
 		return [self hasHeadersOfFooters];
 	} else {
 		return [super respondsToSelector:aSelector];
@@ -203,11 +206,11 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-	return UITableViewAutomaticDimension;
+	return _hasHeadersOfFooters ? UITableViewAutomaticDimension : 0.0;;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section {
-	return 44.0;
+	return _hasHeadersOfFooters ? 44.0 : 0.0;
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -244,6 +247,7 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 
 	NSDictionary* keypaths = cellInfo[kSimpleDataSourceCellKeypaths];
 
+	
 	[self setKeyPaths:keypaths object:cell];
 
 	if (self.configureTableCell) {
