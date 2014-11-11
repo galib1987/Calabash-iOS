@@ -16,9 +16,9 @@
 		30A4739919D9E41B0045D7AF /* TailwindTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4739819D9E41B0045D7AF /* TailwindTests.m */; };
 		5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ACA619E8064D002CA7D2 /* NJOPLeg.m */; };
 		55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */; };
-		6C08E46C19F5938A00119B84 /* NJOPNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C08E46B19F5938900119B84 /* NJOPNavigationTitleView.xib */; };
+		6C08E46C19F5938A00119B84 /* NJOPiPadReservationDetailNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C08E46B19F5938900119B84 /* NJOPiPadReservationDetailNavigationTitleView.xib */; };
 		6C08E46F19F594E700119B84 /* NJOPParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E46E19F594E700119B84 /* NJOPParentViewController.m */; };
-		6C08E47219F5954B00119B84 /* NJOPNavigationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E47119F5954B00119B84 /* NJOPNavigationTitleView.m */; };
+		6C08E47219F5954B00119B84 /* NJOPiPadReservationDetailNavigationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E47119F5954B00119B84 /* NJOPiPadReservationDetailNavigationTitleView.m */; };
 		6C08E4AC19F7B05200119B84 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C08E4AB19F7B05200119B84 /* Main_iPhone.storyboard */; };
 		6C08E4B119F7B73900119B84 /* ReservationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E4B019F7B73900119B84 /* ReservationDetailViewController.m */; };
 		6C08E4B519F7B77A00119B84 /* WeatherTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08E4B419F7B77A00119B84 /* WeatherTableCell.m */; };
@@ -39,7 +39,7 @@
 		6C57E05119EEC8FB00D3FB00 /* NJCompactFlightTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03119EEC8FB00D3FB00 /* NJCompactFlightTile.m */; };
 		6C57E05219EEC8FB00D3FB00 /* NJInfoTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03319EEC8FB00D3FB00 /* NJInfoTile.m */; };
 		6C57E05319EEC8FB00D3FB00 /* NJSingleFBOTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03519EEC8FB00D3FB00 /* NJSingleFBOTile.m */; };
-		6C57E05419EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03719EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m */; };
+		6C57E05419EEC8FB00D3FB00 /* NJOPSummaryViewTopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03719EEC8FB00D3FB00 /* NJOPSummaryViewTopHeaderView.m */; };
 		6C57E05519EEC8FB00D3FB00 /* NJTailNumberTail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03919EEC8FB00D3FB00 /* NJTailNumberTail.m */; };
 		6C57E05619EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03B19EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m */; };
 		6C57E05719EEC8FB00D3FB00 /* NJTodayTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C57E03D19EEC8FB00D3FB00 /* NJTodayTile.m */; };
@@ -57,6 +57,8 @@
 		6C7C2BB919F29F480092F08D /* UIView+NJOPStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C2BB819F29F480092F08D /* UIView+NJOPStyle.m */; };
 		6C7C2BBC19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C2BBB19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m */; };
 		6C8045E419F9212700161C4E /* NJOPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8045E319F9212600161C4E /* NJOPTableViewCell.m */; };
+		6C94480B1A10DFB500A7EEDF /* NJOPPPhoneHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C94480A1A10DFB500A7EEDF /* NJOPPPhoneHomeViewController.m */; };
+		6C9448111A10F38F00A7EEDF /* NJOPNOFBOTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9448101A10F38F00A7EEDF /* NJOPNOFBOTableCell.m */; };
 		6C9754F819EE90C1005DD1DF /* NJTileContainingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */; };
 		6C9754F919EE90C1005DD1DF /* NJOPAllFlightsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9754F719EE90C1005DD1DF /* NJOPAllFlightsHeader.xib */; };
 		6CBD545B19F021E50009077C /* NJSingleFBOTile-Left.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD545A19F021E50009077C /* NJSingleFBOTile-Left.xib */; };
@@ -71,6 +73,11 @@
 		6CC3D6BF19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CC3D6BE19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib */; };
 		6CC3D6C219F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC3D6C119F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m */; };
 		6CCDC6E419F01D8B005339B4 /* NJSingleFBOTile-Right.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCDC6E319F01D8B005339B4 /* NJSingleFBOTile-Right.xib */; };
+		6CD6F25F1A11139600B53E9E /* NJOPSummaryNavigationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F25E1A11139600B53E9E /* NJOPSummaryNavigationTitleView.m */; };
+		6CD6F2621A11143600B53E9E /* NJOPSummaryNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD6F2611A11143600B53E9E /* NJOPSummaryNavigationTitleView.xib */; };
+		6CD6F2661A12031300B53E9E /* NJOPUpcomingFlightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F2651A12031300B53E9E /* NJOPUpcomingFlightTableCell.m */; };
+		6CD6F2691A120E9000B53E9E /* NJOPFBOTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F2681A120E9000B53E9E /* NJOPFBOTableCell.m */; };
+		6CD6F26C1A12155400B53E9E /* NJOPCurrentFBOTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F26B1A12155400B53E9E /* NJOPCurrentFBOTableCell.m */; };
 		6CD6F82419FD1B2C009D0812 /* mobile-api-reservations-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CD6F82319FD1B2C009D0812 /* mobile-api-reservations-response.json */; };
 		6CD92E1A1A0F7D26000056F4 /* NJOPHorizontalHairlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD92E191A0F7D26000056F4 /* NJOPHorizontalHairlineView.m */; };
 		6CE31AF41A0BFA5A009A9710 /* NJOPTopFBOTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE31AF31A0BFA5A009A9710 /* NJOPTopFBOTile.m */; };
@@ -114,11 +121,11 @@
 		55CA603919E7FE22001E2FC6 /* NJOPValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPValueTransformer.h; sourceTree = "<group>"; };
 		55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPValueTransformer.m; sourceTree = "<group>"; };
 		6167B98AFA8D41C092D41CCC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C08E46B19F5938900119B84 /* NJOPNavigationTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJOPNavigationTitleView.xib; path = ../../NJOPNavigationTitleView.xib; sourceTree = "<group>"; };
+		6C08E46B19F5938900119B84 /* NJOPiPadReservationDetailNavigationTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJOPiPadReservationDetailNavigationTitleView.xib; path = ../../NJOPiPadReservationDetailNavigationTitleView.xib; sourceTree = "<group>"; };
 		6C08E46D19F594E700119B84 /* NJOPParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPParentViewController.h; sourceTree = "<group>"; };
 		6C08E46E19F594E700119B84 /* NJOPParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPParentViewController.m; sourceTree = "<group>"; };
-		6C08E47019F5954B00119B84 /* NJOPNavigationTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPNavigationTitleView.h; path = ../NJOPNavigationTitleView.h; sourceTree = "<group>"; };
-		6C08E47119F5954B00119B84 /* NJOPNavigationTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPNavigationTitleView.m; path = ../NJOPNavigationTitleView.m; sourceTree = "<group>"; };
+		6C08E47019F5954B00119B84 /* NJOPiPadReservationDetailNavigationTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPiPadReservationDetailNavigationTitleView.h; path = ../NJOPiPadReservationDetailNavigationTitleView.h; sourceTree = "<group>"; };
+		6C08E47119F5954B00119B84 /* NJOPiPadReservationDetailNavigationTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPiPadReservationDetailNavigationTitleView.m; path = ../NJOPiPadReservationDetailNavigationTitleView.m; sourceTree = "<group>"; };
 		6C08E4AB19F7B05200119B84 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		6C08E4AF19F7B73900119B84 /* ReservationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationDetailViewController.h; sourceTree = "<group>"; };
 		6C08E4B019F7B73900119B84 /* ReservationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationDetailViewController.m; sourceTree = "<group>"; };
@@ -156,8 +163,8 @@
 		6C57E03319EEC8FB00D3FB00 /* NJInfoTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJInfoTile.m; sourceTree = "<group>"; };
 		6C57E03419EEC8FB00D3FB00 /* NJSingleFBOTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSingleFBOTile.h; sourceTree = "<group>"; };
 		6C57E03519EEC8FB00D3FB00 /* NJSingleFBOTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJSingleFBOTile.m; sourceTree = "<group>"; };
-		6C57E03619EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSummaryViewTopHeaderView.h; sourceTree = "<group>"; };
-		6C57E03719EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJSummaryViewTopHeaderView.m; sourceTree = "<group>"; };
+		6C57E03619EEC8FB00D3FB00 /* NJOPSummaryViewTopHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSummaryViewTopHeaderView.h; sourceTree = "<group>"; };
+		6C57E03719EEC8FB00D3FB00 /* NJOPSummaryViewTopHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSummaryViewTopHeaderView.m; sourceTree = "<group>"; };
 		6C57E03819EEC8FB00D3FB00 /* NJTailNumberTail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTailNumberTail.h; sourceTree = "<group>"; };
 		6C57E03919EEC8FB00D3FB00 /* NJTailNumberTail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTailNumberTail.m; sourceTree = "<group>"; };
 		6C57E03A19EEC8FB00D3FB00 /* NJTileContainingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTileContainingTableViewCell.h; sourceTree = "<group>"; };
@@ -191,6 +198,10 @@
 		6C7C2BBB19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionReusableView+NJOPHelpers.m"; sourceTree = "<group>"; };
 		6C8045E219F9212600161C4E /* NJOPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPTableViewCell.h; path = Views/NJOPTableViewCell.h; sourceTree = "<group>"; };
 		6C8045E319F9212600161C4E /* NJOPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPTableViewCell.m; path = Views/NJOPTableViewCell.m; sourceTree = "<group>"; };
+		6C9448091A10DFB500A7EEDF /* NJOPPPhoneHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPPhoneHomeViewController.h; sourceTree = "<group>"; };
+		6C94480A1A10DFB500A7EEDF /* NJOPPPhoneHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPPhoneHomeViewController.m; sourceTree = "<group>"; };
+		6C94480F1A10F38F00A7EEDF /* NJOPNOFBOTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPNOFBOTableCell.h; path = Views/NJOPNOFBOTableCell.h; sourceTree = "<group>"; };
+		6C9448101A10F38F00A7EEDF /* NJOPNOFBOTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPNOFBOTableCell.m; path = Views/NJOPNOFBOTableCell.m; sourceTree = "<group>"; };
 		6C9754F619EE90C1005DD1DF /* NJTileContainingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJTileContainingTableViewCell.xib; path = ../../NJTileContainingTableViewCell.xib; sourceTree = "<group>"; };
 		6C9754F719EE90C1005DD1DF /* NJOPAllFlightsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJOPAllFlightsHeader.xib; path = ../../NJOPAllFlightsHeader.xib; sourceTree = "<group>"; };
 		6CBD545A19F021E50009077C /* NJSingleFBOTile-Left.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "NJSingleFBOTile-Left.xib"; sourceTree = "<group>"; };
@@ -213,6 +224,15 @@
 		6CC3D6C019F176C90081A5BD /* NJOPBriefTopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPBriefTopCollectionViewCell.h; path = ../NJOPBriefTopCollectionViewCell.h; sourceTree = "<group>"; };
 		6CC3D6C119F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPBriefTopCollectionViewCell.m; path = ../NJOPBriefTopCollectionViewCell.m; sourceTree = "<group>"; };
 		6CCDC6E319F01D8B005339B4 /* NJSingleFBOTile-Right.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "NJSingleFBOTile-Right.xib"; sourceTree = "<group>"; };
+		6CD6F25D1A11139600B53E9E /* NJOPSummaryNavigationTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPSummaryNavigationTitleView.h; path = Views/NJOPSummaryNavigationTitleView.h; sourceTree = "<group>"; };
+		6CD6F25E1A11139600B53E9E /* NJOPSummaryNavigationTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPSummaryNavigationTitleView.m; path = Views/NJOPSummaryNavigationTitleView.m; sourceTree = "<group>"; };
+		6CD6F2611A11143600B53E9E /* NJOPSummaryNavigationTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJOPSummaryNavigationTitleView.xib; path = Views/NJOPSummaryNavigationTitleView.xib; sourceTree = "<group>"; };
+		6CD6F2641A12031300B53E9E /* NJOPUpcomingFlightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPUpcomingFlightTableCell.h; sourceTree = "<group>"; };
+		6CD6F2651A12031300B53E9E /* NJOPUpcomingFlightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPUpcomingFlightTableCell.m; sourceTree = "<group>"; };
+		6CD6F2671A120E9000B53E9E /* NJOPFBOTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFBOTableCell.h; sourceTree = "<group>"; };
+		6CD6F2681A120E9000B53E9E /* NJOPFBOTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFBOTableCell.m; sourceTree = "<group>"; };
+		6CD6F26A1A12155400B53E9E /* NJOPCurrentFBOTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCurrentFBOTableCell.h; sourceTree = "<group>"; };
+		6CD6F26B1A12155400B53E9E /* NJOPCurrentFBOTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCurrentFBOTableCell.m; sourceTree = "<group>"; };
 		6CD6F82319FD1B2C009D0812 /* mobile-api-reservations-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mobile-api-reservations-response.json"; sourceTree = "<group>"; };
 		6CD92E181A0F7D26000056F4 /* NJOPHorizontalHairlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPHorizontalHairlineView.h; sourceTree = "<group>"; };
 		6CD92E191A0F7D26000056F4 /* NJOPHorizontalHairlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPHorizontalHairlineView.m; sourceTree = "<group>"; };
@@ -371,6 +391,8 @@
 				6C08E4BC19F7B79200119B84 /* Views */,
 				6C08E4AF19F7B73900119B84 /* ReservationDetailViewController.h */,
 				6C08E4B019F7B73900119B84 /* ReservationDetailViewController.m */,
+				6C9448091A10DFB500A7EEDF /* NJOPPPhoneHomeViewController.h */,
+				6C94480A1A10DFB500A7EEDF /* NJOPPPhoneHomeViewController.m */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -405,6 +427,14 @@
 				6C08E4BE19F7B7AE00119B84 /* NJCellBackgroundView.m */,
 				6C08E4B619F7B78100119B84 /* FBOTableCell.h */,
 				6C08E4B719F7B78100119B84 /* FBOTableCell.m */,
+				6CD6F26A1A12155400B53E9E /* NJOPCurrentFBOTableCell.h */,
+				6CD6F26B1A12155400B53E9E /* NJOPCurrentFBOTableCell.m */,
+				6CD6F2671A120E9000B53E9E /* NJOPFBOTableCell.h */,
+				6CD6F2681A120E9000B53E9E /* NJOPFBOTableCell.m */,
+				6C94480F1A10F38F00A7EEDF /* NJOPNOFBOTableCell.h */,
+				6C9448101A10F38F00A7EEDF /* NJOPNOFBOTableCell.m */,
+				6CD6F2641A12031300B53E9E /* NJOPUpcomingFlightTableCell.h */,
+				6CD6F2651A12031300B53E9E /* NJOPUpcomingFlightTableCell.m */,
 				6C08E4B319F7B77A00119B84 /* WeatherTableCell.h */,
 				6C08E4B419F7B77A00119B84 /* WeatherTableCell.m */,
 			);
@@ -416,6 +446,7 @@
 			children = (
 				6CF2289519F90A0800A68DF4 /* NJOPActionButton.h */,
 				6CF2289619F90A0800A68DF4 /* NJOPActionButton.m */,
+				6CD6F2631A11FD4C00B53E9E /* NavigationTitleViews */,
 				6C08E4C819F7B7F400119B84 /* Headers */,
 				6C08E4B219F7B77200119B84 /* TableVIewCells */,
 				6CEDE59A1A0A830D002D2750 /* NJOPTableView.h */,
@@ -458,8 +489,8 @@
 				6C57E02E19EEC8FB00D3FB00 /* NJOPAllFlightsHeader.h */,
 				6C57E02F19EEC8FB00D3FB00 /* NJOPAllFlightsHeader.m */,
 				6C9754F719EE90C1005DD1DF /* NJOPAllFlightsHeader.xib */,
-				6C57E03619EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.h */,
-				6C57E03719EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m */,
+				6C57E03619EEC8FB00D3FB00 /* NJOPSummaryViewTopHeaderView.h */,
+				6C57E03719EEC8FB00D3FB00 /* NJOPSummaryViewTopHeaderView.m */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -528,10 +559,8 @@
 		6C57E02D19EEC8FB00D3FB00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6CD6F2601A1113A000B53E9E /* NavigationTitleViews */,
 				6CEDE58F1A0948D8002D2750 /* ParalaxView(unused) */,
-				6C08E47019F5954B00119B84 /* NJOPNavigationTitleView.h */,
-				6C08E47119F5954B00119B84 /* NJOPNavigationTitleView.m */,
-				6C08E46B19F5938900119B84 /* NJOPNavigationTitleView.xib */,
 				6C1759A419F3BB81000D4AA8 /* DecoationViews */,
 				6C17599E19F3B86B000D4AA8 /* Tiles */,
 				6C17599D19F3B860000D4AA8 /* Headers */,
@@ -587,6 +616,26 @@
 			children = (
 			);
 			name = IndexPaths;
+			sourceTree = "<group>";
+		};
+		6CD6F2601A1113A000B53E9E /* NavigationTitleViews */ = {
+			isa = PBXGroup;
+			children = (
+				6C08E47019F5954B00119B84 /* NJOPiPadReservationDetailNavigationTitleView.h */,
+				6C08E47119F5954B00119B84 /* NJOPiPadReservationDetailNavigationTitleView.m */,
+				6C08E46B19F5938900119B84 /* NJOPiPadReservationDetailNavigationTitleView.xib */,
+			);
+			name = NavigationTitleViews;
+			sourceTree = "<group>";
+		};
+		6CD6F2631A11FD4C00B53E9E /* NavigationTitleViews */ = {
+			isa = PBXGroup;
+			children = (
+				6CD6F25D1A11139600B53E9E /* NJOPSummaryNavigationTitleView.h */,
+				6CD6F25E1A11139600B53E9E /* NJOPSummaryNavigationTitleView.m */,
+				6CD6F2611A11143600B53E9E /* NJOPSummaryNavigationTitleView.xib */,
+			);
+			name = NavigationTitleViews;
 			sourceTree = "<group>";
 		};
 		6CD6F82219FD1B22009D0812 /* Fixtures */ = {
@@ -710,13 +759,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C08E46C19F5938A00119B84 /* NJOPNavigationTitleView.xib in Resources */,
+				6C08E46C19F5938A00119B84 /* NJOPiPadReservationDetailNavigationTitleView.xib in Resources */,
 				6C9754F919EE90C1005DD1DF /* NJOPAllFlightsHeader.xib in Resources */,
 				30A4738819D9E41A0045D7AF /* Main_iPad.storyboard in Resources */,
 				30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */,
 				6CBD545B19F021E50009077C /* NJSingleFBOTile-Left.xib in Resources */,
 				6C08E4C719F7B7F200119B84 /* ReservationHeaderView.xib in Resources */,
 				6C73F68A19F127C300A92BBE /* NJInfoTile.xib in Resources */,
+				6CD6F2621A11143600B53E9E /* NJOPSummaryNavigationTitleView.xib in Resources */,
 				30A4738A19D9E41A0045D7AF /* Images.xcassets in Resources */,
 				6C08E4AC19F7B05200119B84 /* Main_iPhone.storyboard in Resources */,
 				6CC3D6BF19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib in Resources */,
@@ -828,6 +878,7 @@
 				6C1F219519FFBD5F009F5436 /* NJOPClient.m in Sources */,
 				6CE31AF41A0BFA5A009A9710 /* NJOPTopFBOTile.m in Sources */,
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
+				6C94480B1A10DFB500A7EEDF /* NJOPPPhoneHomeViewController.m in Sources */,
 				30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */,
 				6C57E05319EEC8FB00D3FB00 /* NJSingleFBOTile.m in Sources */,
 				6CC3D6B219F152340081A5BD /* NJOPInfoCell.m in Sources */,
@@ -841,13 +892,14 @@
 				6CC3D6B819F167130081A5BD /* NJOP3TilesLayoutTableViewCell.m in Sources */,
 				6C08E4BB19F7B78D00119B84 /* FlightDetailTopHeaderView.m in Sources */,
 				6CBD546019F111670009077C /* NJOPNestedCollectionTableViewCell.m in Sources */,
-				6C57E05419EEC8FB00D3FB00 /* NJSummaryViewTopHeaderView.m in Sources */,
+				6C57E05419EEC8FB00D3FB00 /* NJOPSummaryViewTopHeaderView.m in Sources */,
 				6C57E05A19EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.m in Sources */,
-				6C08E47219F5954B00119B84 /* NJOPNavigationTitleView.m in Sources */,
+				6C08E47219F5954B00119B84 /* NJOPiPadReservationDetailNavigationTitleView.m in Sources */,
 				6C08E4D019F7C1FB00119B84 /* NJOPFBOTile.m in Sources */,
 				6CEDE59C1A0A830D002D2750 /* NJOPTableView.m in Sources */,
 				6C57E05219EEC8FB00D3FB00 /* NJInfoTile.m in Sources */,
 				6CC3D6C219F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m in Sources */,
+				6CD6F26C1A12155400B53E9E /* NJOPCurrentFBOTableCell.m in Sources */,
 				6C57E05819EEC8FB00D3FB00 /* NJWeatherTile.m in Sources */,
 				6C57E06519EECCD500D3FB00 /* NJOPSplitViewController.m in Sources */,
 				6C7C2BB919F29F480092F08D /* UIView+NJOPStyle.m in Sources */,
@@ -859,10 +911,12 @@
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */,
 				6C57E05619EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m in Sources */,
+				6CD6F2691A120E9000B53E9E /* NJOPFBOTableCell.m in Sources */,
 				6CD92E1A1A0F7D26000056F4 /* NJOPHorizontalHairlineView.m in Sources */,
 				6C8045E419F9212700161C4E /* NJOPTableViewCell.m in Sources */,
 				6C08E4B819F7B78100119B84 /* FBOTableCell.m in Sources */,
 				6CF2289719F90A0800A68DF4 /* NJOPActionButton.m in Sources */,
+				6C9448111A10F38F00A7EEDF /* NJOPNOFBOTableCell.m in Sources */,
 				6C57E05B19EEC8FB00D3FB00 /* SimpleDataSourceTableViewController.m in Sources */,
 				6C7C2BBC19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m in Sources */,
 				6C08E4BF19F7B7AE00119B84 /* NJCellBackgroundView.m in Sources */,
@@ -874,8 +928,10 @@
 				6CEDE5921A094BD9002D2750 /* NJOPCollectionParalaxViewInfo.m in Sources */,
 				6C57E05919EEC8FB00D3FB00 /* SimpleDataSource.m in Sources */,
 				6C08E4C619F7B7F200119B84 /* ReservationHeaderView.m in Sources */,
+				6CD6F25F1A11139600B53E9E /* NJOPSummaryNavigationTitleView.m in Sources */,
 				6C57E05719EEC8FB00D3FB00 /* NJTodayTile.m in Sources */,
 				6CBD546A19F1139D0009077C /* NJOPTileContainingCollectionViewCell.m in Sources */,
+				6CD6F2661A12031300B53E9E /* NJOPUpcomingFlightTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

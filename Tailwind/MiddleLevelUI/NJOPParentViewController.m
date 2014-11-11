@@ -7,7 +7,7 @@
 //
 
 #import "NJOPParentViewController.h"
-#import "NJOPNavigationTitleView.h"
+#import "NJOPiPadReservationDetailNavigationTitleView.h"
 #import "NJOPActionsViewController.h"
 #import "NJOPReservationCollectionViewController.h"
 #import "NJOPCollectionViewFlowLayout.h"
@@ -69,10 +69,10 @@ id findByClass(NSArray*array,Class class) {
 
 
 	self.view.backgroundColor = SCROLLVIEW_BACKGORUND_COLOR;
-	UINib* nib = [UINib nibWithNibName:@"NJOPNavigationTitleView"
+	UINib* nib = [UINib nibWithNibName:@"NJOPiPadReservationDetailNavigationTitleView"
 															bundle:nil];
 
-	NJOPNavigationTitleView* titleView = (NJOPNavigationTitleView*)[nib instantiateWithOwner:nil
+	NJOPiPadReservationDetailNavigationTitleView* titleView = (NJOPiPadReservationDetailNavigationTitleView*)[nib instantiateWithOwner:nil
 																																									 options:nil][0];
 	titleView.fittedSizeForSize = ^(CGSize size, CGSize fittedSize) {
 		fittedSize.width = size.width;
@@ -82,7 +82,7 @@ id findByClass(NSArray*array,Class class) {
 	
 	[titleView setAutoresizingMask:UIViewAutoresizingFlexibleWidth| UIViewAutoresizingFlexibleHeight];
 
-	NSAssert([titleView isKindOfClass:[NJOPNavigationTitleView class]], @"expected a view");
+	NSAssert([titleView isKindOfClass:[NJOPiPadReservationDetailNavigationTitleView class]], @"expected a view");
 	[self.navigationItem setTitleView:titleView];
 }
 

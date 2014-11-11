@@ -13,4 +13,5 @@ IB_DESIGNABLE
 @interface NJOPNavigationBar : UINavigationBar
 @property(nonatomic,retain) IBInspectable UIColor *tintColor;
 @property(nonatomic,retain) IBInspectable UIColor *barTintColor;
+@property(nonatomic,copy) CGSize(^sizeThatFitsBlock)(CGSize size,CGSize fittedSize);
 @end

@@ -8,6 +8,9 @@
 
 #import "NJOPNavigationBar.h"
 
+#define kAppNavBarHeight 84.0
+
+
 @implementation NJOPNavigationBar
 
 -(void)awakeFromNib {
@@ -15,5 +18,11 @@
 	[self setTintColor:NAVIGATIONBAR_TINT_COLOR];
 	[self setTitleTextAttributes:@{NSForegroundColorAttributeName : NAVIGATIONBAR_TEXT_COLOR}];
 }
+
+//- (CGSize)sizeThatFits:(CGSize)size {
+//	CGFloat width = self.superview.frame.size.width;
+//	return CGSizeMake(size.width, kAppNavBarHeight);
+//
+//}
 
 @end

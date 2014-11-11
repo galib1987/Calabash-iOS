@@ -7,7 +7,7 @@
 //
 
 #import "SummaryViewController.h"
-#import "NJSummaryViewTopHeaderView.h"
+#import "NJOPSummaryViewTopHeaderView.h"
 
 @interface SummaryViewController ()
 
@@ -85,8 +85,8 @@
 	self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
 	self.dataSource.headerFooterCellIdentifiers = @[@"SummaryHeaderView"];
 	[self.dataSource setConfigureHeaderFooterViewBlock:^(UIView *headerView) {
-		if ([headerView isKindOfClass:[NJSummaryViewTopHeaderView class]]) {
-			NJSummaryViewTopHeaderView* tableHeaderView = (NJSummaryViewTopHeaderView*)headerView;
+		if ([headerView isKindOfClass:[NJOPSummaryViewTopHeaderView class]]) {
+			NJOPSummaryViewTopHeaderView* tableHeaderView = (NJOPSummaryViewTopHeaderView*)headerView;
 			tableHeaderView.topLabelView.text = dateString;
 			tableHeaderView.bodyLabelView.text = @"Hello Ms. Smith";
 			[tableHeaderView layoutIfNeeded];
