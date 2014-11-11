@@ -79,6 +79,8 @@
 		6CD6F2691A120E9000B53E9E /* NJOPFBOTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F2681A120E9000B53E9E /* NJOPFBOTableCell.m */; };
 		6CD6F26C1A12155400B53E9E /* NJOPCurrentFBOTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F26B1A12155400B53E9E /* NJOPCurrentFBOTableCell.m */; };
 		6CD6F26F1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F26E1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.m */; };
+		6CD6F2721A125CB700B53E9E /* NJOPiPhoneStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F2711A125CB700B53E9E /* NJOPiPhoneStyle.m */; };
+		6CD6F27D1A126E8B00B53E9E /* SimpleDataSourceTableViewController+NJOPStatusBarVisibilitySettableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F27C1A126E8B00B53E9E /* SimpleDataSourceTableViewController+NJOPStatusBarVisibilitySettableViewController.m */; };
 		6CD6F82419FD1B2C009D0812 /* mobile-api-reservations-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CD6F82319FD1B2C009D0812 /* mobile-api-reservations-response.json */; };
 		6CD92E1A1A0F7D26000056F4 /* NJOPHorizontalHairlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD92E191A0F7D26000056F4 /* NJOPHorizontalHairlineView.m */; };
 		6CE31AF41A0BFA5A009A9710 /* NJOPTopFBOTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE31AF31A0BFA5A009A9710 /* NJOPTopFBOTile.m */; };
@@ -236,6 +238,10 @@
 		6CD6F26B1A12155400B53E9E /* NJOPCurrentFBOTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCurrentFBOTableCell.m; sourceTree = "<group>"; };
 		6CD6F26D1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NJNavigationBarHiding.h"; sourceTree = "<group>"; };
 		6CD6F26E1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NJNavigationBarHiding.m"; sourceTree = "<group>"; };
+		6CD6F2701A125CB700B53E9E /* NJOPiPhoneStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPiPhoneStyle.h; sourceTree = "<group>"; };
+		6CD6F2711A125CB700B53E9E /* NJOPiPhoneStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPiPhoneStyle.m; sourceTree = "<group>"; };
+		6CD6F27B1A126E8B00B53E9E /* SimpleDataSourceTableViewController+NJOPStatusBarVisibilitySettableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleDataSourceTableViewController+NJOPStatusBarVisibilitySettableViewController.h"; sourceTree = "<group>"; };
+		6CD6F27C1A126E8B00B53E9E /* SimpleDataSourceTableViewController+NJOPStatusBarVisibilitySettableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SimpleDataSourceTableViewController+NJOPStatusBarVisibilitySettableViewController.m"; sourceTree = "<group>"; };
 		6CD6F82319FD1B2C009D0812 /* mobile-api-reservations-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mobile-api-reservations-response.json"; sourceTree = "<group>"; };
 		6CD92E181A0F7D26000056F4 /* NJOPHorizontalHairlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPHorizontalHairlineView.h; sourceTree = "<group>"; };
 		6CD92E191A0F7D26000056F4 /* NJOPHorizontalHairlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPHorizontalHairlineView.m; sourceTree = "<group>"; };
@@ -589,16 +595,8 @@
 		6C57E04719EEC8FB00D3FB00 /* TopLevelUI */ = {
 			isa = PBXGroup;
 			children = (
-				6C57E04819EEC8FB00D3FB00 /* NJTraitOverrideViewController.h */,
-				6C57E04919EEC8FB00D3FB00 /* NJTraitOverrideViewController.m */,
-				6C57E06619EED4CE00D3FB00 /* NJOPBriefViewController.h */,
-				6C57E06719EED4CE00D3FB00 /* NJOPBriefViewController.m */,
-				6C57E04A19EEC8FB00D3FB00 /* NJVerticalTabCell.h */,
-				6C57E04B19EEC8FB00D3FB00 /* NJVerticalTabCell.m */,
-				6C57E04C19EEC8FB00D3FB00 /* NJVerticalTabViewController.h */,
-				6C57E04D19EEC8FB00D3FB00 /* NJVerticalTabViewController.m */,
-				6C57E06319EECCD500D3FB00 /* NJOPSplitViewController.h */,
-				6C57E06419EECCD500D3FB00 /* NJOPSplitViewController.m */,
+				6CD6F2741A125CC400B53E9E /* iPhone */,
+				6CD6F2731A125CBA00B53E9E /* iPad */,
 			);
 			path = TopLevelUI;
 			sourceTree = "<group>";
@@ -641,6 +639,32 @@
 			name = NavigationTitleViews;
 			sourceTree = "<group>";
 		};
+		6CD6F2731A125CBA00B53E9E /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				6C57E04819EEC8FB00D3FB00 /* NJTraitOverrideViewController.h */,
+				6C57E04919EEC8FB00D3FB00 /* NJTraitOverrideViewController.m */,
+				6C57E06619EED4CE00D3FB00 /* NJOPBriefViewController.h */,
+				6C57E06719EED4CE00D3FB00 /* NJOPBriefViewController.m */,
+				6C57E04A19EEC8FB00D3FB00 /* NJVerticalTabCell.h */,
+				6C57E04B19EEC8FB00D3FB00 /* NJVerticalTabCell.m */,
+				6C57E04C19EEC8FB00D3FB00 /* NJVerticalTabViewController.h */,
+				6C57E04D19EEC8FB00D3FB00 /* NJVerticalTabViewController.m */,
+				6C57E06319EECCD500D3FB00 /* NJOPSplitViewController.h */,
+				6C57E06419EECCD500D3FB00 /* NJOPSplitViewController.m */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		6CD6F2741A125CC400B53E9E /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				6CD6F2701A125CB700B53E9E /* NJOPiPhoneStyle.h */,
+				6CD6F2711A125CB700B53E9E /* NJOPiPhoneStyle.m */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
 		6CD6F82219FD1B22009D0812 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -661,6 +685,8 @@
 			children = (
 				6CD6F26D1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.h */,
 				6CD6F26E1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.m */,
+				6CD6F27B1A126E8B00B53E9E /* SimpleDataSourceTableViewController+NJOPStatusBarVisibilitySettableViewController.h */,
+				6CD6F27C1A126E8B00B53E9E /* SimpleDataSourceTableViewController+NJOPStatusBarVisibilitySettableViewController.m */,
 				6CD92E181A0F7D26000056F4 /* NJOPHorizontalHairlineView.h */,
 				6CD92E191A0F7D26000056F4 /* NJOPHorizontalHairlineView.m */,
 			);
@@ -898,9 +924,11 @@
 				6C08E4BB19F7B78D00119B84 /* FlightDetailTopHeaderView.m in Sources */,
 				6CBD546019F111670009077C /* NJOPNestedCollectionTableViewCell.m in Sources */,
 				6C57E05419EEC8FB00D3FB00 /* NJOPSummaryViewTopHeaderView.m in Sources */,
+				6CD6F2721A125CB700B53E9E /* NJOPiPhoneStyle.m in Sources */,
 				6C57E05A19EEC8FB00D3FB00 /* SimpleDataSourceCollectionViewController.m in Sources */,
 				6C08E47219F5954B00119B84 /* NJOPiPadReservationDetailNavigationTitleView.m in Sources */,
 				6C08E4D019F7C1FB00119B84 /* NJOPFBOTile.m in Sources */,
+				6CD6F27D1A126E8B00B53E9E /* SimpleDataSourceTableViewController+NJOPStatusBarVisibilitySettableViewController.m in Sources */,
 				6CEDE59C1A0A830D002D2750 /* NJOPTableView.m in Sources */,
 				6C57E05219EEC8FB00D3FB00 /* NJInfoTile.m in Sources */,
 				6CC3D6C219F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m in Sources */,

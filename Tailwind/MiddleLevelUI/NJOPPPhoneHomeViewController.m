@@ -11,9 +11,6 @@
 #import "NJOPClient.h"
 #import "NJOPReservation.h"
 #import "NJOPSummaryViewTopHeaderView.h"
-#import "NJOPSummaryNavigationTitleView.h"
-#import "NJOPNavigationBar.h"
-#import "UIViewController+NJNavigationBarHiding.h"
 
 static NSString* headerIdentifier = @"ReservationHeaderView";
 
@@ -96,36 +93,6 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 
 -(void)viewDidLoad {
 	[super viewDidLoad];
-
-	[self setHidesNavigationOnScroll:YES];
-	[self setHidesToolbarOnScroll:YES];
-
-	NSArray* toolbarItems = [NSArray arrayWithObjects:
-													 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-																																				 target:self
-																																				 action:@selector(addStuff:)],
-													 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-																																				 target:nil
-																																				 action:nil],
-													 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
-																																				 target:self
-																																				 action:@selector(searchStuff:)],
-													 nil];
-	self.toolbarItems = toolbarItems;
-	self.navigationController.toolbarHidden = NO;
-
-
-	UINib* nib = [UINib nibWithNibName:NSStringFromClass([NJOPSummaryNavigationTitleView class])
-															bundle:nil];
-	NJOPSummaryNavigationTitleView*titleView = [nib instantiateWithOwner:nil
-																															 options:nil][0];
-
-	self.navigationItem.titleView = titleView;
-	[(NJOPNavigationBar*)self.navigationController.navigationBar setSizeThatFitsBlock:^CGSize(CGSize size, CGSize fittedSize) {
-		CGFloat height = [titleView systemLayoutSizeFittingSize:fittedSize].height;
-		return CGSizeMake(fittedSize.width, height + 20);
-	}];
-	[self.navigationController  setNavigationBarHidden:NO];
 
 	NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
 	[formatter setDateFormat:@"dd MMM, YYYY"];
