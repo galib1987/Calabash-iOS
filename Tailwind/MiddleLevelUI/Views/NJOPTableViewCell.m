@@ -10,6 +10,26 @@
 
 @implementation NJOPTableViewCell
 
+-(void)commonInit {
+	_tileCornerRadius = DEFAULT_CELL_CORENER_RADIUS;
+	_tileColor = TABLEVIEW_CELL_TILE_COLOR;
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super initWithCoder:aDecoder];
+	if (self) {
+		[self commonInit];
+	}
+	return self;
+}
+
+-(instancetype)initWithFrame:(CGRect)frame {
+	self = [super initWithFrame:frame];
+	if (self) {
+		[self commonInit];
+	}
+	return self;
+}
 
 -(void)setTileColor:(UIColor *)tileColor {
 	if (![_tileColor isEqual:tileColor]) {

@@ -10,7 +10,6 @@
 
 @implementation NJOPBriefTopCollectionViewCell
 -(void)awakeFromNib {
-	[super awakeFromNib];
 #if 0
 	[self.subviews enumerateObjectsUsingBlock:^(UIView* subview, NSUInteger idx, BOOL *stop) {
 		subview.layer.borderWidth = 1.0;
