@@ -78,6 +78,7 @@
 		6CD6F2661A12031300B53E9E /* NJOPUpcomingFlightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F2651A12031300B53E9E /* NJOPUpcomingFlightTableCell.m */; };
 		6CD6F2691A120E9000B53E9E /* NJOPFBOTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F2681A120E9000B53E9E /* NJOPFBOTableCell.m */; };
 		6CD6F26C1A12155400B53E9E /* NJOPCurrentFBOTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F26B1A12155400B53E9E /* NJOPCurrentFBOTableCell.m */; };
+		6CD6F26F1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6F26E1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.m */; };
 		6CD6F82419FD1B2C009D0812 /* mobile-api-reservations-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CD6F82319FD1B2C009D0812 /* mobile-api-reservations-response.json */; };
 		6CD92E1A1A0F7D26000056F4 /* NJOPHorizontalHairlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD92E191A0F7D26000056F4 /* NJOPHorizontalHairlineView.m */; };
 		6CE31AF41A0BFA5A009A9710 /* NJOPTopFBOTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE31AF31A0BFA5A009A9710 /* NJOPTopFBOTile.m */; };
@@ -233,6 +234,8 @@
 		6CD6F2681A120E9000B53E9E /* NJOPFBOTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFBOTableCell.m; sourceTree = "<group>"; };
 		6CD6F26A1A12155400B53E9E /* NJOPCurrentFBOTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCurrentFBOTableCell.h; sourceTree = "<group>"; };
 		6CD6F26B1A12155400B53E9E /* NJOPCurrentFBOTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCurrentFBOTableCell.m; sourceTree = "<group>"; };
+		6CD6F26D1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NJNavigationBarHiding.h"; sourceTree = "<group>"; };
+		6CD6F26E1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NJNavigationBarHiding.m"; sourceTree = "<group>"; };
 		6CD6F82319FD1B2C009D0812 /* mobile-api-reservations-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mobile-api-reservations-response.json"; sourceTree = "<group>"; };
 		6CD92E181A0F7D26000056F4 /* NJOPHorizontalHairlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPHorizontalHairlineView.h; sourceTree = "<group>"; };
 		6CD92E191A0F7D26000056F4 /* NJOPHorizontalHairlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPHorizontalHairlineView.m; sourceTree = "<group>"; };
@@ -656,6 +659,8 @@
 		6CD92E171A0F7D13000056F4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6CD6F26D1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.h */,
+				6CD6F26E1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.m */,
 				6CD92E181A0F7D26000056F4 /* NJOPHorizontalHairlineView.h */,
 				6CD92E191A0F7D26000056F4 /* NJOPHorizontalHairlineView.m */,
 			);
@@ -901,6 +906,7 @@
 				6CC3D6C219F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m in Sources */,
 				6CD6F26C1A12155400B53E9E /* NJOPCurrentFBOTableCell.m in Sources */,
 				6C57E05819EEC8FB00D3FB00 /* NJWeatherTile.m in Sources */,
+				6CD6F26F1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.m in Sources */,
 				6C57E06519EECCD500D3FB00 /* NJOPSplitViewController.m in Sources */,
 				6C7C2BB919F29F480092F08D /* UIView+NJOPStyle.m in Sources */,
 				6C57E06819EED4CE00D3FB00 /* NJOPBriefViewController.m in Sources */,
