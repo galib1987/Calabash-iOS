@@ -15,6 +15,10 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+	[[[UIToolbar class] appearance] setBarTintColor:TOOLBAR_BACKGROUND_COLOR];
+	[[[UIToolbar class] appearance] setTintColor:NAVIGATIONBAR_TINT_COLOR];
+
 #if DEBUG
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
