@@ -28,6 +28,8 @@
 @property (nonatomic, weak) UIViewController<NavigationBarHidingAdapterScrollViewContorller>* viewController;
 @property (nonatomic, assign) CGFloat beginDragOffset;
 @property (nonatomic, readonly) CGFloat directionDelta;
+@property (nonatomic, assign) BOOL controlsNavigationBar;
+@property (nonatomic, assign) BOOL controlsToolbar;
 @end
 
 @implementation UIScrollViewControllerNavigationBarHidingAdapter
@@ -58,15 +60,21 @@
 -(void)updateContentOffsetWithScrollView:(UIScrollView*)scrollView {
 	
 	CGFloat directionDelta = self.beginDragOffset == 0 ? 0 : self.beginDragOffset - scrollView.contentOffset.y;
-	if (self.viewController.navigationController) {
-		UINavigationController* nav = self.viewController.navigationController;
+	UINavigationController* nav = self.viewController.navigationController;
+	if (nav && _controlsNavigationBar) {
 		if (directionDelta > 0 && [nav isNavigationBarHidden]) {
 			[nav setNavigationBarHidden:NO animated:YES];
 		} else if(directionDelta < 0 && ![nav isNavigationBarHidden]) {
 			[nav setNavigationBarHidden:YES animated:YES];
 		}
 	}
-
+	if (nav && _controlsToolbar) {
+		if (directionDelta > 0 && [nav isToolbarHidden]) {
+			[nav setToolbarHidden:NO animated:YES];
+		} else if(directionDelta < 0 && ![nav isToolbarHidden]) {
+			[nav setToolbarHidden:YES animated:YES];
+		}
+	}
 }
 
 -(void)setScrollView:(UIScrollView *)scrollView {
@@ -166,16 +174,39 @@ static char UIScrollViewControllerNavigationBarHidingAdapterKey;
 	UIViewController<NavigationBarHidingAdapterScrollViewContorller>* conformingSlef = (UIViewController<NavigationBarHidingAdapterScrollViewContorller>*)self;
 
 	if (self.hidesNavigationOnScroll != hidesNavigationOnScroll) {
-		UIScrollViewControllerNavigationBarHidingAdapter* adapter = nil;
-		if (hidesNavigationOnScroll) {
+		UIScrollViewControllerNavigationBarHidingAdapter* adapter = [self nj_hidingAdapterAdapter];
+		if (!adapter && hidesNavigationOnScroll) {
 			adapter = [[UIScrollViewControllerNavigationBarHidingAdapter alloc] initWithViewController:conformingSlef];
+			[self nj_setHidingAdapterAdapter:adapter];
 		}
-		[self nj_setHidingAdapterAdapter:adapter];
+		adapter.controlsNavigationBar = hidesNavigationOnScroll;
+	}
+}
+
+-(void)setHidesToolbarOnScroll:(BOOL)hidesToolbarOnScroll {
+
+	NSAssert1([self respondsToSelector:@selector(njop_scrollView)], @"controller %@ must conform to protocol NavigationBarHidingAdapterScrollViewContorller in order to be able to hide navigation bar", self);
+
+	UIViewController<NavigationBarHidingAdapterScrollViewContorller>* conformingSlef = (UIViewController<NavigationBarHidingAdapterScrollViewContorller>*)self;
+
+	if (self.hidesToolbarOnScroll != hidesToolbarOnScroll) {
+		UIScrollViewControllerNavigationBarHidingAdapter* adapter = [self nj_hidingAdapterAdapter];
+		if (!adapter && hidesToolbarOnScroll) {
+			adapter = [[UIScrollViewControllerNavigationBarHidingAdapter alloc] initWithViewController:conformingSlef];
+			[self nj_setHidingAdapterAdapter:adapter];
+		}
+		adapter.controlsToolbar = hidesToolbarOnScroll;
 	}
 }
 
 -(BOOL)hidesNavigationOnScroll {
-	return !![self nj_hidingAdapterAdapter];
+	UIScrollViewControllerNavigationBarHidingAdapter* adapter = [self nj_hidingAdapterAdapter];
+	return !!adapter &&  adapter.controlsNavigationBar;
+}
+
+-(BOOL)hidesToolbarOnScroll {
+	UIScrollViewControllerNavigationBarHidingAdapter* adapter = [self nj_hidingAdapterAdapter];
+	return !!adapter &&  adapter.controlsToolbar;
 }
 
 @end

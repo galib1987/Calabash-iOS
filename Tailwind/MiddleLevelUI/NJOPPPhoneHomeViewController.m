@@ -19,6 +19,13 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 
 @implementation NJOPPPhoneHomeViewController
 
+-(void)addStuff:stuff {
+
+}
+-(void)searchStuff:stuff {
+
+}
+
 -(void)updateWithReservations:(NSArray*)reservations {
 
 	NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
@@ -91,6 +98,23 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 	[super viewDidLoad];
 
 	[self setHidesNavigationOnScroll:YES];
+	[self setHidesToolbarOnScroll:YES];
+
+	NSArray* toolbarItems = [NSArray arrayWithObjects:
+													 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+																																				 target:self
+																																				 action:@selector(addStuff:)],
+													 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+																																				 target:nil
+																																				 action:nil],
+													 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+																																				 target:self
+																																				 action:@selector(searchStuff:)],
+													 nil];
+	self.toolbarItems = toolbarItems;
+	self.navigationController.toolbarHidden = NO;
+
+
 	UINib* nib = [UINib nibWithNibName:NSStringFromClass([NJOPSummaryNavigationTitleView class])
 															bundle:nil];
 	NJOPSummaryNavigationTitleView*titleView = [nib instantiateWithOwner:nil
