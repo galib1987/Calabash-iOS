@@ -13,6 +13,7 @@
 #import "NJOPSummaryViewTopHeaderView.h"
 #import "NJOPSummaryNavigationTitleView.h"
 #import "NJOPNavigationBar.h"
+#import "UIViewController+NJNavigationBarHiding.h"
 
 static NSString* headerIdentifier = @"ReservationHeaderView";
 
@@ -89,6 +90,7 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 -(void)viewDidLoad {
 	[super viewDidLoad];
 
+	[self setHidesNavigationOnScroll:YES];
 	UINib* nib = [UINib nibWithNibName:NSStringFromClass([NJOPSummaryNavigationTitleView class])
 															bundle:nil];
 	NJOPSummaryNavigationTitleView*titleView = [nib instantiateWithOwner:nil
