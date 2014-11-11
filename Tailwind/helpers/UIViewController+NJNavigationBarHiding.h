@@ -10,6 +10,7 @@
 
 @interface UIViewController (NJNavigationBarHiding)
 @property (nonatomic, assign) BOOL hidesNavigationOnScroll;
+@property (nonatomic, assign) BOOL hidesToolbarOnScroll;
 @end
 
 
