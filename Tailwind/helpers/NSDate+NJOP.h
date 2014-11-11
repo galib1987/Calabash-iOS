@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "NSDate+DateTools.h"
 
 @interface NSDate (NJOP)

@@ -8,8 +8,9 @@
 
 #import "NJOPTileContainingCollectionViewCell.h"
 
-@class NJSingleFBOTile, NJTailNumberTail, NJWeatherTile;
+@class NJSingleFBOTile, NJTailNumberTail, NJWeatherTile, NJOPTopFBOTile;
 @interface NJOPBriefTopCollectionViewCell : NJOPTileContainingCollectionViewCell
+@property (strong, nonatomic) IBOutlet NJOPTopFBOTile *topTile;
 @property (strong, nonatomic) IBOutlet NJSingleFBOTile *topLeftView;
 @property (strong, nonatomic) IBOutlet NJTailNumberTail *topMiddleView;
 @property (strong, nonatomic) IBOutlet NJSingleFBOTile *topRightView;

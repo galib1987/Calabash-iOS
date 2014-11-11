@@ -31,12 +31,12 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 
 #pragma mark - UIViewController 
 
-#if USE_PARALAX_VIEW
 -(void)viewDidLoad {
 	[super viewDidLoad];
+#if USE_PARALAX_VIEW
 	[self configureForParalaxView];
-}
 #endif //USE_PARALAX_VIEW
+}
 
 #pragma mark -
 
@@ -95,13 +95,15 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 																			@"titleLabel.text" : [NSString stringWithFormat:@"Reservation: %@", reservation.reservationId]
 																			},
 																	@"NJOPBriefTopCollectionViewCell" : @{
+																			@"topTile.leftLabel.text" 									: @"Departure!!",
+																			@"topTile.centerLabel.text"									: @"",
 																			//@"topRightView.tailImageView.text"					: @"",
 																			@"topLeftView.locationLabel.text"         	: reservation.departureFboName,
 																			@"topLeftView.numberLabel.text"         		: reservation.departureAirportId,
 																			@"topLeftView.timeLabel.text"         			: reservation.departureTime,
 																			//@"topLeftView.directionLabel.text"					: @"",
 																			@"topLeftView.airportNameLabel.text"				: reservation.departureAirportCity,
-																			@"topLeftView.airportAddressLabel.text"		: @"Address:Not Availbel",
+																			@"topLeftView.airportAddressLabel.text"		: @"Address:Not Available",
 																			@"topLeftView.phoneNumberLabel.text"				: @"",
 
 																			//@"topRightView.tailImageView.text"					: @"",
@@ -110,12 +112,25 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 																			@"topRightView.timeLabel.text"         		: reservation.arrivalTime,
 																			//@"topRightView.directionLabel.text"				: @"",
 																			@"topRightView.airportNameLabel.text"			: reservation.arrivalAirportCity,
-																			@"topRightView.airportAddressLabel.text"		: @"Address:Not Availbel",
+																			@"topRightView.airportAddressLabel.text"		: @"Address:Not Available",
 																			@"topRightView.phoneNumberLabel.text"			: @"",
 																			
 																			@"topMiddleView.tailNumberLabel.text"			: reservation.tailNumber,
 																			@"topMiddleView.estimatedTravelTimeLabel.text" : [@"Est. Travel:" stringByAppendingFormat:@"%@ %@", reservation.travelTime, reservation.stopsText],
+
+																			@"bottomView.leftDateLabel.text" : @"Mon Aug 28, 2014",
+																			@"bottomView.leftLocationLabel.text" : @"Teterboro, NJ",
+																			@"bottomView.leftTimeLabel.text" : @"12:00PM EST",
+																			@"bottomView.leftTemperatureLabel.text" : @"66º",
+																			//@"bottomView.leftImageView.image" : nil,
+
+																			@"bottomView.rightDateLabel.text" : @"Mon, Aug 28, 2014",
+																			@"bottomView.rightLocationLabel.text" : @"Naples, FL",
+																			@"bottomView.rightTimeLabel.text" : @"2:45PM EST",
+																			@"bottomView.rightTemperatureLabel.text" : @"81º",
+																			//@"bottomView.rightImageView.image" : nil
 																			}
+
 																	};
 
 	NSArray* sections = @[
@@ -161,7 +176,6 @@ static NSString * sectionHeaderIdentifier = @"NJOPAllFlightsHeader";
 
 		CGSize fittingSize = CGSizeMake(columnWidth, UILayoutFittingExpandedSize.height);
 		CGSize size = [cell systemLayoutSizeFittingSize:fittingSize];
-		NSLog(@"%ld:%@, %@",indexPath.item, NSStringFromCGSize(size), NSStringFromCGSize(self.collectionView.contentSize));
 		return size;
 	}
 	return [(UICollectionViewFlowLayout*)collectionViewLayout itemSize];

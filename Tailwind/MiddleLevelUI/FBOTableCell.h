@@ -3,7 +3,7 @@
 //  NetJets
 //
 //  Created by Amos Elmaliah on 9/30/14.
-//  Copyright (c) 2014 Amos Elmaliah. All rights reserved.
+//  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
 #import "NJOPTableViewCell.h"
@@ -23,5 +23,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *toFBODateLabel;
 @property (nonatomic, weak) IBOutlet UILabel *toFBOLocationLabel;
 @property (nonatomic, weak) IBOutlet UILabel *toFBOAirpotCodeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *toFBOTimeLabel;
+
+@property (nonatomic, weak) IBOutlet UILabel *travelTimeLabel;
 
 @end

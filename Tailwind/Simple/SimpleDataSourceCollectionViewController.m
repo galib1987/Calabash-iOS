@@ -26,6 +26,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	[self.collectionView setBackgroundColor:SCROLLVIEW_BACKGORUND_COLOR];
 	self.title = self.dataSource.title ? : self.title;
 	[self loadDataSource];
 	[self registerReusableViews];

@@ -18,7 +18,6 @@
 #import "NJOPReservation.h"
 
 @interface ReservationDetailViewController ()
-@property (nonatomic, strong) NSArray* sections;
 @end
 
 @implementation ReservationDetailViewController
@@ -67,7 +66,7 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 																			@"toFBOAirpotCodeLabel.text"		: reservation.arrivalAirportId,
 
 																			@"fromFBOTailNumberLabel.text"	: reservation.tailNumber,
-																			@"fromFBOTimeLabel.text" 			: [@"Est. Travel:" stringByAppendingFormat:@"%@ %@", reservation.travelTime, reservation.stopsText],
+																			@"travelTimeLabel.text" 			: [@"Est. Travel:" stringByAppendingFormat:@"%@ %@", reservation.travelTime, reservation.stopsText],
 
 																			@"fromFBOLocationLabel.text"		: reservation.departureFboName,
 																			@"toFBOLocationLabel.text"			: reservation.arrivalFboName
@@ -167,7 +166,6 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
-	[self.navigationController.navigationBar setBarTintColor:DARK_BACKGROUND_COLOR];
 }
 
 @end
