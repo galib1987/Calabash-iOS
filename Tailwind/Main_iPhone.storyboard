@@ -16,12 +16,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
+                        <outlet property="delegate" destination="s6J-kM-KQ6" id="2vY-DT-OLv"/>
                         <segue destination="bJO-uZ-sjV" kind="relationship" relationship="rootViewController" id="hV0-tK-wBN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phw-WM-FDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="s6J-kM-KQ6" userLabel="iPhone Style" customClass="NJOPiPhoneStyle"/>
             </objects>
-            <point key="canvasLocation" x="-90" y="290"/>
+            <point key="canvasLocation" x="-90" y="274"/>
         </scene>
         <!--Phone Home View Controller-->
         <scene sceneID="MhQ-nw-iG1">

@@ -11,14 +11,20 @@
 @interface UIViewController (NJNavigationBarHiding)
 @property (nonatomic, assign) BOOL hidesNavigationOnScroll;
 @property (nonatomic, assign) BOOL hidesToolbarOnScroll;
+@property (nonatomic, assign) BOOL hidesStatusBarOnScroll;
+@end
+
+@protocol NJOPStatusBarVisibilitySettableViewController <NSObject>
+-(void)setPrefersStatusBarHidden:(BOOL)hidden;
+-(BOOL)prefersStatusBarHidden;
 @end
 
 
-@protocol NavigationBarHidingAdapterScrollViewContorller <NSObject>
+@protocol NJOPHidingAdapterScrollViewContorller <NSObject>
 -(UIScrollView*)njop_scrollView;
 @end
-@interface UITableViewController (NavigationBarHidingAdapterScrollViewContorller) <NavigationBarHidingAdapterScrollViewContorller>
+@interface UITableViewController (NJOPHidingAdapterScrollViewContorller) <NJOPHidingAdapterScrollViewContorller>
 @end
 
-@interface UICollectionViewController (NavigationBarHidingAdapterScrollViewContorller) <NavigationBarHidingAdapterScrollViewContorller>
+@interface UICollectionViewController (NJOPHidingAdapterScrollViewContorller) <NJOPHidingAdapterScrollViewContorller>
 @end

@@ -12,6 +12,7 @@
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 @end
 
+#define TOOLBAR_BACKGROUND_COLOR						[UIColor colorFromHexString:@/*"#2E2E2E"*/"#121212"]
 #define NAVIGATIONBAR_BACKGORUND_COLOR 			[UIColor colorFromHexString:@"#464D51"]
 #define NAVIGATIONBAR_TINT_COLOR						[UIColor whiteColor]
 #define NAVIGATIONBAR_TEXT_COLOR						[UIColor whiteColor]
