@@ -163,9 +163,4 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 	}];
 }
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	[self.navigationController setNavigationBarHidden:NO animated:YES];
-}
-
 @end

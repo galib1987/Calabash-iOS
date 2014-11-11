@@ -8,7 +8,6 @@
 
 #import "NJOPiPhoneStyle.h"
 #import "UIViewController+NJNavigationBarHiding.h"
-#import "NJOPSummaryNavigationTitleView.h"
 #import "NJOPNavigationBar.h"
 #import "NJOPPPhoneHomeViewController.h"
 #import "ReservationDetailViewController.h"
@@ -66,46 +65,16 @@
 
 	if ([viewController isKindOfClass:[NJOPPPhoneHomeViewController class]]) {
 		viewController.navigationController.toolbarHidden = NO;
-		viewController.navigationController.navigationBarHidden = NO;
-
-		[viewController setHidesNavigationOnScroll:YES];
-		[viewController setHidesToolbarOnScroll:YES];
-		[[viewController.navigationController toolbar] setBarTintColor:TOOLBAR_BACKGROUND_COLOR];
-		[[viewController.navigationController toolbar] setTintColor:NAVIGATIONBAR_TINT_COLOR];
-
 		viewController.toolbarItems = self.toolbarItems;
-		UINib* nib = [UINib nibWithNibName:NSStringFromClass([NJOPSummaryNavigationTitleView class])
-																bundle:nil];
-		NJOPSummaryNavigationTitleView*titleView = [nib instantiateWithOwner:nil
-																																 options:nil][0];
-
-		viewController.navigationItem.titleView = titleView;
-		[(NJOPNavigationBar*)viewController.navigationController.navigationBar setSizeThatFitsBlock:^CGSize(CGSize size, CGSize fittedSize) {
-			CGFloat height = [titleView systemLayoutSizeFittingSize:fittedSize].height;
-			return CGSizeMake(fittedSize.width, height + 20);
-		}];
+		//		[viewController setHidesNavigationOnScroll:YES];
+		//		[viewController setHidesToolbarOnScroll:YES];
 	} else if([viewController isKindOfClass:[ReservationDetailViewController class]]) {
 
 		viewController.navigationController.toolbarHidden = NO;
-		viewController.navigationController.navigationBarHidden = NO;
-
-		[viewController setHidesNavigationOnScroll:YES];
-		[viewController setHidesToolbarOnScroll:YES];
-		[viewController setHidesStatusBarOnScroll:YES];
-		[[viewController.navigationController toolbar] setBarTintColor:TOOLBAR_BACKGROUND_COLOR];
-		[[viewController.navigationController toolbar] setTintColor:NAVIGATIONBAR_TINT_COLOR];
-
 		viewController.toolbarItems = self.toolbarItems;
-		UINib* nib = [UINib nibWithNibName:NSStringFromClass([NJOPSummaryNavigationTitleView class])
-																bundle:nil];
-		NJOPSummaryNavigationTitleView*titleView = [nib instantiateWithOwner:nil
-																																 options:nil][0];
-
-		viewController.navigationItem.titleView = titleView;
-		[(NJOPNavigationBar*)viewController.navigationController.navigationBar setSizeThatFitsBlock:^CGSize(CGSize size, CGSize fittedSize) {
-			CGFloat height = [titleView systemLayoutSizeFittingSize:fittedSize].height;
-			return CGSizeMake(fittedSize.width, height + 20);
-		}];
+//		[viewController setHidesNavigationOnScroll:YES];
+//		[viewController setHidesToolbarOnScroll:YES];
+//		[viewController setHidesStatusBarOnScroll:YES];
 	}
 }
 

@@ -58,9 +58,13 @@
 }
 
 -(void)updateContentOffsetWithScrollView:(UIScrollView*)scrollView {
-	
-	CGFloat directionDelta = self.beginDragOffset == 0 ? 0 : self.beginDragOffset - scrollView.contentOffset.y;
+
 	UINavigationController* nav = self.viewController.navigationController;
+#define buffer_in_with_navigation_bar_size 1
+	CGFloat navigationBarHeight = /*[nav isNavigationBarHidden] ? 0 :*/ buffer_in_with_navigation_bar_size ? nav.navigationBar.frame.size.height : 0 ;
+
+	CGFloat directionDelta = self.beginDragOffset == 0 ? 0 : self.beginDragOffset - scrollView.contentOffset.y + navigationBarHeight;
+	
 	if (nav && _controlsNavigationBar) {
 		if (directionDelta > 0 && [nav isNavigationBarHidden]) {
 			[nav setNavigationBarHidden:NO animated:YES];
@@ -88,7 +92,6 @@
 -(void)setScrollView:(UIScrollView *)scrollView {
 	if (_scrollView != scrollView || !scrollView) {
 		if (_scrollView) {
-			NSLog(@"removing observance for %@",_scrollView);
 			[_scrollView removeObserver:self forKeyPath:@"contentOffset"];
 			[_scrollView removeObserver:self forKeyPath:@"pan.state"];
 		}
