@@ -78,7 +78,7 @@
 }
 
 -(void)setScrollView:(UIScrollView *)scrollView {
-	if (_scrollView != scrollView) {
+	if (_scrollView != scrollView || !scrollView) {
 		if (_scrollView) {
 			NSLog(@"removing observance for %@",_scrollView);
 			[_scrollView removeObserver:self forKeyPath:@"contentOffset"];
@@ -94,7 +94,7 @@
 
 -(void)setViewController:(UIViewController<NavigationBarHidingAdapterScrollViewContorller>*)viewController {
 	
-	if (_viewController != viewController) {
+	if (_viewController != viewController || !viewController) {
 		[self willChangeValueForKey:@"viewController"];
 
 		if ([_viewController isViewLoaded]) {
@@ -128,6 +128,7 @@
 
 -(void)destroy {
 	self.viewController = nil;
+	self.scrollView = nil;
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -146,6 +147,10 @@
 			
 		}
 	}
+}
+
+-(void)dealloc {
+	[self destroy];
 }
 
 @end
