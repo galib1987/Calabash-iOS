@@ -8,6 +8,6 @@
 
 @import UIKit;
 
+IB_DESIGNABLE
 @interface FlightDetailTopHeaderView : UITableViewHeaderFooterView
-
 @end

@@ -23,5 +23,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *toFBODateLabel;
 @property (nonatomic, weak) IBOutlet UILabel *toFBOLocationLabel;
 @property (nonatomic, weak) IBOutlet UILabel *toFBOAirpotCodeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *toFBOTimeLabel;
+
+@property (nonatomic, weak) IBOutlet UILabel *travelTimeLabel;
 
 @end

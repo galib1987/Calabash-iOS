@@ -1,5 +1,5 @@
 //
-//  NJOPNavigationTitleView.h
+//  NJOPiPadReservationDetailNavigationTitleView.h
 //  Tailwind
 //
 //  Created by Amos Elmaliah on 10/20/14.
@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface NJOPNavigationTitleView : UIView
+@interface NJOPiPadReservationDetailNavigationTitleView : UIView
 @property (strong, nonatomic) IBOutlet UILabel *leftTItle;
 @property (strong, nonatomic) IBOutlet UILabel *rightTitle;
 @property (nonatomic,copy) CGSize (^fittedSizeForSize) (CGSize requiredSize,CGSize superFittedSize);

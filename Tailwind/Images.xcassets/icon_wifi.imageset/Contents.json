@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "icon_wifi.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "tail.png"
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",

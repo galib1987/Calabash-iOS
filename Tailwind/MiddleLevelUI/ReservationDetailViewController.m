@@ -66,7 +66,7 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 																			@"toFBOAirpotCodeLabel.text"		: reservation.arrivalAirportId,
 
 																			@"fromFBOTailNumberLabel.text"	: reservation.tailNumber,
-																			@"fromFBOTimeLabel.text" 			: [@"Est. Travel:" stringByAppendingFormat:@"%@ %@", reservation.travelTime, reservation.stopsText],
+																			@"travelTimeLabel.text" 			: [@"Est. Travel:" stringByAppendingFormat:@"%@ %@", reservation.travelTime, reservation.stopsText],
 
 																			@"fromFBOLocationLabel.text"		: reservation.departureFboName,
 																			@"toFBOLocationLabel.text"			: reservation.arrivalFboName

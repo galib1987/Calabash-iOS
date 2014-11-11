@@ -9,4 +9,17 @@
 #import "FlightDetailTopHeaderView.h"
 
 @implementation FlightDetailTopHeaderView
+-(instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
+	self = [super initWithReuseIdentifier:reuseIdentifier];
+	if (self) {
+		self.backgroundColor = NAVIGATIONBAR_BACKGORUND_COLOR;
+	}
+	return self;
+}
+
+-(void)layoutSubviews {
+	[super layoutSubviews];
+	self.backgroundColor = NAVIGATIONBAR_BACKGORUND_COLOR;
+}
+
 @end
