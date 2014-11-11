@@ -10,11 +10,28 @@
 
 @implementation NJOPTileContainingCollectionViewCell
 
-- (void)awakeFromNib {
+
+-(void)commonInit {
 	self.backgroundColor = [UIColor clearColor];
 	self.cornerRadius = DEFAULT_CELL_CORENER_RADIUS;
 	self.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
 	self.backgroundView.backgroundColor = [UIColor whiteColor];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super initWithCoder:aDecoder];
+	if (self) {
+		[self commonInit];
+	}
+	return self;
+}
+
+-(instancetype)initWithFrame:(CGRect)frame {
+	self = [super initWithFrame:frame];
+	if (self) {
+		[self commonInit];
+	}
+	return self;
 }
 
 -(void)setCornerRadius:(CGFloat)cornerRadius {

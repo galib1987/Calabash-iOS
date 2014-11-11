@@ -14,9 +14,18 @@
 
 @interface NJOPiPhoneStyle ()
 @property (nonatomic, strong) NSArray* toolbarItems;
+@property (nonatomic, weak) UIViewController* topViewController;
 @end
 
 @implementation NJOPiPhoneStyle
+
+-(void)showActions:sender {
+
+}
+
+-(void)phoneCall:sender {
+
+}
 
 -(NSArray *)toolbarItems {
 
@@ -26,7 +35,7 @@
 			UIImage *background = [UIImage imageNamed:@"icon_nav_menu"];
 			//	UIImage *backgroundSelected = [UIImage imageNamed:@"icon_selected.png"];
 			button = [UIButton buttonWithType:UIButtonTypeCustom];
-			//	[button addTarget:self action:@selector(checkButtonTapped:event:) forControlEvents:UIControlEventTouchUpInside]; //adding action
+			[button addTarget:self action:@selector(showActions:) forControlEvents:UIControlEventTouchUpInside]; //adding action
 			[button setBackgroundImage:background forState:UIControlStateNormal];
 			//	[button setBackgroundImage:backgroundSelected forState:UIControlStateSelected];
 			button.frame = CGRectMake(0 ,0,35,35);
@@ -76,6 +85,7 @@
 //		[viewController setHidesToolbarOnScroll:YES];
 //		[viewController setHidesStatusBarOnScroll:YES];
 	}
+	self.topViewController = viewController;
 }
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {

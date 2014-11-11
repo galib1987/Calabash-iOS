@@ -11,6 +11,6 @@
 @interface NJOPTileContainingCollectionViewCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UILabel *label;
 @property (nonatomic, strong) IBOutlet UIView* tile;
-@property (nonatomic) IBInspectable CGFloat cornerRadius;
-@property (nonatomic) IBInspectable UIColor* backgroundColor;
+@property (nonatomic) CGFloat cornerRadius;
+@property (nonatomic) UIColor* backgroundColor;
 @end

@@ -21,3 +21,4 @@
 #define VERTICAL_TABBAR_BACKGORUND_COLOR 		[UIColor colorFromHexString:@"#37393B"]
 #define HAIRLINE_COLOR 											[UIColor colorWithWhite:204.0/255.0 alpha:1]
 #define LIGHT_BACKGROUND_COLOR 							[UIColor colorFromHexString:@"#5B6165"]
+#define TABLEVIEW_CELL_TILE_COLOR						[UIColor whiteColor]
