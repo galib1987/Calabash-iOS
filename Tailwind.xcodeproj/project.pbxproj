@@ -10,7 +10,6 @@
 		2AD96D2C90B7446D90304928 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 		30A4737F19D9E41A0045D7AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4737E19D9E41A0045D7AF /* main.m */; };
 		30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4738119D9E41A0045D7AF /* AppDelegate.m */; };
-		30A4738819D9E41A0045D7AF /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738619D9E41A0045D7AF /* Main_iPad.storyboard */; };
 		30A4738A19D9E41A0045D7AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738919D9E41A0045D7AF /* Images.xcassets */; };
 		30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738B19D9E41A0045D7AF /* LaunchScreen.xib */; };
 		30A4739919D9E41B0045D7AF /* TailwindTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4739819D9E41B0045D7AF /* TailwindTests.m */; };
@@ -92,6 +91,44 @@
 		6CEDE59F1A0A83D9002D2750 /* NJOPNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEDE59E1A0A83D9002D2750 /* NJOPNavigationBar.m */; };
 		6CF2289719F90A0800A68DF4 /* NJOPActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2289619F90A0800A68DF4 /* NJOPActionButton.m */; };
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
+		A7A7220D1A38899D0006A079 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A7220B1A38899D0006A079 /* Main_iPad.storyboard */; };
+		A7A722101A388AC70006A079 /* NJOPPadHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A7220F1A388AC70006A079 /* NJOPPadHomeViewController.m */; };
+		A7A722141A3895250006A079 /* NJOPClient+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722131A3895250006A079 /* NJOPClient+Login.m */; };
+		A7A722171A3895840006A079 /* NJOPValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722161A3895840006A079 /* NJOPValidator.m */; };
+		A7A7221A1A3896280006A079 /* NNNOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722191A3896280006A079 /* NNNOAuthClient.m */; };
+		A7A722251A3897B60006A079 /* NCLOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722221A3897B60006A079 /* NCLOAuthClient.m */; };
+		A7A722261A3897B60006A079 /* NCLOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722221A3897B60006A079 /* NCLOAuthClient.m */; };
+		A7A722271A3897B60006A079 /* NCLOAuthCredential.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722241A3897B60006A079 /* NCLOAuthCredential.m */; };
+		A7A722281A3897B60006A079 /* NCLOAuthCredential.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722241A3897B60006A079 /* NCLOAuthCredential.m */; };
+		A7A7222B1A3898B70006A079 /* NNNUserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A7222A1A3898B70006A079 /* NNNUserDefaultsManager.m */; };
+		A7A7222C1A3898B70006A079 /* NNNUserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A7222A1A3898B70006A079 /* NNNUserDefaultsManager.m */; };
+		A7B7A8941A3858F600DF8005 /* NJOPPhoneBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B7A8931A3858F600DF8005 /* NJOPPhoneBookingViewController.m */; };
+		A7B7A8AC1A38654800DF8005 /* Nimbus-Sans-Cond-D-Black-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8971A38654800DF8005 /* Nimbus-Sans-Cond-D-Black-Italic.otf */; };
+		A7B7A8AD1A38654800DF8005 /* Nimbus-Sans-Cond-D-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8981A38654800DF8005 /* Nimbus-Sans-Cond-D-Black.otf */; };
+		A7B7A8AE1A38654800DF8005 /* Nimbus-Sans-Cond-D-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8991A38654800DF8005 /* Nimbus-Sans-Cond-D-Bold-Italic.otf */; };
+		A7B7A8AF1A38654800DF8005 /* Nimbus-Sans-Cond-D-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A89A1A38654800DF8005 /* Nimbus-Sans-Cond-D-Bold.otf */; };
+		A7B7A8B01A38654800DF8005 /* Nimbus-Sans-Cond-D-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A89B1A38654800DF8005 /* Nimbus-Sans-Cond-D-Light-Italic.otf */; };
+		A7B7A8B11A38654800DF8005 /* Nimbus-Sans-Cond-D-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A89C1A38654800DF8005 /* Nimbus-Sans-Cond-D-Light.otf */; };
+		A7B7A8B21A38654800DF8005 /* Nimbus-Sans-Cond-D-Regular-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A89D1A38654800DF8005 /* Nimbus-Sans-Cond-D-Regular-Italic.otf */; };
+		A7B7A8B31A38654800DF8005 /* Nimbus-Sans-Cond-D.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A89E1A38654800DF8005 /* Nimbus-Sans-Cond-D.otf */; };
+		A7B7A8B41A38654800DF8005 /* Nimbus-Sans-D-Black-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A89F1A38654800DF8005 /* Nimbus-Sans-D-Black-Italic.otf */; };
+		A7B7A8B51A38654800DF8005 /* Nimbus-Sans-D-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8A01A38654800DF8005 /* Nimbus-Sans-D-Black.otf */; };
+		A7B7A8B61A38654800DF8005 /* Nimbus-Sans-D-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8A11A38654800DF8005 /* Nimbus-Sans-D-Bold-Italic.otf */; };
+		A7B7A8B71A38654800DF8005 /* Nimbus-Sans-D-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8A21A38654800DF8005 /* Nimbus-Sans-D-Bold.otf */; };
+		A7B7A8B81A38654800DF8005 /* Nimbus-Sans-D-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8A31A38654800DF8005 /* Nimbus-Sans-D-Light-Italic.otf */; };
+		A7B7A8B91A38654800DF8005 /* Nimbus-Sans-D-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8A41A38654800DF8005 /* Nimbus-Sans-D-Light.otf */; };
+		A7B7A8BA1A38654800DF8005 /* Nimbus-Sans-D-Regular-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8A51A38654800DF8005 /* Nimbus-Sans-D-Regular-Italic.otf */; };
+		A7B7A8BB1A38654800DF8005 /* Nimbus-Sans-D-Ultra-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8A61A38654800DF8005 /* Nimbus-Sans-D-Ultra-Light.otf */; };
+		A7B7A8BC1A38654800DF8005 /* Nimbus-Sans-D.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8A71A38654800DF8005 /* Nimbus-Sans-D.otf */; };
+		A7B7A8BD1A38654800DF8005 /* Nimbus-Sans-Extd-D-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8A81A38654800DF8005 /* Nimbus-Sans-Extd-D-Black.otf */; };
+		A7B7A8BE1A38654800DF8005 /* Nimbus-Sans-Extd-D-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8A91A38654800DF8005 /* Nimbus-Sans-Extd-D-Bold.otf */; };
+		A7B7A8BF1A38654800DF8005 /* Nimbus-Sans-Extd-D-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8AA1A38654800DF8005 /* Nimbus-Sans-Extd-D-Light.otf */; };
+		A7B7A8C01A38654800DF8005 /* Nimbus-Sans-Extd-D.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8AB1A38654800DF8005 /* Nimbus-Sans-Extd-D.otf */; };
+		A7B7A8C31A38668F00DF8005 /* NJOPPhoneAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B7A8C21A38668F00DF8005 /* NJOPPhoneAccountViewController.m */; };
+		A7B7A8C61A386BA700DF8005 /* NJOPPhoneLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B7A8C51A386BA700DF8005 /* NJOPPhoneLoginTableViewCell.m */; };
+		A7B7A8C91A386E9800DF8005 /* NJOPPhoneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B7A8C81A386E9800DF8005 /* NJOPPhoneLoginViewController.m */; };
+		A7B7A8CC1A38750000DF8005 /* NJOPSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B7A8CB1A38750000DF8005 /* NJOPSession.m */; };
+		A7B7A8CF1A387C4C00DF8005 /* NJOPPadLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B7A8CE1A387C4C00DF8005 /* NJOPPadLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +148,6 @@
 		30A4737E19D9E41A0045D7AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		30A4738019D9E41A0045D7AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		30A4738119D9E41A0045D7AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		30A4738719D9E41A0045D7AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		30A4738919D9E41A0045D7AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		30A4738C19D9E41A0045D7AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		30A4739219D9E41B0045D7AF /* TailwindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TailwindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +297,55 @@
 		6CF2289519F90A0800A68DF4 /* NJOPActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPActionButton.h; path = Views/NJOPActionButton.h; sourceTree = "<group>"; };
 		6CF2289619F90A0800A68DF4 /* NJOPActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPActionButton.m; path = Views/NJOPActionButton.m; sourceTree = "<group>"; };
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
+		A7A7220C1A38899D0006A079 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		A7A7220E1A388AC70006A079 /* NJOPPadHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPadHomeViewController.h; sourceTree = "<group>"; };
+		A7A7220F1A388AC70006A079 /* NJOPPadHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPadHomeViewController.m; sourceTree = "<group>"; };
+		A7A722111A388E200006A079 /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		A7A722121A3895250006A079 /* NJOPClient+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NJOPClient+Login.h"; sourceTree = "<group>"; };
+		A7A722131A3895250006A079 /* NJOPClient+Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NJOPClient+Login.m"; sourceTree = "<group>"; };
+		A7A722151A3895840006A079 /* NJOPValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPValidator.h; sourceTree = "<group>"; };
+		A7A722161A3895840006A079 /* NJOPValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPValidator.m; sourceTree = "<group>"; };
+		A7A722181A3896280006A079 /* NNNOAuthClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNOAuthClient.h; sourceTree = "<group>"; };
+		A7A722191A3896280006A079 /* NNNOAuthClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNOAuthClient.m; sourceTree = "<group>"; };
+		A7A722211A3897B60006A079 /* NCLOAuthClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCLOAuthClient.h; sourceTree = "<group>"; };
+		A7A722221A3897B60006A079 /* NCLOAuthClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCLOAuthClient.m; sourceTree = "<group>"; };
+		A7A722231A3897B60006A079 /* NCLOAuthCredential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCLOAuthCredential.h; sourceTree = "<group>"; };
+		A7A722241A3897B60006A079 /* NCLOAuthCredential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCLOAuthCredential.m; sourceTree = "<group>"; };
+		A7A722291A3898B70006A079 /* NNNUserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNUserDefaultsManager.h; sourceTree = "<group>"; };
+		A7A7222A1A3898B70006A079 /* NNNUserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNUserDefaultsManager.m; sourceTree = "<group>"; };
+		A7B7A8921A3858F600DF8005 /* NJOPPhoneBookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPhoneBookingViewController.h; sourceTree = "<group>"; };
+		A7B7A8931A3858F600DF8005 /* NJOPPhoneBookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPhoneBookingViewController.m; sourceTree = "<group>"; };
+		A7B7A8971A38654800DF8005 /* Nimbus-Sans-Cond-D-Black-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Cond-D-Black-Italic.otf"; sourceTree = "<group>"; };
+		A7B7A8981A38654800DF8005 /* Nimbus-Sans-Cond-D-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Cond-D-Black.otf"; sourceTree = "<group>"; };
+		A7B7A8991A38654800DF8005 /* Nimbus-Sans-Cond-D-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Cond-D-Bold-Italic.otf"; sourceTree = "<group>"; };
+		A7B7A89A1A38654800DF8005 /* Nimbus-Sans-Cond-D-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Cond-D-Bold.otf"; sourceTree = "<group>"; };
+		A7B7A89B1A38654800DF8005 /* Nimbus-Sans-Cond-D-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Cond-D-Light-Italic.otf"; sourceTree = "<group>"; };
+		A7B7A89C1A38654800DF8005 /* Nimbus-Sans-Cond-D-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Cond-D-Light.otf"; sourceTree = "<group>"; };
+		A7B7A89D1A38654800DF8005 /* Nimbus-Sans-Cond-D-Regular-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Cond-D-Regular-Italic.otf"; sourceTree = "<group>"; };
+		A7B7A89E1A38654800DF8005 /* Nimbus-Sans-Cond-D.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Cond-D.otf"; sourceTree = "<group>"; };
+		A7B7A89F1A38654800DF8005 /* Nimbus-Sans-D-Black-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-D-Black-Italic.otf"; sourceTree = "<group>"; };
+		A7B7A8A01A38654800DF8005 /* Nimbus-Sans-D-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-D-Black.otf"; sourceTree = "<group>"; };
+		A7B7A8A11A38654800DF8005 /* Nimbus-Sans-D-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-D-Bold-Italic.otf"; sourceTree = "<group>"; };
+		A7B7A8A21A38654800DF8005 /* Nimbus-Sans-D-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-D-Bold.otf"; sourceTree = "<group>"; };
+		A7B7A8A31A38654800DF8005 /* Nimbus-Sans-D-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-D-Light-Italic.otf"; sourceTree = "<group>"; };
+		A7B7A8A41A38654800DF8005 /* Nimbus-Sans-D-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-D-Light.otf"; sourceTree = "<group>"; };
+		A7B7A8A51A38654800DF8005 /* Nimbus-Sans-D-Regular-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-D-Regular-Italic.otf"; sourceTree = "<group>"; };
+		A7B7A8A61A38654800DF8005 /* Nimbus-Sans-D-Ultra-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-D-Ultra-Light.otf"; sourceTree = "<group>"; };
+		A7B7A8A71A38654800DF8005 /* Nimbus-Sans-D.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-D.otf"; sourceTree = "<group>"; };
+		A7B7A8A81A38654800DF8005 /* Nimbus-Sans-Extd-D-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Extd-D-Black.otf"; sourceTree = "<group>"; };
+		A7B7A8A91A38654800DF8005 /* Nimbus-Sans-Extd-D-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Extd-D-Bold.otf"; sourceTree = "<group>"; };
+		A7B7A8AA1A38654800DF8005 /* Nimbus-Sans-Extd-D-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Extd-D-Light.otf"; sourceTree = "<group>"; };
+		A7B7A8AB1A38654800DF8005 /* Nimbus-Sans-Extd-D.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Extd-D.otf"; sourceTree = "<group>"; };
+		A7B7A8C11A38668F00DF8005 /* NJOPPhoneAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPhoneAccountViewController.h; sourceTree = "<group>"; };
+		A7B7A8C21A38668F00DF8005 /* NJOPPhoneAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPhoneAccountViewController.m; sourceTree = "<group>"; };
+		A7B7A8C41A386BA700DF8005 /* NJOPPhoneLoginTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPhoneLoginTableViewCell.h; sourceTree = "<group>"; };
+		A7B7A8C51A386BA700DF8005 /* NJOPPhoneLoginTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPhoneLoginTableViewCell.m; sourceTree = "<group>"; };
+		A7B7A8C71A386E9800DF8005 /* NJOPPhoneLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPhoneLoginViewController.h; sourceTree = "<group>"; };
+		A7B7A8C81A386E9800DF8005 /* NJOPPhoneLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPhoneLoginViewController.m; sourceTree = "<group>"; };
+		A7B7A8CA1A38750000DF8005 /* NJOPSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSession.h; sourceTree = "<group>"; };
+		A7B7A8CB1A38750000DF8005 /* NJOPSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSession.m; sourceTree = "<group>"; };
+		A7B7A8CD1A387C4C00DF8005 /* NJOPPadLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPadLoginViewController.h; sourceTree = "<group>"; };
+		A7B7A8CE1A387C4C00DF8005 /* NJOPPadLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPadLoginViewController.m; sourceTree = "<group>"; };
 		DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -321,8 +406,8 @@
 				55CA603319E7FD4A001E2FC6 /* helpers */,
 				30A4738019D9E41A0045D7AF /* AppDelegate.h */,
 				30A4738119D9E41A0045D7AF /* AppDelegate.m */,
+				A7A7220B1A38899D0006A079 /* Main_iPad.storyboard */,
 				6C08E4AB19F7B05200119B84 /* Main_iPhone.storyboard */,
-				30A4738619D9E41A0045D7AF /* Main_iPad.storyboard */,
 				30A4738919D9E41A0045D7AF /* Images.xcassets */,
 				30A4738B19D9E41A0045D7AF /* LaunchScreen.xib */,
 				30A4737C19D9E41A0045D7AF /* Supporting Files */,
@@ -333,6 +418,7 @@
 		30A4737C19D9E41A0045D7AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A7B7A8951A38654800DF8005 /* fonts */,
 				6CD6F82219FD1B22009D0812 /* Fixtures */,
 				30A4737D19D9E41A0045D7AF /* Info.plist */,
 				30A4737E19D9E41A0045D7AF /* main.m */,
@@ -372,8 +458,13 @@
 		55CA603319E7FD4A001E2FC6 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A7A722201A3897B60006A079 /* tmp */,
 				6CD92E171A0F7D13000056F4 /* Views */,
 				6CD6F82519FD5D9C009D0812 /* DataSource */,
+				A7A722151A3895840006A079 /* NJOPValidator.h */,
+				A7A722161A3895840006A079 /* NJOPValidator.m */,
+				A7A722121A3895250006A079 /* NJOPClient+Login.h */,
+				A7A722131A3895250006A079 /* NJOPClient+Login.m */,
 				6C7C2BBA19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.h */,
 				6C7C2BBB19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m */,
 				55CA603919E7FE22001E2FC6 /* NJOPValueTransformer.h */,
@@ -388,8 +479,15 @@
 				6C1F218E19FFAE46009F5436 /* NSDate+NJOP.m */,
 				6C1F219319FFBD5F009F5436 /* NJOPClient.h */,
 				6C1F219419FFBD5F009F5436 /* NJOPClient.m */,
+				A7A722181A3896280006A079 /* NNNOAuthClient.h */,
+				A7A722191A3896280006A079 /* NNNOAuthClient.m */,
+				A7A722291A3898B70006A079 /* NNNUserDefaultsManager.h */,
+				A7A7222A1A3898B70006A079 /* NNNUserDefaultsManager.m */,
 				6C1F219019FFBD24009F5436 /* NJOPReservation.h */,
 				6C1F219119FFBD24009F5436 /* NJOPReservation.m */,
+				A7B7A8CA1A38750000DF8005 /* NJOPSession.h */,
+				A7B7A8CB1A38750000DF8005 /* NJOPSession.m */,
+				A7A722111A388E200006A079 /* Defines.h */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -402,6 +500,12 @@
 				6C08E4B019F7B73900119B84 /* ReservationDetailViewController.m */,
 				6C9448091A10DFB500A7EEDF /* NJOPPPhoneHomeViewController.h */,
 				6C94480A1A10DFB500A7EEDF /* NJOPPPhoneHomeViewController.m */,
+				A7B7A8921A3858F600DF8005 /* NJOPPhoneBookingViewController.h */,
+				A7B7A8931A3858F600DF8005 /* NJOPPhoneBookingViewController.m */,
+				A7B7A8C11A38668F00DF8005 /* NJOPPhoneAccountViewController.h */,
+				A7B7A8C21A38668F00DF8005 /* NJOPPhoneAccountViewController.m */,
+				A7B7A8C71A386E9800DF8005 /* NJOPPhoneLoginViewController.h */,
+				A7B7A8C81A386E9800DF8005 /* NJOPPhoneLoginViewController.m */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -419,6 +523,10 @@
 				6CBD546619F1129E0009077C /* NJOPActionsViewController.m */,
 				6CC3D6BB19F173170081A5BD /* NJOPReservationCollectionViewController.h */,
 				6CC3D6BC19F173170081A5BD /* NJOPReservationCollectionViewController.m */,
+				A7B7A8CD1A387C4C00DF8005 /* NJOPPadLoginViewController.h */,
+				A7B7A8CE1A387C4C00DF8005 /* NJOPPadLoginViewController.m */,
+				A7A7220E1A388AC70006A079 /* NJOPPadHomeViewController.h */,
+				A7A7220F1A388AC70006A079 /* NJOPPadHomeViewController.m */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -446,6 +554,8 @@
 				6CD6F2651A12031300B53E9E /* NJOPUpcomingFlightTableCell.m */,
 				6C08E4B319F7B77A00119B84 /* WeatherTableCell.h */,
 				6C08E4B419F7B77A00119B84 /* WeatherTableCell.m */,
+				A7B7A8C41A386BA700DF8005 /* NJOPPhoneLoginTableViewCell.h */,
+				A7B7A8C51A386BA700DF8005 /* NJOPPhoneLoginTableViewCell.m */,
 			);
 			name = TableVIewCells;
 			sourceTree = "<group>";
@@ -703,6 +813,53 @@
 			name = "ParalaxView(unused)";
 			sourceTree = "<group>";
 		};
+		A7A722201A3897B60006A079 /* tmp */ = {
+			isa = PBXGroup;
+			children = (
+				A7A722211A3897B60006A079 /* NCLOAuthClient.h */,
+				A7A722221A3897B60006A079 /* NCLOAuthClient.m */,
+				A7A722231A3897B60006A079 /* NCLOAuthCredential.h */,
+				A7A722241A3897B60006A079 /* NCLOAuthCredential.m */,
+			);
+			path = tmp;
+			sourceTree = "<group>";
+		};
+		A7B7A8951A38654800DF8005 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A7B7A8961A38654800DF8005 /* Nimbus */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		A7B7A8961A38654800DF8005 /* Nimbus */ = {
+			isa = PBXGroup;
+			children = (
+				A7B7A8971A38654800DF8005 /* Nimbus-Sans-Cond-D-Black-Italic.otf */,
+				A7B7A8981A38654800DF8005 /* Nimbus-Sans-Cond-D-Black.otf */,
+				A7B7A8991A38654800DF8005 /* Nimbus-Sans-Cond-D-Bold-Italic.otf */,
+				A7B7A89A1A38654800DF8005 /* Nimbus-Sans-Cond-D-Bold.otf */,
+				A7B7A89B1A38654800DF8005 /* Nimbus-Sans-Cond-D-Light-Italic.otf */,
+				A7B7A89C1A38654800DF8005 /* Nimbus-Sans-Cond-D-Light.otf */,
+				A7B7A89D1A38654800DF8005 /* Nimbus-Sans-Cond-D-Regular-Italic.otf */,
+				A7B7A89E1A38654800DF8005 /* Nimbus-Sans-Cond-D.otf */,
+				A7B7A89F1A38654800DF8005 /* Nimbus-Sans-D-Black-Italic.otf */,
+				A7B7A8A01A38654800DF8005 /* Nimbus-Sans-D-Black.otf */,
+				A7B7A8A11A38654800DF8005 /* Nimbus-Sans-D-Bold-Italic.otf */,
+				A7B7A8A21A38654800DF8005 /* Nimbus-Sans-D-Bold.otf */,
+				A7B7A8A31A38654800DF8005 /* Nimbus-Sans-D-Light-Italic.otf */,
+				A7B7A8A41A38654800DF8005 /* Nimbus-Sans-D-Light.otf */,
+				A7B7A8A51A38654800DF8005 /* Nimbus-Sans-D-Regular-Italic.otf */,
+				A7B7A8A61A38654800DF8005 /* Nimbus-Sans-D-Ultra-Light.otf */,
+				A7B7A8A71A38654800DF8005 /* Nimbus-Sans-D.otf */,
+				A7B7A8A81A38654800DF8005 /* Nimbus-Sans-Extd-D-Black.otf */,
+				A7B7A8A91A38654800DF8005 /* Nimbus-Sans-Extd-D-Bold.otf */,
+				A7B7A8AA1A38654800DF8005 /* Nimbus-Sans-Extd-D-Light.otf */,
+				A7B7A8AB1A38654800DF8005 /* Nimbus-Sans-Extd-D.otf */,
+			);
+			path = Nimbus;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -791,22 +948,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B7A8C01A38654800DF8005 /* Nimbus-Sans-Extd-D.otf in Resources */,
+				A7B7A8AE1A38654800DF8005 /* Nimbus-Sans-Cond-D-Bold-Italic.otf in Resources */,
 				6C08E46C19F5938A00119B84 /* NJOPiPadReservationDetailNavigationTitleView.xib in Resources */,
+				A7B7A8BD1A38654800DF8005 /* Nimbus-Sans-Extd-D-Black.otf in Resources */,
+				A7B7A8BE1A38654800DF8005 /* Nimbus-Sans-Extd-D-Bold.otf in Resources */,
+				A7B7A8BF1A38654800DF8005 /* Nimbus-Sans-Extd-D-Light.otf in Resources */,
 				6C9754F919EE90C1005DD1DF /* NJOPAllFlightsHeader.xib in Resources */,
-				30A4738819D9E41A0045D7AF /* Main_iPad.storyboard in Resources */,
+				A7B7A8B11A38654800DF8005 /* Nimbus-Sans-Cond-D-Light.otf in Resources */,
 				30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */,
+				A7B7A8AD1A38654800DF8005 /* Nimbus-Sans-Cond-D-Black.otf in Resources */,
 				6CBD545B19F021E50009077C /* NJSingleFBOTile-Left.xib in Resources */,
+				A7B7A8B21A38654800DF8005 /* Nimbus-Sans-Cond-D-Regular-Italic.otf in Resources */,
 				6C08E4C719F7B7F200119B84 /* ReservationHeaderView.xib in Resources */,
 				6C73F68A19F127C300A92BBE /* NJInfoTile.xib in Resources */,
 				6CD6F2621A11143600B53E9E /* NJOPSummaryNavigationTitleView.xib in Resources */,
+				A7B7A8AF1A38654800DF8005 /* Nimbus-Sans-Cond-D-Bold.otf in Resources */,
+				A7B7A8B41A38654800DF8005 /* Nimbus-Sans-D-Black-Italic.otf in Resources */,
+				A7B7A8B91A38654800DF8005 /* Nimbus-Sans-D-Light.otf in Resources */,
+				A7B7A8B61A38654800DF8005 /* Nimbus-Sans-D-Bold-Italic.otf in Resources */,
 				30A4738A19D9E41A0045D7AF /* Images.xcassets in Resources */,
+				A7B7A8AC1A38654800DF8005 /* Nimbus-Sans-Cond-D-Black-Italic.otf in Resources */,
+				A7A7220D1A38899D0006A079 /* Main_iPad.storyboard in Resources */,
 				6C08E4AC19F7B05200119B84 /* Main_iPhone.storyboard in Resources */,
+				A7B7A8BC1A38654800DF8005 /* Nimbus-Sans-D.otf in Resources */,
+				A7B7A8B51A38654800DF8005 /* Nimbus-Sans-D-Black.otf in Resources */,
+				A7B7A8BA1A38654800DF8005 /* Nimbus-Sans-D-Regular-Italic.otf in Resources */,
 				6CC3D6BF19F1738E0081A5BD /* NJOPBriefTopCollectionViewCell.xib in Resources */,
 				6CD6F82419FD1B2C009D0812 /* mobile-api-reservations-response.json in Resources */,
+				A7B7A8B01A38654800DF8005 /* Nimbus-Sans-Cond-D-Light-Italic.otf in Resources */,
+				A7B7A8BB1A38654800DF8005 /* Nimbus-Sans-D-Ultra-Light.otf in Resources */,
 				6C9754F819EE90C1005DD1DF /* NJTileContainingTableViewCell.xib in Resources */,
 				6CC3D6BA19F171AA0081A5BD /* NJOPInfoCell.xib in Resources */,
+				A7B7A8B31A38654800DF8005 /* Nimbus-Sans-Cond-D.otf in Resources */,
+				A7B7A8B71A38654800DF8005 /* Nimbus-Sans-D-Bold.otf in Resources */,
 				6CCDC6E419F01D8B005339B4 /* NJSingleFBOTile-Right.xib in Resources */,
 				6C08E4CD19F7BE3F00119B84 /* NJOPFBOTile.xib in Resources */,
+				A7B7A8B81A38654800DF8005 /* Nimbus-Sans-D-Light-Italic.otf in Resources */,
 				6CEDE58E1A0948D2002D2750 /* NJOPParalaxView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -902,14 +1080,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A722251A3897B60006A079 /* NCLOAuthClient.m in Sources */,
+				A7B7A8941A3858F600DF8005 /* NJOPPhoneBookingViewController.m in Sources */,
+				A7A722171A3895840006A079 /* NJOPValidator.m in Sources */,
 				6CEDE59F1A0A83D9002D2750 /* NJOPNavigationBar.m in Sources */,
 				6C1F219219FFBD24009F5436 /* NJOPReservation.m in Sources */,
 				6C57E05519EEC8FB00D3FB00 /* NJTailNumberTail.m in Sources */,
 				6C08E4B519F7B77A00119B84 /* WeatherTableCell.m in Sources */,
 				6C57E05E19EEC8FB00D3FB00 /* NJVerticalTabViewController.m in Sources */,
 				6C1F219519FFBD5F009F5436 /* NJOPClient.m in Sources */,
+				A7B7A8CC1A38750000DF8005 /* NJOPSession.m in Sources */,
 				6CE31AF41A0BFA5A009A9710 /* NJOPTopFBOTile.m in Sources */,
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
+				A7A722101A388AC70006A079 /* NJOPPadHomeViewController.m in Sources */,
 				6C94480B1A10DFB500A7EEDF /* NJOPPPhoneHomeViewController.m in Sources */,
 				30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */,
 				6C57E05319EEC8FB00D3FB00 /* NJSingleFBOTile.m in Sources */,
@@ -921,6 +1104,7 @@
 				6C57E05019EEC8FB00D3FB00 /* NJOPAllFlightsHeader.m in Sources */,
 				6C57E05D19EEC8FB00D3FB00 /* NJVerticalTabCell.m in Sources */,
 				6C08E4C219F7B7D100119B84 /* TailCell.m in Sources */,
+				A7B7A8CF1A387C4C00DF8005 /* NJOPPadLoginViewController.m in Sources */,
 				6CC3D6B819F167130081A5BD /* NJOP3TilesLayoutTableViewCell.m in Sources */,
 				6C08E4BB19F7B78D00119B84 /* FlightDetailTopHeaderView.m in Sources */,
 				6CBD546019F111670009077C /* NJOPNestedCollectionTableViewCell.m in Sources */,
@@ -934,6 +1118,8 @@
 				6C57E05219EEC8FB00D3FB00 /* NJInfoTile.m in Sources */,
 				6CC3D6C219F176C90081A5BD /* NJOPBriefTopCollectionViewCell.m in Sources */,
 				6CD6F26C1A12155400B53E9E /* NJOPCurrentFBOTableCell.m in Sources */,
+				A7B7A8C61A386BA700DF8005 /* NJOPPhoneLoginTableViewCell.m in Sources */,
+				A7A722271A3897B60006A079 /* NCLOAuthCredential.m in Sources */,
 				6C57E05819EEC8FB00D3FB00 /* NJWeatherTile.m in Sources */,
 				6CD6F26F1A121B6600B53E9E /* UIViewController+NJNavigationBarHiding.m in Sources */,
 				6C57E06519EECCD500D3FB00 /* NJOPSplitViewController.m in Sources */,
@@ -941,16 +1127,21 @@
 				6C57E06819EED4CE00D3FB00 /* NJOPBriefViewController.m in Sources */,
 				6CEDE58D1A0948D2002D2750 /* NJOPParalaxView.m in Sources */,
 				6C57E05119EEC8FB00D3FB00 /* NJCompactFlightTile.m in Sources */,
+				A7B7A8C31A38668F00DF8005 /* NJOPPhoneAccountViewController.m in Sources */,
 				6C57E06219EEC9EE00D3FB00 /* NJOPActionTile.m in Sources */,
 				6CEDE5991A0A6DF6002D2750 /* UIColor+NJOP.m in Sources */,
+				A7A7221A1A3896280006A079 /* NNNOAuthClient.m in Sources */,
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */,
 				6C57E05619EEC8FB00D3FB00 /* NJTileContainingTableViewCell.m in Sources */,
+				A7A722141A3895250006A079 /* NJOPClient+Login.m in Sources */,
 				6CD6F2691A120E9000B53E9E /* NJOPFBOTableCell.m in Sources */,
 				6CD92E1A1A0F7D26000056F4 /* NJOPHorizontalHairlineView.m in Sources */,
 				6C8045E419F9212700161C4E /* NJOPTableViewCell.m in Sources */,
 				6C08E4B819F7B78100119B84 /* FBOTableCell.m in Sources */,
+				A7B7A8C91A386E9800DF8005 /* NJOPPhoneLoginViewController.m in Sources */,
 				6CF2289719F90A0800A68DF4 /* NJOPActionButton.m in Sources */,
+				A7A7222B1A3898B70006A079 /* NNNUserDefaultsManager.m in Sources */,
 				6C9448111A10F38F00A7EEDF /* NJOPNOFBOTableCell.m in Sources */,
 				6C57E05B19EEC8FB00D3FB00 /* SimpleDataSourceTableViewController.m in Sources */,
 				6C7C2BBC19F2A03F0092F08D /* UICollectionReusableView+NJOPHelpers.m in Sources */,
@@ -974,7 +1165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A722261A3897B60006A079 /* NCLOAuthClient.m in Sources */,
 				30A4739919D9E41B0045D7AF /* TailwindTests.m in Sources */,
+				A7A722281A3897B60006A079 /* NCLOAuthCredential.m in Sources */,
+				A7A7222C1A3898B70006A079 /* NNNUserDefaultsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,20 +1183,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		30A4738619D9E41A0045D7AF /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				30A4738719D9E41A0045D7AF /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 		30A4738B19D9E41A0045D7AF /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				30A4738C19D9E41A0045D7AF /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		A7A7220B1A38899D0006A079 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7A7220C1A38899D0006A079 /* Base */,
+			);
+			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -30,7 +30,7 @@
 															@{
 																kSimpleDataSourceCellIdentifierKey	: @"NJVerticalTabCell",
 																kSimpleDataSourceCellKeypaths				: @{
-																		@"label.text" : @"brief",
+																		@"label.text" : @"home",
 																		}
 																},
 															@{
@@ -54,15 +54,17 @@
 															@{
 																kSimpleDataSourceCellIdentifierKey	: @"NJVerticalTabCell",
 																kSimpleDataSourceCellKeypaths				: @{
-																		@"label.text" : @"contact owner service",
+																		@"label.text" : @"owner service",
 																		}
 																},
+                                                            /*
 															@{
 																kSimpleDataSourceCellIdentifierKey	: @"NJVerticalTabCell",
 																kSimpleDataSourceCellKeypaths				: @{
 																		@"label.text" : @"settings",
 																		}
 																},
+                                                             */
 															]
 													}];
 
@@ -78,6 +80,37 @@
 
 -(UIViewController*)viewControllerForItemAtIndexPath:(NSIndexPath*)indexPath {
 	return nil;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    NJVerticalTabCell *cell = (NJVerticalTabCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    NSLog(@"touched cell %@ at indexPath %@", cell.label.text, indexPath);
+    NSString *section = cell.label.text;
+    [self goToSection:section];
+}
+
+- (void) goToSection:(NSString *)section {
+    if ([section isEqualToString:@"home"]) {
+        
+    }
+    if ([section isEqualToString:@"flights"]) {
+        
+    }
+    if ([section isEqualToString:@"book"]) {
+        
+    }
+    if ([section isEqualToString:@"account"]) {
+        
+    }
+    if ([section isEqualToString:@"owner services"]) {
+        
+    }
+    if ([section isEqualToString:@""]) {
+        
+    }
 }
 
 @end

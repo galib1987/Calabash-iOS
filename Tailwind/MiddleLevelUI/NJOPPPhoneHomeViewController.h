@@ -9,4 +9,6 @@
 @import  UIKit;
 #import "SimpleDataSourceTableViewController.h"
 @interface NJOPPPhoneHomeViewController : SimpleDataSourceTableViewController
+
+- (void) checkSession;
 @end

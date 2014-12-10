@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="UCL-iC-8V0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UCL-iC-8V0">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Nimbus-Sans-D.otf">
+            <string>NimbusSanD-Reg</string>
+            <string>NimbusSanD-Reg</string>
+        </mutableArray>
+        <mutableArray key="Nimbus-Sans-Extd-D.otf">
+            <string>NimbusSanExtD-Reg</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Reservation Collection View Controller-->
         <scene sceneID="VIP-Yu-F9Z">
             <objects>
                 <collectionViewController id="sRl-mQ-aMk" customClass="NJOPReservationCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cal-BQ-WPc">
-                        <rect key="frame" x="0.0" y="0.0" width="708" height="846"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="422"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="obw-wn-FAe" customClass="NJOPCollectionViewFlowLayout">
@@ -22,7 +31,7 @@
                         </collectionViewFlowLayout>
                         <cells/>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="ShK-A6-HIO">
-                            <rect key="frame" x="0.0" y="0.0" width="708" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </collectionReusableView>
                         <connections>
@@ -33,14 +42,14 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IaO-x9-rMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1114.8800000000001" y="-2300.5866666666666"/>
+            <point key="canvasLocation" x="957" y="-1360"/>
         </scene>
         <!--Actions View Controller-->
         <scene sceneID="jI6-d9-aaK">
             <objects>
                 <collectionViewController automaticallyAdjustsScrollViewInsets="NO" id="htr-si-UtY" customClass="NJOPActionsViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" dataMode="prototypes" id="L0N-y1-pfg">
-                        <rect key="frame" x="0.0" y="0.0" width="708" height="160"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="Rl2-ei-scV" customClass="NJOPCollectionViewFlowLayout">
@@ -58,7 +67,73 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzr-GU-M41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1128.96" y="-1629.866666666667"/>
+            <point key="canvasLocation" x="882" y="-955.00000000000023"/>
+        </scene>
+        <!--Pad Login View Controller-->
+        <scene sceneID="crO-HO-SwE">
+            <objects>
+                <viewController id="mdF-gA-SRp" customClass="NJOPPadLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k8n-9I-vIR"/>
+                        <viewControllerLayoutGuide type="bottom" id="tZv-bL-jfd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eZ8-g3-GUI">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7D-qS-Gmq" userLabel="username">
+                                <rect key="frame" x="45" y="298" width="450" height="30"/>
+                                <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lf6-vg-3TR" userLabel="password">
+                                <rect key="frame" x="45" y="378" width="450" height="30"/>
+                                <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="NetJets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEF-sb-CaQ">
+                                <rect key="frame" x="26" y="100" width="508" height="25"/>
+                                <fontDescription key="fontDescription" name="NimbusSanExtD-Reg" family="Nimbus Sans Extd D" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRa-3q-R4i">
+                                <rect key="frame" x="95" y="486" width="350" height="30"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitLogin:" destination="mdF-gA-SRp" eventType="touchUpInside" id="ME8-0M-aIr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SEF-sb-CaQ" firstAttribute="trailing" secondItem="eZ8-g3-GUI" secondAttribute="trailingMargin" constant="10" id="MsA-U8-s3I"/>
+                            <constraint firstItem="SEF-sb-CaQ" firstAttribute="leading" secondItem="eZ8-g3-GUI" secondAttribute="leadingMargin" constant="20" id="ny9-Oz-KeI"/>
+                            <constraint firstItem="SEF-sb-CaQ" firstAttribute="leading" secondItem="eZ8-g3-GUI" secondAttribute="leadingMargin" constant="10" id="re9-JH-qsF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SEF-sb-CaQ" secondAttribute="trailing" constant="20" id="vvq-VG-7av"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ny9-Oz-KeI"/>
+                                <exclude reference="vvq-VG-7av"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Etg-yj-bzl"/>
+                    <connections>
+                        <outlet property="emailField" destination="p7D-qS-Gmq" id="j9d-FH-J7K"/>
+                        <outlet property="loginButton" destination="HRa-3q-R4i" id="Mb1-WJ-Gzq"/>
+                        <outlet property="passwordField" destination="lf6-vg-3TR" id="6Et-PA-a6s"/>
+                        <outlet property="view" destination="eZ8-g3-GUI" id="oeN-Ao-fZW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfc-CQ-ov7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-717" y="-122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="744-No-hUe">
@@ -69,33 +144,56 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Wqv-4b-HTR" kind="relationship" relationship="rootViewController" id="dX1-Uo-LAS"/>
+                        <segue destination="PMd-ac-zrY" kind="relationship" relationship="rootViewController" id="7i2-2s-kbN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1z-9q-FlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-528.63999999999999" y="-1962.6666666666667"/>
+            <point key="canvasLocation" x="-1425" y="-982"/>
+        </scene>
+        <!--Pad Home View Controller-->
+        <scene sceneID="aH5-dm-8vF">
+            <objects>
+                <viewController id="PMd-ac-zrY" customClass="NJOPPadHomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b0c-z3-vdA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ew6-li-1D9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BUp-ID-l3f">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xez-Jg-Tfk"/>
+                    <connections>
+                        <outlet property="view" destination="BUp-ID-l3f" id="Vwf-x6-xsE"/>
+                        <segue destination="mdF-gA-SRp" kind="show" identifier="goToLoginScreen" id="QAA-RM-nhh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pVC-co-UuH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-671" y="-1039"/>
         </scene>
         <!--Parent View Controller-->
         <scene sceneID="Ro5-oZ-EGJ">
             <objects>
-                <viewController id="Wqv-4b-HTR" customClass="NJOPParentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NJOPParentViewController" id="Wqv-4b-HTR" customClass="NJOPParentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PF7-RN-wgu"/>
                         <viewControllerLayoutGuide type="bottom" id="0PI-Rw-Nzv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9rc-mn-HMI">
-                        <rect key="frame" x="0.0" y="0.0" width="708" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AT-Ez-dnD">
-                                <rect key="frame" x="0.0" y="0.0" width="708" height="846"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="422"/>
                                 <connections>
                                     <segue destination="sRl-mQ-aMk" kind="embed" id="bfr-Ne-uZx"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isa-Yy-1E1">
-                                <rect key="frame" x="0.0" y="856" width="708" height="160"/>
+                                <rect key="frame" x="0.0" y="432" width="600" height="160"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="8lr-7t-Qif"/>
@@ -123,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9F-BN-tMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280.31999999999999" y="-1962.6666666666667"/>
+            <point key="canvasLocation" x="223" y="-1046"/>
         </scene>
         <!--Trait Override View Controller-->
         <scene sceneID="cyJ-wS-5ZA">
@@ -134,11 +232,11 @@
                         <viewControllerLayoutGuide type="bottom" id="p0n-Mr-NBT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uos-5V-SmF">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="430-3r-MZr">
-                                <rect key="frame" x="0.0" y="0.0" width="60" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="wfM-9k-3ff"/>
                                 </constraints>
@@ -147,7 +245,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruJ-Vy-X0Y">
-                                <rect key="frame" x="60" y="0.0" width="708" height="1024"/>
+                                <rect key="frame" x="60" y="0.0" width="540" height="600"/>
                                 <connections>
                                     <segue destination="NaG-8R-JsJ" kind="embed" id="U0h-Ls-AI3"/>
                                 </connections>
@@ -167,14 +265,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edM-1G-wlw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-578" y="-3223"/>
+            <point key="canvasLocation" x="-451.5625" y="-1888.4765625"/>
         </scene>
         <!--Vertical Tab View Controller-->
         <scene sceneID="KFt-ZZ-IaC">
             <objects>
                 <collectionViewController id="ISj-qN-1mL" customClass="NJVerticalTabViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="JEx-eU-Mne">
-                        <rect key="frame" x="0.0" y="0.0" width="60" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="60" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="pqU-PV-lq8">
                             <size key="itemSize" width="60" height="104"/>
@@ -256,15 +354,10 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e17-Vl-3ZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-932" y="-1963.0000000000002"/>
+            <point key="canvasLocation" x="-1857" y="-956"/>
         </scene>
     </scenes>
     <resources>
         <image name="infoImage" width="51" height="52"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
 </document>
