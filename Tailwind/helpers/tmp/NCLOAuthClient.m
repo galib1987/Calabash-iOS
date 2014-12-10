@@ -1,0 +1,170 @@
+//
+//  NCLOAuthClient.m
+//  NCLFramework
+//
+//  Created by Ryan Smith on 10/7/14.
+//  Copyright (c) 2014 NetJets, Inc. All rights reserved.
+//
+
+#import "NCLOAuthClient.h"
+#import "NCLNetworking_Private.h"
+#import "NCLOAuthCredential.h"
+
+@interface NCLOAuthClient ()
+
+@end
+
+@implementation NCLOAuthClient
+
++ (NCLOAuthClient*)sharedInstance
+{
+    static dispatch_once_t pred;
+    static NCLOAuthClient *sharedInstance = nil;
+    
+    dispatch_once
+    (&pred, ^
+     {
+         sharedInstance = [[self alloc] init];
+     });
+    
+    return sharedInstance;
+}
+
+- (NSString *)serviceProviderIdentifier
+{
+    return [NCLNetworking secondLevelDomainForHost:[self host]];
+}
+
+- (NSString *)clientID
+{
+    // must be overridden by subclass
+    [self doesNotRecognizeSelector:_cmd];
+
+    return nil;
+}
+
+- (NSString *)secret
+{
+    // must be overridden by subclass
+    [self doesNotRecognizeSelector:_cmd];
+
+    return nil;
+}
+
+- (void)authenticateUsingOAuthWithPath:(NSString *)path
+                              username:(NSString *)username
+                              password:(NSString *)password
+                                 scope:(NSString *)scope
+                               success:(void (^)(NCLOAuthCredential *credential))success
+                               failure:(void (^)(NSError *error))failure
+{
+    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
+    [mutableParameters setObject:@"password" forKey:@"grant_type"];
+    [mutableParameters setValue:username forKey:@"username"];
+    [mutableParameters setValue:password forKey:@"password"];
+    if (scope)
+    {
+        [mutableParameters setValue:scope forKey:@"scope"];
+    }
+    NSDictionary *parameters = [NSDictionary dictionaryWithDictionary:mutableParameters];
+
+    [self authenticateUsingOAuthWithPath:path parameters:parameters success:success failure:failure];
+}
+
+
+- (void)authenticateUsingOAuthWithPath:(NSString *)path
+                                 scope:(NSString *)scope
+                               success:(void (^)(NCLOAuthCredential *credential))success
+                               failure:(void (^)(NSError *error))failure
+{
+    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
+    [mutableParameters setObject:@"client_credentials" forKey:@"grant_type"];
+    [mutableParameters setValue:scope forKey:@"scope"];
+    NSDictionary *parameters = [NSDictionary dictionaryWithDictionary:mutableParameters];
+    
+    [self authenticateUsingOAuthWithPath:path parameters:parameters success:success failure:failure];
+}
+
+- (void)authenticateUsingOAuthWithPath:(NSString *)path
+                          refreshToken:(NSString *)refreshToken
+                               success:(void (^)(NCLOAuthCredential *credential))success
+                               failure:(void (^)(NSError *error))failure
+{
+    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
+    [mutableParameters setObject:@"refresh_token" forKey:@"grant_type"];
+    [mutableParameters setValue:refreshToken forKey:@"refresh_token"];
+    NSDictionary *parameters = [NSDictionary dictionaryWithDictionary:mutableParameters];
+    
+    [self authenticateUsingOAuthWithPath:path parameters:parameters success:success failure:failure];
+}
+
+- (void)authenticateUsingOAuthWithPath:(NSString *)path
+                                  code:(NSString *)code
+                           redirectURI:(NSString *)uri
+                               success:(void (^)(NCLOAuthCredential *credential))success
+                               failure:(void (^)(NSError *error))failure
+{
+    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
+    [mutableParameters setObject:@"authorization_code" forKey:@"grant_type"];
+    [mutableParameters setValue:code forKey:@"code"];
+    [mutableParameters setValue:uri forKey:@"redirect_uri"];
+    NSDictionary *parameters = [NSDictionary dictionaryWithDictionary:mutableParameters];
+    
+    [self authenticateUsingOAuthWithPath:path parameters:parameters success:success failure:failure];
+}
+
+- (void)authenticateUsingOAuthWithPath:(NSString *)path
+                            parameters:(NSDictionary *)parameters
+                               success:(void (^)(NCLOAuthCredential *credential))success
+                               failure:(void (^)(NSError *error))failure
+{
+    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
+    [mutableParameters setObject:[self clientID] forKey:@"client_id"];
+    [mutableParameters setValue:[self secret] forKey:@"client_secret"];
+    parameters = [NSDictionary dictionaryWithDictionary:mutableParameters];
+    
+    NSString *scheme = [self isSecure] ? @"https" : @"http";
+    
+    NCLURLRequest *request = [[NCLURLRequest alloc] initWithScheme:scheme host:[self host] port:[self port] path:path];
+    [request setParameters:parameters];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    request.shouldUseSerialDispatchQueue = YES;
+    NSHTTPURLResponse *httpResponse;
+    NSError *error;
+    
+    NSData *data = [self POST:request HTTPBody:parameters returningResponse:&httpResponse error:&error];
+    
+    if (error)
+    {
+        NSLog(@"error:%@", error);
+        failure(error);
+    }
+    else if (data)
+    {
+        id responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        if ([responseObject isKindOfClass:[NSDictionary class]])
+        {
+            NCLOAuthCredential *credential = [NCLOAuthCredential credentialWithOAuthToken:responseObject[@"access_token"] tokenType:responseObject[@"token_type"]];
+            
+            NSString *refreshToken = [responseObject valueForKey:@"refresh_token"];
+            if (refreshToken == nil || [refreshToken isEqual:[NSNull null]]) {
+                refreshToken = [parameters valueForKey:@"refresh_token"];
+            }
+            
+            NSDate *expireDate = [NSDate distantFuture];
+            id expiresIn = [responseObject valueForKey:@"expires_in"];
+            if (expiresIn != nil && ![expiresIn isEqual:[NSNull null]]) {
+                expireDate = [NSDate dateWithTimeIntervalSinceNow:[expiresIn doubleValue]];
+            }
+            
+            [credential setRefreshToken:refreshToken expiration:expireDate];
+            
+            self.credential = credential;
+            
+            success(credential);
+        }
+    }
+}
+
+@end

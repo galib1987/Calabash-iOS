@@ -10,6 +10,7 @@
 #import "NJOPReservation.h"
 #import "NJOPValueTransformer.h"
 #import "NSDate+NJOP.h"
+#import "BFTask.h"
 
 @interface NJOPClassDataTransformer : NJOPValueTransformer
 @end

@@ -122,4 +122,8 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 
 }
 
+- (void) checkSession {
+    
+}
+
 @end

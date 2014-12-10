@@ -8,6 +8,20 @@
 
 @import Foundation;
 
+typedef id(^ContinuationBlock)(id);
+
+@protocol Continuable <NSObject>
+- (instancetype)continueWithBlock:(ContinuationBlock)block;
+@end
+
+@protocol Task <Continuable>
+- (id)result;
+- (NSError *)error;
+- (NSException *)exception;
+- (BOOL)isCancelled;
+- (BOOL)isCompleted;
+@end
+
 @class NJOPReservation;
 
 @interface NJOPClient : NSObject
