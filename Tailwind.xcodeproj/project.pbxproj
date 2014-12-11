@@ -90,7 +90,6 @@
 		6CF2289719F90A0800A68DF4 /* NJOPActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2289619F90A0800A68DF4 /* NJOPActionButton.m */; };
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 		A75680831A3955270008F75C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A75680811A3955270008F75C /* Info.plist */; };
-		A75680841A3955270008F75C /* Tailwind_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A75680821A3955270008F75C /* Tailwind_Tests.m */; };
 		A756808F1A3957A80008F75C /* Tailwind_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A756808E1A3957A80008F75C /* Tailwind_Tests.m */; };
 		A7A7220D1A38899D0006A079 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A7220B1A38899D0006A079 /* Main_iPad.storyboard */; };
 		A7A722101A388AC70006A079 /* NJOPPadHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A7220F1A388AC70006A079 /* NJOPPadHomeViewController.m */; };
@@ -1078,7 +1077,6 @@
 				6CE31AF41A0BFA5A009A9710 /* NJOPTopFBOTile.m in Sources */,
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
 				A7A722101A388AC70006A079 /* NJOPPadHomeViewController.m in Sources */,
-				A75680841A3955270008F75C /* Tailwind_Tests.m in Sources */,
 				6C94480B1A10DFB500A7EEDF /* NJOPPPhoneHomeViewController.m in Sources */,
 				30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */,
 				6C57E05319EEC8FB00D3FB00 /* NJSingleFBOTile.m in Sources */,
@@ -1424,6 +1422,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1462,6 +1461,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1506,6 +1506,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1550,6 +1551,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
