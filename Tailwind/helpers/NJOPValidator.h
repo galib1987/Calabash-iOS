@@ -2,8 +2,8 @@
 //  NJOPValidator.h
 //  OAuthSample
 //
-//  Created by Amos Elmaliah on 9/11/14.
-//  Copyright (c) 2014 Amos Elmaliah. All rights reserved.
+//  Created by NetJets on 9/11/14.
+//  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
 @import Foundation;
