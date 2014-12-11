@@ -2,7 +2,7 @@
 //  NJOPNOFBOTableCell.h
 //  Tailwind
 //
-//  Created by Amos Elmaliah on 11/10/14.
+//  Created by NetJets on 11/10/14.
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 

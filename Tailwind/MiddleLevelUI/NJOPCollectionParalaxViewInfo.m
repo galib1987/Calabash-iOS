@@ -2,7 +2,7 @@
 //  NJOPCollectionParalaxViewInfo.m
 //  Tailwind
 //
-//  Created by Amos Elmaliah on 11/4/14.
+//  Created by NetJets on 11/4/14.
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
