@@ -34,6 +34,20 @@
                ReferencedContainer = "container:Tailwind.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A75680891A3957A80008F75C"
+               BuildableName = "Tailwind Tests.xctest"
+               BlueprintName = "Tailwind Tests"
+               ReferencedContainer = "container:Tailwind.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "30A4739119D9E41B0045D7AF"
                BuildableName = "TailwindTests.xctest"
                BlueprintName = "TailwindTests"
+               ReferencedContainer = "container:Tailwind.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A75680891A3957A80008F75C"
+               BuildableName = "Tailwind Tests.xctest"
+               BlueprintName = "Tailwind Tests"
                ReferencedContainer = "container:Tailwind.xcodeproj">
             </BuildableReference>
          </TestableReference>

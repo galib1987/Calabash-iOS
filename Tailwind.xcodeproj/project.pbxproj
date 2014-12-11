@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2AD96D2C90B7446D90304928 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 		30A4737F19D9E41A0045D7AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4737E19D9E41A0045D7AF /* main.m */; };
 		30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4738119D9E41A0045D7AF /* AppDelegate.m */; };
 		30A4738A19D9E41A0045D7AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738919D9E41A0045D7AF /* Images.xcassets */; };
 		30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738B19D9E41A0045D7AF /* LaunchScreen.xib */; };
-		30A4739919D9E41B0045D7AF /* TailwindTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4739819D9E41B0045D7AF /* TailwindTests.m */; };
 		5559ACA719E8064D002CA7D2 /* NJOPLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ACA619E8064D002CA7D2 /* NJOPLeg.m */; };
 		55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */; };
 		6C08E46C19F5938A00119B84 /* NJOPiPadReservationDetailNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C08E46B19F5938900119B84 /* NJOPiPadReservationDetailNavigationTitleView.xib */; };
@@ -91,17 +89,17 @@
 		6CEDE59F1A0A83D9002D2750 /* NJOPNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEDE59E1A0A83D9002D2750 /* NJOPNavigationBar.m */; };
 		6CF2289719F90A0800A68DF4 /* NJOPActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2289619F90A0800A68DF4 /* NJOPActionButton.m */; };
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
+		A75680831A3955270008F75C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A75680811A3955270008F75C /* Info.plist */; };
+		A75680841A3955270008F75C /* Tailwind_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A75680821A3955270008F75C /* Tailwind_Tests.m */; };
+		A756808F1A3957A80008F75C /* Tailwind_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A756808E1A3957A80008F75C /* Tailwind_Tests.m */; };
 		A7A7220D1A38899D0006A079 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A7220B1A38899D0006A079 /* Main_iPad.storyboard */; };
 		A7A722101A388AC70006A079 /* NJOPPadHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A7220F1A388AC70006A079 /* NJOPPadHomeViewController.m */; };
 		A7A722141A3895250006A079 /* NJOPClient+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722131A3895250006A079 /* NJOPClient+Login.m */; };
 		A7A722171A3895840006A079 /* NJOPValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722161A3895840006A079 /* NJOPValidator.m */; };
 		A7A7221A1A3896280006A079 /* NNNOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722191A3896280006A079 /* NNNOAuthClient.m */; };
 		A7A722251A3897B60006A079 /* NCLOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722221A3897B60006A079 /* NCLOAuthClient.m */; };
-		A7A722261A3897B60006A079 /* NCLOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722221A3897B60006A079 /* NCLOAuthClient.m */; };
 		A7A722271A3897B60006A079 /* NCLOAuthCredential.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722241A3897B60006A079 /* NCLOAuthCredential.m */; };
-		A7A722281A3897B60006A079 /* NCLOAuthCredential.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A722241A3897B60006A079 /* NCLOAuthCredential.m */; };
 		A7A7222B1A3898B70006A079 /* NNNUserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A7222A1A3898B70006A079 /* NNNUserDefaultsManager.m */; };
-		A7A7222C1A3898B70006A079 /* NNNUserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A7222A1A3898B70006A079 /* NNNUserDefaultsManager.m */; };
 		A7B7A8941A3858F600DF8005 /* NJOPPhoneBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B7A8931A3858F600DF8005 /* NJOPPhoneBookingViewController.m */; };
 		A7B7A8AC1A38654800DF8005 /* Nimbus-Sans-Cond-D-Black-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8971A38654800DF8005 /* Nimbus-Sans-Cond-D-Black-Italic.otf */; };
 		A7B7A8AD1A38654800DF8005 /* Nimbus-Sans-Cond-D-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7B7A8981A38654800DF8005 /* Nimbus-Sans-Cond-D-Black.otf */; };
@@ -132,7 +130,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		30A4739319D9E41B0045D7AF /* PBXContainerItemProxy */ = {
+		A75680901A3957A80008F75C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 30A4737119D9E41A0045D7AF /* Project object */;
 			proxyType = 1;
@@ -150,9 +148,6 @@
 		30A4738119D9E41A0045D7AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		30A4738919D9E41A0045D7AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		30A4738C19D9E41A0045D7AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		30A4739219D9E41B0045D7AF /* TailwindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TailwindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		30A4739719D9E41B0045D7AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30A4739819D9E41B0045D7AF /* TailwindTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TailwindTests.m; sourceTree = "<group>"; };
 		30A473A319D9EA5B0045D7AF /* Tailwind-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tailwind-Prefix.pch"; sourceTree = "<group>"; };
 		553EE494A15E7540C63F4EE6 /* Pods.qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.qa.xcconfig; path = "Pods/Target Support Files/Pods/Pods.qa.xcconfig"; sourceTree = SOURCE_ROOT; };
 		5559ACA519E8064D002CA7D2 /* NJOPLeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPLeg.h; sourceTree = "<group>"; };
@@ -297,6 +292,11 @@
 		6CF2289519F90A0800A68DF4 /* NJOPActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPActionButton.h; path = Views/NJOPActionButton.h; sourceTree = "<group>"; };
 		6CF2289619F90A0800A68DF4 /* NJOPActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPActionButton.m; path = Views/NJOPActionButton.m; sourceTree = "<group>"; };
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
+		A75680811A3955270008F75C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A75680821A3955270008F75C /* Tailwind_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tailwind_Tests.m; sourceTree = "<group>"; };
+		A756808A1A3957A80008F75C /* Tailwind Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tailwind Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A756808D1A3957A80008F75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A756808E1A3957A80008F75C /* Tailwind_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tailwind_Tests.m; sourceTree = "<group>"; };
 		A7A7220C1A38899D0006A079 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		A7A7220E1A388AC70006A079 /* NJOPPadHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPadHomeViewController.h; sourceTree = "<group>"; };
 		A7A7220F1A388AC70006A079 /* NJOPPadHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPadHomeViewController.m; sourceTree = "<group>"; };
@@ -358,11 +358,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30A4738F19D9E41B0045D7AF /* Frameworks */ = {
+		A75680871A3957A80008F75C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AD96D2C90B7446D90304928 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +380,8 @@
 			isa = PBXGroup;
 			children = (
 				30A4737B19D9E41A0045D7AF /* Tailwind */,
-				30A4739519D9E41B0045D7AF /* TailwindTests */,
+				A75680801A3955270008F75C /* Tailwind Tests */,
+				A756808B1A3957A80008F75C /* Tailwind Tests */,
 				30A4737A19D9E41A0045D7AF /* Products */,
 				0B02CF39EDF749C9B9FAD40F /* Frameworks */,
 				39774353F90A62D641B32398 /* Pods */,
@@ -392,7 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				30A4737919D9E41A0045D7AF /* Tailwind.app */,
-				30A4739219D9E41B0045D7AF /* TailwindTests.xctest */,
+				A756808A1A3957A80008F75C /* Tailwind Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -423,23 +423,6 @@
 				30A4737D19D9E41A0045D7AF /* Info.plist */,
 				30A4737E19D9E41A0045D7AF /* main.m */,
 				30A473A319D9EA5B0045D7AF /* Tailwind-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		30A4739519D9E41B0045D7AF /* TailwindTests */ = {
-			isa = PBXGroup;
-			children = (
-				30A4739819D9E41B0045D7AF /* TailwindTests.m */,
-				30A4739619D9E41B0045D7AF /* Supporting Files */,
-			);
-			path = TailwindTests;
-			sourceTree = "<group>";
-		};
-		30A4739619D9E41B0045D7AF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				30A4739719D9E41B0045D7AF /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -813,6 +796,40 @@
 			name = "ParalaxView(unused)";
 			sourceTree = "<group>";
 		};
+		A75680801A3955270008F75C /* Tailwind Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A75680821A3955270008F75C /* Tailwind_Tests.m */,
+				A75680851A3955450008F75C /* Supporting Files */,
+			);
+			path = "Tailwind Tests";
+			sourceTree = "<group>";
+		};
+		A75680851A3955450008F75C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A75680811A3955270008F75C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A756808B1A3957A80008F75C /* Tailwind Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A756808E1A3957A80008F75C /* Tailwind_Tests.m */,
+				A756808C1A3957A80008F75C /* Supporting Files */,
+			);
+			path = "Tailwind Tests";
+			sourceTree = "<group>";
+		};
+		A756808C1A3957A80008F75C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A756808D1A3957A80008F75C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		A7A722201A3897B60006A079 /* tmp */ = {
 			isa = PBXGroup;
 			children = (
@@ -883,24 +900,22 @@
 			productReference = 30A4737919D9E41A0045D7AF /* Tailwind.app */;
 			productType = "com.apple.product-type.application";
 		};
-		30A4739119D9E41B0045D7AF /* TailwindTests */ = {
+		A75680891A3957A80008F75C /* Tailwind Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 30A4739F19D9E41B0045D7AF /* Build configuration list for PBXNativeTarget "TailwindTests" */;
+			buildConfigurationList = A75680921A3957A80008F75C /* Build configuration list for PBXNativeTarget "Tailwind Tests" */;
 			buildPhases = (
-				4F7761A59DEA4A0788BDA56D /* Check Pods Manifest.lock */,
-				30A4738E19D9E41B0045D7AF /* Sources */,
-				30A4738F19D9E41B0045D7AF /* Frameworks */,
-				30A4739019D9E41B0045D7AF /* Resources */,
-				DC3B1662C0A4496C95CE7AF1 /* Copy Pods Resources */,
+				A75680861A3957A80008F75C /* Sources */,
+				A75680871A3957A80008F75C /* Frameworks */,
+				A75680881A3957A80008F75C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				30A4739419D9E41B0045D7AF /* PBXTargetDependency */,
+				A75680911A3957A80008F75C /* PBXTargetDependency */,
 			);
-			name = TailwindTests;
-			productName = TailwindTests;
-			productReference = 30A4739219D9E41B0045D7AF /* TailwindTests.xctest */;
+			name = "Tailwind Tests";
+			productName = "Tailwind Tests";
+			productReference = A756808A1A3957A80008F75C /* Tailwind Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -917,9 +932,8 @@
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = 6NM7XPES4Q;
 					};
-					30A4739119D9E41B0045D7AF = {
-						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = 6NM7XPES4Q;
+					A75680891A3957A80008F75C = {
+						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = 30A4737819D9E41A0045D7AF;
 					};
 				};
@@ -938,7 +952,7 @@
 			projectRoot = "";
 			targets = (
 				30A4737819D9E41A0045D7AF /* Tailwind */,
-				30A4739119D9E41B0045D7AF /* TailwindTests */,
+				A75680891A3957A80008F75C /* Tailwind Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -986,10 +1000,11 @@
 				6C08E4CD19F7BE3F00119B84 /* NJOPFBOTile.xib in Resources */,
 				A7B7A8B81A38654800DF8005 /* Nimbus-Sans-D-Light-Italic.otf in Resources */,
 				6CEDE58E1A0948D2002D2750 /* NJOPParalaxView.xib in Resources */,
+				A75680831A3955270008F75C /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30A4739019D9E41B0045D7AF /* Resources */ = {
+		A75680881A3957A80008F75C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1013,37 +1028,7 @@
 			shellPath = /bin/sh;
 			shellScript = "## This is the Tailwind-Info.plist file which is managed in GIT.  I choose not to use or modify it to avoid the add'l push needed after a build.\n## If you wish to refresh the 3 values modified below in the Tailwind-Info.plist, uncomment the next line and comment out the TARGET line for the Info.plist (temporarily).\n## TARGET=\"$PROJECT_DIR/Tailwind/Tailwind-Info.plist\"\n\n##  This is the Info.plist, which is created at build time from the Tailwind-Info.plist file. It is not managed in GIT\nTARGET=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\nDSYM_SRC=\"${BUILT_PRODUCTS_DIR}/${ARCHIVE_DSYMS_PATH}${DWARF_DSYM_FILE_NAME}\"\nDSYM_INFO=\"$DSYM_SRC/Contents/Info.plist\"\necho \"Target build dir: \"${TARGET_BUILD_DIR}\necho \"Info.plist path: \"${INFOPLIST_PATH}\necho \"dSYM path: \"$DSYM_SRC\necho \"Target is \" $TARGET\n\nif [ ! -f \"$TARGET\" ]; then\necho \"missing file $TARGET\"\nexit 1;\nfi\n\nif [ ! -f \"$DSYM_INFO\" ]; then\necho \"missing file $DSYM_INFO\"\nexit 1;\nfi\n\nBUILDSHA=`git rev-parse --short HEAD`\necho \"BUILDSHA is\" $BUILDSHA\n\n## Set a newly defined value in the Info.plist for the SHA\n/usr/libexec/PListBuddy -c \"Set BuildSHA $BUILDSHA\" \"$TARGET\"\n/usr/libexec/PListBuddy -c \"Set BuildSHA $BUILDSHA\" \"$DSYM_INFO\"\n\n\n## The build number is a count of the commit objects for the project HEAD\nBUILDNUMBER=$(git rev-list HEAD | wc -l | tr -d ' ')\necho \"BUILDNUMBER is \" $BUILDNUMBER\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $BUILDNUMBER\" \"$TARGET\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $BUILDNUMBER\" \"$DSYM_INFO\"\n\n## All of following gibberish was replaced by \"git rev-parse --short HEAD\" above\n##BRANCH=`git status | head -1 | cut -c 13-100`\n##NEW_VERSION=`git log refs/heads/$BRANCH | head -1 | cut -c 8-13`\n##echo \"$NEW_VERSION\"\n##/usr/libexec/PListBuddy -c \"Set CFBundleVersion $NEW_VERSION\" \"$TARGET\"\n\nCFBuildDate=$(date \"+%Y-%m-%d% %H:%M %Z\")\n/usr/libexec/PListBuddy -c \"Set :CFBuildDate $CFBuildDate\" \"$TARGET\"";
 		};
-		4F7761A59DEA4A0788BDA56D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		6E70779954D74815BDB0B2BB /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DC3B1662C0A4496C95CE7AF1 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1093,6 +1078,7 @@
 				6CE31AF41A0BFA5A009A9710 /* NJOPTopFBOTile.m in Sources */,
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
 				A7A722101A388AC70006A079 /* NJOPPadHomeViewController.m in Sources */,
+				A75680841A3955270008F75C /* Tailwind_Tests.m in Sources */,
 				6C94480B1A10DFB500A7EEDF /* NJOPPPhoneHomeViewController.m in Sources */,
 				30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */,
 				6C57E05319EEC8FB00D3FB00 /* NJSingleFBOTile.m in Sources */,
@@ -1161,24 +1147,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30A4738E19D9E41B0045D7AF /* Sources */ = {
+		A75680861A3957A80008F75C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7A722261A3897B60006A079 /* NCLOAuthClient.m in Sources */,
-				30A4739919D9E41B0045D7AF /* TailwindTests.m in Sources */,
-				A7A722281A3897B60006A079 /* NCLOAuthCredential.m in Sources */,
-				A7A7222C1A3898B70006A079 /* NNNUserDefaultsManager.m in Sources */,
+				A756808F1A3957A80008F75C /* Tailwind_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		30A4739419D9E41B0045D7AF /* PBXTargetDependency */ = {
+		A75680911A3957A80008F75C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 30A4737819D9E41A0045D7AF /* Tailwind */;
-			targetProxy = 30A4739319D9E41B0045D7AF /* PBXContainerItemProxy */;
+			targetProxy = A75680901A3957A80008F75C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1286,7 +1269,8 @@
 			baseConfigurationReference = DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
@@ -1302,7 +1286,8 @@
 			baseConfigurationReference = 03307E6D414420F7D9C0477B /* Pods.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
@@ -1310,46 +1295,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Production;
-		};
-		30A473A019D9E41B0045D7AF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TailwindTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tailwind.app/Tailwind";
-			};
-			name = Debug;
-		};
-		30A473A119D9E41B0045D7AF /* Production */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03307E6D414420F7D9C0477B /* Pods.production.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = TailwindTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tailwind.app/Tailwind";
 			};
 			name = Production;
 		};
@@ -1400,7 +1345,8 @@
 			baseConfigurationReference = 93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
@@ -1409,28 +1355,6 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Beta;
-		};
-		30A473A719D9ED630045D7AF /* Beta */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TailwindTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tailwind.app/Tailwind";
 			};
 			name = Beta;
 		};
@@ -1481,7 +1405,8 @@
 			baseConfigurationReference = 553EE494A15E7540C63F4EE6 /* Pods.qa.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
@@ -1492,27 +1417,157 @@
 			};
 			name = QA;
 		};
-		30A473AA19D9ED690045D7AF /* QA */ = {
+		A75680931A3957A80008F75C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 553EE494A15E7540C63F4EE6 /* Pods.qa.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TailwindTests/Info.plist;
+				INFOPLIST_FILE = "Tailwind Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tailwind.app/Tailwind";
 			};
+			name = Debug;
+		};
+		A75680941A3957A80008F75C /* QA */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Tailwind Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tailwind.app/Tailwind";
+				VALIDATE_PRODUCT = YES;
+			};
 			name = QA;
+		};
+		A75680951A3957A80008F75C /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Tailwind Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tailwind.app/Tailwind";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Beta;
+		};
+		A75680961A3957A80008F75C /* Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Tailwind Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tailwind.app/Tailwind";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Production;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1539,16 +1594,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Production;
 		};
-		30A4739F19D9E41B0045D7AF /* Build configuration list for PBXNativeTarget "TailwindTests" */ = {
+		A75680921A3957A80008F75C /* Build configuration list for PBXNativeTarget "Tailwind Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				30A473A019D9E41B0045D7AF /* Debug */,
-				30A473AA19D9ED690045D7AF /* QA */,
-				30A473A719D9ED630045D7AF /* Beta */,
-				30A473A119D9E41B0045D7AF /* Production */,
+				A75680931A3957A80008F75C /* Debug */,
+				A75680941A3957A80008F75C /* QA */,
+				A75680951A3957A80008F75C /* Beta */,
+				A75680961A3957A80008F75C /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Production;
 		};
 /* End XCConfigurationList section */
 	};
