@@ -24,6 +24,18 @@
 	NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
 	NSLog(@"%@", basePath);
 #endif
+    [[BITHockeyManager sharedHockeyManager] configureWithBetaIdentifier:@"1a9ff05871bc3ef4723175826474142f"
+                                                         liveIdentifier:@""
+                                                               delegate:self];
+    
+    // app id for iOS8 testing
+    //    [[BITHockeyManager sharedHockeyManager] configureWithBetaIdentifier:@"c01b8990389d65772ab8dd9e942aba09"
+    //                                                         liveIdentifier:@"97fdbf186cc09f3ebb773582a94292a0"
+    //                                                               delegate:self];
+    
+    // automatically send report without user interaction
+    [[[BITHockeyManager sharedHockeyManager] crashManager] setCrashManagerStatus:BITCrashManagerStatusAutoSend];
+    [[BITHockeyManager sharedHockeyManager] startManager];
     // Override point for customization after application launch.
     return YES;
 }
