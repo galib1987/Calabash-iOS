@@ -51,7 +51,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="self.layer.borderColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="self.layer.borderWidth">
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -61,20 +61,39 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you need assistance, please call your Owner Service Team" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icg-EF-Z5Z">
-                                <rect key="frame" x="150" y="362" width="300" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icg-EF-Z5Z">
+                                <rect key="frame" x="150" y="338" width="300" height="16.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lean more about NetJets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0d2-fQ-uxr">
-                                <rect key="frame" x="150" y="444" width="300" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Owner Service General Inquiry: 1.888.8888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0d2-fQ-uxr">
+                                <rect key="frame" x="150" y="578" width="300" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="HWs-yr-uYx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HWs-yr-uYx"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn more about NetJets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v8-ET-PQJ">
+                                <rect key="frame" x="186" y="556" width="140.5" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="C9i-3k-uyH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="C9i-3k-uyH"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="USERNAME" textAlignment="center" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NV8-dS-4VL" userLabel="E-mail Text Field">
                                 <rect key="frame" x="150" y="103" width="300" height="60"/>
@@ -93,14 +112,29 @@
                                     <constraint firstAttribute="height" constant="60" id="8sD-CJ-eHL"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Sales" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnY-yO-Daz">
+                                <rect key="frame" x="339" y="556" width="75.5" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6Bl-mR-HtB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6Bl-mR-HtB"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0d2-fQ-uxr" firstAttribute="top" secondItem="FnY-yO-Daz" secondAttribute="bottom" constant="8" id="1qw-Uy-Kaj"/>
                             <constraint firstItem="bO8-BS-TjL" firstAttribute="height" secondItem="mvV-7o-br6" secondAttribute="height" id="2Za-Pl-5gg"/>
                             <constraint firstItem="YmF-cF-Icm" firstAttribute="centerX" secondItem="Icg-EF-Z5Z" secondAttribute="centerX" id="2cg-fB-KRu"/>
                             <constraint firstAttribute="centerY" secondItem="bO8-BS-TjL" secondAttribute="centerY" id="6Ku-Jz-BbK"/>
                             <constraint firstItem="NV8-dS-4VL" firstAttribute="height" secondItem="RWr-Az-SVj" secondAttribute="height" id="6T5-XO-AUt"/>
-                            <constraint firstItem="Icg-EF-Z5Z" firstAttribute="top" secondItem="YmF-cF-Icm" secondAttribute="bottom" constant="32" id="7D2-m1-HnZ"/>
+                            <constraint firstItem="Icg-EF-Z5Z" firstAttribute="top" secondItem="YmF-cF-Icm" secondAttribute="bottom" constant="8" symbolic="YES" id="7D2-m1-HnZ"/>
                             <constraint firstItem="YmF-cF-Icm" firstAttribute="width" secondItem="Icg-EF-Z5Z" secondAttribute="width" id="8aw-Dm-SpF"/>
                             <constraint firstItem="0d2-fQ-uxr" firstAttribute="top" secondItem="Icg-EF-Z5Z" secondAttribute="bottom" constant="22" id="9Ur-dn-PST"/>
                             <constraint firstItem="0d2-fQ-uxr" firstAttribute="centerX" secondItem="Icg-EF-Z5Z" secondAttribute="centerX" id="Adb-p4-nrs"/>
@@ -117,17 +151,25 @@
                             <constraint firstItem="RWr-Az-SVj" firstAttribute="centerX" secondItem="YmF-cF-Icm" secondAttribute="centerX" id="UnL-6p-T9X"/>
                             <constraint firstItem="NV8-dS-4VL" firstAttribute="width" secondItem="RWr-Az-SVj" secondAttribute="width" id="VfP-kw-KUx"/>
                             <constraint firstItem="RWr-Az-SVj" firstAttribute="width" secondItem="YmF-cF-Icm" secondAttribute="height" multiplier="5:1" id="XRD-CX-Iyj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0d2-fQ-uxr" secondAttribute="bottom" constant="8" id="Xcs-kh-xMk"/>
                             <constraint firstItem="RWr-Az-SVj" firstAttribute="height" secondItem="YmF-cF-Icm" secondAttribute="height" id="aa4-2n-r5Q"/>
+                            <constraint firstItem="FnY-yO-Daz" firstAttribute="trailing" secondItem="0d2-fQ-uxr" secondAttribute="trailing" constant="-35.5" id="c4g-4S-uEq"/>
                             <constraint firstItem="NV8-dS-4VL" firstAttribute="top" secondItem="ge4-FP-FFS" secondAttribute="bottom" constant="23" id="fip-0C-Qyg"/>
+                            <constraint firstItem="0d2-fQ-uxr" firstAttribute="leading" secondItem="0v8-ET-PQJ" secondAttribute="leading" constant="-36" id="fpG-BN-pwr"/>
+                            <constraint firstItem="0d2-fQ-uxr" firstAttribute="top" secondItem="0v8-ET-PQJ" secondAttribute="bottom" constant="8" id="lbl-PZ-56M"/>
                             <constraint firstItem="0d2-fQ-uxr" firstAttribute="width" secondItem="Icg-EF-Z5Z" secondAttribute="width" id="s3n-18-xc7"/>
                             <constraint firstAttribute="centerX" secondItem="NV8-dS-4VL" secondAttribute="centerX" id="u1q-dz-mnA"/>
                             <constraint firstItem="NV8-dS-4VL" firstAttribute="top" secondItem="mvV-7o-br6" secondAttribute="top" constant="20" id="v1z-6i-aA6"/>
                             <constraint firstItem="YmF-cF-Icm" firstAttribute="top" secondItem="RWr-Az-SVj" secondAttribute="bottom" constant="25" id="va0-u2-Q5d"/>
                             <constraint firstItem="NV8-dS-4VL" firstAttribute="centerX" secondItem="RWr-Az-SVj" secondAttribute="centerX" id="ycY-CJ-ElR"/>
+                            <constraint firstItem="FnY-yO-Daz" firstAttribute="leading" relation="lessThanOrEqual" secondItem="0v8-ET-PQJ" secondAttribute="trailing" constant="5.5" id="ykm-KP-NwO"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="v1z-6i-aA6"/>
+                                <exclude reference="JgR-1H-4Ga"/>
+                                <exclude reference="9Ur-dn-PST"/>
+                                <exclude reference="ykm-KP-NwO"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
@@ -135,8 +177,8 @@
                                 <exclude reference="ge4-FP-FFS"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="v1z-6i-aA6"/>
                                 <exclude reference="fip-0C-Qyg"/>
+                                <include reference="v1z-6i-aA6"/>
                             </mask>
                         </variation>
                     </view>
