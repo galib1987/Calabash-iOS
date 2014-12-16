@@ -17,7 +17,8 @@
 		30A4739919D9E41B0045D7AF /* TailwindTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4739819D9E41B0045D7AF /* TailwindTests.m */; };
 		5559ACA719E8064D002CA7D2 /* NJOPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ACA619E8064D002CA7D2 /* NJOPRequest.m */; };
 		55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */; };
-		6CC829AD1A40A54200991949 /* NJOPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC829AC1A40A54200991949 /* NJOPLoginViewController.m */; };
+		6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC829AF1A40B4A900991949 /* NJOPLoginViewController.m */; };
+		6CC829B31A40B4C900991949 /* NJOPResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */; };
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 		A77680891A4062FE00B2E7CF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77680881A4062FE00B2E7CF /* Home.storyboard */; };
 		A776808B1A40631F00B2E7CF /* Flights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A776808A1A40631F00B2E7CF /* Flights.storyboard */; };
@@ -108,8 +109,10 @@
 		55CA603919E7FE22001E2FC6 /* NJOPValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPValueTransformer.h; sourceTree = "<group>"; };
 		55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPValueTransformer.m; sourceTree = "<group>"; };
 		6167B98AFA8D41C092D41CCC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CC829AB1A40A54200991949 /* NJOPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NJOPLoginViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		6CC829AC1A40A54200991949 /* NJOPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NJOPLoginViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		6CC829AE1A40B4A900991949 /* NJOPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPLoginViewController.h; path = Tailwind/NJOPLoginViewController.h; sourceTree = SOURCE_ROOT; };
+		6CC829AF1A40B4A900991949 /* NJOPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPLoginViewController.m; path = Tailwind/NJOPLoginViewController.m; sourceTree = SOURCE_ROOT; };
+		6CC829B11A40B4C900991949 /* NJOPResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPResetPasswordViewController.h; path = Tailwind/NJOPResetPasswordViewController.h; sourceTree = SOURCE_ROOT; };
+		6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPResetPasswordViewController.m; path = Tailwind/NJOPResetPasswordViewController.m; sourceTree = SOURCE_ROOT; };
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A77680881A4062FE00B2E7CF /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A776808A1A40631F00B2E7CF /* Flights.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Flights.storyboard; sourceTree = "<group>"; };
@@ -227,7 +230,6 @@
 				A77680941A4063EC00B2E7CF /* Storyboards */,
 				30A4738019D9E41A0045D7AF /* AppDelegate.h */,
 				30A4738119D9E41A0045D7AF /* AppDelegate.m */,
-				6CC829AA1A40A53C00991949 /* Login */,
 				30A4738319D9E41A0045D7AF /* ViewController.h */,
 				30A4738419D9E41A0045D7AF /* ViewController.m */,
 				30A4738919D9E41A0045D7AF /* Images.xcassets */,
@@ -316,6 +318,10 @@
 		55CA603419E7FD4A001E2FC6 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6CC829AE1A40B4A900991949 /* NJOPLoginViewController.h */,
+				6CC829AF1A40B4A900991949 /* NJOPLoginViewController.m */,
+				6CC829B11A40B4C900991949 /* NJOPResetPasswordViewController.h */,
+				6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -325,15 +331,6 @@
 			children = (
 			);
 			path = views;
-			sourceTree = "<group>";
-		};
-		6CC829AA1A40A53C00991949 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				6CC829AB1A40A54200991949 /* NJOPLoginViewController.h */,
-				6CC829AC1A40A54200991949 /* NJOPLoginViewController.m */,
-			);
-			name = Login;
 			sourceTree = "<group>";
 		};
 		A77680941A4063EC00B2E7CF /* Storyboards */ = {
@@ -619,7 +616,8 @@
 				A77680F51A40734900B2E7CF /* NJOPBrief.m in Sources */,
 				A77680F91A4074AD00B2E7CF /* NJOPContract.m in Sources */,
 				A77680E91A406C7D00B2E7CF /* UIColor+NJOP.m in Sources */,
-				6CC829AD1A40A54200991949 /* NJOPLoginViewController.m in Sources */,
+				6CC829B31A40B4C900991949 /* NJOPResetPasswordViewController.m in Sources */,
+				6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */,
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,
 				A77680DF1A406C7D00B2E7CF /* NJOPValidator.m in Sources */,
 				A77680DD1A406C7D00B2E7CF /* NJOPSession.m in Sources */,

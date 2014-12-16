@@ -17,6 +17,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+
+	UINavigationBar* nav = [[UINavigationBar class] appearance];
+	[nav setBackgroundImage:[UIImage new]
+													 forBarMetrics:UIBarMetricsDefault];
+	nav.shadowImage = [UIImage new];
+	nav.translucent = YES;
+
+	
+	UIBarButtonItem* barItem = [[UIBarButtonItem class] appearance];
+	[barItem setTintColor:[UIColor whiteColor]];
+
     return YES;
 }
 
