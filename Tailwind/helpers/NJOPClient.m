@@ -10,6 +10,8 @@
 #import "NJOPReservation.h"
 #import "NJOPValueTransformer.h"
 #import "NSDate+NJOP.h"
+#import "NSDateFormatter+Utility.h"
+
 #import "BFTask.h"
 
 @interface NJOPClassDataTransformer : NJOPValueTransformer
@@ -34,13 +36,11 @@
 	reservation.reservationId = representation[@"reservationId"];
 	reservation.departureTimeZone = [NSTimeZone timeZoneWithAbbreviation:representation[@"departureTimeZoneFormat"]];
 	reservation.departureDate = [jsonDateFormatter dateFromString:representation[@"etdGmt"]];
-	reservation.departureTime = [reservation.departureDate formattedDateWithFormat:@"hh:mma zzz"
-																																				timeZone:reservation.departureTimeZone];
+	reservation.departureTime = [reservation.departureDate formattedDateWithFormat:@"hh:mma zzz" timeZone:reservation.departureTimeZone];
 
 	reservation.arrivalTimeZone = [NSTimeZone timeZoneWithAbbreviation:representation[@"arrivalTimeZoneFormat"]];
 	reservation.arrivalDate = [jsonDateFormatter dateFromString:representation[@"etaGmt"]];
-	reservation.arrivalTime = [reservation.arrivalDate formattedDateWithFormat:@"hh:mma zzz"
-																																		timeZone:reservation.arrivalTimeZone];
+	reservation.arrivalTime = [reservation.arrivalDate formattedDateWithFormat:@"hh:mma zzz" timeZone:reservation.arrivalTimeZone];
 
 	reservation.departureDateString = [reservation.departureDate njop_spacialDate:@"MMM DD yyyy"
 																																			 timeZone:reservation.departureTimeZone];

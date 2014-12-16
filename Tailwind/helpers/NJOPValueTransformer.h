@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
+#import "BFTask.h"
 
 @protocol NSTransformable <NSObject>
 

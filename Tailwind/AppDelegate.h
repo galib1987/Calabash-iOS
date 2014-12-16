@@ -6,11 +6,9 @@
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
-#import <HockeySDK/HockeySDK.h>
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate, BITHockeyManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
