@@ -24,7 +24,7 @@
 	[self.submitButton removeTarget:self action:_cmd forControlEvents:UIControlEventTouchUpInside];
 	[UIView animateWithDuration:0.3
 									 animations:^{
-										 [self.detailLabel setEnabled:NO];
+										 [self.detailLabel setAlpha:0.7];
 										 [self.emailTextField setEnabled:NO];
 										 [self.submitButton setEnabled:NO];
 									 }];
@@ -38,23 +38,33 @@
 			if(success ) {
 				typeof(wself) self = wself;
 
-				[self.detailLabel setEnabled:YES];
+				[self.detailLabel setText:@"an email has been sent to:\n<email>\nPlease follow link in that email to complete your password reset"];
+				[self.detailLabel setTransform:CGAffineTransformMakeScale(1.03, 1.03)];
+				[self.detailLabel setAlpha:1.0];
 				[self.emailTextField setEnabled:YES];
 				[self.submitButton setEnabled:YES];
 				[self.emailTextField removeFromSuperview];
-				[UIView animateWithDuration:0.5
+				[self.submitButton setTitle:@"BACK TO LOGIN" forState:UIControlStateNormal];
+				[UIView animateWithDuration:0.18
 															delay:0.0
 														options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
 												 animations:^{
-													 [self.detailLabel setAlpha:1.0];
-													 [self.detailLabel setText:@"an email has been sent to:\n<email>\nPlease follow link in that email to complete your password reset"];
-													 [self.submitButton setTitle:@"BACK TO LOGIN" forState:UIControlStateNormal];
+													 [self.detailLabel setTransform:CGAffineTransformMakeScale(1.005, 1.005)];
 													 [self.view setNeedsLayout];
 
 												 } completion:^(BOOL finished) {
 													 [self.submitButton addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
+													 [UIView animateWithDuration:1.0
+																								 delay:0.0
+																							 options:UIViewAnimationOptionBeginFromCurrentState  | UIViewAnimationOptionCurveEaseOut
+																						animations:^{
+																							[self.detailLabel setTransform:CGAffineTransformIdentity];
+																						} completion:^(BOOL finished) {
+
+																						}];
 												 }];
 			} else {
+				[self.emailTextField setEnabled:YES];
 				[self.submitButton setEnabled:YES];
 				[self.submitButton addTarget:self action:_cmd forControlEvents:UIControlEventTouchUpInside];
 			}
