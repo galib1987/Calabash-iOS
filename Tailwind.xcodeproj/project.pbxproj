@@ -347,8 +347,7 @@
 			children = (
 				A77680961A40659D00B2E7CF /* Nimbus */,
 			);
-			name = fonts;
-			path = assets/fonts;
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		A77680961A40659D00B2E7CF /* Nimbus */ = {
