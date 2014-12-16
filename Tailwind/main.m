@@ -1,5 +1,4 @@
-
- //
+//
 //  main.m
 //  Tailwind
 //
@@ -7,7 +6,7 @@
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
 int main(int argc, char * argv[]) {

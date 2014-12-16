@@ -8,6 +8,4 @@
 
 #import <NCLFramework/NCLFramework.h>
 #import <HockeySDK/HockeySDK.h>
-#import "UICollectionReusableView+NJOPHelpers.h"
-#import "UIView+NJOPStyle.h"
-#import "Defines.h"
+
