@@ -11,7 +11,7 @@
 #import "BFTask.h"
 
 #define USERNAME_VALIDATION @"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$"
-#define PASSWORD_VALIDATION @"^[A-Za-z]{5,}$"
+#define PASSWORD_VALIDATION @"^[A-Z0-9a-z]{5,}$"
 
 @interface NJOPLoginViewUserInput : NSObject <NJOPValidator>
 @property (nonatomic, copy) NSString* username;

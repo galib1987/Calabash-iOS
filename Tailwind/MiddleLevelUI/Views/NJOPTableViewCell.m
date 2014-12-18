@@ -7,6 +7,7 @@
 //
 
 #import "NJOPTableViewCell.h"
+#import "UIView+NJOPStyle.h"
 
 @implementation NJOPTableViewCell
 

@@ -8,4 +8,5 @@
 
 #import <NCLFramework/NCLFramework.h>
 #import <HockeySDK/HockeySDK.h>
+#import "Defines.h"
 

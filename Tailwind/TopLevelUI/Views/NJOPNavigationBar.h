@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+#import "UIColor+NJOP.h"
 
 IB_DESIGNABLE
 

@@ -278,7 +278,7 @@ NSString* const kSimpleDataSourceCellSegueAction = @"CellSegueAction";
 	UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
 																																				 forIndexPath:indexPath];
 	NSAssert(cell, @"collection view wasn't able to dequeue cell");
-	[cell aapl_Xcode6OniOS7hotfix];
+	//[cell aapl_Xcode6OniOS7hotfix];
 
 	NSDictionary* keypaths = cellInfo[kSimpleDataSourceCellKeypaths];
 

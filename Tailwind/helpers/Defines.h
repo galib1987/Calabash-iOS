@@ -14,4 +14,18 @@
 #define goToLoginScreen @"goToLoginScreen"
 #define goToHomeScreen @"goToHomeScreen"
 
+
+// hostname and URL for different API calls
+#define API_SOURCE_IDENTIFIER @"OwnersPortalIOSUser"
+#define API_HOSTNAME @"servicesdev.netjets.com"
+#define URL_BRIEF @"/op/v1/brief"
+#define URL_RESERVATIONS @"/op/v1/reservations"
+#define URL_CONTRACTS @"/op/v1/contracts"
+
+// temporarily until I figure out a better way to bypass having to VPN
+// 0 is use VPN
+// 1 is use JSON
+#define USE_STATIC_DATA 0
+//#define USE_STATIC_DATA 1
+
 #endif

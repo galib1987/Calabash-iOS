@@ -7,6 +7,7 @@
 //
 
 #import "NJOPTableView.h"
+#import "UIColor+NJOP.h"
 
 @implementation NJOPTableView
 
