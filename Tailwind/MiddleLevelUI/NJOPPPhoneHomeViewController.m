@@ -51,6 +51,11 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 //																	@"toFBOLocationLabel.text"			: todaysReservations.arrivalFboName
 																	}
 															};
+    NSDictionary *noFBO = @{
+                            @"NJOPNOFBOTableCell" : @{
+                                    @"rawData.text": todaysReservations.rawData
+                                    }
+                            };
 
 	NSArray*sections = @[
 												@{
@@ -66,7 +71,9 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 																kSimpleDataSourceCellIdentifierKey			: @"NJOPCurrentFBOTableCell"
 																},
 															@{
-																kSimpleDataSourceCellIdentifierKey			: @"NJOPNOFBOTableCell"
+																kSimpleDataSourceCellIdentifierKey			: @"NJOPNOFBOTableCell",
+                                                                kSimpleDataSourceCellKeypaths	:
+                                                                    noFBO[@"NJOPNOFBOTableCell"]
 																}
 															],
 													},

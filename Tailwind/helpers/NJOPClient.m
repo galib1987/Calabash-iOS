@@ -26,6 +26,7 @@
 +(void)GETReservationWithInfo:(NSDictionary *)reservationInfo completion:(void (^)(NJOPReservation *reservation, NSError *error))completionHandler {
     NSString *apiURL = @"";
     NSData *data = nil;
+    NSString *jsonString = @"";
     NSError *error = nil;
     NSURLResponse *response = nil;
     if (reservationInfo != nil && [reservationInfo isKindOfClass:[NSDictionary class]]) {
@@ -39,7 +40,7 @@
         NSURLRequest *request = [NSURLRequest requestWithURL:apiCall];
         
         data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        
+        jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     } else {
 	//NSData* data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"mobile-api-reservations-response" ofType:@"json"]];
         data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"brief-test" ofType:@"json"]];
@@ -112,6 +113,7 @@
                                   reservation.travelMinutes];
         reservation.stops = @([representation[@"noOfFuelStops"] integerValue]);
         reservation.stopsText = [reservation.stops boolValue] ? @"" : @"Non Stop";
+        reservation.rawData = jsonString;
     }
 
 	if (completionHandler) {

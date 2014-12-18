@@ -10,4 +10,6 @@
 
 @interface NJOPNOFBOTableCell : NJOPTableViewCell
 
+@property (nonatomic, weak) IBOutlet UITextView *rawData;
+
 @end
