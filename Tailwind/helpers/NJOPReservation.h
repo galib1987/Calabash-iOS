@@ -41,5 +41,6 @@
 @property(nonatomic, copy) NSString* travelTimeMessage;
 @property(nonatomic, strong) NSNumber* stops;
 @property(nonatomic, copy) NSString* stopsText;
+@property (nonatomic, copy) NSString *rawData; // temporary for checking
 
 @end
