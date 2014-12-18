@@ -1,0 +1,184 @@
+{"tripRequestExecutionTime":1484,"briefExecutionTime":3657,"totalRequestCount":0,"individual":{"individualId":1064684,"firstName":"Kim","middleName":null,"lastName":"Brown","telephones":[{"telephoneId":1522833,"telephoneTypeId":7,"telephoneTypeDescription":"Residence","countryCode":"1","areaCode":"845","telephoneNumber":"1522833"},{"telephoneId":1522822,"telephoneTypeId":1,"telephoneTypeDescription":"Primary Office","countryCode":"1","areaCode":"914","telephoneNumber":"1522822"},{"telephoneId":1522832,"telephoneTypeId":2,"telephoneTypeDescription":"Primary Office Fax","countryCode":"1","areaCode":"914","telephoneNumber":"1522832"},{"telephoneId":2400536,"telephoneTypeId":5,"telephoneTypeDescription":"Office","countryCode":"1","areaCode":"914","telephoneNumber":"2400536"}],"defaultAccountId":1005555,"accounts":[{"accountId":1005555,"accountName":"Bright Skies LLC","accountTypeDescription":"Share","isPrincipal":false,"allowedToFly":false,"allowedToBookFlight":true},{"accountId":1046165,"accountName":"Bright Skies LLC-Charter","accountTypeDescription":"Share","isPrincipal":false,"allowedToFly":false,"allowedToBookFlight":true},{"accountId":1003623,"accountName":"Clear Skies LLC","accountTypeDescription":"Share","isPrincipal":false,"allowedToFly":false,"allowedToBookFlight":true},{"accountId":1353553,"accountName":"Nancy Selander","accountTypeDescription":"Share","isPrincipal":false,"allowedToFly":false,"allowedToBookFlight":true}]},"contracts":[{"contractId":1408094,"contractType":7,"contractTypeDescription":"NJ Lease","divisionId":1411309,"cardType":null,"cardTypeDescription":null,"cardNumber":null,"aircraftType":"GV","aircraftTypeName":"GULFSTREAM V","tailNumber":"N509QS","flightRule":"Part 91K","actualRemainingHours":72.4,"projectedRemainingHours":64.4,"programId":1000011,"peakDates":[{"description":"Saturday after Christmas","eventDate":"2014-12-27"},{"description":"Friday after Christmas","eventDate":"2014-12-26"},{"description":"Saturday before Christmas","eventDate":"2014-12-20"},{"description":"Sunday after Thanksgiving","eventDate":"2014-11-30"},{"description":"Wednesday before Thanksgiving","eventDate":"2014-11-26"},{"description":"Presidents Day","eventDate":"2014-02-17"},{"description":"Friday before Presidents Day","eventDate":"2014-02-14"},{"description":"Thursday before Presidents Day","eventDate":"2014-02-13"},{"description":"Sunday after New Years","eventDate":"2014-01-05"},{"description":"Saturday after New Years","eventDate":"2014-01-04"},{"description":"Friday after Christmas Day","eventDate":"2013-12-27"},{"description":"Day after Christmas Day","eventDate":"2013-12-26"}]},{"contractId":1405524,"contractType":8,"contractTypeDescription":"NJ Owner","divisionId":1408719,"cardType":null,"cardTypeDescription":null,"cardNumber":null,"aircraftType":"CE-560XLS","aircraftTypeName":"CITATION EXCEL/XLS","tailNumber":"N579QS","flightRule":"Part 91K","actualRemainingHours":44.7,"projectedRemainingHours":42.6,"programId":1000011,"peakDates":[{"description":"Saturday after Christmas","eventDate":"2014-12-27"},{"description":"Friday after Christmas","eventDate":"2014-12-26"},{"description":"Saturday before Christmas","eventDate":"2014-12-20"},{"description":"Sunday after Thanksgiving","eventDate":"2014-11-30"},{"description":"Wednesday before Thanksgiving","eventDate":"2014-11-26"},{"description":"Presidents Day","eventDate":"2014-02-17"},{"description":"Friday before Presidents Day","eventDate":"2014-02-14"},{"description":"Thursday before Presidents Day","eventDate":"2014-02-13"},{"description":"Sunday after New Years","eventDate":"2014-01-05"},{"description":"Saturday after New Years","eventDate":"2014-01-04"},{"description":"Friday after Christmas Day","eventDate":"2013-12-27"},{"description":"Day after Christmas Day","eventDate":"2013-12-26"}]},{"contractId":1405518,"contractType":8,"contractTypeDescription":"NJ Owner","divisionId":1408713,"cardType":null,"cardTypeDescription":null,"cardNumber":null,"aircraftType":"G-200","aircraftTypeName":"GULFSTREAM 200","tailNumber":"N716QS","flightRule":"Part 91K","actualRemainingHours":41.3,"projectedRemainingHours":35.1,"programId":1000011,"peakDates":[{"description":"Saturday after Christmas","eventDate":"2014-12-27"},{"description":"Friday after Christmas","eventDate":"2014-12-26"},{"description":"Saturday before Christmas","eventDate":"2014-12-20"},{"description":"Sunday after Thanksgiving","eventDate":"2014-11-30"},{"description":"Wednesday before Thanksgiving","eventDate":"2014-11-26"},{"description":"Presidents Day","eventDate":"2014-02-17"},{"description":"Friday before Presidents Day","eventDate":"2014-02-14"},{"description":"Thursday before Presidents Day","eventDate":"2014-02-13"},{"description":"Sunday after New Years","eventDate":"2014-01-05"},{"description":"Saturday after New Years","eventDate":"2014-01-04"},{"description":"Friday after Christmas Day","eventDate":"2013-12-27"},{"description":"Day after Christmas Day","eventDate":"2013-12-26"}]},{"contractId":1380425,"contractType":8,"contractTypeDescription":"NJ Owner","divisionId":1383070,"cardType":null,"cardTypeDescription":null,"cardNumber":null,"aircraftType":"G-550","aircraftTypeName":"GULFSTREAM 550","tailNumber":"N518QS","flightRule":"Part 91K","actualRemainingHours":75.0,"projectedRemainingHours":75.0,"programId":1000011,"peakDates":[{"description":"Saturday after Christmas","eventDate":"2014-12-27"},{"description":"Friday after Christmas","eventDate":"2014-12-26"},{"description":"Saturday before Christmas","eventDate":"2014-12-20"},{"description":"Sunday after Thanksgiving","eventDate":"2014-11-30"},{"description":"Wednesday before Thanksgiving","eventDate":"2014-11-26"},{"description":"Presidents Day","eventDate":"2014-02-17"},{"description":"Friday before Presidents Day","eventDate":"2014-02-14"},{"description":"Thursday before Presidents Day","eventDate":"2014-02-13"},{"description":"Sunday after New Years","eventDate":"2014-01-05"},{"description":"Saturday after New Years","eventDate":"2014-01-04"},{"description":"Friday after Christmas Day","eventDate":"2013-12-27"},{"description":"Day after Christmas Day","eventDate":"2013-12-26"}]},{"contractId":1380426,"contractType":8,"contractTypeDescription":"NJ Owner","divisionId":1383071,"cardType":null,"cardTypeDescription":null,"cardNumber":null,"aircraftType":"CE-560XLS","aircraftTypeName":"CITATION EXCEL/XLS","tailNumber":"N618QS","flightRule":"Part 91K","actualRemainingHours":75.0,"projectedRemainingHours":75.0,"programId":1000011,"peakDates":[{"description":"Saturday after Christmas","eventDate":"2014-12-27"},{"description":"Friday after Christmas","eventDate":"2014-12-26"},{"description":"Saturday before Christmas","eventDate":"2014-12-20"},{"description":"Sunday after Thanksgiving","eventDate":"2014-11-30"},{"description":"Wednesday before Thanksgiving","eventDate":"2014-11-26"},{"description":"Presidents Day","eventDate":"2014-02-17"},{"description":"Friday before Presidents Day","eventDate":"2014-02-14"},{"description":"Thursday before Presidents Day","eventDate":"2014-02-13"},{"description":"Sunday after New Years","eventDate":"2014-01-05"},{"description":"Saturday after New Years","eventDate":"2014-01-04"},{"description":"Friday after Christmas Day","eventDate":"2013-12-27"},{"description":"Day after Christmas Day","eventDate":"2013-12-26"}]},{"contractId":1042445,"contractType":8,"contractTypeDescription":"NJ Owner","divisionId":1045160,"cardType":null,"cardTypeDescription":null,"cardNumber":null,"aircraftType":"G-550","aircraftTypeName":"GULFSTREAM 550","tailNumber":"N531QS","flightRule":"Part 91K","actualRemainingHours":56.3,"projectedRemainingHours":42.8,"programId":1000011,"peakDates":[{"description":"Saturday after Christmas","eventDate":"2014-12-27"},{"description":"Friday after Christmas","eventDate":"2014-12-26"},{"description":"Saturday before Christmas","eventDate":"2014-12-20"},{"description":"Sunday after Thanksgiving","eventDate":"2014-11-30"},{"description":"Wednesday before Thanksgiving","eventDate":"2014-11-26"},{"description":"Presidents Day","eventDate":"2014-02-17"},{"description":"Friday before Presidents Day","eventDate":"2014-02-14"},{"description":"Thursday before Presidents Day","eventDate":"2014-02-13"},{"description":"Sunday after New Years","eventDate":"2014-01-05"},{"description":"Saturday after New Years","eventDate":"2014-01-04"},{"description":"Friday after Christmas Day","eventDate":"2013-12-27"},{"description":"Day after Christmas Day","eventDate":"2013-12-26"}]}],
+"requests": [
+        {
+            "requestId": 2145016,
+            "reservationId": 1782620,
+            "legIdFirst": 2177395,
+            "legIdLast": 2177395,
+            "requestStatus": "B",
+            "requestStatusDescription": "Booked",
+            "departureFboId": 848,
+            "departureFboName": "Nantucket Memorial Airport",
+            "arrivalFboId": 1159843,
+            "arrivalFboName": "Trajen (FKA North American Jet) CLOSED",
+            "requestedAircraftType": "CE-560",
+            "requestedAircraftTypeDescription": "CITATION V ULTRA",
+            "requestedAircraftSize": "S",
+            "guaranteedAircraftType": "CE-560",
+            "guaranteedAircraftTypeDescription": "CITATION V ULTRA",
+            "guaranteedAircraftSize": "S",
+            "programId": 1000011,
+            "programName": "NetJets U.S.",
+            "flightTypeId": 7,
+            "flightTypeDescription": "NetJets",
+            "flightRuleId": 2,
+            "flightRuleDescription": "Part 135",
+            "flownStatus": 3,
+            "flownStatusDescription": "Flown",
+            "isEtdEnteredByUser": null,
+            "etdGmt": "2006-06-22T19:15:00Z",
+            "etdLocal": "2006-06-22T15:15:00-0400",
+            "departureTimeZoneId": "America/New_York",
+            "departureTimeZoneFormat": "EDT",
+            "departureTimeZoneGMTOffset": -4,
+            "departureAirportId": "KACK",
+            "departureAirportName": "NANTUCKET MEML",
+            "departureAirportCity": "NANTUCKET",
+            "departureAirportState": "MA",
+            "departureAirportCountry": "USA",
+            "departureAirportLatitudeQuantity": 148511,
+            "departureAirportLongitudeQuantity": -252215,
+            "etaGmt": "2006-06-22T21:51:00Z",
+            "etaLocal": "2006-06-22T16:51:00-0500",
+            "arrivalTimeZoneId": "America/Chicago",
+            "arrivalTimeZoneFormat": "CDT",
+            "arrivalTimeZoneGMTOffset": -5,
+            "arrivalAirportId": "KPWK",
+            "arrivalAirportName": "CHICAGO EXECUTIVE",
+            "arrivalAirportCity": "CHICAGO/PROSPECT HGTS/WH",
+            "arrivalAirportState": "IL",
+            "arrivalAirportCountry": "USA",
+            "arrivalAirportLatitudeQuantity": 151611,
+            "arrivalAirportLongitudeQuantity": -316445,
+            "isInternational": false,
+            "tailNumber": "N119QS",
+            "tailId": 1014109,
+            "actualAircraftType": "BE-400A",
+            "noOfFuelStops": 0,
+            "estimatedFlightTime": 2.4,
+            "estimatedTripTime": 2.6,
+            "estimatedFlightDistanceInKM": 1485.8,
+            "crew": [
+                {
+                    "individualId": 1300922,
+                    "fullName": "Harry Lee Winters",
+                    "assignedDesignation": "PIC",
+                    "assignedOrderNumber": 1,
+                    "assignedPositionNumber": 1,
+                    "phoneNumber": "19201756091"
+                },
+                {
+                    "individualId": 1441323,
+                    "fullName": "Thomas John OKeefe",
+                    "assignedDesignation": "SIC",
+                    "assignedOrderNumber": 2,
+                    "assignedPositionNumber": 3,
+                    "phoneNumber": "17172006492"
+                }
+            ],
+            "passengerManifest": {
+                "passengerManifestId": 675369,
+                "adultsQuantity": 2,
+                "petsOverThresholdQuantity": 1,
+                "passengers": [
+                    {
+                        "passengerId": 2644968,
+                        "priority": 1,
+                        "passengerType": 558,
+                        "passengerTypeDescription": "Adult(?)",
+                        "isLeadPax": true,
+                        "individualId": 1488653,
+                        "passengerName": "DENNIS MULLEN"
+                    },
+                    {
+                        "passengerId": 2644969,
+                        "priority": 2,
+                        "passengerType": 553,
+                        "passengerTypeDescription": "Adult",
+                        "isLeadPax": false,
+                        "individualId": 1488654,
+                        "passengerName": "Katherine Scherping"
+                    },
+                    {
+                        "passengerId": 2747553,
+                        "priority": 3,
+                        "passengerType": 556,
+                        "passengerTypeDescription": "Pet Over 40 Pounds",
+                        "isLeadPax": false,
+                        "petId": 1013604,
+                        "petName": "Chili",
+                        "petDescription": "will bring harness",
+                        "petType": "Golden Retriever",
+                        "petWeight": 75
+                    }
+                ]
+            },
+            "groundOrders": [
+                {
+                    "orderNumber": 402455,
+                    "groundType": "Chauferred",
+                    "vendorName": "Savoya",
+                    "vendorPhone": "8008020380",
+                    "currentState": "In Position",
+                    "isDeparture": false,
+                    "autoSizeId": 1,
+                    "autoSize": "Sedan (3 + Driver)",
+                    "leadRiderContactName": null,
+                    "billingTypeCode": 1,
+                    "billingNumber": null,
+                    "adjustToFlight": true,
+                    "routeDescriptions": []
+                } ,
+                {
+                    "orderNumber": 402456,
+                    "groundType": "Rental",
+                    "vendorName": "Avis Chairman Club/Marquis Jet",
+                    "vendorPhone": "8882014934",
+                    "currentState": "In Position",
+                    "isDeparture": false,
+                    "autoSizeId": 3,
+                    "autoSize": "Full Size",
+                    "leadRiderContactName": null,
+                    "billingTypeCode": 1,
+                    "billingNumber": null,
+                    "adjustToFlight": true,
+                    "routeDescriptions": [
+                        "LINCOLN (KLNK) Duncan Aviation",
+                        "line 1 test^|{}<>#$&%()/ line 2 test^|{}<>#$&%()/ city test^|{}<>#$&%()/ state test^|{}<>#$&%()/ zip code test^|{}<>#$&%()/"
+                    ]
+                }
+            ],
+            "cateringOrders": [
+                {
+                    "requestedCateringID": 1147256,
+                    "currentState": "In Position",
+                    "isDeparture": true,
+                    "cateringVendor": "Cowboys Market",
+                    "cateringPhone": "5081786097",
+                    "isPrimaryOrder": true,
+                    "isNCIORder": false,
+                    "cateringItems": [
+                        {
+                            "ownerFacingDescription": "Chocolate Dipped Strawberries",
+                            "quantity": 1,
+                            "preparationNotes": "with a note to say: Denny and Katie, Welcome to the Marquis Jet Family!  Warm Regards,  Jae and Marquis Jet Owner Services Team",
+                            "packaging": "Tray"
+                        },
+                        {
+                            "ownerFacingDescription": "Assorted Finger Sandwich (1-2 people) ",
+                            "quantity": 1,
+                            "preparationNotes": "",
+                            "packaging": "Tray"
+                        },
+                        {
+                            "ownerFacingDescription": "Fresh Sliced Fruit (1-2 people) ",
+                            "quantity": 1,
+                            "preparationNotes": "",
+                            "packaging": "Tray"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -23,4 +23,7 @@
 @property (copy, nonatomic) void(^completionHandler)(NJOPLoginViewController*);
 
 - (IBAction)signInAction:(id)sender;
+- (void) displayHome; // displays the home storyboard
+- (void) presentMessage:(NSString *) message withTitle:(NSString *) title; // temporary for testing
+
 @end

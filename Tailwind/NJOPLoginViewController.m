@@ -8,6 +8,8 @@
 
 #import "NJOPLoginViewController.h"
 #import "NJOPClient+Login.h"
+#import "NJOPClient+flights.h"
+#import "NCLInfoPresenter.h"
 
 @interface NJOPLoginViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) NJOPLoginViewUserInput* userInput;
@@ -17,6 +19,12 @@
 @implementation NJOPLoginViewController
 
 #pragma mark - UIViewController
+
+#define API_SOURCE_IDENTIFIER @"OwnersPortalIOSUser"
+#define API_HOSTNAME @"servicesdev.netjets.com"
+#define URL_BRIEF @"/op/v1/brief"
+#define URL_RESERVATIONS @"/op/v1/reservations"
+#define URL_CONTRACTS @"/op/v1/contracts"
 
 #define USE_BLUR 0
 
@@ -44,7 +52,7 @@
 #pragma mark - state changes
 
 -(void)updateUIAfterTextEntry {
-
+    // we don't allow submission until username and password entries seem to be appropriate
 	BOOL valid = [self.userInput validateWithError:nil];
 	self.userNameTextField.returnKeyType = valid ? UIReturnKeyGo : UIReturnKeyNext;
 	self.passwordTextField.returnKeyType = valid ? UIReturnKeyGo : UIReturnKeyNext;
@@ -104,8 +112,20 @@
 	[self presentViewController:alertController animated:YES completion:nil];
 }
 
+- (void) presentMessage:(NSString *) message withTitle:(NSString *) title {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+    }];
+    [alertController addAction:dismissAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 - (IBAction)signInAction:(id)sender {
 
+    // bypass VPN
+    if (USE_STATIC_DATA == 1) {
+        [self displayHome];
+    } else {
 	if (!self.loginTask) {
 
 		UIView* coverView = [UIView new];
@@ -135,17 +155,43 @@
 				}];
 			} else {
 				label.text = @"Done";
+                self.loginTask = nil;
 				[UIView animateWithDuration:0.2 animations:^{
 					[coverView setAlpha:0.0];
 				} completion:^(BOOL finished) {
 					[coverView removeFromSuperview];
+                    
+                    [self displayHome];
 				}];
-				NSAssert(self.completionHandler, @"");
-				self.completionHandler(self);
+				//NSAssert(self.completionHandler, @"");
+				//self.completionHandler(self);
 			}
 			return nil;
 		}];
 	}
+    } // end else static
+}
+
+- (void) displayHome {
+    
+    if (USE_STATIC_DATA == 0) {
+        NNNOAuthClient *userSessoion = [NNNOAuthClient sharedInstance];
+        NSLog(@"USER SESSION TOKEN: %@",userSessoion.credential.accessToken);
+        NSLog(@"USER REFRESH TOKEN: %@",userSessoion.credential.refreshToken);
+        NSLog(@"USER EXPIRATION: %@",userSessoion.credential.expiration);
+        NSString *accessToken = userSessoion.credential.accessToken;
+        NSString *accessInfo = [NSString stringWithFormat:@"Access Token:%@ - Refresh Token:%@ - Expiration: %@",userSessoion.credential.accessToken, userSessoion.credential.refreshToken, userSessoion.credential.expiration];
+        NSLog(@"access info: %@",accessInfo);
+        [self presentMessage:accessInfo withTitle:@"Login Success!!"];
+        NSString *urlString = [NSString stringWithFormat:@"%@%@?appAgent=%@&access_token=%@",API_HOSTNAME, URL_BRIEF,API_SOURCE_IDENTIFIER,accessToken];
+        NSLog(@"get Brief: %@",urlString);
+        //[NJOPClient GETReservationWithInfo:<#(NSDictionary *)#> completion:<#^(NJOPReservation *reservation, NSError *error)completionHandler#>];
+    }
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+    UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    
+    [[UIApplication sharedApplication].keyWindow setRootViewController:vc];
 }
 
 @end

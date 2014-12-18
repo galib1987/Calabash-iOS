@@ -13,6 +13,7 @@
 #import "NJOPSummaryViewTopHeaderView.h"
 #import "NJOPSummaryNavigationTitleView.h"
 #import "NJOPNavigationBar.h"
+#import "NNNOAuthClient.h"
 
 static NSString* headerIdentifier = @"ReservationHeaderView";
 
@@ -88,7 +89,16 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
 
 	__weak NJOPPPhoneHomeViewController* wself = self;
 
-	[NJOPClient GETReservationWithInfo:nil completion:^(NJOPReservation *reservation, NSError *error) {
+    NSDictionary *info = nil;
+    if (USE_STATIC_DATA == 0) {
+        NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
+        NSString *accessToken = userSession.credential.accessToken;
+        NSString *urlString = [NSString stringWithFormat:@"https://%@%@?appAgent=%@&access_token=%@",API_HOSTNAME, URL_BRIEF,API_SOURCE_IDENTIFIER,accessToken];
+        if ([urlString length] > 20) {
+            info = [NSDictionary dictionaryWithObjectsAndKeys:urlString,@"apiURL", API_HOSTNAME, @"host",nil];
+        }
+    }
+	[NJOPClient GETReservationWithInfo:info completion:^(NJOPReservation *reservation, NSError *error) {
 		[wself updateWithReservations:@[reservation]];
 	}];
 }
