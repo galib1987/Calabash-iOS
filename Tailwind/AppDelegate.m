@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NJOPSettingsTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Settings" bundle:[NSBundle mainBundle]];
+//    NJOPSettingsTableViewController *vc = [storyboard instantiateInitialViewController];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.rootViewController = vc;
+//    [self.window makeKeyAndVisible];
 
 
 	UINavigationBar* nav = [[UINavigationBar class] appearance];
