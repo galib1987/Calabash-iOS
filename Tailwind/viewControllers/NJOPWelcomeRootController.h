@@ -2,7 +2,7 @@
 //  NJOPWelcomeRootController.h
 //  Tailwind
 //
-//  Created by netjets on 12/22/14.
+//  Created by Angus.Lo on 12/22/14.
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
