@@ -24,6 +24,9 @@
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    self.window.rootViewController = vc;
 //    [self.window makeKeyAndVisible];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Welcome" bundle:[NSBundle mainBundle]];
+    UIViewController *vc = [storyboard instantiateInitialViewController];
+    self.window.rootViewController = vc;
 
 
 	UINavigationBar* nav = [[UINavigationBar class] appearance];
