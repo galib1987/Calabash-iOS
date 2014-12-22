@@ -2,7 +2,7 @@
 //  NJOPResetPasswordViewController.m
 //  Tailwind
 //
-//  Created by Amos Elmaliah on 12/16/14.
+//  Created by NetJets on 12/16/14.
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
