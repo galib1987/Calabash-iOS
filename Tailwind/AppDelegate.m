@@ -26,12 +26,9 @@
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    self.window.rootViewController = vc;
 //    [self.window makeKeyAndVisible];
-    
-    // TEST CODE TO DISPLAY WELCOME SCENE vvvvv
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Welcome" bundle:[NSBundle mainBundle]];
     UIViewController *vc = [storyboard instantiateInitialViewController];
     self.window.rootViewController = vc;
-    // TEST CODE TO DISPLAY WELCOME SCENE ^^^^^
 
     // listen for major menu changes
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goChangeScreen:) name:changeScreen object:nil];
