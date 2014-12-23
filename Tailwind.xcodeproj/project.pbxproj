@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E1A592E1A48CDD70048A9C9 /* NJOPFullPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1A592D1A48CDD70048A9C9 /* NJOPFullPageViewController.m */; };
+		1E1A596A1A49FB6D0048A9C9 /* NJOPDrawRectWithCircleCutout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1A59691A49FB6D0048A9C9 /* NJOPDrawRectWithCircleCutout.m */; };
 		1E36BD1C1A4887D700221E7D /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E36BD1B1A4887D700221E7D /* Welcome.storyboard */; };
 		1E36BD221A48992700221E7D /* NJOPWelcomeContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E36BD211A48992700221E7D /* NJOPWelcomeContentController.m */; };
 		1E36BD251A489ED100221E7D /* NJOPWelcomeRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E36BD241A489ED100221E7D /* NJOPWelcomeRootController.m */; };
@@ -122,6 +123,8 @@
 		03307E6D414420F7D9C0477B /* Pods.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.production.xcconfig; path = "Pods/Target Support Files/Pods/Pods.production.xcconfig"; sourceTree = SOURCE_ROOT; };
 		1E1A592C1A48CDD70048A9C9 /* NJOPFullPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFullPageViewController.h; sourceTree = "<group>"; };
 		1E1A592D1A48CDD70048A9C9 /* NJOPFullPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFullPageViewController.m; sourceTree = "<group>"; };
+		1E1A59681A49FB6D0048A9C9 /* NJOPDrawRectWithCircleCutout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPDrawRectWithCircleCutout.h; path = DrawShapes/NJOPDrawRectWithCircleCutout.h; sourceTree = "<group>"; };
+		1E1A59691A49FB6D0048A9C9 /* NJOPDrawRectWithCircleCutout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPDrawRectWithCircleCutout.m; path = DrawShapes/NJOPDrawRectWithCircleCutout.m; sourceTree = "<group>"; };
 		1E36BD1B1A4887D700221E7D /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		1E36BD201A48992700221E7D /* NJOPWelcomeContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPWelcomeContentController.h; sourceTree = "<group>"; };
 		1E36BD211A48992700221E7D /* NJOPWelcomeContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPWelcomeContentController.m; sourceTree = "<group>"; };
@@ -816,6 +819,7 @@
 				A7A03EAC1A42EB6D004BE417 /* NJOPTableView.m in Sources */,
 				A7A03EA61A42E626004BE417 /* UIView+NJOPStyle.m in Sources */,
 				A77680E31A406C7D00B2E7CF /* NNNUserDefaultsManager.m in Sources */,
+				1E1A596A1A49FB6D0048A9C9 /* NJOPDrawRectWithCircleCutout.m in Sources */,
 				1E1A592E1A48CDD70048A9C9 /* NJOPFullPageViewController.m in Sources */,
 				A77680E11A406C7D00B2E7CF /* NNNOAuthClient.m in Sources */,
 				A7A03E981A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.m in Sources */,
