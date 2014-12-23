@@ -2,11 +2,12 @@
 //  NJOPWelcomeRootController.m
 //  Tailwind
 //
-//  Created by Angus.Lo on 12/22/14.
+//  Created by netjets on 12/22/14.
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
 #import "NJOPWelcomeRootController.h"
+#import "NJOPFullPageViewController.h"
 
 @interface NJOPWelcomeRootController ()
 
@@ -21,23 +22,37 @@
     self.pageDescs = @[@"Let us show you around.", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"You can submit a flight request in just a few taps. Then our Owner Services team will call you to iron out the details.", @"Allow us to notify you of important flight updates, without answering a phone call."];
     self.pageBgs = @[@"UpcomingFlightsMap.png", @"NJOPFleet.png", @"UpcomingFlightsMap.png", @"NJOPFleet.png", @"UpcomingFlightsMap.png"];
     
-    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcomeViewController"];
+    /*self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcomeViewController"];
     self.pageViewController.dataSource = self;
     
     NJOPWelcomeContentController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:FALSE completion:nil];
     
-    //self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    
     [self addChildViewController:self.pageViewController];
     [self.view insertSubview:self.pageViewController.view atIndex:0];
-    [self.pageViewController didMoveToParentViewController:self];
+    [self.pageViewController didMoveToParentViewController:self];*/
     
     /*UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     pageControl.backgroundColor = [UIColor clearColor];*/
+    
+    
+    self.pageViewController = [[NJOPFullPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    
+    self.pageViewController.dataSource = self;
+    
+    //self.pageViewController.view.frame = CGRectMake(20, 20, self.view.frame.size.width-40, self.view.frame.size.height-40);
+    
+    NJOPWelcomeContentController *startingViewController = [self viewControllerAtIndex:0];
+    NSArray *viewControllers = @[startingViewController];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    [self.pageViewController willMoveToParentViewController:self];
+    [self addChildViewController:self.pageViewController];
+    [self.view insertSubview:self.pageViewController.view atIndex:0];
+    [self.pageViewController didMoveToParentViewController:self];
     
 }
 
