@@ -2,7 +2,7 @@
 //  NJOPFullPageViewController.m
 //  Tailwind
 //
-//  Created by Angus.Lo on 12/22/14.
+//  Created by netjets on 12/22/14.
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
@@ -25,6 +25,7 @@
 }
 
 - (void)viewDidLayoutSubviews {
+    // overlay page indicator on scroll view
     if ([self.view.subviews count] == 2) {
         for(UIView* t in self.view.subviews) {
             if([t isKindOfClass:[UIScrollView class]]) {
