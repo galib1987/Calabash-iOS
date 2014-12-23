@@ -20,10 +20,10 @@
 		6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC829AF1A40B4A900991949 /* NJOPLoginViewController.m */; };
 		6CC829B31A40B4C900991949 /* NJOPResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */; };
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
-		A76C4D671A51A79700282864 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76C4D661A51A79700282864 /* Settings.storyboard */; };
-		A76C4D6A1A51B2DD00282864 /* NJOPFlightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76C4D691A51B2DD00282864 /* NJOPFlightTableCell.m */; };
-		A76C4D6D1A51C44500282864 /* NJOPInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76C4D6C1A51C44500282864 /* NJOPInfoCell.m */; };
-		A76C4D701A51C53200282864 /* NJOPFlightDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76C4D6F1A51C53200282864 /* NJOPFlightDetailCell.m */; };
+		A72AFB961A49FCD1005CF333 /* NJOPFlightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A72AFB951A49FCD1005CF333 /* NJOPFlightTableCell.m */; };
+		A74460C61A488B62004CC945 /* NJOPPPhoneHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74460C51A488B62004CC945 /* NJOPPPhoneHomeViewController.m */; };
+		A75C2D3D1A4617C700F59B9F /* NJOPSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75C2D3C1A4617C700F59B9F /* NJOPSettingsTableViewController.m */; };
+		A75C2D411A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75C2D401A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.m */; };
 		A77680891A4062FE00B2E7CF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77680881A4062FE00B2E7CF /* Home.storyboard */; };
 		A776808B1A40631F00B2E7CF /* Flights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A776808A1A40631F00B2E7CF /* Flights.storyboard */; };
 		A776808D1A40632C00B2E7CF /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A776808C1A40632C00B2E7CF /* Account.storyboard */; };
@@ -140,13 +140,14 @@
 		6CC829B11A40B4C900991949 /* NJOPResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPResetPasswordViewController.h; path = Tailwind/NJOPResetPasswordViewController.h; sourceTree = SOURCE_ROOT; };
 		6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPResetPasswordViewController.m; path = Tailwind/NJOPResetPasswordViewController.m; sourceTree = SOURCE_ROOT; };
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
-		A76C4D661A51A79700282864 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		A76C4D681A51B2DD00282864 /* NJOPFlightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPFlightTableCell.h; path = ../NJOPFlightTableCell.h; sourceTree = "<group>"; };
-		A76C4D691A51B2DD00282864 /* NJOPFlightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPFlightTableCell.m; path = ../NJOPFlightTableCell.m; sourceTree = "<group>"; };
-		A76C4D6B1A51C44500282864 /* NJOPInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPInfoCell.h; sourceTree = "<group>"; };
-		A76C4D6C1A51C44500282864 /* NJOPInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPInfoCell.m; sourceTree = "<group>"; };
-		A76C4D6E1A51C53200282864 /* NJOPFlightDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPFlightDetailCell.h; path = ../NJOPFlightDetailCell.h; sourceTree = "<group>"; };
-		A76C4D6F1A51C53200282864 /* NJOPFlightDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPFlightDetailCell.m; path = ../NJOPFlightDetailCell.m; sourceTree = "<group>"; };
+		A72AFB941A49FCD1005CF333 /* NJOPFlightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightTableCell.h; sourceTree = "<group>"; };
+		A72AFB951A49FCD1005CF333 /* NJOPFlightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightTableCell.m; sourceTree = "<group>"; };
+		A74460C41A488B62004CC945 /* NJOPPPhoneHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPPhoneHomeViewController.h; sourceTree = "<group>"; };
+		A74460C51A488B62004CC945 /* NJOPPPhoneHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPPhoneHomeViewController.m; sourceTree = "<group>"; };
+		A75C2D3B1A4617C700F59B9F /* NJOPSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSettingsTableViewController.h; sourceTree = "<group>"; };
+		A75C2D3C1A4617C700F59B9F /* NJOPSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsTableViewController.m; sourceTree = "<group>"; };
+		A75C2D3F1A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPushNotificationsTableViewController.h; sourceTree = "<group>"; };
+		A75C2D401A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPushNotificationsTableViewController.m; sourceTree = "<group>"; };
 		A77680881A4062FE00B2E7CF /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A776808A1A40631F00B2E7CF /* Flights.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Flights.storyboard; sourceTree = "<group>"; };
 		A776808C1A40632C00B2E7CF /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
@@ -823,6 +824,7 @@
 				A77680E91A406C7D00B2E7CF /* UIColor+NJOP.m in Sources */,
 				6CC829B31A40B4C900991949 /* NJOPResetPasswordViewController.m in Sources */,
 				6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */,
+				A72AFB961A49FCD1005CF333 /* NJOPFlightTableCell.m in Sources */,
 				A7A03EA91A42E7BC004BE417 /* UICollectionReusableView+NJOPHelpers.m in Sources */,
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,
 				A77680DF1A406C7D00B2E7CF /* NJOPValidator.m in Sources */,
