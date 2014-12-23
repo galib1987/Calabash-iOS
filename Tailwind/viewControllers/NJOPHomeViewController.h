@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SimpleDataSourceTableViewController.h"
 
-@interface NJOPHomeViewController : UIViewController
+@interface NJOPHomeViewController : SimpleDataSourceTableViewController
 
 @end
