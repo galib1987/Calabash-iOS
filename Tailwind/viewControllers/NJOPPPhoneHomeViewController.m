@@ -100,7 +100,7 @@ static NSString* headerIdentifier = @"ReservationHeaderView";
     if (USE_STATIC_DATA == 0) {
         NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
         NSString *accessToken = userSession.credential.accessToken;
-        NSString *urlString = [NSString stringWithFormat:@"https://%@%@?appAgent=%@&access_token=%@",API_HOSTNAME, URL_BRIEF,API_SOURCE_IDENTIFIER,accessToken];
+        NSString *urlString = [NSString stringWithFormat:@"https://%@%@?appAgent=%@&access_token=%@&showAllFlights=true",API_HOSTNAME, URL_BRIEF,API_SOURCE_IDENTIFIER,accessToken];
         if ([urlString length] > 20) {
             info = [NSDictionary dictionaryWithObjectsAndKeys:urlString,@"apiURL", API_HOSTNAME, @"host",nil];
         }
