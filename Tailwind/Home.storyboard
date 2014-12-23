@@ -65,7 +65,7 @@
         <!--Table View Controller-->
         <scene sceneID="gOK-0G-DDd">
             <objects>
-                <tableViewController id="col-bo-pwr" sceneMemberID="viewController">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="col-bo-pwr" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="509" sectionHeaderHeight="22" sectionFooterHeight="22" id="J3q-CY-sCq" customClass="NJOPTableView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="2050"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
