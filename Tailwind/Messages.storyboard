@@ -2,25 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Nimbus-Sans-D-Bold.otf">
-            <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
-        </mutableArray>
-        <mutableArray key="Nimbus-Sans-D-Regular-Italic.otf">
-            <string>NimbusSanD-RegIta</string>
-        </mutableArray>
-        <mutableArray key="Nimbus-Sans-D.otf">
-            <string>NimbusSanD-Reg</string>
-            <string>NimbusSanD-Reg</string>
-            <string>NimbusSanD-Reg</string>
-            <string>NimbusSanD-Reg</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--Table View Controller-->
         <scene sceneID="HGA-fs-VW0">
@@ -30,109 +12,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="aPG-Wz-8Ss">
-                            <rect key="frame" x="0.0" y="340" width="375" height="221"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages for completed flights are automatically removed." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UK-4Y-l4c">
-                                    <rect key="frame" x="8" y="8" width="359" height="205"/>
-                                    <fontDescription key="fontDescription" name="NimbusSanD-RegIta" family="Nimbus Sans D" pointSize="20"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="9UK-4Y-l4c" firstAttribute="leading" secondItem="aPG-Wz-8Ss" secondAttribute="leading" constant="8" id="BnY-b3-whL"/>
-                                <constraint firstItem="9UK-4Y-l4c" firstAttribute="top" secondItem="aPG-Wz-8Ss" secondAttribute="top" constant="8" id="L6K-ee-CXr"/>
-                                <constraint firstAttribute="bottom" secondItem="9UK-4Y-l4c" secondAttribute="bottom" constant="8" id="ajj-6R-opn"/>
-                                <constraint firstAttribute="trailing" secondItem="9UK-4Y-l4c" secondAttribute="trailing" constant="8" id="y8f-J7-lxq"/>
-                            </constraints>
-                        </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="127" id="jzB-fF-WAt" userLabel="Today Cell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="127" id="jzB-fF-WAt">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jzB-fF-WAt" id="eFX-jL-zA8">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLIGHT BOOKED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMX-YU-Fn8">
-                                            <rect key="frame" x="24" y="16" width="131" height="17"/>
-                                            <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York to Austin at 12:00p" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFk-ab-KVE">
-                                            <rect key="frame" x="24" y="41" width="206" height="17"/>
-                                            <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, Nov 30, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlL-NR-Str">
-                                            <rect key="frame" x="24" y="66" width="191" height="17"/>
-                                            <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY 2:04p" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9A-oa-6vl">
-                                            <rect key="frame" x="24" y="91" width="91" height="15"/>
-                                            <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="15"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="YMX-YU-Fn8" firstAttribute="leading" secondItem="wFk-ab-KVE" secondAttribute="leading" id="CAf-fg-CNX"/>
-                                        <constraint firstItem="wFk-ab-KVE" firstAttribute="leading" secondItem="jlL-NR-Str" secondAttribute="leading" id="CO6-9d-TaM"/>
-                                        <constraint firstItem="U9A-oa-6vl" firstAttribute="top" secondItem="jlL-NR-Str" secondAttribute="bottom" constant="8" id="My3-BI-O48"/>
-                                        <constraint firstItem="YMX-YU-Fn8" firstAttribute="top" secondItem="eFX-jL-zA8" secondAttribute="topMargin" constant="8" id="daj-75-VqI"/>
-                                        <constraint firstItem="wFk-ab-KVE" firstAttribute="top" secondItem="YMX-YU-Fn8" secondAttribute="bottom" constant="8" id="iEU-hk-b7K"/>
-                                        <constraint firstItem="U9A-oa-6vl" firstAttribute="leading" secondItem="jlL-NR-Str" secondAttribute="leading" id="n3f-Qq-auV"/>
-                                        <constraint firstItem="YMX-YU-Fn8" firstAttribute="leading" secondItem="eFX-jL-zA8" secondAttribute="leadingMargin" constant="16" id="xer-kM-YAp"/>
-                                        <constraint firstItem="jlL-NR-Str" firstAttribute="top" secondItem="wFk-ab-KVE" secondAttribute="bottom" constant="8" id="xvm-z8-l5x"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="127" id="UrX-ch-efR" userLabel="Previous Cell">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UrX-ch-efR" id="Jdy-sW-qy6">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLIGHT BOOKED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWc-WG-LUo">
-                                            <rect key="frame" x="24" y="16" width="131" height="17"/>
-                                            <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FLIGHT BOOKED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMX-YU-Fn8">
+                                            <rect key="frame" x="16" y="8" width="136" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York to Austin at 12:00p" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53b-5t-DND">
-                                            <rect key="frame" x="24" y="41" width="206" height="17"/>
-                                            <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New York to Austin at 12:00p" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFk-ab-KVE">
+                                            <rect key="frame" x="16" y="37" width="223" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, Nov 30, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBw-pL-FRx">
-                                            <rect key="frame" x="24" y="66" width="191" height="17"/>
-                                            <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wednesday, Nov 30, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlL-NR-Str">
+                                            <rect key="frame" x="16" y="66" width="200" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY 2:04p" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51E-49-oPc">
-                                            <rect key="frame" x="24" y="91" width="91" height="15"/>
-                                            <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TODAY 2:04p" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9A-oa-6vl">
+                                            <rect key="frame" x="16" y="95" width="105" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="FWc-WG-LUo" firstAttribute="leading" secondItem="53b-5t-DND" secondAttribute="leading" id="DKU-jz-uvg"/>
-                                        <constraint firstItem="51E-49-oPc" firstAttribute="leading" secondItem="MBw-pL-FRx" secondAttribute="leading" id="Zpx-SL-FcG"/>
-                                        <constraint firstItem="MBw-pL-FRx" firstAttribute="top" secondItem="53b-5t-DND" secondAttribute="bottom" constant="8" id="aVT-dt-jst"/>
-                                        <constraint firstItem="53b-5t-DND" firstAttribute="top" secondItem="FWc-WG-LUo" secondAttribute="bottom" constant="8" id="bt8-fz-VEQ"/>
-                                        <constraint firstItem="51E-49-oPc" firstAttribute="top" secondItem="MBw-pL-FRx" secondAttribute="bottom" constant="8" id="fPr-RQ-V3E"/>
-                                        <constraint firstItem="53b-5t-DND" firstAttribute="leading" secondItem="MBw-pL-FRx" secondAttribute="leading" id="qTM-HT-HQH"/>
-                                        <constraint firstItem="FWc-WG-LUo" firstAttribute="top" secondItem="Jdy-sW-qy6" secondAttribute="topMargin" constant="8" id="raC-9z-apT"/>
-                                        <constraint firstItem="FWc-WG-LUo" firstAttribute="leading" secondItem="Jdy-sW-qy6" secondAttribute="leadingMargin" constant="16" id="v1v-6V-Icc"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
