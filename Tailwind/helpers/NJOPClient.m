@@ -75,6 +75,8 @@
 	NSDateFormatter* jsonDateFormatter = [NSDateFormatter new];
 	[jsonDateFormatter setDateFormat:jsonDateFormat];
 
+    // Need to return an NSArray of reservations
+    NSArray *reservations;
 	NJOPReservation* reservation = [NJOPReservation new];
 
     if (representation != nil) {
@@ -116,6 +118,9 @@
         reservation.rawData = jsonString;
     }
 
+    // returning an array of reservations
+    //reservations = [NSArray arrayWithObjects:reservation, nil];
+    
 	if (completionHandler) {
 		completionHandler(reservation,nil);
 	}

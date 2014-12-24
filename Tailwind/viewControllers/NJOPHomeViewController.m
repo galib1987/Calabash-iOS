@@ -8,6 +8,9 @@
 
 #import "NJOPHomeViewController.h"
 #import "NCLInfoPresenter.h"
+#import "NJOPReservation.h"
+#import "NNNOAuthClient.h"
+#import "NJOPClient.h"
 
 @interface NJOPHomeViewController ()
 
@@ -24,6 +27,95 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)loadDataSource {
+    
+    __weak NJOPHomeViewController* wself = self;
+    
+    NSDictionary *info = nil;
+    if (USE_STATIC_DATA == 0) {
+        NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
+        NSString *accessToken = userSession.credential.accessToken;
+        NSString *urlString = [NSString stringWithFormat:@"https://%@%@?appAgent=%@&access_token=%@",API_HOSTNAME, URL_BRIEF,API_SOURCE_IDENTIFIER,accessToken];
+        if ([urlString length] > 20) {
+            info = [NSDictionary dictionaryWithObjectsAndKeys:urlString,@"apiURL", API_HOSTNAME, @"host",nil];
+        }
+    }
+    [NJOPClient GETReservationWithInfo:info completion:^(NJOPReservation *reservation, NSError *error) {
+        [wself updateWithReservations:@[reservation]];
+    }];
+}
+
+-(void)updateWithReservations:(NSArray*)reservations {
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd MMM, YYYY"];
+    NSString* dateString = [[formatter stringFromDate:[NSDate date]] stringByAppendingString:@"\n Welcome My Smith"];
+    
+    
+    //NSLog(@"reservation is: %@",reservations);
+    NJOPReservation* todaysReservations = reservations[0]; // only taking the first reservation
+    //NSLog(@"today's Reseration: %@",todaysReservations);
+    NSDictionary* todaysFBO = @{
+                                @"FBOTableCell" : @{
+                                        //@"fromFBODateLabel.text"			: [NSString stringWithFormat:@"%@",todaysReservations.departureDateString],
+                                        @"toFBOTimeLabel.text" 				: [NSString stringWithFormat:@"%@",todaysReservations.departureTime],
+                                        @"fromFBOTimeLabel.text" 					: [NSString stringWithFormat:@"%@",todaysReservations.arrivalTime],
+                                        
+                                        @"fromFBOAirpotCodeLabel.text"	: [NSString stringWithFormat:@"%@, %@", todaysReservations.departureAirportId, todaysReservations.departureAirportCity],
+                                        @"toFBOAirpotCodeLabel.text"		: [NSString stringWithFormat:@"%@, %@", todaysReservations.arrivalAirportId, todaysReservations.arrivalAirportCity],
+                                        
+                                        //																	@"fromFBOTailNumberLabel.text"	: todaysReservations.tailNumber,
+                                        //@"travelTimeLabel.text" 			: [NSString stringWithFormat:@"%@ %@", todaysReservations.travelTime, todaysReservations.stopsText],
+                                        
+                                        //																	@"fromFBOLocationLabel.text"		: todaysReservations.departureFboName,
+                                        //																	@"toFBOLocationLabel.text"			: todaysReservations.arrivalFboName
+                                        }
+                                };
+    NSDictionary *noFBO = @{
+                            @"NJOPNOFBOTableCell" : @{
+                                    @"rawData.text": [NSString stringWithFormat:@"%@",todaysReservations.rawData]
+                                    }
+                            };
+    
+    NSArray*sections = @[
+                         @{
+                             kSimpleDataSourceSectionCellsKey : @[
+                                     @{
+                                         kSimpleDataSourceCellIdentifierKey			: @"FBOTableCell",
+                                         kSimpleDataSourceCellKeypaths			 			: todaysFBO[@"FBOTableCell"]
+                                         },
+                                     //@{
+                                         //kSimpleDataSourceCellIdentifierKey			: @"NJOPUpcomingFlightTableCell"
+                                         //},
+                                     //@{
+                                         //kSimpleDataSourceCellIdentifierKey			: @"NJOPCurrentFBOTableCell"
+                                         //},
+                                     @{
+                                         kSimpleDataSourceCellIdentifierKey			: @"NJOPNOFBOTableCell",
+                                         kSimpleDataSourceCellKeypaths	:
+                                             noFBO[@"NJOPNOFBOTableCell"]
+                                         }
+                                     ],
+                             },
+                         ];
+    NSLog(@"HERE");
+    self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
+    NSLog(@"ASLKDJASLKDJASLDJSAL");
+    self.dataSource.headerFooterCellIdentifiers = @[@"SummaryHeaderView"];
+    /*
+    [self.dataSource setConfigureHeaderFooterViewBlock:^(UIView *headerView) {
+        if ([headerView isKindOfClass:[NJOPSummaryViewTopHeaderView class]]) {
+            NJOPSummaryViewTopHeaderView* tableHeaderView = (NJOPSummaryViewTopHeaderView*)headerView;
+            tableHeaderView.topLabelView.text = dateString;
+            tableHeaderView.bodyLabelView.text = @"Hello Ms. Smith";
+            [tableHeaderView layoutIfNeeded];
+        }
+    }];
+     */
+    
+}
+
 
 /*
 #pragma mark - Navigation

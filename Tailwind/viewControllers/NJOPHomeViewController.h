@@ -11,4 +11,7 @@
 
 @interface NJOPHomeViewController : SimpleDataSourceTableViewController
 
+
+-(void)updateWithReservations:(NSArray*)reservations; // get the data for the person and update the view
+
 @end
