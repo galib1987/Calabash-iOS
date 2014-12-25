@@ -422,6 +422,54 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		A72D92121A4BCE6900967641 /* Home Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7A03EBF1A42F21D004BE417 /* NJOPNOFBOTableCell.h */,
+				A7A03EC01A42F21D004BE417 /* NJOPNOFBOTableCell.m */,
+				A7A03EBC1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.h */,
+				A7A03EBD1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.m */,
+				A7A03EB91A42F130004BE417 /* NJOPUpcomingFlightTableCell.h */,
+				A7A03EBA1A42F130004BE417 /* NJOPUpcomingFlightTableCell.m */,
+				A7A03EB01A42EE91004BE417 /* FBOTableCell.h */,
+				A7A03EB11A42EE91004BE417 /* FBOTableCell.m */,
+			);
+			name = "Home Views";
+			sourceTree = "<group>";
+		};
+		A72D92131A4BCE8400967641 /* General Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7A03EB61A42EFCA004BE417 /* NJOPTableViewCell.h */,
+				A7A03EB71A42EFCA004BE417 /* NJOPTableViewCell.m */,
+				A7A03EB31A42EF1D004BE417 /* NJOPActionButton.h */,
+				A7A03EB41A42EF1D004BE417 /* NJOPActionButton.m */,
+				A7A03EAA1A42EB6D004BE417 /* NJOPTableView.h */,
+				A7A03EAB1A42EB6D004BE417 /* NJOPTableView.m */,
+			);
+			name = "General Views";
+			sourceTree = "<group>";
+		};
+		A72D92141A4BCE9300967641 /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				A7A03E9E1A42E585004BE417 /* SimpleDataSource.h */,
+				A7A03E9F1A42E585004BE417 /* SimpleDataSource.m */,
+				A7A03EA01A42E585004BE417 /* SimpleDataSourceTableViewController.h */,
+				A7A03EA11A42E585004BE417 /* SimpleDataSourceTableViewController.m */,
+			);
+			name = Simple;
+			sourceTree = "<group>";
+		};
+		A72D92151A4BCEA700967641 /* Flights Views */ = {
+			isa = PBXGroup;
+			children = (
+				A72AFB941A49FCD1005CF333 /* NJOPFlightTableCell.h */,
+				A72AFB951A49FCD1005CF333 /* NJOPFlightTableCell.m */,
+			);
+			name = "Flights Views";
+			sourceTree = "<group>";
+		};
 		A75C2D3E1A461F6800F59B9F /* Settings ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,26 +543,10 @@
 		A7A03E9D1A42E554004BE417 /* elements */ = {
 			isa = PBXGroup;
 			children = (
-				A7A03EBF1A42F21D004BE417 /* NJOPNOFBOTableCell.h */,
-				A7A03EC01A42F21D004BE417 /* NJOPNOFBOTableCell.m */,
-				A7A03EBC1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.h */,
-				A7A03EBD1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.m */,
-				A7A03EB91A42F130004BE417 /* NJOPUpcomingFlightTableCell.h */,
-				A7A03EBA1A42F130004BE417 /* NJOPUpcomingFlightTableCell.m */,
-				A7A03EB61A42EFCA004BE417 /* NJOPTableViewCell.h */,
-				A7A03EB71A42EFCA004BE417 /* NJOPTableViewCell.m */,
-				A7A03EB31A42EF1D004BE417 /* NJOPActionButton.h */,
-				A7A03EB41A42EF1D004BE417 /* NJOPActionButton.m */,
-				A7A03EB01A42EE91004BE417 /* FBOTableCell.h */,
-				A7A03EB11A42EE91004BE417 /* FBOTableCell.m */,
-				A7A03EAA1A42EB6D004BE417 /* NJOPTableView.h */,
-				A7A03EAB1A42EB6D004BE417 /* NJOPTableView.m */,
-				A7A03E9E1A42E585004BE417 /* SimpleDataSource.h */,
-				A7A03E9F1A42E585004BE417 /* SimpleDataSource.m */,
-				A7A03EA01A42E585004BE417 /* SimpleDataSourceTableViewController.h */,
-				A7A03EA11A42E585004BE417 /* SimpleDataSourceTableViewController.m */,
-				A72AFB941A49FCD1005CF333 /* NJOPFlightTableCell.h */,
-				A72AFB951A49FCD1005CF333 /* NJOPFlightTableCell.m */,
+				A72D92131A4BCE8400967641 /* General Views */,
+				A72D92141A4BCE9300967641 /* Simple */,
+				A72D92121A4BCE6900967641 /* Home Views */,
+				A72D92151A4BCEA700967641 /* Flights Views */,
 			);
 			name = elements;
 			sourceTree = "<group>";
