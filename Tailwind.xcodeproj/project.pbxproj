@@ -98,6 +98,8 @@
 		A7A03EC51A42F2D3004BE417 /* NJOPClient+flights.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03EC31A42F2D3004BE417 /* NJOPClient+flights.m */; };
 		A7A03EC71A4301A3004BE417 /* brief-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A03EC61A4301A3004BE417 /* brief-test.json */; };
 		A7A03EC81A4301A3004BE417 /* brief-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A03EC61A4301A3004BE417 /* brief-test.json */; };
+		A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */; };
+		A7F2CA4C1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +233,10 @@
 		A7A03EC21A42F2D3004BE417 /* NJOPClient+flights.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NJOPClient+flights.h"; sourceTree = "<group>"; };
 		A7A03EC31A42F2D3004BE417 /* NJOPClient+flights.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NJOPClient+flights.m"; sourceTree = "<group>"; };
 		A7A03EC61A4301A3004BE417 /* brief-test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "brief-test.json"; sourceTree = "<group>"; };
+		A7F2CA471A4DCBF700D78804 /* NJOPFlightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightsViewController.h; sourceTree = "<group>"; };
+		A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightsViewController.m; sourceTree = "<group>"; };
+		A7F2CA4A1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightsDetailViewController.h; sourceTree = "<group>"; };
+		A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightsDetailViewController.m; sourceTree = "<group>"; };
 		DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -386,6 +392,7 @@
 		55CA603419E7FD4A001E2FC6 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A7F2CA461A4DCBA000D78804 /* Flights ViewControllers */,
 				A7A03E9D1A42E554004BE417 /* elements */,
 				A7A03E8F1A42E44C004BE417 /* NJOPPPhoneHomeViewController.h */,
 				A7A03E901A42E44C004BE417 /* NJOPPPhoneHomeViewController.m */,
@@ -507,6 +514,17 @@
 				A7A03EAE1A42ECE7004BE417 /* mobile-api-reservations-response.json */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		A7F2CA461A4DCBA000D78804 /* Flights ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7F2CA471A4DCBF700D78804 /* NJOPFlightsViewController.h */,
+				A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */,
+				A7F2CA4A1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.h */,
+				A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */,
+			);
+			name = "Flights ViewControllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -735,6 +753,7 @@
 				A77680ED1A406EA100B2E7CF /* NSDate+NJOP.m in Sources */,
 				A7A03EB21A42EE91004BE417 /* FBOTableCell.m in Sources */,
 				A7A03E941A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.m in Sources */,
+				A7F2CA4C1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m in Sources */,
 				A77680F51A40734900B2E7CF /* NJOPBrief.m in Sources */,
 				A77680F91A4074AD00B2E7CF /* NJOPContract.m in Sources */,
 				A77680E91A406C7D00B2E7CF /* UIColor+NJOP.m in Sources */,
@@ -759,6 +778,7 @@
 				A7A03EC11A42F21D004BE417 /* NJOPNOFBOTableCell.m in Sources */,
 				A7A03EB51A42EF1D004BE417 /* NJOPActionButton.m in Sources */,
 				A7A03EC41A42F2D3004BE417 /* NJOPClient+flights.m in Sources */,
+				A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */,
 				A77680F11A40729200B2E7CF /* NJOPIndividual.m in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPRequest.m in Sources */,
 				A77680D91A406C7D00B2E7CF /* NJOPClient+Login.m in Sources */,
