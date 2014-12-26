@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Booking View Controller-->
         <scene sceneID="4eA-u6-8jq">
             <objects>
-                <tableViewController id="pWK-K7-4l2" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BookingStoryboard" id="pWK-K7-4l2" customClass="NJOPBookingViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qzs-JG-tOD">
                         <rect key="frame" x="0.0" y="64" width="375" height="936"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
