@@ -100,6 +100,7 @@
 		A7A03EC51A42F2D3004BE417 /* NJOPClient+flights.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03EC31A42F2D3004BE417 /* NJOPClient+flights.m */; };
 		A7A03EC71A4301A3004BE417 /* brief-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A03EC61A4301A3004BE417 /* brief-test.json */; };
 		A7A03EC81A4301A3004BE417 /* brief-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A03EC61A4301A3004BE417 /* brief-test.json */; };
+		A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +239,8 @@
 		A7A03EC21A42F2D3004BE417 /* NJOPClient+flights.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NJOPClient+flights.h"; sourceTree = "<group>"; };
 		A7A03EC31A42F2D3004BE417 /* NJOPClient+flights.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NJOPClient+flights.m"; sourceTree = "<group>"; };
 		A7A03EC61A4301A3004BE417 /* brief-test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "brief-test.json"; sourceTree = "<group>"; };
+		A7F2CA431A4DC9F400D78804 /* NJOPBookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPBookingViewController.h; sourceTree = "<group>"; };
+		A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBookingViewController.m; sourceTree = "<group>"; };
 		DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -393,6 +396,7 @@
 		55CA603419E7FD4A001E2FC6 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A7F2CA421A4DC9C300D78804 /* Booking ViewControllers */,
 				A75C2D3E1A461F6800F59B9F /* Settings ViewControllers */,
 				A7A03E9D1A42E554004BE417 /* elements */,
 				6CC829AE1A40B4A900991949 /* NJOPLoginViewController.h */,
@@ -527,6 +531,15 @@
 				A7A03EAE1A42ECE7004BE417 /* mobile-api-reservations-response.json */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		A7F2CA421A4DC9C300D78804 /* Booking ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7F2CA431A4DC9F400D78804 /* NJOPBookingViewController.h */,
+				A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */,
+			);
+			name = "Booking ViewControllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -745,6 +758,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A77680E51A406C7D00B2E7CF /* NCLOAuthClient.m in Sources */,
+				A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */,
 				30A4738519D9E41A0045D7AF /* ViewController.m in Sources */,
 				A74460C61A488B62004CC945 /* NJOPPPhoneHomeViewController.m in Sources */,
 				A77680D71A406C7D00B2E7CF /* NJOPClient.m in Sources */,
