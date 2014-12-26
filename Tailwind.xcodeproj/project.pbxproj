@@ -100,7 +100,7 @@
 		A7A03EC51A42F2D3004BE417 /* NJOPClient+flights.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03EC31A42F2D3004BE417 /* NJOPClient+flights.m */; };
 		A7A03EC71A4301A3004BE417 /* brief-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A03EC61A4301A3004BE417 /* brief-test.json */; };
 		A7A03EC81A4301A3004BE417 /* brief-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A03EC61A4301A3004BE417 /* brief-test.json */; };
-		A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */; };
+		A7F2CA501A4DCDE500D78804 /* NJOPMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA4F1A4DCDE500D78804 /* NJOPMessagesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,8 +239,8 @@
 		A7A03EC21A42F2D3004BE417 /* NJOPClient+flights.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NJOPClient+flights.h"; sourceTree = "<group>"; };
 		A7A03EC31A42F2D3004BE417 /* NJOPClient+flights.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NJOPClient+flights.m"; sourceTree = "<group>"; };
 		A7A03EC61A4301A3004BE417 /* brief-test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "brief-test.json"; sourceTree = "<group>"; };
-		A7F2CA431A4DC9F400D78804 /* NJOPBookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPBookingViewController.h; sourceTree = "<group>"; };
-		A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBookingViewController.m; sourceTree = "<group>"; };
+		A7F2CA4E1A4DCDE500D78804 /* NJOPMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPMessagesViewController.h; sourceTree = "<group>"; };
+		A7F2CA4F1A4DCDE500D78804 /* NJOPMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPMessagesViewController.m; sourceTree = "<group>"; };
 		DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -396,7 +396,7 @@
 		55CA603419E7FD4A001E2FC6 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A7F2CA421A4DC9C300D78804 /* Booking ViewControllers */,
+				A7F2CA4D1A4DCDBE00D78804 /* Messages ViewControllers */,
 				A75C2D3E1A461F6800F59B9F /* Settings ViewControllers */,
 				A7A03E9D1A42E554004BE417 /* elements */,
 				6CC829AE1A40B4A900991949 /* NJOPLoginViewController.h */,
@@ -533,13 +533,13 @@
 			path = data;
 			sourceTree = "<group>";
 		};
-		A7F2CA421A4DC9C300D78804 /* Booking ViewControllers */ = {
+		A7F2CA4D1A4DCDBE00D78804 /* Messages ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A7F2CA431A4DC9F400D78804 /* NJOPBookingViewController.h */,
-				A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */,
+				A7F2CA4E1A4DCDE500D78804 /* NJOPMessagesViewController.h */,
+				A7F2CA4F1A4DCDE500D78804 /* NJOPMessagesViewController.m */,
 			);
-			name = "Booking ViewControllers";
+			name = "Messages ViewControllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -773,6 +773,7 @@
 				A77680F91A4074AD00B2E7CF /* NJOPContract.m in Sources */,
 				A77680E91A406C7D00B2E7CF /* UIColor+NJOP.m in Sources */,
 				A75C2D411A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.m in Sources */,
+				A7F2CA501A4DCDE500D78804 /* NJOPMessagesViewController.m in Sources */,
 				6CC829B31A40B4C900991949 /* NJOPResetPasswordViewController.m in Sources */,
 				6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */,
 				A72AFB961A49FCD1005CF333 /* NJOPFlightTableCell.m in Sources */,
