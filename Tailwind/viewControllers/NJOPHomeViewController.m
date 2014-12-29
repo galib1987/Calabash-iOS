@@ -53,9 +53,9 @@
     NSString* dateString = [[formatter stringFromDate:[NSDate date]] stringByAppendingString:@"\n Welcome My Smith"];
     
     
-    //NSLog(@"reservation is: %@",reservations);
+    NSLog(@"reservation is: %@",reservations);
     NJOPReservation* todaysReservations = reservations[0]; // only taking the first reservation
-    //NSLog(@"today's Reseration: %@",todaysReservations);
+    NSLog(@"today's Reseration: %@",todaysReservations);
     NSDictionary* todaysFBO = @{
                                 @"FBOTableCell" : @{
                                         //@"fromFBODateLabel.text"			: [NSString stringWithFormat:@"%@",todaysReservations.departureDateString],
@@ -72,11 +72,34 @@
                                         //																	@"toFBOLocationLabel.text"			: todaysReservations.arrivalFboName
                                         }
                                 };
+    
+    
     NSDictionary *noFBO = @{
                             @"NJOPNOFBOTableCell" : @{
                                     @"rawData.text": [NSString stringWithFormat:@"%@",todaysReservations.rawData]
                                     }
                             };
+    
+    NSDictionary *upcomingFBO = @{
+                                  @"NJOPUpcomingFlightTableCell" : @{
+                                          @"toFBOTimeLabel.text" 				: [NSString stringWithFormat:@"%@",todaysReservations.departureTime],
+                                          @"fromFBOTimeLabel.text" 					: [NSString stringWithFormat:@"%@",todaysReservations.arrivalTime],
+                                          
+                                          @"fromFBOAirportCodeLabel.text"	: [NSString stringWithFormat:@"%@, %@", todaysReservations.departureAirportId, todaysReservations.departureAirportCity],
+                                          @"toFBOAirportCodeLabel.text"		: [NSString stringWithFormat:@"%@, %@", todaysReservations.arrivalAirportId, todaysReservations.arrivalAirportCity]
+                                          }
+                                  };
+    
+    NSDictionary *currentFBO = @{
+                                 @"NJOPCurrentFBOTableCell" : @{
+                                         @"toFBOTimeLabel.text" 				: [NSString stringWithFormat:@"%@",todaysReservations.departureTime],
+                                         @"fromFBOTimeLabel.text" 					: [NSString stringWithFormat:@"%@",todaysReservations.arrivalTime],
+                                         
+                                         @"fromFBOAirportCodeLabel.text"	: [NSString stringWithFormat:@"%@, %@", todaysReservations.departureAirportId, todaysReservations.departureAirportCity],
+                                         @"toFBOAirportCodeLabel.text"		: [NSString stringWithFormat:@"%@, %@", todaysReservations.arrivalAirportId, todaysReservations.arrivalAirportCity]
+                                         }
+                                 
+                                 };
     
     NSArray*sections = @[
                          @{
@@ -85,12 +108,14 @@
                                          kSimpleDataSourceCellIdentifierKey			: @"FBOTableCell",
                                          kSimpleDataSourceCellKeypaths			 			: todaysFBO[@"FBOTableCell"]
                                          },
-                                     //@{
-                                         //kSimpleDataSourceCellIdentifierKey			: @"NJOPUpcomingFlightTableCell"
-                                         //},
-                                     //@{
-                                         //kSimpleDataSourceCellIdentifierKey			: @"NJOPCurrentFBOTableCell"
-                                         //},
+                                     @{
+                                         kSimpleDataSourceCellIdentifierKey			: @"NJOPUpcomingFlightTableCell",
+                                         kSimpleDataSourceCellKeypaths : upcomingFBO[@"NJOPUpcomingFlightTableCell"]
+                                         },
+                                     @{
+                                         kSimpleDataSourceCellIdentifierKey			: @"NJOPCurrentFBOTableCell",
+                                         kSimpleDataSourceCellKeypaths  : currentFBO[@"NJOPCurrentFBOTableCell"]
+                                         },
                                      @{
                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPNOFBOTableCell",
                                          kSimpleDataSourceCellKeypaths	:
