@@ -7,6 +7,7 @@
 //
 
 #import "NJOPFlightsViewController.h"
+#import "NJOPClient+flights.h"
 
 @interface NJOPFlightsViewController ()
 
@@ -17,11 +18,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)loadDataSource {
+    
+    __weak NJOPFlightsViewController* wself = self;
+    
+    [NJOPClient GETReservationWithInfo:nil completion:^(NJOPReservation *reservation, NSError *error) {
+        [wself updateWithReservation:reservation];
+    }];
+}
+
+-(void)updateWithReservation:(NJOPReservation*)reservation {
+    NSLog(@"%@", reservation);
+    
+    NSArray* sections = @[
+                          @{
+                              kSimpleDataSourceSectionCellsKey : @[
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
+                                          kSimpleDataSourceCellKeypaths					: @{
+                                                  @"monthLabel.text" : @"AUG",
+                                                  @"dateLabel.text" : @"4",
+                                                  @"weekdayLabel.text" : @"Monday",
+                                                  @"toFBOLocationLabel.text" : @"Naples",
+                                                  //@"firstImageView.image" : nil;
+                                                  @"fromFBOLocationLabel.text" : @"Teterboro",
+                                                  @"timeDurationLabel.text" : @"12:00PM-2:45PM",
+
+                                                  //@"secondImageView.image" : nil;
+                                                  }
+                                          }
+                                      ],
+                              },
+                          ];
+    
+    self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
+    self.dataSource.title = @"FLIGHT DETAILS";
 }
 
 /*

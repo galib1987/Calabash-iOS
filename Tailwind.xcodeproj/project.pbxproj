@@ -20,10 +20,11 @@
 		6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC829AF1A40B4A900991949 /* NJOPLoginViewController.m */; };
 		6CC829B31A40B4C900991949 /* NJOPResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */; };
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
+		A76C4D671A51A79700282864 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76C4D661A51A79700282864 /* Settings.storyboard */; };
+		A76C4D6A1A51B2DD00282864 /* NJOPFlightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76C4D691A51B2DD00282864 /* NJOPFlightTableCell.m */; };
 		A77680891A4062FE00B2E7CF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77680881A4062FE00B2E7CF /* Home.storyboard */; };
 		A776808B1A40631F00B2E7CF /* Flights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A776808A1A40631F00B2E7CF /* Flights.storyboard */; };
 		A776808D1A40632C00B2E7CF /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A776808C1A40632C00B2E7CF /* Account.storyboard */; };
-		A776808F1A4063AB00B2E7CF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A776808E1A4063AB00B2E7CF /* Settings.storyboard */; };
 		A77680911A4063D300B2E7CF /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77680901A4063D300B2E7CF /* Booking.storyboard */; };
 		A77680931A4063E400B2E7CF /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77680921A4063E400B2E7CF /* Messages.storyboard */; };
 		A77680AC1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Black-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A77680971A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Black-Italic.otf */; };
@@ -75,9 +76,7 @@
 		A77680F61A40734900B2E7CF /* NJOPBrief.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680F41A40734900B2E7CF /* NJOPBrief.m */; };
 		A77680F91A4074AD00B2E7CF /* NJOPContract.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680F81A4074AD00B2E7CF /* NJOPContract.m */; };
 		A77680FA1A4074AD00B2E7CF /* NJOPContract.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680F81A4074AD00B2E7CF /* NJOPContract.m */; };
-		A7A03E8B1A42D84D004BE417 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A03E8A1A42D84D004BE417 /* Main_iPhone.storyboard */; };
 		A7A03E8E1A42DD15004BE417 /* NJOPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03E8D1A42DD15004BE417 /* NJOPHomeViewController.m */; };
-		A7A03E911A42E44C004BE417 /* NJOPPPhoneHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03E901A42E44C004BE417 /* NJOPPPhoneHomeViewController.m */; };
 		A7A03E941A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03E931A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.m */; };
 		A7A03E981A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03E961A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.m */; };
 		A7A03E991A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A03E971A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.xib */; };
@@ -139,10 +138,12 @@
 		6CC829B11A40B4C900991949 /* NJOPResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPResetPasswordViewController.h; path = Tailwind/NJOPResetPasswordViewController.h; sourceTree = SOURCE_ROOT; };
 		6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPResetPasswordViewController.m; path = Tailwind/NJOPResetPasswordViewController.m; sourceTree = SOURCE_ROOT; };
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
+		A76C4D661A51A79700282864 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		A76C4D681A51B2DD00282864 /* NJOPFlightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPFlightTableCell.h; path = ../NJOPFlightTableCell.h; sourceTree = "<group>"; };
+		A76C4D691A51B2DD00282864 /* NJOPFlightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPFlightTableCell.m; path = ../NJOPFlightTableCell.m; sourceTree = "<group>"; };
 		A77680881A4062FE00B2E7CF /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A776808A1A40631F00B2E7CF /* Flights.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Flights.storyboard; sourceTree = "<group>"; };
 		A776808C1A40632C00B2E7CF /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
-		A776808E1A4063AB00B2E7CF /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = ../Settings.storyboard; sourceTree = "<group>"; };
 		A77680901A4063D300B2E7CF /* Booking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
 		A77680921A4063E400B2E7CF /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
 		A77680971A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Black-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Cond-D-Black-Italic.otf"; sourceTree = "<group>"; };
@@ -195,11 +196,8 @@
 		A77680F41A40734900B2E7CF /* NJOPBrief.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBrief.m; sourceTree = "<group>"; };
 		A77680F71A4074AD00B2E7CF /* NJOPContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPContract.h; sourceTree = "<group>"; };
 		A77680F81A4074AD00B2E7CF /* NJOPContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPContract.m; sourceTree = "<group>"; };
-		A7A03E8A1A42D84D004BE417 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		A7A03E8C1A42DD15004BE417 /* NJOPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPHomeViewController.h; sourceTree = "<group>"; };
 		A7A03E8D1A42DD15004BE417 /* NJOPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPHomeViewController.m; sourceTree = "<group>"; };
-		A7A03E8F1A42E44C004BE417 /* NJOPPPhoneHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPPPhoneHomeViewController.h; path = Tailwind/MiddleLevelUI/NJOPPPhoneHomeViewController.h; sourceTree = SOURCE_ROOT; };
-		A7A03E901A42E44C004BE417 /* NJOPPPhoneHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPPPhoneHomeViewController.m; path = Tailwind/MiddleLevelUI/NJOPPPhoneHomeViewController.m; sourceTree = SOURCE_ROOT; };
 		A7A03E921A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPSummaryViewTopHeaderView.h; path = Tailwind/MiddleLevelUI/Views/NJOPSummaryViewTopHeaderView.h; sourceTree = SOURCE_ROOT; };
 		A7A03E931A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPSummaryViewTopHeaderView.m; path = Tailwind/MiddleLevelUI/Views/NJOPSummaryViewTopHeaderView.m; sourceTree = SOURCE_ROOT; };
 		A7A03E951A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPSummaryNavigationTitleView.h; path = Tailwind/MiddleLevelUI/Views/NJOPSummaryNavigationTitleView.h; sourceTree = SOURCE_ROOT; };
@@ -400,10 +398,6 @@
 				6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */,
 				A7A03E8C1A42DD15004BE417 /* NJOPHomeViewController.h */,
 				A7A03E8D1A42DD15004BE417 /* NJOPHomeViewController.m */,
-				A75C2D3B1A4617C700F59B9F /* NJOPSettingsTableViewController.h */,
-				A75C2D3C1A4617C700F59B9F /* NJOPSettingsTableViewController.m */,
-				A74460C41A488B62004CC945 /* NJOPPPhoneHomeViewController.h */,
-				A74460C51A488B62004CC945 /* NJOPPPhoneHomeViewController.m */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -422,15 +416,6 @@
 			path = views;
 			sourceTree = "<group>";
 		};
-		A75C2D3E1A461F6800F59B9F /* Settings ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				A75C2D3F1A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.h */,
-				A75C2D401A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.m */,
-			);
-			name = "Settings ViewControllers";
-			sourceTree = "<group>";
-		};
 		A77680941A4063EC00B2E7CF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,7 +423,7 @@
 				A77680881A4062FE00B2E7CF /* Home.storyboard */,
 				A776808A1A40631F00B2E7CF /* Flights.storyboard */,
 				A776808C1A40632C00B2E7CF /* Account.storyboard */,
-				A776808E1A4063AB00B2E7CF /* Settings.storyboard */,
+				A76C4D661A51A79700282864 /* Settings.storyboard */,
 				A77680901A4063D300B2E7CF /* Booking.storyboard */,
 				A77680921A4063E400B2E7CF /* Messages.storyboard */,
 			);
@@ -495,6 +480,8 @@
 		A7A03E9D1A42E554004BE417 /* elements */ = {
 			isa = PBXGroup;
 			children = (
+				A76C4D681A51B2DD00282864 /* NJOPFlightTableCell.h */,
+				A76C4D691A51B2DD00282864 /* NJOPFlightTableCell.m */,
 				A7A03EBF1A42F21D004BE417 /* NJOPNOFBOTableCell.h */,
 				A7A03EC01A42F21D004BE417 /* NJOPNOFBOTableCell.m */,
 				A7A03EBC1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.h */,
@@ -513,8 +500,6 @@
 				A7A03E9F1A42E585004BE417 /* SimpleDataSource.m */,
 				A7A03EA01A42E585004BE417 /* SimpleDataSourceTableViewController.h */,
 				A7A03EA11A42E585004BE417 /* SimpleDataSourceTableViewController.m */,
-				A72AFB941A49FCD1005CF333 /* NJOPFlightTableCell.h */,
-				A72AFB951A49FCD1005CF333 /* NJOPFlightTableCell.m */,
 			);
 			name = elements;
 			sourceTree = "<group>";
@@ -627,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A77680B21A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Regular-Italic.otf in Resources */,
+				A76C4D671A51A79700282864 /* Settings.storyboard in Resources */,
 				A776808B1A40631F00B2E7CF /* Flights.storyboard in Resources */,
 				30A4738819D9E41A0045D7AF /* Main.storyboard in Resources */,
 				A77680BE1A40659D00B2E7CF /* Nimbus-Sans-Extd-D-Bold.otf in Resources */,
@@ -658,7 +644,6 @@
 				A776808D1A40632C00B2E7CF /* Account.storyboard in Resources */,
 				A77680AF1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold.otf in Resources */,
 				30A4738A19D9E41A0045D7AF /* Images.xcassets in Resources */,
-				A776808F1A4063AB00B2E7CF /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,9 +740,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A77680E51A406C7D00B2E7CF /* NCLOAuthClient.m in Sources */,
-				A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */,
 				30A4738519D9E41A0045D7AF /* ViewController.m in Sources */,
-				A74460C61A488B62004CC945 /* NJOPPPhoneHomeViewController.m in Sources */,
 				A77680D71A406C7D00B2E7CF /* NJOPClient.m in Sources */,
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
 				A77680E71A406C7D00B2E7CF /* NCLOAuthCredential.m in Sources */,
@@ -770,11 +753,8 @@
 				A77680F51A40734900B2E7CF /* NJOPBrief.m in Sources */,
 				A77680F91A4074AD00B2E7CF /* NJOPContract.m in Sources */,
 				A77680E91A406C7D00B2E7CF /* UIColor+NJOP.m in Sources */,
-				A75C2D411A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.m in Sources */,
-				A7F2CA501A4DCDE500D78804 /* NJOPMessagesViewController.m in Sources */,
 				6CC829B31A40B4C900991949 /* NJOPResetPasswordViewController.m in Sources */,
 				6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */,
-				A72AFB961A49FCD1005CF333 /* NJOPFlightTableCell.m in Sources */,
 				A7A03EA91A42E7BC004BE417 /* UICollectionReusableView+NJOPHelpers.m in Sources */,
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,
 				A77680DF1A406C7D00B2E7CF /* NJOPValidator.m in Sources */,
@@ -796,8 +776,8 @@
 				A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */,
 				A77680F11A40729200B2E7CF /* NJOPIndividual.m in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPRequest.m in Sources */,
+				A76C4D6A1A51B2DD00282864 /* NJOPFlightTableCell.m in Sources */,
 				A77680D91A406C7D00B2E7CF /* NJOPClient+Login.m in Sources */,
-				A75C2D3D1A4617C700F59B9F /* NJOPSettingsTableViewController.m in Sources */,
 				A7A03EBB1A42F130004BE417 /* NJOPUpcomingFlightTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
