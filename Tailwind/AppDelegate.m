@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "NJOPSettingsTableViewController.h"
+//#import "NJOPSettingsTableViewController.h"
 
 @interface AppDelegate ()
 
