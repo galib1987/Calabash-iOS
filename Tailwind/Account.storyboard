@@ -19,7 +19,6 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-<<<<<<< HEAD
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="oom-xv-ncn" customClass="NJOPFlightTableCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oom-xv-ncn" id="6nC-cH-ost">
@@ -474,10 +473,9 @@
                                             <exclude reference="fDu-ZX-J0L"/>
                                         </mask>
                                     </variation>
+                                    <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-=======
->>>>>>> fixed the multiple ID issue
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Ymi-vq-Eyg" id="A2N-tT-bDj"/>

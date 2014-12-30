@@ -29,6 +29,7 @@
 		A77680891A4062FE00B2E7CF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77680881A4062FE00B2E7CF /* Home.storyboard */; };
 		A776808B1A40631F00B2E7CF /* Flights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A776808A1A40631F00B2E7CF /* Flights.storyboard */; };
 		A776808D1A40632C00B2E7CF /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A776808C1A40632C00B2E7CF /* Account.storyboard */; };
+		A776808F1A4063AB00B2E7CF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A776808E1A4063AB00B2E7CF /* Settings.storyboard */; };
 		A77680911A4063D300B2E7CF /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77680901A4063D300B2E7CF /* Booking.storyboard */; };
 		A77680931A4063E400B2E7CF /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77680921A4063E400B2E7CF /* Messages.storyboard */; };
 		A77680AC1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Black-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A77680971A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Black-Italic.otf */; };
@@ -156,6 +157,7 @@
 		A77680881A4062FE00B2E7CF /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A776808A1A40631F00B2E7CF /* Flights.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Flights.storyboard; sourceTree = "<group>"; };
 		A776808C1A40632C00B2E7CF /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		A776808E1A4063AB00B2E7CF /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A77680901A4063D300B2E7CF /* Booking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
 		A77680921A4063E400B2E7CF /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
 		A77680971A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Black-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nimbus-Sans-Cond-D-Black-Italic.otf"; sourceTree = "<group>"; };
@@ -403,6 +405,8 @@
 			isa = PBXGroup;
 			children = (
 				A7F2CA461A4DCBA000D78804 /* Flights ViewControllers */,
+				A758440B1A52EE70000A6649 /* Account ViewControllers */,
+				A75C2D3E1A461F6800F59B9F /* Settings ViewControllers */,
 				A7A03E9D1A42E554004BE417 /* elements */,
 				6CC829AE1A40B4A900991949 /* NJOPLoginViewController.h */,
 				6CC829AF1A40B4A900991949 /* NJOPLoginViewController.m */,
@@ -474,6 +478,13 @@
 				A72AFB951A49FCD1005CF333 /* NJOPFlightTableCell.m */,
 			);
 			name = "Flights Views";
+		A758440B1A52EE70000A6649 /* Account ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A758440C1A52EFF2000A6649 /* NJOPAccountViewController.h */,
+				A758440D1A52EFF2000A6649 /* NJOPAccountViewController.m */,
+			);
+			name = "Account ViewControllers";
 			sourceTree = "<group>";
 		};
 		A75C2D3E1A461F6800F59B9F /* Settings ViewControllers */ = {
@@ -493,6 +504,7 @@
 				A776808A1A40631F00B2E7CF /* Flights.storyboard */,
 				A776808C1A40632C00B2E7CF /* Account.storyboard */,
 				A76C4D661A51A79700282864 /* Settings.storyboard */,
+				A776808E1A4063AB00B2E7CF /* Settings.storyboard */,
 				A77680901A4063D300B2E7CF /* Booking.storyboard */,
 				A77680921A4063E400B2E7CF /* Messages.storyboard */,
 				A75844091A52EE5B000A6649 /* Account.storyboard */,
