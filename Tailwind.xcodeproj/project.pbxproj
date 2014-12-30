@@ -22,11 +22,12 @@
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 		A72AFB961A49FCD1005CF333 /* NJOPFlightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A72AFB951A49FCD1005CF333 /* NJOPFlightTableCell.m */; };
 		A74460C61A488B62004CC945 /* NJOPPPhoneHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74460C51A488B62004CC945 /* NJOPPPhoneHomeViewController.m */; };
+		A758440A1A52EE5B000A6649 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75844091A52EE5B000A6649 /* Account.storyboard */; };
+		A758440E1A52EFF2000A6649 /* NJOPAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A758440D1A52EFF2000A6649 /* NJOPAccountViewController.m */; };
 		A75C2D3D1A4617C700F59B9F /* NJOPSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75C2D3C1A4617C700F59B9F /* NJOPSettingsTableViewController.m */; };
 		A75C2D411A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75C2D401A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.m */; };
 		A77680891A4062FE00B2E7CF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77680881A4062FE00B2E7CF /* Home.storyboard */; };
 		A776808B1A40631F00B2E7CF /* Flights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A776808A1A40631F00B2E7CF /* Flights.storyboard */; };
-		A776808D1A40632C00B2E7CF /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A776808C1A40632C00B2E7CF /* Account.storyboard */; };
 		A776808F1A4063AB00B2E7CF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A776808E1A4063AB00B2E7CF /* Settings.storyboard */; };
 		A77680911A4063D300B2E7CF /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77680901A4063D300B2E7CF /* Booking.storyboard */; };
 		A77680931A4063E400B2E7CF /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77680921A4063E400B2E7CF /* Messages.storyboard */; };
@@ -143,13 +144,15 @@
 		A72AFB951A49FCD1005CF333 /* NJOPFlightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightTableCell.m; sourceTree = "<group>"; };
 		A74460C41A488B62004CC945 /* NJOPPPhoneHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPPhoneHomeViewController.h; sourceTree = "<group>"; };
 		A74460C51A488B62004CC945 /* NJOPPPhoneHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPPhoneHomeViewController.m; sourceTree = "<group>"; };
+		A75844091A52EE5B000A6649 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		A758440C1A52EFF2000A6649 /* NJOPAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAccountViewController.h; sourceTree = "<group>"; };
+		A758440D1A52EFF2000A6649 /* NJOPAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAccountViewController.m; sourceTree = "<group>"; };
 		A75C2D3B1A4617C700F59B9F /* NJOPSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSettingsTableViewController.h; sourceTree = "<group>"; };
 		A75C2D3C1A4617C700F59B9F /* NJOPSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsTableViewController.m; sourceTree = "<group>"; };
 		A75C2D3F1A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPushNotificationsTableViewController.h; sourceTree = "<group>"; };
 		A75C2D401A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPushNotificationsTableViewController.m; sourceTree = "<group>"; };
 		A77680881A4062FE00B2E7CF /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A776808A1A40631F00B2E7CF /* Flights.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Flights.storyboard; sourceTree = "<group>"; };
-		A776808C1A40632C00B2E7CF /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		A776808E1A4063AB00B2E7CF /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A77680901A4063D300B2E7CF /* Booking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
 		A77680921A4063E400B2E7CF /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
@@ -393,6 +396,7 @@
 		55CA603419E7FD4A001E2FC6 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A758440B1A52EE70000A6649 /* Account ViewControllers */,
 				A75C2D3E1A461F6800F59B9F /* Settings ViewControllers */,
 				A7A03E9D1A42E554004BE417 /* elements */,
 				6CC829AE1A40B4A900991949 /* NJOPLoginViewController.h */,
@@ -423,6 +427,15 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		A758440B1A52EE70000A6649 /* Account ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A758440C1A52EFF2000A6649 /* NJOPAccountViewController.h */,
+				A758440D1A52EFF2000A6649 /* NJOPAccountViewController.m */,
+			);
+			name = "Account ViewControllers";
+			sourceTree = "<group>";
+		};
 		A75C2D3E1A461F6800F59B9F /* Settings ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,10 +451,10 @@
 				30A4738619D9E41A0045D7AF /* Main.storyboard */,
 				A77680881A4062FE00B2E7CF /* Home.storyboard */,
 				A776808A1A40631F00B2E7CF /* Flights.storyboard */,
-				A776808C1A40632C00B2E7CF /* Account.storyboard */,
 				A776808E1A4063AB00B2E7CF /* Settings.storyboard */,
 				A77680901A4063D300B2E7CF /* Booking.storyboard */,
 				A77680921A4063E400B2E7CF /* Messages.storyboard */,
+				A75844091A52EE5B000A6649 /* Account.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -644,8 +657,8 @@
 				A77680AE1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold-Italic.otf in Resources */,
 				A77680B61A40659D00B2E7CF /* Nimbus-Sans-D-Bold-Italic.otf in Resources */,
 				A7A03E991A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.xib in Resources */,
+				A758440A1A52EE5B000A6649 /* Account.storyboard in Resources */,
 				A77680B11A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Light.otf in Resources */,
-				A776808D1A40632C00B2E7CF /* Account.storyboard in Resources */,
 				A77680AF1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold.otf in Resources */,
 				30A4738A19D9E41A0045D7AF /* Images.xcassets in Resources */,
 				A776808F1A4063AB00B2E7CF /* Settings.storyboard in Resources */,
@@ -759,6 +772,7 @@
 				A77680F91A4074AD00B2E7CF /* NJOPContract.m in Sources */,
 				A77680E91A406C7D00B2E7CF /* UIColor+NJOP.m in Sources */,
 				A75C2D411A461F7F00F59B9F /* NJOPPushNotificationsTableViewController.m in Sources */,
+				A758440E1A52EFF2000A6649 /* NJOPAccountViewController.m in Sources */,
 				6CC829B31A40B4C900991949 /* NJOPResetPasswordViewController.m in Sources */,
 				6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */,
 				A72AFB961A49FCD1005CF333 /* NJOPFlightTableCell.m in Sources */,
