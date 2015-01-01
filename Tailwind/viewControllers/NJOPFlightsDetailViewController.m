@@ -43,16 +43,6 @@
                                       @{
                                           kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightDetailCell",
                                           kSimpleDataSourceCellKeypaths					: @{
-                                                  @"firstDateLabel.text" : @"Mon, Oct 27, 2014",
-                                                  @"firstLocationLabel.text" : @"Teterboro, NJ",
-                                                  @"firstTimeLabel.text" : @"12:00PM EST",
-                                                  @"firstTemperatureLabel.text" : @"60º",
-                                                  //@"firstImageView.image" : nil;
-                                                  @"secondDateLabel.text" : @"Mon, Oct 27, 2014",
-                                                  @"secondLocationLabel.text" : @"Naples, FL",
-                                                  @"secondTimeLabel.text" : @"2:45PM EST",
-                                                  @"secondTemperatureLabel.text" : @"83º",
-                                                  //@"secondImageView.image" : nil;
                                                   }
                                           },
                                       @{
@@ -60,7 +50,6 @@
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Your Plane",
                                                   @"detailLabel.text" : @"Cessna Citation Encore+",
-                                                  //																@"imgaeView" : @"",
                                                   }
                                           },
                                       @{
@@ -68,7 +57,6 @@
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Ground Transportation",
                                                   @"detailLabel.text" : @"Requested",
-                                                  //																@"imgaeView" : @"",
                                                   }
                                           },
                                       @{
@@ -76,7 +64,6 @@
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Your Crew",
                                                   @"detailLabel.text" : @"Captain Brad Hanshaw",
-                                                  //																@"imgaeView" : @"",
                                                   }
                                           },
                                       @{
@@ -84,7 +71,6 @@
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Passenger Manifest",
                                                   @"detailLabel.text" : @"2 Passengers",
-                                                  //																@"imgaeView" : @"",
                                                   }
                                           },
                                       @{
@@ -92,7 +78,6 @@
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Catering",
                                                   @"detailLabel.text" : @"Requested",
-                                                  //																@"imgaeView" : @"",
                                                   }
                                           },
                                       @{
@@ -100,7 +85,6 @@
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Advisory Notes",
                                                   @"detailLabel.text" : @"Please Read",
-                                                  //																@"imgaeView" : @"",
                                                   }
                                           }
                                       ],

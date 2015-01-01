@@ -1,14 +1,14 @@
 //
-//  NJOPInfoCell.m
+//  NJOPFlightDetailCell.m
 //  Tailwind
 //
 //  Created by netjets on 12/31/14.
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
-#import "NJOPInfoCell.h"
+#import "NJOPFlightDetailCell.h"
 
-@implementation NJOPInfoCell
+@implementation NJOPFlightDetailCell
 
 /*
 // Only override drawRect: if you perform custom drawing.

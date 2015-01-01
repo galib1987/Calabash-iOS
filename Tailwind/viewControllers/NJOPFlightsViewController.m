@@ -47,20 +47,40 @@
                                                   @"monthLabel.text" : @"AUG",
                                                   @"dateLabel.text" : @"4",
                                                   @"weekdayLabel.text" : @"Monday",
-                                                  @"toFBOLocationLabel.text" : @"Naples",
-                                                  //@"firstImageView.image" : nil;
+                                                  @"toFBOLocationLabel.text" : @"",
                                                   @"fromFBOLocationLabel.text" : @"Teterboro",
                                                   @"timeDurationLabel.text" : @"12:00PM-2:45PM",
-
-                                                  //@"secondImageView.image" : nil;
+                                                  }
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
+                                          kSimpleDataSourceCellKeypaths					: @{
+                                                  @"monthLabel.text" : @"AUG",
+                                                  @"dateLabel.text" : @"29",
+                                                  @"weekdayLabel.text" : @"Tuesday",
+                                                  @"toFBOLocationLabel.text" : @"TETERBORO",
+                                                  @"fromFBOLocationLabel.text" : @"Naples",
+                                                  @"timeDurationLabel.text" : @"12:00PM-2:45PM",
+                                                  }
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
+                                          kSimpleDataSourceCellKeypaths					: @{
+                                                  @"monthLabel.text" : @"DEC",
+                                                  @"dateLabel.text" : @"28",
+                                                  @"weekdayLabel.text" : @"Monday",
+                                                  @"toFBOLocationLabel.text" : @"SAN FRANCISCO",
+                                                  @"fromFBOLocationLabel.text" : @"Nice/Cote D Azur",
+                                                  @"timeDurationLabel.text" : @"12:00PM-2:45PM",
                                                   }
                                           }
+                                      
                                       ],
                               },
                           ];
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
-    self.dataSource.title = @"FLIGHT DETAILS";
+    self.dataSource.title = @"FLIGHTS";
 }
 
 /*
