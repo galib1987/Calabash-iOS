@@ -79,6 +79,8 @@
     NSDictionary *noFBO = @{
                             @"NJOPNOFBOTableCell" : @{
                                     @"rawData.text": [NSString stringWithFormat:@"%@",todaysReservations.rawData]
+                                    },
+                            @"NJOPTripCompleteCell" : @{
                                     }
                             };
     
@@ -122,6 +124,11 @@
                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPNOFBOTableCell",
                                          kSimpleDataSourceCellKeypaths	:
                                              noFBO[@"NJOPNOFBOTableCell"]
+                                         },
+                                     @{
+                                         kSimpleDataSourceCellIdentifierKey			: @"NJOPTripCompleteCell",
+                                         kSimpleDataSourceCellKeypaths	:
+                                             noFBO[@"NJOPTripCompleteCell"]
                                          }
                                      ],
                              },
