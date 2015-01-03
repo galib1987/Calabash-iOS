@@ -14,7 +14,7 @@
 -(void)layoutSubviews {
 	[super layoutSubviews];
 	self.backgroundColor = SCROLLVIEW_BACKGORUND_COLOR;
-    self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NJOPFleet"]];
+    self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bkg-copy"]];
 }
 
 @end

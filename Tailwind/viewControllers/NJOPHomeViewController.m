@@ -59,11 +59,13 @@
     NSDictionary* todaysFBO = @{
                                 @"FBOTableCell" : @{
                                         //@"fromFBODateLabel.text"			: [NSString stringWithFormat:@"%@",todaysReservations.departureDateString],
-                                        @"toFBOTimeLabel.text" 				: [NSString stringWithFormat:@"%@",todaysReservations.departureTime],
-                                        @"fromFBOTimeLabel.text" 					: [NSString stringWithFormat:@"%@",todaysReservations.arrivalTime],
+                                        @"toFBOTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",todaysReservations.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                        @"fromFBOTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",todaysReservations.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
                                         
-                                        @"fromFBOAirpotCodeLabel.text"	: [NSString stringWithFormat:@"%@, %@", todaysReservations.departureAirportId, todaysReservations.departureAirportCity],
-                                        @"toFBOAirpotCodeLabel.text"		: [NSString stringWithFormat:@"%@, %@", todaysReservations.arrivalAirportId, todaysReservations.arrivalAirportCity],
+                                        @"fromFBOAirpotCodeLabel.text"	: [NSString stringWithFormat:@"%@", todaysReservations.departureAirportId],
+                                        @"toFBOAirpotCodeLabel.text"		: [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportId],
+                                        @"fromFBOLocationLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.departureAirportCity],
+                                        @"toFBOLocationLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportCity],
                                         
                                         //																	@"fromFBOTailNumberLabel.text"	: todaysReservations.tailNumber,
                                         //@"travelTimeLabel.text" 			: [NSString stringWithFormat:@"%@ %@", todaysReservations.travelTime, todaysReservations.stopsText],
