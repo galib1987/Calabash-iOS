@@ -22,6 +22,7 @@
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 		A730033C1A53189800E5A42C /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A730033A1A53189800E5A42C /* Account.storyboard */; };
 		A730033D1A53189800E5A42C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A730033B1A53189800E5A42C /* Settings.storyboard */; };
+		A7380F681A5881AA008AB5F6 /* NJOPTripCompleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7380F671A5881AA008AB5F6 /* NJOPTripCompleteCell.m */; };
 		A7433C031A531184009BD3EB /* NJOPSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7433C021A531184009BD3EB /* NJOPSettingsTableViewController.m */; };
 		A74C81851A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C81841A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m */; };
 		A74C81881A53150C001FF1A9 /* NJOPAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C81871A53150C001FF1A9 /* NJOPAccountViewController.m */; };
@@ -143,6 +144,8 @@
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A730033A1A53189800E5A42C /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		A730033B1A53189800E5A42C /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		A7380F661A5881AA008AB5F6 /* NJOPTripCompleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPTripCompleteCell.h; path = ../NJOPTripCompleteCell.h; sourceTree = "<group>"; };
+		A7380F671A5881AA008AB5F6 /* NJOPTripCompleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPTripCompleteCell.m; path = ../NJOPTripCompleteCell.m; sourceTree = "<group>"; };
 		A7433C011A531184009BD3EB /* NJOPSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSettingsTableViewController.h; sourceTree = "<group>"; };
 		A7433C021A531184009BD3EB /* NJOPSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsTableViewController.m; sourceTree = "<group>"; };
 		A7433C041A5311AE009BD3EB /* NJOPPushNotificationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPushNotificationsTableViewController.h; sourceTree = "<group>"; };
@@ -495,6 +498,8 @@
 		A7A03E9D1A42E554004BE417 /* elements */ = {
 			isa = PBXGroup;
 			children = (
+				A7380F661A5881AA008AB5F6 /* NJOPTripCompleteCell.h */,
+				A7380F671A5881AA008AB5F6 /* NJOPTripCompleteCell.m */,
 				A7E4151B1A5321E500818524 /* NJOPFlightTableCell.h */,
 				A7E4151C1A5321E500818524 /* NJOPFlightTableCell.m */,
 				A7A03EBF1A42F21D004BE417 /* NJOPNOFBOTableCell.h */,
@@ -774,6 +779,7 @@
 				6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */,
 				A7A03EA91A42E7BC004BE417 /* UICollectionReusableView+NJOPHelpers.m in Sources */,
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,
+				A7380F681A5881AA008AB5F6 /* NJOPTripCompleteCell.m in Sources */,
 				A7E4151D1A5321E500818524 /* NJOPFlightTableCell.m in Sources */,
 				A77680DF1A406C7D00B2E7CF /* NJOPValidator.m in Sources */,
 				A7A03EA21A42E585004BE417 /* SimpleDataSource.m in Sources */,

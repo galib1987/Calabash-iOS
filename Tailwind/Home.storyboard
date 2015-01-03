@@ -42,6 +42,11 @@
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
         </mutableArray>
         <mutableArray key="Nimbus-Sans-D-Light-Italic.otf">
             <string>NimbusSanD-LigIta</string>
@@ -62,6 +67,15 @@
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
+        </mutableArray>
+        <mutableArray key="Nimbus-Sans-D-Ultra-Light.otf">
+            <string>NimbusSanD-UltLig</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -70,7 +84,7 @@
             <objects>
                 <tableViewController id="DIL-aD-A2p" customClass="NJOPHomeViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="528" sectionHeaderHeight="22" sectionFooterHeight="22" id="8aS-54-j84" customClass="NJOPTableView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="3000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -89,7 +103,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owV-gh-gNt">
-                                                    <rect key="frame" x="20" y="332" width="100.5" height="24"/>
+                                                    <rect key="frame" x="20" y="332" width="101" height="24"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="24"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -101,7 +115,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KTEB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9i0-nU-Rin">
-                                                    <rect key="frame" x="20" y="364" width="100.5" height="40"/>
+                                                    <rect key="frame" x="20" y="364" width="101" height="40"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="40"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -113,13 +127,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tail#" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPD-Ko-Nzj">
-                                                    <rect key="frame" x="182" y="88.5" width="33" height="17"/>
+                                                    <rect key="frame" x="182" y="89" width="33" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N168QS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ly-kd-xH8">
-                                                    <rect key="frame" x="140" y="113.5" width="117" height="30"/>
+                                                    <rect key="frame" x="140" y="114" width="117" height="30"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -137,28 +151,28 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flightcellicon" translatesAutoresizingMaskIntoConstraints="NO" id="0mN-TR-qnb">
-                                                    <rect key="frame" x="165" y="333.5" width="67" height="21"/>
+                                                    <rect key="frame" x="165" y="334" width="67" height="21"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teterboro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAU-c4-ahz">
-                                                    <rect key="frame" x="33" y="412" width="74.5" height="17"/>
+                                                    <rect key="frame" x="33" y="412" width="75" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:45PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpd-lz-VLW">
-                                                    <rect key="frame" x="286" y="332" width="85.5" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2:45PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpd-lz-VLW">
+                                                    <rect key="frame" x="287" y="332" width="86" height="24"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="24"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cessna Citation Encore+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YF2-Nu-XWI">
-                                                    <rect key="frame" x="104" y="63.5" width="190" height="17"/>
+                                                    <rect key="frame" x="104" y="64" width="190" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ground Transportation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aG-0g-IPt">
-                                                    <rect key="frame" x="112.5" y="180" width="173" height="17"/>
+                                                    <rect key="frame" x="113" y="180" width="173" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -169,14 +183,14 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure FBO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajs-rW-Hjx">
-                                                    <rect key="frame" x="142" y="230" width="114.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Departure FBO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajs-rW-Hjx">
+                                                    <rect key="frame" x="143" y="230" width="115" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signature Aviation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpi-H1-eV4">
-                                                    <rect key="frame" x="135.5" y="255" width="127" height="17"/>
+                                                    <rect key="frame" x="136" y="255" width="127" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -195,7 +209,7 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2h 54m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8s-cA-xoa">
-                                                    <rect key="frame" x="171" y="362.5" width="54.5" height="17"/>
+                                                    <rect key="frame" x="172" y="363" width="55" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -289,7 +303,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naples, FL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G77-v3-yXn">
-                                                    <rect key="frame" x="104" y="88" width="190.5" height="40"/>
+                                                    <rect key="frame" x="104" y="88" width="191" height="40"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="40"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -298,8 +312,8 @@
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgh-zQ-t9L">
-                                                    <rect key="frame" x="8" y="452" width="382" height="60"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgh-zQ-t9L">
+                                                    <rect key="frame" x="8" y="385" width="382" height="127"/>
                                                     <color key="backgroundColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="37x-3B-XJ9"/>
@@ -324,7 +338,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:45PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3j-uJ-hJB">
-                                                    <rect key="frame" x="286" y="218" width="85.5" height="24"/>
+                                                    <rect key="frame" x="286" y="218" width="86" height="24"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="24"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -342,19 +356,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KTEB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdC-nw-e4S">
-                                                    <rect key="frame" x="20" y="249" width="100.5" height="40"/>
+                                                    <rect key="frame" x="20" y="249" width="101" height="40"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="40"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teterboro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8L-K9-rIc">
-                                                    <rect key="frame" x="33" y="297" width="74.5" height="17"/>
+                                                    <rect key="frame" x="33" y="297" width="75" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Waw-Zs-8lt">
-                                                    <rect key="frame" x="20" y="217" width="100.5" height="24"/>
+                                                    <rect key="frame" x="20" y="217" width="101" height="24"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="24"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -363,7 +377,7 @@
                                                     <rect key="frame" x="166" y="218" width="67" height="21"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2h 54m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFF-UZ-nVn">
-                                                    <rect key="frame" x="177" y="250" width="55" height="21"/>
+                                                    <rect key="frame" x="173" y="247" width="55" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -431,57 +445,57 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="689-6c-BGC">
-                                            <rect key="frame" x="8" y="4" width="398" height="519.5"/>
+                                            <rect key="frame" x="8" y="4" width="398" height="520"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR NEXT FLIGHT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLq-pV-Gab">
-                                                    <rect key="frame" x="126" y="20" width="146" height="47.5"/>
+                                                    <rect key="frame" x="126" y="20" width="146" height="48"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cessna Citation Encore+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hva-0F-2bv">
-                                                    <rect key="frame" x="104" y="109" width="190" height="17"/>
+                                                    <rect key="frame" x="104" y="110" width="190" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tail#" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3J-dP-5WS">
-                                                    <rect key="frame" x="182" y="134" width="33" height="17"/>
+                                                    <rect key="frame" x="182" y="135" width="33" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N168QS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baW-eg-Ysv">
-                                                    <rect key="frame" x="141" y="159" width="117" height="30"/>
+                                                    <rect key="frame" x="141" y="160" width="117" height="30"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEPART" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqA-gU-tAe">
-                                                    <rect key="frame" x="39" y="235" width="63" height="17"/>
+                                                    <rect key="frame" x="39" y="236" width="63" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjn-GE-3SE">
-                                                    <rect key="frame" x="20" y="260" width="100.5" height="24"/>
+                                                    <rect key="frame" x="20" y="261" width="101" height="24"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="24"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KTEB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mpf-Sa-iMf">
-                                                    <rect key="frame" x="20" y="292" width="100.5" height="40"/>
+                                                    <rect key="frame" x="20" y="293" width="101" height="40"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="40"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teterboro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oq2-8v-nnV">
-                                                    <rect key="frame" x="33" y="340" width="74.5" height="17"/>
+                                                    <rect key="frame" x="33" y="341" width="75" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UW-pI-MRE">
-                                                    <rect key="frame" x="8" y="451" width="382" height="60"/>
+                                                    <rect key="frame" x="8" y="452" width="382" height="60"/>
                                                     <color key="backgroundColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="GYj-5H-RNZ"/>
@@ -494,46 +508,46 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Until Arrival" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAB-LM-bsk">
-                                                    <rect key="frame" x="134" y="401" width="129" height="17"/>
+                                                    <rect key="frame" x="134" y="402" width="129" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2hrs 7mins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVC-gV-mMM">
-                                                    <rect key="frame" x="160" y="426" width="78.5" height="17"/>
+                                                    <rect key="frame" x="160" y="427" width="79" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARRIVE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZp-Fd-g0i">
-                                                    <rect key="frame" x="299" y="236" width="58" height="17"/>
+                                                    <rect key="frame" x="299" y="237" width="58" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:45PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYd-B6-QYA">
-                                                    <rect key="frame" x="286" y="261" width="85.5" height="24"/>
+                                                    <rect key="frame" x="286" y="262" width="86" height="24"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="24"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KAPF" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hV0-yj-BJD">
-                                                    <rect key="frame" x="279" y="293" width="99" height="40"/>
+                                                    <rect key="frame" x="279" y="294" width="99" height="40"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="40"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naples" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuL-ZO-Z0r">
-                                                    <rect key="frame" x="302" y="341" width="53" height="17"/>
+                                                    <rect key="frame" x="302" y="342" width="53" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flightcellicon" translatesAutoresizingMaskIntoConstraints="NO" id="QLY-zj-1Wj">
-                                                    <rect key="frame" x="165" y="261" width="67" height="21"/>
+                                                    <rect key="frame" x="165" y="262" width="67" height="21"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2h 54m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XuJ-H5-Hfe">
-                                                    <rect key="frame" x="172" y="290" width="54.5" height="17"/>
+                                                    <rect key="frame" x="172" y="291" width="55" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -598,10 +612,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3Z-se-vTN">
-                                            <rect key="frame" x="8" y="4" width="398" height="519.5"/>
+                                            <rect key="frame" x="8" y="4" width="398" height="520"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paris-1" translatesAutoresizingMaskIntoConstraints="NO" id="sDJ-H0-sCK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="519.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="520"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO FLIGHTS BOOKED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAP-KP-HjX">
                                                     <rect key="frame" x="117" y="20" width="163" height="17"/>
@@ -622,7 +636,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHJ-8o-tQ9">
-                                                    <rect key="frame" x="8" y="451" width="382" height="60"/>
+                                                    <rect key="frame" x="8" y="452" width="382" height="60"/>
                                                     <color key="backgroundColor" red="0.69803921568627447" green="0.95686274509803915" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="L7g-nM-zNa"/>
@@ -674,6 +688,171 @@
                                     <outlet property="tile" destination="K3Z-se-vTN" id="TcM-Z2-lWX"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPTripCompleteCell" rowHeight="528" id="PlS-tM-KQk" customClass="NJOPTripCompleteCell">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PlS-tM-KQk" id="dRp-xq-z6o">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXO-SI-6lw">
+                                            <rect key="frame" x="8" y="4" width="398" height="520"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRIP COMPLETE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neT-0e-N8V">
+                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="40"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="8L1-SH-xsk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Miami" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rH-n4-YO5">
+                                                    <rect key="frame" x="55" y="68" width="290" height="40"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-UltLig" family="Nimbus Sans D" pointSize="40"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and sunny." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0L0-2j-P42">
+                                                    <rect key="frame" x="176" y="143" width="76" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ground Transportation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN7-rc-taQ">
+                                                    <rect key="frame" x="113" y="239" width="173" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Up at 11:00AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd5-H8-VYE">
+                                                    <rect key="frame" x="129" y="264" width="140" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bw-fV-LUR">
+                                                    <rect key="frame" x="143" y="317" width="113" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5hrs 20mins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsh-SX-PJR">
+                                                    <rect key="frame" x="156" y="342" width="88" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Hours Remaining" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SL0-PQ-B83">
+                                                    <rect key="frame" x="100" y="402" width="198" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="151" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93z-tx-5HY">
+                                                    <rect key="frame" x="186" y="427" width="28" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shape 1" translatesAutoresizingMaskIntoConstraints="NO" id="pbT-nD-axd">
+                                                    <rect key="frame" x="127" y="184" width="144" height="1"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bd9-5Y-mur">
+                                                    <rect key="frame" x="8" y="452" width="382" height="60"/>
+                                                    <color key="backgroundColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="c7i-GE-3xV"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="kZN-21-FSF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="15"/>
+                                                    <state key="normal" title="VIEW FLIGHT DETAILS">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cs3-oL-yfj">
+                                                    <rect key="frame" x="98" y="143" width="20" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kg-jR-RQe">
+                                                    <rect key="frame" x="126" y="132" width="43" height="34"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="34"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-WW-My3">
+                                                    <rect key="frame" x="260" y="134" width="36" height="36"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="2rH-n4-YO5" secondAttribute="centerX" id="0vg-vQ-CtV"/>
+                                                <constraint firstItem="0L0-2j-P42" firstAttribute="leading" secondItem="5kg-jR-RQe" secondAttribute="trailing" constant="8" symbolic="YES" id="3J1-Ji-22X"/>
+                                                <constraint firstItem="2rH-n4-YO5" firstAttribute="top" secondItem="neT-0e-N8V" secondAttribute="bottom" multiplier="1.5" constant="8" symbolic="YES" id="3VS-3v-Ep6"/>
+                                                <constraint firstItem="hLl-WW-My3" firstAttribute="leading" secondItem="0L0-2j-P42" secondAttribute="trailing" constant="8" symbolic="YES" id="3VV-09-UXI"/>
+                                                <constraint firstItem="Dsh-SX-PJR" firstAttribute="top" secondItem="7bw-fV-LUR" secondAttribute="bottom" constant="8" symbolic="YES" id="4nk-Ta-OUS"/>
+                                                <constraint firstAttribute="centerX" secondItem="7bw-fV-LUR" secondAttribute="centerX" id="6NX-TS-yL7"/>
+                                                <constraint firstItem="5kg-jR-RQe" firstAttribute="baseline" secondItem="0L0-2j-P42" secondAttribute="baseline" id="6Tp-9B-URg"/>
+                                                <constraint firstAttribute="centerX" secondItem="wN7-rc-taQ" secondAttribute="centerX" id="8RY-fe-iQ3"/>
+                                                <constraint firstItem="0L0-2j-P42" firstAttribute="top" secondItem="2rH-n4-YO5" secondAttribute="bottom" constant="8" symbolic="YES" id="BHs-eK-f2P"/>
+                                                <constraint firstItem="0L0-2j-P42" firstAttribute="centerY" secondItem="hLl-WW-My3" secondAttribute="centerY" id="BXX-53-mIn"/>
+                                                <constraint firstItem="cs3-oL-yfj" firstAttribute="baseline" secondItem="5kg-jR-RQe" secondAttribute="baseline" id="CRH-to-REI"/>
+                                                <constraint firstItem="5kg-jR-RQe" firstAttribute="leading" secondItem="cs3-oL-yfj" secondAttribute="trailing" constant="8" symbolic="YES" id="DzI-An-pT8"/>
+                                                <constraint firstAttribute="centerX" secondItem="Xd5-H8-VYE" secondAttribute="centerX" id="IBy-yp-ovk"/>
+                                                <constraint firstItem="0L0-2j-P42" firstAttribute="centerY" secondItem="hLl-WW-My3" secondAttribute="centerY" id="KlK-lF-cfK"/>
+                                                <constraint firstItem="pbT-nD-axd" firstAttribute="top" secondItem="0L0-2j-P42" secondAttribute="bottom" multiplier="1.1" constant="8" symbolic="YES" id="LRk-S4-9SW"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bd9-5Y-mur" secondAttribute="trailing" constant="8" id="OJb-02-RTi"/>
+                                                <constraint firstItem="Bd9-5Y-mur" firstAttribute="leading" secondItem="lXO-SI-6lw" secondAttribute="leading" constant="8" id="Ows-X9-EiY"/>
+                                                <constraint firstItem="5kg-jR-RQe" firstAttribute="bottom" secondItem="0L0-2j-P42" secondAttribute="bottom" id="QBY-T0-zE7"/>
+                                                <constraint firstAttribute="bottom" secondItem="Bd9-5Y-mur" secondAttribute="bottom" constant="8" id="UFm-ay-i91"/>
+                                                <constraint firstAttribute="centerX" secondItem="0L0-2j-P42" secondAttribute="centerX" constant="-15" id="UW9-Bd-4zN"/>
+                                                <constraint firstItem="wN7-rc-taQ" firstAttribute="top" secondItem="pbT-nD-axd" secondAttribute="bottom" multiplier="1.25" constant="8" symbolic="YES" id="WFV-e1-Ndc"/>
+                                                <constraint firstAttribute="centerX" secondItem="93z-tx-5HY" secondAttribute="centerX" id="ZIv-SW-fZD"/>
+                                                <constraint firstItem="0L0-2j-P42" firstAttribute="top" secondItem="2rH-n4-YO5" secondAttribute="bottom" multiplier="1.25" constant="8" symbolic="YES" id="aYq-oy-bqb"/>
+                                                <constraint firstAttribute="centerX" secondItem="0L0-2j-P42" secondAttribute="centerX" id="bGX-qF-7Q9"/>
+                                                <constraint firstAttribute="centerX" secondItem="pbT-nD-axd" secondAttribute="centerX" id="bZH-Fl-za5"/>
+                                                <constraint firstItem="Bd9-5Y-mur" firstAttribute="top" secondItem="93z-tx-5HY" secondAttribute="bottom" constant="8" symbolic="YES" id="c7u-cM-CHt"/>
+                                                <constraint firstItem="7bw-fV-LUR" firstAttribute="top" secondItem="Xd5-H8-VYE" secondAttribute="bottom" multiplier="1.1" constant="8" symbolic="YES" id="fmx-Bb-pjQ"/>
+                                                <constraint firstItem="Xd5-H8-VYE" firstAttribute="top" secondItem="wN7-rc-taQ" secondAttribute="bottom" constant="8" symbolic="YES" id="gLG-a6-b8W"/>
+                                                <constraint firstAttribute="centerX" secondItem="SL0-PQ-B83" secondAttribute="centerX" id="k64-Oe-pIn"/>
+                                                <constraint firstItem="neT-0e-N8V" firstAttribute="width" secondItem="lXO-SI-6lw" secondAttribute="width" id="l5u-Zq-aZg"/>
+                                                <constraint firstAttribute="centerX" secondItem="Dsh-SX-PJR" secondAttribute="centerX" id="npV-GL-uQA"/>
+                                                <constraint firstItem="hLl-WW-My3" firstAttribute="leading" secondItem="0L0-2j-P42" secondAttribute="trailing" constant="8" symbolic="YES" id="omd-os-eDp"/>
+                                                <constraint firstItem="neT-0e-N8V" firstAttribute="top" secondItem="lXO-SI-6lw" secondAttribute="top" id="r4m-NQ-qz7"/>
+                                                <constraint firstAttribute="centerX" secondItem="neT-0e-N8V" secondAttribute="centerX" id="s9B-Wc-zbK"/>
+                                                <constraint firstItem="93z-tx-5HY" firstAttribute="top" secondItem="SL0-PQ-B83" secondAttribute="bottom" constant="8" symbolic="YES" id="tdT-Oi-qGD"/>
+                                                <constraint firstItem="0L0-2j-P42" firstAttribute="centerY" secondItem="hLl-WW-My3" secondAttribute="centerY" id="uQi-Ts-zpL"/>
+                                                <constraint firstItem="SL0-PQ-B83" firstAttribute="top" secondItem="Dsh-SX-PJR" secondAttribute="bottom" multiplier="1.1" constant="8" symbolic="YES" id="v5p-eJ-WHy"/>
+                                                <constraint firstItem="pbT-nD-axd" firstAttribute="top" secondItem="0L0-2j-P42" secondAttribute="bottom" multiplier="1.25" constant="8" symbolic="YES" id="wrE-OO-1lD"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="QBY-T0-zE7"/>
+                                                    <exclude reference="BHs-eK-f2P"/>
+                                                    <exclude reference="BXX-53-mIn"/>
+                                                    <exclude reference="KlK-lF-cfK"/>
+                                                    <exclude reference="bGX-qF-7Q9"/>
+                                                    <exclude reference="wrE-OO-1lD"/>
+                                                    <exclude reference="3VV-09-UXI"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lXO-SI-6lw" firstAttribute="leading" secondItem="dRp-xq-z6o" secondAttribute="leading" constant="8" id="Mzr-ER-6cI"/>
+                                        <constraint firstAttribute="trailing" secondItem="lXO-SI-6lw" secondAttribute="trailing" constant="8" id="h64-H8-857"/>
+                                        <constraint firstItem="lXO-SI-6lw" firstAttribute="top" secondItem="dRp-xq-z6o" secondAttribute="top" constant="4" id="iQg-AE-xCB"/>
+                                        <constraint firstAttribute="bottom" secondItem="lXO-SI-6lw" secondAttribute="bottom" constant="4" id="px6-z9-N6h"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="tile" destination="lXO-SI-6lw" id="MSv-sc-eFn"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="DIL-aD-A2p" id="0zq-ft-MLH"/>
@@ -681,15 +860,17 @@
                         </connections>
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="2000"/>
+                    <size key="freeformSize" width="414" height="3000"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z44-8W-sRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1394" y="-303"/>
+            <point key="canvasLocation" x="1394" y="-273"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Shape 1" width="144" height="1"/>
         <image name="flightcellicon" width="67" height="21"/>
         <image name="paris-1" width="690" height="961"/>
+        <image name="sun" width="36" height="36"/>
     </resources>
 </document>
