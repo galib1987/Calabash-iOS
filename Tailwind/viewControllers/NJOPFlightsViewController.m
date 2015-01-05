@@ -18,7 +18,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIRefreshControl *refreshMe = [[UIRefreshControl alloc] init];
+    refreshMe.backgroundColor = [UIColor blackColor];
+    refreshMe.tintColor = [UIColor whiteColor];
+    refreshMe.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull Me"];
+    [refreshMe addTarget:self action:@selector(refreshTable:)
+        forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshMe;
 
+}
+
+- (void)refreshTable:(UIRefreshControl *)refreshMe
+{
+    refreshMe.attributedTitle = [[NSAttributedString alloc] initWithString:
+                                 @"Refreshing data..."];
+    NSLog(@"Refreshing!!");
+    [refreshMe endRefreshing];
+    refreshMe.attributedTitle = [[NSAttributedString alloc] initWithString:
+                                 @"Refreshed"];
 }
 
 - (void)didReceiveMemoryWarning {
