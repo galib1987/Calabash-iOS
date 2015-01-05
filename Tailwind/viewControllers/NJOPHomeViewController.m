@@ -58,7 +58,6 @@
     NSLog(@"today's Reseration: %@",todaysReservations);
     NSDictionary* todaysFBO = @{
                                 @"FBOTableCell" : @{
-                                        //@"fromFBODateLabel.text"			: [NSString stringWithFormat:@"%@",todaysReservations.departureDateString],
                                         @"toFBOTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",todaysReservations.departureTime] substringWithRange:NSMakeRange(0, 7)],
                                         @"fromFBOTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",todaysReservations.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
                                         
@@ -66,12 +65,6 @@
                                         @"toFBOAirpotCodeLabel.text"		: [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportId],
                                         @"fromFBOLocationLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.departureAirportCity],
                                         @"toFBOLocationLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportCity],
-                                        
-                                        //																	@"fromFBOTailNumberLabel.text"	: todaysReservations.tailNumber,
-                                        //@"travelTimeLabel.text" 			: [NSString stringWithFormat:@"%@ %@", todaysReservations.travelTime, todaysReservations.stopsText],
-                                        
-                                        //																	@"fromFBOLocationLabel.text"		: todaysReservations.departureFboName,
-                                        //																	@"toFBOLocationLabel.text"			: todaysReservations.arrivalFboName
                                         }
                                 };
     
@@ -81,26 +74,36 @@
                                     @"rawData.text": [NSString stringWithFormat:@"%@",todaysReservations.rawData]
                                     },
                             @"NJOPTripCompleteCell" : @{
+                                    @"completionGreetingLabel.text" : @"Welcome to Miami",
+                                    @"groundOrdersLabel.text" : @"Pick up at 11:00PM",
+                                    @"flightTimeLabel.text" : @"5hrs 20mins",
+                                    @"projectedRemainingHoursLabel.text" : @"151",
                                     }
                             };
     
     NSDictionary *upcomingFBO = @{
                                   @"NJOPUpcomingFlightTableCell" : @{
-                                          @"toFBOTimeLabel.text" 				: [NSString stringWithFormat:@"%@",todaysReservations.departureTime],
-                                          @"fromFBOTimeLabel.text" 					: [NSString stringWithFormat:@"%@",todaysReservations.arrivalTime],
-                                          
-                                          @"fromFBOAirportCodeLabel.text"	: [NSString stringWithFormat:@"%@, %@", todaysReservations.departureAirportId, todaysReservations.departureAirportCity],
-                                          @"toFBOAirportCodeLabel.text"		: [NSString stringWithFormat:@"%@, %@", todaysReservations.arrivalAirportId, todaysReservations.arrivalAirportCity]
+                                          @"arrivalAirportCityAndStateLabel.text" : @"Naples, FL",
+                                          @"scheduledDepartureLabel.text" : @"Monday, August 28, 2014",
+                                          @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",todaysReservations.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                          @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",todaysReservations.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                          @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", todaysReservations.departureAirportId],
+                                          @"departureAirportCityLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.departureAirportCity],
+                                          @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportId],
+                                          @"arrivalAirportCityLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportCity]
                                           }
                                   };
     
     NSDictionary *currentFBO = @{
                                  @"NJOPCurrentFBOTableCell" : @{
-                                         @"toFBOTimeLabel.text" 				: [NSString stringWithFormat:@"%@",todaysReservations.departureTime],
-                                         @"fromFBOTimeLabel.text" 					: [NSString stringWithFormat:@"%@",todaysReservations.arrivalTime],
-                                         
-                                         @"fromFBOAirportCodeLabel.text"	: [NSString stringWithFormat:@"%@, %@", todaysReservations.departureAirportId, todaysReservations.departureAirportCity],
-                                         @"toFBOAirportCodeLabel.text"		: [NSString stringWithFormat:@"%@, %@", todaysReservations.arrivalAirportId, todaysReservations.arrivalAirportCity]
+                                         @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",todaysReservations.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                         @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",todaysReservations.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                         @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", todaysReservations.departureAirportId],
+                                         @"departureAirportCityLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.departureAirportCity],
+                                         @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportId],
+                                         @"arrivalAirportCityLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportCity],
+                                         @"estimatedFlightTimeLabel.text" : @"2hrs 7mins",
+                                         @"estimatedTripTimeLabel.text" : @"2h 54m",
                                          }
                                  
                                  };

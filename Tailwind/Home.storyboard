@@ -436,6 +436,14 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="arrivalAirportCityAndStateLabel" destination="G77-v3-yXn" id="JVi-35-QqA"/>
+                                    <outlet property="arrivalAirportCityLabel" destination="BxG-ht-mh1" id="Lfz-tM-5lj"/>
+                                    <outlet property="arrivalAirportIdLabel" destination="QaS-i6-AgW" id="gJs-UD-GnB"/>
+                                    <outlet property="arrivalTimeLabel" destination="W3j-uJ-hJB" id="OCR-Lg-iAt"/>
+                                    <outlet property="departureAirportCityLabel" destination="n8L-K9-rIc" id="qUO-WL-jeX"/>
+                                    <outlet property="departureAirportIdLabel" destination="CdC-nw-e4S" id="bxN-PW-WNz"/>
+                                    <outlet property="departureTimeLabel" destination="Waw-Zs-8lt" id="3si-Wo-VMe"/>
+                                    <outlet property="scheduledDepartureLabel" destination="gpZ-fM-gxi" id="bdY-Ij-qvt"/>
                                     <outlet property="tile" destination="iji-Gt-SVR" id="eff-do-TU9"/>
                                 </connections>
                             </tableViewCell>
@@ -603,6 +611,16 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="arrivalAirportCityLabel" destination="yuL-ZO-Z0r" id="Rs6-V5-Shh"/>
+                                    <outlet property="arrivalAirportIdLabel" destination="hV0-yj-BJD" id="U9A-Jv-znL"/>
+                                    <outlet property="arrivalTimeLabel" destination="dYd-B6-QYA" id="AZL-tI-e8T"/>
+                                    <outlet property="departureAirportCityLabel" destination="Oq2-8v-nnV" id="o8D-Ge-6fy"/>
+                                    <outlet property="departureAirportIdLabel" destination="Mpf-Sa-iMf" id="HXF-UM-NSn"/>
+                                    <outlet property="departureTimeLabel" destination="tjn-GE-3SE" id="ka3-of-R5K"/>
+                                    <outlet property="estimatedFlightTimeLabel" destination="YVC-gV-mMM" id="loc-AW-mMX"/>
+                                    <outlet property="estimatedTripTimeLabel" destination="XuJ-H5-Hfe" id="DWR-4m-fsK"/>
+                                    <outlet property="guaranteedAircraftTypeDescriptionLabel" destination="Hva-0F-2bv" id="ckv-cM-buS"/>
+                                    <outlet property="tailNumberLabel" destination="baW-eg-Ysv" id="Gis-c9-YST"/>
                                     <outlet property="tile" destination="689-6c-BGC" id="AHo-sr-YBL"/>
                                 </connections>
                             </tableViewCell>
@@ -648,12 +666,21 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lUu-Rl-vYb">
+                                                    <rect key="frame" x="8" y="126" width="382" height="318"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="519.5" id="2iA-O1-S3m"/>
                                                 <constraint firstAttribute="trailing" secondItem="GHJ-8o-tQ9" secondAttribute="trailing" constant="8" id="BpM-mF-53h"/>
                                                 <constraint firstItem="L9t-WP-abH" firstAttribute="top" secondItem="mAP-KP-HjX" secondAttribute="bottom" constant="8" id="Fvx-MM-ue6"/>
+                                                <constraint firstItem="lUu-Rl-vYb" firstAttribute="leading" secondItem="K3Z-se-vTN" secondAttribute="leading" constant="20" symbolic="YES" id="Gbx-hy-OO6"/>
                                                 <constraint firstItem="QDo-lK-lOp" firstAttribute="leading" secondItem="K3Z-se-vTN" secondAttribute="leading" constant="20" symbolic="YES" id="KhM-WP-JmK"/>
                                                 <constraint firstAttribute="centerX" secondItem="mAP-KP-HjX" secondAttribute="centerX" id="LhW-Zn-uRC"/>
                                                 <constraint firstAttribute="centerX" secondItem="QDo-lK-lOp" secondAttribute="centerX" id="MDN-N6-OYO"/>
@@ -663,9 +690,12 @@
                                                 <constraint firstItem="sDJ-H0-sCK" firstAttribute="top" secondItem="K3Z-se-vTN" secondAttribute="top" id="TMk-LX-nlL"/>
                                                 <constraint firstAttribute="centerX" secondItem="L9t-WP-abH" secondAttribute="centerX" id="anr-Yt-sOC"/>
                                                 <constraint firstAttribute="bottom" secondItem="sDJ-H0-sCK" secondAttribute="bottom" id="b8r-73-mw6"/>
+                                                <constraint firstItem="lUu-Rl-vYb" firstAttribute="top" secondItem="L9t-WP-abH" secondAttribute="bottom" constant="8" symbolic="YES" id="lXl-eb-NjI"/>
                                                 <constraint firstItem="QDo-lK-lOp" firstAttribute="top" secondItem="mAP-KP-HjX" secondAttribute="bottom" multiplier="1.5" constant="8" symbolic="YES" id="ppe-Tr-Say"/>
                                                 <constraint firstItem="GHJ-8o-tQ9" firstAttribute="leading" secondItem="K3Z-se-vTN" secondAttribute="leading" constant="8" id="r06-8d-MYS"/>
+                                                <constraint firstItem="GHJ-8o-tQ9" firstAttribute="top" secondItem="lUu-Rl-vYb" secondAttribute="bottom" constant="8" symbolic="YES" id="s46-Sn-5rM"/>
                                                 <constraint firstAttribute="trailing" secondItem="QDo-lK-lOp" secondAttribute="trailing" constant="20" symbolic="YES" id="tJk-b8-voF"/>
+                                                <constraint firstAttribute="trailing" secondItem="lUu-Rl-vYb" secondAttribute="trailing" constant="20" symbolic="YES" id="tbq-7D-ax4"/>
                                                 <constraint firstItem="sDJ-H0-sCK" firstAttribute="leading" secondItem="K3Z-se-vTN" secondAttribute="leading" id="yky-DU-96B"/>
                                                 <constraint firstAttribute="trailing" secondItem="sDJ-H0-sCK" secondAttribute="trailing" id="zIx-29-sZl"/>
                                             </constraints>
@@ -685,6 +715,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="quoteAttributionLabel" destination="L9t-WP-abH" id="Nj8-h7-Lpk"/>
+                                    <outlet property="quoteLabel" destination="QDo-lK-lOp" id="zFp-We-76P"/>
+                                    <outlet property="rawData" destination="lUu-Rl-vYb" id="IB5-px-3z6"/>
                                     <outlet property="tile" destination="K3Z-se-vTN" id="TcM-Z2-lWX"/>
                                 </connections>
                             </tableViewCell>
@@ -831,11 +864,11 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="QBY-T0-zE7"/>
+                                                    <exclude reference="wrE-OO-1lD"/>
                                                     <exclude reference="BHs-eK-f2P"/>
                                                     <exclude reference="BXX-53-mIn"/>
                                                     <exclude reference="KlK-lF-cfK"/>
                                                     <exclude reference="bGX-qF-7Q9"/>
-                                                    <exclude reference="wrE-OO-1lD"/>
                                                     <exclude reference="3VV-09-UXI"/>
                                                 </mask>
                                             </variation>
@@ -850,7 +883,14 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="completionGreetingLabel" destination="2rH-n4-YO5" id="gSA-ZD-jZ4"/>
+                                    <outlet property="currentTemperatureLabel" destination="5kg-jR-RQe" id="BNO-iH-WMr"/>
+                                    <outlet property="currentWeatherLabel" destination="0L0-2j-P42" id="I8p-VG-SiQ"/>
+                                    <outlet property="flightTimeLabel" destination="Dsh-SX-PJR" id="DiC-sI-ngv"/>
+                                    <outlet property="groundOrdersLabel" destination="Xd5-H8-VYE" id="r3x-e9-tDG"/>
+                                    <outlet property="projectedRemainingHoursLabel" destination="93z-tx-5HY" id="Uam-va-TGU"/>
                                     <outlet property="tile" destination="lXO-SI-6lw" id="MSv-sc-eFn"/>
+                                    <outlet property="weatherIcon" destination="hLl-WW-My3" id="I6D-iF-YrX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

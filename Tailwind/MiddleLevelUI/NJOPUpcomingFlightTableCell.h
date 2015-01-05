@@ -9,22 +9,15 @@
 #import "NJOPTableViewCell.h"
 
 @interface NJOPUpcomingFlightTableCell : NJOPTableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *destinationCityLabel;
-@property (weak, nonatomic) IBOutlet UILabel *fromFBODateLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *departureLabel;
-@property (weak, nonatomic) IBOutlet UILabel *fromFBOTimeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *fromFBOAirportCodeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *fromFBOAiportNameLabel;
-
-
-@property (weak, nonatomic) IBOutlet UILabel *arrivalLabel;
-@property (weak, nonatomic) IBOutlet UILabel *toFBOTimeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *toFBOAirportCodeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *toFBOAirportNameLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *travelTimeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *layoverLabel;
+@property (weak, nonatomic) IBOutlet UILabel *arrivalAirportCityAndStateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scheduledDepartureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *departureTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *arrivalTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *departureAirportIdLabel;
+@property (weak, nonatomic) IBOutlet UILabel *arrivalAirportIdLabel;
+@property (weak, nonatomic) IBOutlet UILabel *departureAirportCityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *arrivalAirportCityLabel;
 
 
 @end

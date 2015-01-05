@@ -10,4 +10,12 @@
 
 @interface NJOPTripCompleteCell : NJOPTableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *completionGreetingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentTemperatureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentWeatherLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
+@property (weak, nonatomic) IBOutlet UILabel *groundOrdersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *flightTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *projectedRemainingHoursLabel;
+
 @end

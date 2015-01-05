@@ -11,5 +11,7 @@
 @interface NJOPNOFBOTableCell : NJOPTableViewCell
 
 @property (nonatomic, weak) IBOutlet UITextView *rawData;
+@property (weak, nonatomic) IBOutlet UILabel *quoteLabel;
+@property (weak, nonatomic) IBOutlet UILabel *quoteAttributionLabel;
 
 @end
