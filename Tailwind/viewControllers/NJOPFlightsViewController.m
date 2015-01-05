@@ -10,6 +10,7 @@
 #import "NJOPClient+flights.h"
 
 @interface NJOPFlightsViewController ()
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end
 
@@ -17,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     UIRefreshControl *refreshMe = [[UIRefreshControl alloc] init];
     refreshMe.backgroundColor = [UIColor blackColor];
@@ -98,6 +100,9 @@
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
     self.dataSource.title = @"FLIGHTS";
+}
+- (IBAction)segmentedControlAction:(id)sender {
+    
 }
 
 /*

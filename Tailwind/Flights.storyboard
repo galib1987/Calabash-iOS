@@ -67,6 +67,9 @@
                                         <segment title="ACCOUNT FLIGHTS"/>
                                     </segments>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="segmentedControlAction:" destination="oTb-06-5oe" eventType="valueChanged" id="0An-MH-iGt"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -192,6 +195,9 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Mhx-0q-8eu" id="wrO-db-WUL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S36-U3-beM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -538,6 +544,27 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="arrivalAirportCityAndStateLabel" destination="WuA-ud-bBp" id="MK2-ZS-45A"/>
+                                    <outlet property="arrivalAirportCityLabel" destination="Oi7-Kb-YT5" id="Dky-Ew-qiQ"/>
+                                    <outlet property="arrivalAirportIdLabel" destination="2Zf-XI-3uV" id="vxz-lz-rwi"/>
+                                    <outlet property="arrivalFBONameLabel" destination="PoD-n8-fS0" id="rsn-gR-9g8"/>
+                                    <outlet property="arrivalTemperatureLabel" destination="BmM-dj-d0o" id="PND-ed-Pod"/>
+                                    <outlet property="arrivalTimeLabel" destination="6Py-8L-Cti" id="rfs-CP-6uq"/>
+                                    <outlet property="arrivalWeatherDateLabel" destination="AIK-Mf-s56" id="Ujw-zi-xDe"/>
+                                    <outlet property="arrivalWeatherIcon" destination="h42-DU-5h7" id="GFI-gr-OZw"/>
+                                    <outlet property="arrivalWeatherTimeLabel" destination="bri-hi-fHZ" id="Dpf-zz-Opz"/>
+                                    <outlet property="departureAirportCityAndStateLabel" destination="OQo-je-OO2" id="iAW-5c-KNR"/>
+                                    <outlet property="departureAirportCityLabel" destination="Qyx-gH-aUz" id="aSs-hz-acO"/>
+                                    <outlet property="departureAirportIdLabel" destination="9kL-cj-ePr" id="WTE-qX-1xa"/>
+                                    <outlet property="departureDateLabel" destination="ZiB-G2-vDG" id="IPH-l0-ehq"/>
+                                    <outlet property="departureFBONameLabel" destination="B6p-gE-LqT" id="Qtg-Kr-zz0"/>
+                                    <outlet property="departureTemperatureLabel" destination="mQv-ML-tjV" id="psY-5b-3jm"/>
+                                    <outlet property="departureTimeLabel" destination="EBG-Tx-WAl" id="aGf-Zd-y3x"/>
+                                    <outlet property="departureWeatherDateLabel" destination="DXG-Vh-2jR" id="TTu-Dv-ufN"/>
+                                    <outlet property="departureWeatherIcon" destination="hr0-M6-E7g" id="vOk-ID-Sia"/>
+                                    <outlet property="departureWeatherTimeLabel" destination="dwG-nV-Oha" id="wb1-3e-gdP"/>
+                                    <outlet property="guaranteedAircraftTypeDescriptionLabel" destination="Lo2-T8-Spa" id="dgH-ls-atk"/>
+                                    <outlet property="tailNumberLabel" destination="3RB-4T-UKZ" id="fOL-78-ko5"/>
                                     <outlet property="tile" destination="7ff-fu-Rwq" id="nZi-3F-7lJ"/>
                                 </connections>
                             </tableViewCell>
