@@ -82,6 +82,9 @@
                                         <exclude reference="uL4-Ks-xOz"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="signInAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p5w-ji-orA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Owner Service General Inquiry: 1.888.8888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0d2-fQ-uxr">
                                 <rect key="frame" x="150" y="578" width="300" height="14"/>
@@ -208,7 +211,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="bO8-BS-TjL" id="eJi-Sr-IKr"/>
-                        <outlet property="loginButton" destination="YmF-cF-Icm" id="kR7-7A-K60"/>
+                        <outlet property="forgotPasswordButton" destination="P9T-rH-eaC" id="ts7-qg-Ddu"/>
                         <outlet property="netJetsLogoImageView" destination="ge4-FP-FFS" id="imf-5H-Rw6"/>
                         <outlet property="passwordTextField" destination="RWr-Az-SVj" id="mui-sU-lA4"/>
                         <outlet property="userNameTextField" destination="NV8-dS-4VL" id="wxs-eo-Cg0"/>

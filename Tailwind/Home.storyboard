@@ -82,7 +82,7 @@
         <!--Home View Controller-->
         <scene sceneID="uKs-xo-tmI">
             <objects>
-                <tableViewController id="DIL-aD-A2p" customClass="NJOPHomeViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DIL-aD-A2p" customClass="NJOPHomeViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="528" sectionHeaderHeight="22" sectionFooterHeight="22" id="8aS-54-j84" customClass="NJOPTableView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="3000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

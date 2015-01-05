@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-//#import "NJOPSettingsTableViewController.h"
+//#import "NJOPHomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,8 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Settings" bundle:[NSBundle mainBundle]];
-//    NJOPSettingsTableViewController *vc = [storyboard instantiateInitialViewController];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Home" bundle:[NSBundle mainBundle]];
+//    NJOPHomeViewController *vc = [storyboard instantiateInitialViewController];
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    self.window.rootViewController = vc;
 //    [self.window makeKeyAndVisible];
