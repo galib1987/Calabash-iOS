@@ -13,8 +13,8 @@
 
 -(void)layoutSubviews {
 	[super layoutSubviews];
-	self.backgroundColor = SCROLLVIEW_BACKGORUND_COLOR;
-    self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bkg-copy"]];
+//	self.backgroundColor = SCROLLVIEW_BACKGORUND_COLOR;
+    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-copy"]];
 }
 
 @end
