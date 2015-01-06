@@ -7,6 +7,7 @@
 //
 
 #import "NJOPFullPageViewController.h"
+#import "NJOPWelcomeContentController.h"
 
 @interface NJOPFullPageViewController ()
 
@@ -29,8 +30,9 @@
     if ([self.view.subviews count] == 2) {
         for(UIView* t in self.view.subviews) {
             if([t isKindOfClass:[UIScrollView class]]) {
-                UIScrollView* scrollView = (UIScrollView*)t;
-                scrollView.frame = self.view.bounds;
+                self.scrollView = (UIScrollView*)t;
+                self.scrollView.frame = self.view.bounds;
+                self.scrollView.delegate = self;
             } else if ([t isKindOfClass:[UIPageControl class]]) {
                 [self.view bringSubviewToFront:t];
             }
@@ -48,5 +50,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat viewWidth = self.view.frame.size.width;
+    
+    self.offset = scrollView.contentOffset.x-viewWidth;
+    
+    //[((NJOPWelcomeContentController *)[self.viewControllers objectAtIndex:0]) handleScroll];
+    //[((NJOPWelcomeContentController *)[self.viewControllers objectAtIndex:1]) handleScroll];
+}
 
 @end
