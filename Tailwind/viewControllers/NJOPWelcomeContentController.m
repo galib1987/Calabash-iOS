@@ -48,31 +48,25 @@
 }
 */
 
-- (void)handleScroll {
-    //NSLog(@"%lu", self.pageIndex);
+- (void)handleScroll:(CGFloat) offset {
+    NSLog(@"%f", offset);
+    CGFloat percentage = offset/self.view.frame.size.width;
+    /*[self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, (percentage)*50, 0)];
+    NSLog(@"the offset for %d is %f", self.pageIndex, (percentage)*50);*/
+    [self fadeInDownItem:self.headerLabel toPercentage:percentage];
+    [self fadeInDownItem:self.descLabel toPercentage:percentage];
 }
 
-- (void)fadeInDownItem:(UIView *) item {
-    CGRect origPosition = item.frame;
-    CGRect newPosition = origPosition;
-    newPosition.origin.y -= 15;
-    item.frame = newPosition;
-    item.alpha = 0;
-    [UIView animateWithDuration: 0.5
-                          delay: 0.2
-                        options: UIViewAnimationOptionCurveEaseOut
-                     animations: ^{
-                         item.frame = origPosition;
-                         item.alpha = 1;
-                     }
-                     completion: nil];
+- (void)fadeInDownItem:(UIView *) item toPercentage:(CGFloat) percentage {
+    item.alpha = pow(fabsf(percentage), 3); // Cubed for ease out
+    item.bounds = CGRectOffset(item.bounds, 0, percentage*-10);
 }
 
 - (void)transitionIn {
-    if (!self.displayed) {
+    /*if (!self.displayed) {
         [self fadeInDownItem:self.headerLabel];
         [self fadeInDownItem:self.descLabel];
-    }
+    }*/
     self.displayed = true;
 }
 

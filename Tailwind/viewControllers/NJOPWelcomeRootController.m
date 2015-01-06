@@ -118,20 +118,26 @@
 
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
     [(NJOPWelcomeContentController *)[pendingViewControllers objectAtIndex:0] transitionIn];
+    self.nextPage = (NJOPWelcomeContentController *)[pendingViewControllers objectAtIndex:0];
+    //NSLog(@"peeking at %d", ((NJOPWelcomeContentController *)[pendingViewControllers objectAtIndex:0]).pageIndex);
 }
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     //NSLog(@"finished? %d", finished);
-    self.currentPage = (int)[[self.pageViewController.viewControllers objectAtIndex:0] pageIndex];
+    self.pageViewController.currentPage = (int)[[self.pageViewController.viewControllers objectAtIndex:0] pageIndex];
 }
 
 - (void)handleScroll {
-    CGFloat offset = self.currentPage*self.view.frame.size.width+self.pageViewController.offset;
+    CGFloat offset = self.pageViewController.currentPage*self.view.frame.size.width+self.pageViewController.offset;
     /*CGRect offsetBounds = self.bgImage.bounds;
     offsetBounds.origin.x = offset*-0.2;
     self.bgImage.bounds = offsetBounds;*/
     [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, offset*-0.2, 0)];
     //NSLog(@"%f", self.bgImage.bounds.origin.x);
+    [[self.pageViewController.viewControllers objectAtIndex:0] handleScroll:self.view.frame.size.width-self.pageViewController.offset];
+    if (self.nextPage && self.nextPage.pageIndex != self.pageViewController.currentPage) {
+        [self.nextPage handleScroll:self.pageViewController.offset];
+    }
 }
 
 - (IBAction)skipButton:(id)sender {

@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property CGFloat offset;
+@property int currentPage;
 
 @end

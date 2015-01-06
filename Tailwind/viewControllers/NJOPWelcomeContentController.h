@@ -20,8 +20,8 @@
 @property NSString *descText;
 @property bool displayed;
 
-- (void)handleScroll;
-- (void)fadeInDownItem:(UIView *) item;
+- (void)handleScroll:(CGFloat) offset;
+- (void)fadeInDownItem:(UIView *) item toPercentage:(CGFloat) percentage;
 - (void)transitionIn;
 
 @end
