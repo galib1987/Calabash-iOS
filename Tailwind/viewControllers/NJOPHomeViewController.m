@@ -50,7 +50,7 @@
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd MMM, YYYY"];
-    NSString* dateString = [[formatter stringFromDate:[NSDate date]] stringByAppendingString:@"\n Welcome My Smith"];
+//    NSString* dateString = [[formatter stringFromDate:[NSDate date]] stringByAppendingString:@"\n Welcome My Smith"];
     
     NJOPReservation *todaysReservations = reservations[0]; // only taking the first reservation
     NSLog(@"today's Reservation: %@",todaysReservations);
@@ -114,7 +114,8 @@
                              kSimpleDataSourceSectionCellsKey : @[
                                      @{
                                          kSimpleDataSourceCellIdentifierKey			: @"FBOTableCell",
-                                         kSimpleDataSourceCellKeypaths			 			: todaysFBO[@"FBOTableCell"]
+                                         kSimpleDataSourceCellKeypaths			 			: todaysFBO[@"FBOTableCell"],
+                                         
                                          },
                                      @{
                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPUpcomingFlightTableCell",

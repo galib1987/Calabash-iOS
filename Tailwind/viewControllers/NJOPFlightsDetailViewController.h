@@ -7,7 +7,10 @@
 //
 
 #import "SimpleDataSourceTableViewController.h"
+#import "NJOPReservation.h"
 
 @interface NJOPFlightsDetailViewController : SimpleDataSourceTableViewController
+
+@property (strong, nonatomic) NJOPReservation *reservation;
 
 @end

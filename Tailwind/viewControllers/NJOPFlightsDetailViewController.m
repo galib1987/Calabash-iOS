@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"I GOT HERE WITH A RESERVATION %@", self.reservation);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +44,27 @@
                                       @{
                                           kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightDetailCell",
                                           kSimpleDataSourceCellKeypaths					: @{
+                                                  @"guaranteedAircraftTypeDescriptionLabel.text" : @"",
+                                                  @"tailNumberLabel.text" : @"",
+                                                  @"departureDateLabel.text" : @"",
+                                                  @"departureFBONameLabel.text" : _reservation.departureFboName,
+                                                  @"departureTimeLabel.text" : @"",
+                                                  @"departureAirportIdLabel.text" : @"",
+                                                  @"departureAirportCityLabel.text" : @"",
+                                                  @"arrivalTimeLabel.text" : @"",
+                                                  @"arrivalAirportIdLabel.text" : @"",
+                                                  @"arrivalAirportCityLabel.text" : @"",
+                                                  @"arrivalFBONameLabel.text" : @"",
+                                                  @"departureWeatherDateLabel.text" : @"",
+                                                  @"departureAirportCityAndStateLabel.text" : @"",
+                                                  @"departureWeatherTimeLabel.text" : @"",
+                                                  @"departureTemperatureLabel.text" : @"",
+//                                                  @"departureWeatherIcon" : ,
+                                                  @"arrivalWeatherDateLabel.text" : @"",
+                                                  @"arrivalAirportCityAndStateLabel.text" : @"",
+                                                  @"arrivalWeatherTimeLabel.text" : @"",
+                                                  @"arrivalTemperatureLabel.text" : @"",
+//                                                  @"arrivalWeatherIcon" : ,
                                                   }
                                           },
                                       @{

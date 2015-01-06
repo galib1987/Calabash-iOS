@@ -9,10 +9,11 @@
 #import "NJOPFlightsViewController.h"
 #import "NJOPClient+flights.h"
 #import "NJOPReservation.h"
+#import "NJOPFlightsDetailViewController.h"
 
 @interface NJOPFlightsViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-
+@property (strong, nonatomic) NSArray *reservations;
 @end
 
 @implementation NJOPFlightsViewController
@@ -70,11 +71,20 @@
                                                                   @"toFBOLocationLabel.text" : reservation.arrivalAirportCity,
                                                                   @"fromFBOLocationLabel.text" : reservation.departureAirportCity,
                                                                   @"timeDurationLabel.text" : [NSString stringWithFormat:@"%@", reservation.estimatedTripTimeNumber], // placeholder value
-                                                                  }
+                                                                  },
+                                                          kSimpleDataSourceCellItem : reservation,
+                                                          kSimpleDataSourceCellSegueAction : @"showDetail",
                                                           
                                          }];
+        
         [kSimpleDataSourceCells addObject:kSimpleDataSourceKeys];
     }
+    
+    self.reservations = kSimpleDataSourceCells;
+    
+    NSLog(@"I have: %@", kSimpleDataSourceCells[0][kSimpleDataSourceCellItem]);
+    NSLog(@"I have: %@", kSimpleDataSourceCells[1][kSimpleDataSourceCellItem]);
+    NSLog(@"I have: %@", kSimpleDataSourceCells[2][kSimpleDataSourceCellItem]);
     
     NSArray* sections = @[
                           @{
@@ -89,14 +99,19 @@
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSDictionary *representationDict = [self.reservations objectAtIndex:indexPath.row];
+    NSLog(@"%@", representationDict);
+    
+    if ([segue.identifier isEqualToString:@"showDetail"] ) {
+        
+        NJOPFlightsDetailViewController *viewController = segue.destinationViewController;
+        viewController.reservation = representationDict[@"CellItem"];
+    }
 }
-*/
+
+
 
 @end

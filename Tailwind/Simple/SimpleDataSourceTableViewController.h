@@ -12,6 +12,7 @@
 @interface SimpleDataSourceTableViewController : UITableViewController
 -(void)loadDataSource;
 -(void)registerReusableViews;
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 
 @property (nonatomic, strong) IBOutlet SimpleDataSource* dataSource;
 @end
