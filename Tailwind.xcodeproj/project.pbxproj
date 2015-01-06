@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1E1A592E1A48CDD70048A9C9 /* NJOPFullPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1A592D1A48CDD70048A9C9 /* NJOPFullPageViewController.m */; };
-		1E1A596A1A49FB6D0048A9C9 /* NJOPDrawRectWithCircleCutout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1A59691A49FB6D0048A9C9 /* NJOPDrawRectWithCircleCutout.m */; };
 		1E36BD1C1A4887D700221E7D /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E36BD1B1A4887D700221E7D /* Welcome.storyboard */; };
 		1E36BD221A48992700221E7D /* NJOPWelcomeContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E36BD211A48992700221E7D /* NJOPWelcomeContentController.m */; };
 		1E36BD251A489ED100221E7D /* NJOPWelcomeRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E36BD241A489ED100221E7D /* NJOPWelcomeRootController.m */; };
@@ -130,8 +129,6 @@
 		03307E6D414420F7D9C0477B /* Pods.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.production.xcconfig; path = "Pods/Target Support Files/Pods/Pods.production.xcconfig"; sourceTree = SOURCE_ROOT; };
 		1E1A592C1A48CDD70048A9C9 /* NJOPFullPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFullPageViewController.h; sourceTree = "<group>"; };
 		1E1A592D1A48CDD70048A9C9 /* NJOPFullPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFullPageViewController.m; sourceTree = "<group>"; };
-		1E1A59681A49FB6D0048A9C9 /* NJOPDrawRectWithCircleCutout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPDrawRectWithCircleCutout.h; path = DrawShapes/NJOPDrawRectWithCircleCutout.h; sourceTree = "<group>"; };
-		1E1A59691A49FB6D0048A9C9 /* NJOPDrawRectWithCircleCutout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPDrawRectWithCircleCutout.m; path = DrawShapes/NJOPDrawRectWithCircleCutout.m; sourceTree = "<group>"; };
 		1E36BD1B1A4887D700221E7D /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		1E36BD201A48992700221E7D /* NJOPWelcomeContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPWelcomeContentController.h; sourceTree = "<group>"; };
 		1E36BD211A48992700221E7D /* NJOPWelcomeContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPWelcomeContentController.m; sourceTree = "<group>"; };
@@ -164,8 +161,8 @@
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A730033A1A53189800E5A42C /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		A730033B1A53189800E5A42C /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		A7380F661A5881AA008AB5F6 /* NJOPTripCompleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPTripCompleteCell.h; path = ../NJOPTripCompleteCell.h; sourceTree = "<group>"; };
-		A7380F671A5881AA008AB5F6 /* NJOPTripCompleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPTripCompleteCell.m; path = ../NJOPTripCompleteCell.m; sourceTree = "<group>"; };
+		A7380F661A5881AA008AB5F6 /* NJOPTripCompleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPTripCompleteCell.h; path = Tailwind/NJOPTripCompleteCell.h; sourceTree = "<group>"; };
+		A7380F671A5881AA008AB5F6 /* NJOPTripCompleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPTripCompleteCell.m; path = Tailwind/NJOPTripCompleteCell.m; sourceTree = "<group>"; };
 		A7433C011A531184009BD3EB /* NJOPSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSettingsTableViewController.h; sourceTree = "<group>"; };
 		A7433C021A531184009BD3EB /* NJOPSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsTableViewController.m; sourceTree = "<group>"; };
 		A7433C041A5311AE009BD3EB /* NJOPPushNotificationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPushNotificationsTableViewController.h; sourceTree = "<group>"; };
@@ -308,15 +305,6 @@
 				6167B98AFA8D41C092D41CCC /* libPods.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1E1A59671A49FB590048A9C9 /* DrawShapes */ = {
-			isa = PBXGroup;
-			children = (
-				1E1A59681A49FB6D0048A9C9 /* NJOPDrawRectWithCircleCutout.h */,
-				1E1A59691A49FB6D0048A9C9 /* NJOPDrawRectWithCircleCutout.m */,
-			);
-			name = DrawShapes;
 			sourceTree = "<group>";
 		};
 		30A4737019D9E41A0045D7AF = {
@@ -550,7 +538,6 @@
 		A7A03E9D1A42E554004BE417 /* elements */ = {
 			isa = PBXGroup;
 			children = (
-				1E1A59671A49FB590048A9C9 /* DrawShapes */,
 				A7A03EBF1A42F21D004BE417 /* NJOPNOFBOTableCell.h */,
 				A7A03EC01A42F21D004BE417 /* NJOPNOFBOTableCell.m */,
 				A7A03EBC1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.h */,
@@ -864,7 +851,6 @@
 				A7A03EAC1A42EB6D004BE417 /* NJOPTableView.m in Sources */,
 				A7A03EA61A42E626004BE417 /* UIView+NJOPStyle.m in Sources */,
 				A77680E31A406C7D00B2E7CF /* NNNUserDefaultsManager.m in Sources */,
-				1E1A596A1A49FB6D0048A9C9 /* NJOPDrawRectWithCircleCutout.m in Sources */,
 				1E1A592E1A48CDD70048A9C9 /* NJOPFullPageViewController.m in Sources */,
 				A77680E11A406C7D00B2E7CF /* NNNOAuthClient.m in Sources */,
 				A7C07DC81A5BB8510055126B /* NJOPCateringViewController.m in Sources */,
