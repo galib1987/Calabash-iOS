@@ -58,8 +58,6 @@
     self.offset = scrollView.contentOffset.x-viewWidth;
     
     [((NJOPWelcomeRootController *)self.parentViewController) handleScroll];
-    [((NJOPWelcomeContentController *)[self.viewControllers objectAtIndex:0]) handleScroll];
-    //[((NJOPWelcomeContentController *)[self.viewControllers objectAtIndex:1]) handleScroll];
 }
 
 @end

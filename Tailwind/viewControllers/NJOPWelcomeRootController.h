@@ -13,13 +13,13 @@
 @interface NJOPWelcomeRootController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 - (IBAction)skipButton:(id)sender;
 @property (strong, nonatomic) NJOPFullPageViewController *pageViewController;
+@property (strong, nonatomic) NJOPWelcomeContentController *nextPage;
 @property (strong, nonatomic) NSArray *pageBgs;
 @property (strong, nonatomic) NSArray *pageHeaders;
 @property (strong, nonatomic) NSArray *pageDescs;
 @property (strong, nonatomic) IBOutlet UIImageView *bgImage;
 
 @property int totalPages;
-@property int currentPage;
 
 - (void)handleScroll;
 
