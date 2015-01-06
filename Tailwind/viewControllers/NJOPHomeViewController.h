@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SimpleDataSourceTableViewController.h"
 
-@interface NJOPHomeViewController : UIViewController
+@interface NJOPHomeViewController : SimpleDataSourceTableViewController
+
+
+-(void)updateWithReservations:(NSArray*)reservations; // get the data for the person and update the view
 
 @end

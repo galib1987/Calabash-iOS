@@ -10,4 +10,14 @@
 
 @interface NJOPUpcomingFlightTableCell : NJOPTableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *arrivalAirportCityAndStateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scheduledDepartureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *departureTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *arrivalTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *departureAirportIdLabel;
+@property (weak, nonatomic) IBOutlet UILabel *arrivalAirportIdLabel;
+@property (weak, nonatomic) IBOutlet UILabel *departureAirportCityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *arrivalAirportCityLabel;
+
+
 @end
