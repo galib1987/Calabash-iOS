@@ -17,9 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    /*self.bgImage.image = [UIImage imageNamed:self.imageFile];
+    self.bgImage.image = [UIImage imageNamed:self.imageFile];
     self.headerLabel.text = self.headerText;
-    self.descLabel.text = self.descText;*/
+    self.descLabel.text = self.descText;
     //self.bgImage.frame = self.bgImage.frame.size.height;
 //    self.bgImage.bounds.size.height = self.bgImage.bounds.size.width;
     self.headerLabel.text = [self.headerLabel.text uppercaseString];
@@ -49,7 +49,31 @@
 */
 
 - (void)handleScroll {
-    //NSLog(self.headerText);
+    //NSLog(@"%lu", self.pageIndex);
+}
+
+- (void)fadeInDownItem:(UIView *) item {
+    CGRect origPosition = item.frame;
+    CGRect newPosition = origPosition;
+    newPosition.origin.y -= 15;
+    item.frame = newPosition;
+    item.alpha = 0;
+    [UIView animateWithDuration: 0.5
+                          delay: 0.2
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations: ^{
+                         item.frame = origPosition;
+                         item.alpha = 1;
+                     }
+                     completion: nil];
+}
+
+- (void)transitionIn {
+    if (!self.displayed) {
+        [self fadeInDownItem:self.headerLabel];
+        [self fadeInDownItem:self.descLabel];
+    }
+    self.displayed = true;
 }
 
 @end

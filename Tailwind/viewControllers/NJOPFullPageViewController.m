@@ -8,6 +8,7 @@
 
 #import "NJOPFullPageViewController.h"
 #import "NJOPWelcomeContentController.h"
+#import "NJOPWelcomeRootController.h"
 
 @interface NJOPFullPageViewController ()
 
@@ -49,14 +50,15 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+ */
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat viewWidth = self.view.frame.size.width;
     
     self.offset = scrollView.contentOffset.x-viewWidth;
     
-    //[((NJOPWelcomeContentController *)[self.viewControllers objectAtIndex:0]) handleScroll];
+    [((NJOPWelcomeRootController *)self.parentViewController) handleScroll];
+    [((NJOPWelcomeContentController *)[self.viewControllers objectAtIndex:0]) handleScroll];
     //[((NJOPWelcomeContentController *)[self.viewControllers objectAtIndex:1]) handleScroll];
 }
 
