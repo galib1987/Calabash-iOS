@@ -52,7 +52,7 @@
     
     [self.pageViewController willMoveToParentViewController:self];
     [self addChildViewController:self.pageViewController];
-    [self.view insertSubview:self.pageViewController.view atIndex:0];
+    [self.view insertSubview:self.pageViewController.view atIndex:1]; // behind skip button, in front of bg
     [self.pageViewController didMoveToParentViewController:self];
     
 }
