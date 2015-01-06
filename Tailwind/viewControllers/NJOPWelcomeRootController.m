@@ -18,9 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.pageHeaders = @[@"Welcome to NetJets", @"Placeholder", @"Placeholder2", @"Quick Booking", @"Notifications"];
-    self.pageDescs = @[@"Let us show you around.", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"You can submit a flight request in just a few taps. Then our Owner Services team will call you to iron out the details.", @"Allow us to notify you of important flight updates, without answering a phone call."];
-    self.pageBgs = @[@"UpcomingFlightsMap.png", @"NJOPFleet.png", @"UpcomingFlightsMap.png", @"NJOPFleet.png", @"UpcomingFlightsMap.png"];
+    self.totalPages = 5;
+    /*self.pageHeaders = @[@"Welcome to NetJets", @"Flights", @"Your Owner Services Team", @"Quick Booking", @"Notifications"];
+    self.pageDescs = @[@"Let us show you around.", @"See all your upcoming flights in one place.", @"Your team is now just a tap away—24 hours a day, seven days a week.", @"You can submit a flight request in just a few taps. Then our Owner Services team will call you to iron out the details.", @"Allow us to notify you of important flight updates, without answering a phone call."];
+    self.pageBgs = @[@"UpcomingFlightsMap.png", @"NJOPFleet.png", @"UpcomingFlightsMap.png", @"NJOPFleet.png", @"UpcomingFlightsMap.png"];*/
     
     /*self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcomeViewController"];
     self.pageViewController.dataSource = self;
@@ -86,28 +87,28 @@
         return nil;
     }
     index++;
-    if (index == [self.pageHeaders count]) {
+    if (index == self.totalPages) {
         return nil;
     }
     return [self viewControllerAtIndex:index];
 }
 
 - (NJOPWelcomeContentController *)viewControllerAtIndex:(NSUInteger) index {
-    if ([self.pageHeaders count] == 0 || index >= [self.pageHeaders count]) {
+    if (index >= self.totalPages) {
         return nil;
     }
     
-    NJOPWelcomeContentController *welcomeContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcomeContentController"];
-    welcomeContentViewController.imageFile = self.pageBgs[index];
+    NJOPWelcomeContentController *welcomeContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:[NSString stringWithFormat:@"Welcome%lu",(unsigned long)index]];
+    /*welcomeContentViewController.imageFile = self.pageBgs[index];
     welcomeContentViewController.headerText = self.pageHeaders[index];
-    welcomeContentViewController.descText = self.pageDescs[index];
+    welcomeContentViewController.descText = self.pageDescs[index];*/
     welcomeContentViewController.pageIndex = index;
     
     return welcomeContentViewController;
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return [self.pageHeaders count];
+    return self.totalPages;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {

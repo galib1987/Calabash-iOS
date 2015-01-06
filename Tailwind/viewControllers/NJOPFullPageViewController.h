@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NJOPFullPageViewController : UIPageViewController
+@interface NJOPFullPageViewController : UIPageViewController <UIScrollViewDelegate>
+
+@property (strong, nonatomic) UIScrollView *scrollView;
+@property CGFloat offset;
 
 @end

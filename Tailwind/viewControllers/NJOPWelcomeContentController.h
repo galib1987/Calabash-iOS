@@ -12,10 +12,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bgImage;
 @property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
+@property (weak, nonatomic) IBOutlet UIView *maskHole;
 
 @property NSUInteger pageIndex;
-@property NSString *imageFile;
-@property NSString *headerText;
-@property NSString *descText;
+
+- (void)handleScroll;
 
 @end

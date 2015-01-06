@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "NJOPWelcomeContentController.h"
 
-@interface NJOPWelcomeRootController : UIViewController <UIPageViewControllerDataSource>
+@interface NJOPWelcomeRootController : UIViewController <UIPageViewControllerDataSource, UIScrollViewDelegate>
 - (IBAction)skipButton:(id)sender;
 @property (strong, nonatomic) UIPageViewController *pageViewController;
-@property (strong, nonatomic) NSArray *pageBgs;
+/*@property (strong, nonatomic) NSArray *pageBgs;
 @property (strong, nonatomic) NSArray *pageHeaders;
-@property (strong, nonatomic) NSArray *pageDescs;
+@property (strong, nonatomic) NSArray *pageDescs;*/
+@property int totalPages;
 
 @end

@@ -17,9 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.bgImage.image = [UIImage imageNamed:self.imageFile];
+    /*self.bgImage.image = [UIImage imageNamed:self.imageFile];
     self.headerLabel.text = self.headerText;
-    self.descLabel.text = self.descText;
+    self.descLabel.text = self.descText;*/
+    //self.bgImage.frame = self.bgImage.frame.size.height;
+//    self.bgImage.bounds.size.height = self.bgImage.bounds.size.width;
+    self.maskHole.layer.cornerRadius = self.maskHole.frame.size.width/2;
+    /*NSLog(@"%f", self.bgImage.layer.cornerRadius);
+    NSLog(@"%f", self.bgImage.frame.size.width);
+    NSLog(@"%f", self.bgImage.frame.size.height);*/
+    self.maskHole.layer.masksToBounds = true;
+    /*self.bgImage.layer.borderWidth = 5.0;
+    self.bgImage.layer.borderColor = [UIColor grayColor].CGColor;*/
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,5 +45,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)handleScroll {
+    //NSLog(self.headerText);
+}
 
 @end
