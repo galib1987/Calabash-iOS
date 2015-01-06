@@ -7,7 +7,6 @@
 //
 
 #import "NJOPWelcomeRootController.h"
-#import "NJOPFullPageViewController.h"
 
 @interface NJOPWelcomeRootController ()
 
@@ -19,9 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.totalPages = 5;
-    /*self.pageHeaders = @[@"Welcome to NetJets", @"Flights", @"Your Owner Services Team", @"Quick Booking", @"Notifications"];
+    self.pageHeaders = @[@"Welcome to NetJets", @"Flights", @"Your Owner Services Team", @"Quick Booking", @"Notifications"];
     self.pageDescs = @[@"Let us show you around.", @"See all your upcoming flights in one place.", @"Your team is now just a tap away—24 hours a day, seven days a week.", @"You can submit a flight request in just a few taps. Then our Owner Services team will call you to iron out the details.", @"Allow us to notify you of important flight updates, without answering a phone call."];
-    self.pageBgs = @[@"UpcomingFlightsMap.png", @"NJOPFleet.png", @"UpcomingFlightsMap.png", @"NJOPFleet.png", @"UpcomingFlightsMap.png"];*/
+    self.pageBgs = @[@"welcome0.png", @"welcome1.png", @"welcome2.png", @"welcome3.png", @"welcome4.png"];
     
     /*self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcomeViewController"];
     self.pageViewController.dataSource = self;
@@ -43,12 +42,13 @@
     self.pageViewController = [[NJOPFullPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     self.pageViewController.dataSource = self;
+    self.pageViewController.delegate = self;
     
     //self.pageViewController.view.frame = CGRectMake(20, 20, self.view.frame.size.width-40, self.view.frame.size.height-40);
     
     NJOPWelcomeContentController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     [self.pageViewController willMoveToParentViewController:self];
     [self addChildViewController:self.pageViewController];
@@ -98,11 +98,12 @@
         return nil;
     }
     
-    NJOPWelcomeContentController *welcomeContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:[NSString stringWithFormat:@"Welcome%lu",(unsigned long)index]];
-    /*welcomeContentViewController.imageFile = self.pageBgs[index];
+    NJOPWelcomeContentController *welcomeContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcomeContentTemplate"];
+    welcomeContentViewController.imageFile = self.pageBgs[index];
     welcomeContentViewController.headerText = self.pageHeaders[index];
-    welcomeContentViewController.descText = self.pageDescs[index];*/
+    welcomeContentViewController.descText = self.pageDescs[index];
     welcomeContentViewController.pageIndex = index;
+    //NSLog(@"%@", welcomeContentViewController.pageIndex);
     
     return welcomeContentViewController;
 }
@@ -113,6 +114,24 @@
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
     return 0;
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
+    [(NJOPWelcomeContentController *)[pendingViewControllers objectAtIndex:0] transitionIn];
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
+    //NSLog(@"finished? %d", finished);
+    self.currentPage = (int)[[self.pageViewController.viewControllers objectAtIndex:0] pageIndex];
+}
+
+- (void)handleScroll {
+    CGFloat offset = self.currentPage*self.view.frame.size.width+self.pageViewController.offset;
+    /*CGRect offsetBounds = self.bgImage.bounds;
+    offsetBounds.origin.x = offset*-0.2;
+    self.bgImage.bounds = offsetBounds;*/
+    [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, offset*-0.2, 0)];
+    //NSLog(@"%f", self.bgImage.bounds.origin.x);
 }
 
 - (IBAction)skipButton:(id)sender {

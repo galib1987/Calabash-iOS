@@ -15,7 +15,13 @@
 @property (weak, nonatomic) IBOutlet UIView *maskHole;
 
 @property NSUInteger pageIndex;
+@property NSString *imageFile;
+@property NSString *headerText;
+@property NSString *descText;
+@property bool displayed;
 
 - (void)handleScroll;
+- (void)fadeInDownItem:(UIView *) item;
+- (void)transitionIn;
 
 @end
