@@ -186,6 +186,7 @@
                                     <outlet property="fromFBOLocationLabel" destination="wa0-QZ-GhQ" id="Bs5-5U-OA0"/>
                                     <outlet property="monthLabel" destination="9E5-DB-6rz" id="xZD-HR-LV3"/>
                                     <outlet property="tile" destination="sIA-PP-8Mr" id="GUa-Uj-KWr"/>
+                                    <outlet property="timeDurationLabel" destination="Q4v-0m-bhv" id="LMU-vK-enc"/>
                                     <outlet property="toFBOLocationLabel" destination="CSW-sT-hGu" id="CJo-Z5-Kos"/>
                                     <outlet property="weekdayLabel" destination="sty-3Y-hM1" id="dUK-eV-rK4"/>
                                     <segue destination="lU9-p4-Klb" kind="show" id="94k-Fp-uxB"/>
