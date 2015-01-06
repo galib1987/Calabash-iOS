@@ -29,13 +29,13 @@
     
     __weak NJOPFlightsDetailViewController* wself = self;
     
-    [NJOPClient GETReservationWithInfo:nil completion:^(NJOPReservation *reservation, NSError *error) {
-        [wself updateWithReservation:reservation];
+    [NJOPClient GETReservationsWithInfo:nil completion:^(NSArray *reservations, NSError *error) {
+        [wself updateWithReservation:reservations];
     }];
 }
 
--(void)updateWithReservation:(NJOPReservation*)reservation {
-    NSLog(@"%@", reservation);
+-(void)updateWithReservation:(NSArray *)reservations {
+    NSLog(@"%@", reservations);
     
     NSArray* sections = @[
                           @{

@@ -8,6 +8,7 @@
 
 #import "NJOPFlightsViewController.h"
 #import "NJOPClient+flights.h"
+#import "NJOPReservation.h"
 
 @interface NJOPFlightsViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -49,52 +50,35 @@
     
     __weak NJOPFlightsViewController* wself = self;
     
-    [NJOPClient GETReservationWithInfo:nil completion:^(NJOPReservation *reservation, NSError *error) {
-        [wself updateWithReservation:reservation];
+    [NJOPClient GETReservationsWithInfo:nil completion:^(NSArray *reservations, NSError *error) {
+        [wself updateWithReservation:reservations];
     }];
 }
 
--(void)updateWithReservation:(NJOPReservation*)reservation {
-    NSLog(@"%@", reservation);
+-(void)updateWithReservation:(NSArray *)reservations {
+    
+    NSMutableArray *kSimpleDataSourceCells = [[NSMutableArray alloc] init];
+    
+    for (NJOPReservation *reservation in reservations) {
+        NSMutableDictionary *kSimpleDataSourceKeys = [[NSMutableDictionary alloc] init];
+        [kSimpleDataSourceKeys addEntriesFromDictionary:@{
+                                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
+                                                          kSimpleDataSourceCellKeypaths					: @{
+                                                                  @"monthLabel.text" : @"AUG",
+                                                                  @"dateLabel.text" : reservation.departureDateString, // placeholder value
+                                                                  @"weekdayLabel.text" : @"Monday",
+                                                                  @"toFBOLocationLabel.text" : reservation.arrivalAirportCity,
+                                                                  @"fromFBOLocationLabel.text" : reservation.departureAirportCity,
+                                                                  @"timeDurationLabel.text" : [NSString stringWithFormat:@"%@", reservation.estimatedTripTimeNumber], // placeholder value
+                                                                  }
+                                                          
+                                         }];
+        [kSimpleDataSourceCells addObject:kSimpleDataSourceKeys];
+    }
     
     NSArray* sections = @[
                           @{
-                              kSimpleDataSourceSectionCellsKey : @[
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"monthLabel.text" : @"AUG",
-                                                  @"dateLabel.text" : @"4",
-                                                  @"weekdayLabel.text" : @"Monday",
-                                                  @"toFBOLocationLabel.text" : @"",
-                                                  @"fromFBOLocationLabel.text" : @"Teterboro",
-                                                  @"timeDurationLabel.text" : @"12:00PM-2:45PM",
-                                                  }
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"monthLabel.text" : @"AUG",
-                                                  @"dateLabel.text" : @"29",
-                                                  @"weekdayLabel.text" : @"Tuesday",
-                                                  @"toFBOLocationLabel.text" : @"TETERBORO",
-                                                  @"fromFBOLocationLabel.text" : @"Naples",
-                                                  @"timeDurationLabel.text" : @"12:00PM-2:45PM",
-                                                  }
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"monthLabel.text" : @"DEC",
-                                                  @"dateLabel.text" : @"28",
-                                                  @"weekdayLabel.text" : @"Monday",
-                                                  @"toFBOLocationLabel.text" : @"SAN FRANCISCO",
-                                                  @"fromFBOLocationLabel.text" : @"Nice/Cote D Azur",
-                                                  @"timeDurationLabel.text" : @"12:00PM-2:45PM",
-                                                  }
-                                          }
-                                      
-                                      ],
+                              kSimpleDataSourceSectionCellsKey : kSimpleDataSourceCells,
                               },
                           ];
     

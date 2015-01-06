@@ -25,5 +25,5 @@ typedef id(^ContinuationBlock)(id);
 @class NJOPReservation;
 
 @interface NJOPClient : NSObject
-+(void)GETReservationWithInfo:(NSDictionary*)reservationInfo completion:(void(^)(NJOPReservation*reservation,NSError*error))completionHandler;
++(void)GETReservationsWithInfo:(NSDictionary*)reservationInfo completion:(void(^)(NSArray *reservations,NSError*error))completionHandler;
 @end
