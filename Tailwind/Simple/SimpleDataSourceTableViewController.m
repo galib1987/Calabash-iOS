@@ -132,9 +132,6 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"Source Controller = %@", [segue sourceViewController]);
-    NSLog(@"Destination Controller = %@", [segue destinationViewController]);
-    NSLog(@"Segue Identifier = %@", [segue identifier]);
     
 }
 

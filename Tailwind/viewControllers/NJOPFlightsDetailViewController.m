@@ -44,66 +44,49 @@
                                       @{
                                           kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightDetailCell",
                                           kSimpleDataSourceCellKeypaths					: @{
-                                                  @"guaranteedAircraftTypeDescriptionLabel.text" : @"",
-                                                  @"tailNumberLabel.text" : @"",
-                                                  @"departureDateLabel.text" : @"",
-                                                  @"departureFBONameLabel.text" : _reservation.departureFboName,
-                                                  @"departureTimeLabel.text" : @"",
-                                                  @"departureAirportIdLabel.text" : @"",
-                                                  @"departureAirportCityLabel.text" : @"",
-                                                  @"arrivalTimeLabel.text" : @"",
-                                                  @"arrivalAirportIdLabel.text" : @"",
-                                                  @"arrivalAirportCityLabel.text" : @"",
-                                                  @"arrivalFBONameLabel.text" : @"",
-                                                  @"departureWeatherDateLabel.text" : @"",
-                                                  @"departureAirportCityAndStateLabel.text" : @"",
-                                                  @"departureWeatherTimeLabel.text" : @"",
-                                                  @"departureTemperatureLabel.text" : @"",
-//                                                  @"departureWeatherIcon" : ,
-                                                  @"arrivalWeatherDateLabel.text" : @"",
-                                                  @"arrivalAirportCityAndStateLabel.text" : @"",
-                                                  @"arrivalWeatherTimeLabel.text" : @"",
-                                                  @"arrivalTemperatureLabel.text" : @"",
-//                                                  @"arrivalWeatherIcon" : ,
                                                   }
                                           },
+//                                      @{
+//                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
+//                                          kSimpleDataSourceCellKeypaths					: @{
+//                                                  @"topLabel.text" : @"Your Plane",
+//                                                  @"detailLabel.text" : @"Cessna Citation Encore+",
+//                                                  }
+//                                          },
                                       @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"topLabel.text" : @"Your Plane",
-                                                  @"detailLabel.text" : @"Cessna Citation Encore+",
-                                                  }
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
+                                          kSimpleDataSourceCellIdentifierKey			: @"GroundInfoCell",
+                                          kSimpleDataSourceCellSegueAction : @"showGround",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Ground Transportation",
                                                   @"detailLabel.text" : @"Requested",
                                                   }
                                           },
                                       @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
+                                          kSimpleDataSourceCellIdentifierKey			: @"CrewInfoCell",
+                                          kSimpleDataSourceCellSegueAction : @"showCrew",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Your Crew",
                                                   @"detailLabel.text" : @"Captain Brad Hanshaw",
                                                   }
                                           },
+//                                      @{
+//                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
+//                                          kSimpleDataSourceCellKeypaths					: @{
+//                                                  @"topLabel.text" : @"Passenger Manifest",
+//                                                  @"detailLabel.text" : @"2 Passengers",
+//                                                  }
+//                                          },
                                       @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"topLabel.text" : @"Passenger Manifest",
-                                                  @"detailLabel.text" : @"2 Passengers",
-                                                  }
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
+                                          kSimpleDataSourceCellIdentifierKey			: @"CateringInfoCell",
+                                          kSimpleDataSourceCellSegueAction : @"showCatering",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Catering",
                                                   @"detailLabel.text" : @"Requested",
                                                   }
                                           },
                                       @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
+                                          kSimpleDataSourceCellIdentifierKey			: @"AdvisoryNotesInfoCell",
+                                          kSimpleDataSourceCellSegueAction : @"showAdvisoryNotes",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Advisory Notes",
                                                   @"detailLabel.text" : @"Please Read",

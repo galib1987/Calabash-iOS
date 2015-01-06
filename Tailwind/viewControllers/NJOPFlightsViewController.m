@@ -66,11 +66,11 @@
                                                           kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
                                                           kSimpleDataSourceCellKeypaths					: @{
                                                                   @"monthLabel.text" : @"AUG",
-                                                                  @"dateLabel.text" : reservation.departureDateString, // placeholder value
+                                                                  @"dateLabel.text" : [NSString stringWithFormat:@"%@", [reservation.departureDateString substringWithRange:NSMakeRange(4, 2)]], // placeholder value
                                                                   @"weekdayLabel.text" : @"Monday",
                                                                   @"toFBOLocationLabel.text" : reservation.arrivalAirportCity,
                                                                   @"fromFBOLocationLabel.text" : reservation.departureAirportCity,
-                                                                  @"timeDurationLabel.text" : [NSString stringWithFormat:@"%@", reservation.estimatedTripTimeNumber], // placeholder value
+                                                                  @"timeDurationLabel.text" : @"12:00PM - 2:45AM", // placeholder value
                                                                   },
                                                           kSimpleDataSourceCellItem : reservation,
                                                           kSimpleDataSourceCellSegueAction : @"showDetail",
@@ -81,10 +81,6 @@
     }
     
     self.reservations = kSimpleDataSourceCells;
-    
-    NSLog(@"I have: %@", kSimpleDataSourceCells[0][kSimpleDataSourceCellItem]);
-    NSLog(@"I have: %@", kSimpleDataSourceCells[1][kSimpleDataSourceCellItem]);
-    NSLog(@"I have: %@", kSimpleDataSourceCells[2][kSimpleDataSourceCellItem]);
     
     NSArray* sections = @[
                           @{
