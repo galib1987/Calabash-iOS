@@ -22,7 +22,9 @@
     self.descLabel.text = self.descText;*/
     //self.bgImage.frame = self.bgImage.frame.size.height;
 //    self.bgImage.bounds.size.height = self.bgImage.bounds.size.width;
+    self.headerLabel.text = [self.headerLabel.text uppercaseString];
     self.maskHole.layer.cornerRadius = self.maskHole.frame.size.width/2;
+    self.view.backgroundColor = [UIColor clearColor];
     /*NSLog(@"%f", self.bgImage.layer.cornerRadius);
     NSLog(@"%f", self.bgImage.frame.size.width);
     NSLog(@"%f", self.bgImage.frame.size.height);*/
