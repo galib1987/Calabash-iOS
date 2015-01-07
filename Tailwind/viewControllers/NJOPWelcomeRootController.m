@@ -58,7 +58,7 @@
     NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"welcome-items" ofType:@"json"]];
     NSDictionary* welcomeItems = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     self.items = welcomeItems[@"items"];
-    self.totalPages = [self.items count];
+    self.totalPages = (int)[self.items count];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
@@ -119,11 +119,13 @@
 
 - (void)handleScroll {
     CGFloat offset = self.pageViewController.currentPage*self.view.frame.size.width+self.pageViewController.offset;
+    CGFloat percentage = offset/(self.totalPages*self.view.frame.size.width);
     /*CGRect offsetBounds = self.bgImage.bounds;
      offsetBounds.origin.x = offset*-0.2;
      self.bgImage.bounds = offsetBounds;*/
-    [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, offset*-0.2, 0)];
-    //NSLog(@"%f", self.bgImage.bounds.origin.x);
+    CGFloat bgOffscreenWidth = self.bgImage.frame.size.width - self.view.frame.size.width;
+    [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, (percentage*-300)-bgOffscreenWidth/2, 0)];
+    NSLog(@"%f", percentage);
     
     [[self.pageViewController.viewControllers objectAtIndex:0] handleScroll:self.pageViewController.offset];
     if (self.nextPage && self.nextPage.pageIndex != self.pageViewController.currentPage) {

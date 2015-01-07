@@ -54,7 +54,7 @@
     
     CGFloat offscreenWidth = self.bgImage.frame.size.width-self.maskHole.frame.size.width;
     CGFloat offscreenHeight = self.maskHole.frame.origin.y;
-    [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, (percentage-1)*100-offscreenWidth/2, -offscreenHeight)];
+    [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, (percentage-1)*150-offscreenWidth/2, -offscreenHeight)];
     //NSLog(@"the offset for %d is %f", self.pageIndex, (percentage)*50);
     [self fadeInDownItem:self.headerLabel toPercentage:percentage];
     [self fadeInDownItem:self.descLabel toPercentage:percentage];
