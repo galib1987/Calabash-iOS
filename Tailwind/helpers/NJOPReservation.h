@@ -10,6 +10,7 @@
 
 @interface NJOPReservation : NSObject
 @property(nonatomic, strong) NSNumber* reservationId;
+@property (nonatomic, strong) NSString *aircraftType;
 
 @property(nonatomic, strong) NSTimeZone* departureTimeZone;
 @property(nonatomic, strong) NSDate* departureDate;

@@ -65,9 +65,9 @@
         [kSimpleDataSourceKeys addEntriesFromDictionary:@{
                                                           kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
                                                           kSimpleDataSourceCellKeypaths					: @{
-                                                                  @"monthLabel.text" : @"AUG",
+                                                                  @"monthLabel.text" : @"JAN",
                                                                   @"dateLabel.text" : [NSString stringWithFormat:@"%@", [reservation.departureDateString substringWithRange:NSMakeRange(4, 2)]], // placeholder value
-                                                                  @"weekdayLabel.text" : @"Monday",
+                                                                  @"weekdayLabel.text" : @"Wednesday",
                                                                   @"toFBOLocationLabel.text" : reservation.arrivalAirportCity,
                                                                   @"fromFBOLocationLabel.text" : reservation.departureAirportCity,
                                                                   @"timeDurationLabel.text" : @"12:00PM - 2:45AM", // placeholder value
@@ -99,7 +99,7 @@
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     NSDictionary *representationDict = [self.reservations objectAtIndex:indexPath.row];
-    NSLog(@"%@", representationDict);
+    NSLog(@"HEY HEY HEY HEY %@", representationDict);
     
     if ([segue.identifier isEqualToString:@"showDetail"] ) {
         
