@@ -85,6 +85,7 @@
             NJOPReservation* reservation = [NJOPReservation new];
             
             reservation.reservationId = representation[@"reservationId"];
+            reservation.aircraftType = representation[@"guaranteedAircraftTypeDescription"];
             reservation.departureTimeZone = [NSTimeZone timeZoneWithAbbreviation:representation[@"departureTimeZoneFormat"]];
             reservation.departureDate = [jsonDateFormatter dateFromString:representation[@"etdGmt"]];
             reservation.departureTime = [reservation.departureDate formattedDateWithFormat:@"hh:mma zzz" timeZone:reservation.departureTimeZone];

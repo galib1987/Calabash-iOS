@@ -18,4 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *flightTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *projectedRemainingHoursLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *viewFlightDetailsButton;
+
 @end

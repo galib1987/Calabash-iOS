@@ -27,4 +27,6 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *travelTimeLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *viewFlightDetailsButton;
+
 @end

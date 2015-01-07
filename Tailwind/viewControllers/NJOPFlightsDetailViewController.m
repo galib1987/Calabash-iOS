@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"I GOT HERE WITH A RESERVATION %@", self.reservation);
+    [self updateWithReservation];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,17 +26,19 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)loadDataSource {
-    
-    __weak NJOPFlightsDetailViewController* wself = self;
-    
-    [NJOPClient GETReservationsWithInfo:nil completion:^(NSArray *reservations, NSError *error) {
-        [wself updateWithReservation:reservations];
-    }];
-}
+//-(void)loadDataSource {
+//    
+//    __weak NJOPFlightsDetailViewController* wself = self;
+//    
+//    [NJOPClient GETReservationsWithInfo:nil completion:^(NSArray *reservations, NSError *error) {
+//        [wself updateWithReservation:reservations];
+//    }];
+//}
 
--(void)updateWithReservation:(NSArray *)reservations {
-    NSLog(@"%@", reservations);
+-(void)updateWithReservation {
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd MMM, YYYY"];
     
     NSArray* sections = @[
                           @{
@@ -44,6 +46,25 @@
                                       @{
                                           kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightDetailCell",
                                           kSimpleDataSourceCellKeypaths					: @{
+                                                  @"guaranteedAircraftTypeDescriptionLabel.text" : _reservation.aircraftType,
+                                                  @"tailNumberLabel.text" : @"N618QS",
+                                                  @"departureDateLabel.text" : [formatter stringFromDate:_reservation.departureDate],
+                                                  @"departureFBONameLabel.text" : _reservation.departureFboName,
+                                                  @"departureTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                                  @"departureAirportIdLabel.text" : _reservation.departureAirportId,
+                                                  @"departureAirportCityLabel.text" : _reservation.departureAirportCity,
+                                                  @"arrivalTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                                  @"arrivalAirportIdLabel.text" : _reservation.arrivalAirportId,
+                                                  @"arrivalAirportCityLabel.text" : _reservation.arrivalAirportCity,
+                                                  @"arrivalFBONameLabel.text" : _reservation.arrivalFboName,
+                                                  @"departureWeatherDateLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                                  @"departureAirportCityAndStateLabel.text" : _reservation.arrivalAirportCity,
+                                                  @"departureWeatherTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                                  @"departureTemperatureLabel.text" : @"39°",
+                                                  @"arrivalWeatherDateLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                                  @"arrivalAirportCityAndStateLabel.text" : _reservation.arrivalAirportCity,
+                                                  @"arrivalWeatherTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                                  @"arrivalTemperatureLabel.text" : @"85°",
                                                   }
                                           },
 //                                      @{
