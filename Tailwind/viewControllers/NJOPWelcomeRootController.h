@@ -19,8 +19,12 @@
 @property (strong, nonatomic) NSArray *pageDescs;
 @property (strong, nonatomic) IBOutlet UIImageView *bgImage;
 
+
+@property (strong, nonatomic) NSArray *items;
+
 @property int totalPages;
 
 - (void)handleScroll;
+-(void)getWelcomeItems;
 
 @end
