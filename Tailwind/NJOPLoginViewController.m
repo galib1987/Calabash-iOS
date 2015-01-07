@@ -139,6 +139,11 @@
 		[coverView addSubview:label];
 		[coverView setUserInteractionEnabled:NO];
 		[self.view addSubview:coverView];
+        [self.passwordTextField resignFirstResponder];
+        [self.userNameTextField resignFirstResponder];
+
+        
+        
 
 		__weak NJOPLoginViewController* wself = self;
 		self.loginTask = [[NJOPClient loginWithUserInputs:self.userInput] continueWithBlock:^id(id result) {
