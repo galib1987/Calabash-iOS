@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *debuga;*/
 @property (weak, nonatomic) IBOutlet UIButton *buttonA;
 @property (weak, nonatomic) IBOutlet UIButton *buttonB;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleTopSpace;
 
 @property NSUInteger pageIndex;
 @property NSString *imageFile;
