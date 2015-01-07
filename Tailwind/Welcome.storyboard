@@ -452,7 +452,7 @@
                                     <rect key="frame" x="16" y="698" width="768" height="24"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RDH-cf-Mq8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Desc" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RDH-cf-Mq8">
                                 <rect key="frame" x="16" y="453" width="568" height="18"/>
                                 <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -464,7 +464,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJv-xs-ssd">
                                 <rect key="frame" x="150" y="50" width="300" height="300"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B2k-fe-h3G">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B2k-fe-h3G">
                                         <rect key="frame" x="-75" y="-50" width="450" height="600"/>
                                     </imageView>
                                 </subviews>
@@ -486,10 +486,10 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvY-pg-rSy">
-                                <rect key="frame" x="16" y="491" width="280" height="68"/>
+                                <rect key="frame" x="16" y="487" width="280" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="rxw-Jc-dKV"/>
+                                    <constraint firstAttribute="height" constant="56" id="rxw-Jc-dKV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="15"/>
                                 <state key="normal" title="ButtonA">
@@ -515,11 +515,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Um-or-nVY">
-                                <rect key="frame" x="304" y="491" width="280" height="68"/>
+                                <rect key="frame" x="304" y="487" width="280" height="56"/>
                                 <color key="backgroundColor" red="0.39417493339999998" green="0.89303791519999998" blue="0.53008496760000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="MSV-J3-bed"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="15"/>
                                 <state key="normal" title="ButtonB">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -548,18 +545,21 @@
                             <constraint firstItem="RDH-cf-Mq8" firstAttribute="leading" secondItem="Zpg-rn-qUQ" secondAttribute="leading" id="BC4-xn-Lwu"/>
                             <constraint firstAttribute="trailing" secondItem="RDH-cf-Mq8" secondAttribute="trailing" constant="16" id="DxJ-sI-XNg"/>
                             <constraint firstItem="IJv-xs-ssd" firstAttribute="height" secondItem="jPt-lZ-Wea" secondAttribute="height" multiplier="0.5" id="Ioi-20-BTd"/>
-                            <constraint firstItem="tvY-pg-rSy" firstAttribute="top" secondItem="RDH-cf-Mq8" secondAttribute="bottom" constant="20" id="JGW-rr-dhN"/>
+                            <constraint firstItem="tvY-pg-rSy" firstAttribute="top" secondItem="RDH-cf-Mq8" secondAttribute="bottom" constant="16" id="JGW-rr-dhN"/>
                             <constraint firstItem="mfc-QZ-oMd" firstAttribute="trailing" secondItem="Zpg-rn-qUQ" secondAttribute="trailing" id="Mlb-HP-scD"/>
                             <constraint firstItem="B2k-fe-h3G" firstAttribute="height" secondItem="jPt-lZ-Wea" secondAttribute="height" id="NSK-Eh-wUu"/>
                             <constraint firstItem="Zpg-rn-qUQ" firstAttribute="leading" secondItem="jPt-lZ-Wea" secondAttribute="leading" constant="16" id="Snz-T9-sSZ"/>
                             <constraint firstAttribute="trailing" secondItem="Zpg-rn-qUQ" secondAttribute="trailing" constant="16" id="UuX-2r-vCz"/>
                             <constraint firstItem="tvY-pg-rSy" firstAttribute="top" secondItem="3Um-or-nVY" secondAttribute="top" id="VPt-m0-Dnk"/>
                             <constraint firstAttribute="centerX" secondItem="IJv-xs-ssd" secondAttribute="centerX" id="dSY-KS-lWx"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tvY-pg-rSy" secondAttribute="bottom" constant="35" id="gOV-gy-s7e"/>
                             <constraint firstItem="Zpg-rn-qUQ" firstAttribute="trailing" secondItem="3Um-or-nVY" secondAttribute="trailing" id="ihS-pQ-P4H"/>
                             <constraint firstItem="RDH-cf-Mq8" firstAttribute="top" secondItem="mfc-QZ-oMd" secondAttribute="bottom" constant="15" id="jbJ-ws-KXl"/>
                             <constraint firstItem="3Um-or-nVY" firstAttribute="leading" secondItem="tvY-pg-rSy" secondAttribute="trailing" constant="8" id="q2s-qR-P6c"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RDH-cf-Mq8" secondAttribute="bottom" constant="35" id="q6x-bw-dEu"/>
+                            <constraint firstItem="3Um-or-nVY" firstAttribute="height" secondItem="tvY-pg-rSy" secondAttribute="height" id="sSg-KK-jIT"/>
                             <constraint firstItem="Zpg-rn-qUQ" firstAttribute="top" secondItem="IJv-xs-ssd" secondAttribute="bottom" constant="48" id="sWi-LF-y2t"/>
+                            <constraint firstItem="3Um-or-nVY" firstAttribute="bottom" secondItem="tvY-pg-rSy" secondAttribute="bottom" id="sgT-9k-Yef"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -574,6 +574,7 @@
                         <outlet property="descLabel" destination="RDH-cf-Mq8" id="4Hs-t2-zNt"/>
                         <outlet property="headerLabel" destination="Zpg-rn-qUQ" id="Cep-RB-JLo"/>
                         <outlet property="maskHole" destination="IJv-xs-ssd" id="fY5-Yh-UrD"/>
+                        <outlet property="titleTopSpace" destination="sWi-LF-y2t" id="i3J-bC-keg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OsF-LO-VXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
