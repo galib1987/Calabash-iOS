@@ -21,6 +21,7 @@
 
 
 @property (strong, nonatomic) NSArray *items;
+@property (strong, nonatomic) NSMutableArray *displayedItems;
 
 @property int totalPages;
 

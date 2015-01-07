@@ -56,16 +56,24 @@
     CGFloat offscreenHeight = self.maskHole.frame.origin.y;
     [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, (percentage-1)*150-offscreenWidth/2, -offscreenHeight)];
     //NSLog(@"the offset for %d is %f", self.pageIndex, (percentage)*50);
-    [self fadeInDownItem:self.headerLabel toPercentage:percentage];
-    [self fadeInDownItem:self.descLabel toPercentage:percentage];
+    
+    if (!self.displayed) {
+        [self fadeInDownItem:self.headerLabel toPercentage:percentage];
+        [self fadeInDownItem:self.descLabel toPercentage:percentage];
+    }
     /*self.debuga.text = [NSString stringWithFormat: @"%.2f", percentage];
     self.debugb.text = [NSString stringWithFormat: @"%.2f", percentage];*/
     
 }
 
 - (void)fadeInDownItem:(UIView *) item toPercentage:(CGFloat) percentage {
-    item.alpha = pow(fabsf(percentage), 3); // Cubed for ease out
-    item.bounds = CGRectOffset(item.bounds, 0, percentage*-10);
+    CGFloat curvedPercentage = pow(fabsf(percentage), 3); // Cubed for ease out
+    item.alpha = curvedPercentage;
+    //item.bounds = CGRectOffset(item.bounds, 0, percentage*-10);
+    //[item.layer setBounds:CGRectOffset(item.bounds, 0, (percentage-1)*-100)];
+    [item setTransform:CGAffineTransformMakeTranslation(0, (curvedPercentage-1)*20)];
+    //NSLog(@"bounds: %f", item.layer.bounds.origin.y);
+    //[item setFrame:CGRectOffset(item.bounds, <#CGFloat dx#>, <#CGFloat dy#>)]
 }
 
 - (void)transitionIn {
@@ -73,6 +81,9 @@
         [self fadeInDownItem:self.headerLabel];
         [self fadeInDownItem:self.descLabel];
     }*/
+}
+
+- (void)didFinishDisplay {
     self.displayed = true;
 }
 
