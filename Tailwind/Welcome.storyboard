@@ -30,7 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcomebg" translatesAutoresizingMaskIntoConstraints="NO" id="i7A-q5-rgI">
-                                <rect key="frame" x="-300" y="0.0" width="1200" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdO-gj-Dg5">
                                 <rect key="frame" x="553" y="28" width="31" height="29"/>
@@ -46,7 +46,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="i7A-q5-rgI" firstAttribute="height" secondItem="3sF-uc-iSS" secondAttribute="height" id="9cR-g7-S14"/>
-                            <constraint firstItem="i7A-q5-rgI" firstAttribute="width" secondItem="3sF-uc-iSS" secondAttribute="width" multiplier="2" id="iIq-8z-xQK"/>
+                            <constraint firstItem="i7A-q5-rgI" firstAttribute="width" secondItem="3sF-uc-iSS" secondAttribute="width" id="iIq-8z-xQK"/>
                             <constraint firstItem="cdO-gj-Dg5" firstAttribute="top" secondItem="16V-oE-E3X" secondAttribute="bottom" constant="8" id="mP4-Z2-l06"/>
                             <constraint firstAttribute="centerY" secondItem="i7A-q5-rgI" secondAttribute="centerY" id="sHc-8v-gRg"/>
                             <constraint firstItem="cdO-gj-Dg5" firstAttribute="trailing" secondItem="3sF-uc-iSS" secondAttribute="trailingMargin" id="ug0-fq-PNa"/>
