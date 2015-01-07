@@ -8,17 +8,38 @@
 
 #import "NJOPFlightsViewController.h"
 #import "NJOPClient+flights.h"
+#import "NJOPReservation.h"
+#import "NJOPFlightsDetailViewController.h"
 
 @interface NJOPFlightsViewController ()
-
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (strong, nonatomic) NSArray *reservations;
 @end
 
 @implementation NJOPFlightsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
+    UIRefreshControl *refreshMe = [[UIRefreshControl alloc] init];
+    refreshMe.backgroundColor = [UIColor blackColor];
+    refreshMe.tintColor = [UIColor whiteColor];
+    refreshMe.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull Me"];
+    [refreshMe addTarget:self action:@selector(refreshTable:)
+        forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshMe;
 
+}
+
+- (void)refreshTable:(UIRefreshControl *)refreshMe
+{
+    refreshMe.attributedTitle = [[NSAttributedString alloc] initWithString:
+                                 @"Refreshing data..."];
+    NSLog(@"Refreshing!!");
+    [refreshMe endRefreshing];
+    refreshMe.attributedTitle = [[NSAttributedString alloc] initWithString:
+                                 @"Refreshed"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,67 +51,63 @@
     
     __weak NJOPFlightsViewController* wself = self;
     
-    [NJOPClient GETReservationWithInfo:nil completion:^(NJOPReservation *reservation, NSError *error) {
-        [wself updateWithReservation:reservation];
+    [NJOPClient GETReservationsWithInfo:nil completion:^(NSArray *reservations, NSError *error) {
+        [wself updateWithReservation:reservations];
     }];
 }
 
--(void)updateWithReservation:(NJOPReservation*)reservation {
-    NSLog(@"%@", reservation);
+-(void)updateWithReservation:(NSArray *)reservations {
+    
+    NSMutableArray *kSimpleDataSourceCells = [[NSMutableArray alloc] init];
+    
+    for (NJOPReservation *reservation in reservations) {
+        NSMutableDictionary *kSimpleDataSourceKeys = [[NSMutableDictionary alloc] init];
+        [kSimpleDataSourceKeys addEntriesFromDictionary:@{
+                                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
+                                                          kSimpleDataSourceCellKeypaths					: @{
+                                                                  @"monthLabel.text" : @"AUG",
+                                                                  @"dateLabel.text" : [NSString stringWithFormat:@"%@", [reservation.departureDateString substringWithRange:NSMakeRange(4, 2)]], // placeholder value
+                                                                  @"weekdayLabel.text" : @"Monday",
+                                                                  @"toFBOLocationLabel.text" : reservation.arrivalAirportCity,
+                                                                  @"fromFBOLocationLabel.text" : reservation.departureAirportCity,
+                                                                  @"timeDurationLabel.text" : @"12:00PM - 2:45AM", // placeholder value
+                                                                  },
+                                                          kSimpleDataSourceCellItem : reservation,
+                                                          kSimpleDataSourceCellSegueAction : @"showDetail",
+                                                          
+                                         }];
+        
+        [kSimpleDataSourceCells addObject:kSimpleDataSourceKeys];
+    }
+    
+    self.reservations = kSimpleDataSourceCells;
     
     NSArray* sections = @[
                           @{
-                              kSimpleDataSourceSectionCellsKey : @[
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"monthLabel.text" : @"AUG",
-                                                  @"dateLabel.text" : @"4",
-                                                  @"weekdayLabel.text" : @"Monday",
-                                                  @"toFBOLocationLabel.text" : @"",
-                                                  @"fromFBOLocationLabel.text" : @"Teterboro",
-                                                  @"timeDurationLabel.text" : @"12:00PM-2:45PM",
-                                                  }
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"monthLabel.text" : @"AUG",
-                                                  @"dateLabel.text" : @"29",
-                                                  @"weekdayLabel.text" : @"Tuesday",
-                                                  @"toFBOLocationLabel.text" : @"TETERBORO",
-                                                  @"fromFBOLocationLabel.text" : @"Naples",
-                                                  @"timeDurationLabel.text" : @"12:00PM-2:45PM",
-                                                  }
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"monthLabel.text" : @"DEC",
-                                                  @"dateLabel.text" : @"28",
-                                                  @"weekdayLabel.text" : @"Monday",
-                                                  @"toFBOLocationLabel.text" : @"SAN FRANCISCO",
-                                                  @"fromFBOLocationLabel.text" : @"Nice/Cote D Azur",
-                                                  @"timeDurationLabel.text" : @"12:00PM-2:45PM",
-                                                  }
-                                          }
-                                      
-                                      ],
+                              kSimpleDataSourceSectionCellsKey : kSimpleDataSourceCells,
                               },
                           ];
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
     self.dataSource.title = @"FLIGHTS";
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)segmentedControlAction:(id)sender {
+    
 }
-*/
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSDictionary *representationDict = [self.reservations objectAtIndex:indexPath.row];
+    NSLog(@"%@", representationDict);
+    
+    if ([segue.identifier isEqualToString:@"showDetail"] ) {
+        
+        NJOPFlightsDetailViewController *viewController = segue.destinationViewController;
+        viewController.reservation = representationDict[@"CellItem"];
+    }
+}
+
+
 
 @end

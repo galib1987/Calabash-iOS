@@ -23,7 +23,7 @@
 
 @implementation NJOPClient
 
-+(void)GETReservationWithInfo:(NSDictionary *)reservationInfo completion:(void (^)(NJOPReservation *reservation, NSError *error))completionHandler {
++(void)GETReservationsWithInfo:(NSDictionary *)reservationInfo completion:(void (^)(NSArray *reservations, NSError *error))completionHandler {
     NSString *apiURL = @"";
     NSData *data = nil;
     NSString *jsonString = @"";
@@ -76,53 +76,61 @@
 	[jsonDateFormatter setDateFormat:jsonDateFormat];
 
     // Need to return an NSArray of reservations
-    NSArray *reservations;
-	NJOPReservation* reservation = [NJOPReservation new];
-
-    if (representation != nil) {
-        reservation.reservationId = representation[@"reservationId"];
-        reservation.departureTimeZone = [NSTimeZone timeZoneWithAbbreviation:representation[@"departureTimeZoneFormat"]];
-        reservation.departureDate = [jsonDateFormatter dateFromString:representation[@"etdGmt"]];
-        reservation.departureTime = [reservation.departureDate formattedDateWithFormat:@"hh:mma zzz" timeZone:reservation.departureTimeZone];
-        
-        reservation.arrivalTimeZone = [NSTimeZone timeZoneWithAbbreviation:representation[@"arrivalTimeZoneFormat"]];
-        reservation.arrivalDate = [jsonDateFormatter dateFromString:representation[@"etaGmt"]];
-        reservation.arrivalTime = [reservation.arrivalDate formattedDateWithFormat:@"hh:mma zzz" timeZone:reservation.arrivalTimeZone];
-        
-        reservation.departureDateString = [reservation.departureDate njop_spacialDate:@"MMM DD yyyy"
+    NSMutableArray *results = [[NSMutableArray alloc] init];
+    
+    
+    for (NSDictionary *representation in requests) {
+        if (representation != nil) {
+            
+            NJOPReservation* reservation = [NJOPReservation new];
+            
+            reservation.reservationId = representation[@"reservationId"];
+            reservation.departureTimeZone = [NSTimeZone timeZoneWithAbbreviation:representation[@"departureTimeZoneFormat"]];
+            reservation.departureDate = [jsonDateFormatter dateFromString:representation[@"etdGmt"]];
+            reservation.departureTime = [reservation.departureDate formattedDateWithFormat:@"hh:mma zzz" timeZone:reservation.departureTimeZone];
+            
+            reservation.arrivalTimeZone = [NSTimeZone timeZoneWithAbbreviation:representation[@"arrivalTimeZoneFormat"]];
+            reservation.arrivalDate = [jsonDateFormatter dateFromString:representation[@"etaGmt"]];
+            reservation.arrivalTime = [reservation.arrivalDate formattedDateWithFormat:@"hh:mma zzz" timeZone:reservation.arrivalTimeZone];
+            
+            reservation.departureDateString = [reservation.departureDate njop_spacialDate:@"MMM DD yyyy"
+                                                                                 timeZone:reservation.departureTimeZone];
+            
+            reservation.arrivalDateString = [reservation.arrivalDate njop_spacialDate:@"MMM DD yyyy"
                                                                              timeZone:reservation.departureTimeZone];
+            
+            reservation.arrivalAirportId = representation[@"arrivalAirportId"];
+            reservation.departureAirportId = representation[@"departureAirportId"];
+            
+            reservation.tailNumber = representation[@"tailNumber"];
+            
+            reservation.departureFboName = representation[@"departureFboName"];
+            reservation.arrivalFboName = representation[@"arrivalFboName"];
+            
+            reservation.departureAirportCity = representation[@"departureAirportCity"];
+            reservation.arrivalAirportCity = representation[@"arrivalAirportCity"];
+            
+            reservation.estimatedTripTimeNumber = representation[@"estimatedTripTime"];
+            reservation.travelHours = @(reservation.estimatedTripTimeNumber.integerValue);
+            reservation.travelMinutes = @(ceilf((reservation.estimatedTripTimeNumber.floatValue - [reservation.travelHours floatValue])* 60));
+            
+            reservation.travelTime = [NSString stringWithFormat:@"%@h %@m",
+                                      reservation.travelHours,
+                                      reservation.travelMinutes];
+            reservation.stops = @([representation[@"noOfFuelStops"] integerValue]);
+            reservation.stopsText = [reservation.stops boolValue] ? @"" : @"Non Stop";
+            reservation.rawData = jsonString;
+            
+            [results addObject:reservation];
+        }
         
-        reservation.arrivalDateString = [reservation.arrivalDate njop_spacialDate:@"MMM DD yyyy"
-                                                                         timeZone:reservation.departureTimeZone];
-        
-        reservation.arrivalAirportId = representation[@"arrivalAirportId"];
-        reservation.departureAirportId = representation[@"departureAirportId"];
-        
-        reservation.tailNumber = representation[@"tailNumber"];
-        
-        reservation.departureFboName = representation[@"departureFboName"];
-        reservation.arrivalFboName = representation[@"arrivalFboName"];
-        
-        reservation.departureAirportCity = representation[@"departureAirportCity"];
-        reservation.arrivalAirportCity = representation[@"arrivalAirportCity"];
-        
-        reservation.estimatedTripTimeNumber = representation[@"estimatedTripTime"];
-        reservation.travelHours = @(reservation.estimatedTripTimeNumber.integerValue);
-        reservation.travelMinutes = @(ceilf((reservation.estimatedTripTimeNumber.floatValue - [reservation.travelHours floatValue])* 60));
-        
-        reservation.travelTime = [NSString stringWithFormat:@"%@h %@m",
-                                  reservation.travelHours,
-                                  reservation.travelMinutes];
-        reservation.stops = @([representation[@"noOfFuelStops"] integerValue]);
-        reservation.stopsText = [reservation.stops boolValue] ? @"" : @"Non Stop";
-        reservation.rawData = jsonString;
     }
-
-    // returning an array of reservations
-    //reservations = [NSArray arrayWithObjects:reservation, nil];
+    
+    NSArray *reservations = [[NSArray alloc] initWithArray:results];
+    
     
 	if (completionHandler) {
-		completionHandler(reservation,nil);
+		completionHandler(reservations,nil);
 	}
 }
 

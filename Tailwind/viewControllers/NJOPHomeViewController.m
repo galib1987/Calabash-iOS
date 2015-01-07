@@ -41,8 +41,8 @@
             info = [NSDictionary dictionaryWithObjectsAndKeys:urlString,@"apiURL", API_HOSTNAME, @"host",nil];
         }
     }
-    [NJOPClient GETReservationWithInfo:info completion:^(NJOPReservation *reservation, NSError *error) {
-        [wself updateWithReservations:@[reservation]];
+    [NJOPClient GETReservationsWithInfo:info completion:^(NSArray *reservations, NSError *error) {
+        [wself updateWithReservations:reservations];
     }];
 }
 
@@ -50,12 +50,10 @@
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd MMM, YYYY"];
-    NSString* dateString = [[formatter stringFromDate:[NSDate date]] stringByAppendingString:@"\n Welcome My Smith"];
+//    NSString* dateString = [[formatter stringFromDate:[NSDate date]] stringByAppendingString:@"\n Welcome My Smith"];
     
-    
-    NSLog(@"reservation is: %@",reservations);
-    NJOPReservation* todaysReservations = reservations[0]; // only taking the first reservation
-    NSLog(@"today's Reseration: %@",todaysReservations);
+    NJOPReservation *todaysReservations = reservations[0]; // only taking the first reservation
+    NSLog(@"today's Reservation: %@",todaysReservations);
     NSDictionary* todaysFBO = @{
                                 @"FBOTableCell" : @{
                                         @"toFBOTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",todaysReservations.departureTime] substringWithRange:NSMakeRange(0, 7)],
@@ -81,16 +79,19 @@
                                     }
                             };
     
+    NJOPReservation *nextReservations = reservations[2]; // getting the third flight here, this is messy
+    NSLog(@"today's Reservation: %@",nextReservations);
+    
     NSDictionary *upcomingFBO = @{
                                   @"NJOPUpcomingFlightTableCell" : @{
                                           @"arrivalAirportCityAndStateLabel.text" : @"Naples, FL",
                                           @"scheduledDepartureLabel.text" : @"Monday, August 28, 2014",
-                                          @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",todaysReservations.departureTime] substringWithRange:NSMakeRange(0, 7)],
-                                          @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",todaysReservations.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
-                                          @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", todaysReservations.departureAirportId],
-                                          @"departureAirportCityLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.departureAirportCity],
-                                          @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportId],
-                                          @"arrivalAirportCityLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportCity]
+                                          @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",nextReservations.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                          @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",nextReservations.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                          @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", nextReservations.departureAirportId],
+                                          @"departureAirportCityLabel.text" : [NSString stringWithFormat:@"%@", nextReservations.departureAirportCity],
+                                          @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", nextReservations.arrivalAirportId],
+                                          @"arrivalAirportCityLabel.text" : [NSString stringWithFormat:@"%@", nextReservations.arrivalAirportCity]
                                           }
                                   };
     
@@ -113,7 +114,8 @@
                              kSimpleDataSourceSectionCellsKey : @[
                                      @{
                                          kSimpleDataSourceCellIdentifierKey			: @"FBOTableCell",
-                                         kSimpleDataSourceCellKeypaths			 			: todaysFBO[@"FBOTableCell"]
+                                         kSimpleDataSourceCellKeypaths			 			: todaysFBO[@"FBOTableCell"],
+                                         
                                          },
                                      @{
                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPUpcomingFlightTableCell",

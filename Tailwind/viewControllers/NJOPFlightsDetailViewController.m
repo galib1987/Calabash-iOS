@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"I GOT HERE WITH A RESERVATION %@", self.reservation);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,13 +30,13 @@
     
     __weak NJOPFlightsDetailViewController* wself = self;
     
-    [NJOPClient GETReservationWithInfo:nil completion:^(NJOPReservation *reservation, NSError *error) {
-        [wself updateWithReservation:reservation];
+    [NJOPClient GETReservationsWithInfo:nil completion:^(NSArray *reservations, NSError *error) {
+        [wself updateWithReservation:reservations];
     }];
 }
 
--(void)updateWithReservation:(NJOPReservation*)reservation {
-    NSLog(@"%@", reservation);
+-(void)updateWithReservation:(NSArray *)reservations {
+    NSLog(@"%@", reservations);
     
     NSArray* sections = @[
                           @{
@@ -45,43 +46,47 @@
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   }
                                           },
+//                                      @{
+//                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
+//                                          kSimpleDataSourceCellKeypaths					: @{
+//                                                  @"topLabel.text" : @"Your Plane",
+//                                                  @"detailLabel.text" : @"Cessna Citation Encore+",
+//                                                  }
+//                                          },
                                       @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"topLabel.text" : @"Your Plane",
-                                                  @"detailLabel.text" : @"Cessna Citation Encore+",
-                                                  }
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
+                                          kSimpleDataSourceCellIdentifierKey			: @"GroundInfoCell",
+                                          kSimpleDataSourceCellSegueAction : @"showGround",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Ground Transportation",
                                                   @"detailLabel.text" : @"Requested",
                                                   }
                                           },
                                       @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
+                                          kSimpleDataSourceCellIdentifierKey			: @"CrewInfoCell",
+                                          kSimpleDataSourceCellSegueAction : @"showCrew",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Your Crew",
                                                   @"detailLabel.text" : @"Captain Brad Hanshaw",
                                                   }
                                           },
+//                                      @{
+//                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
+//                                          kSimpleDataSourceCellKeypaths					: @{
+//                                                  @"topLabel.text" : @"Passenger Manifest",
+//                                                  @"detailLabel.text" : @"2 Passengers",
+//                                                  }
+//                                          },
                                       @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"topLabel.text" : @"Passenger Manifest",
-                                                  @"detailLabel.text" : @"2 Passengers",
-                                                  }
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
+                                          kSimpleDataSourceCellIdentifierKey			: @"CateringInfoCell",
+                                          kSimpleDataSourceCellSegueAction : @"showCatering",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Catering",
                                                   @"detailLabel.text" : @"Requested",
                                                   }
                                           },
                                       @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
+                                          kSimpleDataSourceCellIdentifierKey			: @"AdvisoryNotesInfoCell",
+                                          kSimpleDataSourceCellSegueAction : @"showAdvisoryNotes",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Advisory Notes",
                                                   @"detailLabel.text" : @"Please Read",
