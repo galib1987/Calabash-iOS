@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *departureAirportCityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *arrivalAirportCityLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *viewFlightDetailsButton;
 
 @end

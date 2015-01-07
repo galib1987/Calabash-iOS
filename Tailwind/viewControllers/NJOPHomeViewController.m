@@ -11,9 +11,12 @@
 #import "NJOPReservation.h"
 #import "NNNOAuthClient.h"
 #import "NJOPClient.h"
+#import "NJOPFlightsDetailViewController.h"
+#import "NJOPNavigationBar.h"
 
 @interface NJOPHomeViewController ()
-
+@property (strong, nonatomic) NSArray *reservations;
+@property (strong, nonatomic) NSArray *sections;
 @end
 
 @implementation NJOPHomeViewController
@@ -52,24 +55,54 @@
     [formatter setDateFormat:@"dd MMM, YYYY"];
 //    NSString* dateString = [[formatter stringFromDate:[NSDate date]] stringByAppendingString:@"\n Welcome My Smith"];
     
-    NJOPReservation *todaysReservations = reservations[0]; // only taking the first reservation
-    NSLog(@"today's Reservation: %@",todaysReservations);
+    NJOPReservation *firstReservation = reservations[0];
+    NJOPReservation *secondReservation = reservations[1];
+    NJOPReservation *thirdReservation = reservations[2];
+    
     NSDictionary* todaysFBO = @{
                                 @"FBOTableCell" : @{
-                                        @"toFBOTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",todaysReservations.departureTime] substringWithRange:NSMakeRange(0, 7)],
-                                        @"fromFBOTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",todaysReservations.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                        @"toFBOTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",firstReservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                        @"fromFBOTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",firstReservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
                                         
-                                        @"fromFBOAirpotCodeLabel.text"	: [NSString stringWithFormat:@"%@", todaysReservations.departureAirportId],
-                                        @"toFBOAirpotCodeLabel.text"		: [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportId],
-                                        @"fromFBOLocationLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.departureAirportCity],
-                                        @"toFBOLocationLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportCity],
+                                        @"fromFBOAirpotCodeLabel.text"	: [NSString stringWithFormat:@"%@", firstReservation.departureAirportId],
+                                        @"toFBOAirpotCodeLabel.text"		: [NSString stringWithFormat:@"%@", firstReservation.arrivalAirportId],
+                                        @"fromFBOLocationLabel.text" : [NSString stringWithFormat:@"%@", firstReservation.departureAirportCity],
+                                        @"toFBOLocationLabel.text" : [NSString stringWithFormat:@"%@", firstReservation.arrivalAirportCity],
                                         }
                                 };
     
+
+    
+    NSDictionary *upcomingFBO = @{
+                                  @"NJOPUpcomingFlightTableCell" : @{
+                                          @"arrivalAirportCityAndStateLabel.text" : @"Naples, FL",
+                                          @"scheduledDepartureLabel.text" : @"Monday, August 28, 2014",
+                                          @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",secondReservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                          @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",secondReservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                          @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", secondReservation.departureAirportId],
+                                          @"departureAirportCityLabel.text" : [NSString stringWithFormat:@"%@", secondReservation.departureAirportCity],
+                                          @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", secondReservation.arrivalAirportId],
+                                          @"arrivalAirportCityLabel.text" : [NSString stringWithFormat:@"%@", secondReservation.arrivalAirportCity]
+                                          }
+                                  };
+    
+    NSDictionary *currentFBO = @{
+                                 @"NJOPCurrentFBOTableCell" : @{
+                                         @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",thirdReservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                         @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",thirdReservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                         @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", thirdReservation.departureAirportId],
+                                         @"departureAirportCityLabel.text" : [NSString stringWithFormat:@"%@", thirdReservation.departureAirportCity],
+                                         @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", thirdReservation.arrivalAirportId],
+                                         @"arrivalAirportCityLabel.text" : [NSString stringWithFormat:@"%@", thirdReservation.arrivalAirportCity],
+                                         @"estimatedFlightTimeLabel.text" : @"2hrs 7mins",
+                                         @"estimatedTripTimeLabel.text" : @"2h 54m",
+                                         }
+                                 
+                                 };
     
     NSDictionary *noFBO = @{
                             @"NJOPNOFBOTableCell" : @{
-                                    @"rawData.text": [NSString stringWithFormat:@"%@",todaysReservations.rawData]
+                                    @"rawData.text": [NSString stringWithFormat:@"%@", thirdReservation.rawData]
                                     },
                             @"NJOPTripCompleteCell" : @{
                                     @"completionGreetingLabel.text" : @"Welcome to Miami",
@@ -79,68 +112,42 @@
                                     }
                             };
     
-    NJOPReservation *nextReservations = reservations[2]; // getting the third flight here, this is messy
-    NSLog(@"today's Reservation: %@",nextReservations);
-    
-    NSDictionary *upcomingFBO = @{
-                                  @"NJOPUpcomingFlightTableCell" : @{
-                                          @"arrivalAirportCityAndStateLabel.text" : @"Naples, FL",
-                                          @"scheduledDepartureLabel.text" : @"Monday, August 28, 2014",
-                                          @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",nextReservations.departureTime] substringWithRange:NSMakeRange(0, 7)],
-                                          @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",nextReservations.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
-                                          @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", nextReservations.departureAirportId],
-                                          @"departureAirportCityLabel.text" : [NSString stringWithFormat:@"%@", nextReservations.departureAirportCity],
-                                          @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", nextReservations.arrivalAirportId],
-                                          @"arrivalAirportCityLabel.text" : [NSString stringWithFormat:@"%@", nextReservations.arrivalAirportCity]
+    NSArray *sections = @[
+                          @{
+                              kSimpleDataSourceSectionCellsKey : @[
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"FBOTableCell",
+                                          kSimpleDataSourceCellKeypaths			 			: todaysFBO[@"FBOTableCell"],
+                                          kSimpleDataSourceCellItem : firstReservation,
+                                          
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPUpcomingFlightTableCell",
+                                          kSimpleDataSourceCellKeypaths : upcomingFBO[@"NJOPUpcomingFlightTableCell"],
+                                          kSimpleDataSourceCellItem : secondReservation,
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPCurrentFBOTableCell",
+                                          kSimpleDataSourceCellKeypaths  : currentFBO[@"NJOPCurrentFBOTableCell"],
+                                          kSimpleDataSourceCellItem : thirdReservation,
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPNOFBOTableCell",
+                                          kSimpleDataSourceCellKeypaths	:
+                                              noFBO[@"NJOPNOFBOTableCell"],
+                                          kSimpleDataSourceCellItem : thirdReservation,
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPTripCompleteCell",
+                                          kSimpleDataSourceCellKeypaths	:
+                                              noFBO[@"NJOPTripCompleteCell"],
+                                          kSimpleDataSourceCellItem : thirdReservation,
                                           }
-                                  };
-    
-    NSDictionary *currentFBO = @{
-                                 @"NJOPCurrentFBOTableCell" : @{
-                                         @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",todaysReservations.departureTime] substringWithRange:NSMakeRange(0, 7)],
-                                         @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",todaysReservations.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
-                                         @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", todaysReservations.departureAirportId],
-                                         @"departureAirportCityLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.departureAirportCity],
-                                         @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportId],
-                                         @"arrivalAirportCityLabel.text" : [NSString stringWithFormat:@"%@", todaysReservations.arrivalAirportCity],
-                                         @"estimatedFlightTimeLabel.text" : @"2hrs 7mins",
-                                         @"estimatedTripTimeLabel.text" : @"2h 54m",
-                                         }
-                                 
-                                 };
-    
-    NSArray*sections = @[
-                         @{
-                             kSimpleDataSourceSectionCellsKey : @[
-                                     @{
-                                         kSimpleDataSourceCellIdentifierKey			: @"FBOTableCell",
-                                         kSimpleDataSourceCellKeypaths			 			: todaysFBO[@"FBOTableCell"],
-                                         
-                                         },
-                                     @{
-                                         kSimpleDataSourceCellIdentifierKey			: @"NJOPUpcomingFlightTableCell",
-                                         kSimpleDataSourceCellKeypaths : upcomingFBO[@"NJOPUpcomingFlightTableCell"]
-                                         },
-                                     @{
-                                         kSimpleDataSourceCellIdentifierKey			: @"NJOPCurrentFBOTableCell",
-                                         kSimpleDataSourceCellKeypaths  : currentFBO[@"NJOPCurrentFBOTableCell"]
-                                         },
-                                     @{
-                                         kSimpleDataSourceCellIdentifierKey			: @"NJOPNOFBOTableCell",
-                                         kSimpleDataSourceCellKeypaths	:
-                                             noFBO[@"NJOPNOFBOTableCell"]
-                                         },
-                                     @{
-                                         kSimpleDataSourceCellIdentifierKey			: @"NJOPTripCompleteCell",
-                                         kSimpleDataSourceCellKeypaths	:
-                                             noFBO[@"NJOPTripCompleteCell"]
-                                         }
-                                     ],
-                             },
-                         ];
-    NSLog(@"HERE");
+                                      ],
+                              },
+                          ];
+
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
-    NSLog(@"ASLKDJASLKDJASLDJSAL");
     self.dataSource.headerFooterCellIdentifiers = @[@"SummaryHeaderView"];
     /*
     [self.dataSource setConfigureHeaderFooterViewBlock:^(UIView *headerView) {
@@ -156,14 +163,21 @@
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)viewFlightDetailsTapped:(id)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Flights" bundle:nil];
+    NJOPFlightsDetailViewController *flightDetailVC = [storyboard instantiateViewControllerWithIdentifier:@"FlightDetailVC"];
+    
+    CGPoint touchPoint = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touchPoint];
+    NSDictionary *dataDict = [self.dataSource.sections[0][kSimpleDataSourceSectionCellsKey] objectAtIndex:indexPath.row];
+    NJOPReservation *reservationToPass = dataDict[@"CellItem"];
+    flightDetailVC.reservation = reservationToPass;
+    
+    NSLog(@"PASSING THIS: %@", dataDict);
+    
+    [self.navigationController pushViewController:flightDetailVC animated:YES];
+    
 }
-*/
 
 @end
