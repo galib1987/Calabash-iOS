@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
 @property (weak, nonatomic) IBOutlet UIView *maskHole;
+/*@property (strong, nonatomic) IBOutlet UILabel *debugb;
+@property (strong, nonatomic) IBOutlet UILabel *debuga;*/
 
 @property NSUInteger pageIndex;
 @property NSString *imageFile;

@@ -475,6 +475,12 @@
                                     <constraint firstAttribute="height" constant="6" id="HbD-X3-E9I"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="934-Cq-LyC">
+                                <rect key="frame" x="558" y="-1" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -493,6 +499,11 @@
                             <constraint firstItem="RDH-cf-Mq8" firstAttribute="top" secondItem="mfc-QZ-oMd" secondAttribute="bottom" constant="20" id="jbJ-ws-KXl"/>
                             <constraint firstItem="Zpg-rn-qUQ" firstAttribute="top" secondItem="IJv-xs-ssd" secondAttribute="bottom" constant="48" id="sWi-LF-y2t"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="934-Cq-LyC"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="bgImage" destination="B2k-fe-h3G" id="dbb-6S-suH"/>

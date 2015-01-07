@@ -124,9 +124,14 @@
      self.bgImage.bounds = offsetBounds;*/
     [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, offset*-0.2, 0)];
     //NSLog(@"%f", self.bgImage.bounds.origin.x);
-    [[self.pageViewController.viewControllers objectAtIndex:0] handleScroll:self.view.frame.size.width-self.pageViewController.offset];
+    
+    [[self.pageViewController.viewControllers objectAtIndex:0] handleScroll:self.pageViewController.offset];
     if (self.nextPage && self.nextPage.pageIndex != self.pageViewController.currentPage) {
-        [self.nextPage handleScroll:self.pageViewController.offset];
+        if (self.pageViewController.offset < 0) {
+            [self.nextPage handleScroll:self.view.frame.size.width+self.pageViewController.offset];
+        } else {
+            [self.nextPage handleScroll:self.pageViewController.offset-self.view.frame.size.width];
+        }
     }
 }
 

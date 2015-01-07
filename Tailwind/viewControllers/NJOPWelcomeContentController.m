@@ -49,12 +49,18 @@
 */
 
 - (void)handleScroll:(CGFloat) offset {
-    NSLog(@"%f", offset);
-    CGFloat percentage = offset/self.view.frame.size.width;
-    /*[self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, (percentage)*50, 0)];
-    NSLog(@"the offset for %d is %f", self.pageIndex, (percentage)*50);*/
+    //NSLog(@"%f", offset);
+    CGFloat percentage = 1+offset/self.view.frame.size.width;
+    
+    CGFloat offscreenWidth = self.bgImage.frame.size.width-self.maskHole.frame.size.width;
+    CGFloat offscreenHeight = self.maskHole.frame.origin.y;
+    [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, (percentage-1)*100-offscreenWidth/2, -offscreenHeight)];
+    //NSLog(@"the offset for %d is %f", self.pageIndex, (percentage)*50);
     [self fadeInDownItem:self.headerLabel toPercentage:percentage];
     [self fadeInDownItem:self.descLabel toPercentage:percentage];
+    /*self.debuga.text = [NSString stringWithFormat: @"%.2f", percentage];
+    self.debugb.text = [NSString stringWithFormat: @"%.2f", percentage];*/
+    
 }
 
 - (void)fadeInDownItem:(UIView *) item toPercentage:(CGFloat) percentage {
