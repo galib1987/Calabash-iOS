@@ -23,7 +23,10 @@
              {
              "pageHeaders":"Notifications",
              "pageDescs":"Allow us to notify you of important flight updates, without answering a phone call.",
-             "pageBgs":"welcome4.png"
+             "pageBgs":"welcome4.png",
+             "hasButtons":true,
+             "buttonA":"No Thanks",
+             "buttonB":"Allow"
              }
     ]
 }

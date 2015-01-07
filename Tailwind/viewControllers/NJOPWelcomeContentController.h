@@ -15,12 +15,17 @@
 @property (weak, nonatomic) IBOutlet UIView *maskHole;
 /*@property (strong, nonatomic) IBOutlet UILabel *debugb;
 @property (strong, nonatomic) IBOutlet UILabel *debuga;*/
+@property (weak, nonatomic) IBOutlet UIButton *buttonA;
+@property (weak, nonatomic) IBOutlet UIButton *buttonB;
 
 @property NSUInteger pageIndex;
 @property NSString *imageFile;
 @property NSString *headerText;
 @property NSString *descText;
 @property bool displayed;
+@property bool showButtons;
+@property NSString *buttonAText;
+@property NSString *buttonBText;
 
 - (void)handleScroll:(CGFloat) offset;
 - (void)fadeInDownItem:(UIView *) item toPercentage:(CGFloat) percentage;

@@ -108,6 +108,11 @@
     welcomeContentViewController.imageFile = self.items[index][@"pageBgs"];
     welcomeContentViewController.headerText = self.items[index][@"pageHeaders"];
     welcomeContentViewController.descText = self.items[index][@"pageDescs"];
+    if (self.items[index][@"hasButtons"]) {
+        welcomeContentViewController.showButtons = true;
+        welcomeContentViewController.buttonAText = self.items[index][@"buttonA"];
+        welcomeContentViewController.buttonBText = self.items[index][@"buttonB"];
+    }
     welcomeContentViewController.pageIndex = index;
     // NSLog(@"%@", self.items[index][@"pageBgs"]);
     

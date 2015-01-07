@@ -23,6 +23,16 @@
     //self.bgImage.frame = self.bgImage.frame.size.height;
 //    self.bgImage.bounds.size.height = self.bgImage.bounds.size.width;
     self.headerLabel.text = [self.headerLabel.text uppercaseString];
+    
+    if (self.showButtons) {
+        [self.buttonA setTitle:[self.buttonAText uppercaseString] forState:UIControlStateNormal];
+        [self.buttonB setTitle:[self.buttonBText uppercaseString] forState:UIControlStateNormal];
+        self.buttonA.layer.borderColor = [[UIColor whiteColor] CGColor];
+    } else {
+        self.buttonA.hidden = true;
+        self.buttonB.hidden = true;
+    }
+    
     self.view.backgroundColor = [UIColor clearColor];
     /*NSLog(@"%f", self.bgImage.layer.cornerRadius);
     NSLog(@"%f", self.bgImage.frame.size.width);
