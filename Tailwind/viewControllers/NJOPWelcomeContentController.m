@@ -23,7 +23,6 @@
     //self.bgImage.frame = self.bgImage.frame.size.height;
 //    self.bgImage.bounds.size.height = self.bgImage.bounds.size.width;
     self.headerLabel.text = [self.headerLabel.text uppercaseString];
-    self.maskHole.layer.cornerRadius = self.maskHole.frame.size.width/2;
     self.view.backgroundColor = [UIColor clearColor];
     /*NSLog(@"%f", self.bgImage.layer.cornerRadius);
     NSLog(@"%f", self.bgImage.frame.size.width);
@@ -48,13 +47,18 @@
 }
 */
 
+- (void)viewDidLayoutSubviews {
+    // After autolayout is done
+    self.maskHole.layer.cornerRadius = self.maskHole.layer.bounds.size.width/2;
+}
+
 - (void)handleScroll:(CGFloat) offset {
     //NSLog(@"%f", offset);
     CGFloat percentage = 1+offset/self.view.frame.size.width;
     
     CGFloat offscreenWidth = self.bgImage.frame.size.width-self.maskHole.frame.size.width;
-    CGFloat offscreenHeight = self.maskHole.frame.origin.y;
-    [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, (percentage-1)*150-offscreenWidth/2, -offscreenHeight)];
+    CGFloat offscreenHeight = self.bgImage.frame.origin.y;
+    [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, (percentage-1)*150-offscreenWidth/2, offscreenHeight)];
     //NSLog(@"the offset for %d is %f", self.pageIndex, (percentage)*50);
     
     if (!self.displayed) {
@@ -69,11 +73,8 @@
 - (void)fadeInDownItem:(UIView *) item toPercentage:(CGFloat) percentage {
     CGFloat curvedPercentage = pow(fabsf(percentage), 3); // Cubed for ease out
     item.alpha = curvedPercentage;
-    //item.bounds = CGRectOffset(item.bounds, 0, percentage*-10);
-    //[item.layer setBounds:CGRectOffset(item.bounds, 0, (percentage-1)*-100)];
-    [item setTransform:CGAffineTransformMakeTranslation(0, (curvedPercentage-1)*20)];
+    [item setTransform:CGAffineTransformMakeTranslation(0, (curvedPercentage-1)*15)];
     //NSLog(@"bounds: %f", item.layer.bounds.origin.y);
-    //[item setFrame:CGRectOffset(item.bounds, <#CGFloat dx#>, <#CGFloat dy#>)]
 }
 
 - (void)transitionIn {
