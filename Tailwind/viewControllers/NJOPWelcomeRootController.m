@@ -37,6 +37,8 @@
     [self.view insertSubview:self.pageViewController.view atIndex:1]; // behind skip button, in front of bg
     [self.pageViewController didMoveToParentViewController:self];
     
+    [(NJOPWelcomeContentController *)[self.pageViewController.viewControllers objectAtIndex:0] didFinishDisplay];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,6 +61,8 @@
     NSDictionary* welcomeItems = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     self.items = welcomeItems[@"items"];
     self.totalPages = (int)[self.items count];
+    self.displayedItems = [[NSMutableArray alloc] init];
+    [self.displayedItems addObject:@(true)];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
@@ -95,6 +99,10 @@
     welcomeContentViewController.pageIndex = index;
     // NSLog(@"%@", self.items[index][@"pageBgs"]);
     
+    if (index < self.displayedItems.count && self.displayedItems[index]) {
+        welcomeContentViewController.displayed = true;
+    }
+    
     return welcomeContentViewController;
 }
 
@@ -115,6 +123,8 @@
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     //NSLog(@"finished? %d", finished);
     self.pageViewController.currentPage = (int)[[self.pageViewController.viewControllers objectAtIndex:0] pageIndex];
+    [(NJOPWelcomeContentController *)[self.pageViewController.viewControllers objectAtIndex:0] didFinishDisplay];
+    [self.displayedItems setObject:@(true) atIndexedSubscript:self.pageViewController.currentPage];
 }
 
 - (void)handleScroll {
@@ -125,7 +135,7 @@
      self.bgImage.bounds = offsetBounds;*/
     CGFloat bgOffscreenWidth = self.bgImage.frame.size.width - self.view.frame.size.width;
     [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, (percentage*-300)-bgOffscreenWidth/2, 0)];
-    NSLog(@"%f", percentage);
+    //NSLog(@"%f", percentage);
     
     [[self.pageViewController.viewControllers objectAtIndex:0] handleScroll:self.pageViewController.offset];
     if (self.nextPage && self.nextPage.pageIndex != self.pageViewController.currentPage) {

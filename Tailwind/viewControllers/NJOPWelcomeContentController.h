@@ -25,5 +25,6 @@
 - (void)handleScroll:(CGFloat) offset;
 - (void)fadeInDownItem:(UIView *) item toPercentage:(CGFloat) percentage;
 - (void)transitionIn;
+- (void)didFinishDisplay;
 
 @end
