@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 //#import "NJOPHomeViewController.h"
 
+#import "NCLAppOverlayWindow.h"
+
 @interface AppDelegate ()
 
 @end
@@ -24,6 +26,7 @@
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    self.window.rootViewController = vc;
 //    [self.window makeKeyAndVisible];
+    self.njopMenuViewController = nil;
 
     // listen for major menu changes
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goChangeScreen:) name:changeScreen object:nil];
@@ -70,10 +73,24 @@
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:storyboard bundle:nil];
     UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:viewController];
+    
+    
     // also, we're going to create a navigation controller
     UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:vc];
     //[[UIApplication sharedApplication].keyWindow setRootViewController:vc];
     self.window.rootViewController=navController;
+    
+    if (self.njopMenuViewController == nil) {
+    
+        // we're also adding the global menu to all the storyboards
+        self.njopMenuViewController = [[NJOPMenuViewController alloc] initWithNibName:@"NJOPMenuViewController" bundle:nil];
+        
+    }
+
+    UIView *parentView = [self.window.rootViewController.view superview];
+    [parentView addSubview:self.njopMenuViewController.view];
+    [parentView bringSubviewToFront:self.njopMenuViewController.view];
+
     
     
 }

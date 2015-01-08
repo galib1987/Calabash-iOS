@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F6635491A5E94F800E29FA1 /* NJOPHamburgerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6635471A5E94F800E29FA1 /* NJOPHamburgerViewController.m */; };
+		1F66354A1A5E94F800E29FA1 /* NJOPHamburgerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F6635481A5E94F800E29FA1 /* NJOPHamburgerViewController.xib */; };
 		1F739A421A5E70F900D86C0B /* NJOPMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F739A401A5E70F900D86C0B /* NJOPMenuViewController.m */; };
 		1F739A431A5E70F900D86C0B /* NJOPMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F739A411A5E70F900D86C0B /* NJOPMenuViewController.xib */; };
 		2AD96D2C90B7446D90304928 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
@@ -132,6 +134,9 @@
 
 /* Begin PBXFileReference section */
 		03307E6D414420F7D9C0477B /* Pods.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.production.xcconfig; path = "Pods/Target Support Files/Pods/Pods.production.xcconfig"; sourceTree = SOURCE_ROOT; };
+		1F6635461A5E94F800E29FA1 /* NJOPHamburgerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPHamburgerViewController.h; sourceTree = "<group>"; };
+		1F6635471A5E94F800E29FA1 /* NJOPHamburgerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPHamburgerViewController.m; sourceTree = "<group>"; };
+		1F6635481A5E94F800E29FA1 /* NJOPHamburgerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPHamburgerViewController.xib; sourceTree = "<group>"; };
 		1F739A3F1A5E70F900D86C0B /* NJOPMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPMenuViewController.h; sourceTree = "<group>"; };
 		1F739A401A5E70F900D86C0B /* NJOPMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPMenuViewController.m; sourceTree = "<group>"; };
 		1F739A411A5E70F900D86C0B /* NJOPMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPMenuViewController.xib; sourceTree = "<group>"; };
@@ -485,6 +490,9 @@
 				1F739A3F1A5E70F900D86C0B /* NJOPMenuViewController.h */,
 				1F739A401A5E70F900D86C0B /* NJOPMenuViewController.m */,
 				1F739A411A5E70F900D86C0B /* NJOPMenuViewController.xib */,
+				1F6635461A5E94F800E29FA1 /* NJOPHamburgerViewController.h */,
+				1F6635471A5E94F800E29FA1 /* NJOPHamburgerViewController.m */,
+				1F6635481A5E94F800E29FA1 /* NJOPHamburgerViewController.xib */,
 			);
 			path = menu;
 			sourceTree = "<group>";
@@ -809,6 +817,7 @@
 				A7A03E991A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.xib in Resources */,
 				A77680B11A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Light.otf in Resources */,
 				A77680AF1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold.otf in Resources */,
+				1F66354A1A5E94F800E29FA1 /* NJOPHamburgerViewController.xib in Resources */,
 				30A4738A19D9E41A0045D7AF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -943,6 +952,7 @@
 				A7A03EBE1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.m in Sources */,
 				A7A03E9C1A42E523004BE417 /* NJOPNavigationBar.m in Sources */,
 				A7A03EB81A42EFCA004BE417 /* NJOPTableViewCell.m in Sources */,
+				1F6635491A5E94F800E29FA1 /* NJOPHamburgerViewController.m in Sources */,
 				A7A03EAC1A42EB6D004BE417 /* NJOPTableView.m in Sources */,
 				A7A03EA61A42E626004BE417 /* UIView+NJOPStyle.m in Sources */,
 				A77680E31A406C7D00B2E7CF /* NNNUserDefaultsManager.m in Sources */,

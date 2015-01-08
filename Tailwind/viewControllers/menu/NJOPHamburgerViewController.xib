@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Nimbus-Sans-D.otf">
+            <string>NimbusSanD-Reg</string>
+            <string>NimbusSanD-Reg</string>
+            <string>NimbusSanD-Reg</string>
+            <string>NimbusSanD-Reg</string>
+            <string>NimbusSanD-Reg</string>
+            <string>NimbusSanD-Reg</string>
+            <string>NimbusSanD-Reg</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NJOPHamburgerViewController">
+            <connections>
+                <outlet property="accountButton" destination="85z-B7-Mmn" id="c73-RG-7Ei"/>
+                <outlet property="bookButton" destination="ufB-Ph-gx9" id="QJP-S7-ezd"/>
+                <outlet property="flighteButton" destination="d49-mZ-fXY" id="x4J-2E-mYx"/>
+                <outlet property="homeButton" destination="0Hp-oe-p2C" id="Txt-Cc-Whq"/>
+                <outlet property="messagesButton" destination="8vQ-TQ-vkx" id="63P-rd-EiB"/>
+                <outlet property="settingsButton" destination="w8s-HH-aLq" id="BxX-6E-G0s"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="TopLeft" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="365"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iL2-IY-5FD">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MENU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgD-Ts-8Cd">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                            <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="VgD-Ts-8Cd" firstAttribute="top" secondItem="iL2-IY-5FD" secondAttribute="top" id="5wf-Ht-dFN"/>
+                        <constraint firstAttribute="trailing" secondItem="VgD-Ts-8Cd" secondAttribute="trailing" id="Oq5-jK-o0n"/>
+                        <constraint firstItem="VgD-Ts-8Cd" firstAttribute="leading" secondItem="iL2-IY-5FD" secondAttribute="leading" id="mcn-nf-jG2"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hp-oe-p2C">
+                    <rect key="frame" x="0.0" y="44" width="207" height="107"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="40" minY="-20" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="HOME" image="menu-btn-home-on">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="homeButtonPressed:" destination="-1" eventType="touchUpInside" id="ZeD-no-YwI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85z-B7-Mmn">
+                    <rect key="frame" x="207" y="44" width="207" height="107"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="40" minY="-20" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="ACCOUNT" image="menu-btn-account-off">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="accountButtonPressed:" destination="-1" eventType="touchUpInside" id="9SF-Rs-ktJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vQ-TQ-vkx">
+                    <rect key="frame" x="207" y="151" width="207" height="107"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="66" minY="-20" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="MESSAGES" image="menu-btn-messages-off">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="messagesButtonPressed:" destination="-1" eventType="touchUpInside" id="gsf-7y-yJ0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d49-mZ-fXY">
+                    <rect key="frame" x="0.0" y="151" width="207" height="107"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="52" minY="-20" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="FLIGHTS" image="menu-btn-flights-off">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="filghtsButtonPressed:" destination="-1" eventType="touchUpInside" id="wFm-Tk-oh4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8s-HH-aLq">
+                    <rect key="frame" x="207" y="258" width="207" height="107"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="61" minY="-20" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="SETTINGS" image="menu-btn-settings-off">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="settingsButtonPressed:" destination="-1" eventType="touchUpInside" id="s9V-to-YhI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufB-Ph-gx9">
+                    <rect key="frame" x="0.0" y="258" width="207" height="107"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="36" minY="-20" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="BOOK" image="menu-btn-book-off">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="bookButtonPressed:" destination="-1" eventType="touchUpInside" id="cBw-d2-yMZ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="iL2-IY-5FD" secondAttribute="trailing" id="4vX-KV-L3h"/>
+                <constraint firstItem="iL2-IY-5FD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Iyi-k8-uDV"/>
+                <constraint firstItem="iL2-IY-5FD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LmT-1s-HcH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="menu-btn-account-off" width="28" height="27"/>
+        <image name="menu-btn-book-off" width="24" height="25"/>
+        <image name="menu-btn-flights-off" width="34" height="34"/>
+        <image name="menu-btn-home-on" width="29" height="28"/>
+        <image name="menu-btn-messages-off" width="30" height="28"/>
+        <image name="menu-btn-settings-off" width="29" height="29"/>
+    </resources>
+</document>

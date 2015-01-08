@@ -24,6 +24,15 @@
 #define URL_RESERVATIONS @"/op/v1/reservations"
 #define URL_CONTRACTS @"/op/v1/contracts"
 
+
+// global enums
+
+typedef enum {
+    menuButtonNone = 0,
+    menuBUttonHamburger,
+    menuButtonOwnerServices
+} menuButtonStates;
+
 // temporarily until I figure out a better way to bypass having to VPN
 // 0 is use VPN
 // 1 is use JSON

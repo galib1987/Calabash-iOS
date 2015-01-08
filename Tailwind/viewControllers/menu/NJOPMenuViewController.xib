@@ -4,23 +4,57 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NJOPViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NJOPMenuViewController">
             <connections>
+                <outlet property="hamburgerButton" destination="ZNG-EM-osr" id="Td5-ua-3qv"/>
+                <outlet property="mainButtonsView" destination="bzB-0I-X5v" id="ukh-EH-4vr"/>
+                <outlet property="ownerServicesButton" destination="0L9-ix-I3K" id="hDb-iT-Qzh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="bottomLeft" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="TopLeft" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzB-0I-X5v" userLabel="Main Buttons View">
-                    <rect key="frame" x="0.0" y="545" width="414" height="55"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                <view autoresizesSubviews="NO" contentMode="TopLeft" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzB-0I-X5v" userLabel="Main Buttons View">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNG-EM-osr" userLabel="Button - hamburger">
+                            <rect key="frame" x="0.0" y="0.0" width="207" height="55"/>
+                            <state key="normal" image="menu-hamburger-off">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="hamburgerPushed:" destination="-1" eventType="touchUpInside" id="mm6-r4-qU5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0L9-ix-I3K" userLabel="Button - Owner Services">
+                            <rect key="frame" x="207" y="0.0" width="207" height="55"/>
+                            <state key="normal" image="menu-os-off">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="0L9-ix-I3K" secondAttribute="bottom" id="9KL-mo-0ak"/>
+                        <constraint firstAttribute="bottom" secondItem="ZNG-EM-osr" secondAttribute="bottom" id="BTH-9j-6i8"/>
+                        <constraint firstItem="ZNG-EM-osr" firstAttribute="width" secondItem="0L9-ix-I3K" secondAttribute="width" id="mZt-pj-HFq"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="bzB-0I-X5v" secondAttribute="trailing" id="5wt-15-mj8"/>
+                <constraint firstAttribute="bottom" secondItem="bzB-0I-X5v" secondAttribute="bottom" id="UDk-45-rUG"/>
+                <constraint firstItem="bzB-0I-X5v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xu7-o2-v6b"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="menu-hamburger-off" width="25" height="9"/>
+        <image name="menu-os-off" width="23" height="12"/>
+    </resources>
 </document>
