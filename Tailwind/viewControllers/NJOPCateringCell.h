@@ -10,4 +10,7 @@
 
 @interface NJOPCateringCell : NJOPTableViewCell
 
+@property (nonatomic) IBOutlet UILabel *topLabel;
+@property (nonatomic) IBOutlet UITextView *detailLabel;
+
 @end
