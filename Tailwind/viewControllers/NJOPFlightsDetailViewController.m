@@ -37,8 +37,11 @@
 
 -(void)updateWithReservation {
     
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd MMM, YYYY"];
+    NSDateFormatter* weatherFormatter = [[NSDateFormatter alloc] init];
+    [weatherFormatter setDateFormat:@"EE MMM dd, YYYY"];
+    
+    NSDateFormatter *departureFormatter = [[NSDateFormatter alloc] init];
+    [departureFormatter setDateFormat:@"MMMM dd, YYYY"];
     
     NSArray* sections = @[
                           @{
@@ -48,7 +51,7 @@
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"guaranteedAircraftTypeDescriptionLabel.text" : _reservation.aircraftType,
                                                   @"tailNumberLabel.text" : @"N618QS",
-                                                  @"departureDateLabel.text" : [formatter stringFromDate:_reservation.departureDate],
+                                                  @"departureDateLabel.text" : [departureFormatter stringFromDate:_reservation.departureDate],
                                                   @"departureFBONameLabel.text" : _reservation.departureFboName,
                                                   @"departureTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
                                                   @"departureAirportIdLabel.text" : _reservation.departureAirportId,
@@ -57,11 +60,11 @@
                                                   @"arrivalAirportIdLabel.text" : _reservation.arrivalAirportId,
                                                   @"arrivalAirportCityLabel.text" : _reservation.arrivalAirportCity,
                                                   @"arrivalFBONameLabel.text" : _reservation.arrivalFboName,
-                                                  @"departureWeatherDateLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
-                                                  @"departureAirportCityAndStateLabel.text" : _reservation.arrivalAirportCity,
+                                                  @"departureWeatherDateLabel.text" : [weatherFormatter stringFromDate:_reservation.departureDate],
+                                                  @"departureAirportCityAndStateLabel.text" : _reservation.departureAirportCity,
                                                   @"departureWeatherTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
                                                   @"departureTemperatureLabel.text" : @"39°",
-                                                  @"arrivalWeatherDateLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                                  @"arrivalWeatherDateLabel.text" : [weatherFormatter stringFromDate:_reservation.arrivalDate],
                                                   @"arrivalAirportCityAndStateLabel.text" : _reservation.arrivalAirportCity,
                                                   @"arrivalWeatherTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
                                                   @"arrivalTemperatureLabel.text" : @"85°",
