@@ -193,10 +193,12 @@
         //[NJOPClient GETReservationWithInfo:<#(NSDictionary *)#> completion:<#^(NJOPReservation *reservation, NSError *error)completionHandler#>];
     }
     
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
-    UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Home",menuStoryboardName,@"HomeViewController",menuViewControllerName, nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif]; // using NSNotifications for menu changes because we also need to do other things in other places
+    //UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+    //UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
     
-    [[UIApplication sharedApplication].keyWindow setRootViewController:vc];
+    //[[UIApplication sharedApplication].keyWindow setRootViewController:vc];
 }
 
 @end
