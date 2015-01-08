@@ -25,6 +25,8 @@
 //    self.window.rootViewController = vc;
 //    [self.window makeKeyAndVisible];
 
+    // listen for major menu changes
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goChangeScreen:) name:changeScreen object:nil];
 
 	UINavigationBar* nav = [[UINavigationBar class] appearance];
 	[nav setBackgroundImage:[UIImage new]
@@ -59,6 +61,21 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) goChangeScreen:(NSNotification *) aNotification {
+    
+    NSString *storyboard = [[aNotification userInfo] objectForKey:menuStoryboardName];
+    NSString *viewController = [[aNotification userInfo] objectForKey:menuViewControllerName];
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:storyboard bundle:nil];
+    UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:viewController];
+    // also, we're going to create a navigation controller
+    UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:vc];
+    //[[UIApplication sharedApplication].keyWindow setRootViewController:vc];
+    self.window.rootViewController=navController;
+    
+    
 }
 
 @end

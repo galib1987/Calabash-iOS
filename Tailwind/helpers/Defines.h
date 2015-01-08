@@ -13,6 +13,8 @@
 #define changeScreen @"changeScreen"
 #define goToLoginScreen @"goToLoginScreen"
 #define goToHomeScreen @"goToHomeScreen"
+#define menuStoryboardName @"menuStoryboardName" // this is used in the NSNotification to define the storyboard name to use to load the storyboard
+#define menuViewControllerName @"venuViewControlelrName" // this is used in the NSNotification to define the viewController name to use to get and add in a viewController
 
 
 // hostname and URL for different API calls

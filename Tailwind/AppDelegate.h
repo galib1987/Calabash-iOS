@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void) goChangeScreen:(NSNotification *) aNotification;
 
 @end
 
