@@ -26,6 +26,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -75,7 +79,7 @@
     
     NSDictionary *upcomingFBO = @{
                                   @"NJOPUpcomingFlightTableCell" : @{
-                                          @"arrivalAirportCityAndStateLabel.text" : @"Naples, FL",
+                                          @"arrivalAirportCityAndStateLabel.text" : secondReservation.departureAirportCity,
                                           @"scheduledDepartureLabel.text" : @"Monday, August 28, 2014",
                                           @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",secondReservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
                                           @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",secondReservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
@@ -105,7 +109,7 @@
                                     @"rawData.text": [NSString stringWithFormat:@"%@", thirdReservation.rawData]
                                     },
                             @"NJOPTripCompleteCell" : @{
-                                    @"completionGreetingLabel.text" : @"Welcome to Miami",
+                                    @"completionGreetingLabel.text" : [[NSString stringWithFormat:@"Welcome to %@", thirdReservation.arrivalAirportCity] lowercaseString],
                                     @"groundOrdersLabel.text" : @"Pick up at 11:00PM",
                                     @"flightTimeLabel.text" : @"5hrs 20mins",
                                     @"projectedRemainingHoursLabel.text" : @"151",
