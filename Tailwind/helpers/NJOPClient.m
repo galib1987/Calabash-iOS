@@ -121,6 +121,8 @@
             reservation.stops = @([representation[@"noOfFuelStops"] integerValue]);
             reservation.stopsText = [reservation.stops boolValue] ? @"" : @"Non Stop";
             reservation.rawData = jsonString;
+            reservation.passenger = representation[@"passengerManifest"][@"passengers"][0][@"passengerName"];
+            
             
             [results addObject:reservation];
         }

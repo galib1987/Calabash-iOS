@@ -1,31 +1,30 @@
 //
-//  NJOPCateringViewController.m
+//  NJOPPassengeManifestViewController.m
 //  Tailwind
 //
-//  Created by netjets on 1/6/15.
+//  Created by netjets on 1/8/15.
 //  Copyright (c) 2015 NetJets. All rights reserved.
 //
 
-#import "NJOPCateringViewController.h"
-#import "NJOPCateringCell.h"
+#import "NJOPPassengeManifestViewController.h"
 
-@interface NJOPCateringViewController ()
+@interface NJOPPassengeManifestViewController ()
 
 @end
 
-@implementation NJOPCateringViewController
+@implementation NJOPPassengeManifestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     NSArray* sections = @[
                           @{
                               kSimpleDataSourceSectionCellsKey : @[
                                       @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPCateringCell",
+                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPPassengerManifestCell",
                                           kSimpleDataSourceCellKeypaths					: @{
-
+                                                  @"manifestTextView.text" : _reservation.passenger,
+                                                  
                                                   }
                                           },
                                       ]
@@ -33,14 +32,14 @@
                           ];
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
-    self.dataSource.title = @"CATERING";
-
+    self.dataSource.title = @"PASSENGER MANIFEST";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 /*

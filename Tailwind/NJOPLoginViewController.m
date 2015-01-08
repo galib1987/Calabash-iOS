@@ -195,8 +195,9 @@
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
     UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
     
-    [[UIApplication sharedApplication].keyWindow setRootViewController:vc];
+//    [[UIApplication sharedApplication].keyWindow setRootViewController:vc]; not sure this is ok, please let me know!!
 }
 
 @end

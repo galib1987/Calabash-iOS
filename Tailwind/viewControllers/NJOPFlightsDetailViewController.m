@@ -8,6 +8,7 @@
 
 #import "NJOPFlightsDetailViewController.h"
 #import "NJOPClient+flights.h"
+#import "NJOPPassengeManifestViewController.h"
 
 @interface NJOPFlightsDetailViewController ()
 
@@ -93,13 +94,14 @@
                                                   @"detailLabel.text" : @"Captain Brad Hanshaw",
                                                   }
                                           },
-//                                      @{
-//                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
-//                                          kSimpleDataSourceCellKeypaths					: @{
-//                                                  @"topLabel.text" : @"Passenger Manifest",
-//                                                  @"detailLabel.text" : @"2 Passengers",
-//                                                  }
-//                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"PassengerManifestInfoCell",
+                                          kSimpleDataSourceCellKeypaths					: @{
+                                                  @"topLabel.text" : @"Passenger Manifest",
+                                                  @"detailLabel.text" : @"2 Passengers",
+                                                  },
+                                          kSimpleDataSourceCellSegueAction : @"showManifest",
+                                          },
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"CateringInfoCell",
                                           kSimpleDataSourceCellSegueAction : @"showCatering",
@@ -125,14 +127,13 @@
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showManifest"]) {
+        NJOPPassengeManifestViewController *vc = [segue destinationViewController];
+        vc.reservation = self.reservation;
+        
+    }
 }
-*/
+
 
 @end
