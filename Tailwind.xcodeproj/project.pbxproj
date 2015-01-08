@@ -330,6 +330,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1E636ECB1A5F3D37002B3E8C /* Welcome ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1E36BD201A48992700221E7D /* NJOPWelcomeContentController.h */,
+				1E36BD211A48992700221E7D /* NJOPWelcomeContentController.m */,
+				1E36BD231A489ED100221E7D /* NJOPWelcomeRootController.h */,
+				1E36BD241A489ED100221E7D /* NJOPWelcomeRootController.m */,
+			);
+			name = "Welcome ViewControllers";
+			sourceTree = "<group>";
+		};
 		30A4737019D9E41A0045D7AF = {
 			isa = PBXGroup;
 			children = (
@@ -474,12 +485,7 @@
 				6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */,
 				A7A03E8C1A42DD15004BE417 /* NJOPHomeViewController.h */,
 				A7A03E8D1A42DD15004BE417 /* NJOPHomeViewController.m */,
-				1E36BD201A48992700221E7D /* NJOPWelcomeContentController.h */,
-				1E36BD211A48992700221E7D /* NJOPWelcomeContentController.m */,
-				1E36BD231A489ED100221E7D /* NJOPWelcomeRootController.h */,
-				1E36BD241A489ED100221E7D /* NJOPWelcomeRootController.m */,
-				1E1A592C1A48CDD70048A9C9 /* NJOPFullPageViewController.h */,
-				1E1A592D1A48CDD70048A9C9 /* NJOPFullPageViewController.m */,
+				1E636ECB1A5F3D37002B3E8C /* Welcome ViewControllers */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -589,6 +595,8 @@
 		A7A03E9D1A42E554004BE417 /* elements */ = {
 			isa = PBXGroup;
 			children = (
+				1E1A592C1A48CDD70048A9C9 /* NJOPFullPageViewController.h */,
+				1E1A592D1A48CDD70048A9C9 /* NJOPFullPageViewController.m */,
 				A7A03EBF1A42F21D004BE417 /* NJOPNOFBOTableCell.h */,
 				A7A03EC01A42F21D004BE417 /* NJOPNOFBOTableCell.m */,
 				A7A03EBC1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.h */,
