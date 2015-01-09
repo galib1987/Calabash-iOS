@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.opaque = NO;
+    [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"valley"]]];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
