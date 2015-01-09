@@ -67,7 +67,7 @@ NSString * const NJCTSettingTimeout = @"Timeout";
     NSString *host = [[NSUserDefaults standardUserDefaults] valueForKey:NJCTSettingHost];
     if (!host)
     {
-        host = @"servicesdev.netjets.com";
+        host = @"servicesdev2.netjets.com";
         [self setHost:host];
     }
     
