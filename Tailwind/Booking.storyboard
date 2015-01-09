@@ -9,6 +9,12 @@
         <mutableArray key="Nimbus-Sans-D-Bold.otf">
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
         </mutableArray>
         <mutableArray key="Nimbus-Sans-D-Light.otf">
             <string>NimbusSanD-Lig</string>
@@ -87,7 +93,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khd-kD-qmm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-218" y="-266"/>
+            <point key="canvasLocation" x="-157" y="-291"/>
         </scene>
         <!--Booking View Controller-->
         <scene sceneID="4eA-u6-8jq">
