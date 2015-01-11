@@ -451,21 +451,20 @@
 		55CA603419E7FD4A001E2FC6 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A70FDB571A5C0A3E00C549CF /* menu */,
+				A70FDB571A5C0A3E00C549CF /* Menu */,
 				A74C81861A53150C001FF1A9 /* NJOPAccountViewController.h */,
 				A74C81871A53150C001FF1A9 /* NJOPAccountViewController.m */,
 				A74C81841A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m */,
 				A7433C041A5311AE009BD3EB /* NJOPPushNotificationsTableViewController.h */,
 				A7433C011A531184009BD3EB /* NJOPSettingsTableViewController.h */,
 				A7433C021A531184009BD3EB /* NJOPSettingsTableViewController.m */,
-				A7F2CA461A4DCBA000D78804 /* Flights ViewControllers */,
+				A7F9127C1A630F92000E127E /* Home */,
+				A7F2CA461A4DCBA000D78804 /* Flights */,
 				A7A03E9D1A42E554004BE417 /* elements */,
 				6CC829AE1A40B4A900991949 /* NJOPLoginViewController.h */,
 				6CC829AF1A40B4A900991949 /* NJOPLoginViewController.m */,
 				6CC829B11A40B4C900991949 /* NJOPResetPasswordViewController.h */,
 				6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */,
-				A7A03E8C1A42DD15004BE417 /* NJOPHomeViewController.h */,
-				A7A03E8D1A42DD15004BE417 /* NJOPHomeViewController.m */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -484,7 +483,7 @@
 			path = views;
 			sourceTree = "<group>";
 		};
-		A70FDB571A5C0A3E00C549CF /* menu */ = {
+		A70FDB571A5C0A3E00C549CF /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				1F739A3F1A5E70F900D86C0B /* NJOPMenuViewController.h */,
@@ -494,6 +493,7 @@
 				1F6635471A5E94F800E29FA1 /* NJOPHamburgerViewController.m */,
 				1F6635481A5E94F800E29FA1 /* NJOPHamburgerViewController.xib */,
 			);
+			name = Menu;
 			path = menu;
 			sourceTree = "<group>";
 		};
@@ -561,22 +561,10 @@
 		A7A03E9D1A42E554004BE417 /* elements */ = {
 			isa = PBXGroup;
 			children = (
-				A7380F661A5881AA008AB5F6 /* NJOPTripCompleteCell.h */,
-				A7380F671A5881AA008AB5F6 /* NJOPTripCompleteCell.m */,
-				A7E4151B1A5321E500818524 /* NJOPFlightTableCell.h */,
-				A7E4151C1A5321E500818524 /* NJOPFlightTableCell.m */,
-				A7A03EBF1A42F21D004BE417 /* NJOPNOFBOTableCell.h */,
-				A7A03EC01A42F21D004BE417 /* NJOPNOFBOTableCell.m */,
-				A7A03EBC1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.h */,
-				A7A03EBD1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.m */,
-				A7A03EB91A42F130004BE417 /* NJOPUpcomingFlightTableCell.h */,
-				A7A03EBA1A42F130004BE417 /* NJOPUpcomingFlightTableCell.m */,
 				A7A03EB61A42EFCA004BE417 /* NJOPTableViewCell.h */,
 				A7A03EB71A42EFCA004BE417 /* NJOPTableViewCell.m */,
 				A7A03EB31A42EF1D004BE417 /* NJOPActionButton.h */,
 				A7A03EB41A42EF1D004BE417 /* NJOPActionButton.m */,
-				A7A03EB01A42EE91004BE417 /* FBOTableCell.h */,
-				A7A03EB11A42EE91004BE417 /* FBOTableCell.m */,
 				A7A03EAA1A42EB6D004BE417 /* NJOPTableView.h */,
 				A7A03EAB1A42EB6D004BE417 /* NJOPTableView.m */,
 				A7A03E9E1A42E585004BE417 /* SimpleDataSource.h */,
@@ -687,14 +675,43 @@
 			name = "Your Crew";
 			sourceTree = "<group>";
 		};
-		A7F2CA461A4DCBA000D78804 /* Flights ViewControllers */ = {
+		A7F2CA461A4DCBA000D78804 /* Flights */ = {
 			isa = PBXGroup;
 			children = (
 				A7F2CA471A4DCBF700D78804 /* NJOPFlightsViewController.h */,
 				A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */,
+				A7E4151B1A5321E500818524 /* NJOPFlightTableCell.h */,
+				A7E4151C1A5321E500818524 /* NJOPFlightTableCell.m */,
 				A7CD0AEF1A5C825F00D45224 /* Detail View */,
 			);
-			name = "Flights ViewControllers";
+			name = Flights;
+			sourceTree = "<group>";
+		};
+		A7F9127C1A630F92000E127E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A7A03E8C1A42DD15004BE417 /* NJOPHomeViewController.h */,
+				A7A03E8D1A42DD15004BE417 /* NJOPHomeViewController.m */,
+				A7F9127D1A630FE5000E127E /* Home Detail Cards */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		A7F9127D1A630FE5000E127E /* Home Detail Cards */ = {
+			isa = PBXGroup;
+			children = (
+				A7A03EB01A42EE91004BE417 /* FBOTableCell.h */,
+				A7A03EB11A42EE91004BE417 /* FBOTableCell.m */,
+				A7380F661A5881AA008AB5F6 /* NJOPTripCompleteCell.h */,
+				A7380F671A5881AA008AB5F6 /* NJOPTripCompleteCell.m */,
+				A7A03EBF1A42F21D004BE417 /* NJOPNOFBOTableCell.h */,
+				A7A03EC01A42F21D004BE417 /* NJOPNOFBOTableCell.m */,
+				A7A03EBC1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.h */,
+				A7A03EBD1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.m */,
+				A7A03EB91A42F130004BE417 /* NJOPUpcomingFlightTableCell.h */,
+				A7A03EBA1A42F130004BE417 /* NJOPUpcomingFlightTableCell.m */,
+			);
+			name = "Home Detail Cards";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
