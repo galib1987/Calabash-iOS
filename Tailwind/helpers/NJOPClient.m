@@ -47,7 +47,7 @@
     }
 	NSDictionary* payload = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
-    //NSLog(@"DATA: %@",payload);
+    NSLog(@"DATA: %@",payload);
     NSArray *requests = [payload valueForKeyPath:@"requests"];
     NSDictionary *representation = nil;
     
