@@ -21,34 +21,25 @@
     [self getWelcomeItems];
     
     // Do any additional setup after loading the view.
-    self.pageViewController = [[NJOPFullPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
+    // Create page view controller
+    self.pageViewController = [[NJOPFullPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    // set delegates
     self.pageViewController.dataSource = self;
     self.pageViewController.delegate = self;
     
-    //self.pageViewController.view.frame = CGRectMake(20, 20, self.view.frame.size.width-40, self.view.frame.size.height-40);
-    
+    // Add pages
     NJOPWelcomeContentController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
+    // Add to view
     [self.pageViewController willMoveToParentViewController:self];
     [self addChildViewController:self.pageViewController];
     [self.view insertSubview:self.pageViewController.view atIndex:1]; // behind skip button, in front of bg
     [self.pageViewController didMoveToParentViewController:self];
     
-    
-    /*[self.pageViewController.view setTranslatesAutoresizingMaskIntoConstraints:NO];
-    NSLayoutConstraint *pageViewControllerWidth = [NSLayoutConstraint constraintWithItem:self.pageViewController attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
-    NSLayoutConstraint *pageViewControllerHeight = [NSLayoutConstraint constraintWithItem:self.pageViewController.view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
-    NSLayoutConstraint *pageViewControllerX = [NSLayoutConstraint constraintWithItem:self.pageViewController attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0];
-    NSLayoutConstraint *pageViewControllerY = [NSLayoutConstraint constraintWithItem:self.pageViewController attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0];
-    [self.view addConstraint:pageViewControllerWidth];
-    [self.view addConstraint:pageViewControllerHeight];
-    [self.view addConstraint:pageViewControllerX];
-    [self.view addConstraint:pageViewControllerY];
-    NSLog(@"port HEIGHT: %f; controller height: %f", self.view.frame.size.height, self.pageViewController.view.frame.size.height);*/
-    
+    // Tell first page that it has displayed
     [(NJOPWelcomeContentController *)[self.pageViewController.viewControllers objectAtIndex:0] didFinishDisplay];
     
 }
@@ -105,6 +96,7 @@
     
     NJOPWelcomeContentController *welcomeContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcomeContentTemplate"];
     
+    // Set page items
     welcomeContentViewController.imageFile = self.items[index][@"pageBgs"];
     welcomeContentViewController.headerText = self.items[index][@"pageHeaders"];
     welcomeContentViewController.descText = self.items[index][@"pageDescs"];
@@ -114,7 +106,6 @@
         welcomeContentViewController.buttonBText = self.items[index][@"buttonB"];
     }
     welcomeContentViewController.pageIndex = index;
-    // NSLog(@"%@", self.items[index][@"pageBgs"]);
     
     if (index < self.displayedItems.count && self.displayedItems[index]) {
         welcomeContentViewController.displayed = true;
@@ -132,13 +123,10 @@
 }
 
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
-    [(NJOPWelcomeContentController *)[pendingViewControllers objectAtIndex:0] transitionIn];
     self.nextPage = (NJOPWelcomeContentController *)[pendingViewControllers objectAtIndex:0];
-    //NSLog(@"peeking at %d", ((NJOPWelcomeContentController *)[pendingViewControllers objectAtIndex:0]).pageIndex);
 }
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
-    //NSLog(@"finished? %d", finished);
     self.pageViewController.currentPage = (int)[[self.pageViewController.viewControllers objectAtIndex:0] pageIndex];
     [(NJOPWelcomeContentController *)[self.pageViewController.viewControllers objectAtIndex:0] didFinishDisplay];
     [self.displayedItems setObject:@(true) atIndexedSubscript:self.pageViewController.currentPage];
@@ -147,12 +135,9 @@
 - (void)handleScroll {
     CGFloat offset = self.pageViewController.currentPage*self.view.frame.size.width+self.pageViewController.offset;
     CGFloat percentage = offset/(self.totalPages*self.view.frame.size.width);
-    /*CGRect offsetBounds = self.bgImage.bounds;
-     offsetBounds.origin.x = offset*-0.2;
-     self.bgImage.bounds = offsetBounds;*/
+    
     CGFloat bgOffscreenWidth = self.bgImage.frame.size.width - self.view.frame.size.width;
     [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, (percentage*-200)-bgOffscreenWidth/2, 0)];
-    //NSLog(@"%f", percentage);
     
     [[self.pageViewController.viewControllers objectAtIndex:0] handleScroll:self.pageViewController.offset];
     if (self.nextPage && self.nextPage.pageIndex != self.pageViewController.currentPage) {
