@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NJOPBookingViewController : UITableViewController
+@interface NJOPBookingViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *aircraftInput;
+
+@property (strong, nonatomic) UIPickerView *aircraftPicker;
 
 @end
