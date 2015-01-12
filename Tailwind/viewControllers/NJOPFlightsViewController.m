@@ -23,7 +23,7 @@
     
     // Do any additional setup after loading the view.
     UIRefreshControl *refreshMe = [[UIRefreshControl alloc] init];
-    refreshMe.backgroundColor = [UIColor blackColor];
+    refreshMe.backgroundColor = [UIColor clearColor];
     refreshMe.tintColor = [UIColor whiteColor];
     refreshMe.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull Me"];
     [refreshMe addTarget:self action:@selector(refreshTable:)
@@ -92,6 +92,26 @@
     self.dataSource.title = @"FLIGHTS";
 }
 - (IBAction)segmentedControlAction:(id)sender {
+    /* need to load contract flights vs individual's booked flights */
+    if (self.segmentedControl.selectedSegmentIndex == 0) {
+        [self loadDataSource];
+        [self.tableView reloadData];
+    } else if (self.segmentedControl.selectedSegmentIndex == 1) {
+        NSArray *sections = @[
+                              @{
+                                  kSimpleDataSourceSectionCellsKey : @[
+                                          @{
+                                                                           kSimpleDataSourceCellIdentifierKey			: @"NJOPTableViewCell",
+                                                                           }
+                                          ],
+                                  },
+                              ];
+        
+        self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
+        [self.tableView reloadData];
+    } else {
+        NSLog(@"How is this even possible?");
+    }
     
 }
 
@@ -99,7 +119,6 @@
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     NSDictionary *representationDict = [self.reservations objectAtIndex:indexPath.row];
-    NSLog(@"HEY HEY HEY HEY %@", representationDict);
     
     if ([segue.identifier isEqualToString:@"showDetail"] ) {
         
