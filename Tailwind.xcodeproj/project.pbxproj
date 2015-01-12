@@ -31,6 +31,7 @@
 		A730033D1A53189800E5A42C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A730033B1A53189800E5A42C /* Settings.storyboard */; };
 		A7380F681A5881AA008AB5F6 /* NJOPTripCompleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7380F671A5881AA008AB5F6 /* NJOPTripCompleteCell.m */; };
 		A7433C031A531184009BD3EB /* NJOPSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7433C021A531184009BD3EB /* NJOPSettingsTableViewController.m */; };
+		A74C23801A642A75002F2164 /* NJOPMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C237F1A642A75002F2164 /* NJOPMessageCell.m */; };
 		A74C81851A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C81841A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m */; };
 		A74C81881A53150C001FF1A9 /* NJOPAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C81871A53150C001FF1A9 /* NJOPAccountViewController.m */; };
 		A750999B1A6357C00091D7E3 /* NJOPMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75099981A6357C00091D7E3 /* NJOPMessagesViewController.m */; };
@@ -182,6 +183,8 @@
 		A7433C011A531184009BD3EB /* NJOPSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSettingsTableViewController.h; sourceTree = "<group>"; };
 		A7433C021A531184009BD3EB /* NJOPSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsTableViewController.m; sourceTree = "<group>"; };
 		A7433C041A5311AE009BD3EB /* NJOPPushNotificationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPushNotificationsTableViewController.h; sourceTree = "<group>"; };
+		A74C237E1A642A75002F2164 /* NJOPMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPMessageCell.h; sourceTree = "<group>"; };
+		A74C237F1A642A75002F2164 /* NJOPMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPMessageCell.m; sourceTree = "<group>"; };
 		A74C81841A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPushNotificationsTableViewController.m; sourceTree = "<group>"; };
 		A74C81861A53150C001FF1A9 /* NJOPAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAccountViewController.h; sourceTree = "<group>"; };
 		A74C81871A53150C001FF1A9 /* NJOPAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAccountViewController.m; sourceTree = "<group>"; };
@@ -512,6 +515,15 @@
 			path = menu;
 			sourceTree = "<group>";
 		};
+		A74C237D1A642A4C002F2164 /* Messages Views */ = {
+			isa = PBXGroup;
+			children = (
+				A74C237E1A642A75002F2164 /* NJOPMessageCell.h */,
+				A74C237F1A642A75002F2164 /* NJOPMessageCell.m */,
+			);
+			name = "Messages Views";
+			sourceTree = "<group>";
+		};
 		A77680941A4063EC00B2E7CF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,6 +588,7 @@
 		A7A03E9D1A42E554004BE417 /* elements */ = {
 			isa = PBXGroup;
 			children = (
+				A74C237D1A642A4C002F2164 /* Messages Views */,
 				A750999E1A6359630091D7E3 /* NJOPFlightTableCell.h */,
 				A750999F1A6359630091D7E3 /* NJOPFlightTableCell.m */,
 				1E636E8D1A5F1FC3002B3E8C /* NJOPAccountTableCell.h */,
@@ -995,6 +1008,7 @@
 				A77680DD1A406C7D00B2E7CF /* NJOPSession.m in Sources */,
 				A7A03EBE1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.m in Sources */,
 				A7A03E9C1A42E523004BE417 /* NJOPNavigationBar.m in Sources */,
+				A74C23801A642A75002F2164 /* NJOPMessageCell.m in Sources */,
 				A7A03EB81A42EFCA004BE417 /* NJOPTableViewCell.m in Sources */,
 				1F6635491A5E94F800E29FA1 /* NJOPHamburgerViewController.m in Sources */,
 				A7A03EAC1A42EB6D004BE417 /* NJOPTableView.m in Sources */,

@@ -24,6 +24,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)loadDataSource {
+    
+    NSArray* sections = @[
+                          @{
+                              kSimpleDataSourceSectionCellsKey : @[
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPMessageCell",
+                                          kSimpleDataSourceCellKeypaths					: @{
+                                                  }
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPMessageCell",
+                                          kSimpleDataSourceCellKeypaths					: @{
+                                                  }
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPMessageCell",
+                                          kSimpleDataSourceCellKeypaths					: @{
+                                                  }
+                                          }
+                                      ]
+                              }
+                          ];
+    
+    self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
+    self.dataSource.title = [@"Messages" uppercaseString];
+}
+
 /*
 #pragma mark - Navigation
 
