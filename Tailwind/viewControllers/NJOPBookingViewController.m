@@ -9,10 +9,14 @@
 #import "NJOPBookingViewController.h"
 
 @interface NJOPBookingViewController ()
-
 @end
+int PassengerCount = 0;
+int PassengerMax = 15;
+int PassengerMin = 1;
 
 @implementation NJOPBookingViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,13 +44,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+- (IBAction)AddPassenger:(UIButton *)sender {
+    PassengerCount++;
+    [self updatePassengerCount];
+
+}
+
+- (IBAction)SubtractPassenger:(UIButton *)sender {
+    PassengerCount--;
+    [self updatePassengerCount];
+}
+
+-(void)updatePassengerCount{
+    if(PassengerCount<PassengerMin)PassengerCount = PassengerMin;
+    if(PassengerCount>PassengerMax)PassengerCount = PassengerMax;
+    self.NumberOfPassengers.text =  [NSString stringWithFormat:@"%i",PassengerCount];
+}
+
 //#pragma mark - Table view data source
 //
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //#warning Potentially incomplete method implementation.
 //    // Return the number of sections.
 //    return 0;
-//}
+//}/Development/netJets/bitbucket/Tailwind/Booking.storyboard
 //
 //- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
@@ -107,16 +130,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-#pragma mark - Aircraft UIPicker
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    // STUB
-    return 5;
-}
-
 @end
