@@ -13,8 +13,6 @@
 #import "NSDate+NJOP.h"
 #import "NSDateFormatter+Utility.h"
 #import "NCLHTTPClient.h"
-#import "NJOPSession.h"
-#import "NJOPBrief.h"
 
 #import "NCLInfoPresenter.h"
 
@@ -31,9 +29,6 @@
     NSString *jsonString = @"";
     NSError *error = nil;
     NSURLResponse *response = nil;
-    // put results into session
-    NJOPSession *session = [NJOPSession sharedInstance];
-    NJOPBrief *brief = [[NJOPBrief alloc] init];
     if (reservationInfo != nil && [reservationInfo isKindOfClass:[NSDictionary class]]) {
         // look at the NSDictionary to see if we're fetching from URL
         apiURL = [reservationInfo objectForKey:@"apiURL"];
@@ -52,13 +47,12 @@
     }
 	NSDictionary* payload = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
-    NSLog(@"DATA: %@",payload);
+    //NSLog(@"DATA: %@",payload);
     NSArray *requests = [payload valueForKeyPath:@"requests"];
     NSDictionary *representation = nil;
     
     NSDictionary* individualJSON = [payload valueForKeyPath:@"individual"];
     NJOPIndividual *individual = [NJOPIndividual individualWithDictionaryRepresentation:individualJSON];
-    [session setIndividual:individual];
     
     NSString *userInfo = [NSString stringWithFormat:@"%@ - %@ - User ID: %@",individual.firstName, individual.lastName, individual.individualId];
     
@@ -70,10 +64,9 @@
     } else {
         data = nil;
         payload = nil;
-        // we're not loading fake data anymore if there's no reservations
-        //data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"brief-test" ofType:@"json"]];
-        //payload = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        //representation = [payload valueForKeyPath:@"requests"][0];
+        data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"brief-test" ofType:@"json"]];
+        payload = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        representation = [payload valueForKeyPath:@"requests"][0];
     }
     
 
@@ -137,7 +130,6 @@
     }
     
     NSArray *reservations = [[NSArray alloc] initWithArray:results];
-    [session setReservations:reservations];
     
     
 	if (completionHandler) {

@@ -10,24 +10,4 @@
 
 @implementation NJOPSession
 
-+ (NJOPSession *) sharedInstance {
-    static NJOPSession * sharedInstance;
-    @synchronized(self)	{
-        if (!sharedInstance) {
-            sharedInstance = [[NJOPSession alloc] init];
-        }
-        return sharedInstance;
-    }
-}
-
-- (id) init {
-    self = [super init];
-    if (self) {
-        self.individual = nil;
-        self.reservations = [NSArray array];
-        self.brief = nil;
-    }
-    return self;
-}
-
 @end

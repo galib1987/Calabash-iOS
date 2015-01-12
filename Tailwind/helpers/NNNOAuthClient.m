@@ -49,7 +49,7 @@ NSString * const NNNOAuthClientLoginFailed = @"OAuth client login Failed";
 - (NSString*)host
 {
 //    return [[NNNUserDefaultsManager sharedInstance] host];
-    return @"servicesdev2.netjets.com";
+    return @"servicesdev.netjets.com";
 }
 
 - (NSInteger)port

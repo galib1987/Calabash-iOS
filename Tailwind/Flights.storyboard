@@ -112,11 +112,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="YXz-8w-Ufu">
-                            <rect key="frame" x="0.0" y="64" width="375" height="220"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mhx-0q-8eu">
-                                    <rect key="frame" x="20" y="116.5" width="335" height="84.5"/>
+                                    <rect key="frame" x="8" y="8" width="359" height="29"/>
                                     <segments>
                                         <segment title="YOUR FLIGHTS"/>
                                         <segment title="ACCOUNT FLIGHTS"/>
@@ -126,99 +126,16 @@
                                         <action selector="segmentedControlAction:" destination="oTb-06-5oe" eventType="valueChanged" id="0An-MH-iGt"/>
                                     </connections>
                                 </segmentedControl>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Past flights can be viewed in your account." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1w-JG-mu7">
-                                    <rect key="frame" x="20" y="20" width="335" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHA-5F-suQ">
-                                    <rect key="frame" x="20" y="48.5" width="335" height="60"/>
-                                    <color key="backgroundColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="60" id="f05-L3-aBD"/>
-                                    </constraints>
-                                    <state key="normal" title="VIEW PAST FLIGHTS">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="Mhx-0q-8eu" firstAttribute="leading" secondItem="YXz-8w-Ufu" secondAttribute="leading" constant="20" symbolic="YES" id="1xq-PT-zcC"/>
-                                <constraint firstItem="Mhx-0q-8eu" firstAttribute="top" secondItem="ZHA-5F-suQ" secondAttribute="bottom" constant="8" symbolic="YES" id="C4t-QW-t61"/>
-                                <constraint firstAttribute="trailing" secondItem="Mhx-0q-8eu" secondAttribute="trailing" constant="20" symbolic="YES" id="DHR-Bu-hrg"/>
-                                <constraint firstItem="ZHA-5F-suQ" firstAttribute="leading" secondItem="YXz-8w-Ufu" secondAttribute="leading" constant="20" symbolic="YES" id="Q6e-Ib-C5q"/>
-                                <constraint firstItem="Mhx-0q-8eu" firstAttribute="top" secondItem="ZHA-5F-suQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Qoj-np-bf1"/>
-                                <constraint firstAttribute="trailing" secondItem="ZHA-5F-suQ" secondAttribute="trailing" constant="20" symbolic="YES" id="RrJ-ps-O0H"/>
-                                <constraint firstItem="ZHA-5F-suQ" firstAttribute="top" secondItem="P1w-JG-mu7" secondAttribute="bottom" constant="8" symbolic="YES" id="UEl-OH-Dn0"/>
-                                <constraint firstItem="P1w-JG-mu7" firstAttribute="leading" secondItem="YXz-8w-Ufu" secondAttribute="leading" constant="20" symbolic="YES" id="ZI6-Rg-XDT"/>
-                                <constraint firstAttribute="centerX" secondItem="P1w-JG-mu7" secondAttribute="centerX" id="Zgn-he-txt"/>
-                                <constraint firstItem="P1w-JG-mu7" firstAttribute="top" secondItem="YXz-8w-Ufu" secondAttribute="top" constant="20" symbolic="YES" id="aJb-SO-BiC"/>
-                                <constraint firstAttribute="bottom" secondItem="Mhx-0q-8eu" secondAttribute="bottom" constant="20" symbolic="YES" id="cOt-TR-YPZ"/>
-                                <constraint firstItem="ZHA-5F-suQ" firstAttribute="top" secondItem="P1w-JG-mu7" secondAttribute="bottom" constant="8" symbolic="YES" id="eBy-rQ-M7k"/>
-                                <constraint firstAttribute="trailing" secondItem="P1w-JG-mu7" secondAttribute="trailing" constant="20" symbolic="YES" id="w7F-Qt-7IN"/>
+                                <constraint firstItem="Mhx-0q-8eu" firstAttribute="leading" secondItem="YXz-8w-Ufu" secondAttribute="leading" constant="8" id="P2t-1k-cDg"/>
+                                <constraint firstAttribute="centerX" secondItem="Mhx-0q-8eu" secondAttribute="centerX" id="c7l-8x-S5p"/>
+                                <constraint firstAttribute="trailing" secondItem="Mhx-0q-8eu" secondAttribute="trailing" constant="8" id="oBN-2t-08Z"/>
+                                <constraint firstAttribute="centerY" secondItem="Mhx-0q-8eu" secondAttribute="centerY" id="pXu-e3-WfJ"/>
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPTableViewCell" rowHeight="338" id="0oF-E7-DTK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0oF-E7-DTK" id="hYv-z1-TGc">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEv-ao-vcF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="338"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="If you need assistance, please call the owner services team." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dw-wq-34M">
-                                                    <rect key="frame" x="20" y="69" width="335" height="181"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZvU-7u-zOk">
-                                                    <rect key="frame" x="20" y="258" width="335" height="60"/>
-                                                    <color key="backgroundColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="kuH-yx-sDP"/>
-                                                    </constraints>
-                                                    <state key="normal" title="BOOK A NEW FLIGHT">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="There are no upcoming flights booked through your account." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boH-q7-hud">
-                                                    <rect key="frame" x="20" y="20" width="335" height="41"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="1dw-wq-34M" secondAttribute="trailing" constant="20" symbolic="YES" id="895-VQ-EkQ"/>
-                                                <constraint firstItem="ZvU-7u-zOk" firstAttribute="top" secondItem="1dw-wq-34M" secondAttribute="bottom" constant="8" symbolic="YES" id="BmV-wg-2e9"/>
-                                                <constraint firstItem="1dw-wq-34M" firstAttribute="top" secondItem="boH-q7-hud" secondAttribute="bottom" constant="8" symbolic="YES" id="FgO-GI-QL6"/>
-                                                <constraint firstItem="boH-q7-hud" firstAttribute="leading" secondItem="BEv-ao-vcF" secondAttribute="leading" constant="20" symbolic="YES" id="Fyn-sM-hg1"/>
-                                                <constraint firstAttribute="trailing" secondItem="ZvU-7u-zOk" secondAttribute="trailing" constant="20" symbolic="YES" id="PMM-9x-Xh7"/>
-                                                <constraint firstAttribute="trailing" secondItem="boH-q7-hud" secondAttribute="trailing" constant="20" symbolic="YES" id="Q7o-q7-m9q"/>
-                                                <constraint firstItem="ZvU-7u-zOk" firstAttribute="leading" secondItem="BEv-ao-vcF" secondAttribute="leading" constant="20" symbolic="YES" id="Sin-vY-5EH"/>
-                                                <constraint firstItem="ZvU-7u-zOk" firstAttribute="top" secondItem="1dw-wq-34M" secondAttribute="bottom" constant="8" symbolic="YES" id="Sn6-Ry-0Xg"/>
-                                                <constraint firstItem="boH-q7-hud" firstAttribute="top" secondItem="BEv-ao-vcF" secondAttribute="top" constant="20" symbolic="YES" id="g65-kM-koU"/>
-                                                <constraint firstItem="1dw-wq-34M" firstAttribute="leading" secondItem="BEv-ao-vcF" secondAttribute="leading" constant="20" symbolic="YES" id="iOS-sO-xqK"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZvU-7u-zOk" secondAttribute="bottom" constant="20" symbolic="YES" id="jzB-xb-t9F"/>
-                                                <constraint firstItem="1dw-wq-34M" firstAttribute="top" secondItem="boH-q7-hud" secondAttribute="bottom" constant="8" symbolic="YES" id="qUO-BX-mUv"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="BEv-ao-vcF" firstAttribute="leading" secondItem="hYv-z1-TGc" secondAttribute="leading" id="1lD-8z-Kzz"/>
-                                        <constraint firstAttribute="bottom" secondItem="BEv-ao-vcF" secondAttribute="bottom" id="HwT-jG-sk6"/>
-                                        <constraint firstAttribute="trailing" secondItem="BEv-ao-vcF" secondAttribute="trailing" id="XUC-7H-DAI"/>
-                                        <constraint firstItem="BEv-ao-vcF" firstAttribute="top" secondItem="hYv-z1-TGc" secondAttribute="top" id="fKv-ab-C1J"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPFlightTableCell" rowHeight="114" id="YI5-h0-hU6" customClass="NJOPFlightTableCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YI5-h0-hU6" id="4CH-9p-ezo">
@@ -594,7 +511,7 @@
                                                         <constraint firstAttribute="width" constant="33" id="paE-IQ-HIH"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="hr0-M6-E7g">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="hr0-M6-E7g">
                                                     <rect key="frame" x="102" y="594" width="36" height="38"/>
                                                 </imageView>
                                             </subviews>
@@ -1206,7 +1123,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DGG-GF-cth" id="0eK-su-4Ok">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHm-i2-bHF">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eHm-i2-bHF">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="557"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEPARTURE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZC-GN-8YO">
@@ -1352,7 +1269,7 @@ Brooklyn, NY 11238</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iEy-AU-WYH" id="fEH-Xa-Kdu">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QK1-Sl-GQb">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QK1-Sl-GQb">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="557"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARRIVAL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aB-0w-znB">
@@ -1532,7 +1449,7 @@ Brooklyn, NY 11238</string>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEVERAGE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JN-XA-3e6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BEVERAGE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JN-XA-3e6">
                                                     <rect key="frame" x="20" y="136" width="335" height="20"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -1754,7 +1671,7 @@ Don’t see what you want?</string>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tqo-Y4-zGu" id="dKP-n9-BFs">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGB-3Y-8md">
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CGB-3Y-8md">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="523"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSENGERS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwQ-Fb-QD9">
@@ -1766,22 +1683,22 @@ Don’t see what you want?</string>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="EsV-6F-pQl">
                                                     <rect key="frame" x="20" y="48" width="374" height="13"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="nQl-iF-uD9">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="nQl-iF-uD9">
                                                     <rect key="frame" x="20" y="270" width="374" height="13"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="NOTES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJK-WK-rBM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJK-WK-rBM">
                                                     <rect key="frame" x="20" y="242" width="374" height="20"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="*Passport Required For International Flights" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwX-Br-7L1">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Passport Required For International Flights" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwX-Br-7L1">
                                                     <rect key="frame" x="20" y="291" width="374" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZs-Lx-epk">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZs-Lx-epk">
                                                     <rect key="frame" x="20" y="69" width="374" height="144"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <string key="text">Ms. Terry Smith
@@ -1794,7 +1711,7 @@ Kelsey (pet)</string>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUk-Wa-bL0">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUk-Wa-bL0">
                                                     <rect key="frame" x="20" y="316" width="374" height="118"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <string key="text">Prior to boarding, all passengers must show a 
@@ -1806,7 +1723,7 @@ passenger will be under 18 years of age.</string>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfO-wV-SDy">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfO-wV-SDy">
                                                     <rect key="frame" x="20" y="443" width="374" height="60"/>
                                                     <color key="backgroundColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -1896,7 +1813,7 @@ passenger will be under 18 years of age.</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9zg-xc-t4F" id="INd-EH-Gr9">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vgv-zS-j4u">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vgv-zS-j4u">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="TSA Screening Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4z-Dc-Rc3">
@@ -1905,7 +1822,7 @@ passenger will be under 18 years of age.</string>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqv-Xi-2SC">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqv-Xi-2SC">
                                                             <rect key="frame" x="20" y="45" width="335" height="173"/>
                                                             <string key="text">Please be aware that a TSA Security Screening will be conducted prior to boarding the aircraft. The Transportation Security Administration (TSA) requires that all passengers and accessible baggage be screened prior to boarding the aircraft when there is a Commercial Flight 
 on an aircraft with a takeoff weight greater than 100,300 lbs(e.g. BBJ) or with a passenger seating configuration of 61 or more.</string>
@@ -1944,7 +1861,7 @@ on an aircraft with a takeoff weight greater than 100,300 lbs(e.g. BBJ) or with 
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aVp-3w-EC2" id="GiA-0v-O37">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6H-fK-ijp">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6H-fK-ijp">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="List of Prohibited Items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5k-g2-v5r">
@@ -1953,7 +1870,7 @@ on an aircraft with a takeoff weight greater than 100,300 lbs(e.g. BBJ) or with 
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNo-u5-Qow">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNo-u5-Qow">
                                                             <rect key="frame" x="20" y="45" width="335" height="231"/>
                                                             <string key="text">The Transportation Safety Administration has determined that some items may not be carried on commercial or charter aircraft. The TSA website at www.tsa.gov/travelers/airtravel/
 prohibited/permitted-prohibited-items.shtm contains the complete list of both prohibited 
@@ -1996,7 +1913,7 @@ of prohibited items.</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rj8-D7-0ho" id="XEn-aj-b3A">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gg4-QU-gkG">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gg4-QU-gkG">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWN-XV-4kB">
@@ -2007,7 +1924,7 @@ Travel Support</string>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Py-Jg-RQH">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Py-Jg-RQH">
                                                             <rect key="frame" x="20" y="62" width="335" height="156"/>
                                                             <string key="text">MedAire (Worlwide): 480-333-3888
 In the event of a medical incident while traveling, NetJets Owners and Marquis Jet Card Owners can call MedAire for immediate, detailed, expert medical information and assistance anywhere in the world, 24 hours per day. For more information about MedAire services, please contact your Owner Services Team.</string>

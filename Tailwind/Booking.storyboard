@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -101,7 +101,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="BookingStoryboard" id="pWK-K7-4l2" customClass="NJOPBookingViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qzs-JG-tOD">
-                        <rect key="frame" x="0.0" y="64" width="375" height="936"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="937"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -112,7 +112,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM6-Vj-byv">
                                     <rect key="frame" x="12" y="8" width="350" height="60"/>
-                                    <color key="backgroundColor" red="0.34509803919999998" green="0.8862745098" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="COPY FROM PAST FLIGHT">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -324,7 +324,7 @@
                                                     <rect key="frame" x="12" y="38" width="230" height="59"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al4-Tz-avk">
                                                     <rect key="frame" x="243" y="38" width="59" height="59"/>
@@ -336,6 +336,9 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="SubtractPassenger:" destination="pWK-K7-4l2" eventType="touchUpInside" id="zLO-XU-zGl"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYI-6x-zEo">
                                                     <rect key="frame" x="303" y="38" width="59" height="59"/>
@@ -344,6 +347,9 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="AddPassenger:" destination="pWK-K7-4l2" eventType="touchUpInside" id="kcg-tD-eIb"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -389,6 +395,42 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="Sgd-L1-L5W" userLabel="COMMENTS">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sgd-L1-L5W" id="SBN-Pc-QvM">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPy-d9-Ms3">
+                                                    <rect key="frame" x="8" y="31" width="169" height="59"/>
+                                                    <state key="normal" title="RESET FORM">
+                                                        <color key="titleColor" red="0.27843137254901962" green="0.8901960784313725" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbo-2V-KmT">
+                                                    <rect key="frame" x="191" y="31" width="169" height="59"/>
+                                                    <color key="backgroundColor" red="0.17254901960784313" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="NEXT">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="xPy-d9-Ms3" firstAttribute="top" secondItem="SBN-Pc-QvM" secondAttribute="topMargin" constant="23" id="6Wg-IA-ZKM"/>
+                                                <constraint firstItem="Bbo-2V-KmT" firstAttribute="width" secondItem="xPy-d9-Ms3" secondAttribute="width" id="FTb-RY-Zbj"/>
+                                                <constraint firstItem="Bbo-2V-KmT" firstAttribute="leading" secondItem="xPy-d9-Ms3" secondAttribute="trailing" constant="14" id="QmS-cb-vlo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Bbo-2V-KmT" secondAttribute="bottom" constant="12" id="nhO-A9-ITN"/>
+                                                <constraint firstItem="Bbo-2V-KmT" firstAttribute="top" secondItem="SBN-Pc-QvM" secondAttribute="topMargin" constant="23" id="pD6-d6-xoc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xPy-d9-Ms3" secondAttribute="bottom" constant="12" id="rja-3H-sFn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Bbo-2V-KmT" secondAttribute="trailing" constant="7" id="wdI-P1-iVA"/>
+                                                <constraint firstItem="xPy-d9-Ms3" firstAttribute="leading" secondItem="SBN-Pc-QvM" secondAttribute="leadingMargin" id="yoi-hu-ymM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -400,8 +442,18 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <size key="freeformSize" width="375" height="1001"/>
                     <connections>
+                        <outlet property="AircraftSelector" destination="AVD-WU-ES8" id="CPW-Sa-QxU"/>
+                        <outlet property="ArrivalTime" destination="k8I-Ap-M88" id="4mK-XC-aNV"/>
+                        <outlet property="BookingComment" destination="nFw-VJ-5Zi" id="z93-n6-7Xw"/>
+                        <outlet property="DepartTime" destination="W7z-SC-laF" id="1ms-fW-yen"/>
+                        <outlet property="DepartureAirport" destination="cSY-at-BbI" id="s91-Fy-mTx"/>
+                        <outlet property="DestinationAirport" destination="cSY-at-BbI" id="Eco-ZP-GHC"/>
+                        <outlet property="FlightDate" destination="YYH-n1-T0Y" id="ZQT-aN-tYR"/>
+                        <outlet property="NextStep" destination="Bbo-2V-KmT" id="QdB-4N-HoL"/>
+                        <outlet property="NumberOfPassengers" destination="bdM-3r-fvl" id="ajA-tU-2sF"/>
+                        <outlet property="ResetBooking" destination="xPy-d9-Ms3" id="WFc-aU-dRZ"/>
                         <outlet property="aircraftInput" destination="AVD-WU-ES8" id="DUF-hd-GCS"/>
                     </connections>
                 </tableViewController>

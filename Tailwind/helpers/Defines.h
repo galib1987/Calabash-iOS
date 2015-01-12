@@ -9,10 +9,6 @@
 #ifndef Tailwind_Defines_h
 #define Tailwind_Defines_h
 
-//NOTES:
-// for QA Calabash:
-// Login 1000s - NJOPLoginViewController - see this file for specific IDs
-
 // just setting some globals for the app.. mainly for NSNotification
 #define changeScreen @"changeScreen"
 #define goToLoginScreen @"goToLoginScreen"
@@ -23,7 +19,7 @@
 
 // hostname and URL for different API calls
 #define API_SOURCE_IDENTIFIER @"OwnersPortalIOSUser"
-#define API_HOSTNAME @"servicesdev2.netjets.com"
+#define API_HOSTNAME @"servicesdev.netjets.com"
 #define URL_BRIEF @"/op/v1/brief"
 #define URL_RESERVATIONS @"/op/v1/reservations"
 #define URL_CONTRACTS @"/op/v1/contracts"
@@ -40,7 +36,7 @@ typedef enum {
 // temporarily until I figure out a better way to bypass having to VPN
 // 0 is use VPN
 // 1 is use JSON
-#define USE_STATIC_DATA 0
-//#define USE_STATIC_DATA 1
+//#define USE_STATIC_DATA 0
+#define USE_STATIC_DATA 1
 
 #endif
