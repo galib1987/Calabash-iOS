@@ -56,7 +56,20 @@
     }];
 }
 
+- (NSInteger)extractDateFrom:(NSDate *)date {
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:date];
+    NSInteger day = [components day];
+    
+    return day;
+}
+
 -(void)updateWithReservation:(NSArray *)reservations {
+    
+    NSDateFormatter *weekFormatter = [[NSDateFormatter alloc] init];
+    weekFormatter.dateFormat = @"EEEE";
+    
+    NSDateFormatter *monthFormatter = [[NSDateFormatter alloc] init];
+    monthFormatter.dateFormat = @"MMM";
     
     NSMutableArray *kSimpleDataSourceCells = [[NSMutableArray alloc] init];
     
@@ -65,9 +78,9 @@
         [kSimpleDataSourceKeys addEntriesFromDictionary:@{
                                                           kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
                                                           kSimpleDataSourceCellKeypaths					: @{
-                                                                  @"monthLabel.text" : @"JAN",
-                                                                  @"dateLabel.text" : [NSString stringWithFormat:@"%@", [reservation.departureDateString substringWithRange:NSMakeRange(4, 2)]], // placeholder value
-                                                                  @"weekdayLabel.text" : @"Wednesday",
+                                                                  @"monthLabel.text" : [monthFormatter stringFromDate:reservation.departureDate],
+                                                                  @"dateLabel.text" : [NSString stringWithFormat:@"%ld", (long)[self extractDateFrom:reservation.departureDate]], // placeholder value
+                                                                  @"weekdayLabel.text" : [weekFormatter stringFromDate:reservation.departureDate],
                                                                   @"toFBOLocationLabel.text" : reservation.arrivalAirportCity,
                                                                   @"fromFBOLocationLabel.text" : reservation.departureAirportCity,
                                                                   @"timeDurationLabel.text" : @"12:00PM - 2:45AM", // placeholder value
