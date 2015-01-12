@@ -32,6 +32,11 @@ int PassengerMin = 1;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.aircraftPicker = [[UIPickerView alloc] init];
+    [self.aircraftPicker setDataSource: self];
+    [self.aircraftPicker setDelegate: self];
+    self.aircraftInput.inputView = self.aircraftPicker;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -125,4 +130,16 @@ int PassengerMin = 1;
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Aircraft UIPicker
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    // STUB
+    return 5;
+}
+
 @end
