@@ -20,9 +20,7 @@
 - (IBAction)SubtractPassenger:(UIButton *)sender;
 - (IBAction)AddPassenger:(UIButton *)sender;
 
-@property (strong, nonatomic) IBOutlet UITextView *BookingComment;
-@property (strong, nonatomic) IBOutlet UIButton *ResetBooking;
-@property (strong, nonatomic) IBOutlet UIButton *NextStep;
-
+- (UIPickerView*) getAircraftPicker;
+- (void) selectedAircraft;
 
 @end
