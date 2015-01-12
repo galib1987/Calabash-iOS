@@ -10,6 +10,7 @@
 #import "NJOPClient+flights.h"
 #import "NJOPReservation.h"
 #import "NJOPFlightsDetailViewController.h"
+#import "NJOPSession.h"
 
 @interface NJOPFlightsViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -49,11 +50,11 @@
 
 -(void)loadDataSource {
     
-    __weak NJOPFlightsViewController* wself = self;
+    NJOPSession *session = [NJOPSession sharedInstance];
     
-    [NJOPClient GETReservationsWithInfo:nil completion:^(NSArray *reservations, NSError *error) {
-        [wself updateWithReservation:reservations];
-    }];
+    __weak NJOPFlightsViewController* wself = self;
+
+    [wself updateWithReservation:session.reservations];
 }
 
 - (NSInteger)extractDateFrom:(NSDate *)date {

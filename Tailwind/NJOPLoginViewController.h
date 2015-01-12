@@ -27,3 +27,10 @@
 - (void) presentMessage:(NSString *) message withTitle:(NSString *) title; // temporary for testing
 
 @end
+
+
+// for QA : Calabash
+// TAGS:
+// 1001 - login email field
+// 1002 - login password field
+// 1003 - login button

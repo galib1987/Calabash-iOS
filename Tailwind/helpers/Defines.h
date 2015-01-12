@@ -11,7 +11,7 @@
 
 //NOTES:
 // for QA Calabash:
-// Login
+// Login 1000s - NJOPLoginViewController - see this file for specific IDs
 
 // just setting some globals for the app.. mainly for NSNotification
 #define changeScreen @"changeScreen"
