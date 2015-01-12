@@ -9,13 +9,6 @@
     <customFonts key="customFonts">
         <mutableArray key="Nimbus-Sans-D-Bold.otf">
             <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
         </mutableArray>
         <mutableArray key="Nimbus-Sans-D-Light.otf">
             <string>NimbusSanD-Lig</string>
@@ -460,6 +453,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0d-NX-g92" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="365.5" y="-215"/>
+        </scene>
+        <!--Airport Search View Controller-->
+        <scene sceneID="PoS-5V-PVQ">
+            <objects>
+                <viewController id="Saa-EZ-a7o" customClass="NJOPAirportSearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xRF-3v-JEl"/>
+                        <viewControllerLayoutGuide type="bottom" id="MjZ-aL-ewG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MNP-ul-yCy">
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="giG-Ig-gBg">
+                                <rect key="frame" x="16" y="28" width="568" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mIW-ek-Fcu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqA-Pt-Pof">
+                                <rect key="frame" x="26" y="38" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Airports:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2Q-vK-mtY">
+                                <rect key="frame" x="16" y="143" width="161" height="24"/>
+                                <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GPA-kh-Fwu">
+                                <rect key="frame" x="16" y="200" width="568" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="M6Z-nU-dog" customClass="NJOPTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M6Z-nU-dog" id="mZL-BJ-hoA">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Las Vegas, NV, US" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPC-ru-rXy">
+                                                    <rect key="frame" x="8" y="8" width="552" height="18"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="paE-He-qhw">
+                                                    <rect key="frame" x="0.0" y="34" width="568" height="1"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="zvW-cQ-Xo9"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-qn-FIS">
+                                                    <rect key="frame" x="8" y="51" width="552" height="60"/>
+                                                    <string key="text">KLAS McCarran International</string>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="30"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="paE-He-qhw" secondAttribute="trailing" id="6dV-CR-uWT"/>
+                                                <constraint firstItem="Vkj-qn-FIS" firstAttribute="leading" secondItem="vPC-ru-rXy" secondAttribute="leading" id="6hh-IC-Qku"/>
+                                                <constraint firstItem="paE-He-qhw" firstAttribute="leading" secondItem="mZL-BJ-hoA" secondAttribute="leading" id="Lq2-AZ-45a"/>
+                                                <constraint firstItem="Vkj-qn-FIS" firstAttribute="top" secondItem="paE-He-qhw" secondAttribute="bottom" constant="16" id="Mm7-7F-nSX"/>
+                                                <constraint firstItem="vPC-ru-rXy" firstAttribute="leading" secondItem="mZL-BJ-hoA" secondAttribute="leadingMargin" id="WIP-MU-37F"/>
+                                                <constraint firstItem="vPC-ru-rXy" firstAttribute="top" secondItem="mZL-BJ-hoA" secondAttribute="topMargin" id="bY8-c5-RpR"/>
+                                                <constraint firstItem="paE-He-qhw" firstAttribute="top" secondItem="vPC-ru-rXy" secondAttribute="bottom" constant="8" id="ez6-6l-0Sj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Vkj-qn-FIS" secondAttribute="bottom" constant="8" id="iz3-JI-Jgh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vPC-ru-rXy" secondAttribute="trailing" id="v3n-7M-206"/>
+                                                <constraint firstItem="Vkj-qn-FIS" firstAttribute="trailing" secondItem="vPC-ru-rXy" secondAttribute="trailing" id="xq4-Un-tOw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GPA-kh-Fwu" firstAttribute="top" secondItem="i2Q-vK-mtY" secondAttribute="bottom" constant="33" id="1Gz-g6-AUu"/>
+                            <constraint firstAttribute="bottom" secondItem="GPA-kh-Fwu" secondAttribute="bottom" id="Dh4-MW-82Z"/>
+                            <constraint firstItem="giG-Ig-gBg" firstAttribute="leading" secondItem="i2Q-vK-mtY" secondAttribute="leading" id="NeW-3N-6WL"/>
+                            <constraint firstItem="giG-Ig-gBg" firstAttribute="leading" secondItem="MNP-ul-yCy" secondAttribute="leadingMargin" id="QtD-k4-CEE"/>
+                            <constraint firstItem="i2Q-vK-mtY" firstAttribute="top" secondItem="giG-Ig-gBg" secondAttribute="bottom" constant="55" id="T6E-aS-50x"/>
+                            <constraint firstItem="giG-Ig-gBg" firstAttribute="top" secondItem="xRF-3v-JEl" secondAttribute="bottom" constant="8" id="Xlm-gV-bY1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="giG-Ig-gBg" secondAttribute="trailing" id="ZFs-9w-1fc"/>
+                            <constraint firstItem="giG-Ig-gBg" firstAttribute="trailing" secondItem="GPA-kh-Fwu" secondAttribute="trailing" id="aG8-bR-VjT"/>
+                            <constraint firstItem="giG-Ig-gBg" firstAttribute="leading" secondItem="GPA-kh-Fwu" secondAttribute="leading" id="wF2-9p-LEE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultsSectionTitle" destination="i2Q-vK-mtY" id="fsx-Ja-y0y"/>
+                        <outlet property="searchInput" destination="giG-Ig-gBg" id="9yM-m8-PLz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iKV-K6-C41" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="-390"/>
         </scene>
     </scenes>
 </document>
