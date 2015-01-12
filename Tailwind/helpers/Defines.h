@@ -9,6 +9,10 @@
 #ifndef Tailwind_Defines_h
 #define Tailwind_Defines_h
 
+//NOTES:
+// for QA Calabash:
+// Login
+
 // just setting some globals for the app.. mainly for NSNotification
 #define changeScreen @"changeScreen"
 #define goToLoginScreen @"goToLoginScreen"
@@ -36,7 +40,7 @@ typedef enum {
 // temporarily until I figure out a better way to bypass having to VPN
 // 0 is use VPN
 // 1 is use JSON
-//#define USE_STATIC_DATA 0
-#define USE_STATIC_DATA 1
+#define USE_STATIC_DATA 0
+//#define USE_STATIC_DATA 1
 
 #endif

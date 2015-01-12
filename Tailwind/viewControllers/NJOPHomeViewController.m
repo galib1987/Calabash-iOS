@@ -65,7 +65,8 @@
     
     
     /*needs to be refactored into a method. also deciding what date conditions should be. */
-    if (reservations) {
+    if ([reservations count] > 0) {
+        NSLog(@"we have reservations");
         NJOPReservation *reservation = reservations[0]; // only interested in the next flight schedule
         
         reservation.departureDate = [NSDate dateWithTimeInterval:(24*60*60) sinceDate:[NSDate date]];
