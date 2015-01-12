@@ -42,8 +42,8 @@
     [barItem setTintColor:[UIColor whiteColor]];
     
     // TEST CODE TO DISPLAY BOOKING ON LAUNCH vvvvv
-    NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Booking",menuStoryboardName,@"BookingSelectAccount",menuViewControllerName, nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif]; // using NSNotifications for menu changes because we also need to do other things in other places
+    //NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Booking",menuStoryboardName,@"BookingSelectAccount",menuViewControllerName, nil];
+    //[[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif]; // using NSNotifications for menu changes because we also need to do other things in other places
     // TEST CODE TO DISPLAY BOOKING ON LAUNCH ^^^^^
 
     return YES;
