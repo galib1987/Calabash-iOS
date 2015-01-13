@@ -56,8 +56,12 @@
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
         </mutableArray>
         <mutableArray key="Nimbus-Sans-D-Light.otf">
+            <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
@@ -110,111 +114,122 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="114" sectionHeaderHeight="22" sectionFooterHeight="22" id="izd-Eo-P8V" customClass="NJOPTableView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="YXz-8w-Ufu">
-                            <rect key="frame" x="0.0" y="64" width="375" height="220"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="YXz-8w-Ufu" userLabel="Segmented Control Header">
+                            <rect key="frame" x="0.0" y="64" width="375" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mhx-0q-8eu">
-                                    <rect key="frame" x="20" y="116.5" width="335" height="84.5"/>
-                                    <segments>
-                                        <segment title="YOUR FLIGHTS"/>
-                                        <segment title="ACCOUNT FLIGHTS"/>
-                                    </segments>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <connections>
-                                        <action selector="segmentedControlAction:" destination="oTb-06-5oe" eventType="valueChanged" id="0An-MH-iGt"/>
-                                    </connections>
-                                </segmentedControl>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Past flights can be viewed in your account." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1w-JG-mu7">
-                                    <rect key="frame" x="20" y="20" width="335" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHA-5F-suQ">
-                                    <rect key="frame" x="20" y="48.5" width="335" height="60"/>
-                                    <color key="backgroundColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKO-vr-foz" userLabel="Container View">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Past flights can be viewed in your account." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1w-JG-mu7">
+                                            <rect key="frame" x="38" y="8" width="298" height="17"/>
+                                            <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHA-5F-suQ">
+                                            <rect key="frame" x="8" y="33" width="359" height="60"/>
+                                            <color key="backgroundColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="XuR-iH-AL0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="15"/>
+                                            <state key="normal" title="VIEW PAST FLIGHTS">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mhx-0q-8eu">
+                                            <rect key="frame" x="8" y="101" width="359" height="46"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="sJl-0K-Jfp"/>
+                                            </constraints>
+                                            <segments>
+                                                <segment title="YOUR FLIGHTS"/>
+                                                <segment title="ACCOUNT FLIGHTS"/>
+                                            </segments>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="segmentedControlAction:" destination="oTb-06-5oe" eventType="valueChanged" id="0An-MH-iGt"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="60" id="f05-L3-aBD"/>
+                                        <constraint firstItem="Mhx-0q-8eu" firstAttribute="top" secondItem="ZHA-5F-suQ" secondAttribute="bottom" constant="8" id="0C6-x8-A1q"/>
+                                        <constraint firstAttribute="centerX" secondItem="ZHA-5F-suQ" secondAttribute="centerX" id="0M2-HU-GgQ"/>
+                                        <constraint firstAttribute="centerX" secondItem="Mhx-0q-8eu" secondAttribute="centerX" id="3rQ-eD-DKe"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZHA-5F-suQ" secondAttribute="trailing" constant="8" id="Gv8-WD-Mbt"/>
+                                        <constraint firstItem="P1w-JG-mu7" firstAttribute="top" secondItem="mKO-vr-foz" secondAttribute="top" constant="8" id="NcP-qs-n9E"/>
+                                        <constraint firstAttribute="centerX" secondItem="P1w-JG-mu7" secondAttribute="centerX" id="gqA-ZX-TIJ"/>
+                                        <constraint firstItem="ZHA-5F-suQ" firstAttribute="top" secondItem="P1w-JG-mu7" secondAttribute="bottom" constant="8" id="pAk-T0-55Z"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mhx-0q-8eu" secondAttribute="trailing" constant="8" id="rR5-oX-J5h"/>
+                                        <constraint firstItem="Mhx-0q-8eu" firstAttribute="leading" secondItem="mKO-vr-foz" secondAttribute="leading" constant="8" id="we2-f6-Dsy"/>
+                                        <constraint firstItem="ZHA-5F-suQ" firstAttribute="leading" secondItem="mKO-vr-foz" secondAttribute="leading" constant="8" id="z09-V6-MWE"/>
                                     </constraints>
-                                    <state key="normal" title="VIEW PAST FLIGHTS">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="Mhx-0q-8eu" firstAttribute="leading" secondItem="YXz-8w-Ufu" secondAttribute="leading" constant="20" symbolic="YES" id="1xq-PT-zcC"/>
-                                <constraint firstItem="Mhx-0q-8eu" firstAttribute="top" secondItem="ZHA-5F-suQ" secondAttribute="bottom" constant="8" symbolic="YES" id="C4t-QW-t61"/>
-                                <constraint firstAttribute="trailing" secondItem="Mhx-0q-8eu" secondAttribute="trailing" constant="20" symbolic="YES" id="DHR-Bu-hrg"/>
-                                <constraint firstItem="ZHA-5F-suQ" firstAttribute="leading" secondItem="YXz-8w-Ufu" secondAttribute="leading" constant="20" symbolic="YES" id="Q6e-Ib-C5q"/>
-                                <constraint firstItem="Mhx-0q-8eu" firstAttribute="top" secondItem="ZHA-5F-suQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Qoj-np-bf1"/>
-                                <constraint firstAttribute="trailing" secondItem="ZHA-5F-suQ" secondAttribute="trailing" constant="20" symbolic="YES" id="RrJ-ps-O0H"/>
-                                <constraint firstItem="ZHA-5F-suQ" firstAttribute="top" secondItem="P1w-JG-mu7" secondAttribute="bottom" constant="8" symbolic="YES" id="UEl-OH-Dn0"/>
-                                <constraint firstItem="P1w-JG-mu7" firstAttribute="leading" secondItem="YXz-8w-Ufu" secondAttribute="leading" constant="20" symbolic="YES" id="ZI6-Rg-XDT"/>
-                                <constraint firstAttribute="centerX" secondItem="P1w-JG-mu7" secondAttribute="centerX" id="Zgn-he-txt"/>
-                                <constraint firstItem="P1w-JG-mu7" firstAttribute="top" secondItem="YXz-8w-Ufu" secondAttribute="top" constant="20" symbolic="YES" id="aJb-SO-BiC"/>
-                                <constraint firstAttribute="bottom" secondItem="Mhx-0q-8eu" secondAttribute="bottom" constant="20" symbolic="YES" id="cOt-TR-YPZ"/>
-                                <constraint firstItem="ZHA-5F-suQ" firstAttribute="top" secondItem="P1w-JG-mu7" secondAttribute="bottom" constant="8" symbolic="YES" id="eBy-rQ-M7k"/>
-                                <constraint firstAttribute="trailing" secondItem="P1w-JG-mu7" secondAttribute="trailing" constant="20" symbolic="YES" id="w7F-Qt-7IN"/>
+                                <constraint firstAttribute="trailing" secondItem="mKO-vr-foz" secondAttribute="trailing" id="2HE-9K-RNo"/>
+                                <constraint firstItem="mKO-vr-foz" firstAttribute="leading" secondItem="YXz-8w-Ufu" secondAttribute="leading" id="7sy-Ag-Bwv"/>
+                                <constraint firstAttribute="bottom" secondItem="mKO-vr-foz" secondAttribute="bottom" id="GYi-jv-yer"/>
+                                <constraint firstItem="mKO-vr-foz" firstAttribute="top" secondItem="YXz-8w-Ufu" secondAttribute="top" id="T9s-WD-bea"/>
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPTableViewCell" rowHeight="338" id="0oF-E7-DTK">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPTableViewCell" rowHeight="266" id="0oF-E7-DTK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0oF-E7-DTK" id="hYv-z1-TGc">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEv-ao-vcF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="338"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="266"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="If you need assistance, please call the owner services team." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dw-wq-34M">
-                                                    <rect key="frame" x="20" y="69" width="335" height="181"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boH-q7-hud" userLabel="There are no upcoming flights booked through your account.  If you need assistance, please call the owner services team.">
+                                                    <rect key="frame" x="8" y="40" width="359" height="85"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="85" id="lZ5-bK-eWh"/>
+                                                    </constraints>
+                                                    <string key="text">There are no upcoming flights booked through your account.
+
+If you need assistance, please call the owner services team. </string>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZvU-7u-zOk">
-                                                    <rect key="frame" x="20" y="258" width="335" height="60"/>
+                                                    <rect key="frame" x="8" y="165" width="359" height="60"/>
                                                     <color key="backgroundColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="kuH-yx-sDP"/>
+                                                        <constraint firstAttribute="height" constant="60" id="AlV-Xy-k40"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="15"/>
                                                     <state key="normal" title="BOOK A NEW FLIGHT">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="There are no upcoming flights booked through your account." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boH-q7-hud">
-                                                    <rect key="frame" x="20" y="20" width="335" height="41"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="1dw-wq-34M" secondAttribute="trailing" constant="20" symbolic="YES" id="895-VQ-EkQ"/>
-                                                <constraint firstItem="ZvU-7u-zOk" firstAttribute="top" secondItem="1dw-wq-34M" secondAttribute="bottom" constant="8" symbolic="YES" id="BmV-wg-2e9"/>
-                                                <constraint firstItem="1dw-wq-34M" firstAttribute="top" secondItem="boH-q7-hud" secondAttribute="bottom" constant="8" symbolic="YES" id="FgO-GI-QL6"/>
-                                                <constraint firstItem="boH-q7-hud" firstAttribute="leading" secondItem="BEv-ao-vcF" secondAttribute="leading" constant="20" symbolic="YES" id="Fyn-sM-hg1"/>
-                                                <constraint firstAttribute="trailing" secondItem="ZvU-7u-zOk" secondAttribute="trailing" constant="20" symbolic="YES" id="PMM-9x-Xh7"/>
-                                                <constraint firstAttribute="trailing" secondItem="boH-q7-hud" secondAttribute="trailing" constant="20" symbolic="YES" id="Q7o-q7-m9q"/>
-                                                <constraint firstItem="ZvU-7u-zOk" firstAttribute="leading" secondItem="BEv-ao-vcF" secondAttribute="leading" constant="20" symbolic="YES" id="Sin-vY-5EH"/>
-                                                <constraint firstItem="ZvU-7u-zOk" firstAttribute="top" secondItem="1dw-wq-34M" secondAttribute="bottom" constant="8" symbolic="YES" id="Sn6-Ry-0Xg"/>
-                                                <constraint firstItem="boH-q7-hud" firstAttribute="top" secondItem="BEv-ao-vcF" secondAttribute="top" constant="20" symbolic="YES" id="g65-kM-koU"/>
-                                                <constraint firstItem="1dw-wq-34M" firstAttribute="leading" secondItem="BEv-ao-vcF" secondAttribute="leading" constant="20" symbolic="YES" id="iOS-sO-xqK"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZvU-7u-zOk" secondAttribute="bottom" constant="20" symbolic="YES" id="jzB-xb-t9F"/>
-                                                <constraint firstItem="1dw-wq-34M" firstAttribute="top" secondItem="boH-q7-hud" secondAttribute="bottom" constant="8" symbolic="YES" id="qUO-BX-mUv"/>
+                                                <constraint firstAttribute="centerX" secondItem="boH-q7-hud" secondAttribute="centerX" id="85n-N8-YSf"/>
+                                                <constraint firstItem="ZvU-7u-zOk" firstAttribute="leading" secondItem="BEv-ao-vcF" secondAttribute="leading" constant="8" id="N8p-JA-LXe"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZvU-7u-zOk" secondAttribute="trailing" constant="8" id="NXX-JC-az4"/>
+                                                <constraint firstAttribute="centerX" secondItem="ZvU-7u-zOk" secondAttribute="centerX" id="P30-OC-hqx"/>
+                                                <constraint firstAttribute="trailing" secondItem="boH-q7-hud" secondAttribute="trailing" constant="8" id="PgO-l9-FmS"/>
+                                                <constraint firstItem="boH-q7-hud" firstAttribute="leading" secondItem="BEv-ao-vcF" secondAttribute="leading" constant="8" id="TFa-9q-Jto"/>
+                                                <constraint firstItem="boH-q7-hud" firstAttribute="top" secondItem="BEv-ao-vcF" secondAttribute="top" constant="40" id="dB7-GC-uVb"/>
+                                                <constraint firstItem="ZvU-7u-zOk" firstAttribute="top" secondItem="boH-q7-hud" secondAttribute="bottom" constant="40" id="jMK-xm-FNB"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="BEv-ao-vcF" firstAttribute="leading" secondItem="hYv-z1-TGc" secondAttribute="leading" id="1lD-8z-Kzz"/>
-                                        <constraint firstAttribute="bottom" secondItem="BEv-ao-vcF" secondAttribute="bottom" id="HwT-jG-sk6"/>
-                                        <constraint firstAttribute="trailing" secondItem="BEv-ao-vcF" secondAttribute="trailing" id="XUC-7H-DAI"/>
-                                        <constraint firstItem="BEv-ao-vcF" firstAttribute="top" secondItem="hYv-z1-TGc" secondAttribute="top" id="fKv-ab-C1J"/>
+                                        <constraint firstItem="BEv-ao-vcF" firstAttribute="leading" secondItem="hYv-z1-TGc" secondAttribute="leading" id="VvT-cN-tj5"/>
+                                        <constraint firstAttribute="bottom" secondItem="BEv-ao-vcF" secondAttribute="bottom" id="ii8-dB-PXH"/>
+                                        <constraint firstItem="BEv-ao-vcF" firstAttribute="top" secondItem="hYv-z1-TGc" secondAttribute="top" id="o31-p0-fII"/>
+                                        <constraint firstAttribute="trailing" secondItem="BEv-ao-vcF" secondAttribute="trailing" id="sW9-9g-dji"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
