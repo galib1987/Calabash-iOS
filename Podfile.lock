@@ -5,12 +5,14 @@ PODS:
   - NCLFramework (2.0.1):
     - NCLFramework/no-arc
   - NCLFramework/no-arc (2.0.1)
+  - RSDayFlow (0.1.2)
 
 DEPENDENCIES:
   - Bolts
   - DateTools
   - HockeySDK (= 3.6.1)
   - NCLFramework (from `http://stash.netjets.com/scm/mobile/ios-common-library.git`, tag `2.0.1`)
+  - RSDayFlow (~> 0.1.2)
 
 EXTERNAL SOURCES:
   NCLFramework:
@@ -22,5 +24,6 @@ SPEC CHECKSUMS:
   DateTools: 7c2d233ea2d4bda3a717d0cd5f58da926a5998d0
   HockeySDK: 15b24068466aa5ee421eed0cc1d58428d698edf6
   NCLFramework: 57b7a7e127847c590d45066bc6dfe59672efdf68
+  RSDayFlow: 03f2ed762b7ed199323770650597a499ef39112a
 
 COCOAPODS: 0.34.4

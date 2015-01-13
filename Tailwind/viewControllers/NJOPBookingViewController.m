@@ -8,11 +8,14 @@
 
 #import "NJOPBookingViewController.h"
 
-@interface NJOPBookingViewController ()
+@interface NJOPBookingViewController () <RSDFDatePickerViewDelegate, RSDFDatePickerViewDataSource>
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) RSDFDatePickerView *datePickerView;
 @end
-int PassengerCount = 0;
-int PassengerMax = 15;
-int PassengerMin = 1;
+
+int passengerCount = 0;
+int passengerMax = 15;
+int passengerMin = 1;
 
 @implementation NJOPBookingViewController
 
@@ -22,9 +25,9 @@ int PassengerMin = 1;
     [super viewDidLoad];
     
     
-    
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.opaque = NO;
+    self.tableView.allowsSelection = NO;
     [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"valley"]]];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -33,7 +36,23 @@ int PassengerMin = 1;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    
+    self.flightDate.delegate = self;
+    self.aircraftPicker = [[UIPickerView alloc] init];
+    [self.aircraftPicker setDataSource: self];
+    [self.aircraftPicker setDelegate: self];
     self.aircraftInput.inputView = [self getAircraftPicker];
+    
+    
+    
+    
+    self.datePickerView = [[RSDFDatePickerView alloc] initWithFrame:self.view.bounds];
+    self.datePickerView.delegate = self;
+    //  datePickerView.dataSource = self;
+    self.datePickerView.hidden = YES;
+    [self.tableView addSubview:self.datePickerView];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,22 +61,55 @@ int PassengerMin = 1;
 }
 
 
+- (void)textFieldDidBeginEditing:(UITextField *)FlightDate{
+    [self loadCalendar];
+}
+-(void)loadCalendar{
+    self.datePickerView.hidden = NO;
+}
 
-- (IBAction)AddPassenger:(UIButton *)sender {
-    PassengerCount++;
+// Returns YES if the date should be highlighted or NO if it should not.
+- (BOOL)datePickerView:(RSDFDatePickerView *)view shouldHighlightDate:(NSDate *)date
+{
+    return YES;
+}
+
+// Returns YES if the date should be selected or NO if it should not.
+- (BOOL)datePickerView:(RSDFDatePickerView *)view shouldSelectDate:(NSDate *)date
+{
+    return YES;
+}
+
+// Prints out the selected date.
+- (void)datePickerView:(RSDFDatePickerView *)view didSelectDate:(NSDate *)date
+{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM d, yyyy"];
+    NSString *newDate = [dateFormatter stringFromDate:date];
+    
+    
+    NSLog(@"%@ %@", [date description],newDate);
+    self.flightDate.text = newDate;
+    self.datePickerView.hidden = YES;
+    [self.view endEditing:YES];
+}
+
+- (IBAction)addPassenger:(UIButton *)sender {
+    passengerCount++;
     [self updatePassengerCount];
 
 }
 
-- (IBAction)SubtractPassenger:(UIButton *)sender {
-    PassengerCount--;
+- (IBAction)subtractPassenger:(UIButton *)sender {
+    passengerCount--;
     [self updatePassengerCount];
 }
 
 -(void)updatePassengerCount{
-    if(PassengerCount<PassengerMin)PassengerCount = PassengerMin;
-    if(PassengerCount>PassengerMax)PassengerCount = PassengerMax;
-    self.NumberOfPassengers.text =  [NSString stringWithFormat:@"%i",PassengerCount];
+    if(passengerCount<passengerMin)passengerCount = passengerMin;
+    if(passengerCount>passengerMax)passengerCount = passengerMax;
+    self.numberOfPassengers.text =  [NSString stringWithFormat:@"%i",passengerCount];
 }
 
 //#pragma mark - Table view data source
