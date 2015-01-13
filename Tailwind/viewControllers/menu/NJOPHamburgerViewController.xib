@@ -31,114 +31,180 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="365"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iL2-IY-5FD">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4F-2j-emG">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="365"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MENU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgD-Ts-8Cd">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hp-oe-p2C">
+                            <rect key="frame" x="0.0" y="45" width="207" height="107"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="107" id="C2d-Y0-bpM"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
+                            <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="40" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="HOME" image="menu-btn-home-on">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="homeButtonPressed:" destination="-1" eventType="touchUpInside" id="ZeD-no-YwI"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85z-B7-Mmn">
+                            <rect key="frame" x="207" y="45" width="207" height="107"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="107" id="ndu-xy-bPs"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
+                            <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="40" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="ACCOUNT" image="menu-btn-account-off">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="accountButtonPressed:" destination="-1" eventType="touchUpInside" id="9SF-Rs-ktJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d49-mZ-fXY">
+                            <rect key="frame" x="0.0" y="152" width="207" height="107"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="107" id="HZT-XP-EYt"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
+                            <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="52" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="FLIGHTS" image="menu-btn-flights-off">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="filghtsButtonPressed:" destination="-1" eventType="touchUpInside" id="wFm-Tk-oh4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8s-HH-aLq">
+                            <rect key="frame" x="207" y="259" width="207" height="107"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="107" id="btd-dZ-yLa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
+                            <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="61" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="SETTINGS" image="menu-btn-settings-off">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="settingsButtonPressed:" destination="-1" eventType="touchUpInside" id="s9V-to-YhI"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufB-Ph-gx9">
+                            <rect key="frame" x="0.0" y="259" width="207" height="107"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="107" id="Pdi-4d-zfa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
+                            <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="36" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="BOOK" image="menu-btn-book-off">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="bookButtonPressed:" destination="-1" eventType="touchUpInside" id="cBw-d2-yMZ"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iL2-IY-5FD" userLabel="Menu Label Container">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
-                            <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MENU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgD-Ts-8Cd">
+                                    <rect key="frame" x="184" y="14" width="46.5" height="17"/>
+                                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="SA3-md-xdw"/>
+                                <constraint firstAttribute="centerX" secondItem="VgD-Ts-8Cd" secondAttribute="centerX" id="fhu-at-cw5"/>
+                                <constraint firstAttribute="centerY" secondItem="VgD-Ts-8Cd" secondAttribute="centerY" id="wv2-nl-Ugx"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vQ-TQ-vkx">
+                            <rect key="frame" x="207" y="152" width="207" height="107"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="107" id="SNP-H6-3aB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
+                            <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="66" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="MESSAGES" image="menu-btn-messages-off">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="messagesButtonPressed:" destination="-1" eventType="touchUpInside" id="gsf-7y-yJ0"/>
+                            </connections>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="VgD-Ts-8Cd" firstAttribute="top" secondItem="iL2-IY-5FD" secondAttribute="top" id="5wf-Ht-dFN"/>
-                        <constraint firstAttribute="trailing" secondItem="VgD-Ts-8Cd" secondAttribute="trailing" id="Oq5-jK-o0n"/>
-                        <constraint firstItem="VgD-Ts-8Cd" firstAttribute="leading" secondItem="iL2-IY-5FD" secondAttribute="leading" id="mcn-nf-jG2"/>
+                        <constraint firstItem="0Hp-oe-p2C" firstAttribute="top" secondItem="iL2-IY-5FD" secondAttribute="bottom" id="0vd-Yf-8NG"/>
+                        <constraint firstItem="iL2-IY-5FD" firstAttribute="top" secondItem="t4F-2j-emG" secondAttribute="top" id="2DD-me-QTL"/>
+                        <constraint firstItem="d49-mZ-fXY" firstAttribute="width" secondItem="8vQ-TQ-vkx" secondAttribute="width" id="3ts-1N-cef"/>
+                        <constraint firstItem="d49-mZ-fXY" firstAttribute="leading" secondItem="t4F-2j-emG" secondAttribute="leading" id="4A3-zj-s0O"/>
+                        <constraint firstItem="85z-B7-Mmn" firstAttribute="top" secondItem="iL2-IY-5FD" secondAttribute="bottom" id="8Qe-tp-WwR"/>
+                        <constraint firstItem="8vQ-TQ-vkx" firstAttribute="width" secondItem="w8s-HH-aLq" secondAttribute="width" id="AOF-al-6n9"/>
+                        <constraint firstItem="ufB-Ph-gx9" firstAttribute="leading" secondItem="t4F-2j-emG" secondAttribute="leading" id="BAY-Tg-Rwe"/>
+                        <constraint firstItem="85z-B7-Mmn" firstAttribute="leading" secondItem="d49-mZ-fXY" secondAttribute="trailing" id="E6H-mj-IUC"/>
+                        <constraint firstItem="d49-mZ-fXY" firstAttribute="top" secondItem="0Hp-oe-p2C" secondAttribute="bottom" id="Hhx-dy-yTA"/>
+                        <constraint firstItem="0Hp-oe-p2C" firstAttribute="width" secondItem="85z-B7-Mmn" secondAttribute="width" id="Ibj-8z-Gqg"/>
+                        <constraint firstItem="8vQ-TQ-vkx" firstAttribute="width" secondItem="0Hp-oe-p2C" secondAttribute="width" id="MYY-yS-Mxx"/>
+                        <constraint firstItem="w8s-HH-aLq" firstAttribute="leading" secondItem="ufB-Ph-gx9" secondAttribute="trailing" id="Qe9-Hq-znL"/>
+                        <constraint firstAttribute="trailing" secondItem="iL2-IY-5FD" secondAttribute="trailing" id="TXD-Bg-xLO"/>
+                        <constraint firstItem="8vQ-TQ-vkx" firstAttribute="leading" secondItem="ufB-Ph-gx9" secondAttribute="trailing" id="UuO-Zm-XZH"/>
+                        <constraint firstItem="8vQ-TQ-vkx" firstAttribute="width" secondItem="d49-mZ-fXY" secondAttribute="width" id="Viq-Dx-6YJ"/>
+                        <constraint firstItem="8vQ-TQ-vkx" firstAttribute="width" secondItem="ufB-Ph-gx9" secondAttribute="width" id="W88-Rp-B4c"/>
+                        <constraint firstAttribute="trailing" secondItem="8vQ-TQ-vkx" secondAttribute="trailing" id="X3c-jL-I2e"/>
+                        <constraint firstItem="8vQ-TQ-vkx" firstAttribute="width" secondItem="85z-B7-Mmn" secondAttribute="width" id="YUe-NR-ozD"/>
+                        <constraint firstAttribute="trailing" secondItem="85z-B7-Mmn" secondAttribute="trailing" id="ZIp-92-I9E"/>
+                        <constraint firstItem="w8s-HH-aLq" firstAttribute="leading" secondItem="ufB-Ph-gx9" secondAttribute="trailing" id="ZKV-Mr-GHh"/>
+                        <constraint firstItem="0Hp-oe-p2C" firstAttribute="leading" secondItem="t4F-2j-emG" secondAttribute="leading" id="b1n-YG-fOL"/>
+                        <constraint firstItem="8vQ-TQ-vkx" firstAttribute="leading" secondItem="0Hp-oe-p2C" secondAttribute="trailing" id="bnK-aN-wt2"/>
+                        <constraint firstItem="8vQ-TQ-vkx" firstAttribute="top" secondItem="85z-B7-Mmn" secondAttribute="bottom" id="g1v-oE-m2j"/>
+                        <constraint firstItem="w8s-HH-aLq" firstAttribute="width" secondItem="ufB-Ph-gx9" secondAttribute="width" id="jF3-Y7-Tna"/>
+                        <constraint firstItem="w8s-HH-aLq" firstAttribute="leading" secondItem="d49-mZ-fXY" secondAttribute="trailing" id="jTB-hd-4Y1"/>
+                        <constraint firstItem="w8s-HH-aLq" firstAttribute="top" secondItem="8vQ-TQ-vkx" secondAttribute="bottom" id="lCN-JF-JWs"/>
+                        <constraint firstItem="ufB-Ph-gx9" firstAttribute="top" secondItem="d49-mZ-fXY" secondAttribute="bottom" id="m8K-1K-ATn"/>
+                        <constraint firstItem="iL2-IY-5FD" firstAttribute="leading" secondItem="t4F-2j-emG" secondAttribute="leading" id="sqq-b0-H7y"/>
+                        <constraint firstAttribute="trailing" secondItem="w8s-HH-aLq" secondAttribute="trailing" id="zmu-aF-TtD"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="3ts-1N-cef"/>
+                            <exclude reference="AOF-al-6n9"/>
+                            <exclude reference="MYY-yS-Mxx"/>
+                            <exclude reference="W88-Rp-B4c"/>
+                            <exclude reference="YUe-NR-ozD"/>
+                        </mask>
+                    </variation>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hp-oe-p2C">
-                    <rect key="frame" x="0.0" y="44" width="207" height="107"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
-                    <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="40" minY="-20" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="HOME" image="menu-btn-home-on">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="homeButtonPressed:" destination="-1" eventType="touchUpInside" id="ZeD-no-YwI"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85z-B7-Mmn">
-                    <rect key="frame" x="207" y="44" width="207" height="107"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
-                    <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="40" minY="-20" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="ACCOUNT" image="menu-btn-account-off">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="accountButtonPressed:" destination="-1" eventType="touchUpInside" id="9SF-Rs-ktJ"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vQ-TQ-vkx">
-                    <rect key="frame" x="207" y="151" width="207" height="107"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
-                    <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="66" minY="-20" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="MESSAGES" image="menu-btn-messages-off">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="messagesButtonPressed:" destination="-1" eventType="touchUpInside" id="gsf-7y-yJ0"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d49-mZ-fXY">
-                    <rect key="frame" x="0.0" y="151" width="207" height="107"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
-                    <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="52" minY="-20" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="FLIGHTS" image="menu-btn-flights-off">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="filghtsButtonPressed:" destination="-1" eventType="touchUpInside" id="wFm-Tk-oh4"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8s-HH-aLq">
-                    <rect key="frame" x="207" y="258" width="207" height="107"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
-                    <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="61" minY="-20" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="SETTINGS" image="menu-btn-settings-off">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="settingsButtonPressed:" destination="-1" eventType="touchUpInside" id="s9V-to-YhI"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufB-Ph-gx9">
-                    <rect key="frame" x="0.0" y="258" width="207" height="107"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
-                    <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="36" minY="-20" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="BOOK" image="menu-btn-book-off">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="bookButtonPressed:" destination="-1" eventType="touchUpInside" id="cBw-d2-yMZ"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="iL2-IY-5FD" secondAttribute="trailing" id="4vX-KV-L3h"/>
-                <constraint firstItem="iL2-IY-5FD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Iyi-k8-uDV"/>
-                <constraint firstItem="iL2-IY-5FD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LmT-1s-HcH"/>
+                <constraint firstAttribute="bottom" secondItem="t4F-2j-emG" secondAttribute="bottom" id="bsZ-kR-qkr"/>
+                <constraint firstItem="t4F-2j-emG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bsx-CD-00T"/>
+                <constraint firstItem="t4F-2j-emG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hXc-5g-8P6"/>
+                <constraint firstAttribute="trailing" secondItem="t4F-2j-emG" secondAttribute="trailing" id="sw9-ah-pvD"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
