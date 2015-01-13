@@ -122,6 +122,7 @@
 		A7CD0AFA1A5C868C00D45224 /* NJOPCateringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CD0AF91A5C868C00D45224 /* NJOPCateringViewController.m */; };
 		A7CD0AFD1A5C86B900D45224 /* NJOPCateringCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CD0AFC1A5C86B900D45224 /* NJOPCateringCell.m */; };
 		A7CD0B001A5C8DFC00D45224 /* NJOPCrewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CD0AFF1A5C8DFC00D45224 /* NJOPCrewViewController.m */; };
+		A7D6F4C01A64B74900B9E7B4 /* NJOPContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D6F4BF1A64B74900B9E7B4 /* NJOPContactViewController.m */; };
 		A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */; };
 		A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */; };
 		A7F2CA4C1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */; };
@@ -304,6 +305,8 @@
 		A7CD0AFC1A5C86B900D45224 /* NJOPCateringCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCateringCell.m; sourceTree = "<group>"; };
 		A7CD0AFE1A5C8DFC00D45224 /* NJOPCrewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCrewViewController.h; sourceTree = "<group>"; };
 		A7CD0AFF1A5C8DFC00D45224 /* NJOPCrewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCrewViewController.m; sourceTree = "<group>"; };
+		A7D6F4BE1A64B74900B9E7B4 /* NJOPContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPContactViewController.h; sourceTree = "<group>"; };
+		A7D6F4BF1A64B74900B9E7B4 /* NJOPContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPContactViewController.m; sourceTree = "<group>"; };
 		A7F2CA431A4DC9F400D78804 /* NJOPBookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPBookingViewController.h; sourceTree = "<group>"; };
 		A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBookingViewController.m; sourceTree = "<group>"; };
 		A7F2CA471A4DCBF700D78804 /* NJOPFlightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightsViewController.h; sourceTree = "<group>"; };
@@ -479,10 +482,7 @@
 				A7433C021A531184009BD3EB /* NJOPSettingsTableViewController.m */,
 				A7F2CA461A4DCBA000D78804 /* Flights */,
 				A7A03E9D1A42E554004BE417 /* elements */,
-				6CC829AE1A40B4A900991949 /* NJOPLoginViewController.h */,
-				6CC829AF1A40B4A900991949 /* NJOPLoginViewController.m */,
-				6CC829B11A40B4C900991949 /* NJOPResetPasswordViewController.h */,
-				6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */,
+				A7D6F4C11A64BA1A00B9E7B4 /* Main */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -713,6 +713,19 @@
 				A780A7EA1A5E4FFD000911A7 /* NJOPCrewCell.m */,
 			);
 			name = "Your Crew";
+			sourceTree = "<group>";
+		};
+		A7D6F4C11A64BA1A00B9E7B4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6CC829AE1A40B4A900991949 /* NJOPLoginViewController.h */,
+				6CC829AF1A40B4A900991949 /* NJOPLoginViewController.m */,
+				6CC829B11A40B4C900991949 /* NJOPResetPasswordViewController.h */,
+				6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */,
+				A7D6F4BE1A64B74900B9E7B4 /* NJOPContactViewController.h */,
+				A7D6F4BF1A64B74900B9E7B4 /* NJOPContactViewController.m */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		A7F2CA421A4DC9C300D78804 /* Booking ViewControllers */ = {
@@ -1025,6 +1038,7 @@
 				A7A03EC41A42F2D3004BE417 /* NJOPClient+flights.m in Sources */,
 				A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */,
 				A77680F11A40729200B2E7CF /* NJOPIndividual.m in Sources */,
+				A7D6F4C01A64B74900B9E7B4 /* NJOPContactViewController.m in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPRequest.m in Sources */,
 				A7C872491A5B394F0048E2F4 /* NJOPAdvisoryNotesCell.m in Sources */,
 				1F739A421A5E70F900D86C0B /* NJOPMenuViewController.m in Sources */,
