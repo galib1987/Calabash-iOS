@@ -17,11 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self configureSlider];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)configureSlider {
+    self.latenessSlider.minimumValue = 1;
+    self.latenessSlider.maximumValue = 60;
 }
 
 /*
@@ -33,5 +41,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)sliderChanged:(id)sender {
+    int intValue = (int)ceil(self.latenessSlider.value);
+    [_latenessNotificationButton setTitle:[NSString stringWithFormat:@"I'LL BE %d MINUTES LATE", intValue] forState:UIControlStateNormal];
+    
+}
 
 @end
