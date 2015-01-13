@@ -9,8 +9,19 @@
     <customFonts key="customFonts">
         <mutableArray key="Nimbus-Sans-D-Bold.otf">
             <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
         </mutableArray>
         <mutableArray key="Nimbus-Sans-D-Light.otf">
+            <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
         </mutableArray>
     </customFonts>
@@ -32,19 +43,19 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGk-ID-vUS">
                                             <rect key="frame" x="8" y="4" width="584" height="192"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZN-2k-Ya4">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZN-2k-Ya4">
                                                     <rect key="frame" x="8" y="8" width="568" height="82"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="36"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Principal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ug5-0I-Jap">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Principal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ug5-0I-Jap">
                                                     <rect key="frame" x="8" y="140" width="65" height="18"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Principal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk5-JF-yhD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" misplaced="YES" text="Principal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk5-JF-yhD">
                                                     <rect key="frame" x="8" y="166" width="123" height="18"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -441,7 +452,7 @@
                         <outlet property="ArrivalTime" destination="k8I-Ap-M88" id="4mK-XC-aNV"/>
                         <outlet property="BookingComment" destination="nFw-VJ-5Zi" id="z93-n6-7Xw"/>
                         <outlet property="DepartTime" destination="W7z-SC-laF" id="1ms-fW-yen"/>
-                        <outlet property="DepartureAirport" destination="cSY-at-BbI" id="s91-Fy-mTx"/>
+                        <outlet property="DepartureAirport" destination="JJj-Pl-ixz" id="s91-Fy-mTx"/>
                         <outlet property="DestinationAirport" destination="cSY-at-BbI" id="Eco-ZP-GHC"/>
                         <outlet property="FlightDate" destination="YYH-n1-T0Y" id="ZQT-aN-tYR"/>
                         <outlet property="NextStep" destination="Bbo-2V-KmT" id="QdB-4N-HoL"/>
@@ -512,7 +523,8 @@
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-qn-FIS">
                                                     <rect key="frame" x="8" y="51" width="552" height="60"/>
-                                                    <string key="text">KLAS McCarran International</string>
+                                                    <string key="text">KLAS 
+McCarran International</string>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
