@@ -41,7 +41,7 @@ int passengerMin = 1;
     self.aircraftPicker = [[UIPickerView alloc] init];
     [self.aircraftPicker setDataSource: self];
     [self.aircraftPicker setDelegate: self];
-    self.aircraftInput.inputView = self.aircraftPicker;
+    self.aircraftInput.inputView = [self getAircraftPicker];
     
     
     
@@ -182,6 +182,16 @@ int passengerMin = 1;
 
 #pragma mark - Aircraft UIPicker
 
+- (UIPickerView*) getAircraftPicker {
+    if (self.aircraftPicker == nil) {
+        self.aircraftPicker = [[UIPickerView alloc] init];
+        [self.aircraftPicker setDataSource: self];
+        [self.aircraftPicker setDelegate: self];
+        //self.aircraftPicker.showsSelectionIndicator = YES;
+    }
+    return self.aircraftPicker;
+}
+
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
@@ -189,6 +199,15 @@ int passengerMin = 1;
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     // STUB
     return 5;
+}
+
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    // STUB
+    return [NSString stringWithFormat:@"Aircraft%lu", (long)row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    //NSLog(@"selected %d", row);
 }
 
 @end

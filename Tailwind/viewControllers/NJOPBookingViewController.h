@@ -29,4 +29,7 @@
 
 @property (strong, nonatomic) UIPickerView *aircraftPicker;
 
+- (UIPickerView*) getAircraftPicker;
+- (void) selectedAircraft;
+
 @end
