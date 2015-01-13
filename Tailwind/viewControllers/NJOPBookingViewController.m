@@ -40,6 +40,9 @@ int passengerMin = 1;
     self.flightDate.delegate = self;
     self.aircraftInput.inputView = [self getAircraftPicker];
     
+    self.departureAirport.delegate = self;
+    self.destinationAirport.delegate = self;
+    
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
     
@@ -62,8 +65,19 @@ int passengerMin = 1;
 }
 
 
-- (void)textFieldDidBeginEditing:(UITextField *)FlightDate{
-    [self loadCalendar];
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    if (textField == self.flightDate) {
+        [self loadCalendar];
+    } else if (textField == self.departureAirport || textField == self.destinationAirport) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Booking" bundle:nil];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BookingSelectAirport"];
+        if (textField == self.departureAirport) {
+            vc.title = @"Departing From";
+        } else if (textField == self.destinationAirport) {
+            vc.title = @"Arriving At";
+        }
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 -(void)loadCalendar{
     self.datePickerView.hidden = NO;
