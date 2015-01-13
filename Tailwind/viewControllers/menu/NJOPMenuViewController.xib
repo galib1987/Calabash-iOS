@@ -8,7 +8,7 @@
             <connections>
                 <outlet property="hamburgerButton" destination="ZNG-EM-osr" id="Td5-ua-3qv"/>
                 <outlet property="mainButtonsView" destination="bzB-0I-X5v" id="ukh-EH-4vr"/>
-                <outlet property="ownerServicesButton" destination="0L9-ix-I3K" id="hDb-iT-Qzh"/>
+                <outlet property="ownerServicesButton" destination="0L9-ix-I3K" id="zQL-Ep-hiu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,6 +34,9 @@
                             <state key="normal" image="menu-os-off">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="ownerServiesPushed:" destination="-1" eventType="touchUpInside" id="K2S-yT-vUl"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
