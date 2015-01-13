@@ -30,16 +30,11 @@
 
     // listen for major menu changes
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goChangeScreen:) name:changeScreen object:nil];
-
-	UINavigationBar* nav = [[UINavigationBar class] appearance];
-	[nav setBackgroundImage:[UIImage new]
-													 forBarMetrics:UIBarMetricsDefault];
-	nav.shadowImage = [UIImage new];
-	nav.translucent = YES;
-
-	
-	UIBarButtonItem* barItem = [[UIBarButtonItem class] appearance];
-    [barItem setTintColor:[UIColor whiteColor]];
+    
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
     
     // TEST CODE TO DISPLAY BOOKING ON LAUNCH vvvvv
     NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Booking",menuStoryboardName,@"BookingSelectAccount",menuViewControllerName, nil];
