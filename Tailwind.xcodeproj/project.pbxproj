@@ -10,6 +10,7 @@
 		1E636E8F1A5F1FC3002B3E8C /* NJOPAccountTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E636E8E1A5F1FC3002B3E8C /* NJOPAccountTableCell.m */; };
 		1E636E951A5F299C002B3E8C /* NJOPSelectAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E636E941A5F299C002B3E8C /* NJOPSelectAccountViewController.m */; };
 		1E79C8801A6481CA001B73B9 /* NJOPAirportSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79C87F1A6481CA001B73B9 /* NJOPAirportSearchViewController.m */; };
+		1E79C8911A65CAD0001B73B9 /* NJOPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79C8901A65CAD0001B73B9 /* NJOPTextField.m */; };
 		1F6635491A5E94F800E29FA1 /* NJOPHamburgerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6635471A5E94F800E29FA1 /* NJOPHamburgerViewController.m */; };
 		1F66354A1A5E94F800E29FA1 /* NJOPHamburgerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F6635481A5E94F800E29FA1 /* NJOPHamburgerViewController.xib */; };
 		1F739A421A5E70F900D86C0B /* NJOPMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F739A401A5E70F900D86C0B /* NJOPMenuViewController.m */; };
@@ -149,6 +150,8 @@
 		1E636E941A5F299C002B3E8C /* NJOPSelectAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSelectAccountViewController.m; sourceTree = "<group>"; };
 		1E79C87E1A6481CA001B73B9 /* NJOPAirportSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAirportSearchViewController.h; sourceTree = "<group>"; };
 		1E79C87F1A6481CA001B73B9 /* NJOPAirportSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAirportSearchViewController.m; sourceTree = "<group>"; };
+		1E79C88F1A65CAD0001B73B9 /* NJOPTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPTextField.h; path = elements/NJOPTextField.h; sourceTree = "<group>"; };
+		1E79C8901A65CAD0001B73B9 /* NJOPTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPTextField.m; path = elements/NJOPTextField.m; sourceTree = "<group>"; };
 		1F6635461A5E94F800E29FA1 /* NJOPHamburgerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPHamburgerViewController.h; sourceTree = "<group>"; };
 		1F6635471A5E94F800E29FA1 /* NJOPHamburgerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPHamburgerViewController.m; sourceTree = "<group>"; };
 		1F6635481A5E94F800E29FA1 /* NJOPHamburgerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPHamburgerViewController.xib; sourceTree = "<group>"; };
@@ -599,6 +602,8 @@
 		A7A03E9D1A42E554004BE417 /* elements */ = {
 			isa = PBXGroup;
 			children = (
+				1E79C88F1A65CAD0001B73B9 /* NJOPTextField.h */,
+				1E79C8901A65CAD0001B73B9 /* NJOPTextField.m */,
 				A74C237D1A642A4C002F2164 /* Messages Views */,
 				A750999E1A6359630091D7E3 /* NJOPFlightTableCell.h */,
 				A750999F1A6359630091D7E3 /* NJOPFlightTableCell.m */,
@@ -997,6 +1002,7 @@
 			files = (
 				A77680E51A406C7D00B2E7CF /* NCLOAuthClient.m in Sources */,
 				A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */,
+				1E79C8911A65CAD0001B73B9 /* NJOPTextField.m in Sources */,
 				A74C81881A53150C001FF1A9 /* NJOPAccountViewController.m in Sources */,
 				30A4738519D9E41A0045D7AF /* ViewController.m in Sources */,
 				A70FDB5F1A5C1EA000C549CF /* NJOPMenuButton.m in Sources */,
