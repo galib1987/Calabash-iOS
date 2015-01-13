@@ -14,10 +14,10 @@
 #import "NJOPFlightsDetailViewController.h"
 #import "NJOPNavigationBar.h"
 #import <DateTools/NSDate+DateTools.h>
+#import "NJOPSummaryViewTopHeaderView.h"
+
 
 @interface NJOPHomeViewController ()
-@property (strong, nonatomic) NSArray *reservations;
-@property (strong, nonatomic) NSArray *sections;
 @end
 
 @implementation NJOPHomeViewController
@@ -27,10 +27,6 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -50,7 +46,7 @@
         }
     }
     [NJOPClient GETReservationsWithInfo:info completion:^(NSArray *reservations, NSError *error) {
-        [wself updateWithReservations:reservations];
+        [wself updateWithReservations:@[]];
     }];
 }
 
@@ -58,21 +54,17 @@
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd MMM, YYYY"];
-    //    NSString* dateString = [[formatter stringFromDate:[NSDate date]] stringByAppendingString:@"\n Welcome My Smith"];
     
     NSDictionary *FBORepresentation = [[NSDictionary alloc] init];
     NSDictionary *sectionCellRepresentation = [[NSDictionary alloc] init];
     
-    
-    /*needs to be refactored into a method. also deciding what date conditions should be. */
     if ([reservations count] > 0) {
         NSLog(@"we have reservations");
         NJOPReservation *reservation = reservations[0]; // only interested in the next flight schedule
         
-        reservation.departureDate = [NSDate dateWithTimeInterval:(24*60*60) sinceDate:[NSDate date]];
-        NSLog(@"%@", reservation.departureDate);
+        NSInteger FlightState = flightCurrent;
         
-        if ([reservation.departureDate laterDate:[NSDate date]]) {
+        if (FlightState == flightScheduled) {
             
             FBORepresentation = @{
                                   @"FBOTableCell" : @{
@@ -81,8 +73,8 @@
                                           
                                           @"fromFBOAirpotCodeLabel.text"	: [NSString stringWithFormat:@"%@", reservation.departureAirportId],
                                           @"toFBOAirpotCodeLabel.text"		: [NSString stringWithFormat:@"%@", reservation.arrivalAirportId],
-                                          @"fromFBOLocationLabel.text" : [NSString stringWithFormat:@"%@", reservation.departureAirportCity],
-                                          @"toFBOLocationLabel.text" : [NSString stringWithFormat:@"%@", reservation.arrivalAirportCity],
+                                          @"fromFBOLocationLabel.text" : [[NSString stringWithFormat:@"%@", reservation.departureAirportCity] capitalizedString],
+                                          @"toFBOLocationLabel.text" : [[NSString stringWithFormat:@"%@", reservation.arrivalAirportCity] capitalizedString],
                                           }
                                   };
             
@@ -92,7 +84,7 @@
                                                                                 kSimpleDataSourceCellItem : reservation,
                                                                                 
                                                                                 };
-        } else if ([reservation.departureDate isTomorrow]) {
+        } else if (FlightState == flightUpcoming) {
             
             FBORepresentation = @{
                                   @"NJOPUpcomingFlightTableCell" : @{
@@ -101,9 +93,9 @@
                                           @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
                                           @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
                                           @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", reservation.departureAirportId],
-                                          @"departureAirportCityLabel.text" : [NSString stringWithFormat:@"%@", reservation.departureAirportCity],
+                                          @"departureAirportCityLabel.text" : [[NSString stringWithFormat:@"%@", reservation.departureAirportCity] capitalizedString],
                                           @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", reservation.arrivalAirportId],
-                                          @"arrivalAirportCityLabel.text" : [NSString stringWithFormat:@"%@", reservation.arrivalAirportCity]
+                                          @"arrivalAirportCityLabel.text" : [[NSString stringWithFormat:@"%@", reservation.arrivalAirportCity] capitalizedString]
                                           }
                                   };
             
@@ -114,7 +106,7 @@
                                                                                 };
             
             
-        } else if ([reservation.departureDate isToday]) {
+        } else if (FlightState == flightCurrent) {
             
             
             FBORepresentation = @{
@@ -122,9 +114,9 @@
                                           @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
                                           @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
                                           @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", reservation.departureAirportId],
-                                          @"departureAirportCityLabel.text" : [NSString stringWithFormat:@"%@", reservation.departureAirportCity],
+                                          @"departureAirportCityLabel.text" : [[NSString stringWithFormat:@"%@", reservation.departureAirportCity] capitalizedString],
                                           @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", reservation.arrivalAirportId],
-                                          @"arrivalAirportCityLabel.text" : [NSString stringWithFormat:@"%@", reservation.arrivalAirportCity],
+                                          @"arrivalAirportCityLabel.text" : [[NSString stringWithFormat:@"%@", reservation.arrivalAirportCity] capitalizedString],
                                           @"estimatedFlightTimeLabel.text" : @"2hrs 7mins",
                                           @"estimatedTripTimeLabel.text" : @"2h 54m",
                                           }
@@ -133,25 +125,15 @@
             
             sectionCellRepresentation =                                       @{
                                                                                 kSimpleDataSourceCellIdentifierKey			: @"NJOPCurrentFBOTableCell",
-                                                                                kSimpleDataSourceCellKeypaths : FBORepresentation[@"NJOPCurrentFBOTableCel"],
+                                                                                kSimpleDataSourceCellKeypaths : FBORepresentation[@"NJOPCurrentFBOTableCell"],
                                                                                 kSimpleDataSourceCellItem : reservation,
                                                                                 };
             
         }
     } else {
-        
-        // show the no flights booked cell
         FBORepresentation = @{
                               @"NJOPNOFBOTableCell" : @{
-                                      //                                        @"rawData.text": [NSString stringWithFormat:@"%@", reservation.rawData]
                                       },
-                              //                                @"NJOPTripCompleteCell" : @{
-                              //                                        @"completionGreetingLabel.text" : [[NSString stringWithFormat:@"Welcome to %@", reservation.arrivalAirportCity] lowercaseString],
-                              //                                        @"groundOrdersLabel.text" : @"Pick up at 11:00PM",
-                              //                                        @"flightTimeLabel.text" : @"5hrs 20mins",
-                              //                                        @"projectedRemainingHoursLabel.text" : @"151",
-                              //                                        }
-                              //                                };
                               
                               };
         
@@ -169,19 +151,20 @@
                                       ],
                               },
                           ];
-
+    
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
+    self.dataSource.title = @"NETJETS";
     self.dataSource.headerFooterCellIdentifiers = @[@"SummaryHeaderView"];
-    /*
-    [self.dataSource setConfigureHeaderFooterViewBlock:^(UIView *headerView) {
-        if ([headerView isKindOfClass:[NJOPSummaryViewTopHeaderView class]]) {
-            NJOPSummaryViewTopHeaderView* tableHeaderView = (NJOPSummaryViewTopHeaderView*)headerView;
-            tableHeaderView.topLabelView.text = dateString;
-            tableHeaderView.bodyLabelView.text = @"Hello Ms. Smith";
-            [tableHeaderView layoutIfNeeded];
-        }
-    }];
-     */
+    
+//     [self.dataSource setConfigureHeaderFooterViewBlock:^(UIView *headerView) {
+//     if ([headerView isKindOfClass:[NJOPSummaryViewTopHeaderView class]]) {
+//     NJOPSummaryViewTopHeaderView* tableHeaderView = (NJOPSummaryViewTopHeaderView*)headerView;
+//     tableHeaderView.topLabelView.text = @"What what what";
+//     tableHeaderView.bodyLabelView.text = @"Hello Ms. Smith";
+//     [tableHeaderView layoutIfNeeded];
+//     }
+//     }];
+    
     
 }
 
@@ -196,9 +179,7 @@
     NSDictionary *dataDict = [self.dataSource.sections[0][kSimpleDataSourceSectionCellsKey] objectAtIndex:indexPath.row];
     NJOPReservation *reservationToPass = dataDict[@"CellItem"];
     flightDetailVC.reservation = reservationToPass;
-    
-    NSLog(@"PASSING THIS: %@", dataDict);
-    
+
     [self.navigationController pushViewController:flightDetailVC animated:YES];
     
 }
