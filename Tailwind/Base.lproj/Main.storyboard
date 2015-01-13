@@ -31,7 +31,7 @@
         <scene sceneID="SBO-CB-Hcw">
             <objects>
                 <navigationController id="dOM-IF-2VW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" shadowImage="Transparent" backIndicatorImage="Transparent" backIndicatorTransitionMaskImage="Transparent" id="1bS-YL-J9N">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" shadowImage="Transparent" backIndicatorImage="Transparent" backIndicatorTransitionMaskImage="Transparent" id="1bS-YL-J9N" customClass="NJOPNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
