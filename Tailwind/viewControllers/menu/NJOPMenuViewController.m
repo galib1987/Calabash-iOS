@@ -27,25 +27,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)hamburgerPushed:(id)sender {
-    NSLog(@"HAMBURGER PUSHED");
-    if (self.buttonState == menuButtonNone) {
-        [self expandHamburger];
-    } else {
-        [self contractHamburger];
-    }
-}
-
 - (void) setMenuSizesAndPositions {
     float buttonHeight = 55.0;
     CGRect screenBound = [[UIScreen mainScreen] bounds];
@@ -58,6 +39,22 @@
     self.view.frame = CGRectMake(0.0, y, self.screenWidth, buttonHeight);
     
     self.buttonState = menuButtonNone;
+}
+
+- (void) resetButtonState {
+    self.buttonState = menuButtonNone;
+}
+
+#pragma mark -- Hamburger button handling
+- (IBAction)hamburgerPushed:(id)sender {
+    if (self.buttonState == menuButtonNone) {
+        [self expandHamburger];
+    } else if (self.buttonState == menuButtonOwnerServices) {
+        [self contractOS];
+        [self expandHamburger];
+    } else {
+        [self contractHamburger];
+    }
 }
 
 - (void) expandHamburger {
@@ -110,6 +107,18 @@
     } ];
 }
 
+#pragma mark -- Owner Services button handling
+- (IBAction)ownerServiesPushed:(id)sender {
+    if (self.buttonState == menuButtonNone) {
+        [self expandOS];
+    } else if (self.buttonState == menuBUttonHamburger) {
+        [self contractHamburger];
+        [self expandOS];
+    } else {
+        [self contractOS];
+    }
+}
+
 - (void) contractOS {
     
     CGRect rect = self.view.frame;
@@ -154,16 +163,4 @@
     } ];
 }
 
-- (void) resetButtonState {
-    self.buttonState = menuButtonNone;
-}
-
-- (IBAction)ownerServiesPushed:(id)sender {
-    NSLog(@"OWNER SERVICES PUSHED PUSHED");
-    if (self.buttonState == menuButtonNone) {
-        [self expandOS];
-    } else {
-        [self contractOS];
-    }
-}
 @end
