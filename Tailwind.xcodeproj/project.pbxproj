@@ -123,8 +123,6 @@
 		A7CD0AFD1A5C86B900D45224 /* NJOPCateringCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CD0AFC1A5C86B900D45224 /* NJOPCateringCell.m */; };
 		A7CD0B001A5C8DFC00D45224 /* NJOPCrewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CD0AFF1A5C8DFC00D45224 /* NJOPCrewViewController.m */; };
 		A7D6F4C01A64B74900B9E7B4 /* NJOPContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D6F4BF1A64B74900B9E7B4 /* NJOPContactViewController.m */; };
-		A7D6F4C81A64C77800B9E7B4 /* NJOPOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D6F4C61A64C77800B9E7B4 /* NJOPOSViewController.m */; };
-		A7D6F4C91A64C77800B9E7B4 /* NJOPOSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D6F4C71A64C77800B9E7B4 /* NJOPOSViewController.xib */; };
 		A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */; };
 		A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */; };
 		A7F2CA4C1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */; };
@@ -309,9 +307,6 @@
 		A7CD0AFF1A5C8DFC00D45224 /* NJOPCrewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCrewViewController.m; sourceTree = "<group>"; };
 		A7D6F4BE1A64B74900B9E7B4 /* NJOPContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPContactViewController.h; sourceTree = "<group>"; };
 		A7D6F4BF1A64B74900B9E7B4 /* NJOPContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPContactViewController.m; sourceTree = "<group>"; };
-		A7D6F4C51A64C77800B9E7B4 /* NJOPOSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPOSViewController.h; sourceTree = "<group>"; };
-		A7D6F4C61A64C77800B9E7B4 /* NJOPOSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPOSViewController.m; sourceTree = "<group>"; };
-		A7D6F4C71A64C77800B9E7B4 /* NJOPOSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPOSViewController.xib; sourceTree = "<group>"; };
 		A7F2CA431A4DC9F400D78804 /* NJOPBookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPBookingViewController.h; sourceTree = "<group>"; };
 		A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBookingViewController.m; sourceTree = "<group>"; };
 		A7F2CA471A4DCBF700D78804 /* NJOPFlightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightsViewController.h; sourceTree = "<group>"; };
