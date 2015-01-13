@@ -83,7 +83,7 @@
                                                                   @"dateLabel.text" : [NSString stringWithFormat:@"%ld", (long)[self extractDateFrom:reservation.departureDate]], // placeholder value
                                                                   @"weekdayLabel.text" : [weekFormatter stringFromDate:reservation.departureDate],
                                                                   @"toFBOLocationLabel.text" : reservation.arrivalAirportCity,
-                                                                  @"fromFBOLocationLabel.text" : reservation.departureAirportCity,
+                                                                  @"fromFBOLocationLabel.text" : [reservation.departureAirportCity capitalizedString],
                                                                   @"timeDurationLabel.text" : @"12:00PM - 2:45AM", // placeholder value
                                                                   },
                                                           kSimpleDataSourceCellItem : reservation,
