@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.hambergerViewController = nil;
+    self.OSViewController = nil;
     [self setMenuSizesAndPositions];
 }
 
