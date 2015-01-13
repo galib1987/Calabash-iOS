@@ -28,8 +28,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *nextStep;
 
 @property (strong, nonatomic) UIPickerView *aircraftPicker;
-
 - (UIPickerView*) getAircraftPicker;
 - (void) selectedAircraft;
+
+@property (strong, nonatomic) UIDatePicker *timePicker;
+- (UIDatePicker*) getTimePicker;
 
 @end

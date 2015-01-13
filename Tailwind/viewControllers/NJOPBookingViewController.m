@@ -7,10 +7,12 @@
 //
 
 #import "NJOPBookingViewController.h"
+#import "APLKeyboardControls.h"
 
 @interface NJOPBookingViewController () <RSDFDatePickerViewDelegate, RSDFDatePickerViewDataSource>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) RSDFDatePickerView *datePickerView;
+@property (strong, nonatomic) APLKeyboardControls *keyboardControls;
 @end
 
 int passengerCount = 0;
@@ -18,8 +20,6 @@ int passengerMax = 15;
 int passengerMin = 1;
 
 @implementation NJOPBookingViewController
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,13 +38,14 @@ int passengerMin = 1;
     
     
     self.flightDate.delegate = self;
-    self.aircraftPicker = [[UIPickerView alloc] init];
-    [self.aircraftPicker setDataSource: self];
-    [self.aircraftPicker setDelegate: self];
     self.aircraftInput.inputView = [self getAircraftPicker];
     
+    self.departTime.inputView = [self getTimePicker];
+    self.arrivalTime.inputView = [self getTimePicker];
     
-    
+    NSArray* inputChain = @[self.aircraftInput, self.departureAirport, self.destinationAirport, self.flightDate, self.departTime, self.arrivalTime, self.numberOfPassengers];
+    self.keyboardControls = [[APLKeyboardControls alloc] initWithInputFields:inputChain];
+    self.keyboardControls.hasPreviousNext = YES;
     
     self.datePickerView = [[RSDFDatePickerView alloc] initWithFrame:self.view.bounds];
     self.datePickerView.delegate = self;
@@ -180,7 +181,7 @@ int passengerMin = 1;
 }
 */
 
-#pragma mark - Aircraft UIPicker
+#pragma mark - Aircraft Picker
 
 - (UIPickerView*) getAircraftPicker {
     if (self.aircraftPicker == nil) {
@@ -208,6 +209,17 @@ int passengerMin = 1;
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     //NSLog(@"selected %d", row);
+}
+
+#pragma mark - Time Picker
+
+- (UIDatePicker*) getTimePicker {
+    if (self.timePicker == nil) {
+        self.timePicker = [[UIDatePicker alloc] init];
+        self.timePicker.datePickerMode = UIDatePickerModeTime;
+        //self.aircraftPicker.showsSelectionIndicator = YES;
+    }
+    return self.timePicker;
 }
 
 @end

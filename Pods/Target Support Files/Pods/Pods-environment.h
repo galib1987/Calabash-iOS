@@ -6,6 +6,12 @@
 // project.
 
 
+// APLKeyboardControls
+#define COCOAPODS_POD_AVAILABLE_APLKeyboardControls
+#define COCOAPODS_VERSION_MAJOR_APLKeyboardControls 0
+#define COCOAPODS_VERSION_MINOR_APLKeyboardControls 1
+#define COCOAPODS_VERSION_PATCH_APLKeyboardControls 2
+
 // Bolts
 #define COCOAPODS_POD_AVAILABLE_Bolts
 #define COCOAPODS_VERSION_MAJOR_Bolts 1
@@ -35,6 +41,12 @@
 #define COCOAPODS_VERSION_MAJOR_NCLFramework_no_arc 2
 #define COCOAPODS_VERSION_MINOR_NCLFramework_no_arc 0
 #define COCOAPODS_VERSION_PATCH_NCLFramework_no_arc 1
+
+// NSData+Base64
+#define COCOAPODS_POD_AVAILABLE_NSData_Base64
+#define COCOAPODS_VERSION_MAJOR_NSData_Base64 1
+#define COCOAPODS_VERSION_MINOR_NSData_Base64 0
+#define COCOAPODS_VERSION_PATCH_NSData_Base64 0
 
 // RSDayFlow
 #define COCOAPODS_POD_AVAILABLE_RSDayFlow

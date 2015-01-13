@@ -1,13 +1,17 @@
 PODS:
+  - APLKeyboardControls (0.1.2):
+    - NSData+Base64 (~> 1.0.0)
   - Bolts (1.1.3)
   - DateTools (1.4.3)
   - HockeySDK (3.6.1)
   - NCLFramework (2.0.1):
-    - NCLFramework/no-arc
+    - NCLFramework/no-arc (= 2.0.1)
   - NCLFramework/no-arc (2.0.1)
+  - NSData+Base64 (1.0.0)
   - RSDayFlow (0.1.2)
 
 DEPENDENCIES:
+  - APLKeyboardControls
   - Bolts
   - DateTools
   - HockeySDK (= 3.6.1)
@@ -20,10 +24,12 @@ EXTERNAL SOURCES:
     :tag: 2.0.1
 
 SPEC CHECKSUMS:
+  APLKeyboardControls: e2e61708b87ce24bb7daeb06b03888f54a97a67a
   Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
   DateTools: 7c2d233ea2d4bda3a717d0cd5f58da926a5998d0
   HockeySDK: 15b24068466aa5ee421eed0cc1d58428d698edf6
   NCLFramework: 57b7a7e127847c590d45066bc6dfe59672efdf68
+  NSData+Base64: aae92a2e3f0bd88b29fe6093551ded3f5c062548
   RSDayFlow: 03f2ed762b7ed199323770650597a499ef39112a
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.35.0

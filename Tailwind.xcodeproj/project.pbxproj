@@ -198,8 +198,8 @@
 		A75099971A6357C00091D7E3 /* NJOPMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPMessagesViewController.h; sourceTree = "<group>"; };
 		A75099981A6357C00091D7E3 /* NJOPMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPMessagesViewController.m; sourceTree = "<group>"; };
 		A750999C1A63587D0091D7E3 /* NJOPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPHomeViewController.m; sourceTree = "<group>"; };
-		A750999E1A6359630091D7E3 /* NJOPFlightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPFlightTableCell.h; path = NJOPFlightTableCell.h; sourceTree = "<group>"; };
-		A750999F1A6359630091D7E3 /* NJOPFlightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPFlightTableCell.m; path = NJOPFlightTableCell.m; sourceTree = "<group>"; };
+		A750999E1A6359630091D7E3 /* NJOPFlightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightTableCell.h; sourceTree = "<group>"; };
+		A750999F1A6359630091D7E3 /* NJOPFlightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightTableCell.m; sourceTree = "<group>"; };
 		A77680881A4062FE00B2E7CF /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A776808A1A40631F00B2E7CF /* Flights.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Flights.storyboard; sourceTree = "<group>"; };
 		A77680901A4063D300B2E7CF /* Booking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
