@@ -240,7 +240,7 @@
                                                     <color key="textColor" red="0.99607849120000003" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="December 10, 2014" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YYH-n1-T0Y">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Dec 10, 2014" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YYH-n1-T0Y">
                                                     <rect key="frame" x="12" y="38" width="350" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -266,7 +266,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FrL-Bj-P4N" id="8ZW-38-cOK">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="JFK: John F. Kennedy Intl" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W7z-SC-laF">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="9:10 am" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W7z-SC-laF">
                                                     <rect key="frame" x="12" y="38" width="170" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -281,18 +281,18 @@
                                                     <color key="textColor" red="0.99607849120000003" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="JFK: John F. Kennedy Intl" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k8I-Ap-M88">
-                                                    <rect key="frame" x="190" y="38" width="171" height="60"/>
-                                                    <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ARRIVE BY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tt-yB-f5y">
                                                     <rect key="frame" x="190" y="9" width="91" height="21"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" red="0.99607849120000003" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="11:50 am" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k8I-Ap-M88">
+                                                    <rect key="frame" x="190" y="38" width="171" height="60"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="k8I-Ap-M88" firstAttribute="leading" secondItem="3Tt-yB-f5y" secondAttribute="leading" id="8Tw-DO-rcl"/>
@@ -358,7 +358,7 @@
                                                         </mask>
                                                     </variation>
                                                     <connections>
-                                                        <action selector="SubtractPassenger:" destination="pWK-K7-4l2" eventType="touchUpInside" id="zLO-XU-zGl"/>
+                                                        <action selector="subtractPassenger:" destination="pWK-K7-4l2" eventType="touchUpInside" id="L35-h4-MU1"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYI-6x-zEo">
@@ -386,7 +386,7 @@
                                                         </mask>
                                                     </variation>
                                                     <connections>
-                                                        <action selector="AddPassenger:" destination="pWK-K7-4l2" eventType="touchUpInside" id="kcg-tD-eIb"/>
+                                                        <action selector="addPassenger:" destination="pWK-K7-4l2" eventType="touchUpInside" id="ZvO-hr-oBu"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -448,19 +448,19 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sgd-L1-L5W" id="SBN-Pc-QvM">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPy-d9-Ms3">
-                                                    <rect key="frame" x="8" y="31" width="168" height="60"/>
-                                                    <state key="normal" title="RESET FORM">
-                                                        <color key="titleColor" red="0.27843137254901962" green="0.8901960784313725" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbo-2V-KmT">
                                                     <rect key="frame" x="190" y="31" width="170" height="60"/>
                                                     <color key="backgroundColor" red="0.17254901960784313" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="NEXT">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPy-d9-Ms3">
+                                                    <rect key="frame" x="8" y="31" width="168" height="60"/>
+                                                    <state key="normal" title="RESET FORM">
+                                                        <color key="titleColor" red="0.27843137254901962" green="0.8901960784313725" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                             </subviews>
@@ -491,17 +491,16 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1001"/>
                     <connections>
-                        <outlet property="AircraftSelector" destination="AVD-WU-ES8" id="CPW-Sa-QxU"/>
-                        <outlet property="ArrivalTime" destination="k8I-Ap-M88" id="4mK-XC-aNV"/>
-                        <outlet property="BookingComment" destination="nFw-VJ-5Zi" id="z93-n6-7Xw"/>
-                        <outlet property="DepartTime" destination="W7z-SC-laF" id="1ms-fW-yen"/>
-                        <outlet property="DepartureAirport" destination="cSY-at-BbI" id="s91-Fy-mTx"/>
-                        <outlet property="DestinationAirport" destination="cSY-at-BbI" id="Eco-ZP-GHC"/>
-                        <outlet property="FlightDate" destination="YYH-n1-T0Y" id="ZQT-aN-tYR"/>
-                        <outlet property="NextStep" destination="Bbo-2V-KmT" id="QdB-4N-HoL"/>
-                        <outlet property="NumberOfPassengers" destination="bdM-3r-fvl" id="ajA-tU-2sF"/>
-                        <outlet property="ResetBooking" destination="xPy-d9-Ms3" id="WFc-aU-dRZ"/>
                         <outlet property="aircraftInput" destination="AVD-WU-ES8" id="DUF-hd-GCS"/>
+                        <outlet property="arrivalTime" destination="k8I-Ap-M88" id="ytC-x8-rhJ"/>
+                        <outlet property="bookingComment" destination="nFw-VJ-5Zi" id="RRw-SJ-Ihi"/>
+                        <outlet property="departTime" destination="W7z-SC-laF" id="E3s-nt-N09"/>
+                        <outlet property="departureAirport" destination="JJj-Pl-ixz" id="zHq-Vk-Rjh"/>
+                        <outlet property="destinationAirport" destination="cSY-at-BbI" id="RCf-Tn-Xqd"/>
+                        <outlet property="flightDate" destination="YYH-n1-T0Y" id="yoV-bK-xao"/>
+                        <outlet property="nextStep" destination="Bbo-2V-KmT" id="ryI-op-07E"/>
+                        <outlet property="numberOfPassengers" destination="bdM-3r-fvl" id="u5F-WS-j88"/>
+                        <outlet property="resetBooking" destination="xPy-d9-Ms3" id="SiA-xF-tfq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0d-NX-g92" userLabel="First Responder" sceneMemberID="firstResponder"/>

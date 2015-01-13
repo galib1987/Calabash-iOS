@@ -7,24 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RSDFDatePickerView.h"
 
-@interface NJOPBookingViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate>
-@property (strong, nonatomic) IBOutlet UITextField *AircraftSelector;
-@property (strong, nonatomic) IBOutlet UITextField *DepartureAirport;
-@property (strong, nonatomic) IBOutlet UITextField *DestinationAirport;
-@property (strong, nonatomic) IBOutlet UITextField *FlightDate;
-@property (strong, nonatomic) IBOutlet UITextField *DepartTime;
-@property (strong, nonatomic) IBOutlet UITextField *ArrivalTime;
+@interface NJOPBookingViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate>
+
+@property (strong, nonatomic) IBOutlet UITextField *departureAirport;
+@property (strong, nonatomic) IBOutlet UITextField *destinationAirport;
+@property (strong, nonatomic) IBOutlet UITextField *flightDate;
+@property (strong, nonatomic) IBOutlet UITextField *departTime;
+@property (strong, nonatomic) IBOutlet UITextField *arrivalTime;
 
 @property (weak, nonatomic) IBOutlet UITextField *aircraftInput;
 
-@property (strong, nonatomic) IBOutlet UITextField *NumberOfPassengers;
-- (IBAction)SubtractPassenger:(UIButton *)sender;
-- (IBAction)AddPassenger:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UITextField *numberOfPassengers;
+- (IBAction)subtractPassenger:(UIButton *)sender;
+- (IBAction)addPassenger:(UIButton *)sender;
 
-@property (strong, nonatomic) IBOutlet UITextView *BookingComment;
-@property (strong, nonatomic) IBOutlet UIButton *ResetBooking;
-@property (strong, nonatomic) IBOutlet UIButton *NextStep;
+@property (strong, nonatomic) IBOutlet UITextView *bookingComment;
+@property (strong, nonatomic) IBOutlet UIButton *resetBooking;
+@property (strong, nonatomic) IBOutlet UIButton *nextStep;
 
 @property (strong, nonatomic) UIPickerView *aircraftPicker;
 
