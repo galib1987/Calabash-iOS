@@ -1179,6 +1179,7 @@ Teterboro-Naples</string>
                                     <outlet property="imageView" destination="nft-EC-oUa" id="vFZ-Xs-xjU"/>
                                     <outlet property="tile" destination="XyK-mr-CVF" id="dQE-gz-rnr"/>
                                     <outlet property="topLabel" destination="xLZ-2U-Bvy" id="hjT-aj-VhK"/>
+                                    <segue destination="rD0-A9-HS3" kind="show" identifier="showGround" id="4Xk-2v-6jU"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CateringInfoCell" rowHeight="100" id="BZy-AZ-gwp" customClass="NJOPInfoCell">
@@ -1202,9 +1203,9 @@ Teterboro-Naples</string>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="mZY-YM-Y5E"/>
                                                             <exclude reference="L2s-2C-gh0"/>
                                                             <exclude reference="NNt-xg-0gX"/>
+                                                            <exclude reference="mZY-YM-Y5E"/>
                                                             <exclude reference="qyj-J1-Ft2"/>
                                                         </mask>
                                                     </variation>
@@ -1258,6 +1259,7 @@ Teterboro-Naples</string>
                                     <outlet property="imageView" destination="PF4-gU-KYI" id="eRQ-w3-sYo"/>
                                     <outlet property="tile" destination="eIL-9h-Olm" id="JUZ-R9-8TX"/>
                                     <outlet property="topLabel" destination="pwV-f0-nKh" id="ku2-5X-b1N"/>
+                                    <segue destination="u3L-wO-v1v" kind="show" identifier="showCatering" id="ijv-jl-Nwv"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CrewInfoCell" rowHeight="100" id="W33-4S-sSP" customClass="NJOPInfoCell">
@@ -1283,8 +1285,8 @@ Teterboro-Naples</string>
                                                         <mask key="constraints">
                                                             <exclude reference="4N1-ec-BIb"/>
                                                             <exclude reference="5Lk-o8-X9o"/>
-                                                            <exclude reference="rMC-2v-XpV"/>
                                                             <exclude reference="X9G-eh-1PM"/>
+                                                            <exclude reference="rMC-2v-XpV"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
@@ -1337,6 +1339,7 @@ Teterboro-Naples</string>
                                     <outlet property="imageView" destination="wQp-Cg-S5p" id="ff3-cH-Ihk"/>
                                     <outlet property="tile" destination="PZd-Ce-9dv" id="ZGe-mW-sHW"/>
                                     <outlet property="topLabel" destination="Hzb-ci-xv3" id="BG6-f4-cKI"/>
+                                    <segue destination="L6P-Tw-bix" kind="show" identifier="showCrew" id="KH5-G4-S6b"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PassengerManifestInfoCell" rowHeight="100" id="yWu-GS-v01" customClass="NJOPInfoCell">
@@ -1360,8 +1363,8 @@ Teterboro-Naples</string>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="4uS-OI-WdX"/>
                                                             <exclude reference="04f-K6-deN"/>
+                                                            <exclude reference="4uS-OI-WdX"/>
                                                             <exclude reference="h5c-HD-1Gp"/>
                                                             <exclude reference="ysV-t1-vWF"/>
                                                         </mask>
@@ -1396,8 +1399,8 @@ Teterboro-Naples</string>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="wrD-Q1-ebe"/>
                                                     <exclude reference="sQc-YD-U6b"/>
+                                                    <exclude reference="wrD-Q1-ebe"/>
                                                     <exclude reference="69z-iD-skW"/>
                                                 </mask>
                                             </variation>
@@ -1416,6 +1419,7 @@ Teterboro-Naples</string>
                                     <outlet property="imageView" destination="f7g-1z-Tnc" id="txd-ss-j1g"/>
                                     <outlet property="tile" destination="JY0-FD-35n" id="CDH-Ks-mEA"/>
                                     <outlet property="topLabel" destination="avf-lm-NGO" id="9JH-iI-yqR"/>
+                                    <segue destination="MdR-TU-Rfu" kind="show" identifier="showManifest" id="2cl-7a-RhS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
