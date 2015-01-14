@@ -37,7 +37,6 @@ int passengerMin = 1;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    self.flightDate.delegate = self;
     self.aircraftInput.inputView = [self getAircraftPicker];
     
     self.departureAirport.delegate = self;
@@ -46,15 +45,14 @@ int passengerMin = 1;
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
     
+    self.datePickerView = [[RSDFDatePickerView alloc] init];
+    self.datePickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.datePickerView.delegate = self;
+    self.flightDate.inputView = self.datePickerView;
+    
     NSArray* inputChain = @[self.aircraftInput, self.departureAirport, self.destinationAirport, self.flightDate, self.departTime, self.arrivalTime, self.numberOfPassengers];
     self.keyboardControls = [[APLKeyboardControls alloc] initWithInputFields:inputChain];
     self.keyboardControls.hasPreviousNext = YES;
-    
-    self.datePickerView = [[RSDFDatePickerView alloc] initWithFrame:self.view.bounds];
-    self.datePickerView.delegate = self;
-    //  datePickerView.dataSource = self;
-    self.datePickerView.hidden = YES;
-    [self.tableView addSubview:self.datePickerView];
     
     
 }
@@ -66,9 +64,7 @@ int passengerMin = 1;
 
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
-    if (textField == self.flightDate) {
-        [self loadCalendar];
-    } else if (textField == self.departureAirport || textField == self.destinationAirport) {
+    if (textField == self.departureAirport || textField == self.destinationAirport) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Booking" bundle:nil];
         UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BookingSelectAirport"];
         if (textField == self.departureAirport) {
@@ -78,9 +74,6 @@ int passengerMin = 1;
         }
         [self.navigationController pushViewController:vc animated:YES];
     }
-}
--(void)loadCalendar{
-    self.datePickerView.hidden = NO;
 }
 
 // Returns YES if the date should be highlighted or NO if it should not.
