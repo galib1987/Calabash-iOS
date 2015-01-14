@@ -7,6 +7,7 @@
 //
 
 #import "NJOPWelcomeRootController.h"
+#import "NJOPConfig.h"
 
 @interface NJOPWelcomeRootController ()
 
@@ -19,6 +20,7 @@
     
     // get Items from Json File
     [self getWelcomeItems];
+    [self.navigationController setNavigationBarHidden:YES];
     
     // Do any additional setup after loading the view.
     
@@ -150,5 +152,8 @@
 }
 
 - (IBAction)skipButton:(id)sender {
+    [[NJOPConfig sharedInstance] hasSeenWelcomeScreen];
+    NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Main",menuStoryboardName,@"LoginVC",menuViewControllerName,[NSNumber numberWithBool:YES],menuShouldHideMenu, nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif];
 }
 @end

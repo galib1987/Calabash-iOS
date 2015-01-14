@@ -105,8 +105,8 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="CV1-Uj-OKs"/>
-                                                    <exclude reference="cW5-ro-fsg"/>
                                                     <exclude reference="azl-8b-jXw"/>
+                                                    <exclude reference="cW5-ro-fsg"/>
                                                     <exclude reference="5pQ-p8-QTc"/>
                                                     <exclude reference="Rn6-Jf-WOj"/>
                                                     <exclude reference="uuc-IG-4IJ"/>

@@ -10,6 +10,7 @@
 //#import "NJOPHomeViewController.h"
 
 #import "NCLAppOverlayWindow.h"
+#import "NJOPConfig.h"
 
 @interface AppDelegate ()
 
@@ -26,12 +27,6 @@
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    self.window.rootViewController = vc;
 //    [self.window makeKeyAndVisible];
-    
-    // TEST CODE TO DISPLAY WELCOME SCENE vvvvv
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Welcome" bundle:[NSBundle mainBundle]];
-    UIViewController *vc = [storyboard instantiateInitialViewController];
-    self.window.rootViewController = vc;
-    // TEST CODE TO DISPLAY WELCOME SCENE ^^^^^
 
     // listen for major menu changes
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goChangeScreen:) name:changeScreen object:nil];
@@ -41,10 +36,18 @@
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
     
+    // see if we need to load the welcome screen
+    
     // TEST CODE TO DISPLAY BOOKING ON LAUNCH vvvvv
     //NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Booking",menuStoryboardName,@"BookingSelectAccount",menuViewControllerName, nil];
     //[[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif]; // using NSNotifications for menu changes because we also need to do other things in other places
     // TEST CODE TO DISPLAY BOOKING ON LAUNCH ^^^^^
+
+    // let's see if we need to show welcome screen
+    if ([[NJOPConfig sharedInstance] shouldSeeWelcomeScreen] == YES) {
+        NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Welcome",menuStoryboardName,@"WelcomeRootVC",menuViewControllerName,[NSNumber numberWithBool:YES],menuShouldHideMenu, nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif];
+    }
 
     return YES;
 }
@@ -75,6 +78,7 @@
     
     NSString *storyboard = [[aNotification userInfo] objectForKey:menuStoryboardName];
     NSString *viewController = [[aNotification userInfo] objectForKey:menuViewControllerName];
+    NSNumber *shouldDisplayMenu = [[aNotification userInfo] objectForKey:menuShouldHideMenu];
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:storyboard bundle:nil];
     UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:viewController];
@@ -93,8 +97,11 @@
     }
 
     UIView *parentView = [self.window.rootViewController.view superview];
-    [parentView addSubview:self.njopMenuViewController.view];
-    [parentView bringSubviewToFront:self.njopMenuViewController.view];
+    // see if we need to hide menu
+    if ([shouldDisplayMenu intValue] < 1) {
+        [parentView addSubview:self.njopMenuViewController.view];
+        [parentView bringSubviewToFront:self.njopMenuViewController.view];
+    }
 
     
     
