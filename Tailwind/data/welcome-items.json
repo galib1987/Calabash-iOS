@@ -1,0 +1,32 @@
+{
+    "items":[
+             {
+             "pageHeaders":"Welcome to NetJets",
+             "pageDescs":"Let us show you around.",
+             "pageBgs":"welcome0.png"
+             },
+             {
+             "pageHeaders":"Flights",
+             "pageDescs":"See all your upcoming flights in one place.",
+             "pageBgs":"welcome1.png"
+             },
+             {
+             "pageHeaders":"Your Owner Services Team",
+             "pageDescs":"Your team is now just a tap away—24 hours a day, seven days a week.",
+             "pageBgs":"welcome2.png"
+             },
+             {
+             "pageHeaders":"Quick Booking",
+             "pageDescs":"You can submit a flight request in just a few taps. Then our Owner Services team will call you to iron out the details.",
+             "pageBgs":"welcome3.png"
+             },
+             {
+             "pageHeaders":"Notifications",
+             "pageDescs":"Allow us to notify you of important flight updates, without answering a phone call.",
+             "pageBgs":"welcome4.png",
+             "hasButtons":true,
+             "buttonA":"No Thanks",
+             "buttonB":"Allow"
+             }
+    ]
+}

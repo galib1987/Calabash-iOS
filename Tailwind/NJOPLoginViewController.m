@@ -30,6 +30,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
 	_userInput = [NJOPLoginViewUserInput new];
 	[_loginButton setEnabled:[self.userInput validateWithError:nil]];
 #if USE_BLUR

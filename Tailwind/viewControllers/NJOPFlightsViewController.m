@@ -10,6 +10,7 @@
 #import "NJOPClient+flights.h"
 #import "NJOPReservation.h"
 #import "NJOPFlightsDetailViewController.h"
+#import "NJOPSession.h"
 
 @interface NJOPFlightsViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -21,9 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView setContentInset:UIEdgeInsetsMake(-100,0,0,0)];
+    
     // Do any additional setup after loading the view.
     UIRefreshControl *refreshMe = [[UIRefreshControl alloc] init];
-    refreshMe.backgroundColor = [UIColor blackColor];
+    refreshMe.backgroundColor = [UIColor clearColor];
     refreshMe.tintColor = [UIColor whiteColor];
     refreshMe.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull Me"];
     [refreshMe addTarget:self action:@selector(refreshTable:)
@@ -49,27 +52,40 @@
 
 -(void)loadDataSource {
     
-    __weak NJOPFlightsViewController* wself = self;
+    NJOPSession *session = [NJOPSession sharedInstance];
     
-    [NJOPClient GETReservationsWithInfo:nil completion:^(NSArray *reservations, NSError *error) {
-        [wself updateWithReservation:reservations];
-    }];
+    __weak NJOPFlightsViewController* wself = self;
+
+    [wself updateWithReservation:session.reservations];
+}
+
+- (NSInteger)extractDateFrom:(NSDate *)date {
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:date];
+    NSInteger day = [components day];
+    
+    return day;
 }
 
 -(void)updateWithReservation:(NSArray *)reservations {
+    
+    NSDateFormatter *weekFormatter = [[NSDateFormatter alloc] init];
+    weekFormatter.dateFormat = @"EEEE";
+    
+    NSDateFormatter *monthFormatter = [[NSDateFormatter alloc] init];
+    monthFormatter.dateFormat = @"MMM";
     
     NSMutableArray *kSimpleDataSourceCells = [[NSMutableArray alloc] init];
     
     for (NJOPReservation *reservation in reservations) {
         NSMutableDictionary *kSimpleDataSourceKeys = [[NSMutableDictionary alloc] init];
         [kSimpleDataSourceKeys addEntriesFromDictionary:@{
-                                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
+                                                          kSimpleDataSourceCellIdentifierKey		: @"FlightTableCell",
                                                           kSimpleDataSourceCellKeypaths					: @{
-                                                                  @"monthLabel.text" : @"JAN",
-                                                                  @"dateLabel.text" : [NSString stringWithFormat:@"%@", [reservation.departureDateString substringWithRange:NSMakeRange(4, 2)]], // placeholder value
-                                                                  @"weekdayLabel.text" : @"Wednesday",
+                                                                  @"monthLabel.text" : [monthFormatter stringFromDate:reservation.departureDate],
+                                                                  @"dateLabel.text" : [NSString stringWithFormat:@"%ld", (long)[self extractDateFrom:reservation.departureDate]], // placeholder value
+                                                                  @"weekdayLabel.text" : [weekFormatter stringFromDate:reservation.departureDate],
                                                                   @"toFBOLocationLabel.text" : reservation.arrivalAirportCity,
-                                                                  @"fromFBOLocationLabel.text" : reservation.departureAirportCity,
+                                                                  @"fromFBOLocationLabel.text" : [reservation.departureAirportCity capitalizedString],
                                                                   @"timeDurationLabel.text" : @"12:00PM - 2:45AM", // placeholder value
                                                                   },
                                                           kSimpleDataSourceCellItem : reservation,
@@ -80,6 +96,22 @@
         [kSimpleDataSourceCells addObject:kSimpleDataSourceKeys];
     }
     
+    /*IT IS HARD TO GET A WHITE BACKGROUND SEMI TRANSPARENT WITH WHITE TEXT FOR SOME REASON. STILL WORKING ON IT.*/
+    NSDictionary *samplePendingCell = @{
+                                        kSimpleDataSourceCellIdentifierKey		: @"PendingCell",
+                                        kSimpleDataSourceCellKeypaths					: @{
+                                                @"monthLabel.text" : @"FEB",
+                                                @"dateLabel.text" : @"30", // placeholder value
+                                                @"weekdayLabel.text" : @"Tuesday",
+                                                @"toFBOLocationLabel.text" : @"CAIRO",
+                                                @"fromFBOLocationLabel.text" : @"Brisbane",
+                                                @"timeDurationLabel.text" : @"12:00PM - 2:45AM", // placeholder value
+                                                },
+                                        
+                                        };
+    
+    [kSimpleDataSourceCells addObject:samplePendingCell];
+    
     self.reservations = kSimpleDataSourceCells;
     
     NSArray* sections = @[
@@ -88,18 +120,35 @@
                               },
                           ];
     
+    
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
     self.dataSource.title = @"FLIGHTS";
 }
 - (IBAction)segmentedControlAction:(id)sender {
-    
+    /* need to load contract flights vs individual's booked flights */
+    if (self.segmentedControl.selectedSegmentIndex == 0) {
+        [self loadDataSource];
+        [self.tableView reloadData];
+    } else if (self.segmentedControl.selectedSegmentIndex == 1) {
+        NSArray *sections = @[
+                              @{
+                                  kSimpleDataSourceSectionCellsKey : @[
+                                          @{
+                                                                           kSimpleDataSourceCellIdentifierKey			: @"NoAccountFlights",
+                                                                           }
+                                          ],
+                                  },
+                              ];
+        
+        self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     NSDictionary *representationDict = [self.reservations objectAtIndex:indexPath.row];
-    NSLog(@"HEY HEY HEY HEY %@", representationDict);
     
     if ([segue.identifier isEqualToString:@"showDetail"] ) {
         

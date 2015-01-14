@@ -15,6 +15,7 @@
 #define goToHomeScreen @"goToHomeScreen"
 #define menuStoryboardName @"menuStoryboardName" // this is used in the NSNotification to define the storyboard name to use to load the storyboard
 #define menuViewControllerName @"venuViewControlelrName" // this is used in the NSNotification to define the viewController name to use to get and add in a viewController
+#define menuShouldHideMenu @"menuShouldHideMenu" // this is to see if we should add in the menu or not. For example, Welcome screen and login screens don't need menus
 
 
 // hostname and URL for different API calls
@@ -32,6 +33,13 @@ typedef enum {
     menuBUttonHamburger,
     menuButtonOwnerServices
 } menuButtonStates;
+
+typedef NS_ENUM(NSInteger, FlightState) {
+    flightScheduled = 0,
+    flightUpcoming,
+    flightCurrent,
+    noFlight
+};
 
 // temporarily until I figure out a better way to bypass having to VPN
 // 0 is use VPN
