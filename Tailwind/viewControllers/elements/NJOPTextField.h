@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    dropDown,
+    search
+} iconType;
+
 @interface NJOPTextField : UITextField
 @property (nonatomic) BOOL hasDropDown;
+@property (nonatomic) BOOL hasSearchIcon;
+
+- (UIView*) getIconView:(iconType) icon;
 
 @end
