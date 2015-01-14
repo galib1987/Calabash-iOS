@@ -22,8 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView setContentInset:UIEdgeInsetsMake(-100,0,0,0)];
-    
     // Do any additional setup after loading the view.
     UIRefreshControl *refreshMe = [[UIRefreshControl alloc] init];
     refreshMe.backgroundColor = [UIColor clearColor];
@@ -79,7 +77,7 @@
     for (NJOPReservation *reservation in reservations) {
         NSMutableDictionary *kSimpleDataSourceKeys = [[NSMutableDictionary alloc] init];
         [kSimpleDataSourceKeys addEntriesFromDictionary:@{
-                                                          kSimpleDataSourceCellIdentifierKey		: @"FlightTableCell",
+                                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightTableCell",
                                                           kSimpleDataSourceCellKeypaths					: @{
                                                                   @"monthLabel.text" : [monthFormatter stringFromDate:reservation.departureDate],
                                                                   @"dateLabel.text" : [NSString stringWithFormat:@"%ld", (long)[self extractDateFrom:reservation.departureDate]], // placeholder value
@@ -96,22 +94,6 @@
         [kSimpleDataSourceCells addObject:kSimpleDataSourceKeys];
     }
     
-    /*IT IS HARD TO GET A WHITE BACKGROUND SEMI TRANSPARENT WITH WHITE TEXT FOR SOME REASON. STILL WORKING ON IT.*/
-    NSDictionary *samplePendingCell = @{
-                                        kSimpleDataSourceCellIdentifierKey		: @"PendingCell",
-                                        kSimpleDataSourceCellKeypaths					: @{
-                                                @"monthLabel.text" : @"FEB",
-                                                @"dateLabel.text" : @"30", // placeholder value
-                                                @"weekdayLabel.text" : @"Tuesday",
-                                                @"toFBOLocationLabel.text" : @"CAIRO",
-                                                @"fromFBOLocationLabel.text" : @"Brisbane",
-                                                @"timeDurationLabel.text" : @"12:00PM - 2:45AM", // placeholder value
-                                                },
-                                        
-                                        };
-    
-    [kSimpleDataSourceCells addObject:samplePendingCell];
-    
     self.reservations = kSimpleDataSourceCells;
     
     NSArray* sections = @[
@@ -119,7 +101,6 @@
                               kSimpleDataSourceSectionCellsKey : kSimpleDataSourceCells,
                               },
                           ];
-    
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
     self.dataSource.title = @"FLIGHTS";
@@ -134,7 +115,7 @@
                               @{
                                   kSimpleDataSourceSectionCellsKey : @[
                                           @{
-                                                                           kSimpleDataSourceCellIdentifierKey			: @"NoAccountFlights",
+                                                                           kSimpleDataSourceCellIdentifierKey			: @"NJOPTableViewCell",
                                                                            }
                                           ],
                                   },
@@ -142,7 +123,10 @@
         
         self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
         [self.tableView reloadData];
+    } else {
+        NSLog(@"How is this even possible?");
     }
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
