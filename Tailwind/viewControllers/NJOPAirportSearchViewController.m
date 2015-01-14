@@ -18,6 +18,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.searchInput becomeFirstResponder];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Booking" bundle:nil];
+    NJOPAirportSearchTableViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BookingAirportResults"];
+    self.resultsTable = vc;
+    
+    [self.view addSubview:self.resultsTable.view];
+}
+
+- (void)viewDidLayoutSubviews {
+    // Lay out results table
+    CGFloat resultsTop = self.searchInput.frame.origin.y+self.searchInput.frame.size.height+10;
+    CGFloat resultsHeight = self.view.frame.size.height-resultsTop;
+    self.resultsTable.view.frame = CGRectMake(self.searchInput.frame.origin.x, resultsTop, self.searchInput.frame.size.width, resultsHeight);
 }
 
 - (void)didReceiveMemoryWarning {
