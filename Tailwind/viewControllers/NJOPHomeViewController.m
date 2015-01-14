@@ -46,7 +46,7 @@
         }
     }
     [NJOPClient GETReservationsWithInfo:info completion:^(NSArray *reservations, NSError *error) {
-        [wself updateWithReservations:@[]];
+        [wself updateWithReservations:reservations];
     }];
 }
 
@@ -59,12 +59,12 @@
     NSDictionary *sectionCellRepresentation = [[NSDictionary alloc] init];
     
     if ([reservations count] > 0) {
-        NSLog(@"we have reservations");
+        NSLog(@"we have reservations %@", reservations);
         NJOPReservation *reservation = reservations[0]; // only interested in the next flight schedule
         
         NSInteger FlightState = flightCurrent;
         
-        if (FlightState == flightScheduled) {
+        if ([reservation.departureDate isLaterThan:[NSDate date]]) {
             
             FBORepresentation = @{
                                   @"FBOTableCell" : @{
@@ -106,7 +106,7 @@
                                                                                 };
             
             
-        } else if (FlightState == flightCurrent) {
+        } else if ([reservation.departureDate isEqualToDateIgnoringTime:[NSDate date]]) {
             
             
             FBORepresentation = @{
