@@ -108,6 +108,18 @@
     } ];
 }
 
+#pragma mark -- Owner Services button handling
+- (IBAction)ownerServiesPushed:(id)sender {
+    if (self.buttonState == menuButtonNone) {
+        [self expandOS];
+    } else if (self.buttonState == menuBUttonHamburger) {
+        [self contractHamburger];
+        [self expandOS];
+    } else {
+        [self contractOS];
+    }
+}
+
 - (void) contractOS {
     
     CGRect rect = self.view.frame;
@@ -152,16 +164,4 @@
     } ];
 }
 
-- (void) resetButtonState {
-    self.buttonState = menuButtonNone;
-}
-
-- (IBAction)ownerServiesPushed:(id)sender {
-    NSLog(@"OWNER SERVICES PUSHED PUSHED");
-    if (self.buttonState == menuButtonNone) {
-        [self expandOS];
-    } else {
-        [self contractOS];
-    }
-}
 @end
