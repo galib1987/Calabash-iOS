@@ -545,6 +545,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hasSearchIcon" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="searchEdited:" destination="Saa-EZ-a7o" eventType="editingChanged" id="0E8-dB-wxI"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -555,7 +558,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="resultsSectionTitle" destination="i2Q-vK-mtY" id="fsx-Ja-y0y"/>
                         <outlet property="searchInput" destination="giG-Ig-gBg" id="9yM-m8-PLz"/>
                     </connections>
                 </viewController>
@@ -656,6 +658,9 @@ McCarran International</string>
                             <outlet property="delegate" destination="enK-hk-ecn" id="2SG-L1-mNq"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="headerLabel" destination="i2Q-vK-mtY" id="WbB-5o-6QI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0NG-Zm-JhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
