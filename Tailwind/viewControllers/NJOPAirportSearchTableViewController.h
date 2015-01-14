@@ -10,4 +10,8 @@
 
 @interface NJOPAirportSearchTableViewController : SimpleDataSourceTableViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *headerLabel;
+
+- (void)searchWith:(NSString*) term;
+
 @end

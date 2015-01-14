@@ -27,6 +27,8 @@
 
 -(void)loadDataSource {
     
+    // STUB TO SHOW AIRPORT RESULTS
+    
     NSArray* sections = @[
                           @{
                               kSimpleDataSourceSectionCellsKey : @[
@@ -43,12 +45,58 @@
                                                   @"locationLabel.text" : [@"New York-kennedym ny, us" uppercaseString],
                                                   @"airportNameLabel.text" : @"KJFK\nJohn F Kennedy International",
                                                   }
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"resultItem",
+                                          kSimpleDataSourceCellKeypaths					: @{
+                                                  @"locationLabel.text" : [@"Green bay, wi, us" uppercaseString],
+                                                  @"airportNameLabel.text" : @"KGRB\nAustin Straubel International",
+                                                  }
                                           }
                                       ]
                               }
                           ];
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
+}
+
+-(void)searchWith:(NSString *)term {
+    
+    // STUB TO SHOW ABILITY TO RECEIVE TEXTFIELD TEXT
+    
+    if ([term isEmptyOrWhitespace]) {
+        
+        self.headerLabel.text = @"Recent Airports:";
+        [self loadDataSource];
+        
+    } else {
+    
+        self.headerLabel.text = @"Search results:";
+        NSArray* sections = @[
+                              @{
+                                  kSimpleDataSourceSectionCellsKey : @[
+                                          @{
+                                              kSimpleDataSourceCellIdentifierKey			: @"resultItem",
+                                              kSimpleDataSourceCellKeypaths					: @{
+                                                      @"locationLabel.text" : [@"AUstin, TX, US" uppercaseString],
+                                                      @"airportNameLabel.text" : @"KAUS: Austin-Bergstrom\nInternational",
+                                                      }
+                                              },
+                                          @{
+                                              kSimpleDataSourceCellIdentifierKey			: @"resultItem",
+                                              kSimpleDataSourceCellKeypaths					: @{
+                                                      @"locationLabel.text" : [@"Green bay, wi, us" uppercaseString],
+                                                      @"airportNameLabel.text" : @"KGRB\nAustin Straubel International",
+                                                      }
+                                              }
+                                          ]
+                                  }
+                              ];
+        
+        self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
+    }
+    
+    [self.tableView reloadData];
 }
 
 /*

@@ -7,6 +7,7 @@
 //
 
 #import "NJOPAirportSearchViewController.h"
+#import "NJOPTextField.h"
 
 @interface NJOPAirportSearchViewController ()
 
@@ -36,6 +37,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)searchEdited:(NJOPTextField *)sender {
+    [self.resultsTable searchWith:sender.text];
 }
 
 /*
