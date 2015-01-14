@@ -15,6 +15,8 @@
 		1E36BD1C1A4887D700221E7D /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E36BD1B1A4887D700221E7D /* Welcome.storyboard */; };
 		1E36BD221A48992700221E7D /* NJOPWelcomeContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E36BD211A48992700221E7D /* NJOPWelcomeContentController.m */; };
 		1E36BD251A489ED100221E7D /* NJOPWelcomeRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E36BD241A489ED100221E7D /* NJOPWelcomeRootController.m */; };
+		1E79C8941A670983001B73B9 /* NJOPAirportSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79C8931A670983001B73B9 /* NJOPAirportSearchTableViewController.m */; };
+		1E79C8971A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79C8961A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m */; };
 		2AD96D2C90B7446D90304928 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 		30A4737F19D9E41A0045D7AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4737E19D9E41A0045D7AF /* main.m */; };
 		30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4738119D9E41A0045D7AF /* AppDelegate.m */; };
@@ -173,6 +175,10 @@
 		1E36BD211A48992700221E7D /* NJOPWelcomeContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPWelcomeContentController.m; sourceTree = "<group>"; };
 		1E36BD231A489ED100221E7D /* NJOPWelcomeRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPWelcomeRootController.h; sourceTree = "<group>"; };
 		1E36BD241A489ED100221E7D /* NJOPWelcomeRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPWelcomeRootController.m; sourceTree = "<group>"; };
+		1E79C8921A670983001B73B9 /* NJOPAirportSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAirportSearchTableViewController.h; sourceTree = "<group>"; };
+		1E79C8931A670983001B73B9 /* NJOPAirportSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAirportSearchTableViewController.m; sourceTree = "<group>"; };
+		1E79C8951A670ADF001B73B9 /* NJOPAirportResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAirportResultTableViewCell.h; sourceTree = "<group>"; };
+		1E79C8961A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAirportResultTableViewCell.m; sourceTree = "<group>"; };
 		30A4737919D9E41A0045D7AF /* Tailwind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tailwind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A4737D19D9E41A0045D7AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30A4737E19D9E41A0045D7AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -294,8 +300,8 @@
 		A786D60C1A66351F006EDA24 /* NJOPOSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPOSViewController.h; sourceTree = "<group>"; };
 		A786D60D1A66351F006EDA24 /* NJOPOSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPOSViewController.m; sourceTree = "<group>"; };
 		A786D60E1A66351F006EDA24 /* NJOPOSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPOSViewController.xib; sourceTree = "<group>"; };
-		A786D6181A66380B006EDA24 /* NJOPFlightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPFlightTableCell.h; path = NJOPFlightTableCell.h; sourceTree = "<group>"; };
-		A786D6191A66380B006EDA24 /* NJOPFlightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPFlightTableCell.m; path = NJOPFlightTableCell.m; sourceTree = "<group>"; };
+		A786D6181A66380B006EDA24 /* NJOPFlightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightTableCell.h; sourceTree = "<group>"; };
+		A786D6191A66380B006EDA24 /* NJOPFlightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightTableCell.m; sourceTree = "<group>"; };
 		A786D61F1A6639A5006EDA24 /* NJOPMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPMessageCell.h; sourceTree = "<group>"; };
 		A786D6201A6639A5006EDA24 /* NJOPMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPMessageCell.m; sourceTree = "<group>"; };
 		A786D6221A663B4A006EDA24 /* NJOPConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPConfig.h; sourceTree = "<group>"; };
@@ -775,6 +781,10 @@
 		A7F2CA421A4DC9C300D78804 /* Booking ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1E79C8951A670ADF001B73B9 /* NJOPAirportResultTableViewCell.h */,
+				1E79C8961A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m */,
+				1E79C8921A670983001B73B9 /* NJOPAirportSearchTableViewController.h */,
+				1E79C8931A670983001B73B9 /* NJOPAirportSearchTableViewController.m */,
 				1E79C87E1A6481CA001B73B9 /* NJOPAirportSearchViewController.h */,
 				1E79C87F1A6481CA001B73B9 /* NJOPAirportSearchViewController.m */,
 				1E636E931A5F299C002B3E8C /* NJOPSelectAccountViewController.h */,
@@ -1050,6 +1060,7 @@
 				A750999B1A6357C00091D7E3 /* NJOPMessagesViewController.m in Sources */,
 				A780D0301A55040100A79AF6 /* NJOPFlightDetailCell.m in Sources */,
 				A74C81851A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m in Sources */,
+				1E79C8971A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m in Sources */,
 				A7A03EB21A42EE91004BE417 /* FBOTableCell.m in Sources */,
 				A7A03E941A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.m in Sources */,
 				A780A7EB1A5E4FFD000911A7 /* NJOPCrewCell.m in Sources */,
@@ -1106,6 +1117,7 @@
 				A786D6111A66351F006EDA24 /* NJOPMenuViewController.m in Sources */,
 				A7D6F4C81A64C77800B9E7B4 /* (null) in Sources */,
 				A77680D91A406C7D00B2E7CF /* NJOPClient+Login.m in Sources */,
+				1E79C8941A670983001B73B9 /* NJOPAirportSearchTableViewController.m in Sources */,
 				A780A7EE1A5E636B000911A7 /* NJOPPassengerCell.m in Sources */,
 				A7A03EBB1A42F130004BE417 /* NJOPUpcomingFlightTableCell.m in Sources */,
 				A780D0331A5504BC00A79AF6 /* NJOPInfoCell.m in Sources */,
