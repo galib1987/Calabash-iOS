@@ -30,18 +30,47 @@
     _hasDropDown = hasDropDown;
     
     if (self.hasDropDown) {
-        UIImageView *dropDownImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dropdownarrow"]];
-        dropDownImageView.frame = CGRectMake(0, 0, 19, 19);
-        dropDownImageView.contentMode = UIViewContentModeScaleAspectFit;
-        UIView *dropDownView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 19*2, 19)];
-        [dropDownView addSubview:dropDownImageView];
-        dropDownView.userInteractionEnabled = false;
-        
+        UIView *dropDownView = [self getIconView:dropDown];
         self.rightView = dropDownView;
         self.rightViewMode = UITextFieldViewModeAlways;
     } else {
         self.rightView = nil;
     }
+}
+
+- (void)setHasSearchIcon:(BOOL)hasSearchIcon {
+    _hasSearchIcon = hasSearchIcon;
+    
+    if (self.hasSearchIcon) {
+        UIView *searchIconView = [self getIconView:search];
+        self.rightView = searchIconView;
+        self.rightViewMode = UITextFieldViewModeAlways;
+    } else {
+        self.rightView = nil;
+    }
+}
+
+- (UIView*)getIconView:(iconType)icon {
+    UIImageView *iconImageView;
+    CGFloat width;
+    switch (icon) {
+        case dropDown:
+            iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dropdownarrow"]];
+            width = 19;
+            break;
+        case search:
+            iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"searchicon"]];
+            width = 22;
+            break;
+        default:
+            break;
+    }
+    iconImageView.frame = CGRectMake(0, 0, width, width);
+    iconImageView.contentMode = UIViewContentModeScaleAspectFit;
+    UIView *iconView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width*2, width)]; // width*2 for right padding
+    [iconView addSubview:iconImageView];
+    iconView.userInteractionEnabled = false;
+    return iconView;
 }
 
 - (void)drawPlaceholderInRect:(CGRect)rect {
