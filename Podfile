@@ -6,5 +6,5 @@ pod 'NCLFramework', :git => "http://stash.netjets.com/scm/mobile/ios-common-libr
 pod 'HockeySDK', '3.6.1'
 pod 'Bolts'
 pod 'DateTools'
-pod 'RSDayFlow', '~> 0.1.2'
+pod 'RSDayFlow', '~> 0.7.3'
 pod 'APLKeyboardControls'
