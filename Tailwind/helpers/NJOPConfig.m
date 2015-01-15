@@ -48,4 +48,8 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+- (void) hideKeyboard {
+    [[NSNotificationCenter defaultCenter] postNotificationName:dismissKeyboard object:self userInfo:nil];
+}
+
 @end

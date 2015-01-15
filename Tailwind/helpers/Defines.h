@@ -10,6 +10,7 @@
 #define Tailwind_Defines_h
 
 // just setting some globals for the app.. mainly for NSNotification
+#define dismissKeyboard @"dismissKeyboard" // anytime you want to set a way to dismiss the keyboard when tapped out of the area
 #define changeScreen @"changeScreen"
 #define goToLoginScreen @"goToLoginScreen"
 #define goToHomeScreen @"goToHomeScreen"

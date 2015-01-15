@@ -26,4 +26,6 @@
 - (void) displayHome; // displays the home storyboard
 - (void) presentMessage:(NSString *) message withTitle:(NSString *) title; // temporary for testing
 
+- (void) tapGesture:(UIGestureRecognizer *) tap; // for dismissing keyboard and stuff
+
 @end

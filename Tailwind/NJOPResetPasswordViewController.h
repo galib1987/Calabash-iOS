@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NJOPConfig.h"
 
 @interface NJOPResetPasswordViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *netJetsLogoImageView;
@@ -18,4 +19,5 @@
 
 - (IBAction)submitAction:(id)sender;
 
+- (void) tapGesture:(UIGestureRecognizer *) tap;
 @end

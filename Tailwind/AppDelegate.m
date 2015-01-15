@@ -30,6 +30,8 @@
 
     // listen for major menu changes
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goChangeScreen:) name:changeScreen object:nil];
+    // listen for releasing the keyboard focus
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideKeyboard:) name:dismissKeyboard object:nil];
     
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
@@ -105,6 +107,10 @@
 
     
     
+}
+
+- (void) hideKeyboard:(NSNotification *)aNotification {
+    [self.window.rootViewController.view endEditing:YES];
 }
 
 @end

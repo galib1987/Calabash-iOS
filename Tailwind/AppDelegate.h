@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NJOPMenuViewController *njopMenuViewController;
 
 - (void) goChangeScreen:(NSNotification *) aNotification;
+- (void) hideKeyboard:(NSNotification *) aNotification; // dismissing keyboard focus
 
 @end
 

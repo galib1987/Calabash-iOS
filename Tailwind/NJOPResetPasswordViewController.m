@@ -18,6 +18,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    // tap gesture to dismiss keyboard
+    // we put this on any UIView that we want to be able to dismiss keyboard from
+    // also copy the tapGesture method from below
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
+    tap.numberOfTapsRequired = 1;
+    tap.numberOfTouchesRequired = 1;
+    tap.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tap];
 }
 
 - (IBAction)submitAction:(id)sender {
@@ -82,6 +90,11 @@
 	} else {
 		[self.navigationController popViewControllerAnimated:YES];
 	}
+}
+
+- (void) tapGesture:(UIGestureRecognizer *) tap {
+    // we're going to dismiss keyboard
+    [[NJOPConfig sharedInstance] hideKeyboard];
 }
 
 @end

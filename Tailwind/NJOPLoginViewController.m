@@ -10,6 +10,7 @@
 #import "NJOPClient+Login.h"
 #import "NJOPClient+flights.h"
 #import "NCLInfoPresenter.h"
+#import "NJOPConfig.h"
 
 @interface NJOPLoginViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) NJOPLoginViewUserInput* userInput;
@@ -43,6 +44,16 @@
 #endif // USE_BLUR
 	_userNameTextField.delegate = self;
 	_passwordTextField.delegate = self;
+    
+    
+    // tap gesture to dismiss keyboard
+    // we put this on any UIView that we want to be able to dismiss keyboard from
+    // also copy the tapGesture method from below
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
+    tap.numberOfTapsRequired = 1;
+    tap.numberOfTouchesRequired = 1;
+    tap.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tap];
 
 }
 
@@ -200,6 +211,11 @@
     //UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
     
     //[[UIApplication sharedApplication].keyWindow setRootViewController:vc];
+}
+
+- (void) tapGesture:(UIGestureRecognizer *) tap {
+    // we're going to dismiss keyboard
+    [[NJOPConfig sharedInstance] hideKeyboard];
 }
 
 @end
