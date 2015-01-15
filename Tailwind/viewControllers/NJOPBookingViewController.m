@@ -9,9 +9,10 @@
 #import "NJOPBookingViewController.h"
 #import "NJOPKeyboardControls.h"
 
-@interface NJOPBookingViewController () <RSDFDatePickerViewDelegate, RSDFDatePickerViewDataSource>
+@interface NJOPBookingViewController () <PDTSimpleCalendarViewDelegate>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
-@property (strong, nonatomic) NJOPDatePickerView *datePickerView;
+@property (nonatomic, strong) NSArray *customDates;
+@property (strong, nonatomic) NJOPCalendarViewController *calendarViewController;
 @property (strong, nonatomic) NJOPKeyboardControls *keyboardControls;
 @end
 
@@ -44,11 +45,6 @@ NSDateFormatter *timeFormatter;
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)initialiseTextFields {
     
     inputChain = @[self.aircraftInput, self.departureAirport, self.destinationAirport, self.flightDate, self.departTime, self.arrivalTime, self.numberOfPassengers, self.bookingComment];
@@ -71,10 +67,7 @@ NSDateFormatter *timeFormatter;
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
     
-    self.datePickerView = [[NJOPDatePickerView alloc] init];
-    self.datePickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.datePickerView.delegate = self;
-    self.flightDate.inputView = self.datePickerView;
+    self.flightDate.inputView = [self getCalendar];
     
     self.bookingComment.placeholderTextColor = [UIColor blackColor];
     [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
@@ -87,6 +80,63 @@ NSDateFormatter *timeFormatter;
         ((UITextField *)[self.view viewWithTag:textField.tag+1]).enabled = true;
         [self.keyboardControls updateButtonsAt:textField.tag];
     }
+}
+
+-(UIView*)getCalendar{
+    if (self.calendarViewController == nil) {
+        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateFormat = @"dd/MM/yyyy";
+        _customDates = @[[dateFormatter dateFromString:@"01/05/2014"], [dateFormatter dateFromString:@"01/06/2014"], [dateFormatter dateFromString:@"01/07/2014"]];
+        
+       self.calendarViewController = [[NJOPCalendarViewController alloc] init];
+        //This is the default behavior, will display a full year starting the first of the current month
+        self.calendarViewController.delegate = self;
+        self.calendarViewController.firstDate = [NSDate date];
+        NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+        offsetComponents.month = 20;
+        NSDate *lastDate =[self.calendarViewController.calendar dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
+        self.calendarViewController.lastDate = lastDate;
+    }
+    return self.calendarViewController.view;
+}
+#pragma mark - PDTSimpleCalendarViewDelegate
+- (void)simpleCalendarViewController:(NJOPCalendarViewController *)controller didSelectDate:(NSDate *)date
+{
+    NSLog(@"Date Selected : %@",date);
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MMM d, yyyy"];
+        NSString *newDate = [dateFormatter stringFromDate:date];
+        NSLog(@"%@ %@", [date description],newDate);
+        self.flightDate.text = newDate;
+        [self.view endEditing:YES];
+        [self updatePassengerCount];
+    
+    
+}
+
+- (BOOL)calendarViewController:(NJOPCalendarViewController *)controller shouldUseCustomColorsForDate:(NSDate *)date
+{
+    if ([self.customDates containsObject:date]) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (UIColor *)calendarViewController:(NJOPCalendarViewController *)controller circleColorForDate:(NSDate *)date
+{
+    return [UIColor blueColor];
+}
+
+- (UIColor *)calendarViewController:(NJOPCalendarViewController *)controller textColorForDate:(NSDate *)date
+{
+    
+    return [UIColor colorWithRed:71/255.0f green:227/255.0f blue:92/255.0f alpha:1.0f];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
@@ -104,33 +154,6 @@ NSDateFormatter *timeFormatter;
         [self.navigationController pushViewController:vc animated:YES];
     }
     currentTextField = textField.tag;
-}
-
-// Returns YES if the date should be highlighted or NO if it should not.
-- (BOOL)datePickerView:(NJOPDatePickerView *)view shouldHighlightDate:(NSDate *)date
-{
-    return YES;
-}
-
-// Returns YES if the date should be selected or NO if it should not.
-- (BOOL)datePickerView:(NJOPDatePickerView *)view shouldSelectDate:(NSDate *)date
-{
-    return YES;
-}
-
-// Prints out the selected date.
-- (void)datePickerView:(NJOPDatePickerView *)view didSelectDate:(NSDate *)date
-{
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MMM d, yyyy"];
-    NSString *newDate = [dateFormatter stringFromDate:date];
-    
-    
-    NSLog(@"%@ %@", [date description],newDate);
-    self.flightDate.text = newDate;
-    [self.view endEditing:YES];
-    [self updatePassengerCount];
 }
 
 - (IBAction)addPassenger:(UIButton *)sender {
