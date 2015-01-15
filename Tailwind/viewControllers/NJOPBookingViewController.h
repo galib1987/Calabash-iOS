@@ -9,17 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "NJOPDatePickerView.h"
 #import "NJOPTextField.h"
-#import "NJOPCalendarViewController.h"
+#import "SZTextView.h"
 
 @interface NJOPBookingViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet NJOPTextField *aircraftInput;
 @property (weak, nonatomic) IBOutlet NJOPTextField *departureAirport;
 @property (weak, nonatomic) IBOutlet NJOPTextField *destinationAirport;
 @property (weak, nonatomic) IBOutlet NJOPTextField *flightDate;
 @property (weak, nonatomic) IBOutlet NJOPTextField *departTime;
 @property (weak, nonatomic) IBOutlet NJOPTextField *arrivalTime;
-@property (weak, nonatomic) IBOutlet NJOPTextField *numberOfPassengers;
+@property (weak, nonatomic) IBOutlet NJOPTextField *aircraftInput;
 @property (weak, nonatomic) IBOutlet SZTextView *bookingComment;
 
 - (IBAction)subtractPassenger:(UIButton *)sender;
