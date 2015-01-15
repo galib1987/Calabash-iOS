@@ -11,7 +11,7 @@
 
 @interface NJOPBookingViewController () <PDTSimpleCalendarViewDelegate>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
-@property (strong, nonatomic) APLKeyboardControls *keyboardControls;
+@property (strong, nonatomic) NJOPKeyboardControls *keyboardControls;
 @property (nonatomic, strong) NSArray *customDates;
 @property (strong, nonatomic) NJOPCalendarViewController *calendarViewController;
 @end
@@ -20,6 +20,7 @@ int passengerCount = 0;
 int passengerMax = 15;
 int passengerMin = 1;
 
+NSArray* inputChain;
 NSInteger currentTextField;
 NSDateFormatter *timeFormatter;
 
@@ -68,22 +69,18 @@ NSDateFormatter *timeFormatter;
     
     self.aircraftInput.inputView = [self getAircraftPicker];
     
-    self.departureAirport.delegate = self;
-    self.destinationAirport.delegate = self;
-    self.departTime.delegate = self;
-    self.arrivalTime.delegate = self;
-    
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
-    self.flightDate.inputView = [self getCalendar];
     
     
     self.bookingComment.placeholderTextColor = [UIColor blackColor];
     [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
     
-    self.bookingComment.placeholderTextColor = [UIColor blackColor];
-    [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
-    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 -(UIView*)getCalendar{
@@ -136,12 +133,6 @@ NSDateFormatter *timeFormatter;
 {
     
     return [UIColor colorWithRed:71/255.0f green:227/255.0f blue:92/255.0f alpha:1.0f];
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
