@@ -80,7 +80,7 @@ const CGFloat PDTSimpleCalendarCircleSize = 32.0f;
         //Add the Constraints
         [self.dayLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.dayLabel setBackgroundColor:[UIColor clearColor]];
-        //self.dayLabel.layer.cornerRadius = PDTSimpleCalendarCircleSize/2;
+        self.dayLabel.layer.cornerRadius = PDTSimpleCalendarCircleSize/2;
         self.dayLabel.layer.masksToBounds = YES;
 
         [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.dayLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
