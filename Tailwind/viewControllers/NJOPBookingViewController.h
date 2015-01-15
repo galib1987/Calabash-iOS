@@ -10,6 +10,7 @@
 #import "NJOPDatePickerView.h"
 #import "NJOPTextField.h"
 #import "SZTextView.h"
+#import "NJOPCalendarViewController.h"
 
 @interface NJOPBookingViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate>
 
