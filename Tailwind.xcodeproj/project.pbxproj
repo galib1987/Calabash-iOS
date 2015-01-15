@@ -26,10 +26,9 @@
 		30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4738B19D9E41A0045D7AF /* LaunchScreen.xib */; };
 		30A4739919D9E41B0045D7AF /* TailwindTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4739819D9E41B0045D7AF /* TailwindTests.m */; };
 		5255D2561A5D85F9002638F8 /* welcome-items.json in Resources */ = {isa = PBXBuildFile; fileRef = 5255D2551A5D85F9002638F8 /* welcome-items.json */; };
-		52B604171A67386600C0E066 /* NJOPDatePickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B604161A67386600C0E066 /* NJOPDatePickerCollectionView.m */; };
-		52B6041D1A67389200C0E066 /* NJOPDatePickerMonthHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B6041C1A67389200C0E066 /* NJOPDatePickerMonthHeader.m */; };
-		52B604201A67392600C0E066 /* NJOPDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B6041F1A67392600C0E066 /* NJOPDatePickerView.m */; };
-		52B604261A6739ED00C0E066 /* NJOPDatePickerDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B604251A6739ED00C0E066 /* NJOPDatePickerDayCell.m */; };
+		52B604291A683F7200C0E066 /* NJOPCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B604281A683F7200C0E066 /* NJOPCalendarViewController.m */; };
+		52B6042C1A68432600C0E066 /* NJOPCalendarViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B6042B1A68432600C0E066 /* NJOPCalendarViewCell.m */; };
+		52B6042F1A685D0900C0E066 /* NJOPSimpleCalendarViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B6042E1A685D0900C0E066 /* NJOPSimpleCalendarViewHeader.m */; };
 		5559ACA719E8064D002CA7D2 /* NJOPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ACA619E8064D002CA7D2 /* NJOPRequest.m */; };
 		55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */; };
 		6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC829AF1A40B4A900991949 /* NJOPLoginViewController.m */; };
@@ -198,14 +197,12 @@
 		30A4739819D9E41B0045D7AF /* TailwindTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TailwindTests.m; sourceTree = "<group>"; };
 		30A473A319D9EA5B0045D7AF /* Tailwind-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tailwind-Prefix.pch"; sourceTree = "<group>"; };
 		5255D2551A5D85F9002638F8 /* welcome-items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "welcome-items.json"; sourceTree = "<group>"; };
-		52B604151A67386600C0E066 /* NJOPDatePickerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDatePickerCollectionView.h; sourceTree = "<group>"; };
-		52B604161A67386600C0E066 /* NJOPDatePickerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDatePickerCollectionView.m; sourceTree = "<group>"; };
-		52B6041B1A67389200C0E066 /* NJOPDatePickerMonthHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDatePickerMonthHeader.h; sourceTree = "<group>"; };
-		52B6041C1A67389200C0E066 /* NJOPDatePickerMonthHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDatePickerMonthHeader.m; sourceTree = "<group>"; };
-		52B6041E1A67392600C0E066 /* NJOPDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDatePickerView.h; sourceTree = "<group>"; };
-		52B6041F1A67392600C0E066 /* NJOPDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDatePickerView.m; sourceTree = "<group>"; };
-		52B604241A6739ED00C0E066 /* NJOPDatePickerDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDatePickerDayCell.h; sourceTree = "<group>"; };
-		52B604251A6739ED00C0E066 /* NJOPDatePickerDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDatePickerDayCell.m; sourceTree = "<group>"; };
+		52B604271A683F7200C0E066 /* NJOPCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCalendarViewController.h; sourceTree = "<group>"; };
+		52B604281A683F7200C0E066 /* NJOPCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCalendarViewController.m; sourceTree = "<group>"; };
+		52B6042A1A68432600C0E066 /* NJOPCalendarViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCalendarViewCell.h; sourceTree = "<group>"; };
+		52B6042B1A68432600C0E066 /* NJOPCalendarViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCalendarViewCell.m; sourceTree = "<group>"; };
+		52B6042D1A685D0900C0E066 /* NJOPSimpleCalendarViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSimpleCalendarViewHeader.h; sourceTree = "<group>"; };
+		52B6042E1A685D0900C0E066 /* NJOPSimpleCalendarViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSimpleCalendarViewHeader.m; sourceTree = "<group>"; };
 		553EE494A15E7540C63F4EE6 /* Pods.qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.qa.xcconfig; path = "Pods/Target Support Files/Pods/Pods.qa.xcconfig"; sourceTree = SOURCE_ROOT; };
 		5559ACA519E8064D002CA7D2 /* NJOPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPRequest.h; sourceTree = "<group>"; };
 		5559ACA619E8064D002CA7D2 /* NJOPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPRequest.m; sourceTree = "<group>"; };
@@ -481,6 +478,17 @@
 				03307E6D414420F7D9C0477B /* Pods.production.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		52B604301A685DD600C0E066 /* CustomCalendarViewOptions */ = {
+			isa = PBXGroup;
+			children = (
+				52B6042A1A68432600C0E066 /* NJOPCalendarViewCell.h */,
+				52B6042B1A68432600C0E066 /* NJOPCalendarViewCell.m */,
+				52B6042D1A685D0900C0E066 /* NJOPSimpleCalendarViewHeader.h */,
+				52B6042E1A685D0900C0E066 /* NJOPSimpleCalendarViewHeader.m */,
+			);
+			name = CustomCalendarViewOptions;
 			sourceTree = "<group>";
 		};
 		55CA603319E7FD4A001E2FC6 /* helpers */ = {
@@ -793,6 +801,7 @@
 		A7F2CA421A4DC9C300D78804 /* Booking ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				52B604301A685DD600C0E066 /* CustomCalendarViewOptions */,
 				1E79C8951A670ADF001B73B9 /* NJOPAirportResultTableViewCell.h */,
 				1E79C8961A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m */,
 				1E79C8921A670983001B73B9 /* NJOPAirportSearchTableViewController.h */,
@@ -803,14 +812,8 @@
 				1E636E941A5F299C002B3E8C /* NJOPSelectAccountViewController.m */,
 				A7F2CA431A4DC9F400D78804 /* NJOPBookingViewController.h */,
 				A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */,
-				52B6041E1A67392600C0E066 /* NJOPDatePickerView.h */,
-				52B6041F1A67392600C0E066 /* NJOPDatePickerView.m */,
-				52B604151A67386600C0E066 /* NJOPDatePickerCollectionView.h */,
-				52B604161A67386600C0E066 /* NJOPDatePickerCollectionView.m */,
-				52B6041B1A67389200C0E066 /* NJOPDatePickerMonthHeader.h */,
-				52B6041C1A67389200C0E066 /* NJOPDatePickerMonthHeader.m */,
-				52B604241A6739ED00C0E066 /* NJOPDatePickerDayCell.h */,
-				52B604251A6739ED00C0E066 /* NJOPDatePickerDayCell.m */,
+				52B604271A683F7200C0E066 /* NJOPCalendarViewController.h */,
+				52B604281A683F7200C0E066 /* NJOPCalendarViewController.m */,
 			);
 			name = "Booking ViewControllers";
 			sourceTree = "<group>";
@@ -1094,7 +1097,6 @@
 				A77680F91A4074AD00B2E7CF /* NJOPContract.m in Sources */,
 				A762F9731A666513002065EB /* NJOPCateringCell.m in Sources */,
 				A77680E91A406C7D00B2E7CF /* UIColor+NJOP.m in Sources */,
-				52B6041D1A67389200C0E066 /* NJOPDatePickerMonthHeader.m in Sources */,
 				6CC829B31A40B4C900991949 /* NJOPResetPasswordViewController.m in Sources */,
 				1E636E951A5F299C002B3E8C /* NJOPSelectAccountViewController.m in Sources */,
 				6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */,
@@ -1114,11 +1116,9 @@
 				A7A03EB81A42EFCA004BE417 /* NJOPTableViewCell.m in Sources */,
 				A7A03EAC1A42EB6D004BE417 /* NJOPTableView.m in Sources */,
 				A7A03EA61A42E626004BE417 /* UIView+NJOPStyle.m in Sources */,
-				52B604171A67386600C0E066 /* NJOPDatePickerCollectionView.m in Sources */,
 				A77680E31A406C7D00B2E7CF /* NNNUserDefaultsManager.m in Sources */,
 				A786D6131A66351F006EDA24 /* NJOPOSViewController.m in Sources */,
 				1E1A592E1A48CDD70048A9C9 /* NJOPFullPageViewController.m in Sources */,
-				52B604201A67392600C0E066 /* NJOPDatePickerView.m in Sources */,
 				A77680E11A406C7D00B2E7CF /* NNNOAuthClient.m in Sources */,
 				A7A03E981A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.m in Sources */,
 				A7433C031A531184009BD3EB /* NJOPSettingsTableViewController.m in Sources */,
@@ -1126,21 +1126,23 @@
 				A750999D1A63587D0091D7E3 /* NJOPHomeViewController.m in Sources */,
 				A7CD0AFD1A5C86B900D45224 /* (null) in Sources */,
 				A7A03EC11A42F21D004BE417 /* NJOPNOFBOTableCell.m in Sources */,
-				52B604261A6739ED00C0E066 /* NJOPDatePickerDayCell.m in Sources */,
 				A786D61A1A66380B006EDA24 /* NJOPFlightTableCell.m in Sources */,
 				A7A03EB51A42EF1D004BE417 /* NJOPActionButton.m in Sources */,
 				A762F9791A6665BE002065EB /* NJOPCateringViewController.m in Sources */,
 				1E36BD251A489ED100221E7D /* NJOPWelcomeRootController.m in Sources */,
 				A7A03EC41A42F2D3004BE417 /* NJOPClient+flights.m in Sources */,
+				52B6042F1A685D0900C0E066 /* NJOPSimpleCalendarViewHeader.m in Sources */,
 				A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */,
 				A77680F11A40729200B2E7CF /* NJOPIndividual.m in Sources */,
 				A762F97C1A6665D0002065EB /* NJOPCrewViewController.m in Sources */,
 				A7D6F4C01A64B74900B9E7B4 /* (null) in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPRequest.m in Sources */,
+				52B6042C1A68432600C0E066 /* NJOPCalendarViewCell.m in Sources */,
 				A7C872491A5B394F0048E2F4 /* NJOPAdvisoryNotesCell.m in Sources */,
 				A786D6111A66351F006EDA24 /* NJOPMenuViewController.m in Sources */,
 				A7D6F4C81A64C77800B9E7B4 /* (null) in Sources */,
 				A77680D91A406C7D00B2E7CF /* NJOPClient+Login.m in Sources */,
+				52B604291A683F7200C0E066 /* NJOPCalendarViewController.m in Sources */,
 				1E79C8941A670983001B73B9 /* NJOPAirportSearchTableViewController.m in Sources */,
 				A780A7EE1A5E636B000911A7 /* NJOPPassengerCell.m in Sources */,
 				A7A03EBB1A42F130004BE417 /* NJOPUpcomingFlightTableCell.m in Sources */,

@@ -10,6 +10,7 @@
 #import "NJOPDatePickerView.h"
 #import "NJOPTextField.h"
 #import "SZTextView.h"
+#import "NJOPCalendarViewController.h"
 
 @interface NJOPBookingViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate>
 
@@ -34,5 +35,7 @@
 @property (strong, nonatomic) UIDatePicker *timePicker;
 - (UIDatePicker*) getTimePicker;
 - (void) updateTimeField:(UIDatePicker *)sender;
+
+- (UIView*)NJOPCalendarViewController: getCalendar;
 
 @end
