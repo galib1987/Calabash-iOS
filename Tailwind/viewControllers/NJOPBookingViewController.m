@@ -7,11 +7,11 @@
 //
 
 #import "NJOPBookingViewController.h"
-#import "APLKeyboardControls.h"
+#import "NJOPKeyboardControls.h"
 
 @interface NJOPBookingViewController () <PDTSimpleCalendarViewDelegate>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
-@property (strong, nonatomic) APLKeyboardControls *keyboardControls;
+@property (strong, nonatomic) NJOPKeyboardControls *keyboardControls;
 @property (nonatomic, strong) NSArray *customDates;
 @property (strong, nonatomic) NJOPCalendarViewController *calendarViewController;
 @end
@@ -20,6 +20,7 @@ int passengerCount = 0;
 int passengerMax = 15;
 int passengerMin = 1;
 
+NSArray* inputChain;
 NSInteger currentTextField;
 NSDateFormatter *timeFormatter;
 
@@ -40,26 +41,46 @@ NSDateFormatter *timeFormatter;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [self initialiseTextFields];
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)initialiseTextFields {
+    
+    inputChain = @[self.aircraftInput, self.departureAirport, self.destinationAirport, self.flightDate, self.departTime, self.arrivalTime, self.numberOfPassengers, self.bookingComment];
+    self.keyboardControls = [[NJOPKeyboardControls alloc] initWithInputFields:[inputChain subarrayWithRange:NSMakeRange(0, 1)]];
+    self.keyboardControls.hasPreviousNext = YES;
+    
+    for (int i=0; i<[inputChain count]; i++) {
+        ((UIView*)inputChain[i]).tag = (NSInteger)i; // Tag fields to identify them
+        if ([inputChain[i] isKindOfClass:[UITextField class]]) {
+            ((UITextField*)inputChain[i]).delegate = self; // listen to textFieldDidBeginEditing
+            [(UITextField*)inputChain[i] addTarget:self action:@selector(textFieldUpdated:) forControlEvents:UIControlEventEditingChanged]; // listen to changes
+        }
+        if (i > 0) {
+            ((UITextField*)inputChain[i]).enabled = false;
+        }
+    }
     
     self.aircraftInput.inputView = [self getAircraftPicker];
     
-    self.departureAirport.delegate = self;
-    self.destinationAirport.delegate = self;
-    self.departTime.delegate = self;
-    self.arrivalTime.delegate = self;
-    
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
-    self.flightDate.inputView = [self getCalendar];
     
-    
-    NSArray* inputChain = @[self.aircraftInput, self.departureAirport, self.destinationAirport, self.flightDate, self.departTime, self.arrivalTime, self.numberOfPassengers];
-    self.keyboardControls = [[APLKeyboardControls alloc] initWithInputFields:inputChain];
-    self.keyboardControls.hasPreviousNext = YES;
     
     self.bookingComment.placeholderTextColor = [UIColor blackColor];
     [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
     
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 -(UIView*)getCalendar{
@@ -113,13 +134,6 @@ NSDateFormatter *timeFormatter;
     
     return [UIColor colorWithRed:71/255.0f green:227/255.0f blue:92/255.0f alpha:1.0f];
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     if (textField == self.departureAirport || textField == self.destinationAirport) {
@@ -231,7 +245,6 @@ NSDateFormatter *timeFormatter;
         self.aircraftPicker = [[UIPickerView alloc] init];
         [self.aircraftPicker setDataSource: self];
         [self.aircraftPicker setDelegate: self];
-        //self.aircraftPicker.showsSelectionIndicator = YES;
     }
     return self.aircraftPicker;
 }
