@@ -91,8 +91,11 @@ NSDateFormatter *timeFormatter;
         UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BookingSelectAirport"];
         if (textField == self.departureAirport) {
             vc.title = @"Departing From";
+            // "STUB" / test code to populate field
+            textField.text = @"LAS: McCarran Intl";
         } else if (textField == self.destinationAirport) {
             vc.title = @"Arriving At";
+            textField.text = @"JFK: John F Kennedy Intl";
         }
         [self.navigationController pushViewController:vc animated:YES];
     }
