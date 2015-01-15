@@ -11,9 +11,8 @@
 
 @interface NJOPBookingViewController () <PDTSimpleCalendarViewDelegate>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
-@property (strong, nonatomic) NJOPKeyboardControls *keyboardControls;
-@property (nonatomic, strong) NSArray *customDates;
-@property (strong, nonatomic) NJOPCalendarViewController *calendarViewController;
+@property (strong, nonatomic) NJOPDatePickerView *datePickerView;
+@property (strong, nonatomic) APLKeyboardControls *keyboardControls;
 @end
 
 int passengerCount = 0;
@@ -72,6 +71,10 @@ NSDateFormatter *timeFormatter;
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
     
+    self.datePickerView = [[NJOPDatePickerView alloc] init];
+    self.datePickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.datePickerView.delegate = self;
+    self.flightDate.inputView = self.datePickerView;
     
     self.bookingComment.placeholderTextColor = [UIColor blackColor];
     [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
@@ -150,6 +153,34 @@ NSDateFormatter *timeFormatter;
         [self.navigationController pushViewController:vc animated:YES];
     }
     currentTextField = textField.tag;
+}
+
+// Returns YES if the date should be highlighted or NO if it should not.
+- (BOOL)datePickerView:(NJOPDatePickerView *)view shouldHighlightDate:(NSDate *)date
+{
+    return YES;
+}
+
+// Returns YES if the date should be selected or NO if it should not.
+- (BOOL)datePickerView:(NJOPDatePickerView *)view shouldSelectDate:(NSDate *)date
+{
+    return YES;
+}
+
+// Prints out the selected date.
+- (void)datePickerView:(NJOPDatePickerView *)view didSelectDate:(NSDate *)date
+{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM d, yyyy"];
+    NSString *newDate = [dateFormatter stringFromDate:date];
+    
+    
+    NSLog(@"%@ %@", [date description],newDate);
+    self.flightDate.text = newDate;
+    self.datePickerView.hidden = YES;
+    [self.view endEditing:YES];
+    [self updatePassengerCount];
 }
 
 - (IBAction)addPassenger:(UIButton *)sender {
