@@ -19,7 +19,6 @@ int passengerCount = 0;
 int passengerMax = 15;
 int passengerMin = 1;
 
-NSArray* inputChain;
 NSInteger currentTextField;
 NSDateFormatter *timeFormatter;
 
@@ -68,8 +67,16 @@ NSDateFormatter *timeFormatter;
     
     self.aircraftInput.inputView = [self getAircraftPicker];
     
+    self.departureAirport.delegate = self;
+    self.destinationAirport.delegate = self;
+    self.departTime.delegate = self;
+    self.arrivalTime.delegate = self;
+    
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
+    // Tag fields to identify them
+    self.departTime.tag = 4;
+    self.arrivalTime.tag = 5;
     
     self.datePickerView = [[NJOPDatePickerView alloc] init];
     self.datePickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
