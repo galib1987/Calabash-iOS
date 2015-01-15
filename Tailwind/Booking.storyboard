@@ -33,9 +33,7 @@
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
-        </mutableArray>
-        <mutableArray key="Nimbus-Sans-D-Ultra-Light.otf">
-            <string>NimbusSanD-UltLig</string>
+            <string>NimbusSanD-Lig</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -317,7 +315,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W7z-SC-laF" customClass="NJOPTextField">
-                                                    <rect key="frame" x="12" y="45" width="165" height="57"/>
+                                                    <rect key="frame" x="12" y="45" width="171" height="57"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -326,7 +324,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEPART AT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4F-kV-s1S">
-                                                    <rect key="frame" x="12" y="16" width="87" height="21"/>
+                                                    <rect key="frame" x="12" y="16" width="171" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="nhF-OW-Mfu"/>
                                                     </constraints>
@@ -335,7 +333,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k8I-Ap-M88" customClass="NJOPTextField">
-                                                    <rect key="frame" x="185" y="45" width="176" height="57"/>
+                                                    <rect key="frame" x="191" y="45" width="170" height="57"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -344,13 +342,14 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARRIVE BY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tt-yB-f5y">
-                                                    <rect key="frame" x="185" y="16" width="83" height="21"/>
+                                                    <rect key="frame" x="191" y="16" width="170" height="21"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" red="0.99607849120000003" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="k8I-Ap-M88" firstAttribute="width" secondItem="W7z-SC-laF" secondAttribute="width" id="1jp-Eu-AQU"/>
                                                 <constraint firstItem="k8I-Ap-M88" firstAttribute="leading" secondItem="3Tt-yB-f5y" secondAttribute="leading" id="8Tw-DO-rcl"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="k8I-Ap-M88" secondAttribute="trailing" constant="6" id="Brz-VK-gID"/>
                                                 <constraint firstItem="j4F-kV-s1S" firstAttribute="firstBaseline" secondItem="3Tt-yB-f5y" secondAttribute="firstBaseline" id="Cqv-ls-zQA"/>
@@ -358,13 +357,14 @@
                                                 <constraint firstItem="j4F-kV-s1S" firstAttribute="top" secondItem="8ZW-38-cOK" secondAttribute="topMargin" constant="8" id="RyA-nT-Upt"/>
                                                 <constraint firstItem="W7z-SC-laF" firstAttribute="top" secondItem="j4F-kV-s1S" secondAttribute="bottom" constant="8" symbolic="YES" id="WIE-qQ-Q4A"/>
                                                 <constraint firstItem="j4F-kV-s1S" firstAttribute="baseline" secondItem="3Tt-yB-f5y" secondAttribute="baseline" id="WfQ-8o-bTX"/>
+                                                <constraint firstItem="3Tt-yB-f5y" firstAttribute="trailing" secondItem="k8I-Ap-M88" secondAttribute="trailing" id="XxO-Ij-bxe"/>
+                                                <constraint firstItem="j4F-kV-s1S" firstAttribute="trailing" secondItem="W7z-SC-laF" secondAttribute="trailing" id="dvN-5n-lDh"/>
                                                 <constraint firstItem="k8I-Ap-M88" firstAttribute="leading" secondItem="W7z-SC-laF" secondAttribute="trailing" constant="8" symbolic="YES" id="g6D-jz-7Sm"/>
                                                 <constraint firstItem="j4F-kV-s1S" firstAttribute="leading" secondItem="8ZW-38-cOK" secondAttribute="leadingMargin" constant="4" id="hFx-Q7-pas"/>
                                                 <constraint firstItem="k8I-Ap-M88" firstAttribute="top" secondItem="3Tt-yB-f5y" secondAttribute="bottom" constant="8" id="joT-UJ-ObA"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="W7z-SC-laF" secondAttribute="bottom" id="mbY-yH-H3f"/>
                                                 <constraint firstItem="k8I-Ap-M88" firstAttribute="bottom" secondItem="W7z-SC-laF" secondAttribute="bottom" id="qwY-hb-iQ0"/>
                                                 <constraint firstItem="k8I-Ap-M88" firstAttribute="baseline" secondItem="W7z-SC-laF" secondAttribute="baseline" id="vNJ-eH-Nyc"/>
-                                                <constraint firstItem="3Tt-yB-f5y" firstAttribute="leading" secondItem="j4F-kV-s1S" secondAttribute="trailing" constant="86" id="ybh-wi-37d"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -381,7 +381,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="hlN-a8-MFv"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-UltLig" family="Nimbus Sans D" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al4-Tz-avk">
@@ -432,11 +432,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FD8-tf-gAt" id="pE5-hp-jxs">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Reservation Notes" translatesAutoresizingMaskIntoConstraints="NO" id="nFw-VJ-5Zi">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFw-VJ-5Zi" customClass="SZTextView">
                                                     <rect key="frame" x="12" y="8" width="350" height="94"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-LigIta" family="Nimbus Sans D" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Reservation Notes"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -500,7 +503,7 @@
                     <connections>
                         <outlet property="aircraftInput" destination="AVD-WU-ES8" id="OpL-gq-o6Q"/>
                         <outlet property="arrivalTime" destination="k8I-Ap-M88" id="ibb-NK-vO0"/>
-                        <outlet property="bookingComment" destination="nFw-VJ-5Zi" id="2WI-gw-856"/>
+                        <outlet property="bookingComment" destination="nFw-VJ-5Zi" id="2hB-Zx-Ynq"/>
                         <outlet property="departTime" destination="W7z-SC-laF" id="ehr-gS-MK4"/>
                         <outlet property="departureAirport" destination="JJj-Pl-ixz" id="32o-l5-ZUN"/>
                         <outlet property="destinationAirport" destination="cSY-at-BbI" id="ACu-mb-UyR"/>
