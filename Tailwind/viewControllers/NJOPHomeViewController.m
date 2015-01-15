@@ -32,6 +32,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -- SimpleDataSource
+
 -(void)loadDataSource {
     
     __weak NJOPHomeViewController* wself = self;
@@ -50,104 +52,134 @@
     }];
 }
 
+- (BOOL)hasUpcomingFlight:(NJOPReservation *)reservation {
+    if ([reservation.departureDate isLaterThan:[NSDate date]]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (BOOL)hasCurrentFlight:(NJOPReservation *)reservation {
+    if ([reservation.departureDate isEarlierThan:[NSDate date]] && [reservation.arrivalDate isLaterThan:[NSDate date]]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (NSDictionary *)createUpcomingFlightCell:(NJOPReservation *)reservation {
+    NSDictionary *cellKeyPathsDict =
+    @{
+      @"FBOTableCell" : @{
+              @"toFBOTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+              @"fromFBOTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+              
+              @"fromFBOAirpotCodeLabel.text"	: [NSString stringWithFormat:@"%@", reservation.departureAirportId],
+              @"toFBOAirpotCodeLabel.text"		: [NSString stringWithFormat:@"%@", reservation.arrivalAirportId],
+              @"fromFBOLocationLabel.text" : [[NSString stringWithFormat:@"%@", reservation.departureAirportCity] capitalizedString],
+              @"toFBOLocationLabel.text" : [[NSString stringWithFormat:@"%@", reservation.arrivalAirportCity] capitalizedString],
+              }
+                                       };
+    
+    NSDictionary *dataSourceCellDict =
+    @{
+      kSimpleDataSourceCellIdentifierKey			: @"FBOTableCell",
+      kSimpleDataSourceCellKeypaths			 			: cellKeyPathsDict[@"FBOTableCell"],
+      kSimpleDataSourceCellItem : reservation,
+      
+      };
+    
+    return dataSourceCellDict;
+
+}
+
+
+- (NSDictionary *)createCurrentFlightCell:(NJOPReservation *)reservation {
+    NSDictionary *cellKeyPathsDict =
+    @{
+      @"NJOPCurrentFBOTableCell" : @{
+              @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+              @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+              @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", reservation.departureAirportId],
+              @"departureAirportCityLabel.text" : [[NSString stringWithFormat:@"%@", reservation.departureAirportCity] capitalizedString],
+              @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", reservation.arrivalAirportId],
+              @"arrivalAirportCityLabel.text" : [[NSString stringWithFormat:@"%@", reservation.arrivalAirportCity] capitalizedString],
+              @"estimatedFlightTimeLabel.text" : @"2hrs 7mins",
+              @"estimatedTripTimeLabel.text" : @"2h 54m",
+              }
+      
+      };
+    
+    NSDictionary *dataSourceCellDict = @{
+      kSimpleDataSourceCellIdentifierKey			: @"NJOPCurrentFBOTableCell",
+      kSimpleDataSourceCellKeypaths : cellKeyPathsDict[@"NJOPCurrentFBOTableCell"],
+      kSimpleDataSourceCellItem : reservation,
+      };
+    
+    return dataSourceCellDict;
+
+}
+
+- (NSDictionary *)createNoFlightsCell {
+    
+    NSDictionary *dataSourceCellDict =@{
+      kSimpleDataSourceCellIdentifierKey			: @"NJOPNOFBOTableCell"
+      };
+    
+    return dataSourceCellDict;
+}
+
+
+
 -(void)updateWithReservations:(NSArray*)reservations {
     
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd MMM, YYYY"];
-    
-    NSDictionary *FBORepresentation = [[NSDictionary alloc] init];
-    NSDictionary *sectionCellRepresentation = [[NSDictionary alloc] init];
+    NSDictionary *cardDisplayedRepresentation = [[NSDictionary alloc] init];
     
     if ([reservations count] > 0) {
-        NSLog(@"we have reservations %@", reservations);
         NJOPReservation *reservation = reservations[0]; // only interested in the next flight schedule
         
-        NSInteger FlightState = flightCurrent;
-        
-        if ([reservation.departureDate isLaterThan:[NSDate date]]) {
+        if ([self hasUpcomingFlight:reservation]) {
             
-            FBORepresentation = @{
-                                  @"FBOTableCell" : @{
-                                          @"toFBOTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
-                                          @"fromFBOTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
-                                          
-                                          @"fromFBOAirpotCodeLabel.text"	: [NSString stringWithFormat:@"%@", reservation.departureAirportId],
-                                          @"toFBOAirpotCodeLabel.text"		: [NSString stringWithFormat:@"%@", reservation.arrivalAirportId],
-                                          @"fromFBOLocationLabel.text" : [[NSString stringWithFormat:@"%@", reservation.departureAirportCity] capitalizedString],
-                                          @"toFBOLocationLabel.text" : [[NSString stringWithFormat:@"%@", reservation.arrivalAirportCity] capitalizedString],
-                                          }
-                                  };
+            cardDisplayedRepresentation = [self createUpcomingFlightCell:reservation];
             
-            sectionCellRepresentation =                                       @{
-                                                                                kSimpleDataSourceCellIdentifierKey			: @"FBOTableCell",
-                                                                                kSimpleDataSourceCellKeypaths			 			: FBORepresentation[@"FBOTableCell"],
-                                                                                kSimpleDataSourceCellItem : reservation,
-                                                                                
-                                                                                };
-        } else if (FlightState == flightUpcoming) {
-            
-            FBORepresentation = @{
-                                  @"NJOPUpcomingFlightTableCell" : @{
-                                          @"arrivalAirportCityAndStateLabel.text" : reservation.departureAirportCity,
-                                          @"scheduledDepartureLabel.text" : @"Monday, August 28, 2014",
-                                          @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
-                                          @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
-                                          @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", reservation.departureAirportId],
-                                          @"departureAirportCityLabel.text" : [[NSString stringWithFormat:@"%@", reservation.departureAirportCity] capitalizedString],
-                                          @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", reservation.arrivalAirportId],
-                                          @"arrivalAirportCityLabel.text" : [[NSString stringWithFormat:@"%@", reservation.arrivalAirportCity] capitalizedString]
-                                          }
-                                  };
-            
-            sectionCellRepresentation =                                       @{
-                                                                                kSimpleDataSourceCellIdentifierKey			: @"NJOPUpcomingFlightTableCell",
-                                                                                kSimpleDataSourceCellKeypaths : FBORepresentation[@"NJOPUpcomingFlightTableCell"],
-                                                                                kSimpleDataSourceCellItem : reservation,
-                                                                                };
-            
-            
-        } else if ([reservation.departureDate isEqualToDateIgnoringTime:[NSDate date]]) {
-            
-            
-            FBORepresentation = @{
-                                  @"NJOPCurrentFBOTableCell" : @{
-                                          @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
-                                          @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
-                                          @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", reservation.departureAirportId],
-                                          @"departureAirportCityLabel.text" : [[NSString stringWithFormat:@"%@", reservation.departureAirportCity] capitalizedString],
-                                          @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", reservation.arrivalAirportId],
-                                          @"arrivalAirportCityLabel.text" : [[NSString stringWithFormat:@"%@", reservation.arrivalAirportCity] capitalizedString],
-                                          @"estimatedFlightTimeLabel.text" : @"2hrs 7mins",
-                                          @"estimatedTripTimeLabel.text" : @"2h 54m",
-                                          }
-                                  
-                                  };
-            
-            sectionCellRepresentation =                                       @{
-                                                                                kSimpleDataSourceCellIdentifierKey			: @"NJOPCurrentFBOTableCell",
-                                                                                kSimpleDataSourceCellKeypaths : FBORepresentation[@"NJOPCurrentFBOTableCell"],
-                                                                                kSimpleDataSourceCellItem : reservation,
-                                                                                };
+//        } else if (FlightState == flightUpcoming) {
+//            
+//            FBORepresentation =
+//            @{
+//              @"NJOPUpcomingFlightTableCell" : @{
+//                      @"arrivalAirportCityAndStateLabel.text" : reservation.departureAirportCity,
+//                      @"scheduledDepartureLabel.text" : @"Monday, August 28, 2014",
+//                      @"departureTimeLabel.text" 				: [[NSString stringWithFormat:@"%@",reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+//                      @"arrivalTimeLabel.text" 					: [[NSString stringWithFormat:@"%@",reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+//                      @"departureAirportIdLabel.text"	: [NSString stringWithFormat:@"%@", reservation.departureAirportId],
+//                      @"departureAirportCityLabel.text" : [[NSString stringWithFormat:@"%@", reservation.departureAirportCity] capitalizedString],
+//                      @"arrivalAirportIdLabel.text"		: [NSString stringWithFormat:@"%@", reservation.arrivalAirportId],
+//                      @"arrivalAirportCityLabel.text" : [[NSString stringWithFormat:@"%@", reservation.arrivalAirportCity] capitalizedString]
+//                      }
+//              };
+//            
+//            cardDisplayedRepresentation =
+//            @{
+//              kSimpleDataSourceCellIdentifierKey			: @"NJOPUpcomingFlightTableCell",
+//              kSimpleDataSourceCellKeypaths : FBORepresentation[@"NJOPUpcomingFlightTableCell"],
+//              kSimpleDataSourceCellItem : reservation,
+//              };
+//            
+//            
+        } else if ([self hasCurrentFlight:reservation]) {
+            cardDisplayedRepresentation = [self createCurrentFlightCell:reservation];
             
         }
-    } else {
-        FBORepresentation = @{
-                              @"NJOPNOFBOTableCell" : @{
-                                      },
-                              
-                              };
-        
-        sectionCellRepresentation =                                       @{
-                                                                            kSimpleDataSourceCellIdentifierKey			: @"NJOPNOFBOTableCell",
-                                                                            kSimpleDataSourceCellKeypaths : FBORepresentation[@"NJOPNOFBOTableCell"],
-                                                                            };
+    } else { // NO RESERVATIONS
+        cardDisplayedRepresentation = [self createNoFlightsCell];
     }
     
     
     NSArray *sections = @[
                           @{
                               kSimpleDataSourceSectionCellsKey : @[
-                                      sectionCellRepresentation,
+                                      cardDisplayedRepresentation,
                                       ],
                               },
                           ];
