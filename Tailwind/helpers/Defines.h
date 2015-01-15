@@ -9,10 +9,6 @@
 #ifndef Tailwind_Defines_h
 #define Tailwind_Defines_h
 
-//NOTES:
-// for QA Calabash:
-// Login 1000s - NJOPLoginViewController - see this file for specific IDs
-
 // just setting some globals for the app.. mainly for NSNotification
 #define changeScreen @"changeScreen"
 #define goToLoginScreen @"goToLoginScreen"
@@ -24,7 +20,7 @@
 
 // hostname and URL for different API calls
 #define API_SOURCE_IDENTIFIER @"OwnersPortalIOSUser"
-#define API_HOSTNAME @"servicesdev2.netjets.com"
+#define API_HOSTNAME @"servicesdev.netjets.com"
 #define URL_BRIEF @"/op/v1/brief"
 #define URL_RESERVATIONS @"/op/v1/reservations"
 #define URL_CONTRACTS @"/op/v1/contracts"
