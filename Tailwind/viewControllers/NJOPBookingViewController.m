@@ -138,34 +138,6 @@ NSDateFormatter *timeFormatter;
     currentTextField = textField.tag;
 }
 
-// Returns YES if the date should be highlighted or NO if it should not.
-- (BOOL)datePickerView:(NJOPDatePickerView *)view shouldHighlightDate:(NSDate *)date
-{
-    return YES;
-}
-
-// Returns YES if the date should be selected or NO if it should not.
-- (BOOL)datePickerView:(NJOPDatePickerView *)view shouldSelectDate:(NSDate *)date
-{
-    return YES;
-}
-
-// Prints out the selected date.
-- (void)datePickerView:(NJOPDatePickerView *)view didSelectDate:(NSDate *)date
-{
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MMM d, yyyy"];
-    NSString *newDate = [dateFormatter stringFromDate:date];
-    
-    
-    NSLog(@"%@ %@", [date description],newDate);
-    self.flightDate.text = newDate;
-    [self.view endEditing:YES];
-    [self updatePassengerCount];
-}
-
-
 - (IBAction)addPassenger:(UIButton *)sender {
     passengerCount++;
     [self updatePassengerCount];
