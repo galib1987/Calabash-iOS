@@ -2,7 +2,7 @@
 //  NJOPFlightTableCell.m
 //  Tailwind
 //
-//  Created by netjets on 12/23/14.
+//  Created by netjets on 12/29/14.
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
