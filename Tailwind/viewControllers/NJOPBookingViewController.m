@@ -11,7 +11,7 @@
 
 @interface NJOPBookingViewController () <RSDFDatePickerViewDelegate, RSDFDatePickerViewDataSource>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
-@property (strong, nonatomic) RSDFDatePickerView *datePickerView;
+@property (strong, nonatomic) NJOPDatePickerView *datePickerView;
 @property (strong, nonatomic) APLKeyboardControls *keyboardControls;
 @end
 
@@ -45,7 +45,7 @@ int passengerMin = 1;
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
     
-    self.datePickerView = [[RSDFDatePickerView alloc] init];
+    self.datePickerView = [[NJOPDatePickerView alloc] init];
     self.datePickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.datePickerView.delegate = self;
     self.flightDate.inputView = self.datePickerView;
@@ -77,19 +77,19 @@ int passengerMin = 1;
 }
 
 // Returns YES if the date should be highlighted or NO if it should not.
-- (BOOL)datePickerView:(RSDFDatePickerView *)view shouldHighlightDate:(NSDate *)date
+- (BOOL)datePickerView:(NJOPDatePickerView *)view shouldHighlightDate:(NSDate *)date
 {
     return YES;
 }
 
 // Returns YES if the date should be selected or NO if it should not.
-- (BOOL)datePickerView:(RSDFDatePickerView *)view shouldSelectDate:(NSDate *)date
+- (BOOL)datePickerView:(NJOPDatePickerView *)view shouldSelectDate:(NSDate *)date
 {
     return YES;
 }
 
 // Prints out the selected date.
-- (void)datePickerView:(RSDFDatePickerView *)view didSelectDate:(NSDate *)date
+- (void)datePickerView:(NJOPDatePickerView *)view didSelectDate:(NSDate *)date
 {
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -101,6 +101,7 @@ int passengerMin = 1;
     self.flightDate.text = newDate;
     self.datePickerView.hidden = YES;
     [self.view endEditing:YES];
+    [self updatePassengerCount];
 }
 
 - (IBAction)addPassenger:(UIButton *)sender {
@@ -117,7 +118,11 @@ int passengerMin = 1;
 -(void)updatePassengerCount{
     if(passengerCount<passengerMin)passengerCount = passengerMin;
     if(passengerCount>passengerMax)passengerCount = passengerMax;
-    self.numberOfPassengers.text =  [NSString stringWithFormat:@"%i",passengerCount];
+    if(passengerCount==1){
+        self.numberOfPassengers.text =  [NSString stringWithFormat:@"%i Passenger",passengerCount];
+    }else{
+        self.numberOfPassengers.text =  [NSString stringWithFormat:@"%i Passengers",passengerCount];
+    }
 }
 
 //#pragma mark - Table view data source

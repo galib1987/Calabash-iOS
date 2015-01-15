@@ -1,5 +1,5 @@
 //
-// RSDFDatePickerCollectionView.m
+// RSDFDatePickerCollectionViewLayout.m
 //
 // Copyright (c) 2013 Evadne Wu, http://radi.ws/
 // Copyright (c) 2013-2014 Ruslan Skorb, http://lnkd.in/gsBbvb
@@ -23,22 +23,19 @@
 // THE SOFTWARE.
 //
 
-#import "RSDFDatePickerCollectionView.h"
 #import "RSDFDatePickerCollectionViewLayout.h"
 
-@implementation RSDFDatePickerCollectionView
-
-@dynamic delegate;
+@implementation RSDFDatePickerCollectionViewLayout
 
 #pragma mark - Lifecycle
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)init
 {
-	self = [super initWithFrame:frame];
-	if (self) {
-		[self commonInitializer];
-	}
-	return self;
+    self = [super init];
+    if (self) {
+        [self commonInitializer];
+    }
+    return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
@@ -50,37 +47,42 @@
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout
-{
-    self = [super initWithFrame:frame collectionViewLayout:layout];
-    if (self) {
-        [self commonInitializer];
-    }
-    return self;
-}
-
 - (void)commonInitializer
 {
-    self.backgroundColor = [self selfBackgroundColor];
-    self.showsVerticalScrollIndicator = NO;
-    self.showsHorizontalScrollIndicator = NO;
-    self.scrollsToTop = NO;
-    self.delaysContentTouches = NO;
+    self.minimumLineSpacing = [self selfMinimumLineSpacing];
+    self.minimumInteritemSpacing = [self selfMinimumInteritemSpacing];
 }
 
-- (void)layoutSubviews
+#pragma mark - Atrributes of the Layout
+
+- (CGSize)selfHeaderReferenceSize
 {
-    if ([self.delegate respondsToSelector:@selector(pickerCollectionViewWillLayoutSubviews:)]) {
-        [self.delegate pickerCollectionViewWillLayoutSubviews:self];
-    }
-	[super layoutSubviews];
+    CGFloat selfHeaderReferenceWidth = CGRectGetWidth(self.collectionView.frame);
+    CGFloat selfHeaderReferenceHeight = 64.0f;
+    
+    return (CGSize){ selfHeaderReferenceWidth, selfHeaderReferenceHeight };
 }
 
-#pragma mark - Atrributes of the View
-
-- (UIColor *)selfBackgroundColor
+- (CGSize)selfItemSize
 {
-    return [UIColor whiteColor];
+    NSUInteger numberOfItemsInTheSameRow = 7;
+    CGFloat totalInteritemSpacing = [self minimumInteritemSpacing] * (numberOfItemsInTheSameRow - 1);
+    
+    CGFloat selfItemWidth = (CGRectGetWidth(self.collectionView.frame) - totalInteritemSpacing) / numberOfItemsInTheSameRow;
+    selfItemWidth = floor(selfItemWidth * 1000) / 1000;
+    CGFloat selfItemHeight = 70.0f;
+    
+    return (CGSize){ selfItemWidth, selfItemHeight };
+}
+
+- (CGFloat)selfMinimumLineSpacing
+{
+    return 2.0f;
+}
+
+- (CGFloat)selfMinimumInteritemSpacing
+{
+    return 2.0f;
 }
 
 @end
