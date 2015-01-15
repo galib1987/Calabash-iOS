@@ -1,752 +1,279 @@
 {
-    "tripRequestExecutionTime": 242,
-    "briefExecutionTime": 6043,
-    "totalRequestCount": 3,
-    "individual": {
-        "individualId": 1064684,
-        "firstName": "Kim",
-        "middleName": null,
-        "lastName": "Brown",
-        "telephones": [
-            {
-                "telephoneId": 1522833,
-                "telephoneTypeId": 7,
-                "telephoneTypeDescription": "Residence",
-                "countryCode": "1",
-                "areaCode": "845",
-                "telephoneNumber": "1522833"
-            },
-            {
-                "telephoneId": 1522822,
-                "telephoneTypeId": 1,
-                "telephoneTypeDescription": "Primary Office",
-                "countryCode": "1",
-                "areaCode": "914",
-                "telephoneNumber": "1522822"
-            },
-            {
-                "telephoneId": 1522832,
-                "telephoneTypeId": 2,
-                "telephoneTypeDescription": "Primary Office Fax",
-                "countryCode": "1",
-                "areaCode": "914",
-                "telephoneNumber": "1522832"
-            },
-            {
-                "telephoneId": 2400536,
-                "telephoneTypeId": 5,
-                "telephoneTypeDescription": "Office",
-                "countryCode": "1",
-                "areaCode": "914",
-                "telephoneNumber": "2400536"
-            }
-        ],
-        "defaultAccountId": 1005555,
-        "accounts": [
-            {
-                "accountId": 1003623,
-                "accountName": "Clear Skies LLC",
-                "accountTypeDescription": "Share",
-                "accountOSRTeamPhone": "8666893811",
-                "accountOSRTeamEmail": "bturner@netjets.com",
-                "accountOSRTeamName": "Brian Turner - (866) 689-3811",
-                "accountOSRTeamAbbr": "CABT",
-                "accountSalesRep": {
-                    "accountExecName": "Thomas Gasparino",
-                    "accountExecId": 2415621,
-                    "salesVpName": "Charlie Lynch",
-                    "salesVpId": 97,
-                    "salesVpEmail": "97@netjets.com"
-                },
-                "isPrincipal": false,
-                "allowedToFly": false,
-                "allowedToBookFlight": true
-            },
-            {
-                "accountId": 1046165,
-                "accountName": "Bright Skies LLC-Charter",
-                "accountTypeDescription": "Share",
-                "accountOSRTeamPhone": null,
-                "accountOSRTeamEmail": "flycharter@ejmjets.com",
-                "accountOSRTeamName": "CMH - Kimberly Montgomery",
-                "accountOSRTeamAbbr": "MCC08",
-                "accountSalesRep": {
-                    "accountExecName": "Thomas Gasparino",
-                    "accountExecId": 2415621,
-                    "salesVpName": "Charlie Lynch",
-                    "salesVpId": 97,
-                    "salesVpEmail": "97@netjets.com"
-                },
-                "isPrincipal": false,
-                "allowedToFly": false,
-                "allowedToBookFlight": true
-            },
-            {
-                "accountId": 1353553,
-                "accountName": "Nancy Selander",
-                "accountTypeDescription": "Share",
-                "accountOSRTeamPhone": "8666893811",
-                "accountOSRTeamEmail": "bturner@netjets.com",
-                "accountOSRTeamName": "Brian Turner - (866) 689-3811",
-                "accountOSRTeamAbbr": "CABT",
-                "accountSalesRep": {
-                    "accountExecName": "Thomas Gasparino",
-                    "accountExecId": 2415621,
-                    "salesVpName": "Charlie Lynch",
-                    "salesVpId": 97,
-                    "salesVpEmail": "97@netjets.com"
-                },
-                "isPrincipal": false,
-                "allowedToFly": false,
-                "allowedToBookFlight": true
-            },
-            {
-                "accountId": 1005555,
-                "accountName": "Bright Skies LLC",
-                "accountTypeDescription": "Share",
-                "accountOSRTeamPhone": "8666893811",
-                "accountOSRTeamEmail": "bturner@netjets.com",
-                "accountOSRTeamName": "Brian Turner - (866) 689-3811",
-                "accountOSRTeamAbbr": "CABT",
-                "accountSalesRep": {
-                    "accountExecName": "Thomas Gasparino",
-                    "accountExecId": 2415621,
-                    "salesVpName": "Charlie Lynch",
-                    "salesVpId": 97,
-                    "salesVpEmail": "97@netjets.com"
-                },
-                "isPrincipal": false,
-                "allowedToFly": false,
-                "allowedToBookFlight": true
-            }
-        ]
-    },
-    "contracts": [
-        {
-            "contractId": 1408094,
-            "contractType": 7,
-            "contractTypeDescription": "NJ Lease",
-            "divisionId": 1411309,
-            "cardType": null,
-            "cardTypeDescription": null,
-            "cardNumber": null,
-            "aircraftType": "GV",
-            "aircraftTypeName": "GULFSTREAM V",
-            "tailNumber": "N509QS",
-            "flightRule": "Part 91K",
-            "actualRemainingHours": 72.4,
-            "projectedRemainingHours": 64.4,
-            "programId": 1000011,
-            "peakDates": [
-                {
-                    "description": "Saturday after Christmas",
-                    "eventDate": "2014-12-27"
-                },
-                {
-                    "description": "Friday after Christmas",
-                    "eventDate": "2014-12-26"
-                },
-                {
-                    "description": "Saturday before Christmas",
-                    "eventDate": "2014-12-20"
-                },
-                {
-                    "description": "Sunday after Thanksgiving",
-                    "eventDate": "2014-11-30"
-                },
-                {
-                    "description": "Wednesday before Thanksgiving",
-                    "eventDate": "2014-11-26"
-                },
-                {
-                    "description": "Presidents Day",
-                    "eventDate": "2014-02-17"
-                },
-                {
-                    "description": "Friday before Presidents Day",
-                    "eventDate": "2014-02-14"
-                },
-                {
-                    "description": "Thursday before Presidents Day",
-                    "eventDate": "2014-02-13"
-                },
-                {
-                    "description": "Sunday after New Years",
-                    "eventDate": "2014-01-05"
-                },
-                {
-                    "description": "Saturday after New Years",
-                    "eventDate": "2014-01-04"
-                },
-                {
-                    "description": "Friday after Christmas Day",
-                    "eventDate": "2013-12-27"
-                },
-                {
-                    "description": "Day after Christmas Day",
-                    "eventDate": "2013-12-26"
-                }
-            ]
-        },
-        {
-            "contractId": 1405524,
-            "contractType": 8,
-            "contractTypeDescription": "NJ Owner",
-            "divisionId": 1408719,
-            "cardType": null,
-            "cardTypeDescription": null,
-            "cardNumber": null,
-            "aircraftType": "CE-560XLS",
-            "aircraftTypeName": "CITATION EXCEL/XLS",
-            "tailNumber": "N579QS",
-            "flightRule": "Part 91K",
-            "actualRemainingHours": 44.7,
-            "projectedRemainingHours": 42.6,
-            "programId": 1000011,
-            "peakDates": [
-                {
-                    "description": "Saturday after Christmas",
-                    "eventDate": "2014-12-27"
-                },
-                {
-                    "description": "Friday after Christmas",
-                    "eventDate": "2014-12-26"
-                },
-                {
-                    "description": "Saturday before Christmas",
-                    "eventDate": "2014-12-20"
-                },
-                {
-                    "description": "Sunday after Thanksgiving",
-                    "eventDate": "2014-11-30"
-                },
-                {
-                    "description": "Wednesday before Thanksgiving",
-                    "eventDate": "2014-11-26"
-                },
-                {
-                    "description": "Presidents Day",
-                    "eventDate": "2014-02-17"
-                },
-                {
-                    "description": "Friday before Presidents Day",
-                    "eventDate": "2014-02-14"
-                },
-                {
-                    "description": "Thursday before Presidents Day",
-                    "eventDate": "2014-02-13"
-                },
-                {
-                    "description": "Sunday after New Years",
-                    "eventDate": "2014-01-05"
-                },
-                {
-                    "description": "Saturday after New Years",
-                    "eventDate": "2014-01-04"
-                },
-                {
-                    "description": "Friday after Christmas Day",
-                    "eventDate": "2013-12-27"
-                },
-                {
-                    "description": "Day after Christmas Day",
-                    "eventDate": "2013-12-26"
-                }
-            ]
-        },
-        {
-            "contractId": 1405518,
-            "contractType": 8,
-            "contractTypeDescription": "NJ Owner",
-            "divisionId": 1408713,
-            "cardType": null,
-            "cardTypeDescription": null,
-            "cardNumber": null,
-            "aircraftType": "G-200",
-            "aircraftTypeName": "GULFSTREAM 200",
-            "tailNumber": "N716QS",
-            "flightRule": "Part 91K",
-            "actualRemainingHours": 75,
-            "projectedRemainingHours": 75,
-            "programId": 1000011,
-            "peakDates": [
-                {
-                    "description": "Saturday after Christmas",
-                    "eventDate": "2014-12-27"
-                },
-                {
-                    "description": "Friday after Christmas",
-                    "eventDate": "2014-12-26"
-                },
-                {
-                    "description": "Saturday before Christmas",
-                    "eventDate": "2014-12-20"
-                },
-                {
-                    "description": "Sunday after Thanksgiving",
-                    "eventDate": "2014-11-30"
-                },
-                {
-                    "description": "Wednesday before Thanksgiving",
-                    "eventDate": "2014-11-26"
-                },
-                {
-                    "description": "Presidents Day",
-                    "eventDate": "2014-02-17"
-                },
-                {
-                    "description": "Friday before Presidents Day",
-                    "eventDate": "2014-02-14"
-                },
-                {
-                    "description": "Thursday before Presidents Day",
-                    "eventDate": "2014-02-13"
-                },
-                {
-                    "description": "Sunday after New Years",
-                    "eventDate": "2014-01-05"
-                },
-                {
-                    "description": "Saturday after New Years",
-                    "eventDate": "2014-01-04"
-                },
-                {
-                    "description": "Friday after Christmas Day",
-                    "eventDate": "2013-12-27"
-                },
-                {
-                    "description": "Day after Christmas Day",
-                    "eventDate": "2013-12-26"
-                }
-            ]
-        },
-        {
-            "contractId": 1380426,
-            "contractType": 8,
-            "contractTypeDescription": "NJ Owner",
-            "divisionId": 1383071,
-            "cardType": null,
-            "cardTypeDescription": null,
-            "cardNumber": null,
-            "aircraftType": "CE-560XLS",
-            "aircraftTypeName": "CITATION EXCEL/XLS",
-            "tailNumber": "N618QS",
-            "flightRule": "Part 91K",
-            "actualRemainingHours": 75,
-            "projectedRemainingHours": 75,
-            "programId": 1000011,
-            "peakDates": [
-                {
-                    "description": "Saturday after Christmas",
-                    "eventDate": "2014-12-27"
-                },
-                {
-                    "description": "Friday after Christmas",
-                    "eventDate": "2014-12-26"
-                },
-                {
-                    "description": "Saturday before Christmas",
-                    "eventDate": "2014-12-20"
-                },
-                {
-                    "description": "Sunday after Thanksgiving",
-                    "eventDate": "2014-11-30"
-                },
-                {
-                    "description": "Wednesday before Thanksgiving",
-                    "eventDate": "2014-11-26"
-                },
-                {
-                    "description": "Presidents Day",
-                    "eventDate": "2014-02-17"
-                },
-                {
-                    "description": "Friday before Presidents Day",
-                    "eventDate": "2014-02-14"
-                },
-                {
-                    "description": "Thursday before Presidents Day",
-                    "eventDate": "2014-02-13"
-                },
-                {
-                    "description": "Sunday after New Years",
-                    "eventDate": "2014-01-05"
-                },
-                {
-                    "description": "Saturday after New Years",
-                    "eventDate": "2014-01-04"
-                },
-                {
-                    "description": "Friday after Christmas Day",
-                    "eventDate": "2013-12-27"
-                },
-                {
-                    "description": "Day after Christmas Day",
-                    "eventDate": "2013-12-26"
-                }
-            ]
-        },
-        {
-            "contractId": 1380425,
-            "contractType": 8,
-            "contractTypeDescription": "NJ Owner",
-            "divisionId": 1383070,
-            "cardType": null,
-            "cardTypeDescription": null,
-            "cardNumber": null,
-            "aircraftType": "G-550",
-            "aircraftTypeName": "GULFSTREAM 550",
-            "tailNumber": "N518QS",
-            "flightRule": "Part 91K",
-            "actualRemainingHours": 75,
-            "projectedRemainingHours": 75,
-            "programId": 1000011,
-            "peakDates": [
-                {
-                    "description": "Saturday after Christmas",
-                    "eventDate": "2014-12-27"
-                },
-                {
-                    "description": "Friday after Christmas",
-                    "eventDate": "2014-12-26"
-                },
-                {
-                    "description": "Saturday before Christmas",
-                    "eventDate": "2014-12-20"
-                },
-                {
-                    "description": "Sunday after Thanksgiving",
-                    "eventDate": "2014-11-30"
-                },
-                {
-                    "description": "Wednesday before Thanksgiving",
-                    "eventDate": "2014-11-26"
-                },
-                {
-                    "description": "Presidents Day",
-                    "eventDate": "2014-02-17"
-                },
-                {
-                    "description": "Friday before Presidents Day",
-                    "eventDate": "2014-02-14"
-                },
-                {
-                    "description": "Thursday before Presidents Day",
-                    "eventDate": "2014-02-13"
-                },
-                {
-                    "description": "Sunday after New Years",
-                    "eventDate": "2014-01-05"
-                },
-                {
-                    "description": "Saturday after New Years",
-                    "eventDate": "2014-01-04"
-                },
-                {
-                    "description": "Friday after Christmas Day",
-                    "eventDate": "2013-12-27"
-                },
-                {
-                    "description": "Day after Christmas Day",
-                    "eventDate": "2013-12-26"
-                }
-            ]
-        },
-        {
-            "contractId": 1042445,
-            "contractType": 8,
-            "contractTypeDescription": "NJ Owner",
-            "divisionId": 1045160,
-            "cardType": null,
-            "cardTypeDescription": null,
-            "cardNumber": null,
-            "aircraftType": "G-550",
-            "aircraftTypeName": "GULFSTREAM 550",
-            "tailNumber": "N531QS",
-            "flightRule": "Part 91K",
-            "actualRemainingHours": 56.3,
-            "projectedRemainingHours": 42.8,
-            "programId": 1000011,
-            "peakDates": [
-                {
-                    "description": "Saturday after Christmas",
-                    "eventDate": "2014-12-27"
-                },
-                {
-                    "description": "Friday after Christmas",
-                    "eventDate": "2014-12-26"
-                },
-                {
-                    "description": "Saturday before Christmas",
-                    "eventDate": "2014-12-20"
-                },
-                {
-                    "description": "Sunday after Thanksgiving",
-                    "eventDate": "2014-11-30"
-                },
-                {
-                    "description": "Wednesday before Thanksgiving",
-                    "eventDate": "2014-11-26"
-                },
-                {
-                    "description": "Presidents Day",
-                    "eventDate": "2014-02-17"
-                },
-                {
-                    "description": "Friday before Presidents Day",
-                    "eventDate": "2014-02-14"
-                },
-                {
-                    "description": "Thursday before Presidents Day",
-                    "eventDate": "2014-02-13"
-                },
-                {
-                    "description": "Sunday after New Years",
-                    "eventDate": "2014-01-05"
-                },
-                {
-                    "description": "Saturday after New Years",
-                    "eventDate": "2014-01-04"
-                },
-                {
-                    "description": "Friday after Christmas Day",
-                    "eventDate": "2013-12-27"
-                },
-                {
-                    "description": "Day after Christmas Day",
-                    "eventDate": "2013-12-26"
-                }
-            ]
-        }
-    ],
-    "requests": [
-        {
-            "requestId": 7885200,
-            "reservationId": 6504256,
-            "accountId": 1005555,
-            "accountName": "Bright Skies LLC",
-            "requestStatus": "B",
-            "requestStatusDescription": "Booked",
-            "departureFboId": 1172298,
-            "departureFboName": "MAS Munich Aviation Service",
-            "arrivalFboId": 1165302,
-            "arrivalFboName": "Execujet Aviation (EJM)",
-            "requestedAircraftType": "G-550",
-            "requestedAircraftTypeDescription": "GULFSTREAM 550",
-            "requestedAircraftSize": "L",
-            "guaranteedAircraftType": "G-550",
-            "guaranteedAircraftTypeDescription": "GULFSTREAM 550",
-            "guaranteedAircraftSize": "L",
-            "programId": 1000021,
-            "programName": "NetJets Europe",
-            "flightTypeId": 7,
-            "flightTypeDescription": "NetJets",
-            "flightRuleId": 3,
-            "flightRuleDescription": "EU-OPS",
-            "flownStatus": 1,
-            "flownStatusDescription": "Not Flown",
-            "isEtdEnteredByUser": true,
-            "etdGmt": "2015-01-31T09:00:00Z",
-            "etdLocal": "2015-01-31T10:00:00+0100",
-            "departureTimeZoneId": "Europe/Berlin",
-            "departureTimeZoneFormat": "CET",
-            "departureTimeZoneGMTOffset": 1,
-            "departureAirportId": "EDDM",
-            "departureAirportName": "MUNICH",
-            "departureAirportCity": "MUNICH",
-            "departureAirportState": null,
-            "departureAirportCountry": "DEU",
-            "departureAirportLatitudeQuantity": 174073,
-            "departureAirportLongitudeQuantity": 42429,
-            "etaGmt": "2015-01-31T20:06:00Z",
-            "etaLocal": "2015-01-31T22:06:00+0200",
-            "arrivalTimeZoneId": "Africa/Johannesburg",
-            "arrivalTimeZoneFormat": "SAST",
-            "arrivalTimeZoneGMTOffset": 2,
-            "arrivalAirportId": "FACT",
-            "arrivalAirportName": "CAPE TOWN INTL",
-            "arrivalAirportCity": "CAPE TOWN",
-            "arrivalAirportState": null,
-            "arrivalAirportCountry": "ZAF",
-            "arrivalAirportLatitudeQuantity": -122296,
-            "arrivalAirportLongitudeQuantity": 66975,
-            "isInternational": true,
-            "noOfFuelStops": 0,
-            "estimatedFlightTime": 10.9,
-            "estimatedTripTime": 11.1,
-            "estimatedFlightDistanceInKM": 9143.4,
-            "crew": [],
-            "legIdFirst": 7997955,
-            "legIdLast": 7997955,
-            "passengerManifest": {
-                "passengerManifestId": 2836801,
-                "passengers": [
+    briefExecutionTime = 11381;
+    contracts =     (
+                     {
+                     actualRemainingHours = 250;
+                     aircraftType = GL6000S;
+                     aircraftTypeName = "Global 6000 Signature";
+                     cardNumber = "<null>";
+                     cardType = "<null>";
+                     cardTypeDescription = "<null>";
+                     contractId = 1409784;
+                     contractType = 8;
+                     contractTypeDescription = "NJ Owner";
+                     divisionId = 1412939;
+                     flightRule = "Part 135";
+                     peakDates =             (
+                                              {
+                                              description = "mkapral test";
+                                              eventDate = "2015-01-15";
+                                              },
+                                              {
+                                              description = "Saturday after Christmas";
+                                              eventDate = "2014-12-27";
+                                              },
+                                              {
+                                              description = "Friday after Christmas";
+                                              eventDate = "2014-12-26";
+                                              },
+                                              {
+                                              description = "Saturday before Christmas";
+                                              eventDate = "2014-12-20";
+                                              },
+                                              {
+                                              description = "Sunday after Thanksgiving";
+                                              eventDate = "2014-11-30";
+                                              },
+                                              {
+                                              description = "Wednesday before Thanksgiving";
+                                              eventDate = "2014-11-26";
+                                              },
+                                              {
+                                              description = "Test PPD";
+                                              eventDate = "2014-05-13";
+                                              },
+                                              {
+                                              description = "Presidents Day";
+                                              eventDate = "2014-02-17";
+                                              },
+                                              {
+                                              description = "Friday before Presidents Day";
+                                              eventDate = "2014-02-14";
+                                              },
+                                              {
+                                              description = "Thursday before Presidents Day";
+                                              eventDate = "2014-02-13";
+                                              }
+                                              );
+                     programId = 1000011;
+                     projectedRemainingHours = 250;
+                     tailNumber = N141QS;
+                     }
+                     );
+    individual =     {
+        accounts =         (
+                            {
+                            accountId = 1399122;
+                            accountName = "New Account for iOS";
+                            accountOSRTeamAbbr = OST01;
+                            accountOSRTeamEmail = "NetJetsTeam1@netjets.com";
+                            accountOSRTeamName = "Owner Services Team 01";
+                            accountOSRTeamPhone = 8881112233;
+                            accountSalesRep =                 {
+                            accountExecId = 2353814;
+                            accountExecName = "Amy Young";
+                            salesVpEmail = "3194@netjets.com";
+                            salesVpId = 3194;
+                            salesVpName = "Aaron Pinsker";
+                            };
+                            accountTypeDescription = Share;
+                            allowedToBookFlight = 1;
+                            allowedToFly = 1;
+                            isPrincipal = 0;
+                            }
+                            );
+        defaultAccountId = 1399122;
+        firstName = Charles;
+        individualId = 2526432;
+        isBookerOnAtLeastOneAccount = 1;
+        isFlyerOnAtLeastOneAccount = 1;
+        lastName = Lano;
+        middleName = "<null>";
+        telephones =         (
+                              {
+                              areaCode = 202;
+                              countryCode = 1;
+                              telephoneId = 2515992;
+                              telephoneNumber = 1234455;
+                              telephoneTypeDescription = Boat;
+                              telephoneTypeId = 12;
+                              },
+                              {
+                              areaCode = 202;
+                              countryCode = 1;
+                              telephoneId = 2515993;
+                              telephoneNumber = 9977886;
+                              telephoneTypeDescription = Mobile;
+                              telephoneTypeId = 10;
+                              }
+                              );
+    };
+    requests =     (
                     {
-                        "passengerId": 10010215,
-                        "priority": 1,
-                        "unknownPassengerId": null,
-                        "individualId": 1848238,
-                        "isLeadPax": true,
-                        "passengerName": "Ajaypal S. Banga",
-                        "petId": null,
-                        "petName": null
+                    accountId = 1399122;
+                    accountName = "New Account for iOS";
+                    arrivalAirportCity = "LAS VEGAS";
+                    arrivalAirportCountry = USA;
+                    arrivalAirportId = KLAS;
+                    arrivalAirportLatitudeQuantity = 129888;
+                    arrivalAirportLongitudeQuantity = "-414548";
+                    arrivalAirportName = "MC CARRAN INTL";
+                    arrivalAirportState = NV;
+                    arrivalFboId = 3583;
+                    arrivalFboName = "Signature Flight Support";
+                    arrivalTimeZoneFormat = PDT;
+                    arrivalTimeZoneGMTOffset = "-7";
+                    arrivalTimeZoneId = "America/Los_Angeles";
+                    cateringOrders =             (
+                                                  {
+                                                  cateringItems =                     (
+                                                                                       {
+                                                                                       categories =                             (
+                                                                                                                                 {
+                                                                                                                                 category = "Cold entrees";
+                                                                                                                                 categoryParent = "Lunch & dinner";
+                                                                                                                                 },
+                                                                                                                                 {
+                                                                                                                                 category = Sandwiches;
+                                                                                                                                 categoryParent = "Lunch & dinner";
+                                                                                                                                 },
+                                                                                                                                 {
+                                                                                                                                 category = "Lunch/Dinner";
+                                                                                                                                 categoryParent = "Signature Selections";
+                                                                                                                                 },
+                                                                                                                                 {
+                                                                                                                                 category = All;
+                                                                                                                                 categoryParent = "Signature Selections";
+                                                                                                                                 }
+                                                                                                                                 );
+                                                                                       ownerFacingDescription = "Signature Selection:   Tenderloin Sliders";
+                                                                                       packaging = Tray;
+                                                                                       preparationNotes = "Tenderloin on mini rolls, with lettuce, tomato, and red onion, served with horseradish cream sauce";
+                                                                                       quantity = 1;
+                                                                                       },
+                                                                                       {
+                                                                                       categories =                             (
+                                                                                                                                 {
+                                                                                                                                 category = Vodka;
+                                                                                                                                 categoryParent = Liquor;
+                                                                                                                                 }
+                                                                                                                                 );
+                                                                                       ownerFacingDescription = "Grey Goose Vodka";
+                                                                                       packaging = Bottle;
+                                                                                       preparationNotes = "";
+                                                                                       quantity = 2;
+                                                                                       }
+                                                                                       );
+                                                  cateringPhone = 6142447217;
+                                                  cateringVendor = Sodexo;
+                                                  currentState = Requested;
+                                                  isDeparture = 1;
+                                                  isNCIORder = 0;
+                                                  isPrimaryOrder = 1;
+                                                  requestedCateringID = 5244926;
+                                                  }
+                                                  );
+                    crew =             (
+                    );
+                    departureAirportCity = COLUMBUS;
+                    departureAirportCountry = USA;
+                    departureAirportId = KCMH;
+                    departureAirportLatitudeQuantity = 143989;
+                    departureAirportLongitudeQuantity = "-298411";
+                    departureAirportName = "PORT COLUMBUS INTL";
+                    departureAirportState = OH;
+                    departureFboId = 5677;
+                    departureFboName = NetJets;
+                    departureTimeZoneFormat = EDT;
+                    departureTimeZoneGMTOffset = "-4";
+                    departureTimeZoneId = "America/New_York";
+                    estimatedFlightDistanceInKM = "2849.2";
+                    estimatedFlightTime = "3.6";
+                    estimatedTripTime = "3.8";
+                    etaGmt = "2015-04-13T19:48:00Z";
+                    etaLocal = "2015-04-13T12:48:00-0700";
+                    etdGmt = "2015-04-13T16:00:00Z";
+                    etdLocal = "2015-04-13T12:00:00-0400";
+                    flightRuleDescription = "Part 135";
+                    flightRuleId = 2;
+                    flightTypeDescription = NetJets;
+                    flightTypeId = 7;
+                    flownStatus = 1;
+                    flownStatusDescription = "Not Flown";
+                    groundOrders =             (
+                                                {
+                                                adjustToFlight = 1;
+                                                autoSize = "Mini Coach (36-50)";
+                                                autoSizeId = 22;
+                                                billingNumber = 8007;
+                                                billingTypeCode = 1;
+                                                currentState = Requested;
+                                                groundType = Chauffeured;
+                                                isDeparture = 1;
+                                                leadRiderContactName = "Lano, Charles";
+                                                orderNumber = 1606980;
+                                                routeDescriptions =                     (
+                                                                                         "456 Party Blvd",
+                                                                                         "PORT COLUMBUS INTL, (KCMH), NetJets"
+                                                                                         );
+                                                vendorName = CLS;
+                                                vendorPhone = 8008063480;
+                                                },
+                                                {
+                                                adjustToFlight = 1;
+                                                autoSize = "Mini Coach (36-50)";
+                                                autoSizeId = 22;
+                                                billingNumber = 8007;
+                                                billingTypeCode = 1;
+                                                currentState = Requested;
+                                                groundType = Chauffeured;
+                                                isDeparture = 0;
+                                                leadRiderContactName = "Lano, Charles";
+                                                orderNumber = 1606981;
+                                                routeDescriptions =                     (
+                                                                                         "MC CARRAN INTL, (KLAS), Signature Flight Support",
+                                                                                         "123 Party Central"
+                                                                                         );
+                                                vendorName = CLS;
+                                                vendorPhone = 8008063480;
+                                                }
+                                                );
+                    guaranteedAircraftSize = L;
+                    guaranteedAircraftType = GL6000S;
+                    guaranteedAircraftTypeDescription = "Global 6000 Signature";
+                    isEtdEnteredByUser = 1;
+                    isInternational = 0;
+                    legIdFirst = 7886664;
+                    legIdLast = 7886664;
+                    noOfFuelStops = 0;
+                    passengerManifest =             {
+                    passengerManifestId = 2798224;
+                    passengers =                 (
+                                                  {
+                                                  individualId = 2526432;
+                                                  isLeadPax = 1;
+                                                  passengerId = 9860691;
+                                                  passengerName = "Charles Lano";
+                                                  petId = "<null>";
+                                                  petName = "<null>";
+                                                  priority = 1;
+                                                  unknownPassengerId = "<null>";
+                                                  }
+                                                  );
+                    };
+                    programId = 1000011;
+                    programName = "NetJets U.S.";
+                    requestId = 7775221;
+                    requestStatus = D;
+                    requestStatusDescription = Draft;
+                    requestedAircraftSize = L;
+                    requestedAircraftType = GL6000S;
+                    requestedAircraftTypeDescription = "Global 6000 Signature";
+                    requestedTaxiArrival = 0;
+                    requestedTaxiDeparture = 0;
+                    reservationId = 6414089;
                     }
-                ]
-            },
-            "groundOrders": [],
-            "cateringOrders": []
-        },
-        {
-            "requestId": 7885201,
-            "reservationId": 6504256,
-            "accountId": 1005555,
-            "accountName": "Bright Skies LLC",
-            "requestStatus": "B",
-            "requestStatusDescription": "Booked",
-            "departureFboId": 1165302,
-            "departureFboName": "Execujet Aviation (EJM)",
-            "arrivalFboId": 1172298,
-            "arrivalFboName": "MAS Munich Aviation Service",
-            "requestedAircraftType": "G-550",
-            "requestedAircraftTypeDescription": "GULFSTREAM 550",
-            "requestedAircraftSize": "L",
-            "guaranteedAircraftType": "G-550",
-            "guaranteedAircraftTypeDescription": "GULFSTREAM 550",
-            "guaranteedAircraftSize": "L",
-            "programId": 1000021,
-            "programName": "NetJets Europe",
-            "flightTypeId": 7,
-            "flightTypeDescription": "NetJets",
-            "flightRuleId": 3,
-            "flightRuleDescription": "EU-OPS",
-            "flownStatus": 1,
-            "flownStatusDescription": "Not Flown",
-            "isEtdEnteredByUser": true,
-            "etdGmt": "2015-02-04T20:00:00Z",
-            "etdLocal": "2015-02-04T22:00:00+0200",
-            "departureTimeZoneId": "Africa/Johannesburg",
-            "departureTimeZoneFormat": "SAST",
-            "departureTimeZoneGMTOffset": 2,
-            "departureAirportId": "FACT",
-            "departureAirportName": "CAPE TOWN INTL",
-            "departureAirportCity": "CAPE TOWN",
-            "departureAirportState": null,
-            "departureAirportCountry": "ZAF",
-            "departureAirportLatitudeQuantity": -122296,
-            "departureAirportLongitudeQuantity": 66975,
-            "etaGmt": "2015-02-05T07:42:00Z",
-            "etaLocal": "2015-02-05T08:42:00+0100",
-            "arrivalTimeZoneId": "Europe/Berlin",
-            "arrivalTimeZoneFormat": "CET",
-            "arrivalTimeZoneGMTOffset": 1,
-            "arrivalAirportId": "EDDM",
-            "arrivalAirportName": "MUNICH",
-            "arrivalAirportCity": "MUNICH",
-            "arrivalAirportState": null,
-            "arrivalAirportCountry": "DEU",
-            "arrivalAirportLatitudeQuantity": 174073,
-            "arrivalAirportLongitudeQuantity": 42429,
-            "isInternational": true,
-            "noOfFuelStops": 0,
-            "estimatedFlightTime": 11.5,
-            "estimatedTripTime": 11.7,
-            "estimatedFlightDistanceInKM": 9143.4,
-            "crew": [],
-            "legIdFirst": 7997956,
-            "legIdLast": 7997956,
-            "passengerManifest": {
-                "passengerManifestId": 2836802,
-                "passengers": [
-                    {
-                        "passengerId": 10010216,
-                        "priority": 1,
-                        "unknownPassengerId": null,
-                        "individualId": 1848238,
-                        "isLeadPax": true,
-                        "passengerName": "Ajaypal S. Banga",
-                        "petId": null,
-                        "petName": null
-                    }
-                ]
-            },
-            "groundOrders": [],
-            "cateringOrders": []
-        },
-        {
-            "requestId": 8125042,
-            "reservationId": 6707620,
-            "accountId": 1005555,
-            "accountName": "Bright Skies LLC",
-            "requestStatus": "D",
-            "requestStatusDescription": "Draft",
-            "departureFboId": 5677,
-            "departureFboName": "NetJets",
-            "arrivalFboId": 7518,
-            "arrivalFboName": "Atlantic Aviation",
-            "requestedAircraftType": "G-550",
-            "requestedAircraftTypeDescription": "GULFSTREAM 550",
-            "requestedAircraftSize": "L",
-            "guaranteedAircraftType": "G-550",
-            "guaranteedAircraftTypeDescription": "GULFSTREAM 550",
-            "guaranteedAircraftSize": "L",
-            "programId": 1000011,
-            "programName": "NetJets U.S.",
-            "flightTypeId": 7,
-            "flightTypeDescription": "NetJets",
-            "flightRuleId": 4,
-            "flightRuleDescription": "Part 91K",
-            "flownStatus": 1,
-            "flownStatusDescription": "Not Flown",
-            "isEtdEnteredByUser": true,
-            "etdGmt": "2015-03-09T12:00:00Z",
-            "etdLocal": "2015-03-09T08:00:00-0400",
-            "departureTimeZoneId": "America/New_York",
-            "departureTimeZoneFormat": "EDT",
-            "departureTimeZoneGMTOffset": -4,
-            "departureAirportId": "KCMH",
-            "departureAirportName": "PORT COLUMBUS INTL",
-            "departureAirportCity": "COLUMBUS",
-            "departureAirportState": "OH",
-            "departureAirportCountry": "USA",
-            "departureAirportLatitudeQuantity": 143989,
-            "departureAirportLongitudeQuantity": -298411,
-            "etaGmt": "2015-03-09T15:48:00Z",
-            "etaLocal": "2015-03-09T08:48:00-0700",
-            "arrivalTimeZoneId": "America/Los_Angeles",
-            "arrivalTimeZoneFormat": "PDT",
-            "arrivalTimeZoneGMTOffset": -7,
-            "arrivalAirportId": "KLAS",
-            "arrivalAirportName": "MC CARRAN INTL",
-            "arrivalAirportCity": "LAS VEGAS",
-            "arrivalAirportState": "NV",
-            "arrivalAirportCountry": "USA",
-            "arrivalAirportLatitudeQuantity": 129888,
-            "arrivalAirportLongitudeQuantity": -414548,
-            "isInternational": false,
-            "noOfFuelStops": 0,
-            "estimatedFlightTime": 3.6,
-            "estimatedTripTime": 3.8,
-            "estimatedFlightDistanceInKM": 2849.2,
-            "crew": [],
-            "legIdFirst": 8240143,
-            "legIdLast": 8240143,
-            "passengerManifest": {
-                "passengerManifestId": 2919032,
-                "passengers": [
-                    {
-                        "passengerId": 10300174,
-                        "priority": 1,
-                        "unknownPassengerId": null,
-                        "individualId": 1072737,
-                        "isLeadPax": true,
-                        "passengerName": "Noah Jonathan Hanft",
-                        "petId": null,
-                        "petName": null
-                    }
-                ]
-            },
-            "groundOrders": [],
-            "cateringOrders": []
-        }
-    ]
+                    );
+    totalRequestCount = 1;
+    tripRequestExecutionTime = 168;
 }
