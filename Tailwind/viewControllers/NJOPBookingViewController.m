@@ -7,18 +7,19 @@
 //
 
 #import "NJOPBookingViewController.h"
-#import "APLKeyboardControls.h"
+#import "NJOPKeyboardControls.h"
 
 @interface NJOPBookingViewController () <RSDFDatePickerViewDelegate, RSDFDatePickerViewDataSource>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) NJOPDatePickerView *datePickerView;
-@property (strong, nonatomic) APLKeyboardControls *keyboardControls;
+@property (strong, nonatomic) NJOPKeyboardControls *keyboardControls;
 @end
 
 int passengerCount = 0;
 int passengerMax = 15;
 int passengerMin = 1;
 
+NSArray* inputChain;
 NSInteger currentTextField;
 NSDateFormatter *timeFormatter;
 
@@ -39,31 +40,7 @@ NSDateFormatter *timeFormatter;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    
-    self.aircraftInput.inputView = [self getAircraftPicker];
-    
-    self.departureAirport.delegate = self;
-    self.destinationAirport.delegate = self;
-    self.departTime.delegate = self;
-    self.arrivalTime.delegate = self;
-    
-    self.departTime.inputView = [self getTimePicker];
-    self.arrivalTime.inputView = [self getTimePicker];
-    // Tag fields to identify them
-    self.departTime.tag = 4;
-    self.arrivalTime.tag = 5;
-    
-    self.datePickerView = [[NJOPDatePickerView alloc] init];
-    self.datePickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.datePickerView.delegate = self;
-    self.flightDate.inputView = self.datePickerView;
-    
-    NSArray* inputChain = @[self.aircraftInput, self.departureAirport, self.destinationAirport, self.flightDate, self.departTime, self.arrivalTime, self.numberOfPassengers];
-    self.keyboardControls = [[APLKeyboardControls alloc] initWithInputFields:inputChain];
-    self.keyboardControls.hasPreviousNext = YES;
-    
-    self.bookingComment.placeholderTextColor = [UIColor blackColor];
-    [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
+    [self initialiseTextFields];
     
 }
 
@@ -72,6 +49,45 @@ NSDateFormatter *timeFormatter;
     // Dispose of any resources that can be recreated.
 }
 
+- (void)initialiseTextFields {
+    
+    inputChain = @[self.aircraftInput, self.departureAirport, self.destinationAirport, self.flightDate, self.departTime, self.arrivalTime, self.numberOfPassengers, self.bookingComment];
+    self.keyboardControls = [[NJOPKeyboardControls alloc] initWithInputFields:[inputChain subarrayWithRange:NSMakeRange(0, 1)]];
+    self.keyboardControls.hasPreviousNext = YES;
+    
+    for (int i=0; i<[inputChain count]; i++) {
+        ((UIView*)inputChain[i]).tag = (NSInteger)i; // Tag fields to identify them
+        if ([inputChain[i] isKindOfClass:[UITextField class]]) {
+            ((UITextField*)inputChain[i]).delegate = self; // listen to textFieldDidBeginEditing
+            [(UITextField*)inputChain[i] addTarget:self action:@selector(textFieldUpdated:) forControlEvents:UIControlEventEditingChanged]; // listen to changes
+        }
+        if (i > 0) {
+            ((UITextField*)inputChain[i]).enabled = false;
+        }
+    }
+    
+    self.aircraftInput.inputView = [self getAircraftPicker];
+    
+    self.departTime.inputView = [self getTimePicker];
+    self.arrivalTime.inputView = [self getTimePicker];
+    
+    self.datePickerView = [[NJOPDatePickerView alloc] init];
+    self.datePickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.datePickerView.delegate = self;
+    self.flightDate.inputView = self.datePickerView;
+    
+    self.bookingComment.placeholderTextColor = [UIColor blackColor];
+    [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
+    
+}
+
+- (void)textFieldUpdated:(UITextField *)textField {
+    if (![textField.text isEmptyOrWhitespace] && textField.tag < [inputChain count]) {
+        self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, textField.tag+2)];
+        ((UITextField *)[self.view viewWithTag:textField.tag+1]).enabled = true;
+        [self.keyboardControls updateButtonsAt:textField.tag];
+    }
+}
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     if (textField == self.departureAirport || textField == self.destinationAirport) {
@@ -210,7 +226,6 @@ NSDateFormatter *timeFormatter;
         self.aircraftPicker = [[UIPickerView alloc] init];
         [self.aircraftPicker setDataSource: self];
         [self.aircraftPicker setDelegate: self];
-        //self.aircraftPicker.showsSelectionIndicator = YES;
     }
     return self.aircraftPicker;
 }

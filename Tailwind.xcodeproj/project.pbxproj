@@ -11,6 +11,7 @@
 		1E636E951A5F299C002B3E8C /* NJOPSelectAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E636E941A5F299C002B3E8C /* NJOPSelectAccountViewController.m */; };
 		1E79C8801A6481CA001B73B9 /* NJOPAirportSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79C87F1A6481CA001B73B9 /* NJOPAirportSearchViewController.m */; };
 		1E79C8911A65CAD0001B73B9 /* NJOPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79C8901A65CAD0001B73B9 /* NJOPTextField.m */; };
+		1E0D621E1A6875920076516F /* NJOPKeyboardControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D621D1A6875920076516F /* NJOPKeyboardControls.m */; };
 		1E1A592E1A48CDD70048A9C9 /* NJOPFullPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1A592D1A48CDD70048A9C9 /* NJOPFullPageViewController.m */; };
 		1E36BD1C1A4887D700221E7D /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E36BD1B1A4887D700221E7D /* Welcome.storyboard */; };
 		1E36BD221A48992700221E7D /* NJOPWelcomeContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E36BD211A48992700221E7D /* NJOPWelcomeContentController.m */; };
@@ -172,6 +173,8 @@
 		1E79C87F1A6481CA001B73B9 /* NJOPAirportSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAirportSearchViewController.m; sourceTree = "<group>"; };
 		1E79C88F1A65CAD0001B73B9 /* NJOPTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPTextField.h; path = elements/NJOPTextField.h; sourceTree = "<group>"; };
 		1E79C8901A65CAD0001B73B9 /* NJOPTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPTextField.m; path = elements/NJOPTextField.m; sourceTree = "<group>"; };
+		1E0D621C1A6875920076516F /* NJOPKeyboardControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPKeyboardControls.h; path = elements/NJOPKeyboardControls.h; sourceTree = "<group>"; };
+		1E0D621D1A6875920076516F /* NJOPKeyboardControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPKeyboardControls.m; path = elements/NJOPKeyboardControls.m; sourceTree = "<group>"; };
 		1E1A592C1A48CDD70048A9C9 /* NJOPFullPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFullPageViewController.h; sourceTree = "<group>"; };
 		1E1A592D1A48CDD70048A9C9 /* NJOPFullPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFullPageViewController.m; sourceTree = "<group>"; };
 		1E36BD1B1A4887D700221E7D /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
@@ -392,6 +395,19 @@
 				6167B98AFA8D41C092D41CCC /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E0D62181A6857C00076516F /* Airport Search */ = {
+			isa = PBXGroup;
+			children = (
+				1E79C8951A670ADF001B73B9 /* NJOPAirportResultTableViewCell.h */,
+				1E79C8961A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m */,
+				1E79C8921A670983001B73B9 /* NJOPAirportSearchTableViewController.h */,
+				1E79C8931A670983001B73B9 /* NJOPAirportSearchTableViewController.m */,
+				1E79C87E1A6481CA001B73B9 /* NJOPAirportSearchViewController.h */,
+				1E79C87F1A6481CA001B73B9 /* NJOPAirportSearchViewController.m */,
+			);
+			name = "Airport Search";
 			sourceTree = "<group>";
 		};
 		1E636ECB1A5F3D37002B3E8C /* Welcome ViewControllers */ = {
@@ -660,6 +676,8 @@
 		A7A03E9D1A42E554004BE417 /* elements */ = {
 			isa = PBXGroup;
 			children = (
+				1E0D621C1A6875920076516F /* NJOPKeyboardControls.h */,
+				1E0D621D1A6875920076516F /* NJOPKeyboardControls.m */,
 				1E79C88F1A65CAD0001B73B9 /* NJOPTextField.h */,
 				1E79C8901A65CAD0001B73B9 /* NJOPTextField.m */,
 				A786D61B1A663946006EDA24 /* Messages-Views */,
@@ -793,12 +811,7 @@
 		A7F2CA421A4DC9C300D78804 /* Booking ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1E79C8951A670ADF001B73B9 /* NJOPAirportResultTableViewCell.h */,
-				1E79C8961A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m */,
-				1E79C8921A670983001B73B9 /* NJOPAirportSearchTableViewController.h */,
-				1E79C8931A670983001B73B9 /* NJOPAirportSearchTableViewController.m */,
-				1E79C87E1A6481CA001B73B9 /* NJOPAirportSearchViewController.h */,
-				1E79C87F1A6481CA001B73B9 /* NJOPAirportSearchViewController.m */,
+				1E0D62181A6857C00076516F /* Airport Search */,
 				1E636E931A5F299C002B3E8C /* NJOPSelectAccountViewController.h */,
 				1E636E941A5F299C002B3E8C /* NJOPSelectAccountViewController.m */,
 				A7F2CA431A4DC9F400D78804 /* NJOPBookingViewController.h */,
@@ -1127,6 +1140,7 @@
 				A7CD0AFD1A5C86B900D45224 /* (null) in Sources */,
 				A7A03EC11A42F21D004BE417 /* NJOPNOFBOTableCell.m in Sources */,
 				52B604261A6739ED00C0E066 /* NJOPDatePickerDayCell.m in Sources */,
+				1E0D621E1A6875920076516F /* NJOPKeyboardControls.m in Sources */,
 				A786D61A1A66380B006EDA24 /* NJOPFlightTableCell.m in Sources */,
 				A7A03EB51A42EF1D004BE417 /* NJOPActionButton.m in Sources */,
 				A762F9791A6665BE002065EB /* NJOPCateringViewController.m in Sources */,
