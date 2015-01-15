@@ -86,6 +86,9 @@ NSDateFormatter *timeFormatter;
     self.bookingComment.placeholderTextColor = [UIColor blackColor];
     [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
     
+    self.bookingComment.placeholderTextColor = [UIColor blackColor];
+    [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
+    
 }
 
 - (void)textFieldUpdated:(UITextField *)textField {
@@ -136,7 +139,6 @@ NSDateFormatter *timeFormatter;
     
     NSLog(@"%@ %@", [date description],newDate);
     self.flightDate.text = newDate;
-    self.datePickerView.hidden = YES;
     [self.view endEditing:YES];
     [self updatePassengerCount];
 }
