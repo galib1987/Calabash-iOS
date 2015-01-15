@@ -62,6 +62,8 @@ NSDateFormatter *timeFormatter;
     self.keyboardControls = [[APLKeyboardControls alloc] initWithInputFields:inputChain];
     self.keyboardControls.hasPreviousNext = YES;
     
+    self.bookingComment.placeholderTextColor = [UIColor blackColor];
+    [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
     
 }
 
@@ -108,7 +110,6 @@ NSDateFormatter *timeFormatter;
     
     NSLog(@"%@ %@", [date description],newDate);
     self.flightDate.text = newDate;
-    self.datePickerView.hidden = YES;
     [self.view endEditing:YES];
     [self updatePassengerCount];
 }

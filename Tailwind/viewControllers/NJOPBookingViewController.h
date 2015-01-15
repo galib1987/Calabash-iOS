@@ -9,28 +9,27 @@
 #import <UIKit/UIKit.h>
 #import "NJOPDatePickerView.h"
 #import "NJOPTextField.h"
+#import "SZTextView.h"
 
 @interface NJOPBookingViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate>
 
-@property (strong, nonatomic) IBOutlet NJOPTextField *departureAirport;
-@property (strong, nonatomic) IBOutlet NJOPTextField *destinationAirport;
-@property (strong, nonatomic) IBOutlet NJOPTextField *flightDate;
-@property (strong, nonatomic) IBOutlet NJOPTextField *departTime;
-@property (strong, nonatomic) IBOutlet NJOPTextField *arrivalTime;
-
+@property (weak, nonatomic) IBOutlet NJOPTextField *departureAirport;
+@property (weak, nonatomic) IBOutlet NJOPTextField *destinationAirport;
+@property (weak, nonatomic) IBOutlet NJOPTextField *flightDate;
+@property (weak, nonatomic) IBOutlet NJOPTextField *departTime;
+@property (weak, nonatomic) IBOutlet NJOPTextField *arrivalTime;
 @property (weak, nonatomic) IBOutlet NJOPTextField *aircraftInput;
+@property (weak, nonatomic) IBOutlet SZTextView *bookingComment;
 
 @property (strong, nonatomic) IBOutlet NJOPTextField *numberOfPassengers;
 - (IBAction)subtractPassenger:(UIButton *)sender;
 - (IBAction)addPassenger:(UIButton *)sender;
 
-@property (strong, nonatomic) IBOutlet UITextView *bookingComment;
 @property (strong, nonatomic) IBOutlet UIButton *resetBooking;
 @property (strong, nonatomic) IBOutlet UIButton *nextStep;
 
 @property (strong, nonatomic) UIPickerView *aircraftPicker;
 - (UIPickerView*) getAircraftPicker;
-- (void) selectedAircraft;
 
 @property (strong, nonatomic) UIDatePicker *timePicker;
 - (UIDatePicker*) getTimePicker;
