@@ -8,7 +8,6 @@ PODS:
     - NCLFramework/no-arc
   - NCLFramework/no-arc (2.0.1)
   - NSData+Base64 (1.0.0)
-  - PDTSimpleCalendar (0.7.1)
   - RSDayFlow (0.7.3)
 
 DEPENDENCIES:
@@ -17,7 +16,6 @@ DEPENDENCIES:
   - DateTools
   - HockeySDK (= 3.6.1)
   - NCLFramework (from `http://stash.netjets.com/scm/mobile/ios-common-library.git`, tag `2.0.1`)
-  - PDTSimpleCalendar (~> 0.7.0)
   - RSDayFlow (~> 0.7.3)
 
 EXTERNAL SOURCES:
@@ -32,7 +30,6 @@ SPEC CHECKSUMS:
   HockeySDK: 15b24068466aa5ee421eed0cc1d58428d698edf6
   NCLFramework: 57b7a7e127847c590d45066bc6dfe59672efdf68
   NSData+Base64: aae92a2e3f0bd88b29fe6093551ded3f5c062548
-  PDTSimpleCalendar: a08c52f3c0628065fddf48bcec53f888010a8006
   RSDayFlow: 06e3efb0115c1409c455e548570c5ec76d9c575b
 
 COCOAPODS: 0.34.4

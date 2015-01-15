@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NJOPDatePickerView.h"
 #import "NJOPTextField.h"
 #import "NJOPCalendarViewController.h"
 
