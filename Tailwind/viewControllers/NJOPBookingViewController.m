@@ -19,6 +19,9 @@ int passengerCount = 0;
 int passengerMax = 15;
 int passengerMin = 1;
 
+NSInteger currentTextField;
+NSDateFormatter *timeFormatter;
+
 @implementation NJOPBookingViewController
 
 - (void)viewDidLoad {
@@ -41,9 +44,14 @@ int passengerMin = 1;
     
     self.departureAirport.delegate = self;
     self.destinationAirport.delegate = self;
+    self.departTime.delegate = self;
+    self.arrivalTime.delegate = self;
     
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
+    // Tag fields to identify them
+    self.departTime.tag = 4;
+    self.arrivalTime.tag = 5;
     
     self.datePickerView = [[RSDFDatePickerView alloc] init];
     self.datePickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -74,6 +82,7 @@ int passengerMin = 1;
         }
         [self.navigationController pushViewController:vc animated:YES];
     }
+    currentTextField = textField.tag;
 }
 
 // Returns YES if the date should be highlighted or NO if it should not.
@@ -215,7 +224,7 @@ int passengerMin = 1;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    //NSLog(@"selected %d", row);
+    self.aircraftInput.text = [NSString stringWithFormat:@"Aircraft%lu", (long)row];
 }
 
 #pragma mark - Time Picker
@@ -225,8 +234,18 @@ int passengerMin = 1;
         self.timePicker = [[UIDatePicker alloc] init];
         self.timePicker.datePickerMode = UIDatePickerModeTime;
         //self.aircraftPicker.showsSelectionIndicator = YES;
+        [self.timePicker addTarget:self action:@selector(updateTimeField:) forControlEvents:UIControlEventValueChanged];
+        timeFormatter = [[NSDateFormatter alloc] init];
+        [timeFormatter setDateFormat:@"hh:mm a"];
     }
     return self.timePicker;
+}
+
+
+- (void) updateTimeField:(UIDatePicker *)sender {
+    UITextField *textField = (UITextField *)[self.view viewWithTag:currentTextField];
+    [self.dateFormatter stringFromDate:sender.date];
+    textField.text = [timeFormatter stringFromDate:[sender date]];
 }
 
 @end

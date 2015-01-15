@@ -34,5 +34,6 @@
 
 @property (strong, nonatomic) UIDatePicker *timePicker;
 - (UIDatePicker*) getTimePicker;
+- (void) updateTimeField:(UIDatePicker *)sender;
 
 @end
