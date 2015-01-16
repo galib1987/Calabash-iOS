@@ -72,15 +72,19 @@ NSDateFormatter *timeFormatter;
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
     
+    self.flightDate.inputView = [self getCalendar];
     
     self.bookingComment.placeholderTextColor = [UIColor blackColor];
     [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)textFieldUpdated:(UITextField *)textField {
+    if (![textField.text isEmptyOrWhitespace] && textField.tag < [inputChain count]) {
+        self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, textField.tag+2)];
+        ((UITextField *)[self.view viewWithTag:textField.tag+1]).enabled = true;
+        [self.keyboardControls updateButtonsAt:textField.tag];
+    }
 }
 
 -(UIView*)getCalendar{
@@ -151,7 +155,6 @@ NSDateFormatter *timeFormatter;
     }
     currentTextField = textField.tag;
 }
-
 - (IBAction)addPassenger:(UIButton *)sender {
     passengerCount++;
     [self updatePassengerCount];
