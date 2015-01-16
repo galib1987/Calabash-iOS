@@ -9,6 +9,7 @@
 #import "NJOPCateringViewController.h"
 #import "NJOPCateringCell.h"
 #import "NJOPMenuViewController.h"
+#import "AppDelegate.h"
 
 @interface NJOPCateringViewController ()
 
@@ -46,6 +47,8 @@
 }
 
 - (IBAction)contactOSPressed:(id)sender {
+    AppDelegate *delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
+    [delegate.njopMenuViewController expandOS];
     
 }
 
