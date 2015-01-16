@@ -89,7 +89,7 @@
                                                                   @"timeDurationLabel.text" : @"12:00PM - 2:45AM", // placeholder value
                                                                   },
                                                           kSimpleDataSourceCellItem : reservation,
-                                                          kSimpleDataSourceCellSegueAction : @"showDetail",
+//                                                          kSimpleDataSourceCellSegueAction : @"showDetail",
                                                           
                                          }];
         

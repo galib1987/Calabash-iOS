@@ -82,7 +82,6 @@
 //                                          },
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"GroundInfoCell",
-                                          kSimpleDataSourceCellSegueAction : @"showGround",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Ground Transportation",
                                                   @"detailLabel.text" : @"Requested",
@@ -90,7 +89,6 @@
                                           },
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"CrewInfoCell",
-                                          kSimpleDataSourceCellSegueAction : @"showCrew",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Your Crew",
                                                   @"detailLabel.text" : @"Captain Brad Hanshaw",
@@ -102,11 +100,9 @@
                                                   @"topLabel.text" : @"Passenger Manifest",
                                                   @"detailLabel.text" : @"2 Passengers",
                                                   },
-                                          kSimpleDataSourceCellSegueAction : @"showManifest",
                                           },
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"CateringInfoCell",
-                                          kSimpleDataSourceCellSegueAction : @"showCatering",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Catering",
                                                   @"detailLabel.text" : @"Requested",
@@ -114,7 +110,6 @@
                                           },
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"AdvisoryNotesInfoCell",
-                                          kSimpleDataSourceCellSegueAction : @"showAdvisoryNotes",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Advisory Notes",
                                                   @"detailLabel.text" : @"Please Read",
