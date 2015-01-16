@@ -5,7 +5,7 @@ PODS:
   - DateTools (1.4.3)
   - HockeySDK (3.6.1)
   - NCLFramework (2.0.1):
-    - NCLFramework/no-arc (= 2.0.1)
+    - NCLFramework/no-arc
   - NCLFramework/no-arc (2.0.1)
   - NSData+Base64 (1.0.0)
   - PDTSimpleCalendar (0.7.1)
@@ -38,4 +38,4 @@ SPEC CHECKSUMS:
   RSDayFlow: 06e3efb0115c1409c455e548570c5ec76d9c575b
   SZTextView: 8f1126696c6d54e5f0d672bbecf259ef65b04aeb
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.34.4
