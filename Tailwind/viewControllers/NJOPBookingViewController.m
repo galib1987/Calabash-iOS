@@ -62,9 +62,6 @@ NSDateFormatter *timeFormatter;
             ((UITextField*)inputChain[i]).delegate = self; // listen to textFieldDidBeginEditing
             [(UITextField*)inputChain[i] addTarget:self action:@selector(textFieldUpdated:) forControlEvents:UIControlEventEditingChanged]; // listen to changes
         }
-        if (i > 0) {
-            ((UITextField*)inputChain[i]).enabled = false;
-        }
     }
     
     self.aircraftInput.inputView = [self getAircraftPicker];
@@ -77,14 +74,39 @@ NSDateFormatter *timeFormatter;
     self.bookingComment.placeholderTextColor = [UIColor blackColor];
     [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
     
+    [self resetForm:self];
+    
 }
 
 - (void)textFieldUpdated:(UITextField *)textField {
     if (![textField.text isEmptyOrWhitespace] && textField.tag < [inputChain count]) {
         self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, textField.tag+2)];
-        ((UITextField *)[self.view viewWithTag:textField.tag+1]).enabled = true;
+        UITextField *nextField = (UITextField *)[self.view viewWithTag:textField.tag+1];
+        nextField.enabled = true;
+        if (nextField == self.numberOfPassengers) {
+            self.addButton.enabled = self.minusButton.enabled = true;
+            self.addButton.alpha = self.minusButton.alpha = 1;
+        }
         [self.keyboardControls updateButtonsAt:textField.tag];
     }
+}
+
+- (IBAction)resetForm:(id)sender {
+    
+    self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, 1)];
+    
+    for (int i=0; i<[inputChain count]; i++) {
+        if ([inputChain[i] conformsToProtocol:@protocol(NJOPTextFieldElement)]) {
+            UIView <NJOPTextFieldElement> *item = inputChain[i];
+            item.text = @"";
+            if (i > 0) {
+                item.enabled = false;
+            }
+        }
+    }
+    self.addButton.enabled = self.minusButton.enabled = false;
+    self.addButton.alpha = self.minusButton.alpha = 0.75;
+    
 }
 
 -(UIView*)getCalendar{
@@ -108,13 +130,13 @@ NSDateFormatter *timeFormatter;
 - (void)simpleCalendarViewController:(NJOPCalendarViewController *)controller didSelectDate:(NSDate *)date
 {
     NSLog(@"Date Selected : %@",date);
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"MMM d, yyyy"];
-        NSString *newDate = [dateFormatter stringFromDate:date];
-        NSLog(@"%@ %@", [date description],newDate);
-        self.flightDate.text = newDate;
-        [self.view endEditing:YES];
-        [self updatePassengerCount];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM d, yyyy"];
+    NSString *newDate = [dateFormatter stringFromDate:date];
+    NSLog(@"%@ %@", [date description],newDate);
+    self.flightDate.text = newDate;
+    [self.keyboardControls focusNext:self];
+    [self updatePassengerCount];
     
     
 }
