@@ -13,6 +13,9 @@
 		1E79C8911A65CAD0001B73B9 /* NJOPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79C8901A65CAD0001B73B9 /* NJOPTextField.m */; };
 		1E0D621E1A6875920076516F /* NJOPKeyboardControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D621D1A6875920076516F /* NJOPKeyboardControls.m */; };
 		1E0D62211A6969220076516F /* NJOPMultilineTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D62201A6969220076516F /* NJOPMultilineTextField.m */; };
+		1E0D62291A69AA630076516F /* NJOPBookingReviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D62281A69AA630076516F /* NJOPBookingReviewTableViewController.m */; };
+		1E0D622D1A69BABA0076516F /* NJOPPastFlightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D622B1A69BABA0076516F /* NJOPPastFlightTableCell.m */; };
+		1E0D622E1A69BABA0076516F /* NJOPPastFlightTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E0D622C1A69BABA0076516F /* NJOPPastFlightTableCell.xib */; };
 		1E1A592E1A48CDD70048A9C9 /* NJOPFullPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1A592D1A48CDD70048A9C9 /* NJOPFullPageViewController.m */; };
 		1E36BD1C1A4887D700221E7D /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E36BD1B1A4887D700221E7D /* Welcome.storyboard */; };
 		1E36BD221A48992700221E7D /* NJOPWelcomeContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E36BD211A48992700221E7D /* NJOPWelcomeContentController.m */; };
@@ -165,6 +168,11 @@
 
 /* Begin PBXFileReference section */
 		03307E6D414420F7D9C0477B /* Pods.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.production.xcconfig; path = "Pods/Target Support Files/Pods/Pods.production.xcconfig"; sourceTree = SOURCE_ROOT; };
+		1E0D62271A69AA630076516F /* NJOPBookingReviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPBookingReviewTableViewController.h; sourceTree = "<group>"; };
+		1E0D62281A69AA630076516F /* NJOPBookingReviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBookingReviewTableViewController.m; sourceTree = "<group>"; };
+		1E0D622A1A69BABA0076516F /* NJOPPastFlightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPPastFlightTableCell.h; path = elements/NJOPPastFlightTableCell.h; sourceTree = "<group>"; };
+		1E0D622B1A69BABA0076516F /* NJOPPastFlightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPPastFlightTableCell.m; path = elements/NJOPPastFlightTableCell.m; sourceTree = "<group>"; };
+		1E0D622C1A69BABA0076516F /* NJOPPastFlightTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJOPPastFlightTableCell.xib; path = elements/NJOPPastFlightTableCell.xib; sourceTree = "<group>"; };
 		1E1A592C1A48CDD70048A9C9 /* NJOPFullPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFullPageViewController.h; sourceTree = "<group>"; };
 		1E1A592D1A48CDD70048A9C9 /* NJOPFullPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFullPageViewController.m; sourceTree = "<group>"; };
 		1E36BD1B1A4887D700221E7D /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
@@ -687,6 +695,9 @@
 		A7A03E9D1A42E554004BE417 /* elements */ = {
 			isa = PBXGroup;
 			children = (
+				1E0D622A1A69BABA0076516F /* NJOPPastFlightTableCell.h */,
+				1E0D622B1A69BABA0076516F /* NJOPPastFlightTableCell.m */,
+				1E0D622C1A69BABA0076516F /* NJOPPastFlightTableCell.xib */,
 				1E0D621F1A6969220076516F /* NJOPMultilineTextField.h */,
 				1E0D62201A6969220076516F /* NJOPMultilineTextField.m */,
 				1E0D621C1A6875920076516F /* NJOPKeyboardControls.h */,
@@ -830,6 +841,8 @@
 				1E636E941A5F299C002B3E8C /* NJOPSelectAccountViewController.m */,
 				A7F2CA431A4DC9F400D78804 /* NJOPBookingViewController.h */,
 				A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */,
+				1E0D62271A69AA630076516F /* NJOPBookingReviewTableViewController.h */,
+				1E0D62281A69AA630076516F /* NJOPBookingReviewTableViewController.m */,
 				52B604271A683F7200C0E066 /* NJOPCalendarViewController.h */,
 				52B604281A683F7200C0E066 /* NJOPCalendarViewController.m */,
 			);
@@ -942,6 +955,7 @@
 				A77680911A4063D300B2E7CF /* Booking.storyboard in Resources */,
 				A77680BC1A40659D00B2E7CF /* Nimbus-Sans-D.otf in Resources */,
 				A77680931A4063E400B2E7CF /* Messages.storyboard in Resources */,
+				1E0D622E1A69BABA0076516F /* NJOPPastFlightTableCell.xib in Resources */,
 				A77680B01A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Light-Italic.otf in Resources */,
 				5255D2561A5D85F9002638F8 /* welcome-items.json in Resources */,
 				A77680B51A40659D00B2E7CF /* Nimbus-Sans-D-Black.otf in Resources */,
@@ -1125,6 +1139,7 @@
 				A780A7F11A5E6392000911A7 /* NJOPPassengeManifestViewController.m in Sources */,
 				1E636E8F1A5F1FC3002B3E8C /* NJOPAccountTableCell.m in Sources */,
 				A7380F681A5881AA008AB5F6 /* NJOPTripCompleteCell.m in Sources */,
+				1E0D62291A69AA630076516F /* NJOPBookingReviewTableViewController.m in Sources */,
 				A786D60F1A66351F006EDA24 /* NJOPHamburgerViewController.m in Sources */,
 				A7CD0B001A5C8DFC00D45224 /* (null) in Sources */,
 				A77680DF1A406C7D00B2E7CF /* NJOPValidator.m in Sources */,
@@ -1155,6 +1170,7 @@
 				A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */,
 				A77680F11A40729200B2E7CF /* NJOPIndividual.m in Sources */,
 				A762F97C1A6665D0002065EB /* NJOPCrewViewController.m in Sources */,
+				1E0D622D1A69BABA0076516F /* NJOPPastFlightTableCell.m in Sources */,
 				A7D6F4C01A64B74900B9E7B4 /* (null) in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPRequest.m in Sources */,
 				52B6042C1A68432600C0E066 /* NJOPCalendarViewCell.m in Sources */,

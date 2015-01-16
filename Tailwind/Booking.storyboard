@@ -34,6 +34,8 @@
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -110,6 +112,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khd-kD-qmm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-157" y="-291"/>
+        </scene>
+        <!--Booking Review Table View Controller-->
+        <scene sceneID="hM2-Hr-M50">
+            <objects>
+                <tableViewController storyboardIdentifier="BookingReview" id="QLS-NT-ueR" customClass="NJOPBookingReviewTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mex-En-C5e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="937"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addReturnCell" id="cr3-Rp-CSh" customClass="NJOPPastFlightTableCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cr3-Rp-CSh" id="5tl-OV-vkR">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCE-7v-m1e">
+                                            <rect key="frame" x="8" y="8" width="359" height="27"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPz-Tk-nFe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="331" height="27"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
+                                                    <state key="normal" title="Add a return flight">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM9-fv-1nL">
+                                                    <rect key="frame" x="332" y="0.0" width="27" height="27"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="vM9-fv-1nL" secondAttribute="height" multiplier="1:1" id="Yxj-je-Szl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
+                                                    <state key="normal" title="+">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="vM9-fv-1nL" firstAttribute="leading" secondItem="gPz-Tk-nFe" secondAttribute="trailing" constant="1" id="6c1-6e-cxk"/>
+                                                <constraint firstItem="gPz-Tk-nFe" firstAttribute="leading" secondItem="wCE-7v-m1e" secondAttribute="leading" id="7tG-b7-hCN"/>
+                                                <constraint firstAttribute="bottom" secondItem="vM9-fv-1nL" secondAttribute="bottom" id="A6K-kV-p8g"/>
+                                                <constraint firstItem="gPz-Tk-nFe" firstAttribute="top" secondItem="wCE-7v-m1e" secondAttribute="top" id="C77-b2-2ez"/>
+                                                <constraint firstAttribute="bottom" secondItem="gPz-Tk-nFe" secondAttribute="bottom" id="FLD-qh-XMl"/>
+                                                <constraint firstItem="vM9-fv-1nL" firstAttribute="top" secondItem="wCE-7v-m1e" secondAttribute="top" id="cqP-9X-P4x"/>
+                                                <constraint firstItem="vM9-fv-1nL" firstAttribute="width" relation="lessThanOrEqual" secondItem="gPz-Tk-nFe" secondAttribute="width" id="eht-L3-GX5"/>
+                                                <constraint firstAttribute="trailing" secondItem="vM9-fv-1nL" secondAttribute="trailing" id="yns-xN-dza"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="wCE-7v-m1e" firstAttribute="top" secondItem="5tl-OV-vkR" secondAttribute="topMargin" id="9ne-05-9s0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wCE-7v-m1e" secondAttribute="trailing" id="AQy-hQ-rup"/>
+                                        <constraint firstItem="wCE-7v-m1e" firstAttribute="leading" secondItem="5tl-OV-vkR" secondAttribute="leadingMargin" id="IbB-6d-5wL"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="wCE-7v-m1e" secondAttribute="bottom" id="kCe-qH-DcC"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QLS-NT-ueR" id="ACk-8x-vIt"/>
+                            <outlet property="delegate" destination="QLS-NT-ueR" id="WSk-GG-mEp"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6IK-yb-jjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="365.5" y="967.5"/>
         </scene>
         <!--Booking View Controller-->
         <scene sceneID="4eA-u6-8jq">
@@ -475,6 +550,9 @@
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="QLS-NT-ueR" kind="show" id="sRg-av-NCF"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
