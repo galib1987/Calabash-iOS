@@ -7,6 +7,7 @@
 //
 
 #import "NJOPGroundViewController.h"
+#import <DateTools/NSDate+DateTools.h>
 
 @interface NJOPGroundViewController ()
 
@@ -32,22 +33,38 @@
 
 - (void)loadDataSource {
     
-    NSDictionary *groundOrder = self.reservation.groundOrders[0];
+    NSDictionary *departureGroundOrder = _reservation.groundOrders[0];
+    NSDictionary *arrivalGroundOrder = _reservation.groundOrders[1];
     
     NSArray* sections = @[
                           @{
                               kSimpleDataSourceSectionCellsKey : @[
                                       @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPGroundCell",
+                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPGroundCellDeparture",
                                           kSimpleDataSourceCellKeypaths					: @{
-                                                  @"groundTypeLabel.text" : groundOrder[@"groundType"],
-                                                  @"autoSizeLabel.text" : groundOrder[@"autoSize"],
-                                                  @"pickupTimeLabel.text" : @"11:00",
-                                                  @"pickupDateLabel.text" : @"2:00",
-                                                  @"routeDescLabel.text" : groundOrder[@"routeDescriptions"][0]
-                                                  
+                                                  @"topLabel.text" : @"DEPARTURE",
+                                                  @"groundTypeLabel.text" : departureGroundOrder[@"groundType"],
+                                                  @"autoSizeLabel.text" : departureGroundOrder[@"autoSize"],
+                                                  @"carServiceLabel.text" : departureGroundOrder[@"vendorName"],
+                                                  @"pickupTimeLabel.text" : _reservation.departureTime,
+                                                  @"pickupDateLabel.text" : _reservation.departureDateString,
+                                                  @"routeDescLabel.text" : departureGroundOrder[@"routeDescriptions"][0],
+                                                  @"passengers.text" : _reservation.passengers[0][@"passengerName"],
                                                   }
                                           },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPGroundCellArrival",
+                                          kSimpleDataSourceCellKeypaths					: @{
+                                                  @"topLabel.text" : @"ARRIVAL",
+                                                  @"groundTypeLabel.text" : arrivalGroundOrder[@"groundType"],
+                                                  @"autoSizeLabel.text" : arrivalGroundOrder[@"autoSize"],
+                                                  @"carServiceLabel.text" : arrivalGroundOrder[@"vendorName"],
+                                                  @"pickupTimeLabel.text" : _reservation.arrivalTime,
+                                                  @"pickupDateLabel.text" : _reservation.arrivalDateString,
+                                                  @"routeDescLabel.text" : arrivalGroundOrder[@"routeDescriptions"][0],
+                                                  @"passengers.text" : _reservation.passengers[0][@"passengerName"],
+                                                  }
+                                          }
                                       ]
                               }
                           ];
