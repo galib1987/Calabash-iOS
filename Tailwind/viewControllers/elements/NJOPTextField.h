@@ -13,7 +13,12 @@ typedef enum {
     search
 } iconType;
 
-@interface NJOPTextField : UITextField
+@protocol NJOPTextFieldElement
+@property(nonatomic, getter=isEnabled) BOOL enabled;
+@property(nonatomic, copy) NSString *text;
+@end
+
+@interface NJOPTextField : UITextField <NJOPTextFieldElement>
 @property (nonatomic) BOOL hasDropDown;
 @property (nonatomic) BOOL hasSearchIcon;
 

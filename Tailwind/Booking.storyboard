@@ -54,19 +54,19 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGk-ID-vUS">
                                             <rect key="frame" x="8" y="4" width="584" height="192"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZN-2k-Ya4">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZN-2k-Ya4">
                                                     <rect key="frame" x="8" y="8" width="568" height="82"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="36"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Principal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ug5-0I-Jap">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Principal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ug5-0I-Jap">
                                                     <rect key="frame" x="8" y="140" width="65" height="18"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" misplaced="YES" text="Principal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk5-JF-yhD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Principal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk5-JF-yhD">
                                                     <rect key="frame" x="8" y="166" width="123" height="18"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -432,7 +432,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FD8-tf-gAt" id="pE5-hp-jxs">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFw-VJ-5Zi" customClass="SZTextView">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFw-VJ-5Zi" customClass="NJOPMultilineTextField">
                                                     <rect key="frame" x="12" y="8" width="350" height="94"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-LigIta" family="Nimbus Sans D" pointSize="18"/>
@@ -464,6 +464,9 @@
                                                         <color key="titleColor" red="0.27843137254901962" green="0.8901960784313725" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="resetForm:" destination="pWK-K7-4l2" eventType="touchUpInside" id="HmI-Hh-MUd"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbo-2V-KmT">
                                                     <rect key="frame" x="191" y="31" width="169" height="59"/>
@@ -501,6 +504,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1001"/>
                     <connections>
+                        <outlet property="addButton" destination="al4-Tz-avk" id="HSJ-wV-wv9"/>
                         <outlet property="aircraftInput" destination="AVD-WU-ES8" id="OpL-gq-o6Q"/>
                         <outlet property="arrivalTime" destination="k8I-Ap-M88" id="ibb-NK-vO0"/>
                         <outlet property="bookingComment" destination="nFw-VJ-5Zi" id="2hB-Zx-Ynq"/>
@@ -508,6 +512,7 @@
                         <outlet property="departureAirport" destination="JJj-Pl-ixz" id="32o-l5-ZUN"/>
                         <outlet property="destinationAirport" destination="cSY-at-BbI" id="ACu-mb-UyR"/>
                         <outlet property="flightDate" destination="YYH-n1-T0Y" id="lE9-Bk-ZKt"/>
+                        <outlet property="minusButton" destination="WYI-6x-zEo" id="J0j-50-f3o"/>
                         <outlet property="nextStep" destination="Bbo-2V-KmT" id="7vJ-ys-c0Q"/>
                         <outlet property="numberOfPassengers" destination="bdM-3r-fvl" id="YQd-EL-55i"/>
                         <outlet property="resetBooking" destination="xPy-d9-Ms3" id="ecF-A6-qWf"/>
@@ -597,20 +602,20 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxB-oH-nu8">
                                             <rect key="frame" x="0.0" y="2" width="600" height="123"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Las Vegas, NV, US" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPC-ru-rXy">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Las Vegas, NV, US" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPC-ru-rXy">
                                                     <rect key="frame" x="13" y="14" width="574" height="18"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="paE-He-qhw">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="paE-He-qhw">
                                                     <rect key="frame" x="0.0" y="43" width="600" height="1"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="zvW-cQ-Xo9"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-qn-FIS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-qn-FIS">
                                                     <rect key="frame" x="13" y="60" width="574" height="60"/>
                                                     <string key="text">KLAS
 McCarran International</string>

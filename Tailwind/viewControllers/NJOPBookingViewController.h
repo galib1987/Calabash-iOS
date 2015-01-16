@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "NJOPDatePickerView.h"
 #import "NJOPTextField.h"
-#import "SZTextView.h"
+#import "NJOPMultilineTextField.h"
+#import "NJOPCalendarViewController.h"
 
 @interface NJOPBookingViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate>
 
@@ -18,8 +19,11 @@
 @property (weak, nonatomic) IBOutlet NJOPTextField *flightDate;
 @property (weak, nonatomic) IBOutlet NJOPTextField *departTime;
 @property (weak, nonatomic) IBOutlet NJOPTextField *arrivalTime;
-@property (weak, nonatomic) IBOutlet NJOPTextField *aircraftInput;
-@property (weak, nonatomic) IBOutlet SZTextView *bookingComment;
+@property (weak, nonatomic) IBOutlet NJOPTextField *numberOfPassengers;
+@property (weak, nonatomic) IBOutlet NJOPMultilineTextField *bookingComment;
+
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (weak, nonatomic) IBOutlet UIButton *minusButton;
 
 - (IBAction)subtractPassenger:(UIButton *)sender;
 - (IBAction)addPassenger:(UIButton *)sender;
@@ -27,13 +31,13 @@
 @property (strong, nonatomic) IBOutlet UIButton *resetBooking;
 @property (strong, nonatomic) IBOutlet UIButton *nextStep;
 
+- (IBAction)resetForm:(id)sender;
+
 @property (strong, nonatomic) UIPickerView *aircraftPicker;
 - (UIPickerView*) getAircraftPicker;
 
 @property (strong, nonatomic) UIDatePicker *timePicker;
 - (UIDatePicker*) getTimePicker;
 - (void) updateTimeField:(UIDatePicker *)sender;
-
-- (UIView*)NJOPCalendarViewController: getCalendar;
 
 @end
