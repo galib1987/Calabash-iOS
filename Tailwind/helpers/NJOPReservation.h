@@ -44,6 +44,8 @@
 @property(nonatomic, copy) NSString* stopsText;
 @property (nonatomic, copy) NSString *rawData;
 
-@property (nonatomic, strong) NSString *passenger;// temporary for checking
+@property (nonatomic, copy) NSArray *passengers;
+@property (nonatomic, copy) NSArray *groundOrders;
+@property (nonatomic, copy) NSArray *cateringOrders;
 
 @end

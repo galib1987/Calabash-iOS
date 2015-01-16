@@ -13,6 +13,8 @@
 #import "NSDate+NJOP.h"
 #import "NSDateFormatter+Utility.h"
 #import "NCLHTTPClient.h"
+#import "NJOPSession.h"
+#import "NJOPBrief.h"
 
 #import "NCLInfoPresenter.h"
 
@@ -29,6 +31,9 @@
     NSString *jsonString = @"";
     NSError *error = nil;
     NSURLResponse *response = nil;
+    NJOPSession *session = [NJOPSession sharedInstance];
+    NJOPBrief *brief = [[NJOPBrief alloc] init];
+    
     if (reservationInfo != nil && [reservationInfo isKindOfClass:[NSDictionary class]]) {
         // look at the NSDictionary to see if we're fetching from URL
         apiURL = [reservationInfo objectForKey:@"apiURL"];
@@ -42,17 +47,19 @@
         data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     } else {
-	//NSData* data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"mobile-api-reservations-response" ofType:@"json"]];
+        //NSData* data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"mobile-api-reservations-response" ofType:@"json"]];
         data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"brief-test" ofType:@"json"]];
     }
-	NSDictionary* payload = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSDictionary* payload = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
-    //NSLog(@"DATA: %@",payload);
+    //    NSLog(@"DATA: %@",payload);
     NSArray *requests = [payload valueForKeyPath:@"requests"];
     NSDictionary *representation = nil;
     
     NSDictionary* individualJSON = [payload valueForKeyPath:@"individual"];
     NJOPIndividual *individual = [NJOPIndividual individualWithDictionaryRepresentation:individualJSON];
+    [session setIndividual:individual];
+    
     
     NSString *userInfo = [NSString stringWithFormat:@"%@ - %@ - User ID: %@",individual.firstName, individual.lastName, individual.individualId];
     
@@ -64,17 +71,14 @@
     } else {
         data = nil;
         payload = nil;
-        data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"brief-test" ofType:@"json"]];
-        payload = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        representation = [payload valueForKeyPath:@"requests"][0];
     }
     
-
-
-	NSString* jsonDateFormat = @"yyyy-MM-dd'T'HH:mm:ssZ";
-	NSDateFormatter* jsonDateFormatter = [NSDateFormatter new];
-	[jsonDateFormatter setDateFormat:jsonDateFormat];
-
+    
+    
+    NSString* jsonDateFormat = @"yyyy-MM-dd'T'HH:mm:ssZ";
+    NSDateFormatter* jsonDateFormatter = [NSDateFormatter new];
+    [jsonDateFormatter setDateFormat:jsonDateFormat];
+    
     // Need to return an NSArray of reservations
     NSMutableArray *results = [[NSMutableArray alloc] init];
     
@@ -121,7 +125,9 @@
             reservation.stops = @([representation[@"noOfFuelStops"] integerValue]);
             reservation.stopsText = [reservation.stops boolValue] ? @"" : @"Non Stop";
             reservation.rawData = jsonString;
-            reservation.passenger = representation[@"passengerManifest"][@"passengers"][0][@"passengerName"];
+            reservation.passengers = representation[@"passengerManifest"][@"passengers"];
+            reservation.cateringOrders = representation[@"cateringOrders"][0][@"cateringItems"];
+            reservation.groundOrders = representation[@"groundOrders"];
             
             
             [results addObject:reservation];
@@ -130,11 +136,11 @@
     }
     
     NSArray *reservations = [[NSArray alloc] initWithArray:results];
+    [session setReservations:reservations];
     
-    
-	if (completionHandler) {
-		completionHandler(reservations,nil);
-	}
+    if (completionHandler) {
+        completionHandler(reservations,nil);
+    }
 }
 
 @end
