@@ -24,13 +24,60 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor blackColor];
     
     NSArray* sections = @[
                           @{
                               kSimpleDataSourceSectionCellsKey : @[
                                       @{
-                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPPastFlightTableCell"
+                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPPastFlightTableCell",
+                                          kSimpleDataSourceCellKeypaths					: @{
+                                                  @"accountNameLabel.text" : @"Big Skies LLC",
+                                                  @"hoursUsedLabel.text" : @"6 Hours",
+                                                  @"hoursLeftLabel.text" : @"150 Hours",
+                                                  
+                                                  @"departureTimeLabel.text" : @"12:00 PM",
+                                                  @"departureAirportCodeLabel.text" : @"KTEB",
+                                                  @"departureLocationLabel.text" : @"Teterboro",
+                                                  
+                                                  @"flightDurationLabel.text" : @"2h 54m,\nNon Stop",
+                                                  
+                                                  @"arrivalTimeLabel.text" : @"2:45PM",
+                                                  @"arrivalAirportCodeLabel.text" : @"KAPF",
+                                                  @"arrivalLocationLabel.text" : @"Naples",
+                                                  
+                                                  @"passengerNumberLabel.text" : @"3 People",
+                                                  
+                                                  @"aircraftNameLabel.text" : @"Bombardier",
+                                                  @"upgradedLabel.hidden" : @false,
+                                                  
+                                                  @"specialInstructionsLabel.text" : @"Lorem ipsum dolor ito. Lorem ipsum dolor ito. Lorem ipsum dolor ito. Ito lorem ipsum dolor ito lorem dolor ito."
+                                                  }
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPPastFlightTableCell",
+                                          kSimpleDataSourceCellKeypaths					: @{
+                                                  @"accountNameLabel.text" : @"Alan",
+                                                  @"hoursUsedLabel.text" : @"24 Hours",
+                                                  @"hoursLeftLabel.text" : @"15 Hours",
+                                                  
+                                                  @"departureTimeLabel.text" : @"1:00 AM",
+                                                  @"departureAirportCodeLabel.text" : @"ABC",
+                                                  @"departureLocationLabel.text" : @"Reykjavik",
+                                                  
+                                                  @"flightDurationLabel.text" : @"36h 54m,\nNon Stop",
+                                                  
+                                                  @"arrivalTimeLabel.text" : @"2:45PM",
+                                                  @"arrivalAirportCodeLabel.text" : @"WWW",
+                                                  @"arrivalLocationLabel.text" : @"Zurich",
+                                                  
+                                                  @"passengerNumberLabel.text" : @"3 People",
+                                                  
+                                                  @"aircraftNameLabel.text" : @"Gerty",
+                                                  @"upgradedLabel.hidden" : @true,
+                                                  
+                                                  @"specialInstructionsLabel.text" : @"Lorem."
+                                                  }
                                           },
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"addReturnCell"
@@ -45,7 +92,9 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     // STUB not sure how to handle height
-    return 600;
+    if (indexPath.row < 2) {
+        return 800;
+    } else return 60;
 }
 
 -(void)registerReusableViews {
