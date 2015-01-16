@@ -8,6 +8,7 @@
 
 #import "NJOPBookingViewController.h"
 #import "NJOPKeyboardControls.h"
+#import "UIColor+NJOP.h"
 
 @interface NJOPBookingViewController () <PDTSimpleCalendarViewDelegate>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
@@ -16,7 +17,7 @@
 @property (strong, nonatomic) NJOPCalendarViewController *calendarViewController;
 @end
 
-int passengerCount = 0;
+int passengerCount = 1;
 int passengerMax = 15;
 int passengerMin = 1;
 
@@ -74,6 +75,9 @@ NSDateFormatter *timeFormatter;
     self.bookingComment.placeholderTextColor = [UIColor blackColor];
     [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
     
+    [self.nextStep setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.nextStep setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+    
     [self resetForm:self];
     
 }
@@ -83,10 +87,22 @@ NSDateFormatter *timeFormatter;
         self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, textField.tag+2)];
         UITextField *nextField = (UITextField *)[self.view viewWithTag:textField.tag+1];
         nextField.enabled = true;
+        
+        if (textField == self.departTime) {
+            // enable submit
+            self.nextStep.enabled = true;
+            self.nextStep.backgroundColor = [UIColor colorFromHexString:@"#b2f49e"];
+        }
+        
         if (nextField == self.numberOfPassengers) {
             self.addButton.enabled = self.minusButton.enabled = true;
             self.addButton.alpha = self.minusButton.alpha = 1;
+        } else if (nextField == self.departTime) {
+            // also enable arrival time selection
+            self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, textField.tag+3)];
+            self.arrivalTime.enabled = true;
         }
+        
         [self.keyboardControls updateButtonsAt:textField.tag];
     }
 }
@@ -104,8 +120,9 @@ NSDateFormatter *timeFormatter;
             }
         }
     }
-    self.addButton.enabled = self.minusButton.enabled = false;
+    self.addButton.enabled = self.minusButton.enabled = self.nextStep.enabled = false;
     self.addButton.alpha = self.minusButton.alpha = 0.75;
+    self.nextStep.backgroundColor = [UIColor colorFromHexString:@"#3a3838"];
     
 }
 
@@ -189,10 +206,15 @@ NSDateFormatter *timeFormatter;
 }
 
 -(void)updatePassengerCount{
+    self.addButton.enabled = self.minusButton.enabled = true;
     if(passengerCount<passengerMin)passengerCount = passengerMin;
-    if(passengerCount>passengerMax)passengerCount = passengerMax;
+    if(passengerCount>=passengerMax) {
+        passengerCount = passengerMax;
+        self.addButton.enabled = false;
+    }
     if(passengerCount==1){
         self.numberOfPassengers.text =  [NSString stringWithFormat:@"%i Passenger",passengerCount];
+        self.minusButton.enabled = false;
     }else{
         self.numberOfPassengers.text =  [NSString stringWithFormat:@"%i Passengers",passengerCount];
     }
@@ -282,16 +304,17 @@ NSDateFormatter *timeFormatter;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    // STUB
+    // STUB to return number of aircrafts
     return 5;
 }
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    // STUB
+    // STUB to return aircraft name of row
     return [NSString stringWithFormat:@"Aircraft%lu", (long)row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    // STUB to set text field to selected aircraft
     self.aircraftInput.text = [NSString stringWithFormat:@"Aircraft%lu", (long)row];
 }
 
@@ -311,9 +334,22 @@ NSDateFormatter *timeFormatter;
 
 
 - (void) updateTimeField:(UIDatePicker *)sender {
-    UITextField *textField = (UITextField *)[self.view viewWithTag:currentTextField];
+    NJOPTextField *textField = (NJOPTextField *)[self.view viewWithTag:currentTextField];
     [self.dateFormatter stringFromDate:sender.date];
     textField.text = [timeFormatter stringFromDate:[sender date]];
+    
+    [self timeUpdated:textField];
+}
+
+- (void) timeUpdated:(NJOPTextField *)sender {
+    // STUB to update other time field using estimated flight time
+    NSDate *dateFromString = [timeFormatter dateFromString:sender.text];
+    if (sender == self.arrivalTime) {
+        self.departTime.text = [timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:-60*60*2]];
+    } else if (sender == self.departTime) {
+        self.arrivalTime.text = [timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:60*60*2]];
+    }
+    
 }
 
 @end

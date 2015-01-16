@@ -25,6 +25,7 @@
 }
 
 -(void)loadDataSource {
+    // STUB to load accounts
     
     NSArray* sections = @[
                           @{
