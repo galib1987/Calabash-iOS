@@ -8,6 +8,7 @@
 
 #import "NJOPCateringViewController.h"
 #import "NJOPCateringCell.h"
+#import "NJOPMenuViewController.h"
 
 @interface NJOPCateringViewController ()
 
@@ -25,8 +26,8 @@
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"NJOPCateringCell",
                                           kSimpleDataSourceCellKeypaths					: @{
-                                                  @"foodItemsLabel.text" : _reservation.cateringOrders[0][@"ownerFacingDescription"],
-                                                  @"beverageItemsLabel.text" : _reservation.cateringOrders[1][@"ownerFacingDescription"]
+                                                  @"foodItemsLabel.text" : [NSString stringWithFormat:@"%@ %@", _reservation.cateringOrders[0][@"quantity"], _reservation.cateringOrders[0][@"ownerFacingDescription"]],
+                                                  @"beverageItemsLabel.text" : [NSString stringWithFormat:@"%@ %@",_reservation.cateringOrders[1][@"quantity"], _reservation.cateringOrders[1][@"ownerFacingDescription"]]
 
                                                   }
                                           },
@@ -44,6 +45,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)contactOSPressed:(id)sender {
+    
+}
 
 /*
 #pragma mark - Navigation
