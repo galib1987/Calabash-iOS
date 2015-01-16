@@ -10,4 +10,10 @@
 
 @interface NJOPGroundCell : NJOPTableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *groundTypeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *autoSizeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pickupTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pickupDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *routeDescLabel;
+
 @end

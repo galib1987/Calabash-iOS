@@ -6,8 +6,12 @@
 //  Copyright (c) 2015 NetJets. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SimpleDataSourceTableViewController.h"
+#import "NJOPReservation.h"
 
-@interface NJOPGroundViewController : UITableViewController
+@interface NJOPGroundViewController : SimpleDataSourceTableViewController
+
+@property (nonatomic) NJOPReservation *reservation;
+
 
 @end

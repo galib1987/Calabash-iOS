@@ -25,6 +25,8 @@
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"NJOPCateringCell",
                                           kSimpleDataSourceCellKeypaths					: @{
+                                                  @"foodItemsLabel.text" : _reservation.cateringOrders[0][@"ownerFacingDescription"],
+                                                  @"beverageItemsLabel.text" : _reservation.cateringOrders[1][@"ownerFacingDescription"]
 
                                                   }
                                           },

@@ -47,12 +47,12 @@
         data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     } else {
-	//NSData* data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"mobile-api-reservations-response" ofType:@"json"]];
+        //NSData* data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"mobile-api-reservations-response" ofType:@"json"]];
         data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"brief-test" ofType:@"json"]];
     }
-	NSDictionary* payload = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSDictionary* payload = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
-//    NSLog(@"DATA: %@",payload);
+    //    NSLog(@"DATA: %@",payload);
     NSArray *requests = [payload valueForKeyPath:@"requests"];
     NSDictionary *representation = nil;
     
@@ -73,12 +73,12 @@
         payload = nil;
     }
     
-
-
-	NSString* jsonDateFormat = @"yyyy-MM-dd'T'HH:mm:ssZ";
-	NSDateFormatter* jsonDateFormatter = [NSDateFormatter new];
-	[jsonDateFormatter setDateFormat:jsonDateFormat];
-
+    
+    
+    NSString* jsonDateFormat = @"yyyy-MM-dd'T'HH:mm:ssZ";
+    NSDateFormatter* jsonDateFormatter = [NSDateFormatter new];
+    [jsonDateFormatter setDateFormat:jsonDateFormat];
+    
     // Need to return an NSArray of reservations
     NSMutableArray *results = [[NSMutableArray alloc] init];
     
@@ -125,7 +125,9 @@
             reservation.stops = @([representation[@"noOfFuelStops"] integerValue]);
             reservation.stopsText = [reservation.stops boolValue] ? @"" : @"Non Stop";
             reservation.rawData = jsonString;
-            reservation.passenger = representation[@"passengerManifest"][@"passengers"][0][@"passengerName"];
+            reservation.passengers = representation[@"passengerManifest"][@"passengers"];
+            reservation.cateringOrders = representation[@"cateringOrders"][0][@"cateringItems"];
+            reservation.groundOrders = representation[@"groundOrders"];
             
             
             [results addObject:reservation];
@@ -136,9 +138,9 @@
     NSArray *reservations = [[NSArray alloc] initWithArray:results];
     [session setReservations:reservations];
     
-	if (completionHandler) {
-		completionHandler(reservations,nil);
-	}
+    if (completionHandler) {
+        completionHandler(reservations,nil);
+    }
 }
 
 @end

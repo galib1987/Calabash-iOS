@@ -9,6 +9,8 @@
 #import "NJOPFlightsDetailViewController.h"
 #import "NJOPClient+flights.h"
 #import "NJOPPassengeManifestViewController.h"
+#import "NJOPGroundViewController.h"
+#import "NJOPCateringViewController.h"
 
 @interface NJOPFlightsDetailViewController ()
 
@@ -131,7 +133,12 @@
     if ([segue.identifier isEqualToString:@"showManifest"]) {
         NJOPPassengeManifestViewController *vc = [segue destinationViewController];
         vc.reservation = self.reservation;
-        
+    } else if ([segue.identifier isEqualToString:@"showGround"]) {
+        NJOPGroundViewController *vc = [segue destinationViewController];
+        vc.reservation = self.reservation;
+    } else if ([segue.identifier isEqualToString:@"showCatering"]) {
+        NJOPCateringViewController *vc = [segue destinationViewController];
+        vc.reservation = self.reservation;
     }
 }
 

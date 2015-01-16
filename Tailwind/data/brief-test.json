@@ -1,279 +1,280 @@
 {
-    briefExecutionTime = 11381;
-    contracts =     (
-                     {
-                     actualRemainingHours = 250;
-                     aircraftType = GL6000S;
-                     aircraftTypeName = "Global 6000 Signature";
-                     cardNumber = "<null>";
-                     cardType = "<null>";
-                     cardTypeDescription = "<null>";
-                     contractId = 1409784;
-                     contractType = 8;
-                     contractTypeDescription = "NJ Owner";
-                     divisionId = 1412939;
-                     flightRule = "Part 135";
-                     peakDates =             (
-                                              {
-                                              description = "mkapral test";
-                                              eventDate = "2015-01-15";
-                                              },
-                                              {
-                                              description = "Saturday after Christmas";
-                                              eventDate = "2014-12-27";
-                                              },
-                                              {
-                                              description = "Friday after Christmas";
-                                              eventDate = "2014-12-26";
-                                              },
-                                              {
-                                              description = "Saturday before Christmas";
-                                              eventDate = "2014-12-20";
-                                              },
-                                              {
-                                              description = "Sunday after Thanksgiving";
-                                              eventDate = "2014-11-30";
-                                              },
-                                              {
-                                              description = "Wednesday before Thanksgiving";
-                                              eventDate = "2014-11-26";
-                                              },
-                                              {
-                                              description = "Test PPD";
-                                              eventDate = "2014-05-13";
-                                              },
-                                              {
-                                              description = "Presidents Day";
-                                              eventDate = "2014-02-17";
-                                              },
-                                              {
-                                              description = "Friday before Presidents Day";
-                                              eventDate = "2014-02-14";
-                                              },
-                                              {
-                                              description = "Thursday before Presidents Day";
-                                              eventDate = "2014-02-13";
-                                              }
-                                              );
-                     programId = 1000011;
-                     projectedRemainingHours = 250;
-                     tailNumber = N141QS;
-                     }
-                     );
-    individual =     {
-        accounts =         (
-                            {
-                            accountId = 1399122;
-                            accountName = "New Account for iOS";
-                            accountOSRTeamAbbr = OST01;
-                            accountOSRTeamEmail = "NetJetsTeam1@netjets.com";
-                            accountOSRTeamName = "Owner Services Team 01";
-                            accountOSRTeamPhone = 8881112233;
-                            accountSalesRep =                 {
-                            accountExecId = 2353814;
-                            accountExecName = "Amy Young";
-                            salesVpEmail = "3194@netjets.com";
-                            salesVpId = 3194;
-                            salesVpName = "Aaron Pinsker";
-                            };
-                            accountTypeDescription = Share;
-                            allowedToBookFlight = 1;
-                            allowedToFly = 1;
-                            isPrincipal = 0;
-                            }
-                            );
-        defaultAccountId = 1399122;
-        firstName = Charles;
-        individualId = 2526432;
-        isBookerOnAtLeastOneAccount = 1;
-        isFlyerOnAtLeastOneAccount = 1;
-        lastName = Lano;
-        middleName = "<null>";
-        telephones =         (
+    "briefExecutionTime":1432,
+    "tripRequestExecutionTime":111,
+    "totalRequestCount":1,
+    "individual":{
+        "individualId":2526432,
+        "firstName":"Charles",
+        "middleName":null,
+        "lastName":"Lano",
+        "isFlyerOnAtLeastOneAccount":true,
+        "isBookerOnAtLeastOneAccount":true,
+        "telephones":[
+                      {
+                      "telephoneId":2515992,
+                      "telephoneTypeId":12,
+                      "telephoneTypeDescription":"Boat",
+                      "countryCode":"1",
+                      "areaCode":"202",
+                      "telephoneNumber":"1234455"
+                      },
+                      {
+                      "telephoneId":2515993,
+                      "telephoneTypeId":10,
+                      "telephoneTypeDescription":"Mobile",
+                      "countryCode":"1",
+                      "areaCode":"202",
+                      "telephoneNumber":"9977886"
+                      }
+                      ],
+        "defaultAccountId":1399122,
+        "accounts":[
+                    {
+                    "accountId":1399122,
+                    "accountName":"New Account for iOS",
+                    "accountTypeDescription":"Share",
+                    "accountOSRTeamPhone":"8881112233",
+                    "accountOSRTeamEmail":"NetJetsTeam1@netjets.com",
+                    "accountOSRTeamName":"Owner Services Team 01",
+                    "accountOSRTeamAbbr":"OST01",
+                    "accountSalesRep":{
+                    "accountExecName":"Amy Young",
+                    "accountExecId":2353814,
+                    "salesVpName":"Aaron Pinsker",
+                    "salesVpId":3194,
+                    "salesVpEmail":"3194@netjets.com"
+                    },
+                    "isPrincipal":false,
+                    "allowedToFly":true,
+                    "allowedToBookFlight":true
+                    }
+                    ]
+    },
+    "contracts":[
+                 {
+                 "contractId":1409784,
+                 "contractType":8,
+                 "contractTypeDescription":"NJ Owner",
+                 "divisionId":1412939,
+                 "cardType":null,
+                 "cardTypeDescription":null,
+                 "cardNumber":null,
+                 "aircraftType":"GL6000S",
+                 "aircraftTypeName":"Global 6000 Signature",
+                 "tailNumber":"N141QS",
+                 "flightRule":"Part 135",
+                 "actualRemainingHours":250.0,
+                 "projectedRemainingHours":250.0,
+                 "programId":1000011,
+                 "peakDates":[
                               {
-                              areaCode = 202;
-                              countryCode = 1;
-                              telephoneId = 2515992;
-                              telephoneNumber = 1234455;
-                              telephoneTypeDescription = Boat;
-                              telephoneTypeId = 12;
+                              "description":"mkapral test",
+                              "eventDate":"2015-01-15"
                               },
                               {
-                              areaCode = 202;
-                              countryCode = 1;
-                              telephoneId = 2515993;
-                              telephoneNumber = 9977886;
-                              telephoneTypeDescription = Mobile;
-                              telephoneTypeId = 10;
+                              "description":"Saturday after Christmas",
+                              "eventDate":"2014-12-27"
+                              },
+                              {
+                              "description":"Friday after Christmas",
+                              "eventDate":"2014-12-26"
+                              },
+                              {
+                              "description":"Saturday before Christmas",
+                              "eventDate":"2014-12-20"
+                              },
+                              {
+                              "description":"Sunday after Thanksgiving",
+                              "eventDate":"2014-11-30"
+                              },
+                              {
+                              "description":"Wednesday before Thanksgiving",
+                              "eventDate":"2014-11-26"
+                              },
+                              {
+                              "description":"Test PPD",
+                              "eventDate":"2014-05-13"
+                              },
+                              {
+                              "description":"Presidents Day",
+                              "eventDate":"2014-02-17"
+                              },
+                              {
+                              "description":"Friday before Presidents Day",
+                              "eventDate":"2014-02-14"
+                              },
+                              {
+                              "description":"Thursday before Presidents Day",
+                              "eventDate":"2014-02-13"
                               }
-                              );
-    };
-    requests =     (
-                    {
-                    accountId = 1399122;
-                    accountName = "New Account for iOS";
-                    arrivalAirportCity = "LAS VEGAS";
-                    arrivalAirportCountry = USA;
-                    arrivalAirportId = KLAS;
-                    arrivalAirportLatitudeQuantity = 129888;
-                    arrivalAirportLongitudeQuantity = "-414548";
-                    arrivalAirportName = "MC CARRAN INTL";
-                    arrivalAirportState = NV;
-                    arrivalFboId = 3583;
-                    arrivalFboName = "Signature Flight Support";
-                    arrivalTimeZoneFormat = PDT;
-                    arrivalTimeZoneGMTOffset = "-7";
-                    arrivalTimeZoneId = "America/Los_Angeles";
-                    cateringOrders =             (
-                                                  {
-                                                  cateringItems =                     (
-                                                                                       {
-                                                                                       categories =                             (
-                                                                                                                                 {
-                                                                                                                                 category = "Cold entrees";
-                                                                                                                                 categoryParent = "Lunch & dinner";
-                                                                                                                                 },
-                                                                                                                                 {
-                                                                                                                                 category = Sandwiches;
-                                                                                                                                 categoryParent = "Lunch & dinner";
-                                                                                                                                 },
-                                                                                                                                 {
-                                                                                                                                 category = "Lunch/Dinner";
-                                                                                                                                 categoryParent = "Signature Selections";
-                                                                                                                                 },
-                                                                                                                                 {
-                                                                                                                                 category = All;
-                                                                                                                                 categoryParent = "Signature Selections";
-                                                                                                                                 }
-                                                                                                                                 );
-                                                                                       ownerFacingDescription = "Signature Selection:   Tenderloin Sliders";
-                                                                                       packaging = Tray;
-                                                                                       preparationNotes = "Tenderloin on mini rolls, with lettuce, tomato, and red onion, served with horseradish cream sauce";
-                                                                                       quantity = 1;
-                                                                                       },
-                                                                                       {
-                                                                                       categories =                             (
-                                                                                                                                 {
-                                                                                                                                 category = Vodka;
-                                                                                                                                 categoryParent = Liquor;
-                                                                                                                                 }
-                                                                                                                                 );
-                                                                                       ownerFacingDescription = "Grey Goose Vodka";
-                                                                                       packaging = Bottle;
-                                                                                       preparationNotes = "";
-                                                                                       quantity = 2;
-                                                                                       }
-                                                                                       );
-                                                  cateringPhone = 6142447217;
-                                                  cateringVendor = Sodexo;
-                                                  currentState = Requested;
-                                                  isDeparture = 1;
-                                                  isNCIORder = 0;
-                                                  isPrimaryOrder = 1;
-                                                  requestedCateringID = 5244926;
-                                                  }
-                                                  );
-                    crew =             (
-                    );
-                    departureAirportCity = COLUMBUS;
-                    departureAirportCountry = USA;
-                    departureAirportId = KCMH;
-                    departureAirportLatitudeQuantity = 143989;
-                    departureAirportLongitudeQuantity = "-298411";
-                    departureAirportName = "PORT COLUMBUS INTL";
-                    departureAirportState = OH;
-                    departureFboId = 5677;
-                    departureFboName = NetJets;
-                    departureTimeZoneFormat = EDT;
-                    departureTimeZoneGMTOffset = "-4";
-                    departureTimeZoneId = "America/New_York";
-                    estimatedFlightDistanceInKM = "2849.2";
-                    estimatedFlightTime = "3.6";
-                    estimatedTripTime = "3.8";
-                    etaGmt = "2015-04-13T19:48:00Z";
-                    etaLocal = "2015-04-13T12:48:00-0700";
-                    etdGmt = "2015-04-13T16:00:00Z";
-                    etdLocal = "2015-04-13T12:00:00-0400";
-                    flightRuleDescription = "Part 135";
-                    flightRuleId = 2;
-                    flightTypeDescription = NetJets;
-                    flightTypeId = 7;
-                    flownStatus = 1;
-                    flownStatusDescription = "Not Flown";
-                    groundOrders =             (
-                                                {
-                                                adjustToFlight = 1;
-                                                autoSize = "Mini Coach (36-50)";
-                                                autoSizeId = 22;
-                                                billingNumber = 8007;
-                                                billingTypeCode = 1;
-                                                currentState = Requested;
-                                                groundType = Chauffeured;
-                                                isDeparture = 1;
-                                                leadRiderContactName = "Lano, Charles";
-                                                orderNumber = 1606980;
-                                                routeDescriptions =                     (
-                                                                                         "456 Party Blvd",
-                                                                                         "PORT COLUMBUS INTL, (KCMH), NetJets"
-                                                                                         );
-                                                vendorName = CLS;
-                                                vendorPhone = 8008063480;
-                                                },
-                                                {
-                                                adjustToFlight = 1;
-                                                autoSize = "Mini Coach (36-50)";
-                                                autoSizeId = 22;
-                                                billingNumber = 8007;
-                                                billingTypeCode = 1;
-                                                currentState = Requested;
-                                                groundType = Chauffeured;
-                                                isDeparture = 0;
-                                                leadRiderContactName = "Lano, Charles";
-                                                orderNumber = 1606981;
-                                                routeDescriptions =                     (
-                                                                                         "MC CARRAN INTL, (KLAS), Signature Flight Support",
-                                                                                         "123 Party Central"
-                                                                                         );
-                                                vendorName = CLS;
-                                                vendorPhone = 8008063480;
-                                                }
-                                                );
-                    guaranteedAircraftSize = L;
-                    guaranteedAircraftType = GL6000S;
-                    guaranteedAircraftTypeDescription = "Global 6000 Signature";
-                    isEtdEnteredByUser = 1;
-                    isInternational = 0;
-                    legIdFirst = 7886664;
-                    legIdLast = 7886664;
-                    noOfFuelStops = 0;
-                    passengerManifest =             {
-                    passengerManifestId = 2798224;
-                    passengers =                 (
-                                                  {
-                                                  individualId = 2526432;
-                                                  isLeadPax = 1;
-                                                  passengerId = 9860691;
-                                                  passengerName = "Charles Lano";
-                                                  petId = "<null>";
-                                                  petName = "<null>";
-                                                  priority = 1;
-                                                  unknownPassengerId = "<null>";
-                                                  }
-                                                  );
-                    };
-                    programId = 1000011;
-                    programName = "NetJets U.S.";
-                    requestId = 7775221;
-                    requestStatus = D;
-                    requestStatusDescription = Draft;
-                    requestedAircraftSize = L;
-                    requestedAircraftType = GL6000S;
-                    requestedAircraftTypeDescription = "Global 6000 Signature";
-                    requestedTaxiArrival = 0;
-                    requestedTaxiDeparture = 0;
-                    reservationId = 6414089;
-                    }
-                    );
-    totalRequestCount = 1;
-    tripRequestExecutionTime = 168;
+                              ]
+                 }
+                 ],
+    "requests":[
+                {
+                "requestId":7775221,
+                "reservationId":6414089,
+                "accountId":1399122,
+                "accountName":"New Account for iOS",
+                "requestStatus":"D",
+                "requestStatusDescription":"Draft",
+                "departureFboId":5677,
+                "departureFboName":"NetJets",
+                "arrivalFboId":3583,
+                "arrivalFboName":"Signature Flight Support",
+                "requestedAircraftType":"GL6000S",
+                "requestedAircraftTypeDescription":"Global 6000 Signature",
+                "requestedAircraftSize":"L",
+                "guaranteedAircraftType":"GL6000S",
+                "guaranteedAircraftTypeDescription":"Global 6000 Signature",
+                "guaranteedAircraftSize":"L",
+                "programId":1000011,
+                "programName":"NetJets U.S.",
+                "flightTypeId":7,
+                "flightTypeDescription":"NetJets",
+                "flightRuleId":2,
+                "flightRuleDescription":"Part 135",
+                "flownStatus":1,
+                "flownStatusDescription":"Not Flown",
+                "isEtdEnteredByUser":true,
+                "etdGmt":"2015-04-13T16:00:00Z",
+                "etdLocal":"2015-04-13T12:00:00-0400",
+                "departureTimeZoneId":"America/New_York",
+                "departureTimeZoneFormat":"EDT",
+                "departureTimeZoneGMTOffset":-4.0,
+                "departureAirportId":"KCMH",
+                "departureAirportName":"PORT COLUMBUS INTL",
+                "departureAirportCity":"COLUMBUS",
+                "departureAirportState":"OH",
+                "departureAirportCountry":"USA",
+                "departureAirportLatitudeQuantity":143989,
+                "departureAirportLongitudeQuantity":-298411,
+                "etaGmt":"2015-04-13T19:48:00Z",
+                "etaLocal":"2015-04-13T12:48:00-0700",
+                "arrivalTimeZoneId":"America/Los_Angeles",
+                "arrivalTimeZoneFormat":"PDT",
+                "arrivalTimeZoneGMTOffset":-7.0,
+                "arrivalAirportId":"KLAS",
+                "arrivalAirportName":"MC CARRAN INTL",
+                "arrivalAirportCity":"LAS VEGAS",
+                "arrivalAirportState":"NV",
+                "arrivalAirportCountry":"USA",
+                "arrivalAirportLatitudeQuantity":129888,
+                "arrivalAirportLongitudeQuantity":-414548,
+                "requestedTaxiDeparture":false,
+                "requestedTaxiArrival":false,
+                "isInternational":false,
+                "noOfFuelStops":0,
+                "estimatedFlightTime":3.6,
+                "estimatedTripTime":3.8,
+                "estimatedFlightDistanceInKM":2849.2,
+                "crew":[
+                
+                ],
+                "legIdFirst":7886664,
+                "legIdLast":7886664,
+                "passengerManifest":{
+                "passengerManifestId":2798224,
+                "passengers":[
+                              {
+                              "passengerId":9860691,
+                              "priority":1,
+                              "unknownPassengerId":null,
+                              "individualId":2526432,
+                              "isLeadPax":true,
+                              "passengerName":"Charles Lano",
+                              "petId":null,
+                              "petName":null
+                              }
+                              ]
+                },
+                "groundOrders":[
+                                {
+                                "orderNumber":1606980,
+                                "groundType":"Chauffeured",
+                                "vendorName":"CLS",
+                                "vendorPhone":"8008063480",
+                                "currentState":"Requested",
+                                "isDeparture":true,
+                                "autoSizeId":22,
+                                "autoSize":"Mini Coach (36-50)",
+                                "leadRiderContactName":"Lano, Charles",
+                                "billingTypeCode":1,
+                                "billingNumber":"8007",
+                                "adjustToFlight":true,
+                                "routeDescriptions":[
+                                                     "456 Party Blvd",
+                                                     "PORT COLUMBUS INTL, (KCMH), NetJets"
+                                                     ]
+                                },
+                                {
+                                "orderNumber":1606981,
+                                "groundType":"Chauffeured",
+                                "vendorName":"CLS",
+                                "vendorPhone":"8008063480",
+                                "currentState":"Requested",
+                                "isDeparture":false,
+                                "autoSizeId":22,
+                                "autoSize":"Mini Coach (36-50)",
+                                "leadRiderContactName":"Lano, Charles",
+                                "billingTypeCode":1,
+                                "billingNumber":"8007",
+                                "adjustToFlight":true,
+                                "routeDescriptions":[
+                                                     "MC CARRAN INTL, (KLAS), Signature Flight Support",
+                                                     "123 Party Central"
+                                                     ]
+                                }
+                                ],
+                "cateringOrders":[
+                                  {
+                                  "requestedCateringID":5244926,
+                                  "currentState":"Requested",
+                                  "isDeparture":true,
+                                  "cateringVendor":"Sodexo",
+                                  "cateringPhone":"6142447217",
+                                  "isPrimaryOrder":true,
+                                  "isNCIORder":false,
+                                  "cateringItems":[
+                                                   {
+                                                   "ownerFacingDescription":"Signature Selection:   Tenderloin Sliders",
+                                                   "quantity":1,
+                                                   "preparationNotes":"Tenderloin on mini rolls, with lettuce, tomato, and red onion, served with horseradish cream sauce",
+                                                   "packaging":"Tray",
+                                                   "categories":[
+                                                                 {
+                                                                 "category":"Cold entrees",
+                                                                 "categoryParent":"Lunch & dinner"
+                                                                 },
+                                                                 {
+                                                                 "category":"Lunch/Dinner",
+                                                                 "categoryParent":"Signature Selections"
+                                                                 },
+                                                                 {
+                                                                 "category":"Sandwiches",
+                                                                 "categoryParent":"Lunch & dinner"
+                                                                 },
+                                                                 {
+                                                                 "category":"All",
+                                                                 "categoryParent":"Signature Selections"
+                                                                 }
+                                                                 ]
+                                                   },
+                                                   {
+                                                   "ownerFacingDescription":"Grey Goose Vodka",
+                                                   "quantity":2,
+                                                   "preparationNotes":"",
+                                                   "packaging":"Bottle",
+                                                   "categories":[
+                                                                 {
+                                                                 "category":"Vodka",
+                                                                 "categoryParent":"Liquor"
+                                                                 }
+                                                                 ]
+                                                   }
+                                                   ]
+                                  }
+                                  ]
+                }
+                ]
 }

@@ -17,13 +17,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSMutableString *passengerManifestString = [[NSMutableString alloc] init];
+    
+    for (NSDictionary *passengerDict in self.reservation.passengers) {
+        NSString *passengerName = [NSString stringWithFormat:@"%@ \n", passengerDict[@"passengerName"]];
+        passengerManifestString = passengerName;
+        
+    }
+    
     NSArray* sections = @[
                           @{
                               kSimpleDataSourceSectionCellsKey : @[
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"NJOPPassengerManifestCell",
                                           kSimpleDataSourceCellKeypaths					: @{
-                                                  @"manifestTextView.text" : _reservation.passenger,
+                                                  @"manifestTextView.text" : passengerManifestString,
                                                   
                                                   }
                                           },
