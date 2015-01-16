@@ -57,8 +57,18 @@
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
         </mutableArray>
         <mutableArray key="Nimbus-Sans-D-Light.otf">
+            <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
@@ -1429,7 +1439,7 @@ Teterboro-Naples</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPGroundCell" rowHeight="557" id="DGG-GF-cth" customClass="NJOPGroundCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPGroundCellDeparture" rowHeight="557" id="DGG-GF-cth" customClass="NJOPGroundCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DGG-GF-cth" id="0eK-su-4Ok">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1499,9 +1509,8 @@ Brooklyn, NY 11238</string>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-U8-NbN">
                                                     <rect key="frame" x="8" y="400" width="359" height="149"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-pin" translatesAutoresizingMaskIntoConstraints="NO" id="9H6-jY-FMg">
@@ -1560,10 +1569,153 @@ Brooklyn, NY 11238</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="autoSizeLabel" destination="zAe-bz-Tge" id="1mv-MN-DTA"/>
+                                    <outlet property="carServiceLabel" destination="76t-La-sSL" id="t5I-cA-Axw"/>
                                     <outlet property="groundTypeLabel" destination="Gxv-H9-onl" id="v9b-QT-C45"/>
+                                    <outlet property="passengers" destination="EZL-U8-NbN" id="rvp-kY-eOB"/>
                                     <outlet property="pickupDateLabel" destination="rul-sF-DUc" id="OeN-6j-mq1"/>
                                     <outlet property="pickupTimeLabel" destination="366-UT-QqB" id="rBY-EA-0eM"/>
                                     <outlet property="routeDescLabel" destination="tGL-4C-2oT" id="lkc-Cf-ibb"/>
+                                    <outlet property="topLabel" destination="FZC-GN-8YO" id="Mrb-aq-9dL"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPGroundCellArrival" rowHeight="557" id="TZE-A0-PQr" customClass="NJOPGroundCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TZE-A0-PQr" id="Y80-Ni-Gwr">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KT-ii-UZZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="557"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEPARTURE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEy-Db-B4U">
+                                                    <rect key="frame" x="8" y="20" width="112.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="ume-ze-Hzh">
+                                                    <rect key="frame" x="8" y="52" width="359" height="13"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle #1 - Chauffeured" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZA-gD-VY0">
+                                                    <rect key="frame" x="8" y="79" width="188.5" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 passenger sedan (4+ driver)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ9-Im-xaT">
+                                                    <rect key="frame" x="8" y="104" width="211" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLS car service inc." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSt-Za-9PE">
+                                                    <rect key="frame" x="8" y="129" width="140.5" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Up" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eob-h6-8bP">
+                                                    <rect key="frame" x="8" y="169" width="68.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:30AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uL-mB-rVu">
+                                                    <rect key="frame" x="8" y="197" width="166" height="40"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="40"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69O-Pm-ffg">
+                                                    <rect key="frame" x="8" y="300" width="197.5" height="34"/>
+                                                    <string key="text">475 Washington Ave Apt 3A
+Brooklyn, NY 11238</string>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passengers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glj-6G-HuW">
+                                                    <rect key="frame" x="8" y="375" width="89" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday Aug 30, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iik-US-A0U">
+                                                    <rect key="frame" x="8" y="245" width="204" height="20"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXr-JT-rzu">
+                                                    <rect key="frame" x="8" y="400" width="359" height="149"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-pin" translatesAutoresizingMaskIntoConstraints="NO" id="1eV-Uc-4JP">
+                                                    <rect key="frame" x="358" y="309.5" width="9" height="15"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="5uL-mB-rVu" firstAttribute="leading" secondItem="9KT-ii-UZZ" secondAttribute="leading" constant="8" id="01N-gm-nJ5"/>
+                                                <constraint firstItem="NJ9-Im-xaT" firstAttribute="leading" secondItem="9KT-ii-UZZ" secondAttribute="leading" constant="8" id="3hU-Lr-V3G"/>
+                                                <constraint firstAttribute="bottom" secondItem="mXr-JT-rzu" secondAttribute="bottom" constant="8" id="5PD-EH-cDk"/>
+                                                <constraint firstAttribute="trailing" secondItem="mXr-JT-rzu" secondAttribute="trailing" constant="8" id="6Cu-ZG-VrB"/>
+                                                <constraint firstAttribute="trailing" secondItem="ume-ze-Hzh" secondAttribute="trailing" constant="20" symbolic="YES" id="6hh-PU-lci"/>
+                                                <constraint firstItem="eob-h6-8bP" firstAttribute="top" secondItem="iSt-Za-9PE" secondAttribute="bottom" constant="23" id="Ayg-PQ-EIO"/>
+                                                <constraint firstItem="iSt-Za-9PE" firstAttribute="leading" secondItem="9KT-ii-UZZ" secondAttribute="leading" constant="8" id="CML-iK-kG7"/>
+                                                <constraint firstItem="mXr-JT-rzu" firstAttribute="top" secondItem="glj-6G-HuW" secondAttribute="bottom" constant="8" id="Cno-H9-eDh"/>
+                                                <constraint firstAttribute="trailing" secondItem="ume-ze-Hzh" secondAttribute="trailing" constant="8" id="DBI-IN-dcI"/>
+                                                <constraint firstItem="glj-6G-HuW" firstAttribute="leading" secondItem="9KT-ii-UZZ" secondAttribute="leading" constant="8" id="FJ9-BL-jQZ"/>
+                                                <constraint firstItem="Iik-US-A0U" firstAttribute="top" secondItem="eob-h6-8bP" secondAttribute="bottom" constant="8" symbolic="YES" id="FhL-0d-fdY"/>
+                                                <constraint firstItem="EEy-Db-B4U" firstAttribute="top" secondItem="9KT-ii-UZZ" secondAttribute="top" constant="20" id="I8l-tU-Zc7"/>
+                                                <constraint firstItem="XZA-gD-VY0" firstAttribute="top" secondItem="ume-ze-Hzh" secondAttribute="bottom" constant="8" symbolic="YES" id="JUR-cQ-VYU"/>
+                                                <constraint firstItem="ume-ze-Hzh" firstAttribute="leading" secondItem="9KT-ii-UZZ" secondAttribute="leading" constant="8" id="Jj8-yx-VWX"/>
+                                                <constraint firstItem="69O-Pm-ffg" firstAttribute="top" secondItem="Iik-US-A0U" secondAttribute="bottom" constant="35" id="NDH-lJ-0SC"/>
+                                                <constraint firstItem="glj-6G-HuW" firstAttribute="top" secondItem="69O-Pm-ffg" secondAttribute="bottom" constant="41" id="PxK-ch-rgb"/>
+                                                <constraint firstItem="Iik-US-A0U" firstAttribute="leading" secondItem="9KT-ii-UZZ" secondAttribute="leading" constant="8" id="Rfp-Gk-gpb"/>
+                                                <constraint firstItem="ume-ze-Hzh" firstAttribute="top" secondItem="EEy-Db-B4U" secondAttribute="bottom" constant="12" id="XT8-9Y-L6J"/>
+                                                <constraint firstItem="mXr-JT-rzu" firstAttribute="leading" secondItem="9KT-ii-UZZ" secondAttribute="leading" constant="8" id="Xg3-8A-2mb"/>
+                                                <constraint firstItem="Iik-US-A0U" firstAttribute="top" secondItem="5uL-mB-rVu" secondAttribute="bottom" constant="8" id="aDF-Sl-8T6"/>
+                                                <constraint firstItem="XZA-gD-VY0" firstAttribute="top" secondItem="ume-ze-Hzh" secondAttribute="bottom" constant="14" id="aKN-wq-0Od"/>
+                                                <constraint firstItem="eob-h6-8bP" firstAttribute="leading" secondItem="9KT-ii-UZZ" secondAttribute="leading" constant="8" id="apY-RK-dl9"/>
+                                                <constraint firstItem="69O-Pm-ffg" firstAttribute="centerY" secondItem="1eV-Uc-4JP" secondAttribute="centerY" id="dnI-Up-lPi"/>
+                                                <constraint firstItem="NJ9-Im-xaT" firstAttribute="top" secondItem="XZA-gD-VY0" secondAttribute="bottom" constant="8" id="ggt-L2-QFD"/>
+                                                <constraint firstItem="iSt-Za-9PE" firstAttribute="top" secondItem="NJ9-Im-xaT" secondAttribute="bottom" constant="8" id="mN0-dA-uAH"/>
+                                                <constraint firstAttribute="trailing" secondItem="1eV-Uc-4JP" secondAttribute="trailing" constant="8" id="okQ-MQ-qvL"/>
+                                                <constraint firstItem="5uL-mB-rVu" firstAttribute="top" secondItem="eob-h6-8bP" secondAttribute="bottom" constant="8" id="qDR-uT-Gpo"/>
+                                                <constraint firstItem="EEy-Db-B4U" firstAttribute="leading" secondItem="9KT-ii-UZZ" secondAttribute="leading" constant="8" id="rG3-Gm-NRn"/>
+                                                <constraint firstItem="XZA-gD-VY0" firstAttribute="leading" secondItem="9KT-ii-UZZ" secondAttribute="leading" constant="8" id="vz3-HK-k9b"/>
+                                                <constraint firstItem="69O-Pm-ffg" firstAttribute="leading" secondItem="9KT-ii-UZZ" secondAttribute="leading" constant="8" id="zIf-XR-cdt"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="6hh-PU-lci"/>
+                                                    <exclude reference="JUR-cQ-VYU"/>
+                                                    <exclude reference="FhL-0d-fdY"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9KT-ii-UZZ" firstAttribute="leading" secondItem="Y80-Ni-Gwr" secondAttribute="leading" id="2Xy-io-NlM"/>
+                                        <constraint firstAttribute="trailing" secondItem="9KT-ii-UZZ" secondAttribute="trailing" id="3WH-de-oqS"/>
+                                        <constraint firstItem="9KT-ii-UZZ" firstAttribute="top" secondItem="Y80-Ni-Gwr" secondAttribute="top" id="Xiv-jn-DC3"/>
+                                        <constraint firstAttribute="bottom" secondItem="9KT-ii-UZZ" secondAttribute="bottom" id="abW-Ub-W0j"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="autoSizeLabel" destination="NJ9-Im-xaT" id="Dur-Da-VeT"/>
+                                    <outlet property="carServiceLabel" destination="iSt-Za-9PE" id="Rxg-pQ-LXb"/>
+                                    <outlet property="groundTypeLabel" destination="XZA-gD-VY0" id="f0E-mU-0hl"/>
+                                    <outlet property="passengers" destination="mXr-JT-rzu" id="hoe-eL-wYR"/>
+                                    <outlet property="pickupDateLabel" destination="Iik-US-A0U" id="RAh-n8-Gzd"/>
+                                    <outlet property="pickupTimeLabel" destination="5uL-mB-rVu" id="zLz-0k-zpH"/>
+                                    <outlet property="routeDescLabel" destination="69O-Pm-ffg" id="w31-42-hGl"/>
+                                    <outlet property="topLabel" destination="EEy-Db-B4U" id="YSo-o4-nJL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

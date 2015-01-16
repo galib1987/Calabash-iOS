@@ -46,6 +46,8 @@
     NSDateFormatter *departureFormatter = [[NSDateFormatter alloc] init];
     [departureFormatter setDateFormat:@"MMMM dd, YYYY"];
     
+    NSInteger *passengerCount = _reservation.passengers.count;
+    
     NSArray* sections = @[
                           @{
                               kSimpleDataSourceSectionCellsKey : @[
@@ -98,7 +100,7 @@
                                           kSimpleDataSourceCellIdentifierKey			: @"PassengerManifestInfoCell",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"topLabel.text" : @"Passenger Manifest",
-                                                  @"detailLabel.text" : @"2 Passengers",
+                                                  @"detailLabel.text" : passengerCount <= 1? [NSString stringWithFormat:@"%d passenger", passengerCount] : [NSString stringWithFormat:@"%d passengers", passengerCount],
                                                   },
                                           },
                                       @{
