@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NJOPDatePickerView.h"
 #import "NJOPTextField.h"
 #import "NJOPMultilineTextField.h"
 #import "NJOPCalendarViewController.h"
 
 @interface NJOPBookingViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet NJOPTextField *aircraftInput;
 @property (weak, nonatomic) IBOutlet NJOPTextField *departureAirport;
 @property (weak, nonatomic) IBOutlet NJOPTextField *destinationAirport;
 @property (weak, nonatomic) IBOutlet NJOPTextField *flightDate;

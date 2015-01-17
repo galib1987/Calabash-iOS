@@ -12,14 +12,16 @@
 
 @interface NJOPBookingViewController () <PDTSimpleCalendarViewDelegate>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
-@property (strong, nonatomic) NJOPDatePickerView *datePickerView;
-@property (strong, nonatomic) APLKeyboardControls *keyboardControls;
+@property (strong, nonatomic) NJOPKeyboardControls *keyboardControls;
+@property (nonatomic, strong) NSArray *customDates;
+@property (strong, nonatomic) NJOPCalendarViewController *calendarViewController;
 @end
 
 int passengerCount = 1;
 int passengerMax = 15;
 int passengerMin = 1;
 
+NSArray* inputChain;
 NSInteger currentTextField;
 NSDateFormatter *timeFormatter;
 
@@ -65,21 +67,10 @@ NSDateFormatter *timeFormatter;
     
     self.aircraftInput.inputView = [self getAircraftPicker];
     
-    self.departureAirport.delegate = self;
-    self.destinationAirport.delegate = self;
-    self.departTime.delegate = self;
-    self.arrivalTime.delegate = self;
-    
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
-    // Tag fields to identify them
-    self.departTime.tag = 4;
-    self.arrivalTime.tag = 5;
     
-    self.datePickerView = [[NJOPDatePickerView alloc] init];
-    self.datePickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.datePickerView.delegate = self;
-    self.flightDate.inputView = self.datePickerView;
+    self.flightDate.inputView = [self getCalendar];
     
     self.bookingComment.placeholderTextColor = [UIColor blackColor];
     [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
@@ -203,34 +194,6 @@ NSDateFormatter *timeFormatter;
     }
     currentTextField = textField.tag;
 }
-
-// Returns YES if the date should be highlighted or NO if it should not.
-- (BOOL)datePickerView:(NJOPDatePickerView *)view shouldHighlightDate:(NSDate *)date
-{
-    return YES;
-}
-
-// Returns YES if the date should be selected or NO if it should not.
-- (BOOL)datePickerView:(NJOPDatePickerView *)view shouldSelectDate:(NSDate *)date
-{
-    return YES;
-}
-
-// Prints out the selected date.
-- (void)datePickerView:(NJOPDatePickerView *)view didSelectDate:(NSDate *)date
-{
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MMM d, yyyy"];
-    NSString *newDate = [dateFormatter stringFromDate:date];
-    
-    
-    NSLog(@"%@ %@", [date description],newDate);
-    self.flightDate.text = newDate;
-    [self.view endEditing:YES];
-    [self updatePassengerCount];
-}
-
 - (IBAction)addPassenger:(UIButton *)sender {
     passengerCount++;
     [self updatePassengerCount];
