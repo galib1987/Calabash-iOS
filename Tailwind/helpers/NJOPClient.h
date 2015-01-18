@@ -28,4 +28,5 @@ typedef id(^ContinuationBlock)(id);
 +(void)GETReservationsWithInfo:(NSDictionary*)reservationInfo completion:(void(^)(NSArray *reservations,NSError*error))completionHandler;
 +(void)GETWeatherForReservation:(NSNumber *)reservationId;
 +(void)GETPastFlightsForAccounts:(NSArray *)accountIds;
++(void)GETContractsForAccount:(NSNumber *)accountId;
 @end

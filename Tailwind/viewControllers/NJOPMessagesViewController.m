@@ -7,6 +7,7 @@
 //
 
 #import "NJOPMessagesViewController.h"
+#import "NJOPClient.h"
 
 @interface NJOPMessagesViewController ()
 
@@ -50,6 +51,8 @@
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
     self.dataSource.title = [@"Messages" uppercaseString];
+    
+    [NJOPClient GETContractsForAccount:@1399122]; // leaving this here temporarily because i don't want to touch booking
 }
 
 /*
