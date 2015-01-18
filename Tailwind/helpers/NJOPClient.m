@@ -31,13 +31,18 @@
     NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
     NSString *accessToken = userSession.credential.accessToken;
     
+    NSData *data = nil;
     NSURLResponse *response = nil;
     NSError *error = nil;
     
-    NSString *urlString = [NSString stringWithFormat:@"https://%@%@?accountId=%@&appAgent=%@&access_token=%@", API_HOSTNAME, URL_CONTRACTS, accountId, API_SOURCE_IDENTIFIER, accessToken];
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if (USE_STATIC_DATA == 0) {
+        NSString *urlString = [NSString stringWithFormat:@"https://%@%@?accountId=%@&appAgent=%@&access_token=%@", API_HOSTNAME, URL_CONTRACTS, accountId, API_SOURCE_IDENTIFIER, accessToken];
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+        data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    } else {
+        data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"contracts" ofType:@"json"]];
+    }
     
     NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     NSLog(@"%@", dataDict);
@@ -48,29 +53,39 @@
     NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
     NSString *accessToken = userSession.credential.accessToken;
     
+    NSData *data = nil;
+    
     NSURLResponse *response = nil;
     NSError *error = nil;
-    
-    NSString *urlString = [NSString stringWithFormat:@"https://%@%@?reservationId=%@&appAgent=%@&access_token=%@", API_HOSTNAME, URL_WEATHER, reservationId, API_SOURCE_IDENTIFIER, accessToken];
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if (USE_STATIC_DATA == 0) {
+        NSString *urlString = [NSString stringWithFormat:@"https://%@%@?reservationId=%@&appAgent=%@&access_token=%@", API_HOSTNAME, URL_WEATHER, reservationId, API_SOURCE_IDENTIFIER, accessToken];
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+        data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    } else {
+        data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"weather-test" ofType:@"json"]];
+    }
     
     NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//    NSLog(@"%@", dataDict);
+    NSLog(@"%@", dataDict);
 }
 
 +(void)GETPastFlightsForAccounts:(NSArray *)accountIds {
     NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
     NSString *accessToken = userSession.credential.accessToken;
     
+    NSData *data = nil;
     NSURLResponse *response = nil;
     NSError *error = nil;
     
-    NSString *urlString = [NSString stringWithFormat:@"https://%@%@?accountIds=%@,&showAllFlights=true&searchFuture=false&appAgent=%@&access_token=%@", API_HOSTNAME, URL_FLIGHTS, @"1399122", API_SOURCE_IDENTIFIER, accessToken];
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if (USE_STATIC_DATA == 0) {
+        NSString *urlString = [NSString stringWithFormat:@"https://%@%@?accountIds=%@,&showAllFlights=true&searchFuture=false&appAgent=%@&access_token=%@", API_HOSTNAME, URL_FLIGHTS, @"1399122", API_SOURCE_IDENTIFIER, accessToken];
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+        data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    } else {
+        data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"past-flights" ofType:@"json"]];
+    }
     
     NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     NSLog(@"%@", dataDict);
