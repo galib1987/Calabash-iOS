@@ -1,0 +1,60 @@
+ (
+  {
+  actualRemainingHours = 250;
+  aircraftType = GL6000S;
+  aircraftTypeName = "Global 6000 Signature";
+  cardNumber = "<null>";
+  cardType = "<null>";
+  cardTypeDescription = "<null>";
+  contractId = 1409784;
+  contractType = 8;
+  contractTypeDescription = "NJ Owner";
+  divisionId = 1412939;
+  flightRule = "Part 135";
+  peakDates =         (
+                       {
+                       description = "mkapral test";
+                       eventDate = "2015-01-15";
+                       },
+                       {
+                       description = "Saturday after Christmas";
+                       eventDate = "2014-12-27";
+                       },
+                       {
+                       description = "Friday after Christmas";
+                       eventDate = "2014-12-26";
+                       },
+                       {
+                       description = "Saturday before Christmas";
+                       eventDate = "2014-12-20";
+                       },
+                       {
+                       description = "Sunday after Thanksgiving";
+                       eventDate = "2014-11-30";
+                       },
+                       {
+                       description = "Wednesday before Thanksgiving";
+                       eventDate = "2014-11-26";
+                       },
+                       {
+                       description = "Test PPD";
+                       eventDate = "2014-05-13";
+                       },
+                       {
+                       description = "Presidents Day";
+                       eventDate = "2014-02-17";
+                       },
+                       {
+                       description = "Friday before Presidents Day";
+                       eventDate = "2014-02-14";
+                       },
+                       {
+                       description = "Thursday before Presidents Day";
+                       eventDate = "2014-02-13";
+                       }
+                       );
+  programId = 1000011;
+  projectedRemainingHours = 250;
+  tailNumber = N141QS;
+  }
+  )

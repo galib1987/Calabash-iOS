@@ -106,6 +106,7 @@
 		A77680FA1A4074AD00B2E7CF /* NJOPContract.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680F81A4074AD00B2E7CF /* NJOPContract.m */; };
 		A77E18611A6B3CEB0061B34C /* weather-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A77E18601A6B3CEB0061B34C /* weather-test.json */; };
 		A77E18631A6B45B50061B34C /* past-flights.json in Resources */ = {isa = PBXBuildFile; fileRef = A77E18621A6B45B50061B34C /* past-flights.json */; };
+		A77E18691A6B4B530061B34C /* contracts.json in Resources */ = {isa = PBXBuildFile; fileRef = A77E18681A6B4B530061B34C /* contracts.json */; };
 		A780A7EB1A5E4FFD000911A7 /* NJOPCrewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A780A7EA1A5E4FFD000911A7 /* NJOPCrewCell.m */; };
 		A780A7EE1A5E636B000911A7 /* NJOPPassengerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A780A7ED1A5E636B000911A7 /* NJOPPassengerCell.m */; };
 		A780A7F11A5E6392000911A7 /* NJOPPassengeManifestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A780A7F01A5E6392000911A7 /* NJOPPassengeManifestViewController.m */; };
@@ -308,6 +309,7 @@
 		A77680F81A4074AD00B2E7CF /* NJOPContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPContract.m; sourceTree = "<group>"; };
 		A77E18601A6B3CEB0061B34C /* weather-test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-test.json"; sourceTree = "<group>"; };
 		A77E18621A6B45B50061B34C /* past-flights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "past-flights.json"; sourceTree = "<group>"; };
+		A77E18681A6B4B530061B34C /* contracts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contracts.json; sourceTree = "<group>"; };
 		A780A7E91A5E4FFD000911A7 /* NJOPCrewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCrewCell.h; sourceTree = "<group>"; };
 		A780A7EA1A5E4FFD000911A7 /* NJOPCrewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCrewCell.m; sourceTree = "<group>"; };
 		A780A7EC1A5E636B000911A7 /* NJOPPassengerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPassengerCell.h; sourceTree = "<group>"; };
@@ -745,6 +747,7 @@
 				5255D2551A5D85F9002638F8 /* welcome-items.json */,
 				A77E18601A6B3CEB0061B34C /* weather-test.json */,
 				A77E18621A6B45B50061B34C /* past-flights.json */,
+				A77E18681A6B4B530061B34C /* contracts.json */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -977,6 +980,7 @@
 				30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */,
 				A77680BA1A40659D00B2E7CF /* Nimbus-Sans-D-Regular-Italic.otf in Resources */,
 				A77680BF1A40659D00B2E7CF /* Nimbus-Sans-Extd-D-Light.otf in Resources */,
+				A77E18691A6B4B530061B34C /* contracts.json in Resources */,
 				A77680C01A40659D00B2E7CF /* Nimbus-Sans-Extd-D.otf in Resources */,
 				A77680AC1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Black-Italic.otf in Resources */,
 				A786D6271A664562006EDA24 /* Settings.storyboard in Resources */,
