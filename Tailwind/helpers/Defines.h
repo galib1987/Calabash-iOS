@@ -25,6 +25,8 @@
 #define URL_BRIEF @"/op/v1/brief"
 #define URL_RESERVATIONS @"/op/v1/reservations"
 #define URL_CONTRACTS @"/op/v1/contracts"
+#define URL_WEATHER @"/op/v1/weather"
+#define URL_FLIGHTS @"/op/v1/flights"
 
 
 // global enums
@@ -45,7 +47,7 @@ typedef NS_ENUM(NSInteger, FlightState) {
 // temporarily until I figure out a better way to bypass having to VPN
 // 0 is use VPN
 // 1 is use JSON
-//#define USE_STATIC_DATA 0
-#define USE_STATIC_DATA 1
+#define USE_STATIC_DATA 0
+//#define USE_STATIC_DATA 1
 
 #endif

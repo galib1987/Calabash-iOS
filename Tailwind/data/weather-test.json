@@ -1,0 +1,18 @@
+ [
+  {
+  "requestId": 7775221,
+  "reservationId": 6414089,
+  "departureAirportId": "KCMH",
+  "departureCondition": "Not Found - Departure Date not in range of forecast",
+  "departureIcon": "",
+  "departureIcon_url": "",
+  "departureTempEnglish": "",
+  "departureTempMetric": "",
+  "arrivalAirportId": "KLAS",
+  "arrivalCondition": "Not Found - Departure Date not in range of forecast",
+  "arrivalIcon": "",
+  "arrivalIcon_url": "",
+  "arrivalTempEnglish": "",
+  "arrivalTempMetric": ""
+  }
+]

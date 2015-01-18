@@ -123,6 +123,10 @@
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
     self.dataSource.title = @"FLIGHTS";
+    
+    [NJOPClient GETPastFlightsForAccounts:@[]];
+    
+    
 }
 - (IBAction)segmentedControlAction:(id)sender {
     /* need to load contract flights vs individual's booked flights */

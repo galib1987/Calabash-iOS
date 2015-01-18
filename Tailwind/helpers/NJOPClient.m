@@ -15,6 +15,8 @@
 #import "NCLHTTPClient.h"
 #import "NJOPSession.h"
 #import "NJOPBrief.h"
+#import "Defines.h"
+#import "NNNOAuthClient.h"
 
 #import "NCLInfoPresenter.h"
 
@@ -25,6 +27,39 @@
 
 @implementation NJOPClient
 
++(void)GETWeatherForReservation:(NSNumber *)reservationId {
+    NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
+    NSString *accessToken = userSession.credential.accessToken;
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://%@%@?reservationId=%@&appAgent=%@&access_token=%@", API_HOSTNAME, URL_WEATHER, reservationId, API_SOURCE_IDENTIFIER, accessToken];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//    NSLog(@"%@", dataDict);
+}
+
++(void)GETPastFlightsForAccounts:(NSArray *)accountIds {
+    NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
+    NSString *accessToken = userSession.credential.accessToken;
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://%@%@?accountIds=1399122,&showAllFlights=true&searchFuture=false&appAgent=%@&access_token=%@", API_HOSTNAME, URL_FLIGHTS, API_SOURCE_IDENTIFIER, accessToken];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSLog(@"%@", dataDict);
+}
+
+
 +(void)GETReservationsWithInfo:(NSDictionary *)reservationInfo completion:(void (^)(NSArray *reservations, NSError *error))completionHandler {
     NSString *apiURL = @"";
     NSData *data = nil;
@@ -32,7 +67,6 @@
     NSError *error = nil;
     NSURLResponse *response = nil;
     NJOPSession *session = [NJOPSession sharedInstance];
-    NJOPBrief *brief = [[NJOPBrief alloc] init];
     
     if (reservationInfo != nil && [reservationInfo isKindOfClass:[NSDictionary class]]) {
         // look at the NSDictionary to see if we're fetching from URL

@@ -40,6 +40,8 @@
 
 -(void)updateWithReservation {
     
+    [NJOPClient GETWeatherForReservation:_reservation.reservationId];
+    
     NSDateFormatter* weatherFormatter = [[NSDateFormatter alloc] init];
     [weatherFormatter setDateFormat:@"EE MMM dd, YYYY"];
     
@@ -123,6 +125,7 @@
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
     self.dataSource.title = @"FLIGHT DETAILS";
+    
 }
 
 

@@ -26,4 +26,6 @@ typedef id(^ContinuationBlock)(id);
 
 @interface NJOPClient : NSObject
 +(void)GETReservationsWithInfo:(NSDictionary*)reservationInfo completion:(void(^)(NSArray *reservations,NSError*error))completionHandler;
++(void)GETWeatherForReservation:(NSNumber *)reservationId;
++(void)GETPastFlightsForAccounts:(NSArray *)accountIds;
 @end
