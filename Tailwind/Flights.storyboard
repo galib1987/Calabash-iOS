@@ -2116,13 +2116,13 @@ passenger will be under 18 years of age.</string>
         <!--Plane View Controller-->
         <scene sceneID="Sml-4g-aby">
             <objects>
-                <tableViewController id="xIl-Eg-9Hc" customClass="NJOPPlaneViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PlaneTVC" id="xIl-Eg-9Hc" customClass="NJOPPlaneViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="612" sectionHeaderHeight="22" sectionFooterHeight="22" id="LmN-yw-jRX" customClass="NJOPTableView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="3000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Plane Blurb" rowHeight="612" id="BcK-rE-020">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneBlurbCell" rowHeight="612" id="BcK-rE-020" customClass="NJOPTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BcK-rE-020" id="azv-vb-XTO">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -2184,7 +2184,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="219" id="pAZ-jQ-beT" userLabel="Passengers and Baggage Capacity">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneInfoCell" rowHeight="219" id="pAZ-jQ-beT" userLabel="Passengers and Baggage Capacity" customClass="NJOPTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pAZ-jQ-beT" id="ry4-9C-YEe">
@@ -2248,7 +2248,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="451" id="FTf-gd-QHW" userLabel="Amenities Cell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneAmenitiesCell" rowHeight="451" id="FTf-gd-QHW" userLabel="Amenities Cell" customClass="NJOPTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FTf-gd-QHW" id="ZO0-ig-tZ0">
@@ -2435,7 +2435,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="154" id="xD9-5F-eLk" userLabel="Wifi Cell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneWifiCell" rowHeight="154" id="xD9-5F-eLk" userLabel="Wifi Cell" customClass="NJOPTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xD9-5F-eLk" id="2pL-GT-b2x">
@@ -2485,7 +2485,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="392" id="sgx-lZ-3v0">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneCabinCell" rowHeight="392" id="sgx-lZ-3v0" customClass="NJOPTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sgx-lZ-3v0" id="wJY-iE-lf5">
@@ -2527,7 +2527,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="1057" id="cfK-fu-kNc">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneLayoutCell" rowHeight="1057" id="cfK-fu-kNc" customClass="NJOPTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfK-fu-kNc" id="eNk-UM-isl">

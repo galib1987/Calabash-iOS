@@ -611,8 +611,6 @@
 				6CC829B11A40B4C900991949 /* NJOPResetPasswordViewController.h */,
 				6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */,
 				1E636ECB1A5F3D37002B3E8C /* Welcome ViewControllers */,
-				A7BFBB551A6D4EDC00368E12 /* NJOPPlaneViewController.h */,
-				A7BFBB561A6D4EDC00368E12 /* NJOPPlaneViewController.m */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -837,6 +835,8 @@
 		A7CD0AF61A5C851900D45224 /* Your Plane */ = {
 			isa = PBXGroup;
 			children = (
+				A7BFBB551A6D4EDC00368E12 /* NJOPPlaneViewController.h */,
+				A7BFBB561A6D4EDC00368E12 /* NJOPPlaneViewController.m */,
 			);
 			name = "Your Plane";
 			sourceTree = "<group>";
