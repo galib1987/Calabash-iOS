@@ -2113,11 +2113,11 @@ passenger will be under 18 years of age.</string>
             </objects>
             <point key="canvasLocation" x="5194" y="-2600"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Plane View Controller-->
         <scene sceneID="Sml-4g-aby">
             <objects>
-                <tableViewController id="xIl-Eg-9Hc" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="612" sectionHeaderHeight="22" sectionFooterHeight="22" id="LmN-yw-jRX">
+                <tableViewController id="xIl-Eg-9Hc" customClass="NJOPPlaneViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="612" sectionHeaderHeight="22" sectionFooterHeight="22" id="LmN-yw-jRX" customClass="NJOPTableView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="3000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
