@@ -29,94 +29,66 @@
     // Dispose of any resources that can be recreated.
 }
 
-//-(void)loadDataSource {
-//    
-//    __weak NJOPFlightsDetailViewController* wself = self;
-//    
-//    [NJOPClient GETReservationsWithInfo:nil completion:^(NSArray *reservations, NSError *error) {
-//        [wself updateWithReservation:reservations];
-//    }];
-//}
 
--(void)updateWithReservation {
-    
+- (NSDictionary *)detailCellFromReservation:(NJOPReservation *)reservation {
     NSDateFormatter* weatherFormatter = [[NSDateFormatter alloc] init];
     [weatherFormatter setDateFormat:@"EE MMM dd, YYYY"];
     
     NSDateFormatter *departureFormatter = [[NSDateFormatter alloc] init];
     [departureFormatter setDateFormat:@"MMMM dd, YYYY"];
     
-    NSInteger *passengerCount = _reservation.passengers.count;
+    NSDictionary *cellRepresentation = @{
+                                         kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightDetailCell",
+                                         kSimpleDataSourceCellKeypaths					: @{
+                                                 @"guaranteedAircraftTypeDescriptionLabel.text" : _reservation.aircraftType,
+                                                 @"tailNumberLabel.text" : @"N618QS",
+                                                 @"departureDateLabel.text" : [departureFormatter stringFromDate:_reservation.departureDate],
+                                                 @"departureFBONameLabel.text" : _reservation.departureFboName,
+                                                 @"departureTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                                 @"departureAirportIdLabel.text" : _reservation.departureAirportId,
+                                                 @"departureAirportCityLabel.text" : [_reservation.departureAirportCity capitalizedString],
+                                                 @"arrivalTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                                 @"arrivalAirportIdLabel.text" : _reservation.arrivalAirportId,
+                                                 @"arrivalAirportCityLabel.text" : [_reservation.arrivalAirportCity capitalizedString],
+                                                 @"arrivalFBONameLabel.text" : _reservation.arrivalFboName,
+                                                 @"departureWeatherDateLabel.text" : [weatherFormatter stringFromDate:_reservation.departureDate],
+                                                 @"departureAirportCityAndStateLabel.text" : [_reservation.departureAirportCity capitalizedString],
+                                                 @"departureWeatherTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                                 @"departureTemperatureLabel.text" : @"39°",
+                                                 @"arrivalWeatherDateLabel.text" : [weatherFormatter stringFromDate:_reservation.arrivalDate],
+                                                 @"arrivalAirportCityAndStateLabel.text" : [_reservation.arrivalAirportCity capitalizedString],
+                                                 @"arrivalWeatherTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                                 @"arrivalTemperatureLabel.text" : @"85°",
+                                                 }
+                                         };
+    return cellRepresentation;
+    
+}
+
+- (NSDictionary *)infoCellWithIdentifier:(NSString *)identifier topLabel:(NSString *)topLabel detailLabel:(NSString *)detailLabel {
+    NSDictionary *cellRepresentation = @{
+                                         kSimpleDataSourceCellIdentifierKey			: identifier,
+                                         kSimpleDataSourceCellKeypaths					: @{
+                                                 @"topLabel.text" : topLabel,
+                                                 @"detailLabel.text" : detailLabel,
+                                                 }
+                                         };
+    return cellRepresentation;
+}
+
+-(void)updateWithReservation {
+    
+    NSUInteger passengerCount = self.reservation.passengers.count;
+    NSString *passengerCountString = passengerCount <= 1? [NSString stringWithFormat:@"%lu passenger", (unsigned long)passengerCount] : [NSString stringWithFormat:@"%lu passengers", (unsigned long)passengerCount];
     
     NSArray* sections = @[
                           @{
                               kSimpleDataSourceSectionCellsKey : @[
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey		: @"NJOPFlightDetailCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"guaranteedAircraftTypeDescriptionLabel.text" : _reservation.aircraftType,
-                                                  @"tailNumberLabel.text" : @"N618QS",
-                                                  @"departureDateLabel.text" : [departureFormatter stringFromDate:_reservation.departureDate],
-                                                  @"departureFBONameLabel.text" : _reservation.departureFboName,
-                                                  @"departureTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
-                                                  @"departureAirportIdLabel.text" : _reservation.departureAirportId,
-                                                  @"departureAirportCityLabel.text" : [_reservation.departureAirportCity capitalizedString],
-                                                  @"arrivalTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
-                                                  @"arrivalAirportIdLabel.text" : _reservation.arrivalAirportId,
-                                                  @"arrivalAirportCityLabel.text" : [_reservation.arrivalAirportCity capitalizedString],
-                                                  @"arrivalFBONameLabel.text" : _reservation.arrivalFboName,
-                                                  @"departureWeatherDateLabel.text" : [weatherFormatter stringFromDate:_reservation.departureDate],
-                                                  @"departureAirportCityAndStateLabel.text" : [_reservation.departureAirportCity capitalizedString],
-                                                  @"departureWeatherTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
-                                                  @"departureTemperatureLabel.text" : @"39°",
-                                                  @"arrivalWeatherDateLabel.text" : [weatherFormatter stringFromDate:_reservation.arrivalDate],
-                                                  @"arrivalAirportCityAndStateLabel.text" : [_reservation.arrivalAirportCity capitalizedString],
-                                                  @"arrivalWeatherTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
-                                                  @"arrivalTemperatureLabel.text" : @"85°",
-                                                  }
-                                          },
-//                                      @{
-//                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPInfoCell",
-//                                          kSimpleDataSourceCellKeypaths					: @{
-//                                                  @"topLabel.text" : @"Your Plane",
-//                                                  @"detailLabel.text" : @"Cessna Citation Encore+",
-//                                                  }
-//                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"GroundInfoCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"topLabel.text" : @"Ground Transportation",
-                                                  @"detailLabel.text" : @"Requested",
-                                                  }
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"CrewInfoCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"topLabel.text" : @"Your Crew",
-                                                  @"detailLabel.text" : @"Captain Brad Hanshaw",
-                                                  }
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"PassengerManifestInfoCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"topLabel.text" : @"Passenger Manifest",
-                                                  @"detailLabel.text" : passengerCount <= 1? [NSString stringWithFormat:@"%d passenger", passengerCount] : [NSString stringWithFormat:@"%d passengers", passengerCount],
-                                                  },
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"CateringInfoCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"topLabel.text" : @"Catering",
-                                                  @"detailLabel.text" : @"Requested",
-                                                  }
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"AdvisoryNotesInfoCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"topLabel.text" : @"Advisory Notes",
-                                                  @"detailLabel.text" : @"Please Read",
-                                                  }
-                                          }
+                                      [self detailCellFromReservation:_reservation],
+                                      [self infoCellWithIdentifier:@"GroundInfoCell" topLabel:@"Ground Transportation" detailLabel:@"Requested"],
+                                      [self infoCellWithIdentifier:@"CrewInfoCell" topLabel:@"Your Crew" detailLabel:@"Captain Brad Hanshaw"],
+                                      [self infoCellWithIdentifier:@"PassengerManifestInfoCell" topLabel:@"Passenger Manifest" detailLabel:passengerCountString],
+                                      [self infoCellWithIdentifier:@"AdvisoryNotesInfoCell" topLabel:@"Advisory Notes" detailLabel:@"Please Read"]
                                       ],
                               },
                           ];
