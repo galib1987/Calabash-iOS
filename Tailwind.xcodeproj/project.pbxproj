@@ -141,6 +141,7 @@
 		A7A03EC11A42F21D004BE417 /* NJOPNOFBOTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03EC01A42F21D004BE417 /* NJOPNOFBOTableCell.m */; };
 		A7A03EC71A4301A3004BE417 /* brief-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A03EC61A4301A3004BE417 /* brief-test.json */; };
 		A7A03EC81A4301A3004BE417 /* brief-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A03EC61A4301A3004BE417 /* brief-test.json */; };
+		A7BFBB571A6D4EDC00368E12 /* NJOPPlaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BFBB561A6D4EDC00368E12 /* NJOPPlaneViewController.m */; };
 		A7C07DC21A5B3FFF0055126B /* NJOPAdvisoryNotesController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C07DC11A5B3FFF0055126B /* NJOPAdvisoryNotesController.m */; };
 		A7C07DC51A5BACB60055126B /* NJOPGroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C07DC41A5BACB60055126B /* NJOPGroundViewController.m */; };
 		A7C872491A5B394F0048E2F4 /* NJOPAdvisoryNotesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C872481A5B394F0048E2F4 /* NJOPAdvisoryNotesCell.m */; };
@@ -368,6 +369,8 @@
 		A7A03EBF1A42F21D004BE417 /* NJOPNOFBOTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPNOFBOTableCell.h; path = Tailwind/MiddleLevelUI/Views/NJOPNOFBOTableCell.h; sourceTree = SOURCE_ROOT; };
 		A7A03EC01A42F21D004BE417 /* NJOPNOFBOTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPNOFBOTableCell.m; path = Tailwind/MiddleLevelUI/Views/NJOPNOFBOTableCell.m; sourceTree = SOURCE_ROOT; };
 		A7A03EC61A4301A3004BE417 /* brief-test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "brief-test.json"; sourceTree = "<group>"; };
+		A7BFBB551A6D4EDC00368E12 /* NJOPPlaneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPlaneViewController.h; sourceTree = "<group>"; };
+		A7BFBB561A6D4EDC00368E12 /* NJOPPlaneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPlaneViewController.m; sourceTree = "<group>"; };
 		A7C07DC01A5B3FFF0055126B /* NJOPAdvisoryNotesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAdvisoryNotesController.h; sourceTree = "<group>"; };
 		A7C07DC11A5B3FFF0055126B /* NJOPAdvisoryNotesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAdvisoryNotesController.m; sourceTree = "<group>"; };
 		A7C07DC31A5BACB60055126B /* NJOPGroundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPGroundViewController.h; sourceTree = "<group>"; };
@@ -608,6 +611,8 @@
 				6CC829B11A40B4C900991949 /* NJOPResetPasswordViewController.h */,
 				6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */,
 				1E636ECB1A5F3D37002B3E8C /* Welcome ViewControllers */,
+				A7BFBB551A6D4EDC00368E12 /* NJOPPlaneViewController.h */,
+				A7BFBB561A6D4EDC00368E12 /* NJOPPlaneViewController.m */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -1163,6 +1168,7 @@
 				A77680DD1A406C7D00B2E7CF /* NJOPSession.m in Sources */,
 				A7A03EBE1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.m in Sources */,
 				A7A03E9C1A42E523004BE417 /* NJOPNavigationBar.m in Sources */,
+				A7BFBB571A6D4EDC00368E12 /* NJOPPlaneViewController.m in Sources */,
 				A7A03EB81A42EFCA004BE417 /* NJOPTableViewCell.m in Sources */,
 				A7A03EAC1A42EB6D004BE417 /* NJOPTableView.m in Sources */,
 				A7A03EA61A42E626004BE417 /* UIView+NJOPStyle.m in Sources */,
