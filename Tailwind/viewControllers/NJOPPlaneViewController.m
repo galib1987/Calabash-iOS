@@ -24,6 +24,42 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)loadDataSource {
+    NSArray* sections = @[
+                          @{
+                              kSimpleDataSourceSectionCellsKey : @[
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"PlaneBlurbCell"
+                                          
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"PlaneInfoCell"
+                                          
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"PlaneAmenitiesCell"
+                                          
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"PlaneWifiCell"
+                                          
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"PlaneCabinCell"
+                                          
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"PlaneLayoutCell"
+                                          
+                                          }
+                                      ]
+                              }
+                          ];
+    
+    self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
+    self.dataSource.title = @"YOUR PLANE";
+
+}
 /*
 #pragma mark - Navigation
 
