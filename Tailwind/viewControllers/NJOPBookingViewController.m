@@ -144,6 +144,7 @@ UIView *calendarLegend;
         self.customPeakDates =  @[[dateFormatter dateFromString:@"27/01/2015"], [dateFormatter dateFromString:@"26/01/2015"], [dateFormatter dateFromString:@"25/01/2015"]];
         self.calendarViewController = [[PDTSimpleCalendarViewController alloc] init];
         
+        self.calendarViewController.weekHeaderEnabled = true;
         //This is the default behavior, will display a full year starting the first of the current month
         self.calendarViewController.firstDate = [NSDate date];
         NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];

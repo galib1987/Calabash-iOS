@@ -22,6 +22,7 @@
 		1E79C8911A65CAD0001B73B9 /* NJOPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79C8901A65CAD0001B73B9 /* NJOPTextField.m */; };
 		1E79C8941A670983001B73B9 /* NJOPAirportSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79C8931A670983001B73B9 /* NJOPAirportSearchTableViewController.m */; };
 		1E79C8971A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79C8961A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m */; };
+		1E7E55501A6F06DC00848E0B /* PDTSimpleCalendarViewWeekdayHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7E554F1A6F06DC00848E0B /* PDTSimpleCalendarViewWeekdayHeader.m */; };
 		2AD96D2C90B7446D90304928 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 		30A4737F19D9E41A0045D7AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4737E19D9E41A0045D7AF /* main.m */; };
 		30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4738119D9E41A0045D7AF /* AppDelegate.m */; };
@@ -197,6 +198,8 @@
 		1E79C8931A670983001B73B9 /* NJOPAirportSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAirportSearchTableViewController.m; sourceTree = "<group>"; };
 		1E79C8951A670ADF001B73B9 /* NJOPAirportResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAirportResultTableViewCell.h; sourceTree = "<group>"; };
 		1E79C8961A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAirportResultTableViewCell.m; sourceTree = "<group>"; };
+		1E7E554E1A6F06DC00848E0B /* PDTSimpleCalendarViewWeekdayHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDTSimpleCalendarViewWeekdayHeader.h; sourceTree = "<group>"; };
+		1E7E554F1A6F06DC00848E0B /* PDTSimpleCalendarViewWeekdayHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDTSimpleCalendarViewWeekdayHeader.m; sourceTree = "<group>"; };
 		30A4737919D9E41A0045D7AF /* Tailwind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tailwind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A4737D19D9E41A0045D7AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30A4737E19D9E41A0045D7AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -523,6 +526,8 @@
 				5244179D1A6ECB7B00DA7868 /* PDTSimpleCalendarViewFlowLayout.m */,
 				5244179E1A6ECB7B00DA7868 /* PDTSimpleCalendarViewHeader.h */,
 				5244179F1A6ECB7B00DA7868 /* PDTSimpleCalendarViewHeader.m */,
+				1E7E554E1A6F06DC00848E0B /* PDTSimpleCalendarViewWeekdayHeader.h */,
+				1E7E554F1A6F06DC00848E0B /* PDTSimpleCalendarViewWeekdayHeader.m */,
 			);
 			path = PDTSimpleCalendar;
 			sourceTree = "<group>";
@@ -1185,6 +1190,7 @@
 				A7C872491A5B394F0048E2F4 /* NJOPAdvisoryNotesCell.m in Sources */,
 				A786D6111A66351F006EDA24 /* NJOPMenuViewController.m in Sources */,
 				524417A01A6ECB7B00DA7868 /* PDTSimpleCalendarViewCell.m in Sources */,
+				1E7E55501A6F06DC00848E0B /* PDTSimpleCalendarViewWeekdayHeader.m in Sources */,
 				A7D6F4C81A64C77800B9E7B4 /* (null) in Sources */,
 				A77680D91A406C7D00B2E7CF /* NJOPClient+Login.m in Sources */,
 				1E79C8941A670983001B73B9 /* NJOPAirportSearchTableViewController.m in Sources */,
