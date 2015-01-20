@@ -19,7 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self loadDataSource];
+}
+
+- (void)loadDataSource {
+    NSMutableString *cateringString = [[NSMutableString alloc] init];
+    
+    for (NSDictionary *foodRepresentation in self.reservation.cateringOrders) {
+        NSString *currentCateringItem = foodRepresentation[@"ownerFacingDescription"];
+        [cateringString appendString:[NSString stringWithFormat:@"%@ \n", currentCateringItem]];
+    }
     
     NSArray* sections = @[
                           @{
@@ -27,8 +37,8 @@
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"NJOPCateringCell",
                                           kSimpleDataSourceCellKeypaths					: @{
-                                                  @"foodItemsLabel.text" : [NSString stringWithFormat:@"%@ %@", _reservation.cateringOrders[0][@"quantity"], _reservation.cateringOrders[0][@"ownerFacingDescription"]]
-
+                                                  @"foodItemsLabel.text" : cateringString,
+                                                  
                                                   }
                                           },
                                       ]
@@ -37,7 +47,6 @@
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
     self.dataSource.title = @"CATERING";
-
 }
 
 - (void)didReceiveMemoryWarning {
