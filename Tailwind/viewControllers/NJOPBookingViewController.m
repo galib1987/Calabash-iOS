@@ -88,13 +88,15 @@ NSDateFormatter *timeFormatter;
         UITextField *nextField = (UITextField *)[self.view viewWithTag:textField.tag+1];
         nextField.enabled = true;
         
-        if (textField == self.departTime) {
+        if (textField == self.departTime || textField == self.arrivalTime) { // if either DEPART AT or ARRIVAL BY has been entered
+            self.numberOfPassengers.enabled = true;
+            self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, self.numberOfPassengers.tag+1)];
             // enable submit
             self.nextStep.enabled = true;
             self.nextStep.backgroundColor = [UIColor colorFromHexString:@"#b2f49e"];
         }
         
-        if (nextField == self.numberOfPassengers) {
+        if (nextField == self.numberOfPassengers || nextField == self.arrivalTime) {
             self.addButton.enabled = self.minusButton.enabled = true;
             self.addButton.alpha = self.minusButton.alpha = 1;
         } else if (nextField == self.departTime) {
@@ -345,9 +347,9 @@ NSDateFormatter *timeFormatter;
     // STUB to update other time field using estimated flight time
     NSDate *dateFromString = [timeFormatter dateFromString:sender.text];
     if (sender == self.arrivalTime) {
-        self.departTime.text = [timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:-60*60*2]];
+        self.departTime.text = @"";//[timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:-60*60*2]];
     } else if (sender == self.departTime) {
-        self.arrivalTime.text = [timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:60*60*2]];
+        self.arrivalTime.text = @"";//[timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:60*60*2]];
     }
     
 }

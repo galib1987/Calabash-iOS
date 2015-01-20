@@ -89,6 +89,9 @@ NSString *actionButtonText = @"EDIT FLIGHT DETAILS";
                                           },
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"addOnwardCell"
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"formActionsCell"
                                           }
                                       ],
                               },

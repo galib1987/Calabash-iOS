@@ -18,6 +18,8 @@
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
         </mutableArray>
         <mutableArray key="Nimbus-Sans-D-Light-Italic.otf">
             <string>NimbusSanD-LigIta</string>
@@ -228,6 +230,59 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="Ejb-Lw-4iz" secondAttribute="trailing" id="IYz-oF-bhG"/>
                                         <constraint firstItem="Ejb-Lw-4iz" firstAttribute="leading" secondItem="FOO-uh-wzy" secondAttribute="leadingMargin" id="JFf-Ew-Qzk"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Ejb-Lw-4iz" secondAttribute="bottom" id="wai-oI-Gjm"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="formActionsCell" rowHeight="90" id="a5l-lU-uPw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a5l-lU-uPw" id="xSk-EG-GGG">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="143-Rc-bps">
+                                            <rect key="frame" x="8" y="8" width="359" height="74"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVR-ce-8kG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="74"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="16"/>
+                                                    <inset key="contentEdgeInsets" minX="0.0" minY="27" maxX="0.0" maxY="27"/>
+                                                    <state key="normal" title="START OVER">
+                                                        <color key="titleColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tu-9G-L6d">
+                                                    <rect key="frame" x="185" y="0.0" width="174" height="74"/>
+                                                    <color key="backgroundColor" red="0.69803921568627447" green="0.95686274509803915" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="16"/>
+                                                    <inset key="contentEdgeInsets" minX="0.0" minY="27" maxX="0.0" maxY="27"/>
+                                                    <state key="normal" title="SUBMIT">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="kVR-ce-8kG" firstAttribute="bottom" secondItem="1tu-9G-L6d" secondAttribute="bottom" id="BSe-gS-hg6"/>
+                                                <constraint firstItem="kVR-ce-8kG" firstAttribute="top" secondItem="1tu-9G-L6d" secondAttribute="top" id="I3l-XK-iEY"/>
+                                                <constraint firstItem="kVR-ce-8kG" firstAttribute="leading" secondItem="143-Rc-bps" secondAttribute="leading" id="Ktf-Fa-gaC"/>
+                                                <constraint firstItem="kVR-ce-8kG" firstAttribute="top" secondItem="143-Rc-bps" secondAttribute="top" id="bO4-Wv-9Gt"/>
+                                                <constraint firstAttribute="bottom" secondItem="kVR-ce-8kG" secondAttribute="bottom" id="dJw-97-XIC"/>
+                                                <constraint firstAttribute="trailing" secondItem="1tu-9G-L6d" secondAttribute="trailing" id="hUz-NY-frS"/>
+                                                <constraint firstItem="1tu-9G-L6d" firstAttribute="leading" secondItem="kVR-ce-8kG" secondAttribute="trailing" constant="11" id="hrD-Jc-HMY"/>
+                                                <constraint firstItem="1tu-9G-L6d" firstAttribute="width" secondItem="kVR-ce-8kG" secondAttribute="width" id="mWW-pb-Akf"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="143-Rc-bps" firstAttribute="leading" secondItem="xSk-EG-GGG" secondAttribute="leadingMargin" id="UC0-tD-2mB"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="143-Rc-bps" secondAttribute="bottom" id="e77-c8-biC"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="143-Rc-bps" secondAttribute="trailing" id="tdu-IA-lPp"/>
+                                        <constraint firstItem="143-Rc-bps" firstAttribute="top" secondItem="xSk-EG-GGG" secondAttribute="topMargin" id="yXV-6M-xvE"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
