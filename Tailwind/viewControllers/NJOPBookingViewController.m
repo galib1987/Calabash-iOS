@@ -153,6 +153,7 @@ UIView *calendarLegend;
         self.calendarViewController.lastDate = lastDate;
         [[PDTSimpleCalendarViewCell appearance] setCircleSelectedColor: [UIColor colorWithRed:71/255.0f green:227/255.0f blue:92/255.0f alpha:1.0f]];
         [[PDTSimpleCalendarViewCell appearance] setTextSelectedColor: [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:1.0f]];
+        [[PDTSimpleCalendarViewCell appearance] setTextTodayColor:[UIColor blackColor]];
         [self.calendarViewController setDelegate:self];
     }
     return self.calendarViewController.view;
