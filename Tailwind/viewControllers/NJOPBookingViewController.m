@@ -58,6 +58,9 @@ UIView *calendarLegend;
     inputChain = @[self.aircraftInput, self.departureAirport, self.destinationAirport, self.flightDate, self.departTime, self.arrivalTime, self.numberOfPassengers, self.bookingComment];
     self.keyboardControls = [[NJOPKeyboardControls alloc] initWithInputFields:[inputChain subarrayWithRange:NSMakeRange(0, 1)]];
     self.keyboardControls.hasPreviousNext = YES;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputSwitched:) name:@"UITextFieldTextDidBeginEditingNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputSwitched:) name:@"UITextViewTextDidBeginEditingNotification" object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self.keyboardControls selector:@selector(inputSwitched) name:@"APLKeyboardControlsInputDidBeginEditingNotification" object:nil];
     
     for (int i=0; i<[inputChain count]; i++) {
         ((UIView*)inputChain[i]).tag = (NSInteger)i; // Tag fields to identify them
@@ -72,7 +75,7 @@ UIView *calendarLegend;
     
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
-    
+    self.numberOfPassengers.inputView = [[UIView alloc] init];
     self.flightDate.inputView = [self getCalendar];
     
     self.bookingComment.placeholderTextColor = [UIColor blackColor];
@@ -93,7 +96,7 @@ UIView *calendarLegend;
         
         if (textField == self.departTime || textField == self.arrivalTime) { // if either DEPART AT or ARRIVAL BY has been entered
             self.numberOfPassengers.enabled = true;
-            self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, self.numberOfPassengers.tag+1)];
+            self.keyboardControls.inputFields = inputChain;
             // enable submit
             self.nextStep.enabled = true;
             self.nextStep.backgroundColor = [UIColor colorFromHexString:@"#b2f49e"];
@@ -196,12 +199,17 @@ UIView *calendarLegend;
             textField.text = @"JFK: John F Kennedy Intl";
         }
         [self.navigationController pushViewController:vc animated:YES];
-    } else if (textField == self.flightDate) {
+    }
+    currentTextField = textField.tag;
+}
+
+- (void)inputSwitched:(NSNotification *)sender {
+    if (sender.object == self.flightDate) {
         self.keyboardControls.customItem = [[UIBarButtonItem alloc] initWithCustomView:[self getCalendarLegend]];
     } else {
         self.keyboardControls.hasPreviousNext = true;
     }
-    currentTextField = textField.tag;
+    //[self.keyboardControls inputSwitched:sender.object];
 }
 
 - (UIView *)getCalendarLegend {
