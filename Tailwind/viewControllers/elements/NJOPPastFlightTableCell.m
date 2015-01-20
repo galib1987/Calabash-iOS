@@ -20,4 +20,10 @@
     // Configure the view for the selected state
 }
 
+- (void)setActionButtonLabel:(NSString *)actionButtonLabel {
+    _actionButtonLabel = actionButtonLabel;
+    
+    [self.actionButton setTitle:self.actionButtonLabel forState:UIControlStateNormal];
+}
+
 @end
