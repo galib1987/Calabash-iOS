@@ -63,10 +63,8 @@
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
         </mutableArray>
         <mutableArray key="Nimbus-Sans-D-Light.otf">
-            <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
@@ -1028,7 +1026,7 @@ Teterboro-Naples</string>
                                         <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfK-KP-4g6">
                                             <rect key="frame" x="8" y="4" width="359" height="92"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crew" translatesAutoresizingMaskIntoConstraints="NO" id="bHf-HR-oNY">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bHf-HR-oNY">
                                                     <rect key="frame" x="8" y="20" width="51" height="52"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="7jV-g4-vKF"/>
@@ -1099,86 +1097,6 @@ Teterboro-Naples</string>
                                     <segue destination="9GZ-2u-RF2" kind="show" identifier="showAdvisoryNotes" id="R8R-iM-eeT"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroundInfoCell" rowHeight="100" id="m8h-Vd-GHb" customClass="NJOPInfoCell">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m8h-Vd-GHb" id="u59-NC-8cD">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XyK-mr-CVF">
-                                            <rect key="frame" x="8" y="4" width="359" height="92"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infoImage" translatesAutoresizingMaskIntoConstraints="NO" id="nft-EC-oUa">
-                                                    <rect key="frame" x="8" y="20" width="51" height="52"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="1bi-vE-KUM"/>
-                                                        <constraint firstAttribute="height" constant="75" id="BnN-Fn-6W0"/>
-                                                        <constraint firstAttribute="width" constant="75" id="MOH-ww-rIc"/>
-                                                        <constraint firstAttribute="height" constant="52" id="X4B-Bd-xYk"/>
-                                                        <constraint firstAttribute="width" constant="51" id="eQc-l1-1KM"/>
-                                                        <constraint firstAttribute="width" constant="30" id="q91-Nh-czm"/>
-                                                    </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="1bi-vE-KUM"/>
-                                                            <exclude reference="BnN-Fn-6W0"/>
-                                                            <exclude reference="MOH-ww-rIc"/>
-                                                            <exclude reference="q91-Nh-czm"/>
-                                                        </mask>
-                                                    </variation>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Crew" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLZ-2U-Bvy">
-                                                    <rect key="frame" x="79" y="20" width="77.5" height="17"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capt. Michael Chapman" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRL-ke-Zg7">
-                                                    <rect key="frame" x="79" y="45" width="169" height="17"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="xLZ-2U-Bvy" firstAttribute="leading" secondItem="nft-EC-oUa" secondAttribute="trailing" constant="8" id="1Lk-pY-B42"/>
-                                                <constraint firstItem="xLZ-2U-Bvy" firstAttribute="leading" secondItem="FRL-ke-Zg7" secondAttribute="leading" id="39S-Lc-Jb1"/>
-                                                <constraint firstAttribute="bottom" secondItem="nft-EC-oUa" secondAttribute="bottom" constant="20" id="H0v-3Q-YLs"/>
-                                                <constraint firstItem="FRL-ke-Zg7" firstAttribute="top" secondItem="xLZ-2U-Bvy" secondAttribute="bottom" constant="8" id="QAy-ff-AFK"/>
-                                                <constraint firstItem="nft-EC-oUa" firstAttribute="leading" secondItem="XyK-mr-CVF" secondAttribute="leading" constant="8" id="T0B-fV-ljf"/>
-                                                <constraint firstItem="xLZ-2U-Bvy" firstAttribute="leading" secondItem="nft-EC-oUa" secondAttribute="trailing" constant="20" id="XfD-a5-bpA"/>
-                                                <constraint firstItem="xLZ-2U-Bvy" firstAttribute="top" secondItem="nft-EC-oUa" secondAttribute="top" id="gS1-8W-ROW"/>
-                                                <constraint firstItem="nft-EC-oUa" firstAttribute="top" secondItem="XyK-mr-CVF" secondAttribute="top" constant="20" id="kyy-jy-uPL"/>
-                                                <constraint firstAttribute="bottom" secondItem="nft-EC-oUa" secondAttribute="bottom" constant="20" id="lNj-Hv-hdb"/>
-                                                <constraint firstAttribute="centerY" secondItem="nft-EC-oUa" secondAttribute="centerY" id="lxt-qT-1WA"/>
-                                                <constraint firstItem="nft-EC-oUa" firstAttribute="top" secondItem="XyK-mr-CVF" secondAttribute="top" constant="20" id="taZ-OK-BUi"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="H0v-3Q-YLs"/>
-                                                    <exclude reference="taZ-OK-BUi"/>
-                                                    <exclude reference="1Lk-pY-B42"/>
-                                                </mask>
-                                            </variation>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="XyK-mr-CVF" firstAttribute="top" secondItem="u59-NC-8cD" secondAttribute="top" constant="4" id="Oan-gl-T6f"/>
-                                        <constraint firstItem="XyK-mr-CVF" firstAttribute="leading" secondItem="u59-NC-8cD" secondAttribute="leading" constant="8" id="gdl-EJ-iEq"/>
-                                        <constraint firstAttribute="bottom" secondItem="XyK-mr-CVF" secondAttribute="bottom" constant="4" id="kwJ-Bk-kQ5"/>
-                                        <constraint firstAttribute="trailing" secondItem="XyK-mr-CVF" secondAttribute="trailing" constant="8" id="yRD-TX-EXI"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="detailLabel" destination="FRL-ke-Zg7" id="EgB-Vl-BnT"/>
-                                    <outlet property="imageView" destination="nft-EC-oUa" id="vFZ-Xs-xjU"/>
-                                    <outlet property="tile" destination="XyK-mr-CVF" id="dQE-gz-rnr"/>
-                                    <outlet property="topLabel" destination="xLZ-2U-Bvy" id="hjT-aj-VhK"/>
-                                    <segue destination="rD0-A9-HS3" kind="show" identifier="showGround" id="4Xk-2v-6jU"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CateringInfoCell" rowHeight="100" id="BZy-AZ-gwp" customClass="NJOPInfoCell">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -1188,7 +1106,7 @@ Teterboro-Naples</string>
                                         <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIL-9h-Olm">
                                             <rect key="frame" x="8" y="4" width="359" height="92"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infoImage" translatesAutoresizingMaskIntoConstraints="NO" id="PF4-gU-KYI">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PF4-gU-KYI">
                                                     <rect key="frame" x="8" y="20" width="51" height="52"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="75" id="L2s-2C-gh0"/>
@@ -1268,7 +1186,7 @@ Teterboro-Naples</string>
                                         <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZd-Ce-9dv">
                                             <rect key="frame" x="8" y="4" width="359" height="92"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infoImage" translatesAutoresizingMaskIntoConstraints="NO" id="wQp-Cg-S5p">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wQp-Cg-S5p">
                                                     <rect key="frame" x="8" y="20" width="51" height="52"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="4N1-ec-BIb"/>
@@ -1348,7 +1266,7 @@ Teterboro-Naples</string>
                                         <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JY0-FD-35n">
                                             <rect key="frame" x="8" y="4" width="359" height="92"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infoImage" translatesAutoresizingMaskIntoConstraints="NO" id="f7g-1z-Tnc">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f7g-1z-Tnc">
                                                     <rect key="frame" x="8" y="20" width="51" height="52"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="75" id="04f-K6-deN"/>
@@ -1419,6 +1337,86 @@ Teterboro-Naples</string>
                                     <segue destination="MdR-TU-Rfu" kind="show" identifier="showManifest" id="2cl-7a-RhS"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroundInfoCell" rowHeight="100" id="m8h-Vd-GHb" customClass="NJOPInfoCell">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m8h-Vd-GHb" id="u59-NC-8cD">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XyK-mr-CVF">
+                                            <rect key="frame" x="8" y="4" width="359" height="92"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nft-EC-oUa">
+                                                    <rect key="frame" x="8" y="20" width="51" height="52"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="1bi-vE-KUM"/>
+                                                        <constraint firstAttribute="height" constant="75" id="BnN-Fn-6W0"/>
+                                                        <constraint firstAttribute="width" constant="75" id="MOH-ww-rIc"/>
+                                                        <constraint firstAttribute="height" constant="52" id="X4B-Bd-xYk"/>
+                                                        <constraint firstAttribute="width" constant="51" id="eQc-l1-1KM"/>
+                                                        <constraint firstAttribute="width" constant="30" id="q91-Nh-czm"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="1bi-vE-KUM"/>
+                                                            <exclude reference="BnN-Fn-6W0"/>
+                                                            <exclude reference="MOH-ww-rIc"/>
+                                                            <exclude reference="q91-Nh-czm"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Crew" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLZ-2U-Bvy">
+                                                    <rect key="frame" x="79" y="20" width="77.5" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capt. Michael Chapman" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRL-ke-Zg7">
+                                                    <rect key="frame" x="79" y="45" width="169" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="xLZ-2U-Bvy" firstAttribute="leading" secondItem="nft-EC-oUa" secondAttribute="trailing" constant="8" id="1Lk-pY-B42"/>
+                                                <constraint firstItem="xLZ-2U-Bvy" firstAttribute="leading" secondItem="FRL-ke-Zg7" secondAttribute="leading" id="39S-Lc-Jb1"/>
+                                                <constraint firstAttribute="bottom" secondItem="nft-EC-oUa" secondAttribute="bottom" constant="20" id="H0v-3Q-YLs"/>
+                                                <constraint firstItem="FRL-ke-Zg7" firstAttribute="top" secondItem="xLZ-2U-Bvy" secondAttribute="bottom" constant="8" id="QAy-ff-AFK"/>
+                                                <constraint firstItem="nft-EC-oUa" firstAttribute="leading" secondItem="XyK-mr-CVF" secondAttribute="leading" constant="8" id="T0B-fV-ljf"/>
+                                                <constraint firstItem="xLZ-2U-Bvy" firstAttribute="leading" secondItem="nft-EC-oUa" secondAttribute="trailing" constant="20" id="XfD-a5-bpA"/>
+                                                <constraint firstItem="xLZ-2U-Bvy" firstAttribute="top" secondItem="nft-EC-oUa" secondAttribute="top" id="gS1-8W-ROW"/>
+                                                <constraint firstItem="nft-EC-oUa" firstAttribute="top" secondItem="XyK-mr-CVF" secondAttribute="top" constant="20" id="kyy-jy-uPL"/>
+                                                <constraint firstAttribute="bottom" secondItem="nft-EC-oUa" secondAttribute="bottom" constant="20" id="lNj-Hv-hdb"/>
+                                                <constraint firstAttribute="centerY" secondItem="nft-EC-oUa" secondAttribute="centerY" id="lxt-qT-1WA"/>
+                                                <constraint firstItem="nft-EC-oUa" firstAttribute="top" secondItem="XyK-mr-CVF" secondAttribute="top" constant="20" id="taZ-OK-BUi"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="H0v-3Q-YLs"/>
+                                                    <exclude reference="taZ-OK-BUi"/>
+                                                    <exclude reference="1Lk-pY-B42"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XyK-mr-CVF" firstAttribute="top" secondItem="u59-NC-8cD" secondAttribute="top" constant="4" id="Oan-gl-T6f"/>
+                                        <constraint firstItem="XyK-mr-CVF" firstAttribute="leading" secondItem="u59-NC-8cD" secondAttribute="leading" constant="8" id="gdl-EJ-iEq"/>
+                                        <constraint firstAttribute="bottom" secondItem="XyK-mr-CVF" secondAttribute="bottom" constant="4" id="kwJ-Bk-kQ5"/>
+                                        <constraint firstAttribute="trailing" secondItem="XyK-mr-CVF" secondAttribute="trailing" constant="8" id="yRD-TX-EXI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="detailLabel" destination="FRL-ke-Zg7" id="EgB-Vl-BnT"/>
+                                    <outlet property="imageView" destination="nft-EC-oUa" id="vFZ-Xs-xjU"/>
+                                    <outlet property="tile" destination="XyK-mr-CVF" id="dQE-gz-rnr"/>
+                                    <outlet property="topLabel" destination="xLZ-2U-Bvy" id="hjT-aj-VhK"/>
+                                    <segue destination="rD0-A9-HS3" kind="show" identifier="showGround" id="4Xk-2v-6jU"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YourPlaneInfoCell" rowHeight="100" id="zP0-UW-7wT" customClass="NJOPInfoCell">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -1428,7 +1426,7 @@ Teterboro-Naples</string>
                                         <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3g-uh-SQq">
                                             <rect key="frame" x="8" y="4" width="359" height="92"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crew" translatesAutoresizingMaskIntoConstraints="NO" id="1rF-9s-xhj">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1rF-9s-xhj">
                                                     <rect key="frame" x="8" y="20" width="51" height="52"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="AKA-1q-Lh3"/>
@@ -1442,8 +1440,8 @@ Teterboro-Naples</string>
                                                         <mask key="constraints">
                                                             <exclude reference="AKA-1q-Lh3"/>
                                                             <exclude reference="fdS-kq-qIF"/>
-                                                            <exclude reference="zQx-Pb-lJE"/>
                                                             <exclude reference="nxa-ge-6Cl"/>
+                                                            <exclude reference="zQx-Pb-lJE"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
@@ -1830,17 +1828,17 @@ Brooklyn, NY 11238</string>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSX-Sp-As4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="FOOD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROj-1D-O92">
-                                                    <rect key="frame" x="8" y="20" width="54" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORDERING" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROj-1D-O92">
+                                                    <rect key="frame" x="8" y="20" width="100.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="4SK-DW-agl">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="4SK-DW-agl">
                                                     <rect key="frame" x="8" y="48" width="359" height="13"/>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEf-5c-bpk">
-                                                    <rect key="frame" x="8" y="69.5" width="359" height="60.5"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEf-5c-bpk">
+                                                    <rect key="frame" x="8" y="69" width="359" height="216"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <string key="text">2 Cobb salad entrees
 1 Roast beef sandwich
@@ -1849,25 +1847,7 @@ Brooklyn, NY 11238</string>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="BEVERAGE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JN-XA-3e6">
-                                                    <rect key="frame" x="8" y="148.5" width="101.5" height="20"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="20"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRW-rC-ihB">
-                                                    <rect key="frame" x="8" y="196.5" width="359" height="57"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <string key="text">1 Freshly brewed coffee
-1 Tea</string>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="Uxg-RV-1Eo">
-                                                    <rect key="frame" x="8" y="175.5" width="359" height="13"/>
-                                                </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="252" ambiguous="YES" misplaced="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhp-Rf-Vg6">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="252" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhp-Rf-Vg6">
                                                     <rect key="frame" x="8" y="285" width="359" height="138.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <string key="text">Don’t forget:
@@ -1898,46 +1878,30 @@ Don’t see what you want?</string>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="hRW-rC-ihB" firstAttribute="leading" secondItem="PSX-Sp-As4" secondAttribute="leading" constant="8" id="17N-IK-Hvx"/>
                                                 <constraint firstItem="ppF-sp-21o" firstAttribute="leading" secondItem="PSX-Sp-As4" secondAttribute="leading" constant="8" id="2oP-PS-esH"/>
-                                                <constraint firstItem="6JN-XA-3e6" firstAttribute="top" secondItem="vEf-5c-bpk" secondAttribute="bottom" constant="8" symbolic="YES" id="7fj-XP-6za"/>
                                                 <constraint firstAttribute="trailing" secondItem="Dhp-Rf-Vg6" secondAttribute="trailing" constant="8" id="9Nc-u1-twb"/>
                                                 <constraint firstItem="ppF-sp-21o" firstAttribute="top" secondItem="Dhp-Rf-Vg6" secondAttribute="bottom" constant="8" id="BKw-zG-Fdt"/>
                                                 <constraint firstAttribute="bottom" secondItem="ppF-sp-21o" secondAttribute="bottom" constant="8" id="BRB-XT-Ktg"/>
-                                                <constraint firstItem="Dhp-Rf-Vg6" firstAttribute="top" secondItem="hRW-rC-ihB" secondAttribute="bottom" constant="32" id="J4t-2Y-BX3"/>
                                                 <constraint firstAttribute="trailing" secondItem="4SK-DW-agl" secondAttribute="trailing" constant="8" id="JMb-fd-LT7"/>
                                                 <constraint firstItem="vEf-5c-bpk" firstAttribute="top" secondItem="4SK-DW-agl" secondAttribute="bottom" constant="8" id="JjR-VV-aKd"/>
-                                                <constraint firstItem="Uxg-RV-1Eo" firstAttribute="top" secondItem="6JN-XA-3e6" secondAttribute="bottom" constant="7" id="K3L-bS-gjY"/>
-                                                <constraint firstAttribute="trailing" secondItem="Uxg-RV-1Eo" secondAttribute="trailing" constant="8" id="Mjm-yR-oXP"/>
-                                                <constraint firstAttribute="trailing" secondItem="hRW-rC-ihB" secondAttribute="trailing" constant="8" id="Ohs-Zh-4Ay"/>
-                                                <constraint firstItem="Dhp-Rf-Vg6" firstAttribute="top" secondItem="hRW-rC-ihB" secondAttribute="bottom" constant="8" symbolic="YES" id="Q3W-b0-8ZX"/>
                                                 <constraint firstAttribute="trailing" secondItem="ppF-sp-21o" secondAttribute="trailing" constant="8" id="RIH-uh-8w5"/>
-                                                <constraint firstItem="6JN-XA-3e6" firstAttribute="top" secondItem="vEf-5c-bpk" secondAttribute="bottom" constant="18.5" id="Sct-3i-LlJ"/>
                                                 <constraint firstItem="4SK-DW-agl" firstAttribute="leading" secondItem="PSX-Sp-As4" secondAttribute="leading" constant="8" id="WLk-ma-XRr"/>
                                                 <constraint firstItem="vEf-5c-bpk" firstAttribute="top" secondItem="4SK-DW-agl" secondAttribute="bottom" constant="8" symbolic="YES" id="Xx2-Bf-G8V"/>
                                                 <constraint firstItem="4SK-DW-agl" firstAttribute="top" secondItem="ROj-1D-O92" secondAttribute="bottom" constant="8" id="bjT-4z-Egl"/>
-                                                <constraint firstItem="Uxg-RV-1Eo" firstAttribute="top" secondItem="6JN-XA-3e6" secondAttribute="bottom" constant="7" id="bt4-2K-Hc4"/>
                                                 <constraint firstAttribute="trailing" secondItem="vEf-5c-bpk" secondAttribute="trailing" constant="8" id="crl-6x-frx"/>
                                                 <constraint firstItem="ppF-sp-21o" firstAttribute="top" secondItem="Dhp-Rf-Vg6" secondAttribute="bottom" constant="8.5" id="cze-IK-bc7"/>
-                                                <constraint firstItem="Dhp-Rf-Vg6" firstAttribute="top" secondItem="hRW-rC-ihB" secondAttribute="bottom" constant="31.5" id="eAz-HN-5Uo"/>
-                                                <constraint firstItem="hRW-rC-ihB" firstAttribute="top" secondItem="Uxg-RV-1Eo" secondAttribute="bottom" constant="8" id="fF9-Nj-dpm"/>
                                                 <constraint firstItem="ROj-1D-O92" firstAttribute="leading" secondItem="PSX-Sp-As4" secondAttribute="leading" constant="8" id="hxD-zH-2Hi"/>
                                                 <constraint firstItem="ppF-sp-21o" firstAttribute="top" secondItem="Dhp-Rf-Vg6" secondAttribute="bottom" constant="8" symbolic="YES" id="k6y-YG-Q8I"/>
-                                                <constraint firstItem="Uxg-RV-1Eo" firstAttribute="leading" secondItem="PSX-Sp-As4" secondAttribute="leading" constant="8" id="m37-Oc-PB4"/>
-                                                <constraint firstItem="6JN-XA-3e6" firstAttribute="top" secondItem="vEf-5c-bpk" secondAttribute="bottom" constant="19" id="pff-ej-iSX"/>
                                                 <constraint firstItem="Dhp-Rf-Vg6" firstAttribute="leading" secondItem="PSX-Sp-As4" secondAttribute="leading" constant="8" id="qH3-T8-QCQ"/>
                                                 <constraint firstItem="ROj-1D-O92" firstAttribute="top" secondItem="PSX-Sp-As4" secondAttribute="top" constant="20" id="u7C-36-b7e"/>
-                                                <constraint firstItem="hRW-rC-ihB" firstAttribute="top" secondItem="Uxg-RV-1Eo" secondAttribute="bottom" constant="8" id="uLh-ds-geV"/>
                                                 <constraint firstItem="vEf-5c-bpk" firstAttribute="top" secondItem="4SK-DW-agl" secondAttribute="bottom" constant="8.5" id="wei-1G-coo"/>
+                                                <constraint firstItem="Dhp-Rf-Vg6" firstAttribute="top" secondItem="vEf-5c-bpk" secondAttribute="bottom" id="wsb-12-MLy"/>
                                                 <constraint firstItem="4SK-DW-agl" firstAttribute="top" secondItem="ROj-1D-O92" secondAttribute="bottom" constant="8" id="wtw-8m-cX8"/>
                                                 <constraint firstItem="vEf-5c-bpk" firstAttribute="leading" secondItem="PSX-Sp-As4" secondAttribute="leading" constant="8" id="zRD-dG-cVy"/>
-                                                <constraint firstItem="6JN-XA-3e6" firstAttribute="leading" secondItem="PSX-Sp-As4" secondAttribute="leading" constant="8" id="zYF-Ud-TbS"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="Xx2-Bf-G8V"/>
-                                                    <exclude reference="7fj-XP-6za"/>
-                                                    <exclude reference="Q3W-b0-8ZX"/>
                                                     <exclude reference="k6y-YG-Q8I"/>
                                                 </mask>
                                             </variation>
@@ -1952,7 +1916,6 @@ Don’t see what you want?</string>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="beverageItemsLabel" destination="hRW-rC-ihB" id="7L9-vp-h6L"/>
                                     <outlet property="foodItemsLabel" destination="vEf-5c-bpk" id="lEr-h7-FXh"/>
                                 </connections>
                             </tableViewCell>
@@ -1967,7 +1930,7 @@ Don’t see what you want?</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiG-36-8RA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4308.5" y="-2635"/>
+            <point key="canvasLocation" x="4308.5" y="-2635.5"/>
         </scene>
         <!--Crew View Controller-->
         <scene sceneID="26d-x2-HKI">
@@ -2845,10 +2808,8 @@ In the event of a medical incident while traveling, NetJets Owners and Marquis J
         <image name="cabin" width="375" height="309"/>
         <image name="cabin speakers" width="39" height="36"/>
         <image name="cesna" width="750" height="618"/>
-        <image name="crew" width="32" height="32"/>
         <image name="drop-pin" width="9" height="15"/>
         <image name="headset" width="46" height="52"/>
-        <image name="infoImage" width="51" height="52"/>
         <image name="plane-layout" width="750" height="1977"/>
         <image name="power outlet" width="51" height="44"/>
         <image name="refreshments" width="81" height="34"/>

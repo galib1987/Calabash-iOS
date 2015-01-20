@@ -11,6 +11,5 @@
 @interface NJOPCateringCell : NJOPTableViewCell
 
 @property (nonatomic) IBOutlet UITextView *foodItemsLabel;
-@property (nonatomic) IBOutlet UITextView *beverageItemsLabel;
 
 @end

@@ -235,44 +235,44 @@
                                   "cateringPhone":"6142447217",
                                   "isPrimaryOrder":true,
                                   "isNCIORder":false,
-                                  "cateringItems":[
-                                                   {
-                                                   "ownerFacingDescription":"Signature Selection:   Tenderloin Sliders",
-                                                   "quantity":1,
-                                                   "preparationNotes":"Tenderloin on mini rolls, with lettuce, tomato, and red onion, served with horseradish cream sauce",
-                                                   "packaging":"Tray",
-                                                   "categories":[
-                                                                 {
-                                                                 "category":"Cold entrees",
-                                                                 "categoryParent":"Lunch & dinner"
-                                                                 },
-                                                                 {
-                                                                 "category":"Lunch/Dinner",
-                                                                 "categoryParent":"Signature Selections"
-                                                                 },
-                                                                 {
-                                                                 "category":"Sandwiches",
-                                                                 "categoryParent":"Lunch & dinner"
-                                                                 },
-                                                                 {
-                                                                 "category":"All",
-                                                                 "categoryParent":"Signature Selections"
-                                                                 }
-                                                                 ]
-                                                   },
-                                                   {
-                                                   "ownerFacingDescription":"Grey Goose Vodka",
-                                                   "quantity":2,
-                                                   "preparationNotes":"",
-                                                   "packaging":"Bottle",
-                                                   "categories":[
-                                                                 {
-                                                                 "category":"Vodka",
-                                                                 "categoryParent":"Liquor"
-                                                                 }
-                                                                 ]
-                                                   }
-                                                   ]
+                                  "cateringItems": [
+                                                    {
+                                                    "ownerFacingDescription": "Chocolate Dipped Strawberries",
+                                                    "quantity": 1,
+                                                    "preparationNotes": "with a note to say: Denny and Katie, Welcome to the Marquis Jet Family!  Warm Regards,  Jae and Marquis Jet Owner Services Team",
+                                                    "packaging": "Tray",
+                                                    "categories": []
+                                                    },
+                                                    {
+                                                    "ownerFacingDescription": "Assorted Finger Sandwich (1-2 people) ",
+                                                    "quantity": 1,
+                                                    "preparationNotes": "",
+                                                    "packaging": "Tray",
+                                                    "categories": []
+                                                    },
+                                                    {
+                                                    "ownerFacingDescription": "Fresh Sliced Fruit (1-2 people) ",
+                                                    "quantity": 1,
+                                                    "preparationNotes": "",
+                                                    "packaging": "Tray",
+                                                    "categories": []
+                                                    },
+                                                    {
+                                                    "ownerFacingDescription": "Fresh Brewed Coffee",
+                                                    "quantity": 1,"preparationNotes": "",
+                                                    "packaging": "Bulk",
+                                                    "categories": [
+                                                                   {
+                                                                   "category": "Coffee & Tea",
+                                                                   "categoryParent": "Non-alcoholic"
+                                                                   },
+                                                                   {
+                                                                   "category": "Beverages",
+                                                                   "categoryParent": "RUSHMORE_MARQUIS"
+                                                                   }
+                                                                   ]
+                                                    }
+                                                    ]
                                   }
                                   ]
                 }

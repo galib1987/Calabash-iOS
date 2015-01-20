@@ -16,14 +16,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    NSMutableString *passengerManifestString = [[NSMutableString alloc] init];
+    [self loadDataSource];
     
-    for (NSDictionary *passengerDict in self.reservation.passengers) {
-        NSString *passengerName = [NSString stringWithFormat:@"%@ \n", passengerDict[@"passengerName"]];
-        passengerManifestString = passengerName;
-        
+}
+
+- (void)loadDataSource {
+    NSMutableString *manifestString = [[NSMutableString alloc] init];
+    
+    for (NSDictionary *passengerRepresentation in self.reservation.passengers) {
+        NSString *currentPassengerName = passengerRepresentation[@"passengerName"];
+        [manifestString appendString:[NSString stringWithFormat:@"%@ \n", currentPassengerName]];
     }
     
     NSArray* sections = @[
@@ -32,7 +35,7 @@
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"NJOPPassengerManifestCell",
                                           kSimpleDataSourceCellKeypaths					: @{
-                                                  @"manifestTextView.text" : passengerManifestString,
+                                                  @"manifestTextView.text" : manifestString,
                                                   
                                                   }
                                           },
@@ -49,16 +52,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
