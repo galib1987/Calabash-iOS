@@ -7,7 +7,10 @@
 //
 
 #import "SimpleDataSourceTableViewController.h"
+#import "NJOPReservation.h"
 
 @interface NJOPPlaneViewController : SimpleDataSourceTableViewController
+
+@property (nonatomic) NJOPReservation *reservation;
 
 @end
