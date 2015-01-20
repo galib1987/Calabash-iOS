@@ -1,5 +1,5 @@
 #include "Pods-NCLFramework.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/NCLFramework" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/APLKeyboardControls" "${PODS_ROOT}/Headers/Public/Bolts" "${PODS_ROOT}/Headers/Public/DateTools" "${PODS_ROOT}/Headers/Public/HockeySDK" "${PODS_ROOT}/Headers/Public/NCLFramework" "${PODS_ROOT}/Headers/Public/NSData+Base64" "${PODS_ROOT}/Headers/Public/PDTSimpleCalendar" "${PODS_ROOT}/Headers/Public/RSDayFlow" "${PODS_ROOT}/Headers/Public/SZTextView"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/NCLFramework" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/APLKeyboardControls" "${PODS_ROOT}/Headers/Public/Bolts" "${PODS_ROOT}/Headers/Public/DateTools" "${PODS_ROOT}/Headers/Public/HockeySDK" "${PODS_ROOT}/Headers/Public/NCLFramework" "${PODS_ROOT}/Headers/Public/NSData+Base64" "${PODS_ROOT}/Headers/Public/RSDayFlow" "${PODS_ROOT}/Headers/Public/SZTextView"
 OTHER_LDFLAGS = ${PODS_NCLFRAMEWORK_OTHER_LDFLAGS} -ObjC
 PODS_ROOT = ${SRCROOT}
