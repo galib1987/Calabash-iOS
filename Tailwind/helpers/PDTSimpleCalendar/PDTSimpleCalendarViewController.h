@@ -78,7 +78,7 @@
 /**
  *  Scroll to the current selected date in the calendar.
  *
- *  @param animated if you want to animate the scrolling
+ *  @param animated if you want to animate the scrollingbackgroundColor
  */
 - (void)scrollToSelectedDate:(BOOL)animated;
 

@@ -205,6 +205,8 @@ const CGFloat PDTSimpleCalendarCircleSize = 32.0f;
     }
 
     return [UIColor redColor];
+    //return [UIColor colorWithRed:71/255.0f green:227/255.0f blue:92/255.0f alpha:1.0f];
+
 }
 
 #pragma mark - Text Label Customizations Color
