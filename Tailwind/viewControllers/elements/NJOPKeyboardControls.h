@@ -10,6 +10,8 @@
 
 @interface NJOPKeyboardControls : APLKeyboardControls
 
+@property (strong, nonatomic) UIBarButtonItem *customItem;
+
 - (void)updateButtonsAt:(NSInteger)index;
 
 @end
