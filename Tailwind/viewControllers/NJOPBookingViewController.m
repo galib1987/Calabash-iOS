@@ -13,6 +13,8 @@
 @interface NJOPBookingViewController () <PDTSimpleCalendarViewDelegate>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) NJOPKeyboardControls *keyboardControls;
+@property (nonatomic, strong) NSArray *customBlackoutDates;
+@property (nonatomic, strong) NSArray *customPeakDates;
 @property (nonatomic, strong) NSArray *customDates;
 @property (strong, nonatomic) PDTSimpleCalendarViewController *calendarViewController;
 @end
@@ -65,8 +67,8 @@ NSDateFormatter *timeFormatter;
         }
     }
     
-    self.aircraftInput.inputView = [self getAircraftPicker];
-    //self.aircraftInput.inputView = [self getCalendar];
+    //self.aircraftInput.inputView = [self getAircraftPicker];
+    self.aircraftInput.inputView = [self getCalendar];
     
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
@@ -131,53 +133,83 @@ NSDateFormatter *timeFormatter;
     if (self.calendarViewController == nil) {
         NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateFormat = @"dd/MM/yyyy";
-        _customDates = @[[dateFormatter dateFromString:@"01/05/2014"], [dateFormatter dateFromString:@"01/06/2014"], [dateFormatter dateFromString:@"01/07/2014"]];
+        self.customBlackoutDates = @[[dateFormatter dateFromString:@"22/01/2015"], [dateFormatter dateFromString:@"23/01/2015"], [dateFormatter dateFromString:@"24/01/2015"]];
+        self.customPeakDates =  @[[dateFormatter dateFromString:@"27/01/2015"], [dateFormatter dateFromString:@"26/01/2015"], [dateFormatter dateFromString:@"25/01/2015"]];
+        self.calendarViewController = [[PDTSimpleCalendarViewController alloc] init];
         
-       self.calendarViewController = [[PDTSimpleCalendarViewController alloc] init];
         //This is the default behavior, will display a full year starting the first of the current month
-        self.calendarViewController.delegate = self;
         self.calendarViewController.firstDate = [NSDate date];
         NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
         offsetComponents.month = 20;
         NSDate *lastDate =[self.calendarViewController.calendar dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
         self.calendarViewController.lastDate = lastDate;
+        [[PDTSimpleCalendarViewCell appearance] setCircleSelectedColor: [UIColor colorWithRed:71/255.0f green:227/255.0f blue:92/255.0f alpha:1.0f]];
+        [[PDTSimpleCalendarViewCell appearance] setTextSelectedColor: [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:1.0f]];
+        [self.calendarViewController setDelegate:self];
     }
     return self.calendarViewController.view;
 }
 #pragma mark - PDTSimpleCalendarViewDelegate
 - (void)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller didSelectDate:(NSDate *)date
 {
-    NSLog(@"Date Selected : %@",date);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM d, yyyy"];
     NSString *newDate = [dateFormatter stringFromDate:date];
     NSLog(@"%@ %@", [date description],newDate);
     self.flightDate.text = newDate;
-    [self.keyboardControls focusNext:self];
+    //[self.keyboardControls focusNext:self];
     [self updatePassengerCount];
-    
-    
 }
+/*  Dates Color  */
 
-- (BOOL)calendarViewController:(PDTSimpleCalendarViewController *)controller shouldUseCustomColorsForDate:(NSDate *)date
+- (BOOL)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller shouldUseCustomColorsForDate:(NSDate *)date
 {
-    if ([self.customDates containsObject:date]) {
+    if ([self.customBlackoutDates containsObject:date]||[self.customPeakDates containsObject:date]||[self.customDates containsObject:date]) {
         return YES;
     }
-    
+    return NO;
+}
+/*  Blackout Dates Color  */
+
+- (BOOL)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller shouldUseCustomColorsForBlackoutDate:(NSDate *)date
+{
+    if ([self.customBlackoutDates containsObject:date]) {
+        return YES;
+    }
     return NO;
 }
 
-- (UIColor *)calendarViewController:(PDTSimpleCalendarViewController *)controller circleColorForDate:(NSDate *)date
+- (UIColor *)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller circleColorForBlackoutDate:(NSDate *)date
 {
-    return [UIColor blueColor];
+    return [UIColor colorWithRed:225/255.0f green:225/255.0f blue:225/255.0f alpha:1.0f];
 }
 
-- (UIColor *)calendarViewController:(PDTSimpleCalendarViewController *)controller textColorForDate:(NSDate *)date
+- (UIColor *)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller textColorForBlackoutDate:(NSDate *)date
 {
-    
-    return [UIColor colorWithRed:71/255.0f green:227/255.0f blue:92/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:1.0f];
 }
+
+
+/*  Peak Dates Color  */
+
+- (BOOL)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller shouldUseCustomColorsForPeakDate:(NSDate *)date
+{
+    if ([self.customPeakDates containsObject:date]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (UIColor *)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller circleColorForPeakDate:(NSDate *)date
+{
+    return [UIColor colorWithRed:236/255.0f green:66/255.0f blue:66/255.0f alpha:1.0f];
+}
+
+- (UIColor *)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller textColorForPeakDate:(NSDate *)date
+{
+    return [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:1.0f];
+}
+
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     if (textField == self.departureAirport || textField == self.destinationAirport) {

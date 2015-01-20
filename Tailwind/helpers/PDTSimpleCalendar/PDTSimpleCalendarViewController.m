@@ -327,13 +327,12 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
         isSelected = ([self isSelectedDate:cellDate] && (indexPath.section == [self sectionForDate:cellDate]));
         isToday = [self isTodayDate:cellDate];
         [cell setDate:cellDate calendar:self.calendar];
-
+        
         //Ask the delegate if this date should have specific colors.
         if ([self.delegate respondsToSelector:@selector(simpleCalendarViewController:shouldUseCustomColorsForDate:)]) {
             isCustomDate = [self.delegate simpleCalendarViewController:self shouldUseCustomColorsForDate:cellDate];
         }
-
-
+        
     } else {
         [cell setDate:nil calendar:nil];
     }
@@ -583,5 +582,90 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
 
     return nil;
 }
+
+- (BOOL)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell shouldUseCustomColorsForPeakDate:(NSDate *)date
+{
+    //If the date is not enabled (aka outside the first/lastDate) return YES
+    if (![self isEnabledDate:date]) {
+        return YES;
+    }
+    
+    //Otherwise we ask the delegate
+    if ([self.delegate respondsToSelector:@selector(simpleCalendarViewController:shouldUseCustomColorsForPeakDate:)]) {
+        return [self.delegate simpleCalendarViewController:self shouldUseCustomColorsForPeakDate:date];
+    }
+    
+    return NO;
+}
+
+- (UIColor *)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell circleColorForPeakDate:(NSDate *)date
+{
+    if (![self isEnabledDate:date]) {
+        return cell.circleDefaultColor;
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(simpleCalendarViewController:circleColorForPeakDate:)]) {
+        return [self.delegate simpleCalendarViewController:self circleColorForPeakDate:date];
+    }
+    
+    return nil;
+}
+
+- (UIColor *)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell textColorForPeakDate:(NSDate *)date
+{
+    if (![self isEnabledDate:date]) {
+        return cell.textDisabledColor;
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(simpleCalendarViewController:textColorForPeakDate:)]) {
+        return [self.delegate simpleCalendarViewController:self textColorForPeakDate:date];
+    }
+    
+    return nil;
+}
+
+
+- (BOOL)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell shouldUseCustomColorsForBlackoutDate:(NSDate *)date
+{
+    //If the date is not enabled (aka outside the first/lastDate) return YES
+    if (![self isEnabledDate:date]) {
+        return YES;
+    }
+    
+    //Otherwise we ask the delegate
+    if ([self.delegate respondsToSelector:@selector(simpleCalendarViewController:shouldUseCustomColorsForBlackoutDate:)]) {
+        return [self.delegate simpleCalendarViewController:self shouldUseCustomColorsForBlackoutDate:date];
+    }
+    
+    return NO;
+}
+
+- (UIColor *)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell circleColorForBlackoutDate:(NSDate *)date
+{
+    if (![self isEnabledDate:date]) {
+        return cell.circleDefaultColor;
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(simpleCalendarViewController:circleColorForBlackoutDate:)]) {
+        return [self.delegate simpleCalendarViewController:self circleColorForBlackoutDate:date];
+    }
+    
+    return nil;
+}
+
+- (UIColor *)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell textColorForBlackoutDate:(NSDate *)date
+{
+    if (![self isEnabledDate:date]) {
+        return cell.textDisabledColor;
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(simpleCalendarViewController:textColorForBlackoutDate:)]) {
+        return [self.delegate simpleCalendarViewController:self textColorForBlackoutDate:date];
+    }
+    
+    return nil;
+}
+
+
 
 @end

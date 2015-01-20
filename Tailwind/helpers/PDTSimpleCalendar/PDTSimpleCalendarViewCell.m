@@ -126,14 +126,39 @@ const CGFloat PDTSimpleCalendarCircleSize = 32.0f;
     UIColor *labelColor = (today) ? [self textTodayColor] : [self textDefaultColor];
 
     if (self.date && self.delegate) {
-        if ([self.delegate respondsToSelector:@selector(simpleCalendarViewCell:shouldUseCustomColorsForDate:)] && [self.delegate simpleCalendarViewCell:self shouldUseCustomColorsForDate:self.date]) {
+        if([self.delegate respondsToSelector:@selector(simpleCalendarViewCell:shouldUseCustomColorsForDate:)]){
+            if([self.delegate simpleCalendarViewCell:self shouldUseCustomColorsForDate:self.date]){
+                if ([self.delegate respondsToSelector:@selector(simpleCalendarViewCell:textColorForDate:)] && [self.delegate simpleCalendarViewCell:self textColorForDate:self.date]) {
+                    labelColor = [self.delegate simpleCalendarViewCell:self textColorForDate:self.date];
+                }
+                
+                if ([self.delegate respondsToSelector:@selector(simpleCalendarViewCell:circleColorForDate:)] && [self.delegate simpleCalendarViewCell:self circleColorForDate:self.date]) {
+                    circleColor = [self.delegate simpleCalendarViewCell:self circleColorForDate:self.date];
+                }
 
-            if ([self.delegate respondsToSelector:@selector(simpleCalendarViewCell:textColorForDate:)] && [self.delegate simpleCalendarViewCell:self textColorForDate:self.date]) {
-                labelColor = [self.delegate simpleCalendarViewCell:self textColorForDate:self.date];
             }
-
-            if ([self.delegate respondsToSelector:@selector(simpleCalendarViewCell:circleColorForDate:)] && [self.delegate simpleCalendarViewCell:self circleColorForDate:self.date]) {
-                circleColor = [self.delegate simpleCalendarViewCell:self circleColorForDate:self.date];
+            
+        }
+        if([self.delegate respondsToSelector:@selector(simpleCalendarViewCell:shouldUseCustomColorsForPeakDate:)]){
+            if([self.delegate simpleCalendarViewCell:self shouldUseCustomColorsForPeakDate:self.date]) {
+                if ([self.delegate respondsToSelector:@selector(simpleCalendarViewCell:textColorForPeakDate:)] && [self.delegate simpleCalendarViewCell:self textColorForPeakDate:self.date]) {
+                    labelColor = [self.delegate simpleCalendarViewCell:self textColorForPeakDate:self.date];
+                }
+                
+                if ([self.delegate respondsToSelector:@selector(simpleCalendarViewCell:circleColorForPeakDate:)] && [self.delegate simpleCalendarViewCell:self circleColorForPeakDate:self.date]) {
+                    circleColor = [self.delegate simpleCalendarViewCell:self circleColorForPeakDate:self.date];
+                }
+            }
+        }
+        if([self.delegate respondsToSelector:@selector(simpleCalendarViewCell:shouldUseCustomColorsForBlackoutDate:)]){
+            if([self.delegate simpleCalendarViewCell:self shouldUseCustomColorsForBlackoutDate:self.date]){
+                if ([self.delegate respondsToSelector:@selector(simpleCalendarViewCell:textColorForBlackoutDate:)] && [self.delegate simpleCalendarViewCell:self textColorForBlackoutDate:self.date]) {
+                    labelColor = [self.delegate simpleCalendarViewCell:self textColorForBlackoutDate:self.date];
+                }
+                
+                if ([self.delegate respondsToSelector:@selector(simpleCalendarViewCell:circleColorForBlackoutDate:)] && [self.delegate simpleCalendarViewCell:self circleColorForBlackoutDate:self.date]) {
+                    circleColor = [self.delegate simpleCalendarViewCell:self circleColorForBlackoutDate:self.date];
+                }
             }
         }
     }
