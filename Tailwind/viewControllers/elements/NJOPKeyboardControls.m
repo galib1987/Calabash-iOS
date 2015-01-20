@@ -17,4 +17,11 @@
     }
 }
 
+- (void)setCustomItem:(UIBarButtonItem *)customItem {
+    _customItem = customItem;
+    if (customItem != nil) {
+        self.inputAccessoryView.items = @[self.customItem, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], self.doneButton];
+    }
+}
+
 @end

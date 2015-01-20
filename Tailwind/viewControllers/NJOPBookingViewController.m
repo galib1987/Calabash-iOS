@@ -25,6 +25,8 @@ NSArray* inputChain;
 NSInteger currentTextField;
 NSDateFormatter *timeFormatter;
 
+UIView *calendarLegend;
+
 @implementation NJOPBookingViewController
 
 - (void)viewDidLoad {
@@ -194,9 +196,30 @@ NSDateFormatter *timeFormatter;
             textField.text = @"JFK: John F Kennedy Intl";
         }
         [self.navigationController pushViewController:vc animated:YES];
+    } else if (textField == self.flightDate) {
+        self.keyboardControls.customItem = [[UIBarButtonItem alloc] initWithCustomView:[self getCalendarLegend]];
+    } else {
+        self.keyboardControls.hasPreviousNext = true;
     }
     currentTextField = textField.tag;
 }
+
+- (UIView *)getCalendarLegend {
+    if (calendarLegend == nil) {
+        calendarLegend = [[UIView alloc] init];
+        CGRect barFrame = self.keyboardControls.inputAccessoryView.frame;
+        UIView *rectangle = [[UIView alloc] initWithFrame:CGRectMake(0, -6, 12, 8)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, -barFrame.size.height/2, self.view.frame.size.width, barFrame.size.height)];
+        label.text = @"PEAK PERIOD";
+        [label setFont:[UIFont fontWithName:@"NimbusSanD-Reg" size:11.0]];
+        [label setTextColor:[UIColor redColor]];
+        [rectangle setBackgroundColor:[UIColor redColor]];
+        [calendarLegend addSubview:rectangle];
+        [calendarLegend addSubview:label];
+    }
+    return calendarLegend;
+}
+
 - (IBAction)addPassenger:(UIButton *)sender {
     passengerCount++;
     [self updatePassengerCount];
