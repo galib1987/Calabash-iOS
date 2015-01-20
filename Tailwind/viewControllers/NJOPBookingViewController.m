@@ -14,7 +14,7 @@
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) NJOPKeyboardControls *keyboardControls;
 @property (nonatomic, strong) NSArray *customDates;
-@property (strong, nonatomic) NJOPCalendarViewController *calendarViewController;
+@property (strong, nonatomic) PDTSimpleCalendarViewController *calendarViewController;
 @end
 
 int passengerCount = 1;
@@ -65,7 +65,8 @@ NSDateFormatter *timeFormatter;
         }
     }
     
-    self.aircraftInput.inputView = [self getAircraftPicker];
+    //self.aircraftInput.inputView = [self getAircraftPicker];
+    self.aircraftInput.inputView = [self getCalendar];
     
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
@@ -132,7 +133,7 @@ NSDateFormatter *timeFormatter;
         dateFormatter.dateFormat = @"dd/MM/yyyy";
         _customDates = @[[dateFormatter dateFromString:@"01/05/2014"], [dateFormatter dateFromString:@"01/06/2014"], [dateFormatter dateFromString:@"01/07/2014"]];
         
-       self.calendarViewController = [[NJOPCalendarViewController alloc] init];
+       self.calendarViewController = [[PDTSimpleCalendarViewController alloc] init];
         //This is the default behavior, will display a full year starting the first of the current month
         self.calendarViewController.delegate = self;
         self.calendarViewController.firstDate = [NSDate date];
@@ -144,7 +145,7 @@ NSDateFormatter *timeFormatter;
     return self.calendarViewController.view;
 }
 #pragma mark - PDTSimpleCalendarViewDelegate
-- (void)simpleCalendarViewController:(NJOPCalendarViewController *)controller didSelectDate:(NSDate *)date
+- (void)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller didSelectDate:(NSDate *)date
 {
     NSLog(@"Date Selected : %@",date);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -158,7 +159,7 @@ NSDateFormatter *timeFormatter;
     
 }
 
-- (BOOL)calendarViewController:(NJOPCalendarViewController *)controller shouldUseCustomColorsForDate:(NSDate *)date
+- (BOOL)calendarViewController:(PDTSimpleCalendarViewController *)controller shouldUseCustomColorsForDate:(NSDate *)date
 {
     if ([self.customDates containsObject:date]) {
         return YES;
@@ -167,12 +168,12 @@ NSDateFormatter *timeFormatter;
     return NO;
 }
 
-- (UIColor *)calendarViewController:(NJOPCalendarViewController *)controller circleColorForDate:(NSDate *)date
+- (UIColor *)calendarViewController:(PDTSimpleCalendarViewController *)controller circleColorForDate:(NSDate *)date
 {
     return [UIColor blueColor];
 }
 
-- (UIColor *)calendarViewController:(NJOPCalendarViewController *)controller textColorForDate:(NSDate *)date
+- (UIColor *)calendarViewController:(PDTSimpleCalendarViewController *)controller textColorForDate:(NSDate *)date
 {
     
     return [UIColor colorWithRed:71/255.0f green:227/255.0f blue:92/255.0f alpha:1.0f];

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NJOPTextField.h"
 #import "NJOPMultilineTextField.h"
-#import "NJOPCalendarViewController.h"
+#import "PDTSimpleCalendar.h"
 
 @interface NJOPBookingViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate>
 
