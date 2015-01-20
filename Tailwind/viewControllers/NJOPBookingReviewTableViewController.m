@@ -16,6 +16,7 @@
 @implementation NJOPBookingReviewTableViewController
 
 NSString *cellIdentifier = @"NJOPPastFlightTableCell";
+NSString *actionButtonText = @"EDIT FLIGHT DETAILS";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +35,7 @@ NSString *cellIdentifier = @"NJOPPastFlightTableCell";
                                       @{
                                           kSimpleDataSourceCellIdentifierKey		: @"NJOPPastFlightTableCell",
                                           kSimpleDataSourceCellKeypaths					: @{
+                                                  @"actionButtonLabel" : actionButtonText,
                                                   @"accountNameLabel.text" : @"Big Skies LLC",
                                                   @"hoursUsedLabel.text" : @"6 Hours",
                                                   @"hoursLeftLabel.text" : @"150 Hours",
@@ -59,6 +61,7 @@ NSString *cellIdentifier = @"NJOPPastFlightTableCell";
                                       @{
                                           kSimpleDataSourceCellIdentifierKey		: @"NJOPPastFlightTableCell",
                                           kSimpleDataSourceCellKeypaths					: @{
+                                                  @"actionButtonLabel" : actionButtonText,
                                                   @"accountNameLabel.text" : @"Alan",
                                                   @"hoursUsedLabel.text" : @"24 Hours",
                                                   @"hoursLeftLabel.text" : @"15 Hours",

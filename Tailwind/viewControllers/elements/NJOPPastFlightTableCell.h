@@ -33,4 +33,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *specialInstructionsLabel;
 
+@property (strong, nonatomic) NSString *actionButtonLabel;
+
 @end
