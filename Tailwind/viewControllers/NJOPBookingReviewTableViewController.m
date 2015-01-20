@@ -15,6 +15,8 @@
 
 @implementation NJOPBookingReviewTableViewController
 
+NSString *cellIdentifier = @"NJOPPastFlightTableCell";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -81,6 +83,9 @@
                                           },
                                       @{
                                           kSimpleDataSourceCellIdentifierKey			: @"addReturnCell"
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"addOnwardCell"
                                           }
                                       ],
                               },
@@ -91,16 +96,27 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // STUB not sure how to handle height
+    // STUB need to determine which cells get height = 60.
     if (indexPath.row < 2) {
-        return 800;
+        
+        NJOPPastFlightTableCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        
+        if(!cell){
+            cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        }
+        
+        [cell setNeedsLayout];
+        [cell layoutIfNeeded];
+        
+        CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+        
+        return size.height;
     } else return 60;
 }
 
 -(void)registerReusableViews {
-    NSString *identifier = @"NJOPPastFlightTableCell";
-    UINib *nib = [UINib nibWithNibName:identifier bundle:nil];
-    [self.tableView registerNib:nib forCellReuseIdentifier:identifier];
+    UINib *nib = [UINib nibWithNibName:cellIdentifier bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -120,25 +136,6 @@
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 2;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self tableView:self.tableView cellForRowAtIndexPath:indexPath].frame.size.height;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSString *identifier = @"NJOPPastFlightTableCell";
-    
-    NJOPPastFlightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if(!cell){
-        UINib *nib = [UINib nibWithNibName:identifier bundle:nil];
-        [self.tableView registerNib:nib forCellReuseIdentifier:identifier];
-        cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
-    }
-    
-    return cell;
 }*/
 
 /*
