@@ -47,6 +47,71 @@
  */
 - (UIColor *)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell circleColorForDate:(NSDate *)date;
 
+
+/**
+ *  Asks the delegate if the Cell should use custom colors.
+ *
+ *  @param cell the current cell
+ *  @param date the date associated with the cell
+ *
+ *  @return YES if the cell must ask the delegate for text and circle color, NO if it should use default values.
+ */
+- (BOOL)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell shouldUseCustomColorsForBlackoutDate:(NSDate *)date;
+
+/**
+ *  Asks the delegate for the text color for a specific date.
+ *  Will be called only if the delegate returns YES for `- (BOOL)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell shouldUseCustomColorsForBlackoutDate:(NSDate *)date;`
+ *
+ *  @param cell the current cell
+ *  @param date the date associated with the cell
+ *
+ *  @return The text desired color
+ */
+- (UIColor *)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell textColorForBlackoutDate:(NSDate *)date;
+
+/**
+ *  Asks the delegate for the circle color for a specific date.
+ *  Will be called only if the delegate returns YES for `- (BOOL)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell shouldUseCustomColorsForBlackoutDate:(NSDate *)date;`
+ *
+ *  @param cell the current cell
+ *  @param date the date associated with the cell
+ *
+ *  @return The circle desired color
+ */
+- (UIColor *)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell circleColorForBlackoutDate:(NSDate *)date;
+
+/**
+ *  Asks the delegate if the Cell should use custom colors.
+ *
+ *  @param cell the current cell
+ *  @param date the date associated with the cell
+ *
+ *  @return YES if the cell must ask the delegate for text and circle color, NO if it should use default values.
+ */
+- (BOOL)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell shouldUseCustomColorsForPeakDate:(NSDate *)date;
+
+/**
+ *  Asks the delegate for the text color for a specific date.
+ *  Will be called only if the delegate returns YES for `- (BOOL)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell shouldUseCustomColorsForBlackoutDate:(NSDate *)date;`
+ *
+ *  @param cell the current cell
+ *  @param date the date associated with the cell
+ *
+ *  @return The text desired color
+ */
+- (UIColor *)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell textColorForPeakDate:(NSDate *)date;
+
+/**
+ *  Asks the delegate for the circle color for a specific date.
+ *  Will be called only if the delegate returns YES for `- (BOOL)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell shouldUseCustomColorsForBlackoutDate:(NSDate *)date;`
+ *
+ *  @param cell the current cell
+ *  @param date the date associated with the cell
+ *
+ *  @return The circle desired color
+ */
+- (UIColor *)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell circleColorForPeakDate:(NSDate *)date;
+
 @end
 
 #import <UIKit/UIKit.h>
