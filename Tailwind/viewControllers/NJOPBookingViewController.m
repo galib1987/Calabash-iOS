@@ -27,6 +27,8 @@ NSArray* inputChain;
 NSInteger currentTextField;
 NSDateFormatter *timeFormatter;
 
+UIView *calendarLegend;
+
 @implementation NJOPBookingViewController
 
 - (void)viewDidLoad {
@@ -58,6 +60,9 @@ NSDateFormatter *timeFormatter;
     inputChain = @[self.aircraftInput, self.departureAirport, self.destinationAirport, self.flightDate, self.departTime, self.arrivalTime, self.numberOfPassengers, self.bookingComment];
     self.keyboardControls = [[NJOPKeyboardControls alloc] initWithInputFields:[inputChain subarrayWithRange:NSMakeRange(0, 1)]];
     self.keyboardControls.hasPreviousNext = YES;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputSwitched:) name:@"UITextFieldTextDidBeginEditingNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputSwitched:) name:@"UITextViewTextDidBeginEditingNotification" object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self.keyboardControls selector:@selector(inputSwitched) name:@"APLKeyboardControlsInputDidBeginEditingNotification" object:nil];
     
     for (int i=0; i<[inputChain count]; i++) {
         ((UIView*)inputChain[i]).tag = (NSInteger)i; // Tag fields to identify them
@@ -72,7 +77,7 @@ NSDateFormatter *timeFormatter;
     
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
-    
+    self.numberOfPassengers.inputView = [[UIView alloc] init];
     self.flightDate.inputView = [self getCalendar];
     
     self.bookingComment.placeholderTextColor = [UIColor blackColor];
@@ -91,13 +96,15 @@ NSDateFormatter *timeFormatter;
         UITextField *nextField = (UITextField *)[self.view viewWithTag:textField.tag+1];
         nextField.enabled = true;
         
-        if (textField == self.departTime) {
+        if (textField == self.departTime || textField == self.arrivalTime) { // if either DEPART AT or ARRIVAL BY has been entered
+            self.numberOfPassengers.enabled = true;
+            self.keyboardControls.inputFields = inputChain;
             // enable submit
             self.nextStep.enabled = true;
             self.nextStep.backgroundColor = [UIColor colorFromHexString:@"#b2f49e"];
         }
         
-        if (nextField == self.numberOfPassengers) {
+        if (nextField == self.numberOfPassengers || nextField == self.arrivalTime) {
             self.addButton.enabled = self.minusButton.enabled = true;
             self.addButton.alpha = self.minusButton.alpha = 1;
         } else if (nextField == self.departTime) {
@@ -227,6 +234,32 @@ NSDateFormatter *timeFormatter;
     }
     currentTextField = textField.tag;
 }
+
+- (void)inputSwitched:(NSNotification *)sender {
+    if (sender.object == self.flightDate) {
+        self.keyboardControls.customItem = [[UIBarButtonItem alloc] initWithCustomView:[self getCalendarLegend]];
+    } else {
+        self.keyboardControls.hasPreviousNext = true;
+    }
+    //[self.keyboardControls inputSwitched:sender.object];
+}
+
+- (UIView *)getCalendarLegend {
+    if (calendarLegend == nil) {
+        calendarLegend = [[UIView alloc] init];
+        CGRect barFrame = self.keyboardControls.inputAccessoryView.frame;
+        UIView *rectangle = [[UIView alloc] initWithFrame:CGRectMake(0, -6, 12, 8)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, -barFrame.size.height/2, self.view.frame.size.width, barFrame.size.height)];
+        label.text = @"PEAK PERIOD";
+        [label setFont:[UIFont fontWithName:@"NimbusSanD-Reg" size:11.0]];
+        [label setTextColor:[UIColor redColor]];
+        [rectangle setBackgroundColor:[UIColor redColor]];
+        [calendarLegend addSubview:rectangle];
+        [calendarLegend addSubview:label];
+    }
+    return calendarLegend;
+}
+
 - (IBAction)addPassenger:(UIButton *)sender {
     passengerCount++;
     [self updatePassengerCount];
@@ -378,9 +411,9 @@ NSDateFormatter *timeFormatter;
     // STUB to update other time field using estimated flight time
     NSDate *dateFromString = [timeFormatter dateFromString:sender.text];
     if (sender == self.arrivalTime) {
-        self.departTime.text = [timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:-60*60*2]];
+        self.departTime.text = @"";//[timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:-60*60*2]];
     } else if (sender == self.departTime) {
-        self.arrivalTime.text = [timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:60*60*2]];
+        self.arrivalTime.text = @"";//[timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:60*60*2]];
     }
     
 }
