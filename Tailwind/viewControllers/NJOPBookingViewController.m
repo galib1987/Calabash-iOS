@@ -72,8 +72,8 @@ UIView *calendarLegend;
         }
     }
     
-    //self.aircraftInput.inputView = [self getAircraftPicker];
-    self.aircraftInput.inputView = [self getCalendar];
+    self.aircraftInput.inputView = [self getAircraftPicker];
+    //self.aircraftInput.inputView = [self getCalendar];
     
     self.departTime.inputView = [self getTimePicker];
     self.arrivalTime.inputView = [self getTimePicker];
