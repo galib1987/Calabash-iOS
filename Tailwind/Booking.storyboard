@@ -36,6 +36,8 @@
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
+            <string>NimbusSanD-Lig</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -128,10 +130,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCE-7v-m1e">
-                                            <rect key="frame" x="8" y="8" width="359" height="27"/>
+                                            <rect key="frame" x="8" y="8" width="359" height="28"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPz-Tk-nFe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="331" height="27"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPz-Tk-nFe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="330" height="28"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                                     <state key="normal" title="Add a return flight">
@@ -140,7 +142,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM9-fv-1nL">
-                                                    <rect key="frame" x="332" y="0.0" width="27" height="27"/>
+                                                    <rect key="frame" x="331" y="0.0" width="28" height="28"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="vM9-fv-1nL" secondAttribute="height" multiplier="1:1" id="Yxj-je-Szl"/>
@@ -171,6 +173,59 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="wCE-7v-m1e" secondAttribute="trailing" id="AQy-hQ-rup"/>
                                         <constraint firstItem="wCE-7v-m1e" firstAttribute="leading" secondItem="5tl-OV-vkR" secondAttribute="leadingMargin" id="IbB-6d-5wL"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="wCE-7v-m1e" secondAttribute="bottom" id="kCe-qH-DcC"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addOnwardCell" id="GMx-qL-f5k" customClass="NJOPPastFlightTableCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GMx-qL-f5k" id="FOO-uh-wzy">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ejb-Lw-4iz">
+                                            <rect key="frame" x="8" y="8" width="359" height="28"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vF3-HV-dsC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="330" height="28"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
+                                                    <state key="normal" title="Add an onward flight">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ0-o1-QKw">
+                                                    <rect key="frame" x="331" y="0.0" width="28" height="28"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="KJ0-o1-QKw" secondAttribute="height" multiplier="1:1" id="Ae7-3W-7Yb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
+                                                    <state key="normal" title="+">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="vF3-HV-dsC" firstAttribute="top" secondItem="Ejb-Lw-4iz" secondAttribute="top" id="6dg-Ic-PqA"/>
+                                                <constraint firstItem="KJ0-o1-QKw" firstAttribute="width" relation="lessThanOrEqual" secondItem="vF3-HV-dsC" secondAttribute="width" id="8WN-JN-AZW"/>
+                                                <constraint firstAttribute="trailing" secondItem="KJ0-o1-QKw" secondAttribute="trailing" id="DNp-EG-yNR"/>
+                                                <constraint firstItem="vF3-HV-dsC" firstAttribute="leading" secondItem="Ejb-Lw-4iz" secondAttribute="leading" id="Lej-ee-iTc"/>
+                                                <constraint firstAttribute="bottom" secondItem="KJ0-o1-QKw" secondAttribute="bottom" id="Yie-qb-ORr"/>
+                                                <constraint firstAttribute="bottom" secondItem="vF3-HV-dsC" secondAttribute="bottom" id="cVb-tJ-VgQ"/>
+                                                <constraint firstItem="KJ0-o1-QKw" firstAttribute="top" secondItem="Ejb-Lw-4iz" secondAttribute="top" id="mxt-xt-Vpz"/>
+                                                <constraint firstItem="KJ0-o1-QKw" firstAttribute="leading" secondItem="vF3-HV-dsC" secondAttribute="trailing" constant="1" id="nqA-2f-6vI"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="Ejb-Lw-4iz" firstAttribute="top" secondItem="FOO-uh-wzy" secondAttribute="topMargin" id="347-Uj-eEJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ejb-Lw-4iz" secondAttribute="trailing" id="IYz-oF-bhG"/>
+                                        <constraint firstItem="Ejb-Lw-4iz" firstAttribute="leading" secondItem="FOO-uh-wzy" secondAttribute="leadingMargin" id="JFf-Ew-Qzk"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ejb-Lw-4iz" secondAttribute="bottom" id="wai-oI-Gjm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
