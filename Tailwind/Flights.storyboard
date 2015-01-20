@@ -1494,6 +1494,7 @@ Teterboro-Naples</string>
                                     <outlet property="imageView" destination="1rF-9s-xhj" id="SQe-PO-vBS"/>
                                     <outlet property="tile" destination="I3g-uh-SQq" id="e7I-jI-W8d"/>
                                     <outlet property="topLabel" destination="8v0-WB-uLB" id="PwT-bz-GXg"/>
+                                    <segue destination="xIl-Eg-9Hc" kind="show" identifier="showPlane" id="W0d-TX-erl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
