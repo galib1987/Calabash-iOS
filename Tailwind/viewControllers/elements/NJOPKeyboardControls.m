@@ -17,6 +17,10 @@
     }
 }
 
+- (void)inputSwitched:(UIView *)sender {
+    [self updateButtonsAt:sender.tag];
+}
+
 - (void)setCustomItem:(UIBarButtonItem *)customItem {
     _customItem = customItem;
     if (customItem != nil) {

@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIBarButtonItem *customItem;
 
+- (void)inputSwitched:(UIView *)sender;
+
 - (void)updateButtonsAt:(NSInteger)index;
 
 @end
