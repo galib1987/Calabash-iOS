@@ -61,6 +61,10 @@ UIView *calendarLegend;
     inputChain = @[self.aircraftInput, self.departureAirport, self.destinationAirport, self.flightDate, self.departTime, self.numberOfPassengers, self.bookingComment];
     self.keyboardControls = [[NJOPKeyboardControls alloc] initWithInputFields:[inputChain subarrayWithRange:NSMakeRange(0, 1)]];
     self.keyboardControls.hasPreviousNext = YES;
+    self.keyboardControls.inputAccessoryView.backgroundColor = [UIColor whiteColor];
+    self.keyboardControls.inputAccessoryView.barTintColor = [UIColor whiteColor];
+    self.keyboardControls.doneButton.tintColor = [UIColor blackColor];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputSwitched:) name:@"UITextFieldTextDidBeginEditingNotification" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputSwitched:) name:@"UITextViewTextDidBeginEditingNotification" object:nil];
     //[[NSNotificationCenter defaultCenter] addObserver:self.keyboardControls selector:@selector(inputSwitched) name:@"APLKeyboardControlsInputDidBeginEditingNotification" object:nil];
@@ -154,6 +158,9 @@ UIView *calendarLegend;
         [[PDTSimpleCalendarViewCell appearance] setTextSelectedColor: [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:1.0f]];
         [[PDTSimpleCalendarViewCell appearance] setTextTodayColor:[UIColor blackColor]];
         [self.calendarViewController setDelegate:self];
+        
+        self.calendarViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 548-self.keyboardControls.inputAccessoryView.frame.size.height);
+        self.calendarViewController.view.autoresizingMask = UIViewAutoresizingNone;
     }
     return self.calendarViewController.view;
 }

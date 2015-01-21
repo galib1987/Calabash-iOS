@@ -59,8 +59,8 @@
     // Fill weekdayView with labels
     for (NSUInteger index = 0; index < [self.weekdays count]; index++) {
         UILabel *weekdayLabel = [[UILabel alloc] init];
-        weekdayLabel.font = [UIFont systemFontOfSize:12.0];
-        weekdayLabel.text = self.weekdays[index];
+        weekdayLabel.font = [UIFont fontWithName:@"NimbusSanD-Reg" size:10];
+        weekdayLabel.text = [self.weekdays[index] uppercaseString];
         weekdayLabel.textColor = self.textColor;
         weekdayLabel.textAlignment = NSTextAlignmentCenter;
         weekdayLabel.backgroundColor = self.backgroundColor;
