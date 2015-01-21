@@ -70,7 +70,7 @@
 - (NSDictionary *)createDepartureCellFromReservation:(NSDictionary *)departureGroundOrder {
     
     NSDictionary *cellRepresentation = @{
-                                         kSimpleDataSourceCellIdentifierKey			: @"NJOPGroundCellDeparture",
+                                         kSimpleDataSourceCellIdentifierKey			: @"NJOPGroundCell",
                                          kSimpleDataSourceCellKeypaths					: @{
                                                  @"topLabel.text" : @"DEPARTURE",
                                                  @"groundTypeLabel.text" : [NSString stringWithFormat:@"Vehicle #1 - %@", departureGroundOrder[@"groundType"]],
@@ -91,7 +91,7 @@
 - (NSDictionary *)createArrivalCellFromReservation:(NSDictionary *)arrivalGroundOrder {
     
     NSDictionary *cellRepresentation = @{
-                                         kSimpleDataSourceCellIdentifierKey			: @"NJOPGroundCellArrival",
+                                         kSimpleDataSourceCellIdentifierKey			: @"NJOPGroundCell",
                                          kSimpleDataSourceCellKeypaths					: @{
                                                  @"topLabel.text" : @"ARRIVAL",
                                                  @"groundTypeLabel.text" : [NSString stringWithFormat:@"Vehicle #1 - %@", arrivalGroundOrder[@"groundType"]],

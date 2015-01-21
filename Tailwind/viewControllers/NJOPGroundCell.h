@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *autoSizeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pickupTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pickupDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *routeDescLabel;
+@property (weak, nonatomic) IBOutlet UITextView *routeDescLabel;
 @property (weak, nonatomic) IBOutlet UITextView *passengers;
 @property (weak, nonatomic) IBOutlet UILabel *carServiceLabel;
 
