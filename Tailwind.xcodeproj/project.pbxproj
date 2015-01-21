@@ -1181,7 +1181,6 @@
 				A7A03EB51A42EF1D004BE417 /* NJOPActionButton.m in Sources */,
 				A762F9791A6665BE002065EB /* NJOPCateringViewController.m in Sources */,
 				1E36BD251A489ED100221E7D /* NJOPWelcomeRootController.m in Sources */,
-				52B6042F1A685D0900C0E066 /* NJOPSimpleCalendarViewHeader.m in Sources */,
 				A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */,
 				A77680F11A40729200B2E7CF /* NJOPIndividual.m in Sources */,
 				A762F97C1A6665D0002065EB /* NJOPCrewViewController.m in Sources */,
