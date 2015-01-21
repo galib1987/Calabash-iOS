@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet NJOPTextField *destinationAirport;
 @property (weak, nonatomic) IBOutlet NJOPTextField *flightDate;
 @property (weak, nonatomic) IBOutlet NJOPTextField *departTime;
-@property (weak, nonatomic) IBOutlet NJOPTextField *arrivalTime;
 @property (weak, nonatomic) IBOutlet NJOPTextField *numberOfPassengers;
 @property (weak, nonatomic) IBOutlet NJOPMultilineTextField *bookingComment;
 

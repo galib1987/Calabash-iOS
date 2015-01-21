@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -18,15 +17,11 @@
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
-            <string>NimbusSanD-Bol</string>
         </mutableArray>
         <mutableArray key="Nimbus-Sans-D-Light-Italic.otf">
             <string>NimbusSanD-LigIta</string>
         </mutableArray>
         <mutableArray key="Nimbus-Sans-D-Light.otf">
-            <string>NimbusSanD-Lig</string>
-            <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
@@ -473,28 +468,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="Wmf-Y4-hfr">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wmf-Y4-hfr" id="bOU-YN-Vqu">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*SELECT ONE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1T5-CC-HQD">
-                                                    <rect key="frame" x="12" y="16" width="350" height="43"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="1T5-CC-HQD" secondAttribute="trailing" constant="5" id="0Qz-Fp-qb5"/>
-                                                <constraint firstItem="1T5-CC-HQD" firstAttribute="bottom" secondItem="bOU-YN-Vqu" secondAttribute="bottomMargin" constant="8" id="1sw-Gl-8oc"/>
-                                                <constraint firstItem="1T5-CC-HQD" firstAttribute="top" secondItem="bOU-YN-Vqu" secondAttribute="topMargin" constant="8" id="4m3-ko-eNL"/>
-                                                <constraint firstItem="1T5-CC-HQD" firstAttribute="leading" secondItem="bOU-YN-Vqu" secondAttribute="leadingMargin" constant="4" id="qpF-jH-DCb"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="FrL-Bj-P4N" userLabel="DEPART AND ARRIVE">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -502,56 +475,36 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W7z-SC-laF" customClass="NJOPTextField">
-                                                    <rect key="frame" x="12" y="45" width="171" height="57"/>
+                                                    <rect key="frame" x="12" y="56" width="351" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="hasDropDown" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEPART AT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4F-kV-s1S">
-                                                    <rect key="frame" x="12" y="16" width="171" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="nhF-OW-Mfu"/>
+                                                        <constraint firstAttribute="height" constant="60" id="EMd-Wg-Dlm"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
-                                                    <color key="textColor" red="0.99607849120000003" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k8I-Ap-M88" customClass="NJOPTextField">
-                                                    <rect key="frame" x="191" y="45" width="170" height="57"/>
-                                                    <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="hasDropDown" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARRIVE BY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tt-yB-f5y">
-                                                    <rect key="frame" x="191" y="16" width="170" height="21"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
-                                                    <color key="textColor" red="0.99607849120000003" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wii-rh-MdU">
+                                                    <rect key="frame" x="12" y="8" width="351" height="41"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="97R-XB-aO3"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="DEPART AT"/>
+                                                        <segment title="ARRIVE AT"/>
+                                                    </segments>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </segmentedControl>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="k8I-Ap-M88" firstAttribute="width" secondItem="W7z-SC-laF" secondAttribute="width" id="1jp-Eu-AQU"/>
-                                                <constraint firstItem="k8I-Ap-M88" firstAttribute="leading" secondItem="3Tt-yB-f5y" secondAttribute="leading" id="8Tw-DO-rcl"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="k8I-Ap-M88" secondAttribute="trailing" constant="6" id="Brz-VK-gID"/>
-                                                <constraint firstItem="j4F-kV-s1S" firstAttribute="firstBaseline" secondItem="3Tt-yB-f5y" secondAttribute="firstBaseline" id="Cqv-ls-zQA"/>
-                                                <constraint firstItem="j4F-kV-s1S" firstAttribute="leading" secondItem="W7z-SC-laF" secondAttribute="leading" id="MPv-b2-wg6"/>
-                                                <constraint firstItem="j4F-kV-s1S" firstAttribute="top" secondItem="8ZW-38-cOK" secondAttribute="topMargin" constant="8" id="RyA-nT-Upt"/>
-                                                <constraint firstItem="W7z-SC-laF" firstAttribute="top" secondItem="j4F-kV-s1S" secondAttribute="bottom" constant="8" symbolic="YES" id="WIE-qQ-Q4A"/>
-                                                <constraint firstItem="j4F-kV-s1S" firstAttribute="baseline" secondItem="3Tt-yB-f5y" secondAttribute="baseline" id="WfQ-8o-bTX"/>
-                                                <constraint firstItem="3Tt-yB-f5y" firstAttribute="trailing" secondItem="k8I-Ap-M88" secondAttribute="trailing" id="XxO-Ij-bxe"/>
-                                                <constraint firstItem="j4F-kV-s1S" firstAttribute="trailing" secondItem="W7z-SC-laF" secondAttribute="trailing" id="dvN-5n-lDh"/>
-                                                <constraint firstItem="k8I-Ap-M88" firstAttribute="leading" secondItem="W7z-SC-laF" secondAttribute="trailing" constant="8" symbolic="YES" id="g6D-jz-7Sm"/>
-                                                <constraint firstItem="j4F-kV-s1S" firstAttribute="leading" secondItem="8ZW-38-cOK" secondAttribute="leadingMargin" constant="4" id="hFx-Q7-pas"/>
-                                                <constraint firstItem="k8I-Ap-M88" firstAttribute="top" secondItem="3Tt-yB-f5y" secondAttribute="bottom" constant="8" id="joT-UJ-ObA"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="W7z-SC-laF" secondAttribute="bottom" id="mbY-yH-H3f"/>
-                                                <constraint firstItem="k8I-Ap-M88" firstAttribute="bottom" secondItem="W7z-SC-laF" secondAttribute="bottom" id="qwY-hb-iQ0"/>
-                                                <constraint firstItem="k8I-Ap-M88" firstAttribute="baseline" secondItem="W7z-SC-laF" secondAttribute="baseline" id="vNJ-eH-Nyc"/>
+                                                <constraint firstItem="Wii-rh-MdU" firstAttribute="trailing" secondItem="W7z-SC-laF" secondAttribute="trailing" id="GnN-Rr-R28"/>
+                                                <constraint firstItem="W7z-SC-laF" firstAttribute="top" secondItem="Wii-rh-MdU" secondAttribute="bottom" constant="8" symbolic="YES" id="Id0-F7-yHI"/>
+                                                <constraint firstItem="Wii-rh-MdU" firstAttribute="leading" secondItem="8ZW-38-cOK" secondAttribute="leading" constant="12" id="d2T-gX-Icj"/>
+                                                <constraint firstItem="Wii-rh-MdU" firstAttribute="leading" secondItem="W7z-SC-laF" secondAttribute="leading" id="etH-nj-j8S"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wii-rh-MdU" secondAttribute="trailing" constant="12" id="h0e-FU-8L4"/>
+                                                <constraint firstItem="Wii-rh-MdU" firstAttribute="top" secondItem="8ZW-38-cOK" secondAttribute="topMargin" id="y0F-Z7-jE0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -563,7 +516,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1 Passenger" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdM-3r-fvl" customClass="NJOPTextField">
-                                                    <rect key="frame" x="12" y="7" width="228" height="60"/>
+                                                    <rect key="frame" x="12" y="16" width="228" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="hlN-a8-MFv"/>
@@ -572,7 +525,7 @@
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al4-Tz-avk">
-                                                    <rect key="frame" x="241" y="7" width="60" height="60"/>
+                                                    <rect key="frame" x="241" y="16" width="60" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="al4-Tz-avk" secondAttribute="height" multiplier="1:1" id="KEt-zH-2wW"/>
@@ -586,7 +539,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYI-6x-zEo">
-                                                    <rect key="frame" x="302" y="7" width="60" height="60"/>
+                                                    <rect key="frame" x="302" y="16" width="60" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="+">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -601,10 +554,10 @@
                                             <constraints>
                                                 <constraint firstItem="al4-Tz-avk" firstAttribute="top" secondItem="bdM-3r-fvl" secondAttribute="top" id="5hX-0q-5GR"/>
                                                 <constraint firstItem="al4-Tz-avk" firstAttribute="leading" secondItem="bdM-3r-fvl" secondAttribute="trailing" constant="1" id="DXI-gd-beO"/>
+                                                <constraint firstItem="bdM-3r-fvl" firstAttribute="top" secondItem="80t-gT-SxA" secondAttribute="topMargin" constant="8" id="L5Q-9s-cHU"/>
                                                 <constraint firstItem="WYI-6x-zEo" firstAttribute="top" secondItem="bdM-3r-fvl" secondAttribute="top" id="W06-bh-Pd4"/>
                                                 <constraint firstItem="bdM-3r-fvl" firstAttribute="leading" secondItem="80t-gT-SxA" secondAttribute="leadingMargin" constant="4" id="c3c-0a-HAn"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="WYI-6x-zEo" secondAttribute="trailing" constant="5" id="emH-qw-i76"/>
-                                                <constraint firstAttribute="centerY" secondItem="bdM-3r-fvl" secondAttribute="centerY" id="hg1-7C-iG8"/>
                                                 <constraint firstItem="WYI-6x-zEo" firstAttribute="leading" secondItem="al4-Tz-avk" secondAttribute="trailing" constant="1" id="nM3-gK-BUe"/>
                                                 <constraint firstItem="al4-Tz-avk" firstAttribute="height" secondItem="WYI-6x-zEo" secondAttribute="height" id="pkN-KU-Xjf"/>
                                                 <constraint firstItem="al4-Tz-avk" firstAttribute="height" secondItem="bdM-3r-fvl" secondAttribute="height" id="uqY-nu-xyI"/>
@@ -620,7 +573,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFw-VJ-5Zi" customClass="NJOPMultilineTextField">
-                                                    <rect key="frame" x="12" y="8" width="350" height="94"/>
+                                                    <rect key="frame" x="12" y="16" width="350" height="86"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-LigIta" family="Nimbus Sans D" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -634,7 +587,7 @@
                                                 <constraint firstItem="nFw-VJ-5Zi" firstAttribute="leading" secondItem="pE5-hp-jxs" secondAttribute="leadingMargin" constant="4" id="2Va-az-IRi"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="nFw-VJ-5Zi" secondAttribute="trailing" constant="5" id="4aq-Kq-Nue"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="nFw-VJ-5Zi" secondAttribute="bottom" id="8Bw-Ki-D5b"/>
-                                                <constraint firstItem="nFw-VJ-5Zi" firstAttribute="top" secondItem="pE5-hp-jxs" secondAttribute="topMargin" id="Ff3-sM-ViL"/>
+                                                <constraint firstItem="nFw-VJ-5Zi" firstAttribute="top" secondItem="pE5-hp-jxs" secondAttribute="topMargin" constant="8" id="Ff3-sM-ViL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -696,7 +649,6 @@
                     <connections>
                         <outlet property="addButton" destination="al4-Tz-avk" id="HSJ-wV-wv9"/>
                         <outlet property="aircraftInput" destination="AVD-WU-ES8" id="OpL-gq-o6Q"/>
-                        <outlet property="arrivalTime" destination="k8I-Ap-M88" id="ibb-NK-vO0"/>
                         <outlet property="bookingComment" destination="nFw-VJ-5Zi" id="2hB-Zx-Ynq"/>
                         <outlet property="departTime" destination="W7z-SC-laF" id="ehr-gS-MK4"/>
                         <outlet property="departureAirport" destination="JJj-Pl-ixz" id="32o-l5-ZUN"/>
