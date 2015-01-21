@@ -15,7 +15,7 @@
 
 
 const CGFloat PDTSimpleCalendarOverlaySize = 14.0f;
-const CGFloat PDTSimpleCalendarWeekdayHeaderHeight = 20.0;
+const CGFloat PDTSimpleCalendarWeekdayHeaderHeight = 30.0;
 
 static NSString *PDTSimpleCalendarViewCellIdentifier = @"com.producteev.collection.cell.identifier";
 static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collection.header.identifier";
@@ -26,7 +26,7 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
 @property (nonatomic, strong) PDTSimpleCalendarViewWeekdayHeader *headerView;
 @property (nonatomic, strong) UICollectionView *collectionView;
 
-@property (nonatomic, strong) UILabel *overlayView;
+@property (nonatomic, strong) PDTSimpleCalendarViewHeader *overlayView;
 @property (nonatomic, strong) NSDateFormatter *headerDateFormatter; //Will be used to format date in header view and on scroll.
 
 // First and last date of the months based on the public properties first & lastDate
@@ -86,7 +86,7 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
 
 - (void)simpleCalendarCommonInit
 {
-    self.overlayView = [[UILabel alloc] init];
+    self.overlayView = [[PDTSimpleCalendarViewHeader alloc] init];
     self.backgroundColor = [UIColor whiteColor];
     self.overlayTextColor = [UIColor blackColor];
     self.daysPerWeek = 7;
@@ -236,7 +236,7 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
             UICollectionViewLayoutAttributes *sectionLayoutAttributes = [self.collectionView layoutAttributesForItemAtIndexPath:sectionIndexPath];
             CGPoint origin = sectionLayoutAttributes.frame.origin;
             origin.x = 0;
-            origin.y -= (PDTSimpleCalendarFlowLayoutHeaderHeight + PDTSimpleCalendarFlowLayoutInsetTop + self.collectionView.contentInset.top);
+            origin.y -= (PDTSimpleCalendarFlowLayoutHeaderHeight + PDTSimpleCalendarWeekdayHeaderHeight + PDTSimpleCalendarFlowLayoutInsetTop + self.collectionView.contentInset.top);
             [self.collectionView setContentOffset:origin animated:animated];
         }
     }
@@ -273,10 +273,10 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
 
     //Configure the Overlay View
     [self.overlayView setBackgroundColor:self.backgroundColor];
-    [self.overlayView setFont:[UIFont fontWithName:@"NimbusSanD-Bol" size:16]];
+    [self.overlayView.titleLabel setFont:[UIFont fontWithName:@"NimbusSanD-Bol" size:16]];
     [self.overlayView setTextColor:self.overlayTextColor];
     //[self.overlayView setAlpha:0.0];
-    [self.overlayView setTextAlignment:NSTextAlignmentLeft];
+    //[self.overlayView setTextAlignment:NSTextAlignmentLeft];
     [self updateMonth];
 
     [self.view addSubview:self.overlayView];
@@ -317,8 +317,8 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[overlayView]|" options:0 metrics:nil views:viewsDictionary]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[headerView]|" options:0 metrics:nil views:viewsDictionary]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[collectionView]|" options:0 metrics:nil views:viewsDictionary]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[overlayView(==overlayViewHeight)][collectionView]|" options:0 metrics:metricsDictionary views:viewsDictionary]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[overlayView][headerView(==headerViewHeight)]" options:0 metrics:metricsDictionary views:viewsDictionary]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[overlayView(==overlayViewHeight)][headerView(==headerViewHeight)]" options:0 metrics:metricsDictionary views:viewsDictionary]];
+    self.collectionView.frame = CGRectOffset(CGRectInset(self.collectionView.frame, 0, PDTSimpleCalendarWeekdayHeaderHeight/2), 0, PDTSimpleCalendarWeekdayHeaderHeight/2);
 }
 
 #pragma mark - Rotation Handling
@@ -486,7 +486,7 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
     }];
  }*/
 
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+/*- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
     //We only display the overlay view if there is a vertical velocity
     if ( fabsf(velocity.y) > 0.0f) {
@@ -504,6 +504,13 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
     [self performSelector:@selector(hideHeaderView) withObject:nil afterDelay:delay];
 }
 
+- (void)hideHeaderView
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.headerView setAlpha:0.0];
+    }];
+}*/
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self updateMonth];
@@ -516,14 +523,7 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
     NSArray *sortedIndexPaths = [indexPaths sortedArrayUsingSelector:@selector(compare:)];
     NSIndexPath *firstIndexPath = [sortedIndexPaths firstObject];
     
-    self.overlayView.text = [self.headerDateFormatter stringFromDate:[self firstOfMonthForSection:firstIndexPath.section]];
-}
-
-- (void)hideHeaderView
-{
-    [UIView animateWithDuration:0.25 animations:^{
-        [self.headerView setAlpha:0.0];
-    }];
+    self.overlayView.titleLabel.text = [self.headerDateFormatter stringFromDate:[self firstOfMonthForSection:firstIndexPath.section]];
 }
 
 #pragma mark -

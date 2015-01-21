@@ -30,15 +30,14 @@ const CGFloat PDTSimpleCalendarHeaderTextSize = 12.0f;
         [self addSubview:separatorView];
         [separatorView setTranslatesAutoresizingMaskIntoConstraints:NO];
 
-        CGFloat onePixel = 1.0f / [UIScreen mainScreen].scale;
-        NSDictionary *metricsDictionary = @{@"onePixel" : [NSNumber numberWithFloat:onePixel]};
+        NSDictionary *metricsDictionary = @{@"separatorHeight" : self.separatorHeight};
         NSDictionary *viewsDictionary = @{@"titleLabel" : self.titleLabel, @"separatorView" : separatorView};
 
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(==10)-[titleLabel]-(==10)-|" options:0 metrics:nil views:viewsDictionary]];
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[titleLabel]|" options:0 metrics:nil views:viewsDictionary]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[titleLabel]-(==10)-[separatorView]|" options:0 metrics:nil views:viewsDictionary]];
 
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[separatorView]|" options:0 metrics:nil views:viewsDictionary]];
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[separatorView(==onePixel)]|" options:0 metrics:metricsDictionary views:viewsDictionary]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(==10)-[separatorView]-(==10)-|" options:0 metrics:nil views:viewsDictionary]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[separatorView(==separatorHeight)]|" options:0 metrics:metricsDictionary views:viewsDictionary]];
     }
 
     return self;
@@ -84,6 +83,19 @@ const CGFloat PDTSimpleCalendarHeaderTextSize = 12.0f;
     }
 
     return [UIColor lightGrayColor];
+}
+
+- (NSNumber *)separatorHeight
+{
+    if (_separatorHeight == nil) {
+        _separatorHeight = [[[self class] appearance] separatorHeight];
+    }
+    
+    if (_separatorHeight != nil) {
+        return _separatorHeight;
+    }
+    
+    return [NSNumber numberWithFloat:1.0f / [UIScreen mainScreen].scale];
 }
 
 
