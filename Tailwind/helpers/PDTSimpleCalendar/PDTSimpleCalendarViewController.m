@@ -289,6 +289,7 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
     // Configure the Header View
     self.headerView = [[PDTSimpleCalendarViewWeekdayHeader alloc] init];
     [self.headerView setBackgroundColor:self.backgroundColor];
+    [self updateMonth];
 
     // Set the weekday strings
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -505,6 +506,10 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    [self updateMonth];
+}
+
+- (void)updateMonth {
     //Update Content of the Overlay View
     NSArray *indexPaths = [self.collectionView indexPathsForVisibleItems];
     //indexPaths is not sorted
