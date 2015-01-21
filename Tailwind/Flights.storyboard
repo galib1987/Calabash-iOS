@@ -1517,12 +1517,12 @@ Teterboro-Naples</string>
         <scene sceneID="IEo-c9-1Yk">
             <objects>
                 <tableViewController storyboardIdentifier="NJOPGroundViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rD0-A9-HS3" customClass="NJOPGroundViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="557" sectionHeaderHeight="22" sectionFooterHeight="22" id="xis-0p-xhU" customClass="NJOPTableView">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="557" sectionHeaderHeight="22" sectionFooterHeight="22" id="xis-0p-xhU" customClass="NJOPTableView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPGroundCell" rowHeight="557" id="DGG-GF-cth" customClass="NJOPGroundCell">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPGroundCell" rowHeight="557" id="DGG-GF-cth" customClass="NJOPGroundCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DGG-GF-cth" id="0eK-su-4Ok">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1813,7 +1813,7 @@ Don’t see what you want?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPCrewCell" rowHeight="120" id="yq1-yU-2nn" customClass="NJOPCrewCell">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPCrewCell" rowHeight="120" id="yq1-yU-2nn" customClass="NJOPCrewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yq1-yU-2nn" id="pol-dH-YPm">
                                     <autoresizingMask key="autoresizingMask"/>
