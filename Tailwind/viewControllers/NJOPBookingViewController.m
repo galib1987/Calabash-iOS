@@ -57,7 +57,7 @@ UIView *calendarLegend;
 
 - (void)initialiseTextFields {
     
-    inputChain = @[self.aircraftInput, self.departureAirport, self.destinationAirport, self.flightDate, self.departTime, self.arrivalTime, self.numberOfPassengers, self.bookingComment];
+    inputChain = @[self.aircraftInput, self.departureAirport, self.destinationAirport, self.flightDate, self.departTime, self.numberOfPassengers, self.bookingComment];
     self.keyboardControls = [[NJOPKeyboardControls alloc] initWithInputFields:[inputChain subarrayWithRange:NSMakeRange(0, 1)]];
     self.keyboardControls.hasPreviousNext = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputSwitched:) name:@"UITextFieldTextDidBeginEditingNotification" object:nil];
@@ -76,7 +76,6 @@ UIView *calendarLegend;
     //self.aircraftInput.inputView = [self getCalendar];
     
     self.departTime.inputView = [self getTimePicker];
-    self.arrivalTime.inputView = [self getTimePicker];
     self.numberOfPassengers.inputView = [[UIView alloc] init];
     self.flightDate.inputView = [self getCalendar];
     
@@ -96,7 +95,7 @@ UIView *calendarLegend;
         UITextField *nextField = (UITextField *)[self.view viewWithTag:textField.tag+1];
         nextField.enabled = true;
         
-        if (textField == self.departTime || textField == self.arrivalTime) { // if either DEPART AT or ARRIVAL BY has been entered
+        if (textField == self.departTime) { // if either DEPART AT or ARRIVAL BY has been entered
             self.numberOfPassengers.enabled = true;
             self.keyboardControls.inputFields = inputChain;
             // enable submit
@@ -104,14 +103,13 @@ UIView *calendarLegend;
             self.nextStep.backgroundColor = [UIColor colorFromHexString:@"#b2f49e"];
         }
         
-        if (nextField == self.numberOfPassengers || nextField == self.arrivalTime) {
+        if (nextField == self.numberOfPassengers) {
             self.addButton.enabled = self.minusButton.enabled = true;
             self.addButton.alpha = self.minusButton.alpha = 1;
-        } else if (nextField == self.departTime) {
+        }/* else if (nextField == self.departTime) {
             // also enable arrival time selection
             self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, textField.tag+3)];
-            self.arrivalTime.enabled = true;
-        }
+        }*/
         
         [self.keyboardControls updateButtonsAt:textField.tag];
     }
@@ -166,7 +164,7 @@ UIView *calendarLegend;
     NSString *newDate = [dateFormatter stringFromDate:date];
     NSLog(@"%@ %@", [date description],newDate);
     self.flightDate.text = newDate;
-    //[self.keyboardControls focusNext:self];
+    [self.keyboardControls focusNext:self];
     [self updatePassengerCount];
 }
 /*  Dates Color  */
@@ -411,12 +409,12 @@ UIView *calendarLegend;
 
 - (void) timeUpdated:(NJOPTextField *)sender {
     // STUB to update other time field using estimated flight time
-    NSDate *dateFromString = [timeFormatter dateFromString:sender.text];
+    /*NSDate *dateFromString = [timeFormatter dateFromString:sender.text];
     if (sender == self.arrivalTime) {
         self.departTime.text = @"";//[timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:-60*60*2]];
     } else if (sender == self.departTime) {
         self.arrivalTime.text = @"";//[timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:60*60*2]];
-    }
+    }*/
     
 }
 
