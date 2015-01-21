@@ -2033,12 +2033,12 @@ passenger will be under 18 years of age.</string>
         <scene sceneID="Sml-4g-aby">
             <objects>
                 <tableViewController storyboardIdentifier="PlaneTVC" id="xIl-Eg-9Hc" customClass="NJOPPlaneViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="612" sectionHeaderHeight="22" sectionFooterHeight="22" id="LmN-yw-jRX" customClass="NJOPTableView">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="612" sectionHeaderHeight="22" sectionFooterHeight="22" id="LmN-yw-jRX" customClass="NJOPTableView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="3000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneBlurbCell" rowHeight="612" id="BcK-rE-020" customClass="NJOPTableViewCell">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneBlurbCell" rowHeight="612" id="BcK-rE-020" customClass="NJOPTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BcK-rE-020" id="azv-vb-XTO">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -2075,7 +2075,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="vp3-Dx-Ggu" firstAttribute="top" secondItem="Hsi-Rh-2f8" secondAttribute="bottom" id="3QN-mg-3YY"/>
                                                 <constraint firstAttribute="trailing" secondItem="vp3-Dx-Ggu" secondAttribute="trailing" id="3SX-AX-4B6"/>
@@ -2103,8 +2103,9 @@ Typical Flight: Los Angeles to Dallas</string>
                                         <constraint firstAttribute="bottom" secondItem="nzX-Xj-0Ch" secondAttribute="bottom" id="uwG-44-6r4"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneInfoCell" rowHeight="219" id="pAZ-jQ-beT" userLabel="Passengers and Baggage Capacity" customClass="NJOPTableViewCell">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneInfoCell" rowHeight="219" id="pAZ-jQ-beT" userLabel="Passengers and Baggage Capacity" customClass="NJOPTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pAZ-jQ-beT" id="ry4-9C-YEe">
@@ -2144,7 +2145,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="MCf-bO-K2g" firstAttribute="top" secondItem="GgU-JT-TDl" secondAttribute="bottom" constant="8" id="18w-BJ-0vb"/>
                                                 <constraint firstItem="MCf-bO-K2g" firstAttribute="leading" secondItem="cBj-Ae-0OZ" secondAttribute="leading" constant="20" symbolic="YES" id="4KQ-ef-NTZ"/>
@@ -2183,8 +2184,9 @@ Typical Flight: Los Angeles to Dallas</string>
                                         <constraint firstAttribute="trailing" secondItem="cBj-Ae-0OZ" secondAttribute="trailing" id="eA2-Mo-QlM"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneAmenitiesCell" rowHeight="451" id="FTf-gd-QHW" userLabel="Amenities Cell" customClass="NJOPTableViewCell">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneAmenitiesCell" rowHeight="451" id="FTf-gd-QHW" userLabel="Amenities Cell" customClass="NJOPTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FTf-gd-QHW" id="ZO0-ig-tZ0">
@@ -2206,7 +2208,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="9ly-VK-Qla" firstAttribute="top" secondItem="1Zo-Sh-2YJ" secondAttribute="bottom" constant="8" id="4hP-rL-5IO"/>
                                                         <constraint firstItem="9ly-VK-Qla" firstAttribute="centerX" secondItem="1Zo-Sh-2YJ" secondAttribute="centerX" id="Jgh-5i-LRv"/>
@@ -2226,7 +2228,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                             <rect key="frame" x="77" y="55" width="53" height="41"/>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="gy6-Vs-LVk"/>
                                                         <constraint firstItem="Iny-cA-sIu" firstAttribute="centerX" secondItem="2LL-dr-7JR" secondAttribute="centerX" id="lX2-1E-t0o"/>
@@ -2246,7 +2248,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="45o-KC-vHw"/>
                                                         <constraint firstItem="dBN-bQ-rif" firstAttribute="top" secondItem="YxB-2R-iNs" secondAttribute="bottom" constant="8" id="Ses-bk-vFF"/>
@@ -2266,7 +2268,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="7dd-cS-ZVT"/>
                                                         <constraint firstItem="hND-gr-hpK" firstAttribute="top" secondItem="Nff-tK-ISe" secondAttribute="bottom" constant="8" id="Kgc-l4-ynV"/>
@@ -2286,7 +2288,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="E5z-zs-ky6" firstAttribute="top" secondItem="9q6-fS-sBO" secondAttribute="bottom" constant="8" id="VVS-jy-UFa"/>
                                                         <constraint firstAttribute="height" constant="150" id="ovF-GR-l3i"/>
@@ -2306,7 +2308,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="oXi-Sj-u3n" firstAttribute="centerX" secondItem="JSg-qt-duD" secondAttribute="centerX" id="XXq-8h-ZS3"/>
                                                         <constraint firstItem="oXi-Sj-u3n" firstAttribute="top" secondItem="JSg-qt-duD" secondAttribute="bottom" constant="8" id="rbZ-W0-nkq"/>
@@ -2314,7 +2316,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="3s7-2d-jon" secondAttribute="width" multiplier="1:2" id="2zt-3J-BKP"/>
                                                 <constraint firstItem="tyX-wn-XJ4" firstAttribute="centerX" secondItem="dBN-bQ-rif" secondAttribute="centerX" id="4Vc-y6-tmL"/>
@@ -2383,8 +2385,9 @@ Typical Flight: Los Angeles to Dallas</string>
                                         <constraint firstAttribute="trailing" secondItem="1o3-tS-EsY" secondAttribute="trailing" id="eu4-1Z-bXF"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneWifiCell" rowHeight="154" id="xD9-5F-eLk" userLabel="Wifi Cell" customClass="NJOPTableViewCell">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneWifiCell" rowHeight="154" id="xD9-5F-eLk" userLabel="Wifi Cell" customClass="NJOPTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xD9-5F-eLk" id="2pL-GT-b2x">
@@ -2412,7 +2415,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="centerX" secondItem="kaV-jb-5eQ" secondAttribute="centerX" id="2Df-rd-SqP"/>
                                                 <constraint firstAttribute="centerX" secondItem="8Mc-al-iiG" secondAttribute="centerX" id="4Vz-eZ-odq"/>
@@ -2433,8 +2436,9 @@ Typical Flight: Los Angeles to Dallas</string>
                                         <constraint firstAttribute="bottom" secondItem="oyC-Vk-ktU" secondAttribute="bottom" id="hsf-Cs-s67"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneCabinCell" rowHeight="392" id="sgx-lZ-3v0" customClass="NJOPTableViewCell">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneCabinCell" rowHeight="392" id="sgx-lZ-3v0" customClass="NJOPTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sgx-lZ-3v0" id="wJY-iE-lf5">
@@ -2456,7 +2460,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                     <rect key="frame" x="0.0" y="30" width="414" height="361.5"/>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="jMP-DS-E3x" secondAttribute="trailing" id="2L1-WU-DnJ"/>
                                                 <constraint firstItem="jMP-DS-E3x" firstAttribute="top" secondItem="Fqb-vt-A3Y" secondAttribute="bottom" id="53i-ey-S2a"/>
@@ -2475,8 +2479,9 @@ Typical Flight: Los Angeles to Dallas</string>
                                         <constraint firstAttribute="bottom" secondItem="jEh-w4-YJN" secondAttribute="bottom" id="Xx4-A6-PsQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneLayoutCell" rowHeight="1057" id="cfK-fu-kNc" customClass="NJOPTableViewCell">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaneLayoutCell" rowHeight="1057" id="cfK-fu-kNc" customClass="NJOPTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfK-fu-kNc" id="eNk-UM-isl">
@@ -2498,7 +2503,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                     <rect key="frame" x="0.0" y="30" width="414" height="1026.5"/>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="ygZ-Bt-sU4" firstAttribute="top" secondItem="B3f-e7-eNY" secondAttribute="top" constant="20" symbolic="YES" id="1O3-MC-dmT"/>
                                                 <constraint firstAttribute="centerX" secondItem="ygZ-Bt-sU4" secondAttribute="centerX" id="1iu-T5-X4M"/>
@@ -2527,6 +2532,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                         <constraint firstItem="B3f-e7-eNY" firstAttribute="top" secondItem="eNk-UM-isl" secondAttribute="top" id="i1F-TL-LUI"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
