@@ -6,7 +6,7 @@
 #
 Pod::Spec.new do |s|
   s.name         = "NCLFramework"
-  s.version      = "2.0.1"
+  s.version      = "2.2.0"
   s.summary      = "This iOS library is a collection of commonly used software components shared among various NetJets iOS projects."
   s.homepage     = "http://stash.netjets.com/projects/MOBILE/repos/ios-common-library/browse"
 

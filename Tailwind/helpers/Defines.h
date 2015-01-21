@@ -22,6 +22,7 @@
 // hostname and URL for different API calls
 #define API_SOURCE_IDENTIFIER @"OwnersPortalIOSUser"
 #define API_HOSTNAME @"servicesdev2.netjets.com"
+#define API_BASEPATH @"/op/v1"
 #define URL_BRIEF @"/op/v1/brief"
 #define URL_RESERVATIONS @"/op/v1/reservations"
 #define URL_CONTRACTS @"/op/v1/contracts"

@@ -66,7 +66,7 @@ NSString * const protocolClientKey = @"NCLProtocolClientKey";
          
          DEBUGLog(@"routing request through UIWebView interceptor...");
          
-         NCLURLSession *session = [[NCLSessionManager sharedInstance] sessionForUsername:user host:newRequest.URL.host];
+         NCLURLSession *session = [[NCLSessionManager sharedInstance] sessionForUsername:user host:newRequest.URL.host isOAuthClient:NO];
          [session executeDataTaskWithRequest:newRequest returningResponse:nil error:nil];
      }];
     

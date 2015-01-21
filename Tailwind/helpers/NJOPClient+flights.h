@@ -8,7 +8,7 @@
 
 #import "NJOPClient.h"
 #import "NJOPValidator.h"
-#import "NNNOAuthClient.h"
+//#import "NNNOAuthClient.h"
 #import "BFTask.h"
 
 @interface NJOPClient (flights)

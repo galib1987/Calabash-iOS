@@ -9,13 +9,12 @@
 #import "NJOPHomeViewController.h"
 #import "NCLInfoPresenter.h"
 #import "NJOPReservation.h"
-#import "NNNOAuthClient.h"
 #import "NJOPClient.h"
 #import "NJOPFlightsDetailViewController.h"
 #import "NJOPNavigationBar.h"
 #import <DateTools/NSDate+DateTools.h>
 #import "NJOPSummaryViewTopHeaderView.h"
-
+#import "NJOPOAuthClient.h"
 
 @interface NJOPHomeViewController ()
 @end
@@ -25,6 +24,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.coverView = [UIView new];
+    self.coverView.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.7];
+    self.coverView.frame = self.view.bounds;
+    UILabel* label = [UILabel new];
+    label.textColor = [UIColor whiteColor];
+    label.text = @"Loading";
+    label.textAlignment = NSTextAlignmentCenter;
+    label.frame = self.coverView.bounds;
+    [self.coverView addSubview:label];
+    [self.coverView setUserInteractionEnabled:NO];
+    [self.view addSubview:self.coverView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,8 +50,8 @@
     
     NSDictionary *info = nil;
     if (USE_STATIC_DATA == 0) {
-        NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
-        NSString *accessToken = userSession.credential.accessToken;
+//        NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
+        NSString *accessToken = [[NJOPOAuthClient sharedInstance] accessToken:nil];
         NSString *urlString = [NSString stringWithFormat:@"https://%@%@?appAgent=%@&access_token=%@",API_HOSTNAME, URL_BRIEF,API_SOURCE_IDENTIFIER,accessToken];
         if ([urlString length] > 20) {
             info = [NSDictionary dictionaryWithObjectsAndKeys:urlString,@"apiURL", API_HOSTNAME, @"host",nil];
@@ -49,6 +59,11 @@
     }
     [NJOPClient GETReservationsWithInfo:info completion:^(NSArray *reservations, NSError *error) {
         [wself updateWithReservations:reservations];
+        [UIView animateWithDuration:0.2 animations:^{
+            [self.coverView setAlpha:0.0];
+        } completion:^(BOOL finished) {
+            [self.coverView removeFromSuperview];
+        }];
     }];
 }
 

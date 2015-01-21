@@ -24,6 +24,9 @@
 - (NSInteger)dateComponent:(NSInteger)component;
 - (NSInteger)dateComponent:(NSInteger)component timezone:(NSTimeZone*)timezone;
 
+- (NSDate*)dateByTruncatingTime;
+- (NSDate*)dateByTruncatingTimeForTimezone:(NSTimeZone*)timezone;
+
 - (BOOL)isBefore:(NSDate*)date;
 - (BOOL)isBeforeOrEqualTo:(NSDate*)date;
 - (BOOL)isAfter:(NSDate*)date;

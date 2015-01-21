@@ -14,14 +14,14 @@
 + (NCLOperationManager*)sharedInstance;
 
 + (void)addManagedOperationWithName:(NSString*)name
-                     repeatInterval:(enum NCLRepeatInterval)repeatInterval
+              repeatIntervalOptions:(NCLRepeatIntervalOptions)repeatIntervalOptions
                      operationQueue:(enum NCLOperationQueue)operationQueue
                      executionBlock:(NCLOperationBlock)executionBlock
                        successBlock:(NCLOperationSuccessBlock)successBlock
                        failureBlock:(NCLOperationFailureBlock)failureBlock;
 
 + (void)addManagedOperationWithName:(NSString*)name
-                     repeatInterval:(enum NCLRepeatInterval)repeatInterval
+              repeatIntervalOptions:(NCLRepeatIntervalOptions)repeatIntervalOptions
                      operationQueue:(enum NCLOperationQueue)operationQueue
                      executionBlock:(NCLOperationBlock)executionBlock;
 

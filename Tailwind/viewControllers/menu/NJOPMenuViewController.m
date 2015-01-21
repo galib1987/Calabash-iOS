@@ -15,7 +15,6 @@
 @implementation NJOPMenuViewController
 
 - (void)viewDidLoad {
-    NSLog(@"viewDidLoad");
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.hambergerViewController = nil;

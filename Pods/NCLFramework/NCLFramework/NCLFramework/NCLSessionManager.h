@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "NCLURLSession.h"
+#import "NCLOAuthClient.h"
 
 @interface NCLSessionManager : NSObject
 
 + (NCLSessionManager*)sharedInstance;
 
 - (void)reset;
-- (NCLURLSession*)sessionForUsername:(NSString*)username host:(NSString*)host;
+- (NCLURLSession*)sessionForUsername:(NSString*)username host:(NSString*)host isOAuthClient:(BOOL)isOAuthClient;
 
 @end

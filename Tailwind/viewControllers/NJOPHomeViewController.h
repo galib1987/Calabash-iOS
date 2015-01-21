@@ -11,6 +11,7 @@
 
 @interface NJOPHomeViewController : SimpleDataSourceTableViewController
 
+@property (nonatomic, retain) UIView *coverView;
 
 -(void)updateWithReservations:(NSArray*)reservations; // get the data for the person and update the view
 

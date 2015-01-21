@@ -13,26 +13,26 @@ typedef id(^NCLOperationBlock)(void);
 typedef void(^NCLOperationSuccessBlock)(id);
 typedef void(^NCLOperationFailureBlock)(NSError*);
 
-enum NCLRepeatInterval : NSInteger
+typedef NS_OPTIONS(NSInteger, NCLRepeatIntervalOptions)
 {
-    RepeatIntervalOnDemand = 0,
-    RepeatIntervalAppInstallation = 1,
-    RepeatIntervalWeekly = 2,
-    RepeatIntervalDaily = 3,
-    RepeatIntervalAppActivation = 4
+    NCLRepeatIntervalOnDemand         = 1 << 0,
+    NCLRepeatIntervalAppInstallation  = 1 << 1,
+    NCLRepeatIntervalWeekly           = 1 << 2,
+    NCLRepeatIntervalDaily            = 1 << 3,
+    NCLRepeatIntervalAppActivation    = 1 << 4
 };
 
 enum NCLOperationQueue : NSInteger
 {
-    OperationQueueMain = 0,
-    OperationQueueBackgroundSerial = 1,
-    OperationQueueBackgroundConcurrent = 2
+    NCLOperationQueueMain = 0,
+    NCLOperationQueueBackgroundSerial = 1,
+    NCLOperationQueueBackgroundConcurrent = 2
 };
 
 @interface NCLManagedOperation : NSOperation <NSCopying>
 
 @property (nonatomic, readonly, strong) NSString *managedOperationName;
-@property (nonatomic) enum NCLRepeatInterval repeatInterval;
+@property (nonatomic) NCLRepeatIntervalOptions repeatIntervalOptions;
 @property (nonatomic, readonly) enum NCLOperationQueue operationQueue;
 
 @property (nonatomic) NetworkStatus minimumNetworkStatus;
@@ -45,12 +45,12 @@ enum NCLOperationQueue : NSInteger
 @property (nonatomic) BOOL shouldSuspendWhenBackgrounded;
 
 + (id)managedOperationWithName:(NSString*)name
-                repeatInterval:(enum NCLRepeatInterval)repeatInterval
+         repeatIntervalOptions:(NCLRepeatIntervalOptions)repeatIntervalOptions
                 operationQueue:(enum NCLOperationQueue)operationQueue
                 executionBlock:(NCLOperationBlock)executionBlock;
 
 + (id)managedOperationWithName:(NSString*)name
-                repeatInterval:(enum NCLRepeatInterval)repeatInterval
+         repeatIntervalOptions:(NCLRepeatIntervalOptions)repeatInterval
                 operationQueue:(enum NCLOperationQueue)operationQueue
                 executionBlock:(NCLOperationBlock)executionBlock
                   successBlock:(NCLOperationSuccessBlock)successBlock

@@ -13,7 +13,6 @@
 @interface NSString (Utility)
 
 + (NSString*)stringFromDate:(NSDate*)date formatType:(NCLDateFormat)format;
-+ (NSString*)stringFromDate:(NSDate*)date formatType:(NCLDateFormat)format timezone:(NSTimeZone*)timezone;
 + (NSString*)stringForRelativeTimeSinceDate:(NSDate*)date withPrefix:(NSString*)prefix;
 + (NSString*)stringFromObject:(id)object;
 

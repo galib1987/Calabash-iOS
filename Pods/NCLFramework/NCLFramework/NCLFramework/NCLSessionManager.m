@@ -56,7 +56,7 @@
     }
 }
 
-- (NCLURLSession*)sessionForUsername:(NSString*)username host:(NSString*)host
+- (NCLURLSession*)sessionForUsername:(NSString*)username host:(NSString*)host isOAuthClient:(BOOL)isOAuthClient
 {
     if (!host)
         return nil;
@@ -122,8 +122,7 @@
         
         NSMutableDictionary *addlHeaders = [[NCLNetworking sharedInstance] standardHeadersForDomain:host];
         
-        if (username &&
-            [NCLKeychainStorage certificateForHost:host] == nil)
+        if (username && !isOAuthClient && [NCLKeychainStorage certificateForHost:host] == nil)
         {
             NCLUserPassword *userPass = [NCLKeychainStorage userPasswordForUser:username host:host];
             

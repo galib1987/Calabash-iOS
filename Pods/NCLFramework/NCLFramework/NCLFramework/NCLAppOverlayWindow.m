@@ -9,6 +9,103 @@
 #import "NCLAppOverlayWindow.h"
 #import "NCLMessageView.h"
 
+#pragma mark - NCLRadialBackgroundView
+
+@interface NCLRadialBackgroundView : UIView
+
+@property (nonatomic) CGGradientRef gradientRef;
+@property (nonatomic) CGColorRef overlayColor;
+
+@end
+
+@implementation NCLRadialBackgroundView
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    if (self)
+    {
+        self.backgroundColor = [UIColor clearColor];
+        self.alpha = 0.0;
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        // build/set overlay color
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        CGFloat r = 0/255.0;
+        CGFloat g = 0/255.0;
+        CGFloat b = 0/255.0;
+        CGFloat a = 0/255.0;
+        CGFloat components[4] = {r,g,b,a};
+        
+        self.overlayColor = CGColorCreate(colorSpace, components);
+        CGColorSpaceRelease(colorSpace);
+        
+        self.opaque = NO;
+        
+        // build gradient
+        if (_gradientRef) {
+            CGGradientRelease(_gradientRef);
+        }
+        
+        CGColorRef firstColor = CGColorCreateCopyWithAlpha(self.overlayColor, 0.f);
+        CGColorRef secondColor = CGColorCreateCopyWithAlpha(self.overlayColor, 0.4f);
+        CGColorRef thirdColor = CGColorCreateCopyWithAlpha(self.overlayColor, 0.5f);
+        
+        CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();
+        CGColorRef colorsArray[] = {
+            firstColor,
+            secondColor,
+            thirdColor
+        };
+        
+        CFArrayRef colors = CFArrayCreate(NULL,
+                                          (const void**)colorsArray,
+                                          sizeof(colorsArray)/sizeof(CGColorRef),
+                                          &kCFTypeArrayCallBacks);
+        
+        CGFloat locationList[] = {0.0,0.5,1.0};
+        
+        self.gradientRef = CGGradientCreateWithColors(rgb, colors, locationList);
+        
+        CGColorRelease(firstColor);
+        CGColorRelease(secondColor);
+        CGColorRelease(thirdColor);
+        CFRelease(colors);
+        CGColorSpaceRelease(rgb);
+    }
+    
+    return self;
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    CGPoint center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
+    
+    float startRadius = 50.0f;
+    float endRadius = rect.size.height*0.66f;
+    
+    CGContextDrawRadialGradient(context,
+                                self.gradientRef,
+                                center,
+                                startRadius,
+                                center,
+                                endRadius,
+                                kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
+    
+    CGContextRestoreGState(context);
+}
+
+@end
+
+@interface NCLAppOverlayWindow()
+
+@property (nonatomic, strong) UIView *radialBackgroundView;
+
+@end
+
 @implementation NCLAppOverlayWindow
 
 + (NCLAppOverlayWindow*)sharedInstance
@@ -41,6 +138,9 @@
         rootController.view.backgroundColor = [UIColor clearColor];
         [self setRootViewController:rootController];
         
+        self.radialBackgroundView = [[NCLRadialBackgroundView alloc] initWithFrame:rootController.view.frame];
+        [rootController.view addSubview:self.radialBackgroundView];
+        
         self.hidden = NO;
     }
     
@@ -54,13 +154,13 @@
     if (_shouldBlockBackgroundTouches)
     {
         [UIView animateWithDuration:0.3 animations:^{
-            [NCLAppOverlayWindow view].backgroundColor = [UIColor colorWithWhite:0 alpha:.33];
+            self.radialBackgroundView.alpha = 1;
         }];
     }
     else
     {
         [UIView animateWithDuration:0.15 animations:^{
-            [NCLAppOverlayWindow view].backgroundColor = [UIColor clearColor];
+            self.radialBackgroundView.alpha = 0;
         }];
     }
 }
@@ -84,3 +184,4 @@
 }
 
 @end
+

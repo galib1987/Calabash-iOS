@@ -24,9 +24,11 @@
 #import "NSData+Utility.h"
 #import "NSError+Utility.h"
 #import "NSNumber+Utility.h"
+#import "NSDecimalNumber+Utility.h"
 #import "NSString+Utility.h"
 #import "UIDevice+Utility.h"
 #import "UIView+Utility.h"
+#import "UIColor+Utility.h"
 #import "UIViewController+Utility.h"
 #import "UIApplication+Utility.h"
 #import "UIImage+Utility.h"
@@ -41,6 +43,8 @@
 #import "NCLURLSession.h"
 #import "NCLURLSessionHandler.h"
 #import "NCLErrorDelegate.h"
+#import "NCLOAuthClient.h"
+#import "NCLOAuthCredential.h"
 
 extern NSString * const NCLDateFormatShouldUseTwoDigitDateComponentsKey;
 extern NSString * const NCLDateFormatShouldUseMilitaryTimeKey;

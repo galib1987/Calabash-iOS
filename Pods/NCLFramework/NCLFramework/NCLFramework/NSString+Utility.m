@@ -12,24 +12,18 @@
 
 @implementation NSString (Utility)
 
-+ (NSString*)stringFromDate:(NSDate*)date formatType:(NCLDateFormat)format
-{
-    return [NSString stringFromDate:date formatType:format timezone:[NSTimeZone defaultTimeZone]];
-}
-
 // using the device culture settings, formats a date to {date, time, or date & time} for the specified timezone
 // an empty string is returned for null values
-+ (NSString*)stringFromDate:(NSDate*)date formatType:(NCLDateFormat)format timezone:(NSTimeZone*)timezone
++ (NSString*)stringFromDate:(NSDate*)date formatType:(NCLDateFormat)format
 {
     if (date == nil ||
         [date isEqual:[NSNull null]] ||
-        timezone == nil ||
         format > 3 || format < 1)
     {
         return @"";
     }
     
-    NSDateFormatter *formatter = [NSDateFormatter dateFormatterFromFormatType:format timezone:timezone];
+    NSDateFormatter *formatter = [NSDateFormatter dateFormatterFromFormatType:format];
     
     // return the formatted date string
     return [formatter stringFromDate:date];
@@ -43,6 +37,13 @@
     NSDate *now = [NSDate new];
     NSString *updatedString = nil;
     NSTimeInterval secondsSinceUpdate = [now timeIntervalSinceDate:date];
+    
+    NSUInteger options = 0;
+    
+    if ([(NSNumber*)[NCLFramework appPreferenceForKey:NCLDateFormatShouldUseMilitaryTimeKey] isEqualToNumber:@YES])
+    {
+        options = options | NCLDateFormatOptionMilitaryTime;
+    }
     
     INFOLog(@"now=%@; update date=%@", now.description, date.description);
     
@@ -60,7 +61,7 @@
     }
     else if ([date isToday])
     {
-        NSDateFormatter *fmt = [NSDateFormatter dateFormatterFromFormatType:NCLDateFormatTimeOnly timezone:[NSTimeZone defaultTimeZone] shouldStripColons:NO];
+        NSDateFormatter *fmt = [NSDateFormatter dateFormatterFromFormatType:NCLDateFormatTimeOnly options:options];
         updatedString = [NSString stringWithFormat:@"at %@", [fmt stringFromDate:date]];
     }
     else if ([date isYesterday])
@@ -69,7 +70,7 @@
     }
     else
     {
-        NSDateFormatter *fmt = [NSDateFormatter dateFormatterFromFormatType:NCLDateFormatDateOnly timezone:[NSTimeZone defaultTimeZone] shouldStripColons:NO];
+        NSDateFormatter *fmt = [NSDateFormatter dateFormatterFromFormatType:NCLDateFormatDateOnly options:options];
         updatedString = [NSString stringWithFormat:@"on %@", [fmt stringFromDate:date]];
     }
     
@@ -156,7 +157,8 @@
     
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:self];
     NSDictionary *attributes = @{NSFontAttributeName:font};
-    
+
+    // full character replacement
     [self enumerateSubstringsInRange:NSMakeRange(0, self.length)
                              options:NSStringEnumerationByComposedCharacterSequences
                           usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop)
@@ -167,15 +169,16 @@
          }
      }];
     
-    [self enumerateSubstringsInRange:NSMakeRange(0, self.length)
-                             options:NSStringEnumerationByWords
-                          usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop)
-     {
-         if ([wordArray containsObject:substring])
-         {
-             [attrString setAttributes:attributes range:substringRange];
-         }
-     }];
+    // first word replacement
+    [wordArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+    {
+        NSRange range = [self rangeOfString:((NSString*)obj)];
+        
+        if (range.location != NSNotFound)
+        {
+            [attrString setAttributes:attributes range:range];
+        }
+    }];
     
     return attrString;
 }

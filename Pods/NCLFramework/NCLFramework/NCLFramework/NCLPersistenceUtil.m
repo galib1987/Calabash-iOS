@@ -35,8 +35,9 @@
     if (results &&
         [results count] > 0)
     {
-        if ([results count] > 1)
-            INFOLog(@"WARNING: Unique fetch returned more than one result!");
+        if ([results count] > 1) {
+            INFOLog(@"WARNING: Unique fetch returned more than one result! Entity: %@ Key: %@ Value: %@", entityName, key, value);
+        }
 
         return [results objectAtIndex:0];
     }

@@ -74,12 +74,29 @@
         [data isKindOfClass:[NSData class]])
     {
         NSError *jsonError = nil;
-        NSDictionary *payload = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+        NSObject *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
         
         if (!jsonError &&
-            [payload isKindOfClass:[NSDictionary class]] &&
-            [payload objectForKey:@"code"])
+            [jsonObject isKindOfClass:[NSDictionary class]])
         {
+            NSObject *errorList = [((NSDictionary*)jsonObject) objectForKey:@"errors"];
+            
+            if (errorList && [errorList isKindOfClass:[NSArray class]])
+            {
+                jsonObject = ((NSArray*)errorList)[0];
+            }
+            else if (errorList && [errorList isKindOfClass:[NSDictionary class]])
+            {
+                jsonObject = errorList; // sometimes not an array when only one exists
+            }
+        }
+        
+        if (!jsonError &&
+            jsonObject &&
+            [jsonObject isKindOfClass:[NSDictionary class]] &&
+            [((NSDictionary*)jsonObject) objectForKey:@"code"])
+        {
+            NSDictionary *payload = ((NSDictionary*)jsonObject);
             NSString *errorDesc = [NSString stringFromObject:[payload objectForKey:@"description"]];
             
             if ([errorDesc contains:@"TransactionRolledbackException"])
@@ -138,6 +155,22 @@
                                             description:@"Not Connected"
                                           failureReason:@"The device appears to be offline."];
         }
+        // cant connect to host
+        else if (error && (error.code == NSURLErrorCannotConnectToHost || error.code == NSURLErrorCannotFindHost))
+        {
+            errorTranslation = [NSError errorWithDomain:NSURLErrorDomain
+                                                   code:error.code
+                                            description:@"Cannot Connect to Host"
+                                          failureReason:@"A connection to the server cannot be established."];
+        }
+        // network connection lost
+        else if (error && (error.code == NSURLErrorNetworkConnectionLost))
+        {
+            errorTranslation = [NSError errorWithDomain:NSURLErrorDomain
+                                                   code:error.code
+                                            description:@"Network Connection Lost"
+                                          failureReason:@"The network connection was lost."];
+        }
         // unexpected response
         else if (error && error.code == NSURLErrorCannotParseResponse)
         {
@@ -157,6 +190,14 @@
                                             description:@"Cannot Connect to Host"
                                           failureReason:@"The WiFi network is not responding."];
 //                                     recoverySuggestion:@"Ensure that the device has a valid network connection."];
+        }
+        // request timed out
+        else if (error && error.code == NSURLErrorTimedOut)
+        {
+            errorTranslation = [NSError errorWithDomain:NSURLErrorDomain
+                                                   code:error.code
+                                            description:@"Request Timed Out"
+                                          failureReason:@"The request timed out."];
         }
         // catch the rest of the iOS network errors (does not include some http errors)
         else if (error)

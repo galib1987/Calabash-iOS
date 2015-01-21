@@ -11,10 +11,10 @@
 @implementation NJOPClient (flights)
 
 - (NSString *) getBrief {
-    NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
+    //NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
     // let's see if we have session data
-    NSLog(@"Session DATA: %@",userSession.session);
-    [self getBriefURL:userSession.credential.accessToken];
+    //NSLog(@"Session DATA: %@",userSession.session);
+    //[self getBriefURL:userSession.credential.accessToken];
     return @"";
 }
 

@@ -12,6 +12,5 @@
 
 + (NSNumber*)numberFromObject:(id)object;
 + (NSNumber*)numberFromObject:(id)object shouldUseZeroDefault:(BOOL)shouldUseZeroDefault;
-+ (NSNumber*)numberFromObject:(id)object shouldUseZeroDefault:(BOOL)shouldUseZeroDefault decimalPlaces:(NSInteger)decimalPlaces;
 
 @end

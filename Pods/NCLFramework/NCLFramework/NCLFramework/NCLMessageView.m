@@ -16,7 +16,6 @@
 
 @property (nonatomic, strong) NSMutableArray *viewConstraints;
 @property (nonatomic, strong) CALayer *topBorder;
-//@property (nonatomic, strong) CALayer *rectLayer;
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;
 @property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, strong) UIImageView *closeImage;
@@ -44,15 +43,8 @@
 
         self.topBorder = [CALayer layer];
         self.topBorder.frame = CGRectMake(0, 0, self.frame.size.width, 1.0f);
-        self.topBorder.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.3].CGColor;
+        self.topBorder.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.15].CGColor;
         [[self layer] addSublayer:self.topBorder];
-        
-//        self.rectLayer = [CALayer layer];
-//        self.rectLayer.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0].CGColor;
-//        self.rectLayer.frame = CGRectInset(self.bounds, 2, 2);
-//        self.rectLayer.borderColor = [UIColor clearColor].CGColor;
-//        self.rectLayer.borderWidth = 1.0;
-//        [self.layer addSublayer:self.rectLayer];
         
         self.gradientLayer = [CAGradientLayer layer];
         self.gradientLayer.frame = self.bounds;
@@ -109,27 +101,19 @@
     gradientColor = backgroundColor;
     
     // depending on the back color setting, use white or black
-    CGFloat red = 0.0, green = 0.0, blue = 0.0, alpha = 0.0;
-    [backgroundColor getRed:&red green:&green blue:&blue alpha:&alpha];
-    isDark = red + green + blue > 1.5 ? NO : YES;
-    
-    if (isDark)
+    if ([backgroundColor isDark])
     {
         self.closeImage.image = [UIImage imageNamed:@"close.png"];
-//        self.rectLayer.borderColor = [UIColor colorWithWhite:1.0 alpha:.75].CGColor;
         self.textLabel.textColor = [UIColor whiteColor];
     }
     else
     {
         self.closeImage.image = [[UIImage imageNamed:@"close.png"] imageWithOverlayColor:[UIColor blackColor]];
-//        self.rectLayer.borderColor = [UIColor colorWithWhite:0.0 alpha:.75].CGColor;
         self.textLabel.textColor = [UIColor blackColor];
     }
     
     // update gradient layer
-    [gradientColor getRed:&red green:&green blue:&blue alpha:&alpha];
-    UIColor *start = [UIColor colorWithRed:MIN(red*1.2, 1) green:MIN(green*1.2, 1) blue:MIN(blue*1.2, 1) alpha:1];
-    self.gradientLayer.colors = [NSArray arrayWithObjects:(id)start.CGColor, (id)gradientColor.CGColor, nil];
+    self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[gradientColor lighterColorWithOffset:.1].CGColor, (id)gradientColor.CGColor, nil];
 }
 
 - (void)handleTap:(UIGestureRecognizer*)sender
@@ -216,6 +200,14 @@
     {
         [self.textLabel setPreferredMaxLayoutWidth:self.frame.size.width - (35+5+20+10)];
     });
+    
+    // set the shadow
+    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:self.layer.cornerRadius];
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.layer.shadowRadius = 1;
+    self.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    self.layer.shadowOpacity = 0.25f;
+    self.layer.shadowPath = shadowPath.CGPath;
 }
 
 -(void)layoutSublayersOfLayer:(CALayer *)layer
@@ -224,7 +216,6 @@
     
     // reset frames for the border layers
     self.topBorder.frame = CGRectMake(0, 0, self.frame.size.width, 1.0f);
-//    self.rectLayer.frame = CGRectInset(self.bounds, 2, 2);
     self.gradientLayer.frame = self.bounds;
 }
 

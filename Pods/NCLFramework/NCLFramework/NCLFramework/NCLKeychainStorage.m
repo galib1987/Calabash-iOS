@@ -81,7 +81,7 @@
         userPass.host == nil ||
         userPass.host.length == 0)
     {
-        INFOLog(@"nothing to save to keychain... continuing");
+        DEBUGLog(@"nothing to save to keychain... continuing");
         
         return YES;
     }
@@ -161,7 +161,7 @@
         }
     }
     
-    INFOLog(@"user %@ not in keychain for host %@", username, [NCLNetworking secondLevelDomainForHost:host]);
+    DEBUGLog(@"user %@ not in keychain for host %@", username, [NCLNetworking secondLevelDomainForHost:host]);
     
     return nil;
 }

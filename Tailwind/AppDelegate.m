@@ -20,6 +20,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // set NCL framework log level
+    [NCLFramework setLogLevel:LogLevelINFO];
+    
+    // setup global http headers for all http calls to netjets.com
+    NSMutableDictionary *projectHeaders = [[NSMutableDictionary alloc] initWithDictionary:[[NCLNetworking sharedInstance] appHeaders]];
+    [projectHeaders setObject:API_SOURCE_IDENTIFIER forKey:@"AppAgent"];
+    [[NCLNetworking sharedInstance] setStandardHeaders:projectHeaders forDomain:@"netjets.com"];
+    
     // Override point for customization after application launch.
     
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Home" bundle:[NSBundle mainBundle]];

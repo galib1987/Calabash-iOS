@@ -79,12 +79,13 @@ static NSString *installDateKey = @"InstallDate";
              [NCLAnalytics sharedInstance].serialOperationQueue.name = @"NCLAnalyticsSerialOperationQueue";
 
              // perform clean-up mx once per day
-             if ([NCLAnalytics sharedInstance].active == YES)
-             {
-                 NCLManagedOperation *op1 = [NCLManagedOperation managedOperationWithName:@"NCLAnalyticsCleanUp"
-                                                                           repeatInterval:RepeatIntervalDaily
-                                                                           operationQueue:OperationQueueBackgroundSerial
-                                                                           executionBlock:^id
+
+             NCLManagedOperation *op1 = [NCLManagedOperation managedOperationWithName:@"NCLAnalyticsCleanUp"
+                                                                repeatIntervalOptions:NCLRepeatIntervalDaily
+                                                                       operationQueue:NCLOperationQueueBackgroundSerial
+                                                                       executionBlock:^id
+                                         {
+                                             if ([NCLAnalytics sharedInstance].active == YES)
                                              {
                                                  NSManagedObjectContext *moc = [[NCLAnalyticsPersistenceManager sharedInstance] privateMOCWithParent:nil];
                                                  
@@ -105,21 +106,24 @@ static NSString *installDateKey = @"InstallDate";
                                                      INFOLog(@"removed %d device usage records prior to %@", records, removalThreshold.description);
                                                      return @YES;
                                                  }
-                                             }];
-                 
-                 [op1 setQueuePriority:NSOperationQueuePriorityVeryLow];
-                 [NCLOperationManager addManagedOperation:op1];
-             }
+                                             } else {
+                                                 return @YES;
+                                             }
+                                         }];
+             
+             [op1 setQueuePriority:NSOperationQueuePriorityVeryLow];
+             [NCLOperationManager addManagedOperation:op1];
 
-             // post usage data when on activation when in wifi
-             if ([NCLAnalytics sharedInstance].active == YES &&
-                 [NCLAnalytics sharedInstance].autoSync == YES &&
-                 [NCLNetworking sharedInstance].networkStatus == ReachableViaWiFi)
-             {
-                 NCLManagedOperation *op2 = [NCLManagedOperation managedOperationWithName:@"NCLAnalyticsPostUsageData"
-                                                                           repeatInterval:RepeatIntervalAppActivation
-                                                                           operationQueue:OperationQueueBackgroundSerial
-                                                                           executionBlock:^id
+
+             NCLManagedOperation *op2 = [NCLManagedOperation managedOperationWithName:@"NCLAnalyticsPostUsageData"
+                                                                repeatIntervalOptions:NCLRepeatIntervalAppActivation
+                                                                       operationQueue:NCLOperationQueueBackgroundSerial
+                                                                       executionBlock:^id
+                                         {
+                                             // post usage data when on activation when in wifi
+                                             if ([NCLAnalytics sharedInstance].active == YES &&
+                                                 [NCLAnalytics sharedInstance].autoSync == YES &&
+                                                 [NCLNetworking sharedInstance].networkStatus == ReachableViaWiFi)
                                              {
                                                  NSManagedObjectContext *moc = [[NCLAnalyticsPersistenceManager sharedInstance] privateMOCWithParent:nil];
                                                  
@@ -128,12 +132,13 @@ static NSString *installDateKey = @"InstallDate";
                                                      [[NCLAnalytics sharedInstance] sendUsage:moc silentMode:YES];
                                                  }
                                                  
-                                                 return @YES;
-                                             }];
-                 
-                 [op2 setQueuePriority:NSOperationQueuePriorityVeryLow];
-                 [NCLOperationManager addManagedOperation:op2];
-             }
+                                             }
+                                             
+                                             return @YES;
+                                         }];
+             
+             [op2 setQueuePriority:NSOperationQueuePriorityVeryLow];
+             [NCLOperationManager addManagedOperation:op2];
 
              // register for activate/inactive
              [[NSNotificationCenter defaultCenter] addObserver:[NCLAnalytics sharedInstance] selector:@selector(applicationDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];

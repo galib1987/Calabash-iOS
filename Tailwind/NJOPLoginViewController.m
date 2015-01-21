@@ -8,9 +8,9 @@
 
 #import "NJOPLoginViewController.h"
 #import "NJOPClient+Login.h"
-#import "NJOPClient+flights.h"
 #import "NCLInfoPresenter.h"
 #import "NJOPConfig.h"
+#import "NJOPOAuthClient.h"
 
 @interface NJOPLoginViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) NJOPLoginViewUserInput* userInput;
@@ -151,12 +151,40 @@
 		[coverView addSubview:label];
 		[coverView setUserInteractionEnabled:NO];
 		[self.view addSubview:coverView];
-        [self.passwordTextField resignFirstResponder];
-        [self.userNameTextField resignFirstResponder];
-
+        [[NJOPConfig sharedInstance] hideKeyboard];
+        
+        coverView.alpha = 0.0;
+        [UIView animateWithDuration:0.2 animations:^{
+            [coverView setAlpha:1.0];
+        } completion:^(BOOL finished) {
+        
+            // login should be synchronous. we can't really do anything if login fails for any reason
+            NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
+            [session login:self.userNameTextField.text withPassword:self.passwordTextField.text];
+            if (session.isLoggedIn == YES) {
+                /*
+                [UIView animateWithDuration:0.2 animations:^{
+                    [coverView setAlpha:0.0];
+                } completion:^(BOOL finished) {
+                    [coverView removeFromSuperview];
+                    [self displayHome];
+                }];
+                 */
+                
+                [self displayHome];
+            } else {
+                [self presentMessage:@"Error" withTitle:@"Login Failed. Please try again."];
+                [UIView animateWithDuration:0.2 animations:^{
+                    [coverView setAlpha:0.0];
+                } completion:^(BOOL finished) {
+                    [coverView removeFromSuperview];
+                }];
+            } // end isLoggedIn
+            
+        }]; // end loading animation
         
         
-
+        /*
 		__weak NJOPLoginViewController* wself = self;
 		self.loginTask = [[NJOPClient loginWithUserInputs:self.userInput] continueWithBlock:^id(id result) {
 			NJOPLoginViewController* self = wself;
@@ -177,7 +205,6 @@
 					[coverView setAlpha:0.0];
 				} completion:^(BOOL finished) {
 					[coverView removeFromSuperview];
-                    
                     [self displayHome];
 				}];
 				//NSAssert(self.completionHandler, @"");
@@ -185,25 +212,26 @@
 			}
 			return nil;
 		}];
-	}
+        */
+	} // end if loginTask
     } // end else static
 }
 
 - (void) displayHome {
-    
+    /*
     if (USE_STATIC_DATA == 0) {
-        NNNOAuthClient *userSessoion = [NNNOAuthClient sharedInstance];
-        NSLog(@"USER SESSION TOKEN: %@",userSessoion.credential.accessToken);
-        NSLog(@"USER REFRESH TOKEN: %@",userSessoion.credential.refreshToken);
-        NSLog(@"USER EXPIRATION: %@",userSessoion.credential.expiration);
-        NSString *accessToken = userSessoion.credential.accessToken;
-        NSString *accessInfo = [NSString stringWithFormat:@"Access Token:%@ - Refresh Token:%@ - Expiration: %@",userSessoion.credential.accessToken, userSessoion.credential.refreshToken, userSessoion.credential.expiration];
-        NSLog(@"access info: %@",accessInfo);
-        [self presentMessage:accessInfo withTitle:@"Login Success!!"];
+        
+//        NNNOAuthClient *userSessoion = [NNNOAuthClient sharedInstance];
+//        NSLog(@"USER SESSION TOKEN: %@",userSessoion.credential.accessToken);
+//        NSLog(@"USER REFRESH TOKEN: %@",userSessoion.credential.refreshToken);
+//        NSLog(@"USER EXPIRATION: %@",userSessoion.credential.expiration);
+        NSString *accessToken = [[NJOPOAuthClient sharedInstance] accessToken:nil];
+//        [self presentMessage:accessInfo withTitle:@"Login Success!!"];
         NSString *urlString = [NSString stringWithFormat:@"%@%@?appAgent=%@&access_token=%@",API_HOSTNAME, URL_BRIEF,API_SOURCE_IDENTIFIER,accessToken];
         NSLog(@"get Brief: %@",urlString);
         //[NJOPClient GETReservationWithInfo:<#(NSDictionary *)#> completion:<#^(NJOPReservation *reservation, NSError *error)completionHandler#>];
     }
+     */
     
     NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Home",menuStoryboardName,@"HomeViewController",menuViewControllerName, nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif]; // using NSNotifications for menu changes because we also need to do other things in other places

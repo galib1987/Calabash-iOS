@@ -16,7 +16,7 @@
 #import "NJOPSession.h"
 #import "NJOPBrief.h"
 #import "Defines.h"
-#import "NNNOAuthClient.h"
+//#import "NNNOAuthClient.h"
 
 #import "NCLInfoPresenter.h"
 
@@ -28,21 +28,23 @@
 @implementation NJOPClient
 
 +(void)GETContractsForAccount:(NSNumber *)accountId {
-    NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
-    NSString *accessToken = userSession.credential.accessToken;
+    //NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
+    //NSString *accessToken = userSession.credential.accessToken;
     
     NSData *data = nil;
     NSURLResponse *response = nil;
     NSError *error = nil;
     
+    /*
     if (USE_STATIC_DATA == 0) {
         NSString *urlString = [NSString stringWithFormat:@"https://%@%@?accountId=%@&appAgent=%@&access_token=%@", API_HOSTNAME, URL_CONTRACTS, accountId, API_SOURCE_IDENTIFIER, accessToken];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
         data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     } else {
+     */
         data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"contracts" ofType:@"json"]];
-    }
+    /*}*/
     
     NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     NSLog(@"%@", dataDict);
@@ -50,42 +52,46 @@
 }
 
 +(void)GETWeatherForReservation:(NSNumber *)reservationId {
-    NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
-    NSString *accessToken = userSession.credential.accessToken;
+    //NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
+    //NSString *accessToken = userSession.credential.accessToken;
     
     NSData *data = nil;
     
     NSURLResponse *response = nil;
     NSError *error = nil;
+    /*
     if (USE_STATIC_DATA == 0) {
         NSString *urlString = [NSString stringWithFormat:@"https://%@%@?reservationId=%@&appAgent=%@&access_token=%@", API_HOSTNAME, URL_WEATHER, reservationId, API_SOURCE_IDENTIFIER, accessToken];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
         data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     } else {
+     */
         data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"weather-test" ofType:@"json"]];
-    }
+    /*} */
     
     NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     NSLog(@"%@", dataDict);
 }
 
 +(void)GETPastFlightsForAccounts:(NSArray *)accountIds {
-    NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
-    NSString *accessToken = userSession.credential.accessToken;
+    //NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
+    //NSString *accessToken = userSession.credential.accessToken;
     
     NSData *data = nil;
     NSURLResponse *response = nil;
     NSError *error = nil;
     
+    /*
     if (USE_STATIC_DATA == 0) {
         NSString *urlString = [NSString stringWithFormat:@"https://%@%@?accountIds=%@,&showAllFlights=true&searchFuture=false&appAgent=%@&access_token=%@", API_HOSTNAME, URL_FLIGHTS, @"1399122", API_SOURCE_IDENTIFIER, accessToken];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
         data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     } else {
+     */
         data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"past-flights" ofType:@"json"]];
-    }
+    /*}*/
     
     NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     NSLog(@"%@", dataDict);
@@ -99,6 +105,7 @@
     NSError *error = nil;
     NSURLResponse *response = nil;
     NJOPSession *session = [NJOPSession sharedInstance];
+    NJOPBrief *brief = [[NJOPBrief alloc] init];
     
     if (reservationInfo != nil && [reservationInfo isKindOfClass:[NSDictionary class]]) {
         // look at the NSDictionary to see if we're fetching from URL

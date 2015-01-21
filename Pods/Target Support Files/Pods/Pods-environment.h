@@ -33,14 +33,14 @@
 // NCLFramework
 #define COCOAPODS_POD_AVAILABLE_NCLFramework
 #define COCOAPODS_VERSION_MAJOR_NCLFramework 2
-#define COCOAPODS_VERSION_MINOR_NCLFramework 0
-#define COCOAPODS_VERSION_PATCH_NCLFramework 1
+#define COCOAPODS_VERSION_MINOR_NCLFramework 2
+#define COCOAPODS_VERSION_PATCH_NCLFramework 0
 
 // NCLFramework/no-arc
 #define COCOAPODS_POD_AVAILABLE_NCLFramework_no_arc
 #define COCOAPODS_VERSION_MAJOR_NCLFramework_no_arc 2
-#define COCOAPODS_VERSION_MINOR_NCLFramework_no_arc 0
-#define COCOAPODS_VERSION_PATCH_NCLFramework_no_arc 1
+#define COCOAPODS_VERSION_MINOR_NCLFramework_no_arc 2
+#define COCOAPODS_VERSION_PATCH_NCLFramework_no_arc 0
 
 // NSData+Base64
 #define COCOAPODS_POD_AVAILABLE_NSData_Base64

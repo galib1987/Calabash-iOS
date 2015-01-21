@@ -13,15 +13,10 @@
 
 + (NSNumber*)numberFromObject:(id)object
 {
-    return [NSNumber numberFromObject:object shouldUseZeroDefault:YES decimalPlaces:-1];
+    return [NSNumber numberFromObject:object shouldUseZeroDefault:YES];
 }
 
 + (NSNumber*)numberFromObject:(id)object shouldUseZeroDefault:(BOOL)shouldUseZeroDefault
-{
-    return [NSNumber numberFromObject:object shouldUseZeroDefault:shouldUseZeroDefault decimalPlaces:-1];
-}
-
-+ (NSNumber*)numberFromObject:(id)object shouldUseZeroDefault:(BOOL)shouldUseZeroDefault decimalPlaces:(NSInteger)decimalPlaces
 {
     // check for nulls and invalid objects
     if (object == nil ||
@@ -60,20 +55,7 @@
         }
     }
     
-    // if decimal places are specified, return a rounded NSNumber
-    if (decimalPlaces >= 0)
-    {
-        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-        [formatter setMaximumFractionDigits:decimalPlaces];
-        [formatter setRoundingMode: NSNumberFormatterRoundHalfUp];
-        NSString *numberString = [formatter stringFromNumber:number];
-        
-        return [NSDecimalNumber decimalNumberWithString:numberString];
-    }
-    else
-    {
-        return number;
-    }
+    return number;
 }
 
 @end

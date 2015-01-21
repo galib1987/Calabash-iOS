@@ -40,6 +40,7 @@
 
 -(void)updateWithReservation {
     
+    NSLog(@"getting reservation: %@",_reservation.reservationId);
     [NJOPClient GETWeatherForReservation:_reservation.reservationId];
     
     NSDateFormatter* weatherFormatter = [[NSDateFormatter alloc] init];

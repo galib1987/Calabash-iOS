@@ -14,11 +14,13 @@
 @property (nonatomic, readonly, strong) NSManagedObjectModel *objectModel;
 @property (nonatomic, readonly, strong) NSManagedObjectContext *mainMOC;
 @property (nonatomic, readonly, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, readonly, strong) NSString *sqliteFileNameBase;
+
 
 - (NSString*)modelName;
 - (BOOL)shouldAlwaysInstallResourcedDatabase;
 - (BOOL)shouldBeExcludedFromBackup;
-- (BOOL)supportsModelVersioning;
+- (BOOL)supportsCustomModelMigration;
 
 - (NSNumber*)storeSize;
 

@@ -79,9 +79,20 @@
     return nil;
 }
 
+- (NCLOAuthClient*)oAuthClient
+{
+    // may be overridden by subclasses to provide an oauth http client for the purpose of obtaining an access token
+    return nil;
+}
+
 - (NCLURLSession*)session
 {
-    return [[NCLSessionManager sharedInstance] sessionForUsername:self.user host:self.host];
+    return [[NCLSessionManager sharedInstance] sessionForUsername:(self.user ?: [[self oAuthClient] user]) host:self.host isOAuthClient:[self isOAuthClient]];
+}
+
+- (BOOL)isOAuthClient
+{
+    return [self oAuthClient] || [self isKindOfClass:[NCLOAuthClient class]];
 }
 
 #pragma mark - Base request
@@ -140,6 +151,18 @@
 //                processingBlock(nil, localError);
 //        }
 //    }
+
+    if (!localError &&
+        [self oAuthClient])
+    {
+        NSString *token = [[self oAuthClient] accessToken:&localError];
+        
+        if (!localError &&
+            token)
+        {
+            [httpRequest addValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
+        }
+    }
     
     if (!localError)
     {
@@ -172,11 +195,11 @@
             if (httpRequest.shouldSuspendWhenBackgrounded == NO &&
                 httpRequest.timeoutInterval < 60.0)
             {
-                backgroundTaskID = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^(void)
-                                    {
-                                        [[UIApplication sharedApplication] endBackgroundTask:backgroundTaskID];
-                                        backgroundTaskID = UIBackgroundTaskInvalid;
-                                    }];
+                backgroundTaskID = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^(void) {
+
+                    [[UIApplication sharedApplication] endBackgroundTask:backgroundTaskID];
+                    backgroundTaskID = UIBackgroundTaskInvalid;
+                }];
             }
             else
             {
@@ -254,6 +277,14 @@
             // clear the password on an unauthorized error (helps prevent account locks)
             if (localError.code == 401)
             {
+                // clear any cached oauth credentials
+                if ([self oAuthClient])
+                {
+                    [[self oAuthClient] resetCredential];
+                    
+                    INFOLog(@"OAuth credential has been reset");
+                }
+                
                 userPass = [NCLKeychainStorage userPasswordForUser:username host:self.host];
                 [userPass setPassword:@""];
                 [NCLKeychainStorage saveUserPassword:userPass error:nil];
@@ -286,7 +317,7 @@
             localError = [NSError errorWithDomain:NSURLErrorDomain
                                              code:kCFURLErrorUnknown
                                       description:@"Unexpected Error"
-                                    failureReason:[NSString stringWithFormat:@"An unexpected error (%d) has occurred.", httpResponse.statusCode]];
+                                    failureReason:[NSString stringWithFormat:@"An unexpected error (%ld) has occurred.", (long)httpResponse.statusCode]];
             
             if (processingBlock)
                 processingBlock(nil, localError);
@@ -421,7 +452,7 @@
         transactionID)
     {
         [httpRequest setValue:transactionID forHTTPHeaderField:@"Trans-ID"];
-        [httpRequest setValue:[NSString stringWithFormat:@"%d", [NCLNetworking sharedInstance].networkStatus] forHTTPHeaderField:@"Network-Status"];
+        [httpRequest setValue:[NSString stringWithFormat:@"%ld", [NCLNetworking sharedInstance].networkStatus] forHTTPHeaderField:@"Network-Status"];
     }
 }
 

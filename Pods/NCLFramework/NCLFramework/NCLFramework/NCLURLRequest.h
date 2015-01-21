@@ -40,7 +40,6 @@ typedef enum
 @property (nonatomic, strong) NSString *notificationNameOnFailure;
 @property (nonatomic, strong) NSObject *notificationID;
 @property (nonatomic) ContentType contentType;
-//@property (nonatomic) ContentType expectedResponseType;
 @property (nonatomic, strong) NCLSimulatedHTTPResponse *simulatedHTTPResponse;
 
 - (id)initWithScheme:(NSString*)scheme host:(NSString*)host port:(NSInteger)port path:(NSString*)urlPath;

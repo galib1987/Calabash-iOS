@@ -99,77 +99,79 @@
 {
     BOOL success = YES;
     
-    if (data != nil)
+    if (data == nil)
     {
-        [self setHTTPMethod:method];
-
-        // JSON
-        if (self.contentType == ContentTypeJSON)
+        data = @[];
+    }
+    
+    [self setHTTPMethod:method];
+    
+    // JSON
+    if (self.contentType == ContentTypeJSON)
+    {
+        if (![data isKindOfClass:[NSDictionary class]] && ![data isKindOfClass:[NSArray class]])
+            INFOLog(@"EXPECTING NSDictionary OR NSArray OBJECT FOR JSON HTTP BODY");
+        
+        NSError *error = nil;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:&error];
+        
+        if (error)
         {
-            if (![data isKindOfClass:[NSDictionary class]] && ![data isKindOfClass:[NSArray class]])
-                INFOLog(@"EXPECTING NSDictionary OR NSArray OBJECT FOR JSON HTTP BODY");
+            success = NO;
             
-            NSError *error = nil;
-            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:&error];
-            
-            if (error)
+            if ([NCLFramework logLevel] > 1)
             {
-                success = NO;
+                NSString *printableData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                 
-                if ([NCLFramework logLevel] > 1)
-                {
-                    NSString *printableData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                    
-                    INFOLog(@"JSON serialization error: %@\n%@", [error localizedDescription], printableData);
-                }
-            }
-            else
-            {
-                [self setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-                [self setValue:[NSString stringWithFormat:@"%d", [jsonData length]] forHTTPHeaderField:@"Content-Length"];
-                [self setHTTPBody:jsonData];
-                
-                if ([NCLFramework logLevel] > 1)
-                {
-                    NSInteger maxDisplayBytes = ([NCLFramework logLevel] > LogLevelINFO || self.shouldOutputTraceLog) ? 1024*1000 : 1024;
-                    NSError *parseError = nil;
-                    id json = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&parseError];
-                    
-                    if (json)
-                    {
-                        NSString *prettyPrintJSON = [json description];
-                        NSString *moreBytes = prettyPrintJSON.length > maxDisplayBytes ? [NSString stringWithFormat:@"... < %i MORE BYTES >", prettyPrintJSON.length - maxDisplayBytes] : @"";
-                        prettyPrintJSON = prettyPrintJSON.length > maxDisplayBytes ? [prettyPrintJSON substringToIndex:maxDisplayBytes] : prettyPrintJSON;
-                        
-                        INFOLog(@"JSON payload:\n%@%@", prettyPrintJSON, moreBytes);
-                    }
-                }
+                INFOLog(@"JSON serialization error: %@\n%@", [error localizedDescription], printableData);
             }
         }
-        // image
-        else if (self.contentType == ContentTypeImage)
+        else
         {
-            if (![data isKindOfClass:[NSData class]])
-                INFOLog(@"EXPECTING NSData OBJECT FOR IMAGE HTTP BODY");
+            [self setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+            [self setValue:[NSString stringWithFormat:@"%d", [jsonData length]] forHTTPHeaderField:@"Content-Length"];
+            [self setHTTPBody:jsonData];
             
-            [self setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-            [self setValue:[NSString stringWithFormat:@"%d", [data length]] forHTTPHeaderField:@"Content-Length"];
-            [self setHTTPBody:data];
-            
-            INFOLog(@"image payload: < %d K >", ([data length] / 1024));
+            if ([NCLFramework logLevel] > 1)
+            {
+                NSInteger maxDisplayBytes = ([NCLFramework logLevel] > LogLevelINFO || self.shouldOutputTraceLog) ? 1024*1000 : 1024;
+                NSError *parseError = nil;
+                id json = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&parseError];
+                
+                if (json)
+                {
+                    NSString *prettyPrintJSON = [json description];
+                    NSString *moreBytes = prettyPrintJSON.length > maxDisplayBytes ? [NSString stringWithFormat:@"... < %i MORE BYTES >", prettyPrintJSON.length - maxDisplayBytes] : @"";
+                    prettyPrintJSON = prettyPrintJSON.length > maxDisplayBytes ? [prettyPrintJSON substringToIndex:maxDisplayBytes] : prettyPrintJSON;
+                    
+                    INFOLog(@"JSON payload:\n%@%@", prettyPrintJSON, moreBytes);
+                }
+            }
         }
-        // XML
-        else if (self.contentType == ContentTypeXML)
-        {
-            if (![data isKindOfClass:[NSData class]])
-                INFOLog(@"EXPECTING NSData OBJECT FOR XML HTTP BODY");
-            
-            [self setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
-            [self setValue:[NSString stringWithFormat:@"%d", [data length]] forHTTPHeaderField:@"Content-Length"];
-            [self setHTTPBody:data];
-            
-            INFOLog(@"XML payload: < %d K >", ([data length] / 1024));
-        }
+    }
+    // image
+    else if (self.contentType == ContentTypeImage)
+    {
+        if (![data isKindOfClass:[NSData class]])
+            INFOLog(@"EXPECTING NSData OBJECT FOR IMAGE HTTP BODY");
+        
+        [self setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [self setValue:[NSString stringWithFormat:@"%d", [data length]] forHTTPHeaderField:@"Content-Length"];
+        [self setHTTPBody:data];
+        
+        INFOLog(@"image payload: < %d K >", ([data length] / 1024));
+    }
+    // XML
+    else if (self.contentType == ContentTypeXML)
+    {
+        if (![data isKindOfClass:[NSData class]])
+            INFOLog(@"EXPECTING NSData OBJECT FOR XML HTTP BODY");
+        
+        [self setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
+        [self setValue:[NSString stringWithFormat:@"%d", [data length]] forHTTPHeaderField:@"Content-Length"];
+        [self setHTTPBody:data];
+        
+        INFOLog(@"XML payload: < %d K >", ([data length] / 1024));
     }
     
     return success;
@@ -240,6 +242,33 @@
     return queryParamsString;
 }
 
+- (BOOL)formatValue:(NSObject *)object forKey:(NSString *)key arguments:(NSMutableArray *)arguments
+{
+    BOOL handled = YES;
+    
+    // clean up strings with proper escaping
+    if ([object isKindOfClass:[NSString class]])
+    {
+        [arguments addObject:[NSString stringWithFormat:@"%@=%@", key, [self stringByEscapingForURLQueryString:(NSString*)object]]];
+    }
+    
+    // numbers
+    else if ([object isKindOfClass:[NSNumber class]])
+    {
+        [arguments addObject:[NSString stringWithFormat:@"%@=%@", key, [(NSNumber*)object stringValue]]];
+    }
+    
+    // format dates/times in ISO 8601
+    else if ([object isKindOfClass:[NSDate class]])
+    {
+        [arguments addObject:[NSString stringWithFormat:@"%@=%@", key, [(NSDate*)object description]]];
+    } else {
+        handled = NO;
+    }
+    
+    return handled;
+}
+
 - (NSString*)stringWithURLEncodedComponentsForDictionary:(NSDictionary*)dictionary
 {
     NSMutableArray *arguments = [NSMutableArray array];
@@ -248,22 +277,14 @@
     {
         NSObject *object = [dictionary objectForKey:key];
         
-        // clean up strings with proper escaping
-        if ([object isKindOfClass:[NSString class]])
-        {
-            [arguments addObject:[NSString stringWithFormat:@"%@=%@", key, [self stringByEscapingForURLQueryString:(NSString*)object]]];
-        }
+        BOOL handled = [self formatValue:object forKey:key arguments:arguments];
         
-        // numbers
-        if ([object isKindOfClass:[NSNumber class]])
+        if (!handled && [object isKindOfClass:[NSArray class]])
         {
-            [arguments addObject:[NSString stringWithFormat:@"%@=%@", key, [(NSNumber*)object stringValue]]];
-        }
-        
-        // format dates/times in ISO 8601
-        else if ([object isKindOfClass:[NSDate class]])
-        {
-            [arguments addObject:[NSString stringWithFormat:@"%@=%@", key, [(NSDate*)object description]]];
+            NSArray *values = (NSArray *)object;
+            for (NSObject *value in values) {
+                [self formatValue:value forKey:key arguments:arguments];
+            }
         }
     }
     

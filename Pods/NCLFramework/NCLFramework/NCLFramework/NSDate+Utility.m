@@ -75,9 +75,26 @@
     return [formatter dateFromString:mediumDateText];
 }
 
+- (NSDate*)dateByTruncatingTime
+{
+    return [self dateByTruncatingTimeForTimezone:[NSTimeZone defaultTimeZone]];
+}
+
+- (NSDate*)dateByTruncatingTimeForTimezone:(NSTimeZone*)timezone
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *comps = [calendar componentsInTimeZone:timezone fromDate:self];
+    
+    [comps setHour:0];
+    [comps setMinute:0];
+    [comps setSecond:0];
+    
+    return [calendar dateFromComponents:comps];
+}
+
 - (NSDate*)dateByAddingComponent:(NSInteger)component amount:(NSInteger)amount
 {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *comps = [[NSDateComponents alloc] init];
     
     if (component == NSYearCalendarUnit)
@@ -104,7 +121,7 @@
 
 - (NSInteger)dateComponent:(NSInteger)component timezone:(NSTimeZone*)timezone
 {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
     [calendar setTimeZone:timezone];
     
     NSDateComponents *dateComponents = [calendar components:component fromDate:self];

@@ -9,8 +9,7 @@
 #import "NJOPClient+Login.h"
 #import "BFTask.h"
 #import "BFTaskCompletionSource.h"
-
-#import "NNNOAuthClient.h"
+#import "NJOPOAuthClient.h"
 
 @interface BFTask (Task) <Task>
 @end
@@ -22,15 +21,20 @@
 	NSError* error = nil;
 	if ([userInput validateWithError:error]) {
 
-		[[NNNOAuthClient sharedInstance] requestCredentialWithUserName:userInput.username
-																													password:userInput.password
-																								 completionHandler:^(NCLOAuthCredential *credential, NSError* error) {
-																									 if (error) {
-																										 [source setError:error];
-																									 } else {
-																										 [source setResult:credential];
-																									 }
-																								 }];
+//		[[NNNOAuthClient sharedInstance] requestCredentialWithUserName:userInput.username
+//																													password:userInput.password
+//																								 completionHandler:^(NCLOAuthCredential *credential, NSError* error) {
+//																									 if (error) {
+//																										 [source setError:error];
+//																									 } else {
+//																										 [source setResult:credential];
+//																									 }
+//																								 }];
+        NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
+        NSLog(@"logging in");
+        //NSString *sessionToken = [session login:userInput.username withPassword:userInput.password];
+        //session.user = userInput.username;
+        //session.password = userInput.password;
 	} else {
 		[source setError:error];
 	}

@@ -52,12 +52,12 @@
 #pragma mark - adding managed operations
 
 + (void)addManagedOperationWithName:(NSString*)name
-                     repeatInterval:(enum NCLRepeatInterval)repeatInterval
+              repeatIntervalOptions:(NCLRepeatIntervalOptions)repeatIntervalOptions
                      operationQueue:(enum NCLOperationQueue)operationQueue
                      executionBlock:(NCLOperationBlock)executionBlock
 {
     [NCLOperationManager addManagedOperationWithName:name
-                                      repeatInterval:repeatInterval
+                               repeatIntervalOptions:repeatIntervalOptions
                                       operationQueue:operationQueue
                                       executionBlock:executionBlock
                                         successBlock:nil
@@ -65,14 +65,14 @@
 }
 
 + (void)addManagedOperationWithName:(NSString*)name
-                     repeatInterval:(enum NCLRepeatInterval)repeatInterval
+              repeatIntervalOptions:(NCLRepeatIntervalOptions)repeatIntervalOptions
                      operationQueue:(enum NCLOperationQueue)operationQueue
                      executionBlock:(NCLOperationBlock)executionBlock
                        successBlock:(NCLOperationSuccessBlock)successBlock
                        failureBlock:(NCLOperationFailureBlock)failureBlock
 {
     NCLManagedOperation *operation = [NCLManagedOperation managedOperationWithName:name
-                                                                    repeatInterval:repeatInterval
+                                                             repeatIntervalOptions:repeatIntervalOptions
                                                                     operationQueue:operationQueue
                                                                     executionBlock:executionBlock
                                                                       successBlock:successBlock
@@ -120,7 +120,7 @@
         {
             for (NCLManagedOperation *managedOperation in self.operations)
             {
-                if (managedOperation.repeatInterval != RepeatIntervalOnDemand)
+                if (!(managedOperation.repeatIntervalOptions & NCLRepeatIntervalOnDemand))
                 {
                     [operations addObject:[managedOperation copy]];
                 }
@@ -184,18 +184,19 @@
     if (managedOperation)
     {
         // update the last execution date if successful
-        if (managedOperation.repeatInterval == RepeatIntervalDaily ||
-            managedOperation.repeatInterval == RepeatIntervalWeekly)
+        if ((managedOperation.repeatIntervalOptions & NCLRepeatIntervalDaily) ||
+            (managedOperation.repeatIntervalOptions & NCLRepeatIntervalWeekly))
         {
             managedOperation.shouldUpdateLastExecutionDate = YES;
         }
-        else if (managedOperation.repeatInterval == RepeatIntervalAppInstallation)
+        
+        if (managedOperation.repeatIntervalOptions & NCLRepeatIntervalAppInstallation)
         {
             managedOperation.shouldUpdateLastExecutionForBundleVersion = YES;
         }
 
         // force it to run regardless of the calendar or "first run" status
-        managedOperation.repeatInterval = RepeatIntervalOnDemand;
+        managedOperation.repeatIntervalOptions = NCLRepeatIntervalOnDemand;
         
         [[NCLOperationManager sharedInstance] processOperations:[NSArray arrayWithObject:managedOperation]];
     }
@@ -226,11 +227,11 @@
     // place all the operations on the queue for immediate processing
     for (NCLManagedOperation *managedOperation in operations)
     {
-        if (managedOperation.operationQueue == OperationQueueMain)
+        if (managedOperation.operationQueue == NCLOperationQueueMain)
         {
             [[NSOperationQueue mainQueue] addOperation:[managedOperation copy]];
         }
-        else if (managedOperation.operationQueue == OperationQueueBackgroundSerial)
+        else if (managedOperation.operationQueue == NCLOperationQueueBackgroundSerial)
         {
             [self.serialOperationQueue addOperation:[managedOperation copy]];
         }

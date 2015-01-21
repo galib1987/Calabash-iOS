@@ -10,6 +10,7 @@
 
 @class NCLURLSession;
 @class NCLURLRequest;
+@class NCLOAuthClient;
 
 #define HTTP_REQUEST_ID_NOTIFICATION_KEY @"HTTPRequestIDNotificationKey"
 #define HTTP_REQUEST_ERROR_NOTIFICATION_KEY @"HTTPRequestErrorNotificationKey"
@@ -42,6 +43,8 @@
  */
 - (NSString*)user;
 
+- (NCLOAuthClient*)oAuthClient;
+
 /*
  * gets a shared private URLSession for this http client, but should only be used when an NSURLSessionUploadTask or NSURLSessionDownloadTask are required
  * -the session returned is dynamic, and will reset if the user or host change
@@ -53,7 +56,7 @@
  * gets a default URLRequest for this http client
  * properties & defaults...
  * -timeoutInterval = 30
- * -expectedResponseType = ContentTypeJSON            * generates error for unexpected responses, oftentimes caused by wifi redirects
+ * -contentType = ContentTypeJSON                     * generates error for unexpected responses, oftentimes caused by wifi redirects
  * -shouldDisplayActivityIndicator = YES              * if YES, displays the iOS activity indicator in the device status bar
  * -shouldPresentAlertOnError = NO                    * if YES, network & http errors are delegated to the NCLErrorDelegate (see NCLFramework.setErrorDelegate)
  * -shouldSuppressAnalytics = NO                      * if NO & the analytics engine has been started, all non-WebView network calls will be audited
@@ -86,7 +89,7 @@
 /*
  * synchronous http POST w/ request & http body
  * -see NCLURLRequest for customized request behavior
- * -if http body is an array or dictionary, it will be sent as JSON w/ the proper headers (otherwise NSData objects are passed through)
+ * -if contentType=JSON, pass an array or dictionary for the http body... pass NSData for all other contentTypes
  * -query parameters can still be set w/ request.parameters if needed
  */
 - (NSData*)POST:(NCLURLRequest*)request HTTPBody:(id)data returningResponse:(NSHTTPURLResponse**)response error:(NSError**)error;
@@ -94,7 +97,7 @@
 /*
  * asynchronous http POST w/ request & http body
  * -see NCLURLRequest for customized request behavior
- * -if http body is an array or dictionary, it will be sent as JSON w/ the proper headers (otherwise NSData objects are passed through)
+ * -if contentType=JSON, pass an array or dictionary for the http body... pass NSData for all other contentTypes
  * -completionBlock is executed in a BACKGROUND THREAD
  * -query parameters can still be set w/ request.parameters if needed
  */

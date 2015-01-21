@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15EAFD7B1A6D4682003C3B8A /* NJOPFlightHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EAFD781A6D4682003C3B8A /* NJOPFlightHTTPClient.m */; };
+		15EAFD7C1A6D4682003C3B8A /* NJOPOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EAFD7A1A6D4682003C3B8A /* NJOPOAuthClient.m */; };
 		1E0D621E1A6875920076516F /* NJOPKeyboardControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D621D1A6875920076516F /* NJOPKeyboardControls.m */; };
 		1E0D62211A6969220076516F /* NJOPMultilineTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D62201A6969220076516F /* NJOPMultilineTextField.m */; };
 		1E0D62291A69AA630076516F /* NJOPBookingReviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D62281A69AA630076516F /* NJOPBookingReviewTableViewController.m */; };
@@ -43,8 +45,13 @@
 		A730033C1A53189800E5A42C /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A730033A1A53189800E5A42C /* Account.storyboard */; };
 		A7380F681A5881AA008AB5F6 /* NJOPTripCompleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7380F671A5881AA008AB5F6 /* NJOPTripCompleteCell.m */; };
 		A7433C031A531184009BD3EB /* NJOPSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7433C021A531184009BD3EB /* NJOPSettingsTableViewController.m */; };
+		A7492CAE1A6B5857006E9711 /* NJOPFlightDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7492CAD1A6B5857006E9711 /* NJOPFlightDetailCell.m */; };
 		A74C81851A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C81841A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m */; };
 		A74C81881A53150C001FF1A9 /* NJOPAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C81871A53150C001FF1A9 /* NJOPAccountViewController.m */; };
+		A74CDC5D1A6F909300F10A0C /* NJOPClient+flights.m in Sources */ = {isa = PBXBuildFile; fileRef = A74CDC5C1A6F909300F10A0C /* NJOPClient+flights.m */; };
+		A74CDC611A6F951800F10A0C /* contracts.json in Resources */ = {isa = PBXBuildFile; fileRef = A74CDC5E1A6F951800F10A0C /* contracts.json */; };
+		A74CDC621A6F951800F10A0C /* past-flights.json in Resources */ = {isa = PBXBuildFile; fileRef = A74CDC5F1A6F951800F10A0C /* past-flights.json */; };
+		A74CDC631A6F951800F10A0C /* weather-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A74CDC601A6F951800F10A0C /* weather-test.json */; };
 		A750999B1A6357C00091D7E3 /* NJOPMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75099981A6357C00091D7E3 /* NJOPMessagesViewController.m */; };
 		A750999D1A63587D0091D7E3 /* NJOPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A750999C1A63587D0091D7E3 /* NJOPHomeViewController.m */; };
 		A762F9731A666513002065EB /* NJOPCateringCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A762F9721A666513002065EB /* NJOPCateringCell.m */; };
@@ -86,14 +93,8 @@
 		A77680DE1A406C7D00B2E7CF /* NJOPSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680C91A406C7D00B2E7CF /* NJOPSession.m */; };
 		A77680DF1A406C7D00B2E7CF /* NJOPValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680CB1A406C7D00B2E7CF /* NJOPValidator.m */; };
 		A77680E01A406C7D00B2E7CF /* NJOPValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680CB1A406C7D00B2E7CF /* NJOPValidator.m */; };
-		A77680E11A406C7D00B2E7CF /* NNNOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680CD1A406C7D00B2E7CF /* NNNOAuthClient.m */; };
-		A77680E21A406C7D00B2E7CF /* NNNOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680CD1A406C7D00B2E7CF /* NNNOAuthClient.m */; };
 		A77680E31A406C7D00B2E7CF /* NNNUserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680CF1A406C7D00B2E7CF /* NNNUserDefaultsManager.m */; };
 		A77680E41A406C7D00B2E7CF /* NNNUserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680CF1A406C7D00B2E7CF /* NNNUserDefaultsManager.m */; };
-		A77680E51A406C7D00B2E7CF /* NCLOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680D21A406C7D00B2E7CF /* NCLOAuthClient.m */; };
-		A77680E61A406C7D00B2E7CF /* NCLOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680D21A406C7D00B2E7CF /* NCLOAuthClient.m */; };
-		A77680E71A406C7D00B2E7CF /* NCLOAuthCredential.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680D41A406C7D00B2E7CF /* NCLOAuthCredential.m */; };
-		A77680E81A406C7D00B2E7CF /* NCLOAuthCredential.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680D41A406C7D00B2E7CF /* NCLOAuthCredential.m */; };
 		A77680E91A406C7D00B2E7CF /* UIColor+NJOP.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680D61A406C7D00B2E7CF /* UIColor+NJOP.m */; };
 		A77680EA1A406C7D00B2E7CF /* UIColor+NJOP.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680D61A406C7D00B2E7CF /* UIColor+NJOP.m */; };
 		A77680ED1A406EA100B2E7CF /* NSDate+NJOP.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680EC1A406EA100B2E7CF /* NSDate+NJOP.m */; };
@@ -104,13 +105,9 @@
 		A77680F61A40734900B2E7CF /* NJOPBrief.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680F41A40734900B2E7CF /* NJOPBrief.m */; };
 		A77680F91A4074AD00B2E7CF /* NJOPContract.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680F81A4074AD00B2E7CF /* NJOPContract.m */; };
 		A77680FA1A4074AD00B2E7CF /* NJOPContract.m in Sources */ = {isa = PBXBuildFile; fileRef = A77680F81A4074AD00B2E7CF /* NJOPContract.m */; };
-		A77E18611A6B3CEB0061B34C /* weather-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A77E18601A6B3CEB0061B34C /* weather-test.json */; };
-		A77E18631A6B45B50061B34C /* past-flights.json in Resources */ = {isa = PBXBuildFile; fileRef = A77E18621A6B45B50061B34C /* past-flights.json */; };
-		A77E18691A6B4B530061B34C /* contracts.json in Resources */ = {isa = PBXBuildFile; fileRef = A77E18681A6B4B530061B34C /* contracts.json */; };
 		A780A7EB1A5E4FFD000911A7 /* NJOPCrewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A780A7EA1A5E4FFD000911A7 /* NJOPCrewCell.m */; };
 		A780A7EE1A5E636B000911A7 /* NJOPPassengerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A780A7ED1A5E636B000911A7 /* NJOPPassengerCell.m */; };
 		A780A7F11A5E6392000911A7 /* NJOPPassengeManifestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A780A7F01A5E6392000911A7 /* NJOPPassengeManifestViewController.m */; };
-		A780D0301A55040100A79AF6 /* NJOPFlightDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A780D02F1A55040100A79AF6 /* NJOPFlightDetailCell.m */; };
 		A780D0331A5504BC00A79AF6 /* NJOPInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A780D0321A5504BC00A79AF6 /* NJOPInfoCell.m */; };
 		A786D60F1A66351F006EDA24 /* NJOPHamburgerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A786D6071A66351F006EDA24 /* NJOPHamburgerViewController.m */; };
 		A786D6101A66351F006EDA24 /* NJOPHamburgerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A786D6081A66351F006EDA24 /* NJOPHamburgerViewController.xib */; };
@@ -140,8 +137,6 @@
 		A7A03EBB1A42F130004BE417 /* NJOPUpcomingFlightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03EBA1A42F130004BE417 /* NJOPUpcomingFlightTableCell.m */; };
 		A7A03EBE1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03EBD1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.m */; };
 		A7A03EC11A42F21D004BE417 /* NJOPNOFBOTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03EC01A42F21D004BE417 /* NJOPNOFBOTableCell.m */; };
-		A7A03EC41A42F2D3004BE417 /* NJOPClient+flights.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03EC31A42F2D3004BE417 /* NJOPClient+flights.m */; };
-		A7A03EC51A42F2D3004BE417 /* NJOPClient+flights.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03EC31A42F2D3004BE417 /* NJOPClient+flights.m */; };
 		A7A03EC71A4301A3004BE417 /* brief-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A03EC61A4301A3004BE417 /* brief-test.json */; };
 		A7A03EC81A4301A3004BE417 /* brief-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A03EC61A4301A3004BE417 /* brief-test.json */; };
 		A7C07DC21A5B3FFF0055126B /* NJOPAdvisoryNotesController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C07DC11A5B3FFF0055126B /* NJOPAdvisoryNotesController.m */; };
@@ -171,6 +166,10 @@
 
 /* Begin PBXFileReference section */
 		03307E6D414420F7D9C0477B /* Pods.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.production.xcconfig; path = "Pods/Target Support Files/Pods/Pods.production.xcconfig"; sourceTree = SOURCE_ROOT; };
+		15EAFD771A6D4682003C3B8A /* NJOPFlightHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightHTTPClient.h; sourceTree = "<group>"; };
+		15EAFD781A6D4682003C3B8A /* NJOPFlightHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightHTTPClient.m; sourceTree = "<group>"; };
+		15EAFD791A6D4682003C3B8A /* NJOPOAuthClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPOAuthClient.h; sourceTree = "<group>"; };
+		15EAFD7A1A6D4682003C3B8A /* NJOPOAuthClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPOAuthClient.m; sourceTree = "<group>"; };
 		1E0D621C1A6875920076516F /* NJOPKeyboardControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPKeyboardControls.h; path = elements/NJOPKeyboardControls.h; sourceTree = "<group>"; };
 		1E0D621D1A6875920076516F /* NJOPKeyboardControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPKeyboardControls.m; path = elements/NJOPKeyboardControls.m; sourceTree = "<group>"; };
 		1E0D621F1A6969220076516F /* NJOPMultilineTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPMultilineTextField.h; path = elements/NJOPMultilineTextField.h; sourceTree = "<group>"; };
@@ -238,9 +237,16 @@
 		A7433C011A531184009BD3EB /* NJOPSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSettingsTableViewController.h; sourceTree = "<group>"; };
 		A7433C021A531184009BD3EB /* NJOPSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsTableViewController.m; sourceTree = "<group>"; };
 		A7433C041A5311AE009BD3EB /* NJOPPushNotificationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPushNotificationsTableViewController.h; sourceTree = "<group>"; };
+		A7492CAC1A6B5857006E9711 /* NJOPFlightDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPFlightDetailCell.h; path = elements/NJOPFlightDetailCell.h; sourceTree = "<group>"; };
+		A7492CAD1A6B5857006E9711 /* NJOPFlightDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPFlightDetailCell.m; path = elements/NJOPFlightDetailCell.m; sourceTree = "<group>"; };
 		A74C81841A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPushNotificationsTableViewController.m; sourceTree = "<group>"; };
 		A74C81861A53150C001FF1A9 /* NJOPAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAccountViewController.h; sourceTree = "<group>"; };
 		A74C81871A53150C001FF1A9 /* NJOPAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAccountViewController.m; sourceTree = "<group>"; };
+		A74CDC5B1A6F909300F10A0C /* NJOPClient+flights.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NJOPClient+flights.h"; sourceTree = "<group>"; };
+		A74CDC5C1A6F909300F10A0C /* NJOPClient+flights.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NJOPClient+flights.m"; sourceTree = "<group>"; };
+		A74CDC5E1A6F951800F10A0C /* contracts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contracts.json; sourceTree = "<group>"; };
+		A74CDC5F1A6F951800F10A0C /* past-flights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "past-flights.json"; sourceTree = "<group>"; };
+		A74CDC601A6F951800F10A0C /* weather-test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-test.json"; sourceTree = "<group>"; };
 		A75099951A6357C00091D7E3 /* NJOPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPHomeViewController.h; sourceTree = "<group>"; };
 		A75099971A6357C00091D7E3 /* NJOPMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPMessagesViewController.h; sourceTree = "<group>"; };
 		A75099981A6357C00091D7E3 /* NJOPMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPMessagesViewController.m; sourceTree = "<group>"; };
@@ -289,14 +295,8 @@
 		A77680C91A406C7D00B2E7CF /* NJOPSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSession.m; sourceTree = "<group>"; };
 		A77680CA1A406C7D00B2E7CF /* NJOPValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPValidator.h; sourceTree = "<group>"; };
 		A77680CB1A406C7D00B2E7CF /* NJOPValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPValidator.m; sourceTree = "<group>"; };
-		A77680CC1A406C7D00B2E7CF /* NNNOAuthClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNOAuthClient.h; sourceTree = "<group>"; };
-		A77680CD1A406C7D00B2E7CF /* NNNOAuthClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNOAuthClient.m; sourceTree = "<group>"; };
 		A77680CE1A406C7D00B2E7CF /* NNNUserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNUserDefaultsManager.h; sourceTree = "<group>"; };
 		A77680CF1A406C7D00B2E7CF /* NNNUserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNUserDefaultsManager.m; sourceTree = "<group>"; };
-		A77680D11A406C7D00B2E7CF /* NCLOAuthClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCLOAuthClient.h; sourceTree = "<group>"; };
-		A77680D21A406C7D00B2E7CF /* NCLOAuthClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCLOAuthClient.m; sourceTree = "<group>"; };
-		A77680D31A406C7D00B2E7CF /* NCLOAuthCredential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCLOAuthCredential.h; sourceTree = "<group>"; };
-		A77680D41A406C7D00B2E7CF /* NCLOAuthCredential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCLOAuthCredential.m; sourceTree = "<group>"; };
 		A77680D51A406C7D00B2E7CF /* UIColor+NJOP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+NJOP.h"; sourceTree = "<group>"; };
 		A77680D61A406C7D00B2E7CF /* UIColor+NJOP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NJOP.m"; sourceTree = "<group>"; };
 		A77680EB1A406EA100B2E7CF /* NSDate+NJOP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NJOP.h"; sourceTree = "<group>"; };
@@ -307,17 +307,12 @@
 		A77680F41A40734900B2E7CF /* NJOPBrief.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBrief.m; sourceTree = "<group>"; };
 		A77680F71A4074AD00B2E7CF /* NJOPContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPContract.h; sourceTree = "<group>"; };
 		A77680F81A4074AD00B2E7CF /* NJOPContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPContract.m; sourceTree = "<group>"; };
-		A77E18601A6B3CEB0061B34C /* weather-test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "weather-test.json"; sourceTree = "<group>"; };
-		A77E18621A6B45B50061B34C /* past-flights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "past-flights.json"; sourceTree = "<group>"; };
-		A77E18681A6B4B530061B34C /* contracts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contracts.json; sourceTree = "<group>"; };
 		A780A7E91A5E4FFD000911A7 /* NJOPCrewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCrewCell.h; sourceTree = "<group>"; };
 		A780A7EA1A5E4FFD000911A7 /* NJOPCrewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCrewCell.m; sourceTree = "<group>"; };
 		A780A7EC1A5E636B000911A7 /* NJOPPassengerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPassengerCell.h; sourceTree = "<group>"; };
 		A780A7ED1A5E636B000911A7 /* NJOPPassengerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPassengerCell.m; sourceTree = "<group>"; };
 		A780A7EF1A5E6392000911A7 /* NJOPPassengeManifestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPassengeManifestViewController.h; sourceTree = "<group>"; };
 		A780A7F01A5E6392000911A7 /* NJOPPassengeManifestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPassengeManifestViewController.m; sourceTree = "<group>"; };
-		A780D02E1A55040100A79AF6 /* NJOPFlightDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightDetailCell.h; sourceTree = "<group>"; };
-		A780D02F1A55040100A79AF6 /* NJOPFlightDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightDetailCell.m; sourceTree = "<group>"; };
 		A780D0311A5504BC00A79AF6 /* NJOPInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPInfoCell.h; sourceTree = "<group>"; };
 		A780D0321A5504BC00A79AF6 /* NJOPInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPInfoCell.m; sourceTree = "<group>"; };
 		A786D6061A66351F006EDA24 /* NJOPHamburgerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPHamburgerViewController.h; sourceTree = "<group>"; };
@@ -329,8 +324,8 @@
 		A786D60C1A66351F006EDA24 /* NJOPOSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPOSViewController.h; sourceTree = "<group>"; };
 		A786D60D1A66351F006EDA24 /* NJOPOSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPOSViewController.m; sourceTree = "<group>"; };
 		A786D60E1A66351F006EDA24 /* NJOPOSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPOSViewController.xib; sourceTree = "<group>"; };
-		A786D6181A66380B006EDA24 /* NJOPFlightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightTableCell.h; sourceTree = "<group>"; };
-		A786D6191A66380B006EDA24 /* NJOPFlightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightTableCell.m; sourceTree = "<group>"; };
+		A786D6181A66380B006EDA24 /* NJOPFlightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPFlightTableCell.h; path = elements/NJOPFlightTableCell.h; sourceTree = "<group>"; };
+		A786D6191A66380B006EDA24 /* NJOPFlightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPFlightTableCell.m; path = elements/NJOPFlightTableCell.m; sourceTree = "<group>"; };
 		A786D61F1A6639A5006EDA24 /* NJOPMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPMessageCell.h; sourceTree = "<group>"; };
 		A786D6201A6639A5006EDA24 /* NJOPMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPMessageCell.m; sourceTree = "<group>"; };
 		A786D6221A663B4A006EDA24 /* NJOPConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPConfig.h; sourceTree = "<group>"; };
@@ -365,8 +360,6 @@
 		A7A03EBD1A42F1A3004BE417 /* NJOPCurrentFBOTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPCurrentFBOTableCell.m; path = Tailwind/MiddleLevelUI/NJOPCurrentFBOTableCell.m; sourceTree = SOURCE_ROOT; };
 		A7A03EBF1A42F21D004BE417 /* NJOPNOFBOTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPNOFBOTableCell.h; path = Tailwind/MiddleLevelUI/Views/NJOPNOFBOTableCell.h; sourceTree = SOURCE_ROOT; };
 		A7A03EC01A42F21D004BE417 /* NJOPNOFBOTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPNOFBOTableCell.m; path = Tailwind/MiddleLevelUI/Views/NJOPNOFBOTableCell.m; sourceTree = SOURCE_ROOT; };
-		A7A03EC21A42F2D3004BE417 /* NJOPClient+flights.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NJOPClient+flights.h"; sourceTree = "<group>"; };
-		A7A03EC31A42F2D3004BE417 /* NJOPClient+flights.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NJOPClient+flights.m"; sourceTree = "<group>"; };
 		A7A03EC61A4301A3004BE417 /* brief-test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "brief-test.json"; sourceTree = "<group>"; };
 		A7C07DC01A5B3FFF0055126B /* NJOPAdvisoryNotesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAdvisoryNotesController.h; sourceTree = "<group>"; };
 		A7C07DC11A5B3FFF0055126B /* NJOPAdvisoryNotesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAdvisoryNotesController.m; sourceTree = "<group>"; };
@@ -409,6 +402,17 @@
 				6167B98AFA8D41C092D41CCC /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		15EAFD761A6D466E003C3B8A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				15EAFD771A6D4682003C3B8A /* NJOPFlightHTTPClient.h */,
+				15EAFD781A6D4682003C3B8A /* NJOPFlightHTTPClient.m */,
+				15EAFD791A6D4682003C3B8A /* NJOPOAuthClient.h */,
+				15EAFD7A1A6D4682003C3B8A /* NJOPOAuthClient.m */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		1E0D62181A6857C00076516F /* Airport Search */ = {
@@ -458,6 +462,7 @@
 		30A4737B19D9E41A0045D7AF /* Tailwind */ = {
 			isa = PBXGroup;
 			children = (
+				15EAFD761A6D466E003C3B8A /* Networking */,
 				55CA603319E7FD4A001E2FC6 /* helpers */,
 				55CA603419E7FD4A001E2FC6 /* viewControllers */,
 				55CA603519E7FD4A001E2FC6 /* views */,
@@ -527,6 +532,8 @@
 		55CA603319E7FD4A001E2FC6 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A74CDC5B1A6F909300F10A0C /* NJOPClient+flights.h */,
+				A74CDC5C1A6F909300F10A0C /* NJOPClient+flights.m */,
 				A7A03EA71A42E7BC004BE417 /* UICollectionReusableView+NJOPHelpers.h */,
 				A7A03EA81A42E7BC004BE417 /* UICollectionReusableView+NJOPHelpers.m */,
 				A7A03EA41A42E626004BE417 /* UIView+NJOPStyle.h */,
@@ -538,16 +545,12 @@
 				A77680C31A406C7D00B2E7CF /* NJOPClient.m */,
 				A77680C41A406C7D00B2E7CF /* NJOPClient+Login.h */,
 				A77680C51A406C7D00B2E7CF /* NJOPClient+Login.m */,
-				A7A03EC21A42F2D3004BE417 /* NJOPClient+flights.h */,
-				A7A03EC31A42F2D3004BE417 /* NJOPClient+flights.m */,
 				A77680C61A406C7D00B2E7CF /* NJOPReservation.h */,
 				A77680C71A406C7D00B2E7CF /* NJOPReservation.m */,
 				A77680C81A406C7D00B2E7CF /* NJOPSession.h */,
 				A77680C91A406C7D00B2E7CF /* NJOPSession.m */,
 				A77680CA1A406C7D00B2E7CF /* NJOPValidator.h */,
 				A77680CB1A406C7D00B2E7CF /* NJOPValidator.m */,
-				A77680CC1A406C7D00B2E7CF /* NNNOAuthClient.h */,
-				A77680CD1A406C7D00B2E7CF /* NNNOAuthClient.m */,
 				A77680CE1A406C7D00B2E7CF /* NNNUserDefaultsManager.h */,
 				A77680CF1A406C7D00B2E7CF /* NNNUserDefaultsManager.m */,
 				A77680D51A406C7D00B2E7CF /* UIColor+NJOP.h */,
@@ -562,7 +565,6 @@
 				A77680F41A40734900B2E7CF /* NJOPBrief.m */,
 				A77680F71A4074AD00B2E7CF /* NJOPContract.h */,
 				A77680F81A4074AD00B2E7CF /* NJOPContract.m */,
-				A77680D01A406C7D00B2E7CF /* tmp */,
 				A786D6221A663B4A006EDA24 /* NJOPConfig.h */,
 				A786D6231A663B4A006EDA24 /* NJOPConfig.m */,
 			);
@@ -677,17 +679,6 @@
 			path = Nimbus;
 			sourceTree = "<group>";
 		};
-		A77680D01A406C7D00B2E7CF /* tmp */ = {
-			isa = PBXGroup;
-			children = (
-				A77680D11A406C7D00B2E7CF /* NCLOAuthClient.h */,
-				A77680D21A406C7D00B2E7CF /* NCLOAuthClient.m */,
-				A77680D31A406C7D00B2E7CF /* NCLOAuthCredential.h */,
-				A77680D41A406C7D00B2E7CF /* NCLOAuthCredential.m */,
-			);
-			path = tmp;
-			sourceTree = "<group>";
-		};
 		A786D61B1A663946006EDA24 /* Messages-Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -701,6 +692,8 @@
 		A7A03E9D1A42E554004BE417 /* elements */ = {
 			isa = PBXGroup;
 			children = (
+				A7492CAC1A6B5857006E9711 /* NJOPFlightDetailCell.h */,
+				A7492CAD1A6B5857006E9711 /* NJOPFlightDetailCell.m */,
 				1E0D622A1A69BABA0076516F /* NJOPPastFlightTableCell.h */,
 				1E0D622B1A69BABA0076516F /* NJOPPastFlightTableCell.m */,
 				1E0D622C1A69BABA0076516F /* NJOPPastFlightTableCell.xib */,
@@ -742,12 +735,12 @@
 		A7A03EAD1A42ECE7004BE417 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				A74CDC5E1A6F951800F10A0C /* contracts.json */,
+				A74CDC5F1A6F951800F10A0C /* past-flights.json */,
+				A74CDC601A6F951800F10A0C /* weather-test.json */,
 				A7A03EC61A4301A3004BE417 /* brief-test.json */,
 				A7A03EAE1A42ECE7004BE417 /* mobile-api-reservations-response.json */,
 				5255D2551A5D85F9002638F8 /* welcome-items.json */,
-				A77E18601A6B3CEB0061B34C /* weather-test.json */,
-				A77E18621A6B45B50061B34C /* past-flights.json */,
-				A77E18681A6B4B530061B34C /* contracts.json */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -792,8 +785,6 @@
 			children = (
 				A7F2CA4A1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.h */,
 				A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */,
-				A780D02E1A55040100A79AF6 /* NJOPFlightDetailCell.h */,
-				A780D02F1A55040100A79AF6 /* NJOPFlightDetailCell.m */,
 				A780D0311A5504BC00A79AF6 /* NJOPInfoCell.h */,
 				A780D0321A5504BC00A79AF6 /* NJOPInfoCell.m */,
 				A7C07DBF1A5B3FD30055126B /* Info Cell Segues */,
@@ -961,9 +952,9 @@
 				30A4738819D9E41A0045D7AF /* Main.storyboard in Resources */,
 				A77680BE1A40659D00B2E7CF /* Nimbus-Sans-Extd-D-Bold.otf in Resources */,
 				A77680B41A40659D00B2E7CF /* Nimbus-Sans-D-Black-Italic.otf in Resources */,
+				A74CDC611A6F951800F10A0C /* contracts.json in Resources */,
 				A77680911A4063D300B2E7CF /* Booking.storyboard in Resources */,
 				A77680BC1A40659D00B2E7CF /* Nimbus-Sans-D.otf in Resources */,
-				A77E18611A6B3CEB0061B34C /* weather-test.json in Resources */,
 				A77680931A4063E400B2E7CF /* Messages.storyboard in Resources */,
 				1E0D622E1A69BABA0076516F /* NJOPPastFlightTableCell.xib in Resources */,
 				A77680B01A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Light-Italic.otf in Resources */,
@@ -980,7 +971,6 @@
 				30A4738D19D9E41A0045D7AF /* LaunchScreen.xib in Resources */,
 				A77680BA1A40659D00B2E7CF /* Nimbus-Sans-D-Regular-Italic.otf in Resources */,
 				A77680BF1A40659D00B2E7CF /* Nimbus-Sans-Extd-D-Light.otf in Resources */,
-				A77E18691A6B4B530061B34C /* contracts.json in Resources */,
 				A77680C01A40659D00B2E7CF /* Nimbus-Sans-Extd-D.otf in Resources */,
 				A77680AC1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Black-Italic.otf in Resources */,
 				A786D6271A664562006EDA24 /* Settings.storyboard in Resources */,
@@ -990,7 +980,7 @@
 				1E36BD1C1A4887D700221E7D /* Welcome.storyboard in Resources */,
 				A77680B91A40659D00B2E7CF /* Nimbus-Sans-D-Light.otf in Resources */,
 				A786D6101A66351F006EDA24 /* NJOPHamburgerViewController.xib in Resources */,
-				A77E18631A6B45B50061B34C /* past-flights.json in Resources */,
+				A74CDC621A6F951800F10A0C /* past-flights.json in Resources */,
 				A77680891A4062FE00B2E7CF /* Home.storyboard in Resources */,
 				A77680AE1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold-Italic.otf in Resources */,
 				A77680B61A40659D00B2E7CF /* Nimbus-Sans-D-Bold-Italic.otf in Resources */,
@@ -999,6 +989,7 @@
 				A77680AF1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold.otf in Resources */,
 				A7D6F4C91A64C77800B9E7B4 /* (null) in Resources */,
 				30A4738A19D9E41A0045D7AF /* Images.xcassets in Resources */,
+				A74CDC631A6F951800F10A0C /* weather-test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1111,21 +1102,19 @@
 			files = (
 				A786D6241A663B4A006EDA24 /* NJOPConfig.m in Sources */,
 				A786D6211A6639A5006EDA24 /* NJOPMessageCell.m in Sources */,
-				A77680E51A406C7D00B2E7CF /* NCLOAuthClient.m in Sources */,
 				A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */,
 				1E79C8911A65CAD0001B73B9 /* NJOPTextField.m in Sources */,
 				A74C81881A53150C001FF1A9 /* NJOPAccountViewController.m in Sources */,
 				30A4738519D9E41A0045D7AF /* ViewController.m in Sources */,
 				A70FDB5F1A5C1EA000C549CF /* NJOPMenuButton.m in Sources */,
 				A77680D71A406C7D00B2E7CF /* NJOPClient.m in Sources */,
+				A74CDC5D1A6F909300F10A0C /* NJOPClient+flights.m in Sources */,
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
-				A77680E71A406C7D00B2E7CF /* NCLOAuthCredential.m in Sources */,
 				A77680DB1A406C7D00B2E7CF /* NJOPReservation.m in Sources */,
 				A7CD0AFA1A5C868C00D45224 /* (null) in Sources */,
 				30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */,
 				A77680ED1A406EA100B2E7CF /* NSDate+NJOP.m in Sources */,
 				A750999B1A6357C00091D7E3 /* NJOPMessagesViewController.m in Sources */,
-				A780D0301A55040100A79AF6 /* NJOPFlightDetailCell.m in Sources */,
 				A74C81851A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m in Sources */,
 				1E79C8971A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m in Sources */,
 				A7A03EB21A42EE91004BE417 /* FBOTableCell.m in Sources */,
@@ -1143,6 +1132,7 @@
 				A77680E91A406C7D00B2E7CF /* UIColor+NJOP.m in Sources */,
 				6CC829B31A40B4C900991949 /* NJOPResetPasswordViewController.m in Sources */,
 				1E636E951A5F299C002B3E8C /* NJOPSelectAccountViewController.m in Sources */,
+				15EAFD7C1A6D4682003C3B8A /* NJOPOAuthClient.m in Sources */,
 				1E0D62211A6969220076516F /* NJOPMultilineTextField.m in Sources */,
 				6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */,
 				A7A03EA91A42E7BC004BE417 /* UICollectionReusableView+NJOPHelpers.m in Sources */,
@@ -1165,7 +1155,6 @@
 				A77680E31A406C7D00B2E7CF /* NNNUserDefaultsManager.m in Sources */,
 				A786D6131A66351F006EDA24 /* NJOPOSViewController.m in Sources */,
 				1E1A592E1A48CDD70048A9C9 /* NJOPFullPageViewController.m in Sources */,
-				A77680E11A406C7D00B2E7CF /* NNNOAuthClient.m in Sources */,
 				A7A03E981A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.m in Sources */,
 				A7433C031A531184009BD3EB /* NJOPSettingsTableViewController.m in Sources */,
 				A7A03EA31A42E585004BE417 /* SimpleDataSourceTableViewController.m in Sources */,
@@ -1177,7 +1166,6 @@
 				A7A03EB51A42EF1D004BE417 /* NJOPActionButton.m in Sources */,
 				A762F9791A6665BE002065EB /* NJOPCateringViewController.m in Sources */,
 				1E36BD251A489ED100221E7D /* NJOPWelcomeRootController.m in Sources */,
-				A7A03EC41A42F2D3004BE417 /* NJOPClient+flights.m in Sources */,
 				52B6042F1A685D0900C0E066 /* NJOPSimpleCalendarViewHeader.m in Sources */,
 				A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */,
 				A77680F11A40729200B2E7CF /* NJOPIndividual.m in Sources */,
@@ -1187,6 +1175,8 @@
 				5559ACA719E8064D002CA7D2 /* NJOPRequest.m in Sources */,
 				52B6042C1A68432600C0E066 /* NJOPCalendarViewCell.m in Sources */,
 				A7C872491A5B394F0048E2F4 /* NJOPAdvisoryNotesCell.m in Sources */,
+				A7492CAE1A6B5857006E9711 /* NJOPFlightDetailCell.m in Sources */,
+				15EAFD7B1A6D4682003C3B8A /* NJOPFlightHTTPClient.m in Sources */,
 				A786D6111A66351F006EDA24 /* NJOPMenuViewController.m in Sources */,
 				A7D6F4C81A64C77800B9E7B4 /* (null) in Sources */,
 				A77680D91A406C7D00B2E7CF /* NJOPClient+Login.m in Sources */,
@@ -1202,9 +1192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A77680E81A406C7D00B2E7CF /* NCLOAuthCredential.m in Sources */,
 				A786D6251A663B4A006EDA24 /* NJOPConfig.m in Sources */,
-				A7A03EC51A42F2D3004BE417 /* NJOPClient+flights.m in Sources */,
 				A77680DA1A406C7D00B2E7CF /* NJOPClient+Login.m in Sources */,
 				A77680EA1A406C7D00B2E7CF /* UIColor+NJOP.m in Sources */,
 				A77680DC1A406C7D00B2E7CF /* NJOPReservation.m in Sources */,
@@ -1212,13 +1200,11 @@
 				A77680DE1A406C7D00B2E7CF /* NJOPSession.m in Sources */,
 				A77680EE1A406EA100B2E7CF /* NSDate+NJOP.m in Sources */,
 				A77680E01A406C7D00B2E7CF /* NJOPValidator.m in Sources */,
-				A77680E21A406C7D00B2E7CF /* NNNOAuthClient.m in Sources */,
 				A77680F61A40734900B2E7CF /* NJOPBrief.m in Sources */,
 				A77680FA1A4074AD00B2E7CF /* NJOPContract.m in Sources */,
 				30A4739919D9E41B0045D7AF /* TailwindTests.m in Sources */,
 				A77680D81A406C7D00B2E7CF /* NJOPClient.m in Sources */,
 				A77680E41A406C7D00B2E7CF /* NNNUserDefaultsManager.m in Sources */,
-				A77680E61A406C7D00B2E7CF /* NCLOAuthClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

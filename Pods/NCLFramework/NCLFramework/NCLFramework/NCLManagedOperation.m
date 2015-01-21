@@ -25,25 +25,35 @@
 @implementation NCLManagedOperation
 
 + (id)managedOperationWithName:(NSString*)name
-                repeatInterval:(enum NCLRepeatInterval)repeatInterval
+         repeatIntervalOptions:(NCLRepeatIntervalOptions)repeatIntervalOptions
                 operationQueue:(enum NCLOperationQueue)operationQueue
                 executionBlock:(NCLOperationBlock)executionBlock
 {
-    return [[NCLManagedOperation alloc] initWithName:name repeatInterval:repeatInterval operationQueue:operationQueue executionBlock:executionBlock successBlock:nil failureBlock:nil];
+    return [[NCLManagedOperation alloc] initWithName:name
+                               repeatIntervalOptions:repeatIntervalOptions
+                                      operationQueue:operationQueue
+                                      executionBlock:executionBlock
+                                        successBlock:nil
+                                        failureBlock:nil];
 }
 
 + (id)managedOperationWithName:(NSString*)name
-                repeatInterval:(enum NCLRepeatInterval)repeatInterval
+         repeatIntervalOptions:(NCLRepeatIntervalOptions)repeatIntervalOptions
                 operationQueue:(enum NCLOperationQueue)operationQueue
                 executionBlock:(NCLOperationBlock)executionBlock
                   successBlock:(NCLOperationSuccessBlock)successBlock
                   failureBlock:(NCLOperationFailureBlock)failureBlock
 {
-    return [[NCLManagedOperation alloc] initWithName:name repeatInterval:repeatInterval operationQueue:operationQueue executionBlock:executionBlock successBlock:successBlock failureBlock:failureBlock];
+    return [[NCLManagedOperation alloc] initWithName:name
+                               repeatIntervalOptions:repeatIntervalOptions
+                                      operationQueue:operationQueue
+                                      executionBlock:executionBlock
+                                        successBlock:successBlock
+                                        failureBlock:failureBlock];
 }
 
 - (id)initWithName:(NSString*)name
-    repeatInterval:(enum NCLRepeatInterval)repeatInterval
+repeatIntervalOptions:(NCLRepeatIntervalOptions)repeatIntervalOptions
     operationQueue:(enum NCLOperationQueue)operationQueue
     executionBlock:(NCLOperationBlock)executionBlock
       successBlock:(NCLOperationSuccessBlock)successBlock
@@ -58,17 +68,13 @@
         {
             @throw [NSException exceptionWithName:@"Invalid Name" reason:@"A name is required for all managed operations" userInfo:nil];
         }
-        else if (_repeatInterval < 0 || _repeatInterval > 4)
-        {
-            @throw [NSException exceptionWithName:@"Invalid Repeat Interval" reason:@"Repeat interval for managed operation is invalid" userInfo:nil];
-        }
         else if (executionBlock == nil)
         {
             @throw [NSException exceptionWithName:@"Invalid Execution Block" reason:@"An execution block is required for all managed operations" userInfo:nil];
         }
         
         _managedOperationName = name;
-        _repeatInterval = repeatInterval;
+        _repeatIntervalOptions = repeatIntervalOptions;
         _operationQueue = operationQueue;
         self.operation = executionBlock;
         self.successBlock = successBlock;
@@ -92,7 +98,7 @@
 - (id)copyWithZone:(NSZone*)zone
 {
     NCLManagedOperation *mo = [NCLManagedOperation managedOperationWithName:self.managedOperationName
-                                                             repeatInterval:self.repeatInterval
+                                                      repeatIntervalOptions:self.repeatIntervalOptions
                                                              operationQueue:self.operationQueue
                                                              executionBlock:self.operation
                                                                successBlock:self.successBlock
@@ -178,22 +184,22 @@
 {
     BOOL shouldExecute = NO;
     
-    if (self.repeatInterval == RepeatIntervalAppInstallation &&
+    if ((self.repeatIntervalOptions & NCLRepeatIntervalAppInstallation) &&
         [self isFirstRunForBundleVersion])
     {
         shouldExecute = YES;
     }
-    else if (self.repeatInterval == RepeatIntervalDaily &&
+    else if ((self.repeatIntervalOptions & NCLRepeatIntervalDaily) &&
              ![[self lastExecutionDate] isToday])
     {
         shouldExecute = YES;
     }
-    else if (self.repeatInterval == RepeatIntervalAppActivation ||
-             self.repeatInterval == RepeatIntervalOnDemand)
+    else if ((self.repeatIntervalOptions & NCLRepeatIntervalAppActivation) ||
+             (self.repeatIntervalOptions & NCLRepeatIntervalOnDemand))
     {
         shouldExecute = YES;
     }
-    else if (self.repeatInterval == RepeatIntervalWeekly &&
+    else if ((self.repeatIntervalOptions & NCLRepeatIntervalWeekly) &&
              [[self lastExecutionDate] dateComponent:NSWeekOfYearCalendarUnit] != [[NSDate new] dateComponent:NSWeekOfYearCalendarUnit])
     {
         shouldExecute = YES;
@@ -224,7 +230,7 @@
     {
         // execute the block operation
         INFOLog(@"executing managed operation %@ on %@ queue...", self.managedOperationName,
-                (self.operationQueue == OperationQueueMain ? @"main" : self.operationQueue == OperationQueueBackgroundSerial ? @"serial" : @"concurrent"));
+                (self.operationQueue == NCLOperationQueueMain ? @"main" : self.operationQueue == NCLOperationQueueBackgroundSerial ? @"serial" : @"concurrent"));
         
         id result = self.operation();
         
@@ -274,15 +280,15 @@
         // process SUCCESS
         else
         {
-            if (self.repeatInterval == RepeatIntervalAppInstallation ||
+            if ((self.repeatIntervalOptions & NCLRepeatIntervalAppInstallation) ||
                 self.shouldUpdateLastExecutionForBundleVersion)
             {
                 [self updateLastExecutionForBundleVersion];
             }
             
-            else if (self.repeatInterval == RepeatIntervalDaily ||
-                     self.repeatInterval == RepeatIntervalWeekly ||
-                     self.shouldUpdateLastExecutionDate) // applicable when manually executed by name & want the date updated
+            if ((self.repeatIntervalOptions & NCLRepeatIntervalDaily) ||
+                (self.repeatIntervalOptions & NCLRepeatIntervalWeekly) ||
+                (self.shouldUpdateLastExecutionDate)) // applicable when manually executed by name (NCLRepeatIntervalOnDemand) & want the date updated
             {
                 [self updateLastExecutionDate];
             }

@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "NNNOAuthClient.h"
 #import "NNNUserDefaultsManager.h"
 
 @interface ViewController ()
@@ -41,8 +40,8 @@
         [[NNNUserDefaultsManager sharedInstance] setUsername:username];
         NCLUserPassword *password = [[NCLUserPassword alloc] initWithUsername:username password:passwordText host:[[NNNUserDefaultsManager sharedInstance] host]];
         [NCLKeychainStorage saveUserPassword:password error:nil];
-        NNNOAuthClient *authClient = [NNNOAuthClient sharedInstance];
-        [authClient requestCredential];
+//        NNNOAuthClient *authClient = [NNNOAuthClient sharedInstance];
+//        [authClient requestCredential];
     }
 }
 @end

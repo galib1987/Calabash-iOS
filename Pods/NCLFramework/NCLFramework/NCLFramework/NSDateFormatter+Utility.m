@@ -13,17 +13,37 @@
 
 + (NSDateFormatter*)dateFormatterFromFormatType:(NCLDateFormat)format
 {
-    return [self dateFormatterFromFormatType:format timezone:[NSTimeZone defaultTimeZone]];
-}
-
-+ (NSDateFormatter*)dateFormatterFromFormatType:(NCLDateFormat)format timezone:(NSTimeZone*)timezone
-{
-    BOOL shouldStripColons = [(NSNumber*)[NCLFramework appPreferenceForKey:NCLDateFormatShouldStripColonsKey] isEqualToNumber:@YES];
+    NSUInteger options = 0;
     
-    return [self dateFormatterFromFormatType:format timezone:[NSTimeZone defaultTimeZone] shouldStripColons:shouldStripColons];
+    if ([(NSNumber*)[NCLFramework appPreferenceForKey:NCLDateFormatShouldStripColonsKey] isEqualToNumber:@YES])
+    {
+        options = options | NCLDateFormatOptionStripColons;
+    }
+    
+    if ([(NSNumber*)[NCLFramework appPreferenceForKey:NCLDateFormatShouldStripCommasKey] isEqualToNumber:@YES])
+    {
+        options = options | NCLDateFormatOptionStripCommas;
+    }
+    
+    if ([(NSNumber*)[NCLFramework appPreferenceForKey:NCLDateFormatShouldUseTwoDigitDateComponentsKey] isEqualToNumber:@YES])
+    {
+        options = options | NCLDateFormatOptionTwoDigitDateComponents;
+    }
+    
+    if ([(NSNumber*)[NCLFramework appPreferenceForKey:NCLDateFormatShouldUseMilitaryTimeKey] isEqualToNumber:@YES])
+    {
+        options = options | NCLDateFormatOptionMilitaryTime;
+    }
+    
+    return [self dateFormatterFromFormatType:format options:options];
 }
 
-+ (NSDateFormatter*)dateFormatterFromFormatType:(NCLDateFormat)format timezone:(NSTimeZone*)timezone shouldStripColons:(BOOL)shouldStripColons
++ (NSDateFormatter*)dateFormatterFromFormatType:(NCLDateFormat)format options:(NCLDateFormatOptions)options
+{
+    return [self dateFormatterFromFormatType:format options:options timezone:[NSTimeZone defaultTimeZone]];
+}
+
++ (NSDateFormatter*)dateFormatterFromFormatType:(NCLDateFormat)format options:(NCLDateFormatOptions)options timezone:(NSTimeZone*)timezone
 {
     // get the standard format for the culture set on the device
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -42,12 +62,44 @@
     // enforce two-digit month and day if preferred
     if (format != NCLDateFormatTimeOnly)
     {
-        NSObject *shouldUseTwoDigitDateComponents = [NCLFramework appPreferenceForKey:NCLDateFormatShouldUseTwoDigitDateComponentsKey];
+        if (options & NCLDateFormatOptionIncludeWeekday)
+        {
+            formatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:[formatter.dateFormat stringByAppendingString:@"EEE"]
+                                                                   options:0
+                                                                    locale:[NSLocale currentLocale]];
+        }
         
-        if (shouldUseTwoDigitDateComponents &&
-            [(NSNumber*)shouldUseTwoDigitDateComponents isEqualToNumber:@YES])
+        if (options & NCLDateFormatOptionExcludeYear)
+        {
+            formatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:[formatter.dateFormat stringByReplacingOccurrencesOfString:@"y" withString:@""]
+                                                                   options:0
+                                                                    locale:[NSLocale currentLocale]];
+        }
+        
+        if (options & NCLDateFormatOptionUseShortMonth &&
+            [formatter.dateFormat rangeOfString:@"M" options:0].location != NSNotFound &&
+            [formatter.dateFormat rangeOfString:@"MMM" options:0].location == NSNotFound)
+        {
+            NSUInteger index = [formatter.dateFormat rangeOfString:@"M" options:0].location;
+            formatter.dateFormat = [formatter.dateFormat stringByReplacingOccurrencesOfString:@"M" withString:@""];
+            formatter.dateFormat = [NSString stringWithFormat:@"%@%@%@", [formatter.dateFormat substringToIndex:index], @"MMM", [formatter.dateFormat substringFromIndex:index]];
+            
+            formatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:formatter.dateFormat
+                                                                   options:0
+                                                                    locale:[NSLocale currentLocale]];
+        }
+        
+        if (options & NCLDateFormatOptionExcludeDay)
+        {
+            formatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:[formatter.dateFormat stringByReplacingOccurrencesOfString:@"d" withString:@""]
+                                                                   options:0
+                                                                    locale:[NSLocale currentLocale]];
+        }
+        
+        if (options & NCLDateFormatOptionTwoDigitDateComponents)
         {
             if ([formatter.dateFormat rangeOfString:@"M" options:0].location != NSNotFound &&
+                [formatter.dateFormat rangeOfString:@"MMM" options:0].location == NSNotFound &&
                 [formatter.dateFormat rangeOfString:@"MM" options:0].location == NSNotFound)
             {
                 formatter.dateFormat = [formatter.dateFormat stringByReplacingOccurrencesOfString:@"M" withString:@"MM"];
@@ -64,15 +116,14 @@
                 formatter.dateFormat = [formatter.dateFormat stringByReplacingOccurrencesOfString:@"yyyy" withString:@"yy"];
             }
         }
+//        
+//        INFOLog(@"date format: %@", formatter.dateFormat);
     }
     
     // enforce military time if preferred
     if (format != NCLDateFormatDateOnly)
     {
-        NSObject *shouldUseMilitaryTime = [NCLFramework appPreferenceForKey:NCLDateFormatShouldUseMilitaryTimeKey];
-        
-        if (shouldUseMilitaryTime &&
-            [(NSNumber*)shouldUseMilitaryTime isEqualToNumber:@YES])
+        if (options & NCLDateFormatOptionMilitaryTime)
         {
             if ([formatter.dateFormat rangeOfString:@"h" options:0].location != NSNotFound &&
                 [formatter.dateFormat rangeOfString:@"hh" options:0].location == NSNotFound)
@@ -102,7 +153,7 @@
     // strip colons if preferred
     static NSString *colon = @":";
     
-    if (shouldStripColons &&
+    if ((options & NCLDateFormatOptionStripColons) &&
         [formatter.dateFormat rangeOfString:colon options:0].location != NSNotFound)
     {
         formatter.dateFormat = [formatter.dateFormat stringByReplacingOccurrencesOfString:colon withString:@""];
@@ -110,10 +161,8 @@
     
     // strip commas if preferred
     static NSString *comma = @",";
-    NSObject *shouldStripCommas = [NCLFramework appPreferenceForKey:NCLDateFormatShouldStripCommasKey];
     
-    if (shouldStripCommas &&
-        [(NSNumber*)shouldStripCommas isEqualToNumber:@YES] &&
+    if ((options & NCLDateFormatOptionStripCommas) &&
         [formatter.dateFormat rangeOfString:comma options:0].location != NSNotFound)
     {
         formatter.dateFormat = [formatter.dateFormat stringByReplacingOccurrencesOfString:comma withString:@""];
