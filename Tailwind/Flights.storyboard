@@ -2551,166 +2551,163 @@ Typical Flight: Los Angeles to Dallas</string>
         <scene sceneID="lbe-y7-cV0">
             <objects>
                 <tableViewController storyboardIdentifier="AdvisoryNotesViewController" title="Advisory Notes View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9GZ-2u-RF2" customClass="NJOPAdvisoryNotesController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="238" sectionHeaderHeight="22" sectionFooterHeight="22" id="Fpc-Jp-69h" customClass="NJOPTableView">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="238" sectionHeaderHeight="22" sectionFooterHeight="22" id="Fpc-Jp-69h" customClass="NJOPTableView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="umm-pF-W1D">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TSA Screening Required" rowHeight="238" id="9zg-xc-t4F" customClass="NJOPAdvisoryNotesCell">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9zg-xc-t4F" id="INd-EH-Gr9">
-                                            <autoresizingMask key="autoresizingMask"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TSA Screening Required" rowHeight="238" id="9zg-xc-t4F" customClass="NJOPAdvisoryNotesCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9zg-xc-t4F" id="INd-EH-Gr9">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vgv-zS-j4u">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vgv-zS-j4u">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="TSA Screening Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4z-Dc-Rc3">
-                                                            <rect key="frame" x="20" y="20" width="335" height="17"/>
-                                                            <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqv-Xi-2SC">
-                                                            <rect key="frame" x="20" y="45" width="335" height="173"/>
-                                                            <string key="text">Please be aware that a TSA Security Screening will be conducted prior to boarding the aircraft. The Transportation Security Administration (TSA) requires that all passengers and accessible baggage be screened prior to boarding the aircraft when there is a Commercial Flight 
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="TSA Screening Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4z-Dc-Rc3">
+                                                    <rect key="frame" x="20" y="20" width="335" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqv-Xi-2SC">
+                                                    <rect key="frame" x="20" y="45" width="335" height="173"/>
+                                                    <string key="text">Please be aware that a TSA Security Screening will be conducted prior to boarding the aircraft. The Transportation Security Administration (TSA) requires that all passengers and accessible baggage be screened prior to boarding the aircraft when there is a Commercial Flight 
 on an aircraft with a takeoff weight greater than 100,300 lbs(e.g. BBJ) or with a passenger seating configuration of 61 or more.</string>
-                                                            <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="bqv-Xi-2SC" firstAttribute="top" secondItem="m4z-Dc-Rc3" secondAttribute="bottom" constant="8" symbolic="YES" id="IsO-iz-8Wq"/>
-                                                        <constraint firstAttribute="trailing" secondItem="m4z-Dc-Rc3" secondAttribute="trailing" constant="20" symbolic="YES" id="JJU-cr-DKV"/>
-                                                        <constraint firstItem="m4z-Dc-Rc3" firstAttribute="leading" secondItem="Vgv-zS-j4u" secondAttribute="leading" constant="20" symbolic="YES" id="NRj-bq-M35"/>
-                                                        <constraint firstItem="bqv-Xi-2SC" firstAttribute="leading" secondItem="Vgv-zS-j4u" secondAttribute="leading" constant="20" symbolic="YES" id="Z7X-4V-b6R"/>
-                                                        <constraint firstAttribute="trailing" secondItem="bqv-Xi-2SC" secondAttribute="trailing" constant="20" symbolic="YES" id="Zqv-VY-5LM"/>
-                                                        <constraint firstItem="m4z-Dc-Rc3" firstAttribute="top" secondItem="Vgv-zS-j4u" secondAttribute="top" constant="20" symbolic="YES" id="exr-mW-DIA"/>
-                                                        <constraint firstAttribute="bottom" secondItem="bqv-Xi-2SC" secondAttribute="bottom" constant="20" symbolic="YES" id="rdU-84-Crv"/>
-                                                    </constraints>
-                                                </view>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Vgv-zS-j4u" secondAttribute="trailing" id="G2L-yb-Jc8"/>
-                                                <constraint firstItem="Vgv-zS-j4u" firstAttribute="top" secondItem="INd-EH-Gr9" secondAttribute="top" id="MB8-vH-shT"/>
-                                                <constraint firstItem="Vgv-zS-j4u" firstAttribute="leading" secondItem="INd-EH-Gr9" secondAttribute="leading" id="UpK-uD-gHa"/>
-                                                <constraint firstAttribute="bottom" secondItem="Vgv-zS-j4u" secondAttribute="bottom" id="VBV-vD-O7J"/>
+                                                <constraint firstItem="bqv-Xi-2SC" firstAttribute="top" secondItem="m4z-Dc-Rc3" secondAttribute="bottom" constant="8" symbolic="YES" id="IsO-iz-8Wq"/>
+                                                <constraint firstAttribute="trailing" secondItem="m4z-Dc-Rc3" secondAttribute="trailing" constant="20" symbolic="YES" id="JJU-cr-DKV"/>
+                                                <constraint firstItem="m4z-Dc-Rc3" firstAttribute="leading" secondItem="Vgv-zS-j4u" secondAttribute="leading" constant="20" symbolic="YES" id="NRj-bq-M35"/>
+                                                <constraint firstItem="bqv-Xi-2SC" firstAttribute="leading" secondItem="Vgv-zS-j4u" secondAttribute="leading" constant="20" symbolic="YES" id="Z7X-4V-b6R"/>
+                                                <constraint firstAttribute="trailing" secondItem="bqv-Xi-2SC" secondAttribute="trailing" constant="20" symbolic="YES" id="Zqv-VY-5LM"/>
+                                                <constraint firstItem="m4z-Dc-Rc3" firstAttribute="top" secondItem="Vgv-zS-j4u" secondAttribute="top" constant="20" symbolic="YES" id="exr-mW-DIA"/>
+                                                <constraint firstAttribute="bottom" secondItem="bqv-Xi-2SC" secondAttribute="bottom" constant="20" symbolic="YES" id="rdU-84-Crv"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="detailLabel" destination="bqv-Xi-2SC" id="Qji-IF-eNX"/>
-                                            <outlet property="topLabel" destination="m4z-Dc-Rc3" id="ibR-CR-FsS"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="List of Prohibited Items" rowHeight="296" id="aVp-3w-EC2" customClass="NJOPAdvisoryNotesCell">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aVp-3w-EC2" id="GiA-0v-O37">
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Vgv-zS-j4u" secondAttribute="trailing" id="G2L-yb-Jc8"/>
+                                        <constraint firstItem="Vgv-zS-j4u" firstAttribute="top" secondItem="INd-EH-Gr9" secondAttribute="top" id="MB8-vH-shT"/>
+                                        <constraint firstItem="Vgv-zS-j4u" firstAttribute="leading" secondItem="INd-EH-Gr9" secondAttribute="leading" id="UpK-uD-gHa"/>
+                                        <constraint firstAttribute="bottom" secondItem="Vgv-zS-j4u" secondAttribute="bottom" id="VBV-vD-O7J"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="detailLabel" destination="bqv-Xi-2SC" id="Qji-IF-eNX"/>
+                                    <outlet property="topLabel" destination="m4z-Dc-Rc3" id="ibR-CR-FsS"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="List of Prohibited Items" rowHeight="296" id="aVp-3w-EC2" customClass="NJOPAdvisoryNotesCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aVp-3w-EC2" id="GiA-0v-O37">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6H-fK-ijp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6H-fK-ijp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="List of Prohibited Items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5k-g2-v5r">
-                                                            <rect key="frame" x="20" y="20" width="335" height="17"/>
-                                                            <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNo-u5-Qow">
-                                                            <rect key="frame" x="20" y="45" width="335" height="231"/>
-                                                            <string key="text">The Transportation Safety Administration has determined that some items may not be carried on commercial or charter aircraft. The TSA website at www.tsa.gov/travelers/airtravel/
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="List of Prohibited Items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5k-g2-v5r">
+                                                    <rect key="frame" x="20" y="20" width="335" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNo-u5-Qow">
+                                                    <rect key="frame" x="20" y="45" width="335" height="231"/>
+                                                    <string key="text">The Transportation Safety Administration has determined that some items may not be carried on commercial or charter aircraft. The TSA website at www.tsa.gov/travelers/airtravel/
 prohibited/permitted-prohibited-items.shtm contains the complete list of both prohibited 
 and permitted items. Please contact your Owner Services Team if you have any questions.
 
 Visit the TSA website to see the complete list 
 of prohibited items.</string>
-                                                            <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="dNo-u5-Qow" secondAttribute="bottom" constant="20" symbolic="YES" id="0le-T3-2xK"/>
-                                                        <constraint firstItem="dNo-u5-Qow" firstAttribute="top" secondItem="N5k-g2-v5r" secondAttribute="bottom" constant="8" symbolic="YES" id="28y-rP-mPb"/>
-                                                        <constraint firstAttribute="trailing" secondItem="N5k-g2-v5r" secondAttribute="trailing" constant="20" symbolic="YES" id="Ney-R5-PNj"/>
-                                                        <constraint firstItem="N5k-g2-v5r" firstAttribute="top" secondItem="d6H-fK-ijp" secondAttribute="top" constant="20" symbolic="YES" id="Nsd-M2-f9m"/>
-                                                        <constraint firstItem="dNo-u5-Qow" firstAttribute="leading" secondItem="d6H-fK-ijp" secondAttribute="leading" constant="20" symbolic="YES" id="ZGq-pn-ums"/>
-                                                        <constraint firstAttribute="trailing" secondItem="dNo-u5-Qow" secondAttribute="trailing" constant="20" symbolic="YES" id="ckJ-Tp-f7f"/>
-                                                        <constraint firstItem="N5k-g2-v5r" firstAttribute="leading" secondItem="d6H-fK-ijp" secondAttribute="leading" constant="20" symbolic="YES" id="qHR-jw-6Hd"/>
-                                                    </constraints>
-                                                </view>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="d6H-fK-ijp" firstAttribute="top" secondItem="GiA-0v-O37" secondAttribute="top" id="1eH-f8-Urd"/>
-                                                <constraint firstItem="d6H-fK-ijp" firstAttribute="leading" secondItem="GiA-0v-O37" secondAttribute="leading" id="IKI-hB-04K"/>
-                                                <constraint firstAttribute="bottom" secondItem="d6H-fK-ijp" secondAttribute="bottom" id="VNE-yJ-V4z"/>
-                                                <constraint firstAttribute="trailing" secondItem="d6H-fK-ijp" secondAttribute="trailing" id="pUC-gs-tsh"/>
+                                                <constraint firstAttribute="bottom" secondItem="dNo-u5-Qow" secondAttribute="bottom" constant="20" symbolic="YES" id="0le-T3-2xK"/>
+                                                <constraint firstItem="dNo-u5-Qow" firstAttribute="top" secondItem="N5k-g2-v5r" secondAttribute="bottom" constant="8" symbolic="YES" id="28y-rP-mPb"/>
+                                                <constraint firstAttribute="trailing" secondItem="N5k-g2-v5r" secondAttribute="trailing" constant="20" symbolic="YES" id="Ney-R5-PNj"/>
+                                                <constraint firstItem="N5k-g2-v5r" firstAttribute="top" secondItem="d6H-fK-ijp" secondAttribute="top" constant="20" symbolic="YES" id="Nsd-M2-f9m"/>
+                                                <constraint firstItem="dNo-u5-Qow" firstAttribute="leading" secondItem="d6H-fK-ijp" secondAttribute="leading" constant="20" symbolic="YES" id="ZGq-pn-ums"/>
+                                                <constraint firstAttribute="trailing" secondItem="dNo-u5-Qow" secondAttribute="trailing" constant="20" symbolic="YES" id="ckJ-Tp-f7f"/>
+                                                <constraint firstItem="N5k-g2-v5r" firstAttribute="leading" secondItem="d6H-fK-ijp" secondAttribute="leading" constant="20" symbolic="YES" id="qHR-jw-6Hd"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="detailLabel" destination="dNo-u5-Qow" id="7Ra-tf-8Vc"/>
-                                            <outlet property="topLabel" destination="N5k-g2-v5r" id="ZeJ-WT-O5J"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedAire: Worldwide Medical and Travel Support" rowHeight="238" id="rj8-D7-0ho" customClass="NJOPAdvisoryNotesCell">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rj8-D7-0ho" id="XEn-aj-b3A">
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="d6H-fK-ijp" firstAttribute="top" secondItem="GiA-0v-O37" secondAttribute="top" id="1eH-f8-Urd"/>
+                                        <constraint firstItem="d6H-fK-ijp" firstAttribute="leading" secondItem="GiA-0v-O37" secondAttribute="leading" id="IKI-hB-04K"/>
+                                        <constraint firstAttribute="bottom" secondItem="d6H-fK-ijp" secondAttribute="bottom" id="VNE-yJ-V4z"/>
+                                        <constraint firstAttribute="trailing" secondItem="d6H-fK-ijp" secondAttribute="trailing" id="pUC-gs-tsh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="detailLabel" destination="dNo-u5-Qow" id="7Ra-tf-8Vc"/>
+                                    <outlet property="topLabel" destination="N5k-g2-v5r" id="ZeJ-WT-O5J"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedAire: Worldwide Medical and Travel Support" rowHeight="238" id="rj8-D7-0ho" customClass="NJOPAdvisoryNotesCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rj8-D7-0ho" id="XEn-aj-b3A">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gg4-QU-gkG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gg4-QU-gkG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWN-XV-4kB">
-                                                            <rect key="frame" x="20" y="20" width="335" height="34"/>
-                                                            <string key="text">MedAire: Worldwide Medical and 
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWN-XV-4kB">
+                                                    <rect key="frame" x="20" y="20" width="335" height="34"/>
+                                                    <string key="text">MedAire: Worldwide Medical and 
 Travel Support</string>
-                                                            <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Py-Jg-RQH">
-                                                            <rect key="frame" x="20" y="62" width="335" height="156"/>
-                                                            <string key="text">MedAire (Worlwide): 480-333-3888
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Py-Jg-RQH">
+                                                    <rect key="frame" x="20" y="62" width="335" height="156"/>
+                                                    <string key="text">MedAire (Worlwide): 480-333-3888
 In the event of a medical incident while traveling, NetJets Owners and Marquis Jet Card Owners can call MedAire for immediate, detailed, expert medical information and assistance anywhere in the world, 24 hours per day. For more information about MedAire services, please contact your Owner Services Team.</string>
-                                                            <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="5Py-Jg-RQH" firstAttribute="top" secondItem="OWN-XV-4kB" secondAttribute="bottom" constant="8" symbolic="YES" id="0ZU-fc-1lV"/>
-                                                        <constraint firstItem="OWN-XV-4kB" firstAttribute="leading" secondItem="Gg4-QU-gkG" secondAttribute="leading" constant="20" symbolic="YES" id="1CU-fK-1qF"/>
-                                                        <constraint firstAttribute="trailing" secondItem="5Py-Jg-RQH" secondAttribute="trailing" constant="20" symbolic="YES" id="Fv9-C4-ey1"/>
-                                                        <constraint firstItem="OWN-XV-4kB" firstAttribute="top" secondItem="Gg4-QU-gkG" secondAttribute="top" constant="20" symbolic="YES" id="V7r-86-P56"/>
-                                                        <constraint firstAttribute="bottom" secondItem="5Py-Jg-RQH" secondAttribute="bottom" constant="20" symbolic="YES" id="d7q-bS-4bg"/>
-                                                        <constraint firstAttribute="trailing" secondItem="OWN-XV-4kB" secondAttribute="trailing" constant="20" symbolic="YES" id="gZr-8t-lrr"/>
-                                                        <constraint firstItem="5Py-Jg-RQH" firstAttribute="leading" secondItem="Gg4-QU-gkG" secondAttribute="leading" constant="20" symbolic="YES" id="s8W-yE-pLl"/>
-                                                    </constraints>
-                                                </view>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Gg4-QU-gkG" secondAttribute="bottom" id="bOw-MV-bv5"/>
-                                                <constraint firstItem="Gg4-QU-gkG" firstAttribute="leading" secondItem="XEn-aj-b3A" secondAttribute="leading" id="du7-dm-Gmc"/>
-                                                <constraint firstItem="Gg4-QU-gkG" firstAttribute="top" secondItem="XEn-aj-b3A" secondAttribute="top" id="eph-4c-HQG"/>
-                                                <constraint firstAttribute="trailing" secondItem="Gg4-QU-gkG" secondAttribute="trailing" id="xAs-dk-b66"/>
+                                                <constraint firstItem="5Py-Jg-RQH" firstAttribute="top" secondItem="OWN-XV-4kB" secondAttribute="bottom" constant="8" symbolic="YES" id="0ZU-fc-1lV"/>
+                                                <constraint firstItem="OWN-XV-4kB" firstAttribute="leading" secondItem="Gg4-QU-gkG" secondAttribute="leading" constant="20" symbolic="YES" id="1CU-fK-1qF"/>
+                                                <constraint firstAttribute="trailing" secondItem="5Py-Jg-RQH" secondAttribute="trailing" constant="20" symbolic="YES" id="Fv9-C4-ey1"/>
+                                                <constraint firstItem="OWN-XV-4kB" firstAttribute="top" secondItem="Gg4-QU-gkG" secondAttribute="top" constant="20" symbolic="YES" id="V7r-86-P56"/>
+                                                <constraint firstAttribute="bottom" secondItem="5Py-Jg-RQH" secondAttribute="bottom" constant="20" symbolic="YES" id="d7q-bS-4bg"/>
+                                                <constraint firstAttribute="trailing" secondItem="OWN-XV-4kB" secondAttribute="trailing" constant="20" symbolic="YES" id="gZr-8t-lrr"/>
+                                                <constraint firstItem="5Py-Jg-RQH" firstAttribute="leading" secondItem="Gg4-QU-gkG" secondAttribute="leading" constant="20" symbolic="YES" id="s8W-yE-pLl"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="detailLabel" destination="5Py-Jg-RQH" id="UkY-BO-mh1"/>
-                                            <outlet property="topLabel" destination="OWN-XV-4kB" id="09y-IQ-wmL"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Gg4-QU-gkG" secondAttribute="bottom" id="bOw-MV-bv5"/>
+                                        <constraint firstItem="Gg4-QU-gkG" firstAttribute="leading" secondItem="XEn-aj-b3A" secondAttribute="leading" id="du7-dm-Gmc"/>
+                                        <constraint firstItem="Gg4-QU-gkG" firstAttribute="top" secondItem="XEn-aj-b3A" secondAttribute="top" id="eph-4c-HQG"/>
+                                        <constraint firstAttribute="trailing" secondItem="Gg4-QU-gkG" secondAttribute="trailing" id="xAs-dk-b66"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="detailLabel" destination="5Py-Jg-RQH" id="UkY-BO-mh1"/>
+                                    <outlet property="topLabel" destination="OWN-XV-4kB" id="09y-IQ-wmL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="9GZ-2u-RF2" id="U3S-Dd-uQc"/>
                             <outlet property="delegate" destination="9GZ-2u-RF2" id="6gG-9J-ZMP"/>

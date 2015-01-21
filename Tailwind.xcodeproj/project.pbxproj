@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		E4EE71391A6FE9EE00B29027 /* Mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E4EE713A1A6FE9EE00B29027 /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
+			buildPhases = (
+				E4EE713F1A6FE9FB00B29027 /* Run Script */,
+			);
+			dependencies = (
+			);
+			name = Mogenerator;
+			productName = Mogenerator;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		15EAFD7B1A6D4682003C3B8A /* NJOPFlightHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EAFD781A6D4682003C3B8A /* NJOPFlightHTTPClient.m */; };
 		15EAFD7C1A6D4682003C3B8A /* NJOPOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EAFD7A1A6D4682003C3B8A /* NJOPOAuthClient.m */; };
@@ -155,6 +169,7 @@
 		A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */; };
 		A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */; };
 		A7F2CA4C1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */; };
+		E4EE71411A6FEAEA00B29027 /* Tailwind.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E4EE71401A6FEAEA00B29027 /* Tailwind.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -384,6 +399,7 @@
 		A7F2CA4A1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightsDetailViewController.h; sourceTree = "<group>"; };
 		A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightsDetailViewController.m; sourceTree = "<group>"; };
 		DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
+		E4EE71401A6FEAEA00B29027 /* Tailwind.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tailwind.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -472,6 +488,8 @@
 		30A4737B19D9E41A0045D7AF /* Tailwind */ = {
 			isa = PBXGroup;
 			children = (
+				E4EE71361A6FE9BD00B29027 /* Model */,
+				E4EE71351A6FE9B800B29027 /* Data */,
 				15EAFD761A6D466E003C3B8A /* Networking */,
 				55CA603319E7FD4A001E2FC6 /* helpers */,
 				55CA603419E7FD4A001E2FC6 /* viewControllers */,
@@ -876,6 +894,37 @@
 			name = Flights;
 			sourceTree = "<group>";
 		};
+		E4EE71351A6FE9B800B29027 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E4EE71401A6FEAEA00B29027 /* Tailwind.sqlite */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		E4EE71361A6FE9BD00B29027 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4EE71381A6FE9CC00B29027 /* GeneratedManagedObjects */,
+				E4EE71371A6FE9C500B29027 /* ManagedObjects */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E4EE71371A6FE9C500B29027 /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		E4EE71381A6FE9CC00B29027 /* GeneratedManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GeneratedManagedObjects;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -938,6 +987,9 @@
 						CreatedOnToolsVersion = 6.0.1;
 						TestTargetID = 30A4737819D9E41A0045D7AF;
 					};
+					E4EE71391A6FE9EE00B29027 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 				};
 			};
 			buildConfigurationList = 30A4737419D9E41A0045D7AF /* Build configuration list for PBXProject "Tailwind" */;
@@ -955,6 +1007,7 @@
 			targets = (
 				30A4737819D9E41A0045D7AF /* Tailwind */,
 				30A4739119D9E41B0045D7AF /* TailwindTests */,
+				E4EE71391A6FE9EE00B29027 /* Mogenerator */,
 			);
 		};
 /* End PBXProject section */
@@ -975,6 +1028,7 @@
 				A77680931A4063E400B2E7CF /* Messages.storyboard in Resources */,
 				1E0D622E1A69BABA0076516F /* NJOPPastFlightTableCell.xib in Resources */,
 				A77680B01A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Light-Italic.otf in Resources */,
+				E4EE71411A6FEAEA00B29027 /* Tailwind.sqlite in Resources */,
 				5255D2561A5D85F9002638F8 /* welcome-items.json in Resources */,
 				A77680B51A40659D00B2E7CF /* Nimbus-Sans-D-Black.otf in Resources */,
 				A786D6121A66351F006EDA24 /* NJOPMenuViewController.xib in Resources */,
@@ -1094,6 +1148,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# This script will only run in an env where Imagemagik has been installed. Typically, this is only on the build boxes adn developers don't need to run this script.\n\n#commit=`git rev-parse --short HEAD`\n#branch=`git rev-parse --abbrev-ref HEAD`\n#version=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\"`\nversion=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Info.plist\"`\n\nfunction processIcon()\n{\n    \n    export PATH=$PATH:/usr/local/bin\n    \n    if (type \"convert\" >/dev/null) ; then\n        base_file=$1\n        base_path=`find ${SRCROOT}/${PROJECT_NAME}/Images.xcassets/AppIcon.appiconset -name $base_file`\n    \n        if [[ ! -f ${base_path} || -z ${base_path} ]]; then\n            return;\n        fi\n    \n        # target_file=`echo $base_file | sed \"s/_base//\"`\n        target_file=$base_file\n        target_path=\"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/${target_file}\"\n    \n        width=`identify -format %w ${base_path}`\n        height=`identify -format %h ${base_path}`\n        height=`expr $height \\/ 5`\n    \n        convert -background '#ffff' -fill black -gravity south -size ${width}x${height}\\\n        caption:\"${version}\"\\\n        ${base_path} +swap -gravity south -composite ${target_path}\n    fi\n}\n\n\nif [ $CONFIGURATION != \"Production\" ]; then\n    processIcon \"AppIcon60x60@2x.png\"\n    #processIcon \"AppIcon29x29@2x.png\"\n    #processIcon \"AppIcon40x40@2x.png\"\n    processIcon \"AppIcon76x76@2x~ipad.png\"\n    processIcon \"AppIcon76x76~ipad.png\"\n    #processIcon \"AppIcon40x40@2x~ipad.png\"\n    #processIcon \"AppIcon40x40~ipad.png\"\n    #processIcon \"AppIcon29x29@2x~ipad.png\"\n    #processIcon \"AppIcon29x29~ipad.png\"\nfi";
+		};
+		E4EE713F1A6FE9FB00B29027 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Update the mogenerator files.\n# Don't forget to add any new generated files to Xcode and don't commit any files from the Mogen dir (or the dir itself)\n\nGEN_FILES_LOC=\"${SOURCE_ROOT}/${PROJECT_NAME}/Mogen\"\necho $GEN_FILES_LOC\n\n/usr/bin/mogenerator --v2 \\\n--model Tailwind/Tailwind.xcdatamodeld/Tailwind.xcdatamodel \\\n--machine-dir $GEN_FILES_LOC/GeneratedManagedObjects \\\n--human-dir   $GEN_FILES_LOC/ManagedObjects";
 		};
 		F19C3E613B6248AC831B1960 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1574,6 +1642,34 @@
 			};
 			name = QA;
 		};
+		E4EE713B1A6FE9EE00B29027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E4EE713C1A6FE9EE00B29027 /* QA */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = QA;
+		};
+		E4EE713D1A6FE9EE00B29027 /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Beta;
+		};
+		E4EE713E1A6FE9EE00B29027 /* Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Production;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1606,6 +1702,17 @@
 				30A473AA19D9ED690045D7AF /* QA */,
 				30A473A719D9ED630045D7AF /* Beta */,
 				30A473A119D9E41B0045D7AF /* Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Production;
+		};
+		E4EE713A1A6FE9EE00B29027 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4EE713B1A6FE9EE00B29027 /* Debug */,
+				E4EE713C1A6FE9EE00B29027 /* QA */,
+				E4EE713D1A6FE9EE00B29027 /* Beta */,
+				E4EE713E1A6FE9EE00B29027 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Production;

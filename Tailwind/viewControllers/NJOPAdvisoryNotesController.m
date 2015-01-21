@@ -25,5 +25,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)loadDataSource {
+    
+    NSArray *sections = @[
+                          @{
+                              kSimpleDataSourceSectionCellsKey : @[
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"TSA Screening Required",
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"List of Prohibited Items",
+                                          },
+                                      @{
+                                          kSimpleDataSourceCellIdentifierKey			: @"MedAire: Worldwide Medical and Travel Support",
+                                          },
+                                      ]
+                              }
+                          ];
+    
+    self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
+    self.dataSource.title = @"ADVISORY NOTES";
+}
 
 @end
