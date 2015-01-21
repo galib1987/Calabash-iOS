@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SimpleDataSourceTableViewController.h"
+#import "NJOPSession.h"
 
 @interface NJOPHomeViewController : SimpleDataSourceTableViewController
 
