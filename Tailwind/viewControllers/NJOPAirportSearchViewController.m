@@ -43,6 +43,16 @@
     [self.resultsTable searchWith:sender.text];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.4f;
+    transition.type = kCATransitionMoveIn;
+    transition.subtype = kCATransitionFromBottom;
+    [self.navigationController.view.layer addAnimation:transition
+                                                forKey:kCATransition];
+    [super viewWillDisappear:NO];
+}
+
 /*
 #pragma mark - Navigation
 

@@ -47,6 +47,7 @@ UIView *calendarLegend;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [self initialiseTextFields];
+    self.title = [@"Book a Flight" uppercaseString];
     
 }
 
@@ -230,7 +231,14 @@ UIView *calendarLegend;
             vc.title = @"Arriving At";
             textField.text = @"JFK: John F Kennedy Intl";
         }
-        [self.navigationController pushViewController:vc animated:YES];
+        CATransition* transition = [CATransition animation];
+        transition.duration = 0.4f;
+        transition.type = kCATransitionMoveIn;
+        transition.subtype = kCATransitionFromTop;
+        [self.navigationController.view.layer addAnimation:transition
+                                                    forKey:kCATransition];
+        [self.navigationController pushViewController:vc animated:NO];
+        [textField resignFirstResponder];
     }
     currentTextField = textField.tag;
 }
