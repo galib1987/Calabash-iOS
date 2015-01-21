@@ -273,10 +273,11 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
 
     //Configure the Overlay View
     [self.overlayView setBackgroundColor:self.backgroundColor];
-    [self.overlayView setFont:[UIFont boldSystemFontOfSize:PDTSimpleCalendarOverlaySize]];
+    [self.overlayView setFont:[UIFont fontWithName:@"NimbusSanD-Bol" size:16]];
     [self.overlayView setTextColor:self.overlayTextColor];
     //[self.overlayView setAlpha:0.0];
-    [self.overlayView setTextAlignment:NSTextAlignmentCenter];
+    [self.overlayView setTextAlignment:NSTextAlignmentLeft];
+    [self updateMonth];
 
     [self.view addSubview:self.overlayView];
     [self.overlayView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -289,7 +290,6 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
     // Configure the Header View
     self.headerView = [[PDTSimpleCalendarViewWeekdayHeader alloc] init];
     [self.headerView setBackgroundColor:self.backgroundColor];
-    [self updateMonth];
 
     // Set the weekday strings
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -445,7 +445,7 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
 {
     CGFloat itemWidth = floorf(CGRectGetWidth(self.collectionView.bounds) / self.daysPerWeek);
 
-    return CGSizeMake(itemWidth, itemWidth);
+    return CGSizeMake(itemWidth, 35);
 }
 
 #pragma mark - UIScrollViewDelegate
