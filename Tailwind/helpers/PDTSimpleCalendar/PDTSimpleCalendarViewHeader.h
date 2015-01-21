@@ -35,4 +35,9 @@
  */
 @property (nonatomic, strong) UIColor *separatorColor UI_APPEARANCE_SELECTOR;
 
+/**
+ *  Customize the separator height between the month name and the dates.
+ */
+@property (nonatomic, strong) NSNumber *separatorHeight UI_APPEARANCE_SELECTOR;
+
 @end

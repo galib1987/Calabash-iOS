@@ -145,6 +145,8 @@ UIView *calendarLegend;
         dateFormatter.dateFormat = @"dd/MM/yyyy";
         self.customBlackoutDates = @[[dateFormatter dateFromString:@"22/01/2015"], [dateFormatter dateFromString:@"23/01/2015"], [dateFormatter dateFromString:@"24/01/2015"]];
         self.customPeakDates =  @[[dateFormatter dateFromString:@"27/01/2015"], [dateFormatter dateFromString:@"26/01/2015"], [dateFormatter dateFromString:@"25/01/2015"]];
+        [[PDTSimpleCalendarViewHeader appearance] setSeparatorColor:[UIColor blackColor]];
+        [[PDTSimpleCalendarViewHeader appearance] setSeparatorHeight:[NSNumber numberWithFloat:6]];
         self.calendarViewController = [[PDTSimpleCalendarViewController alloc] init];
         
         self.calendarViewController.weekHeaderEnabled = true;
