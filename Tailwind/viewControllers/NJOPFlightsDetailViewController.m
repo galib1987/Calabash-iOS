@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self updateWithReservation];
+    [self loadDataSource];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,8 +79,8 @@
     return cellRepresentation;
 }
 
--(void)updateWithReservation {
-    
+
+- (void)loadDataSource {
     NSUInteger passengerCount = self.reservation.passengers.count;
     NSString *passengerCountString = passengerCount <= 1? [NSString stringWithFormat:@"%lu passenger", (unsigned long)passengerCount] : [NSString stringWithFormat:@"%lu passengers", (unsigned long)passengerCount];
     
@@ -88,7 +88,7 @@
                                                 [self detailCellFromReservation:_reservation],
                                                 [self infoCellWithIdentifier:@"CrewInfoCell" topLabel:@"Your Crew" detailLabel:@"Captain Michael Chapman" icon:[UIImage imageNamed:@"crew"]],
                                                 [self infoCellWithIdentifier:@"PassengerManifestInfoCell" topLabel:@"Passenger Manifest" detailLabel:passengerCountString icon:[UIImage imageNamed:@"passengers"]],
-                                                 nil];
+                                                nil];
     if (_reservation.cateringOrders.count) {
         [conditionalSectionsArray addObject:[self infoCellWithIdentifier:@"CateringInfoCell" topLabel:@"Catering" detailLabel:@"Details Enclosed" icon:[UIImage imageNamed:@"catering"]]];
     }
@@ -101,7 +101,7 @@
                                                     [self infoCellWithIdentifier:@"AdvisoryNotesInfoCell" topLabel:@"Advisory Notes" detailLabel:@"Details Enclosed" icon:[UIImage imageNamed:@"advisory-notes"]],
                                                     [self infoCellWithIdentifier:@"YourPlaneInfoCell" topLabel:@"Your Plane" detailLabel:@"Cessna Citation Encore+" icon:[UIImage imageNamed:@"plane"]]
                                                     ]];
-                                                
+    
     
     NSArray* sections = @[
                           @{
@@ -112,7 +112,6 @@
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
     self.dataSource.title = @"FLIGHT DETAILS";
-    
 }
 
 
