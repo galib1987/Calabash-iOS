@@ -15,6 +15,7 @@
 #import <DateTools/NSDate+DateTools.h>
 #import "NJOPSummaryViewTopHeaderView.h"
 #import "NJOPOAuthClient.h"
+#import "NJOPSelectAccountViewController.h"
 
 @interface NJOPHomeViewController ()
 @end
@@ -239,6 +240,13 @@
 
     [self.navigationController pushViewController:flightDetailVC animated:YES];
     
+}
+
+- (IBAction)bookFlightTapped:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Booking" bundle:nil];
+    NJOPSelectAccountViewController *selectAccountVC = [storyboard instantiateViewControllerWithIdentifier:@"BookingSelectAccount"];
+    
+    [self.navigationController pushViewController:selectAccountVC animated:YES];
 }
 
 @end
