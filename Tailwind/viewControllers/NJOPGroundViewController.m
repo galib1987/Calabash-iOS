@@ -110,20 +110,29 @@
 
 - (void)loadDataSource {
 
-    NSDictionary *departureGroundOrder = _reservation.groundOrders[0];
-    NSDictionary *arrivalGroundOrder = _reservation.groundOrders[1];
+    NSLog(@"%@", _reservation.groundOrders);
+    NSMutableArray *sectionsTempArray = [[NSMutableArray alloc] init];
+    NSDictionary *currentCell = [[NSDictionary alloc] init];
+    
+    for (NSDictionary *groundOrder in _reservation.groundOrders) {
+        if ([groundOrder[@"isDeparture"] isEqualToNumber:@1]) {
+            currentCell = [self createDepartureCellFromReservation:groundOrder];
+            [sectionsTempArray addObject:currentCell];
+        } else {
+            currentCell = [self createArrivalCellFromReservation:groundOrder];
+            [sectionsTempArray addObject:currentCell];
+        }
+        
+    }
     
     NSArray* sections = @[
                           @{
-                              kSimpleDataSourceSectionCellsKey : @[
-                                      [self createArrivalCellFromReservation:departureGroundOrder],
-                                      [self createDepartureCellFromReservation:arrivalGroundOrder]
-                                      ]
+                              kSimpleDataSourceSectionCellsKey : sectionsTempArray
                               }
                           ];
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
-    self.dataSource.title = @"GROUND";
+    self.dataSource.title = @"GROUND TRANSPORTATION";
 }
 
 
