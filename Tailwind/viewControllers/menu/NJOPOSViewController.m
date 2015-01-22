@@ -7,8 +7,9 @@
 //
 
 #import "NJOPOSViewController.h"
+@import MessageUI;
 
-@interface NJOPOSViewController ()
+@interface NJOPOSViewController () <MFMailComposeViewControllerDelegate>
 
 @end
 
@@ -48,4 +49,42 @@
     
 }
 
+
+- (IBAction)sendMailPressed:(id)sender {
+    MFMailComposeViewController *composeController = [[MFMailComposeViewController alloc] init];
+    if ([MFMailComposeViewController canSendMail]) {
+        composeController.mailComposeDelegate = self;
+        [composeController setSubject:@"NETJETS INQUIRY"];
+        [composeController setMessageBody:@"I need..." isHTML:NO];
+        [self presentViewController:composeController animated:YES completion:nil];
+    } else {
+        NSString *email = @"mailto:rosa@urbanpixels.com?&subject=NETJETS!";;
+        email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+ 
+    }
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"GO TEAM GO!");
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)callPressed:(id)sender {
+    NSString *phNo = @"+9176918605";
+    NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@",phNo]];
+    UIAlertView *calert;
+    
+    if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {
+        [[UIApplication sharedApplication] openURL:phoneUrl];
+    } else
+    {
+        calert = [[UIAlertView alloc]initWithTitle:@"Alert" message:@"Call facility is not available!!!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+        [calert show];
+    }
+}
 @end

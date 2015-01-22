@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NJOPMenuViewController">
@@ -17,10 +18,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view autoresizesSubviews="NO" contentMode="TopLeft" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzB-0I-X5v" userLabel="Main Buttons View">
+                <view autoresizesSubviews="NO" contentMode="TopLeft" translatesAutoresizingMaskIntoConstraints="NO" id="bzB-0I-X5v" userLabel="Main Buttons View">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNG-EM-osr" userLabel="Button - hamburger">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNG-EM-osr" userLabel="Button - hamburger">
                             <rect key="frame" x="0.0" y="0.0" width="207" height="55"/>
                             <state key="normal" image="menu-hamburger-off">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,7 +30,7 @@
                                 <action selector="hamburgerPushed:" destination="-1" eventType="touchUpInside" id="mm6-r4-qU5"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0L9-ix-I3K" userLabel="Button - Owner Services">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0L9-ix-I3K" userLabel="Button - Owner Services">
                             <rect key="frame" x="207" y="0.0" width="207" height="55"/>
                             <state key="normal" image="menu-os-off">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -41,17 +42,25 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="0L9-ix-I3K" secondAttribute="bottom" id="9KL-mo-0ak"/>
-                        <constraint firstAttribute="bottom" secondItem="ZNG-EM-osr" secondAttribute="bottom" id="BTH-9j-6i8"/>
-                        <constraint firstItem="ZNG-EM-osr" firstAttribute="width" secondItem="0L9-ix-I3K" secondAttribute="width" id="mZt-pj-HFq"/>
+                        <constraint firstItem="0L9-ix-I3K" firstAttribute="leading" secondItem="ZNG-EM-osr" secondAttribute="trailing" id="3ZK-lt-uwg"/>
+                        <constraint firstItem="0L9-ix-I3K" firstAttribute="top" secondItem="bzB-0I-X5v" secondAttribute="top" id="4tt-5A-jor"/>
+                        <constraint firstAttribute="bottom" secondItem="ZNG-EM-osr" secondAttribute="bottom" id="52Z-az-zoO"/>
+                        <constraint firstItem="ZNG-EM-osr" firstAttribute="width" secondItem="0L9-ix-I3K" secondAttribute="width" id="MhA-1q-eZr"/>
+                        <constraint firstItem="ZNG-EM-osr" firstAttribute="leading" secondItem="bzB-0I-X5v" secondAttribute="leading" id="WmX-OG-ep6"/>
+                        <constraint firstItem="ZNG-EM-osr" firstAttribute="top" secondItem="bzB-0I-X5v" secondAttribute="top" id="Zt0-H4-Uf3"/>
+                        <constraint firstItem="ZNG-EM-osr" firstAttribute="width" secondItem="bzB-0I-X5v" secondAttribute="width" multiplier="1:2" id="f1U-eB-nqe"/>
+                        <constraint firstItem="0L9-ix-I3K" firstAttribute="leading" secondItem="ZNG-EM-osr" secondAttribute="trailing" id="iiv-nT-hie"/>
+                        <constraint firstAttribute="bottom" secondItem="0L9-ix-I3K" secondAttribute="bottom" id="tLQ-4V-8vK"/>
+                        <constraint firstAttribute="trailing" secondItem="0L9-ix-I3K" secondAttribute="trailing" id="xaK-Sh-gJh"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="bzB-0I-X5v" secondAttribute="trailing" id="5wt-15-mj8"/>
-                <constraint firstAttribute="bottom" secondItem="bzB-0I-X5v" secondAttribute="bottom" id="UDk-45-rUG"/>
-                <constraint firstItem="bzB-0I-X5v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xu7-o2-v6b"/>
+                <constraint firstAttribute="bottom" secondItem="bzB-0I-X5v" secondAttribute="bottom" id="4C3-67-qz0"/>
+                <constraint firstItem="bzB-0I-X5v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5wJ-Wa-Jad"/>
+                <constraint firstAttribute="trailing" secondItem="bzB-0I-X5v" secondAttribute="trailing" id="T7H-UH-pz0"/>
+                <constraint firstItem="bzB-0I-X5v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="obh-hH-bDk"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
