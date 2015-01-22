@@ -161,7 +161,7 @@ UIView *calendarLegend;
         [[PDTSimpleCalendarViewCell appearance] setTextTodayColor:[UIColor blackColor]];
         [self.calendarViewController setDelegate:self];
         
-        self.calendarViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 548-self.keyboardControls.inputAccessoryView.frame.size.height);
+        self.calendarViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-20-self.keyboardControls.inputAccessoryView.frame.size.height);
         self.calendarViewController.view.autoresizingMask = UIViewAutoresizingNone;
     }
     return self.calendarViewController.view;
