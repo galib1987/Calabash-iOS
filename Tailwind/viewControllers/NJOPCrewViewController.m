@@ -21,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self loadDataSource];
+}
+
+- (void)loadDataSource {
     NSArray* sections = @[
                           @{
                               kSimpleDataSourceSectionCellsKey : @[
@@ -51,6 +55,7 @@
     
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
     self.dataSource.title = @"YOUR CREW";
+    
 }
 
 - (void)didReceiveMemoryWarning {
