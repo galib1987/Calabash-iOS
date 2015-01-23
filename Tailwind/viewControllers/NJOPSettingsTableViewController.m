@@ -7,6 +7,8 @@
 //
 
 #import "NJOPSettingsTableViewController.h"
+#import "NJOPLoginViewController.h"
+#import "NJOPOAuthClient.h"
 
 @interface NJOPSettingsTableViewController ()
 
@@ -27,6 +29,22 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)logoutTapped:(id)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    NJOPLoginViewController *loginVC = [storyboard instantiateInitialViewController];
+    
+    [self.navigationController presentViewController:loginVC animated:YES completion:^{
+        [[NJOPOAuthClient sharedInstance] resetCredential];
+    }];
+    
+//    
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        [self.navigationController pushViewController:loginVC animated:YES];
+//    }];
+    
 }
 
 //#pragma mark - Table view data source
