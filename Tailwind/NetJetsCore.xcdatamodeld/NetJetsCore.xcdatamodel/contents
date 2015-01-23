@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AircraftSpecMatrix" representedClassName="NJOPAircraftSpecMatrix" syncable="YES">
+        <attribute name="highSpeedDistanceInKPHForNJA" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="highSpeedDistanceInKPHForNJE" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="highSpeedDistanceInMPHForNJA" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="highSpeedDistanceInMPHForNJE" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longRangeDistanceInKPHForNJA" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longRangeDistanceInKPHForNJE" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longRangeDistanceInMPHForNJA" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longRangeDistanceInMPHForNJE" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="passengerCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rangeInHours" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="rangeMapDistanceInKPHForNJA" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="rangeMapDistanceInKPHForNJE" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="typeName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="aircraftType" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="AircraftType" syncable="YES"/>
+    </entity>
+    <entity name="AircraftType" representedClassName="NJOPAircraftType" syncable="YES">
+        <attribute name="baggageCapacityInCubicFeet" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="baggageCapacityInCubicMeters" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cabinHeightInFeet" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cabinHeightInMeters" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cabinLengthInFeet" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cabinLengthInMeters" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cabinSize" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cabinWidthInFeet" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cabinWidthInMeters" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayOrder" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="highCruiseSpeed" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="highSpeedKPH" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="highSpeedMPH" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="interiorSeatingLengthInFeet" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="interiorSeatingLengthInMeters" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="isSignatureSeries" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="lastChanged" optional="YES" attributeType="Date" defaultDateTimeInterval="0" syncable="YES"/>
+        <attribute name="longRangeKPH" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longRangeMPH" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="maxFlyingTime" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="minRunwayLength" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberOfPax" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="tagLine1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tagLine2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tagLine3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeFullName" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="typeGroupName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeName" attributeType="String" defaultValueString="N/A" indexed="YES" syncable="YES"/>
+        <relationship name="aircraftSpecs" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="AircraftSpecMatrix" syncable="YES"/>
+    </entity>
+    <entity name="AircraftTypeGroup" representedClassName="NJOPAircraftTypeGroup" syncable="YES" dataClassName="AircraftTypeGroup">
+        <attribute name="acPerformanceTypeName" attributeType="String" syncable="YES"/>
+        <attribute name="baggageCapacity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cabinHeight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cabinWidth" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="highCruiseSpeed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="manufacturer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfPax" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="range" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="specsDisclaimerText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeGroupName" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="warnings" optional="YES" transient="YES" attributeType="Transformable" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <entity name="Airport" representedClassName="NJOPAirport" syncable="YES">
+        <attribute name="airport_name" attributeType="String" defaultValueString="N/A" indexed="YES" syncable="YES"/>
+        <attribute name="airportid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="city_name" optional="YES" attributeType="String" defaultValueString="N/A" indexed="YES" syncable="YES"/>
+        <attribute name="closest_airportid" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="country_cd" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="customs_available" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="elevation_qty" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fuel_available" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="iata_cd" optional="YES" attributeType="String" defaultValueString="N/A" indexed="YES" syncable="YES"/>
+        <attribute name="instrument_approach_flag" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="latitude_qty" optional="YES" attributeType="Decimal" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="longest_runway_length_qty" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude_qty" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="slots_required" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="state_cd" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="timezone_cd" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+    </entity>
+    <entity name="FBO" representedClassName="NJOPFBO" syncable="YES">
+        <attribute name="airportid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="fbo_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="fbo_ranking_qty" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="summer_operating_hour_desc" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="sys_last_changed_ts" optional="YES" attributeType="Date" defaultDateTimeInterval="0" syncable="YES"/>
+        <attribute name="vendor_name" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="winter_operating_hour_desc" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fboaddress" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="FBOAddress" syncable="YES"/>
+        <relationship name="fbophone" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="FBOPhone" syncable="YES"/>
+    </entity>
+    <entity name="FBOAddress" representedClassName="NJOPFBOAddress" syncable="YES">
+        <attribute name="address_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="address_line1_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="address_line2_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="address_line3_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="address_line4_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="address_line5_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="city_name" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="country_cd" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="fbo_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="postal_cd" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="state_province_name" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="sys_last_changed_ts" optional="YES" attributeType="Date" defaultDateTimeInterval="0" syncable="YES"/>
+        <relationship name="fboAddressParent" optional="YES" minCount="1" maxCount="1" deletionRule="No Action" destinationEntity="FBO" syncable="YES"/>
+    </entity>
+    <entity name="FBOPhone" representedClassName="NJOPFBOPhone" syncable="YES">
+        <attribute name="area_code_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="country_code_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="fbo_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="sys_last_changed_ts" optional="YES" attributeType="Date" defaultDateTimeInterval="0" syncable="YES"/>
+        <attribute name="telephone_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="telephone_nbr_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <relationship name="fboPhoneParent" optional="YES" minCount="1" maxCount="1" deletionRule="No Action" destinationEntity="FBO" syncable="YES"/>
+    </entity>
+    <entity name="MasterAircraftType" representedClassName="NJOPMasterAircraftType" parentEntity="AircraftType" syncable="YES">
+        <attribute name="cabinSizeForNJA" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cabinSizeForNJE" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeGroupNameForNJA" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeGroupNameForNJE" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MasterAircraftTypeGroup" representedClassName="NJOPMasterAircraftTypeGroup" parentEntity="AircraftTypeGroup" syncable="YES">
+        <attribute name="typeGroupNameForNJA" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeGroupNameForNJE" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AircraftType" positionX="-36" positionY="9" width="128" height="493"/>
+        <element name="AircraftTypeGroup" positionX="0" positionY="45" width="128" height="223"/>
+        <element name="Airport" positionX="27" positionY="72" width="128" height="283"/>
+        <element name="MasterAircraftType" positionX="54" positionY="99" width="128" height="103"/>
+        <element name="MasterAircraftTypeGroup" positionX="9" positionY="54" width="128" height="73"/>
+        <element name="FBO" positionX="18" positionY="63" width="128" height="178"/>
+        <element name="FBOAddress" positionX="27" positionY="72" width="128" height="238"/>
+        <element name="FBOPhone" positionX="36" positionY="81" width="128" height="148"/>
+        <element name="AircraftSpecMatrix" positionX="45" positionY="90" width="128" height="253"/>
+    </elements>
+</model>

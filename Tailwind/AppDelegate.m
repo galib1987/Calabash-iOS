@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 //#import "NJOPHomeViewController.h"
-
+#import "NJOPNetJetsCorePM.h"
 #import "NCLAppOverlayWindow.h"
 #import "NJOPConfig.h"
 
@@ -29,6 +29,8 @@
     [projectHeaders setObject:API_SOURCE_IDENTIFIER forKey:@"AppAgent"];
     [[NCLNetworking sharedInstance] setStandardHeaders:projectHeaders forDomain:@"netjets.com"];
     
+    
+    [NJOPNetJetsCorePM sharedInstance].mainMOC;
     // Override point for customization after application launch.
     
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Home" bundle:[NSBundle mainBundle]];
