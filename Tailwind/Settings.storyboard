@@ -43,22 +43,41 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="IlC-4b-HpO" userLabel="Message View">
-                            <rect key="frame" x="0.0" y="306" width="414" height="116"/>
+                            <rect key="frame" x="0.0" y="284" width="414" height="264"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to comment on a recent flight? Is there a feature that you would like to see in the next release of this app?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwv-dN-sof">
-                                    <rect key="frame" x="8" y="8" width="398" height="51"/>
+                                    <rect key="frame" x="20" y="20" width="374" height="156"/>
                                     <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lET-Bp-Wgl">
+                                    <rect key="frame" x="20" y="184" width="374" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="p2x-tP-Yxd"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                    <state key="normal" title="LOGOUT">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="logoutTapped:" destination="LEJ-BI-d5m" eventType="touchUpInside" id="8Ls-sO-Phy"/>
+                                    </connections>
+                                </button>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="uwv-dN-sof" firstAttribute="trailing" secondItem="IlC-4b-HpO" secondAttribute="trailingMargin" id="PGi-qb-aKy"/>
-                                <constraint firstItem="uwv-dN-sof" firstAttribute="leading" secondItem="IlC-4b-HpO" secondAttribute="leadingMargin" id="as9-bm-2Sj"/>
-                                <constraint firstItem="uwv-dN-sof" firstAttribute="top" secondItem="IlC-4b-HpO" secondAttribute="topMargin" id="kz4-8o-orw"/>
-                                <constraint firstAttribute="centerX" secondItem="uwv-dN-sof" secondAttribute="centerX" id="vPQ-PC-tgc"/>
+                                <constraint firstItem="lET-Bp-Wgl" firstAttribute="leading" secondItem="IlC-4b-HpO" secondAttribute="leading" constant="20" symbolic="YES" id="3bm-tV-Jgu"/>
+                                <constraint firstItem="lET-Bp-Wgl" firstAttribute="top" secondItem="uwv-dN-sof" secondAttribute="bottom" constant="8" symbolic="YES" id="5wg-tS-ywg"/>
+                                <constraint firstItem="lET-Bp-Wgl" firstAttribute="top" secondItem="uwv-dN-sof" secondAttribute="bottom" constant="8" symbolic="YES" id="BPD-mJ-BSK"/>
+                                <constraint firstItem="uwv-dN-sof" firstAttribute="top" secondItem="IlC-4b-HpO" secondAttribute="top" constant="20" symbolic="YES" id="OMI-ye-cRc"/>
+                                <constraint firstAttribute="trailing" secondItem="uwv-dN-sof" secondAttribute="trailing" constant="20" symbolic="YES" id="b4S-Mv-US3"/>
+                                <constraint firstAttribute="trailing" secondItem="lET-Bp-Wgl" secondAttribute="trailing" constant="20" symbolic="YES" id="mPJ-Bh-olN"/>
+                                <constraint firstItem="uwv-dN-sof" firstAttribute="leading" secondItem="IlC-4b-HpO" secondAttribute="leading" constant="20" symbolic="YES" id="nEo-mw-CMM"/>
+                                <constraint firstAttribute="bottom" secondItem="lET-Bp-Wgl" secondAttribute="bottom" constant="20" symbolic="YES" id="ped-8i-tR6"/>
                             </constraints>
                         </view>
                         <sections>
@@ -457,7 +476,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oy9-tP-3w6" id="o2J-zP-QQw">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Push Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze6-SD-cfU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze6-SD-cfU">
                                                     <rect key="frame" x="16" y="14" width="127" height="17"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
