@@ -197,6 +197,7 @@
 		A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */; };
 		A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */; };
 		A7F2CA4C1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */; };
+		A7FC581F1A72AA3B00DE22B1 /* NJOPIntrospector.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FC581E1A72AA3B00DE22B1 /* NJOPIntrospector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -382,7 +383,7 @@
 		A77DBDE61A7257FA00B5F306 /* NJOPRequest2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPRequest2.m; sourceTree = "<group>"; };
 		A77DBDE71A7257FA00B5F306 /* NJOPReservation2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPReservation2.h; sourceTree = "<group>"; };
 		A77DBDE81A7257FA00B5F306 /* NJOPReservation2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPReservation2.m; sourceTree = "<group>"; };
-		A77DBDF51A72583300B5F306 /* NetJetsCore.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = NetJetsCore.sqlite; sourceTree = "<group>"; };
+		A77DBDF51A72583300B5F306 /* NetJetsCore.sqlite */ = {isa = PBXFileReference; lastKnownFileType = text; path = NetJetsCore.sqlite; sourceTree = "<group>"; };
 		A77DBDF81A725AD100B5F306 /* NetJetsCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NetJetsCore.xcdatamodel; sourceTree = "<group>"; };
 		A77DBDFA1A725AD100B5F306 /* Tailwind.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tailwind.xcdatamodel; sourceTree = "<group>"; };
 		A780A7EF1A5E6392000911A7 /* NJOPPassengeManifestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPassengeManifestViewController.h; sourceTree = "<group>"; };
@@ -480,6 +481,8 @@
 		A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightsViewController.m; sourceTree = "<group>"; };
 		A7F2CA4A1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightsDetailViewController.h; sourceTree = "<group>"; };
 		A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightsDetailViewController.m; sourceTree = "<group>"; };
+		A7FC581D1A72AA3B00DE22B1 /* NJOPIntrospector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPIntrospector.h; sourceTree = "<group>"; };
+		A7FC581E1A72AA3B00DE22B1 /* NJOPIntrospector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPIntrospector.m; sourceTree = "<group>"; };
 		DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -1107,6 +1110,8 @@
 				A77680EC1A406EA100B2E7CF /* NSDate+NJOP.m */,
 				55CA603919E7FE22001E2FC6 /* NJOPValueTransformer.h */,
 				55CA603A19E7FE22001E2FC6 /* NJOPValueTransformer.m */,
+				A7FC581D1A72AA3B00DE22B1 /* NJOPIntrospector.h */,
+				A7FC581E1A72AA3B00DE22B1 /* NJOPIntrospector.m */,
 			);
 			name = "Data Formatting Helpers";
 			sourceTree = "<group>";
@@ -1214,7 +1219,7 @@
 				TargetAttributes = {
 					30A4737819D9E41A0045D7AF = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = LCC6EUU9EK;
+						DevelopmentTeam = 47M87T34Y6;
 					};
 					30A4739119D9E41B0045D7AF = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -1477,6 +1482,7 @@
 				A7380F681A5881AA008AB5F6 /* NJOPTripCompleteCell.m in Sources */,
 				1E0D62291A69AA630076516F /* NJOPBookingReviewTableViewController.m in Sources */,
 				A7E007691A70B19F007BE054 /* NJOPMultilineTextField.m in Sources */,
+				A7FC581F1A72AA3B00DE22B1 /* NJOPIntrospector.m in Sources */,
 				A77DBDEE1A7257FB00B5F306 /* NJOPFBO.m in Sources */,
 				A77DBDF31A7257FB00B5F306 /* NJOPRequest2.m in Sources */,
 				A786D60F1A66351F006EDA24 /* NJOPHamburgerViewController.m in Sources */,
@@ -1687,8 +1693,8 @@
 			baseConfigurationReference = 03307E6D414420F7D9C0477B /* Pods.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
@@ -1786,8 +1792,8 @@
 			baseConfigurationReference = 93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
@@ -1868,8 +1874,8 @@
 			baseConfigurationReference = 553EE494A15E7540C63F4EE6 /* Pods.qa.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;

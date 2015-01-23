@@ -16,6 +16,7 @@
 #import "NJOPSummaryViewTopHeaderView.h"
 #import "NJOPOAuthClient.h"
 #import "NJOPSelectAccountViewController.h"
+#import "NJOPIntrospector.h"
 
 @interface NJOPHomeViewController ()
 @end
@@ -162,7 +163,7 @@
     
     NSDictionary *cardDisplayedRepresentation = [[NSDictionary alloc] init];
     
-    if ([reservations count] > 0) {
+    if ([NJOPIntrospector isObjectArray:reservations]) {
         NJOPReservation *reservation = reservations[0]; // only interested in the next flight schedule
         
         if ([self hasUpcomingFlight:reservation]) {

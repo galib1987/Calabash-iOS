@@ -13,6 +13,7 @@
 #import "NJOPCateringViewController.h"
 #import "NJOPCrewViewController.h"
 #import "NJOPPlaneViewController.h"
+#import "NJOPIntrospector.h"
 
 @interface NJOPFlightsDetailViewController ()
 
@@ -89,11 +90,11 @@
                                                 [self infoCellWithIdentifier:@"CrewInfoCell" topLabel:@"Your Crew" detailLabel:@"Captain Michael Chapman" icon:[UIImage imageNamed:@"crew"]],
                                                 [self infoCellWithIdentifier:@"PassengerManifestInfoCell" topLabel:@"Passenger Manifest" detailLabel:passengerCountString icon:[UIImage imageNamed:@"passengers"]],
                                                 nil];
-    if (_reservation.cateringOrders.count) {
+    if ([NJOPIntrospector isObjectArray:_reservation.cateringOrders]) {
         [conditionalSectionsArray addObject:[self infoCellWithIdentifier:@"CateringInfoCell" topLabel:@"Catering" detailLabel:@"Details Enclosed" icon:[UIImage imageNamed:@"catering"]]];
     }
     
-    if (_reservation.groundOrders.count >= 1) {
+    if ([NJOPIntrospector isObjectArray:_reservation.groundOrders]) {
         [conditionalSectionsArray addObject:[self infoCellWithIdentifier:@"GroundInfoCell" topLabel:@"Ground Transportation" detailLabel:@"On Departure & Arrival" icon:[UIImage imageNamed:@"ground-transportation"]]];
     }
     
