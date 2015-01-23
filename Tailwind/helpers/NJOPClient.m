@@ -125,7 +125,7 @@
     }
     NSDictionary* payload = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
-    //    NSLog(@"DATA: %@",payload);
+    NSLog(@"DATA: %@",payload);
     NSArray *requests = [payload valueForKeyPath:@"requests"];
     NSDictionary *representation = nil;
     
@@ -133,10 +133,13 @@
     NJOPIndividual *individual = [NJOPIndividual individualWithDictionaryRepresentation:individualJSON];
     [session setIndividual:individual];
     
+    NSArray *accountJSON = payload[@"individual"][@"accounts"];
+    [session setAccounts:accountJSON];
     
-    NSString *userInfo = [NSString stringWithFormat:@"%@ - %@ - User ID: %@",individual.firstName, individual.lastName, individual.individualId];
-    
-    [NCLInfoPresenter presentText:userInfo];
+//    
+//    NSString *userInfo = [NSString stringWithFormat:@"%@ - %@ - User ID: %@",individual.firstName, individual.lastName, individual.individualId];
+//    
+//    [NCLInfoPresenter presentText:userInfo];
     
     
     if ([requests count] > 0) {

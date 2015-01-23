@@ -1223,6 +1223,7 @@
 					};
 					30A4739119D9E41B0045D7AF = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 47M87T34Y6;
 						TestTargetID = 30A4737819D9E41A0045D7AF;
 					};
 					E4EE71391A6FE9EE00B29027 = {

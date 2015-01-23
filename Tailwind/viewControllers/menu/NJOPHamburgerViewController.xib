@@ -154,7 +154,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="0Hp-oe-p2C" firstAttribute="top" secondItem="iL2-IY-5FD" secondAttribute="bottom" id="0vd-Yf-8NG"/>
                         <constraint firstItem="iL2-IY-5FD" firstAttribute="top" secondItem="t4F-2j-emG" secondAttribute="top" id="2DD-me-QTL"/>
