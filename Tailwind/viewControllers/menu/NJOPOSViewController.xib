@@ -98,6 +98,9 @@ Let us know through the app:</string>
                             <state key="normal" title="I'LL BE 20 MINUTES LATE">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="lateButtonPressed:" destination="-1" eventType="touchUpInside" id="VnI-gP-rTh"/>
+                            </connections>
                         </button>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="C3l-ok-PAf">
                             <rect key="frame" x="14" y="205" width="387" height="31"/>
@@ -106,7 +109,7 @@ Let us know through the app:</string>
                             </connections>
                         </slider>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Z61-fD-qFb" secondAttribute="trailing" constant="8" id="0YC-At-3Y2"/>
                         <constraint firstItem="Sy4-cD-afX" firstAttribute="top" secondItem="3rk-SY-9yE" secondAttribute="top" id="5Dh-q6-Npe"/>

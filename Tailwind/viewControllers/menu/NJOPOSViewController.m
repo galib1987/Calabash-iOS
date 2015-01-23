@@ -7,20 +7,31 @@
 //
 
 #import "NJOPOSViewController.h"
+#import "NJOPFlightHTTPClient.h"
+#import "NJOPSession.h"
+
 @import MessageUI;
 
 @interface NJOPOSViewController () <MFMailComposeViewControllerDelegate>
+@property (nonatomic) NSArray *accounts;
+@property (nonatomic) NJOPSession *session;
 
 @end
 
 @implementation NJOPOSViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self configureSlider];
     
-
+    self.session = [NJOPSession sharedInstance];
+    
+    self.latenessSlider.value = 20;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,20 +60,42 @@
     
 }
 
+- (NSDictionary *)getOSRInfo {
+    NJOPSession *session = [NJOPSession sharedInstance];
+    NSLog(@"%@",session.accounts);
+    
+    NSDictionary *accountDict = session.accounts[0];
 
-- (IBAction)sendMailPressed:(id)sender {
+    return accountDict;
+}
+
+- (void)sendMail {
+    NSString *teamEmail = [[self getOSRInfo] valueForKeyPath:@"accountOSRTeamEmail"];
+    NSString *clientName = [NSString stringWithFormat:@"%@ %@", self.session.individual.firstName, self.session.individual.lastName];
+    
     MFMailComposeViewController *composeController = [[MFMailComposeViewController alloc] init];
     if ([MFMailComposeViewController canSendMail]) {
         composeController.mailComposeDelegate = self;
-        [composeController setSubject:@"NETJETS INQUIRY"];
-        [composeController setMessageBody:@"I need..." isHTML:NO];
+        [composeController setSubject:@"Running Late"];
+        [composeController setToRecipients:@[teamEmail]];
+        [composeController setMessageBody:[NSString stringWithFormat:@"I am running %d minutes late. \n - %@", (int)self.latenessSlider.value, clientName] isHTML:NO];
         [self presentViewController:composeController animated:YES completion:nil];
     } else {
-        NSString *email = @"mailto:rosa@urbanpixels.com?&subject=NETJETS!";;
+        NSString *email = [NSString stringWithFormat:@"mailto:%@?&subject=NETJETS!", teamEmail];
         email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
- 
+        
     }
+}
+
+- (IBAction)lateButtonPressed:(id)sender {
+    
+    [self sendMail];
+}
+
+- (IBAction)sendMailPressed:(id)sender {
+    
+    [self sendMail];
 }
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
@@ -75,7 +108,8 @@
 }
 
 - (IBAction)callPressed:(id)sender {
-    NSString *phNo = @"+9176918605";
+    
+    NSString *phNo = [[self getOSRInfo] valueForKeyPath:@"accountOSRTeamPhone"];
     NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@",phNo]];
     UIAlertView *calert;
     
@@ -83,7 +117,7 @@
         [[UIApplication sharedApplication] openURL:phoneUrl];
     } else
     {
-        calert = [[UIAlertView alloc]initWithTitle:@"Alert" message:@"Call facility is not available!!!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+        calert = [[UIAlertView alloc]initWithTitle:@"Alert" message:@"Phone is offline." delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
         [calert show];
     }
 }
