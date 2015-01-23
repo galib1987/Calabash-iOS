@@ -9,6 +9,7 @@
 #import "NJOPBookingViewController.h"
 #import "NJOPKeyboardControls.h"
 #import "UIColor+NJOP.h"
+#import "NJOPConfig.h"
 
 @interface NJOPBookingViewController () <PDTSimpleCalendarViewDelegate>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
@@ -49,6 +50,16 @@ UIView *calendarLegend;
     [self initialiseTextFields];
     self.title = [@"Book a Flight" uppercaseString];
     
+    
+    // tap gesture to dismiss keyboard
+    // we put this on any UIView that we want to be able to dismiss keyboard from
+    // also copy the tapGesture method from below
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:[NJOPConfig sharedInstance] action:@selector(hideKeyboard)];
+    tap.numberOfTapsRequired = 1;
+    tap.numberOfTouchesRequired = 1;
+    tap.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tap];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,7 +81,7 @@ UIView *calendarLegend;
     //[[NSNotificationCenter defaultCenter] addObserver:self.keyboardControls selector:@selector(inputSwitched) name:@"APLKeyboardControlsInputDidBeginEditingNotification" object:nil];
     
     for (int i=0; i<[inputChain count]; i++) {
-        ((UIView*)inputChain[i]).tag = (NSInteger)i; // Tag fields to identify them
+        //((UIView*)inputChain[i]).tag = (NSInteger)i; // Tag fields to identify them
         if ([inputChain[i] isKindOfClass:[UITextField class]]) {
             ((UITextField*)inputChain[i]).delegate = self; // listen to textFieldDidBeginEditing
             [(UITextField*)inputChain[i] addTarget:self action:@selector(textFieldUpdated:) forControlEvents:UIControlEventEditingChanged]; // listen to changes
@@ -98,9 +109,10 @@ UIView *calendarLegend;
 }
 
 - (void)textFieldUpdated:(UITextField *)textField {
-    if (![textField.text isEmptyOrWhitespace] && textField.tag < [inputChain count]) {
-        self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, textField.tag+2)];
-        UITextField *nextField = (UITextField *)[self.view viewWithTag:textField.tag+1];
+    if (![textField.text isEmptyOrWhitespace] && [inputChain containsObject:textField]) {
+        NSUInteger textFieldIndex = [inputChain indexOfObject:textField];
+        self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, textFieldIndex+2)];
+        UITextField *nextField = (UITextField *)inputChain[textFieldIndex+1];
         nextField.enabled = true;
         
         if (textField == self.departTime) { // if either DEPART AT or ARRIVAL BY has been entered
@@ -116,10 +128,10 @@ UIView *calendarLegend;
             self.addButton.alpha = self.minusButton.alpha = 1;
         }/* else if (nextField == self.departTime) {
             // also enable arrival time selection
-            self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, textField.tag+3)];
+            self.keyboardControls.inputFields = [inputChain subarrayWithRange:NSMakeRange(0, textFieldIndex+3)];
         }*/
         
-        [self.keyboardControls updateButtonsAt:textField.tag];
+        [self.keyboardControls updateButtonsAt:textFieldIndex];
     }
 }
 
@@ -252,7 +264,7 @@ UIView *calendarLegend;
         [self.navigationController pushViewController:vc animated:NO];
         [textField resignFirstResponder];
     }
-    currentTextField = textField.tag;
+    currentTextField = [inputChain indexOfObject:textField];
 }
 
 - (void)inputSwitched:(NSNotification *)sender {
@@ -420,7 +432,7 @@ UIView *calendarLegend;
 
 
 - (void) updateTimeField:(UIDatePicker *)sender {
-    NJOPTextField *textField = (NJOPTextField *)[self.view viewWithTag:currentTextField];
+    NJOPTextField *textField = (NJOPTextField *)inputChain[currentTextField];
     [self.dateFormatter stringFromDate:sender.date];
     textField.text = [timeFormatter stringFromDate:[sender date]];
     

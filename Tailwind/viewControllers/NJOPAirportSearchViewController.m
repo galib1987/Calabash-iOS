@@ -8,6 +8,7 @@
 
 #import "NJOPAirportSearchViewController.h"
 #import "NJOPTextField.h"
+#import "NJOPConfig.h"
 
 @interface NJOPAirportSearchViewController ()
 
@@ -25,6 +26,16 @@
     self.resultsTable = vc;
     
     [self.view addSubview:self.resultsTable.view];
+    
+    
+    // tap gesture to dismiss keyboard
+    // we put this on any UIView that we want to be able to dismiss keyboard from
+    // also copy the tapGesture method from below
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:[NJOPConfig sharedInstance] action:@selector(hideKeyboard)];
+    tap.numberOfTapsRequired = 1;
+    tap.numberOfTouchesRequired = 1;
+    tap.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)viewDidLayoutSubviews {
