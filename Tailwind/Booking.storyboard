@@ -17,12 +17,14 @@
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
             <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
+            <string>NimbusSanD-Bol</string>
         </mutableArray>
         <mutableArray key="Nimbus-Sans-D-Light-Italic.otf">
             <string>NimbusSanD-LigIta</string>
         </mutableArray>
         <mutableArray key="Nimbus-Sans-D-Light.otf">
-            <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
             <string>NimbusSanD-Lig</string>
@@ -45,7 +47,26 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="65H-zt-Ies">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="O3x-Mg-TYR">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an Account:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w12-xw-YBK">
+                                    <rect key="frame" x="15" y="10" width="570" height="50"/>
+                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="24"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="w12-xw-YBK" firstAttribute="leading" secondItem="O3x-Mg-TYR" secondAttribute="leading" constant="15" id="A3p-GS-5Ix"/>
+                                <constraint firstAttribute="bottom" secondItem="w12-xw-YBK" secondAttribute="bottom" constant="10" id="F4A-Ae-nmU"/>
+                                <constraint firstAttribute="centerY" secondItem="w12-xw-YBK" secondAttribute="centerY" id="Vo7-wV-wC1"/>
+                                <constraint firstAttribute="trailing" secondItem="w12-xw-YBK" secondAttribute="trailing" constant="15" id="nxm-A3-uLv"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NJOPAccountTableCell" rowHeight="200" id="VEh-QW-k95" customClass="NJOPAccountTableCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -53,22 +74,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGk-ID-vUS">
-                                            <rect key="frame" x="8" y="4" width="584" height="192"/>
+                                            <rect key="frame" x="15" y="3" width="570" height="194"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZN-2k-Ya4">
-                                                    <rect key="frame" x="8" y="8" width="568" height="82"/>
+                                                    <rect key="frame" x="8" y="24" width="552" height="70"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="36"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Principal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ug5-0I-Jap">
-                                                    <rect key="frame" x="8" y="140" width="65" height="18"/>
+                                                    <rect key="frame" x="8" y="141" width="65" height="18"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Principal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk5-JF-yhD">
-                                                    <rect key="frame" x="8" y="166" width="123" height="18"/>
+                                                    <rect key="frame" x="8" y="161" width="123" height="18"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -76,22 +97,22 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="LZN-2k-Ya4" secondAttribute="trailing" constant="8" id="3Jd-Dn-LHO"/>
-                                                <constraint firstAttribute="bottom" secondItem="Dk5-JF-yhD" secondAttribute="bottom" constant="8" id="5YG-AL-hEe"/>
-                                                <constraint firstItem="ug5-0I-Jap" firstAttribute="top" secondItem="LZN-2k-Ya4" secondAttribute="bottom" constant="50" id="HnS-sr-kRw"/>
+                                                <constraint firstAttribute="trailing" secondItem="LZN-2k-Ya4" secondAttribute="trailing" constant="10" id="3Jd-Dn-LHO"/>
+                                                <constraint firstAttribute="bottom" secondItem="Dk5-JF-yhD" secondAttribute="bottom" constant="15" id="5YG-AL-hEe"/>
+                                                <constraint firstItem="ug5-0I-Jap" firstAttribute="top" secondItem="LZN-2k-Ya4" secondAttribute="bottom" constant="47" id="HnS-sr-kRw"/>
                                                 <constraint firstItem="LZN-2k-Ya4" firstAttribute="leading" secondItem="MGk-ID-vUS" secondAttribute="leading" constant="8" id="M82-37-fna"/>
                                                 <constraint firstItem="Dk5-JF-yhD" firstAttribute="leading" secondItem="ug5-0I-Jap" secondAttribute="leading" id="Qcs-cq-SsR"/>
-                                                <constraint firstItem="Dk5-JF-yhD" firstAttribute="top" secondItem="ug5-0I-Jap" secondAttribute="bottom" constant="8" id="RL0-Ep-dYv"/>
+                                                <constraint firstItem="Dk5-JF-yhD" firstAttribute="top" secondItem="ug5-0I-Jap" secondAttribute="bottom" constant="2" id="RL0-Ep-dYv"/>
                                                 <constraint firstItem="LZN-2k-Ya4" firstAttribute="leading" secondItem="ug5-0I-Jap" secondAttribute="leading" id="VIJ-bf-NMk"/>
-                                                <constraint firstItem="LZN-2k-Ya4" firstAttribute="top" secondItem="MGk-ID-vUS" secondAttribute="top" constant="8" id="vqe-aN-AUZ"/>
+                                                <constraint firstItem="LZN-2k-Ya4" firstAttribute="top" secondItem="MGk-ID-vUS" secondAttribute="top" constant="24" id="vqe-aN-AUZ"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="MGk-ID-vUS" firstAttribute="top" secondItem="ZOb-Zn-dGD" secondAttribute="top" constant="4" id="7og-V8-4jl"/>
-                                        <constraint firstItem="MGk-ID-vUS" firstAttribute="leading" secondItem="ZOb-Zn-dGD" secondAttribute="leading" constant="8" id="Scr-Yj-z7x"/>
-                                        <constraint firstAttribute="trailing" secondItem="MGk-ID-vUS" secondAttribute="trailing" constant="8" id="cAL-9l-OKC"/>
-                                        <constraint firstAttribute="bottom" secondItem="MGk-ID-vUS" secondAttribute="bottom" constant="4" id="vh8-zU-6Aa"/>
+                                        <constraint firstItem="MGk-ID-vUS" firstAttribute="top" secondItem="ZOb-Zn-dGD" secondAttribute="top" constant="3" id="7og-V8-4jl"/>
+                                        <constraint firstItem="MGk-ID-vUS" firstAttribute="leading" secondItem="ZOb-Zn-dGD" secondAttribute="leading" constant="15" id="Scr-Yj-z7x"/>
+                                        <constraint firstAttribute="trailing" secondItem="MGk-ID-vUS" secondAttribute="trailing" constant="15" id="cAL-9l-OKC"/>
+                                        <constraint firstAttribute="bottom" secondItem="MGk-ID-vUS" secondAttribute="bottom" constant="3" id="vh8-zU-6Aa"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -119,19 +140,22 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mex-En-C5e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="937"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addReturnCell" id="cr3-Rp-CSh" customClass="NJOPPastFlightTableCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addReturnCell" rowHeight="65" id="cr3-Rp-CSh" customClass="NJOPPastFlightTableCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cr3-Rp-CSh" id="5tl-OV-vkR">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCE-7v-m1e">
-                                            <rect key="frame" x="8" y="8" width="359" height="28"/>
+                                            <rect key="frame" x="8" y="3" width="359" height="60"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPz-Tk-nFe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="330" height="28"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="wee-v5-NX3"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                                     <inset key="contentEdgeInsets" minX="13" minY="0.0" maxX="13" maxY="0.0"/>
                                                     <state key="normal" title="Add a return flight">
@@ -139,14 +163,13 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM9-fv-1nL">
-                                                    <rect key="frame" x="331" y="0.0" width="28" height="28"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM9-fv-1nL">
+                                                    <rect key="frame" x="295" y="0.0" width="64" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="vM9-fv-1nL" secondAttribute="height" multiplier="1:1" id="Yxj-je-Szl"/>
+                                                        <constraint firstAttribute="width" secondItem="vM9-fv-1nL" secondAttribute="height" multiplier="129:120" id="Yxj-je-Szl"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
-                                                    <state key="normal" title="+">
+                                                    <state key="normal" image="increaseSign">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -160,32 +183,33 @@
                                                 <constraint firstItem="gPz-Tk-nFe" firstAttribute="top" secondItem="wCE-7v-m1e" secondAttribute="top" id="C77-b2-2ez"/>
                                                 <constraint firstAttribute="bottom" secondItem="gPz-Tk-nFe" secondAttribute="bottom" id="FLD-qh-XMl"/>
                                                 <constraint firstItem="vM9-fv-1nL" firstAttribute="top" secondItem="wCE-7v-m1e" secondAttribute="top" id="cqP-9X-P4x"/>
-                                                <constraint firstItem="vM9-fv-1nL" firstAttribute="width" relation="lessThanOrEqual" secondItem="gPz-Tk-nFe" secondAttribute="width" id="eht-L3-GX5"/>
                                                 <constraint firstAttribute="trailing" secondItem="vM9-fv-1nL" secondAttribute="trailing" id="yns-xN-dza"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="wCE-7v-m1e" firstAttribute="top" secondItem="5tl-OV-vkR" secondAttribute="topMargin" id="9ne-05-9s0"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="wCE-7v-m1e" secondAttribute="trailing" id="AQy-hQ-rup"/>
                                         <constraint firstItem="wCE-7v-m1e" firstAttribute="leading" secondItem="5tl-OV-vkR" secondAttribute="leadingMargin" id="IbB-6d-5wL"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="wCE-7v-m1e" secondAttribute="bottom" id="kCe-qH-DcC"/>
+                                        <constraint firstAttribute="centerY" secondItem="wCE-7v-m1e" secondAttribute="centerY" id="u9a-qb-TtG"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addOnwardCell" id="GMx-qL-f5k" customClass="NJOPPastFlightTableCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addOnwardCell" rowHeight="65" id="GMx-qL-f5k" customClass="NJOPPastFlightTableCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GMx-qL-f5k" id="FOO-uh-wzy">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ejb-Lw-4iz">
-                                            <rect key="frame" x="8" y="8" width="359" height="28"/>
+                                            <rect key="frame" x="8" y="3" width="359" height="60"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vF3-HV-dsC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="330" height="28"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="kUP-DT-EDH"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                                     <inset key="contentEdgeInsets" minX="13" minY="0.0" maxX="13" maxY="0.0"/>
                                                     <state key="normal" title="Add an onward flight">
@@ -193,14 +217,13 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ0-o1-QKw">
-                                                    <rect key="frame" x="331" y="0.0" width="28" height="28"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ0-o1-QKw">
+                                                    <rect key="frame" x="295" y="0.0" width="64" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="KJ0-o1-QKw" secondAttribute="height" multiplier="1:1" id="Ae7-3W-7Yb"/>
+                                                        <constraint firstAttribute="width" secondItem="KJ0-o1-QKw" secondAttribute="height" multiplier="129:120" id="Ae7-3W-7Yb"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
-                                                    <state key="normal" title="+">
+                                                    <state key="normal" image="increaseSign">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -209,7 +232,6 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="vF3-HV-dsC" firstAttribute="top" secondItem="Ejb-Lw-4iz" secondAttribute="top" id="6dg-Ic-PqA"/>
-                                                <constraint firstItem="KJ0-o1-QKw" firstAttribute="width" relation="lessThanOrEqual" secondItem="vF3-HV-dsC" secondAttribute="width" id="8WN-JN-AZW"/>
                                                 <constraint firstAttribute="trailing" secondItem="KJ0-o1-QKw" secondAttribute="trailing" id="DNp-EG-yNR"/>
                                                 <constraint firstItem="vF3-HV-dsC" firstAttribute="leading" secondItem="Ejb-Lw-4iz" secondAttribute="leading" id="Lej-ee-iTc"/>
                                                 <constraint firstAttribute="bottom" secondItem="KJ0-o1-QKw" secondAttribute="bottom" id="Yie-qb-ORr"/>
@@ -221,10 +243,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="Ejb-Lw-4iz" firstAttribute="top" secondItem="FOO-uh-wzy" secondAttribute="topMargin" id="347-Uj-eEJ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Ejb-Lw-4iz" secondAttribute="trailing" id="IYz-oF-bhG"/>
-                                        <constraint firstItem="Ejb-Lw-4iz" firstAttribute="leading" secondItem="FOO-uh-wzy" secondAttribute="leadingMargin" id="JFf-Ew-Qzk"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Ejb-Lw-4iz" secondAttribute="bottom" id="wai-oI-Gjm"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ejb-Lw-4iz" secondAttribute="trailing" id="JWk-aw-yRj"/>
+                                        <constraint firstItem="Ejb-Lw-4iz" firstAttribute="leading" secondItem="FOO-uh-wzy" secondAttribute="leadingMargin" id="aKk-IF-cfw"/>
+                                        <constraint firstAttribute="centerY" secondItem="Ejb-Lw-4iz" secondAttribute="centerY" id="rnh-iL-Fvb"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -236,11 +257,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="143-Rc-bps">
-                                            <rect key="frame" x="8" y="8" width="359" height="74"/>
+                                            <rect key="frame" x="8" y="11" width="359" height="68"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVR-ce-8kG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="74"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="68"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="68" id="V3U-RR-rWd"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="16"/>
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="27" maxX="0.0" maxY="27"/>
                                                     <state key="normal" title="START OVER">
@@ -249,7 +273,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tu-9G-L6d">
-                                                    <rect key="frame" x="185" y="0.0" width="174" height="74"/>
+                                                    <rect key="frame" x="185" y="0.0" width="174" height="68"/>
                                                     <color key="backgroundColor" red="0.69803921568627447" green="0.95686274509803915" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="16"/>
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="27" maxX="0.0" maxY="27"/>
@@ -274,10 +298,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="143-Rc-bps" secondAttribute="centerY" id="2RU-rt-F0k"/>
                                         <constraint firstItem="143-Rc-bps" firstAttribute="leading" secondItem="xSk-EG-GGG" secondAttribute="leadingMargin" id="UC0-tD-2mB"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="143-Rc-bps" secondAttribute="bottom" id="e77-c8-biC"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="143-Rc-bps" secondAttribute="trailing" id="tdu-IA-lPp"/>
-                                        <constraint firstItem="143-Rc-bps" firstAttribute="top" secondItem="xSk-EG-GGG" secondAttribute="topMargin" id="yXV-6M-xvE"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -309,7 +332,8 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM6-Vj-byv">
                                     <rect key="frame" x="12" y="8" width="350" height="60"/>
-                                    <color key="backgroundColor" red="0.27843137254901962" green="0.8901960784313725" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.69803921568627447" green="0.95686274509803915" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="16"/>
                                     <state key="normal" title="COPY FROM PAST FLIGHT">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -327,14 +351,14 @@
                         <sections>
                             <tableViewSection id="xPA-MT-2DZ">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="5rE-Jf-IFf" userLabel="AIRCRAFT">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="5rE-Jf-IFf" userLabel="AIRCRAFT">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5rE-Jf-IFf" id="yJx-5H-uqy">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Select Contract Aircraft" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AVD-WU-ES8" customClass="NJOPTextField">
-                                                    <rect key="frame" x="12" y="38" width="350" height="60"/>
+                                                    <rect key="frame" x="12" y="27" width="350" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="9l9-OV-qfj"/>
@@ -346,8 +370,8 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AIRCRAFT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnP-KY-W5r">
-                                                    <rect key="frame" x="12" y="13" width="355" height="17"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <rect key="frame" x="12" y="9" width="355" height="13"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="13"/>
                                                     <color key="textColor" red="0.99989157915115356" green="1" blue="0.99988085031509399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -359,25 +383,25 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="AVD-WU-ES8" secondAttribute="bottom" constant="4.5" id="fYe-04-mrf"/>
                                                 <constraint firstItem="AVD-WU-ES8" firstAttribute="centerX" secondItem="yJx-5H-uqy" secondAttribute="centerX" id="ll5-Lf-uSb"/>
                                                 <constraint firstItem="AVD-WU-ES8" firstAttribute="leading" secondItem="AnP-KY-W5r" secondAttribute="leading" id="llp-Hb-eJC"/>
-                                                <constraint firstItem="AVD-WU-ES8" firstAttribute="top" secondItem="AnP-KY-W5r" secondAttribute="bottom" constant="8" symbolic="YES" id="prS-be-xjE"/>
+                                                <constraint firstItem="AVD-WU-ES8" firstAttribute="top" secondItem="AnP-KY-W5r" secondAttribute="bottom" constant="5" id="prS-be-xjE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="quj-qL-TUU" userLabel="FROM">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="quj-qL-TUU" userLabel="FROM">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="quj-qL-TUU" id="h3Q-Ia-9Kz">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FROM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3r-X2-pX7">
-                                                    <rect key="frame" x="12" y="13" width="355" height="17"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <rect key="frame" x="12" y="9" width="355" height="13"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="13"/>
                                                     <color key="textColor" red="0.99607849120000003" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Departure City or Airport" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JJj-Pl-ixz" customClass="NJOPTextField">
-                                                    <rect key="frame" x="12" y="38" width="350" height="60"/>
+                                                    <rect key="frame" x="12" y="27" width="350" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="23Q-Tu-JRH"/>
@@ -391,21 +415,21 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="JJj-Pl-ixz" secondAttribute="bottom" constant="4.5" id="3wa-kt-yif"/>
                                                 <constraint firstItem="JJj-Pl-ixz" firstAttribute="leading" secondItem="Z3r-X2-pX7" secondAttribute="leading" id="EnN-ax-XJ8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="JJj-Pl-ixz" secondAttribute="trailing" constant="5" id="Yq2-DY-gwF"/>
-                                                <constraint firstItem="JJj-Pl-ixz" firstAttribute="top" secondItem="Z3r-X2-pX7" secondAttribute="bottom" constant="8" symbolic="YES" id="hFU-83-AxO"/>
+                                                <constraint firstItem="JJj-Pl-ixz" firstAttribute="top" secondItem="Z3r-X2-pX7" secondAttribute="bottom" constant="5" id="hFU-83-AxO"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Z3r-X2-pX7" secondAttribute="trailing" id="ls4-bV-ZGg"/>
                                                 <constraint firstItem="JJj-Pl-ixz" firstAttribute="leading" secondItem="h3Q-Ia-9Kz" secondAttribute="leadingMargin" constant="4" id="qIo-oZ-OQZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="SCX-00-Xhr" userLabel="TO">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="SCX-00-Xhr" userLabel="TO">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SCX-00-Xhr" id="lPt-AD-LNf">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Arrival City or Airport" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSY-at-BbI" customClass="NJOPTextField">
-                                                    <rect key="frame" x="12" y="38" width="350" height="60"/>
+                                                    <rect key="frame" x="12" y="27" width="350" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="cIi-Cx-kiX"/>
@@ -414,8 +438,8 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpX-Cp-iyh">
-                                                    <rect key="frame" x="12" y="13" width="355" height="17"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <rect key="frame" x="12" y="9" width="355" height="13"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="13"/>
                                                     <color key="textColor" red="0.99607849120000003" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -423,7 +447,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="jpX-Cp-iyh" secondAttribute="trailing" id="8NQ-98-j9d"/>
-                                                <constraint firstItem="cSY-at-BbI" firstAttribute="top" secondItem="jpX-Cp-iyh" secondAttribute="bottom" constant="8" symbolic="YES" id="8yV-jT-omg"/>
+                                                <constraint firstItem="cSY-at-BbI" firstAttribute="top" secondItem="jpX-Cp-iyh" secondAttribute="bottom" constant="5" id="8yV-jT-omg"/>
                                                 <constraint firstItem="cSY-at-BbI" firstAttribute="leading" secondItem="jpX-Cp-iyh" secondAttribute="leading" id="9Ko-kM-dmf"/>
                                                 <constraint firstItem="cSY-at-BbI" firstAttribute="leading" secondItem="lPt-AD-LNf" secondAttribute="leadingMargin" constant="4" id="J9c-nk-4fr"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cSY-at-BbI" secondAttribute="trailing" constant="5" id="g7i-7r-Oxd"/>
@@ -432,20 +456,20 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="KmK-hn-aCi" userLabel="DATE">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KmK-hn-aCi" userLabel="DATE">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KmK-hn-aCi" id="IeE-py-UM2">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3km-j8-EgQ">
-                                                    <rect key="frame" x="12" y="13" width="355" height="17"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <rect key="frame" x="12" y="9" width="355" height="13"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="13"/>
                                                     <color key="textColor" red="0.99607849120000003" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Select a Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YYH-n1-T0Y" customClass="NJOPTextField">
-                                                    <rect key="frame" x="12" y="38" width="350" height="60"/>
+                                                    <rect key="frame" x="12" y="27" width="350" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="7x8-qt-uoz"/>
@@ -462,13 +486,13 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="3km-j8-EgQ" secondAttribute="trailing" id="5GQ-kw-tBK"/>
                                                 <constraint firstItem="YYH-n1-T0Y" firstAttribute="leading" secondItem="IeE-py-UM2" secondAttribute="leadingMargin" constant="4" id="ErI-jl-9F1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="YYH-n1-T0Y" secondAttribute="trailing" constant="5" id="dlD-qL-fkM"/>
-                                                <constraint firstItem="YYH-n1-T0Y" firstAttribute="top" secondItem="3km-j8-EgQ" secondAttribute="bottom" constant="8" symbolic="YES" id="qZ1-Pb-caz"/>
+                                                <constraint firstItem="YYH-n1-T0Y" firstAttribute="top" secondItem="3km-j8-EgQ" secondAttribute="bottom" constant="5" id="qZ1-Pb-caz"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="YYH-n1-T0Y" secondAttribute="bottom" constant="4.5" id="sRq-bV-7Ku"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="FrL-Bj-P4N" userLabel="DEPART AND ARRIVE">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="FrL-Bj-P4N" userLabel="DEPART AND ARRIVE">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FrL-Bj-P4N" id="8ZW-38-cOK">
@@ -516,7 +540,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1 Passenger" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdM-3r-fvl" customClass="NJOPTextField">
-                                                    <rect key="frame" x="12" y="16" width="228" height="60"/>
+                                                    <rect key="frame" x="12" y="16" width="218" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="hlN-a8-MFv"/>
@@ -524,13 +548,13 @@
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al4-Tz-avk">
-                                                    <rect key="frame" x="241" y="16" width="60" height="60"/>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al4-Tz-avk">
+                                                    <rect key="frame" x="231" y="16" width="65" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="al4-Tz-avk" secondAttribute="height" multiplier="1:1" id="KEt-zH-2wW"/>
+                                                        <constraint firstAttribute="width" secondItem="al4-Tz-avk" secondAttribute="height" multiplier="129:120" id="KEt-zH-2wW"/>
                                                     </constraints>
-                                                    <state key="normal" title="-">
+                                                    <state key="normal" image="decreaseSign">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -538,10 +562,10 @@
                                                         <action selector="subtractPassenger:" destination="pWK-K7-4l2" eventType="touchUpInside" id="2fV-46-gPf"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYI-6x-zEo">
-                                                    <rect key="frame" x="302" y="16" width="60" height="60"/>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYI-6x-zEo">
+                                                    <rect key="frame" x="297" y="16" width="65" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
-                                                    <state key="normal" title="+">
+                                                    <state key="normal" image="increaseSign">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -600,8 +624,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPy-d9-Ms3">
                                                     <rect key="frame" x="8" y="31" width="169" height="59"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="16"/>
                                                     <state key="normal" title="RESET FORM">
-                                                        <color key="titleColor" red="0.27843137254901962" green="0.8901960784313725" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -611,6 +636,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbo-2V-KmT">
                                                     <rect key="frame" x="191" y="31" width="169" height="59"/>
                                                     <color key="backgroundColor" red="0.17254901960784313" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="16"/>
                                                     <state key="normal" title="NEXT">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -809,4 +835,8 @@ McCarran International</string>
             <point key="canvasLocation" x="932" y="333"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="decreaseSign" width="64" height="60"/>
+        <image name="increaseSign" width="64" height="60"/>
+    </resources>
 </document>

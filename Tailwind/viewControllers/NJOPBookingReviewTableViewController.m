@@ -8,6 +8,7 @@
 
 #import "NJOPBookingReviewTableViewController.h"
 #import "NJOPPastFlightTableCell.h"
+#import "UIColor+NJOP.h"
 
 @interface NJOPBookingReviewTableViewController ()
 
@@ -117,7 +118,7 @@ NSString *actionButtonText = @"EDIT FLIGHT DETAILS";
         CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
         
         return size.height;
-    } else return 60;
+    } else return 80;
 }
 
 -(void)registerReusableViews {

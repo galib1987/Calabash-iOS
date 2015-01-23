@@ -87,6 +87,9 @@ UIView *calendarLegend;
     self.bookingComment.placeholderTextColor = [UIColor blackColor];
     [self.bookingComment setTextContainerInset:UIEdgeInsetsMake(20, 15, 20, 15)];
     
+    self.resetBooking.layer.borderWidth = 1;
+    self.resetBooking.layer.borderColor = [[UIColor colorFromHexString:@"#c1f7af"] CGColor];
+    
     [self.nextStep setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.nextStep setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
     
