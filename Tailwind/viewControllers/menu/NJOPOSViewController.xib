@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Nimbus-Sans-D-Light.otf">
@@ -80,8 +81,8 @@
                                 <action selector="callPressed:" destination="-1" eventType="touchUpInside" id="Nql-0E-sg7"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhB-hx-4qR">
-                            <rect key="frame" x="106" y="151" width="204.5" height="34"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhB-hx-4qR">
+                            <rect key="frame" x="106" y="175" width="204.5" height="34"/>
                             <string key="text">Running late for a flight?
 Let us know through the app:</string>
                             <fontDescription key="fontDescription" name="NimbusSanD-Lig" family="Nimbus Sans D" pointSize="17"/>
@@ -102,8 +103,8 @@ Let us know through the app:</string>
                                 <action selector="lateButtonPressed:" destination="-1" eventType="touchUpInside" id="VnI-gP-rTh"/>
                             </connections>
                         </button>
-                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="C3l-ok-PAf">
-                            <rect key="frame" x="14" y="205" width="387" height="31"/>
+                        <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="C3l-ok-PAf">
+                            <rect key="frame" x="14" y="217" width="387" height="19"/>
                             <connections>
                                 <action selector="sliderChanged:" destination="-1" eventType="valueChanged" id="LG3-IQ-LNz"/>
                             </connections>
@@ -116,6 +117,7 @@ Let us know through the app:</string>
                         <constraint firstItem="Z61-fD-qFb" firstAttribute="top" secondItem="C3l-ok-PAf" secondAttribute="bottom" constant="60" id="5Np-3b-7gb"/>
                         <constraint firstItem="Sy4-cD-afX" firstAttribute="leading" secondItem="3rk-SY-9yE" secondAttribute="leading" id="804-eM-Zhd"/>
                         <constraint firstItem="JAm-SD-Lvu" firstAttribute="top" secondItem="Sy4-cD-afX" secondAttribute="bottom" id="HPp-HG-zL3"/>
+                        <constraint firstItem="dhB-hx-4qR" firstAttribute="top" secondItem="xHx-dC-43e" secondAttribute="bottom" multiplier="1.1" constant="8" symbolic="YES" id="JXX-az-PUa"/>
                         <constraint firstAttribute="trailing" secondItem="JAm-SD-Lvu" secondAttribute="trailing" id="Mtl-LX-gC7"/>
                         <constraint firstAttribute="trailing" secondItem="Sy4-cD-afX" secondAttribute="trailing" id="XvB-xv-YVq"/>
                         <constraint firstItem="Z61-fD-qFb" firstAttribute="width" secondItem="C3l-ok-PAf" secondAttribute="width" constant="16" id="c6Z-My-Zj6"/>
@@ -127,7 +129,7 @@ Let us know through the app:</string>
                         <constraint firstAttribute="centerX" secondItem="dhB-hx-4qR" secondAttribute="centerX" id="hdW-Rv-inN"/>
                         <constraint firstItem="JAm-SD-Lvu" firstAttribute="width" secondItem="xHx-dC-43e" secondAttribute="width" id="qby-hB-j2B"/>
                         <constraint firstItem="JAm-SD-Lvu" firstAttribute="leading" secondItem="xHx-dC-43e" secondAttribute="trailing" id="qkq-E0-HZ0"/>
-                        <constraint firstItem="C3l-ok-PAf" firstAttribute="top" secondItem="dhB-hx-4qR" secondAttribute="bottom" constant="20" id="wrY-Nl-p6p"/>
+                        <constraint firstItem="C3l-ok-PAf" firstAttribute="top" secondItem="dhB-hx-4qR" secondAttribute="bottom" constant="8" symbolic="YES" id="wrY-Nl-p6p"/>
                         <constraint firstItem="JAm-SD-Lvu" firstAttribute="leading" secondItem="xHx-dC-43e" secondAttribute="trailing" id="xah-uQ-oYi"/>
                         <constraint firstAttribute="centerX" secondItem="Z61-fD-qFb" secondAttribute="centerX" id="zQG-Pu-IVI"/>
                     </constraints>
