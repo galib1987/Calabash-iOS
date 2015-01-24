@@ -46,7 +46,7 @@
                                 <constraint firstAttribute="centerY" secondItem="ISu-ib-NZw" secondAttribute="centerY" id="jZH-oX-1pw"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHx-dC-43e">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHx-dC-43e" customClass="NJOPMenuButton">
                             <rect key="frame" x="0.0" y="45" width="207.5" height="107"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -63,7 +63,7 @@
                                 <action selector="sendMailPressed:" destination="-1" eventType="touchUpInside" id="chJ-MZ-0G7"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAm-SD-Lvu">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAm-SD-Lvu" customClass="NJOPMenuButton">
                             <rect key="frame" x="207" y="45" width="207.5" height="107"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
