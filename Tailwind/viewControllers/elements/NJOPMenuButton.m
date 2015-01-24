@@ -7,6 +7,7 @@
 //
 
 #import "NJOPMenuButton.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation NJOPMenuButton
 
@@ -40,6 +41,10 @@
 }
 
 - (void) setup {
+    
+    self.layer.borderWidth = .5f;
+    
+    self.layer.borderColor = [UIColor grayColor].CGColor;
 //    [self setTitleEdgeInsets:UIEdgeInsetsMake(70.0, -150.0, 5.0, 5.0)];
     
     // the space between the image and text
