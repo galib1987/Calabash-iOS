@@ -1224,11 +1224,10 @@
 				TargetAttributes = {
 					30A4737819D9E41A0045D7AF = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = 47M87T34Y6;
+						DevelopmentTeam = LCC6EUU9EK;
 					};
 					30A4739119D9E41B0045D7AF = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = 47M87T34Y6;
 						TestTargetID = 30A4737819D9E41A0045D7AF;
 					};
 					E4EE71391A6FE9EE00B29027 = {
@@ -1700,8 +1699,8 @@
 			baseConfigurationReference = 03307E6D414420F7D9C0477B /* Pods.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
@@ -1799,8 +1798,8 @@
 			baseConfigurationReference = 93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
@@ -1881,8 +1880,8 @@
 			baseConfigurationReference = 553EE494A15E7540C63F4EE6 /* Pods.qa.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
 				INFOPLIST_FILE = Tailwind/Info.plist;
