@@ -17,6 +17,7 @@
 #import "NJOPOAuthClient.h"
 #import "NJOPSelectAccountViewController.h"
 #import "NJOPIntrospector.h"
+#import "NJOPResigner.h"
 
 @interface NJOPHomeViewController ()
 @end
@@ -36,6 +37,9 @@
     label.frame = self.coverView.bounds;
     [self.coverView addSubview:label];
     [self.coverView setUserInteractionEnabled:NO];
+    
+    [NJOPResigner globalResignFirstResponder]; // temporary solution to keyboard on login 
+    
     [self.view addSubview:self.coverView];
 }
 

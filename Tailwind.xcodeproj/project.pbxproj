@@ -198,6 +198,7 @@
 		A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */; };
 		A7F2CA4C1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */; };
 		A7FC581F1A72AA3B00DE22B1 /* NJOPIntrospector.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FC581E1A72AA3B00DE22B1 /* NJOPIntrospector.m */; };
+		A7FC58251A732F6800DE22B1 /* NJOPResigner.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FC58241A732F6800DE22B1 /* NJOPResigner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -483,6 +484,8 @@
 		A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightsDetailViewController.m; sourceTree = "<group>"; };
 		A7FC581D1A72AA3B00DE22B1 /* NJOPIntrospector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPIntrospector.h; sourceTree = "<group>"; };
 		A7FC581E1A72AA3B00DE22B1 /* NJOPIntrospector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPIntrospector.m; sourceTree = "<group>"; };
+		A7FC58231A732F6800DE22B1 /* NJOPResigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPResigner.h; sourceTree = "<group>"; };
+		A7FC58241A732F6800DE22B1 /* NJOPResigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPResigner.m; sourceTree = "<group>"; };
 		DF9840D1E1477E14D0789000 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -1125,6 +1128,8 @@
 				A7A03EA51A42E626004BE417 /* UIView+NJOPStyle.m */,
 				A77680D51A406C7D00B2E7CF /* UIColor+NJOP.h */,
 				A77680D61A406C7D00B2E7CF /* UIColor+NJOP.m */,
+				A7FC58231A732F6800DE22B1 /* NJOPResigner.h */,
+				A7FC58241A732F6800DE22B1 /* NJOPResigner.m */,
 			);
 			name = "View Helpers";
 			sourceTree = "<group>";
@@ -1493,6 +1498,7 @@
 				A77DBDAA1A72577300B5F306 /* (null) in Sources */,
 				A7E007681A70B19F007BE054 /* NJOPKeyboardControls.m in Sources */,
 				A77680DD1A406C7D00B2E7CF /* NJOPSession.m in Sources */,
+				A7FC58251A732F6800DE22B1 /* NJOPResigner.m in Sources */,
 				A7E007511A70AFF3007BE054 /* NJOPTableViewCell.m in Sources */,
 				A7E007771A70B2CB007BE054 /* NJOPClient+flights.m in Sources */,
 				A77DBDC61A7257E000B5F306 /* _NJOPAircraftType.m in Sources */,
