@@ -9,6 +9,7 @@
 #import "NJOPOSViewController.h"
 #import "NJOPFlightHTTPClient.h"
 #import "NJOPSession.h"
+#import "NJOPMenuViewController.h"
 
 @import MessageUI;
 
@@ -69,6 +70,7 @@
     return accountDict;
 }
 
+
 - (void)sendMail {
     NSString *teamEmail = [[self getOSRInfo] valueForKeyPath:@"accountOSRTeamEmail"];
     NSString *clientName = [NSString stringWithFormat:@"%@ %@", self.session.individual.firstName, self.session.individual.lastName];
@@ -80,7 +82,11 @@
         [composeController setSubject:@"Running Late"];
         [composeController setToRecipients:@[teamEmail]];
         [composeController setMessageBody:[NSString stringWithFormat:@"I am running %d minutes late. \n - %@", (int)self.latenessSlider.value, clientName] isHTML:NO];
-        [self presentViewController:composeController animated:YES completion:nil];
+        
+        
+        [self.delegate contractOS];
+        [self.view.window.rootViewController presentViewController:composeController animated:YES completion:nil];
+        
     } else {
         NSString *email = [NSString stringWithFormat:@"mailto:%@?&subject=NETJETS!", teamEmail];
         email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
