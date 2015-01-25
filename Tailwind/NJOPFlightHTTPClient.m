@@ -12,9 +12,9 @@
 #import "NJOPReservation.h"
 #import "NJOPSession.h"
 #import "NJOPTailwindPM.h"
+#import "NJOPRequest2.h"
 #import "NJOPReservation2.h"
 #import "NJOPAccount.h"
-#import "NJOPRequest2.h"
 
 #import "NJOPValueTransformer.h"
 #import "NSDate+NJOP.h"
@@ -30,7 +30,6 @@
     static NJOPFlightHTTPClient *sharedInstance = nil;
     
     dispatch_once(&pred, ^{
-
         sharedInstance = [[self alloc] init];
     });
     
@@ -52,47 +51,6 @@
     return [NJOPOAuthClient sharedInstance];
 }
 
-//- (void)parseJSONObjects:(id)objects {
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-//        NSInteger totalRecords = [objects count];
-//        NSInteger currentRecord = 0;
-//        
-//        NSManagedObjectContext *context = [[NJOPTailwindPM sharedInstance] mainMOC];
-//        
-//        for (NSDictionary *dictionary in objects) {
-//            NSInteger reservationId = [[dictionary objectForKey:@"reservationId"] intValue];
-//            NJOPReservation2 *reservation = [NJOPReservation2 reservationWithReservationId:reservationId usingManagedObjectContext:context];
-//            
-//            if (reservation == nil) {
-//                reservation = [NJOPReservation2 insertInManagedObjectContext:context];
-//            }
-//            
-//            [reservation updateAttributes:dictionary];
-//            
-//            currentRecord++;
-//            
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                float percent = ((float) currentRecord)/totalRecords;
-//                NSLog(@"%f loaded...", percent);
-//            });
-//        }
-//        
-//        NSError *error = nil;
-//        if([context save:&error]) {
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                NSLog(@"DONE!");
-//            });
-//            
-//        } else {
-//            NSLog(@"ERROR: %@ %@", [error localizedDescription], [error userInfo]);
-//            exit(1);
-//        }
-//        
-//    });
-//
-//    
-//}
-
 - (void)loadBriefWithCompletion:(void (^)(NSArray *reservations, NSError *error))completionHandler
 {
     NCLURLRequest *request = [self urlRequestWithPath:@"/brief"];
@@ -110,28 +68,46 @@
         {
             NSError *jsonError = nil;
             NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
-            NSArray *reservations = result[@"requests"];
-            NSArray *accounts = result[@"individual"][@"accounts"];
+            
             // parse & save to core data here
-            NSManagedObjectContext *moc = [[NJOPTailwindPM sharedInstance] mainMOC];
+            NSArray *requests = result[@"requests"];
+            NSArray *accounts = result[@"individual"][@"accounts"];
             NSError *error = nil;
             
+            NJOPTailwindPM *persistenceManager = [NJOPTailwindPM sharedInstance];
+            NSManagedObjectContext *context = [persistenceManager mainMOC];
+            
             for (NSDictionary *accountDict in accounts) {
-                NJOPAccount *newAccount = [NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:moc];
+                NJOPAccount *newAccount = [NSEntityDescription insertNewObjectForEntityForName:@"Account"
+                                                                        inManagedObjectContext:context];
                 newAccount.accountID = accountDict[@"accountId"];
-            }
-            
-            for (NSDictionary *reservationDict in reservations) {
-                NJOPReservation2 *newReservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:moc];
-                newReservation.reservationID = reservationDict[@"reservationId"];
+                NSMutableSet *reservationsSet = [[NSMutableSet alloc] init];
                 
-                NJOPRequest2 *newRequest = [NSEntityDescription insertNewObjectForEntityForName:@"Request" inManagedObjectContext:moc];
-                newRequest.requestID = reservationDict[@"requestId"];
+                for (NSDictionary *requestDict in requests) {
+                    if ([requestDict[@"accountId"] isEqualToNumber:newAccount.accountID]) {
+                        NJOPReservation2 *newReservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation"
+                                                                                 inManagedObjectContext:context];
+                        [reservationsSet addObject:newReservation];
+
+                    }
+                }
+                
+                [newAccount setReservations:reservationsSet];
             }
             
-            NSLog(@"%@", [moc registeredObjects]);
+            NSLog(@"%@", [context registeredObjects]);
             
-            [moc save:&error];
+            
+//            for (NSDictionary *accountDict in accounts) {
+//                [persistenceManager addAccountWithId:accountDict[@"accountId"]];
+//                NSLog(@"%@", [context registeredObjects]);
+//            }
+//            
+//            for (NSDictionary *requestDict in requests) {
+//                [persistenceManager addRequestWithId:requestDict[@"requestId"]];
+//                [persistenceManager addReservationWithId:requestDict[@"reservationId"]];
+//                NSLog(@"%@", [context registeredObjects]);
+//            }
             
         }
         
