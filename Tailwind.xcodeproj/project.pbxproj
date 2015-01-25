@@ -143,6 +143,7 @@
 		A786D6251A663B4A006EDA24 /* NJOPConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A786D6231A663B4A006EDA24 /* NJOPConfig.m */; };
 		A786D6271A664562006EDA24 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A786D6261A664562006EDA24 /* Settings.storyboard */; };
 		A786D6281A664562006EDA24 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A786D6261A664562006EDA24 /* Settings.storyboard */; };
+		A78DA90E1A7468D900DD8091 /* NSDictionary+ObjectForKeyOrNil.m in Sources */ = {isa = PBXBuildFile; fileRef = A78DA90D1A7468D900DD8091 /* NSDictionary+ObjectForKeyOrNil.m */; };
 		A7A03E941A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03E931A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.m */; };
 		A7A03E981A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03E961A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.m */; };
 		A7A03E991A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A03E971A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.xib */; };
@@ -398,6 +399,8 @@
 		A786D6221A663B4A006EDA24 /* NJOPConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPConfig.h; sourceTree = "<group>"; };
 		A786D6231A663B4A006EDA24 /* NJOPConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPConfig.m; sourceTree = "<group>"; };
 		A786D6261A664562006EDA24 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		A78DA90C1A7468D900DD8091 /* NSDictionary+ObjectForKeyOrNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ObjectForKeyOrNil.h"; sourceTree = "<group>"; };
+		A78DA90D1A7468D900DD8091 /* NSDictionary+ObjectForKeyOrNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ObjectForKeyOrNil.m"; sourceTree = "<group>"; };
 		A7A03E921A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPSummaryViewTopHeaderView.h; path = Tailwind/MiddleLevelUI/Views/NJOPSummaryViewTopHeaderView.h; sourceTree = SOURCE_ROOT; };
 		A7A03E931A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPSummaryViewTopHeaderView.m; path = Tailwind/MiddleLevelUI/Views/NJOPSummaryViewTopHeaderView.m; sourceTree = SOURCE_ROOT; };
 		A7A03E951A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPSummaryNavigationTitleView.h; path = Tailwind/MiddleLevelUI/Views/NJOPSummaryNavigationTitleView.h; sourceTree = SOURCE_ROOT; };
@@ -659,6 +662,8 @@
 				A7E007801A70B41F007BE054 /* NNNUserDefaultsManager.m */,
 				A786D6221A663B4A006EDA24 /* NJOPConfig.h */,
 				A786D6231A663B4A006EDA24 /* NJOPConfig.m */,
+				A78DA90C1A7468D900DD8091 /* NSDictionary+ObjectForKeyOrNil.h */,
+				A78DA90D1A7468D900DD8091 /* NSDictionary+ObjectForKeyOrNil.m */,
 				A7E0077E1A70B3A9007BE054 /* View Helpers */,
 				A7E0077D1A70B38A007BE054 /* Data Formatting Helpers */,
 				A7E007791A70B304007BE054 /* Model Helpers */,
@@ -1508,6 +1513,7 @@
 				1E1A592E1A48CDD70048A9C9 /* NJOPFullPageViewController.m in Sources */,
 				A77DBDF11A7257FB00B5F306 /* NJOPMasterAircraftType.m in Sources */,
 				A77DBDA71A72577300B5F306 /* (null) in Sources */,
+				A78DA90E1A7468D900DD8091 /* NSDictionary+ObjectForKeyOrNil.m in Sources */,
 				A77DBDC41A7257E000B5F306 /* _NJOPAccount.m in Sources */,
 				A7A03E981A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.m in Sources */,
 				A7E007761A70B2CB007BE054 /* NJOPClient.m in Sources */,

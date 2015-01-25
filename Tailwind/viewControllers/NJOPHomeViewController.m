@@ -18,6 +18,7 @@
 #import "NJOPSelectAccountViewController.h"
 #import "NJOPIntrospector.h"
 #import "NJOPResigner.h"
+#import "NJOPFlightHTTPClient.h"
 
 @interface NJOPHomeViewController ()
 @end
@@ -38,7 +39,10 @@
     [self.coverView addSubview:label];
     [self.coverView setUserInteractionEnabled:NO];
     
-    [NJOPResigner globalResignFirstResponder]; // temporary solution to keyboard on login 
+    [NJOPResigner globalResignFirstResponder]; // temporary solution to keyboard on login
+    
+//    NJOPFlightHTTPClient *client = [NJOPFlightHTTPClient sharedInstance];
+//    [client loadBriefWithCompletion:nil];
     
     [self.view addSubview:self.coverView];
 }
