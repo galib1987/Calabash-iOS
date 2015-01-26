@@ -57,7 +57,8 @@
 
 - (IBAction)sliderChanged:(id)sender {
     int intValue = (int)ceil(self.latenessSlider.value);
-    [_latenessNotificationButton setTitle:[NSString stringWithFormat:@"I'LL BE %d MINUTES LATE", intValue] forState:UIControlStateNormal];
+    [_latenessNotificationButton setTitle:[NSString stringWithFormat:@"I'LL BE %d MINUTES LATE", intValue]
+                                 forState:UIControlStateNormal];
     
 }
 
@@ -77,8 +78,8 @@
     
     MFMailComposeViewController *composeController = [[MFMailComposeViewController alloc] init];
     composeController.mailComposeDelegate = self;
+    
     if ([MFMailComposeViewController canSendMail]) {
-        composeController.mailComposeDelegate = self;
         [composeController setSubject:@"Running Late"];
         [composeController setToRecipients:@[teamEmail]];
         [composeController setMessageBody:[NSString stringWithFormat:@"I am running %d minutes late. \n - %@", (int)self.latenessSlider.value, clientName] isHTML:NO];
@@ -111,7 +112,7 @@
         NSLog(@"GO TEAM GO!");
     }
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)callPressed:(id)sender {
