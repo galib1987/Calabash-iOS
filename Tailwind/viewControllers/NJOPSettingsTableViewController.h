@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NJOPSettingsTableViewController : UITableViewController
+#import "NJOPBaseTableViewController.h"
+
+@interface NJOPSettingsTableViewController : NJOPBaseTableViewController
 
 @end

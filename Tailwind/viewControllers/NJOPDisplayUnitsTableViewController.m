@@ -1,20 +1,18 @@
 //
-//  NJOPSettingsTableViewController.m
+//  NJOPDisplayUnitsTableViewController.m
 //  Tailwind
 //
-//  Created by netjets on 12/20/14.
-//  Copyright (c) 2014 NetJets. All rights reserved.
+//  Created by Amin Heidari on 1/26/15.
+//  Copyright (c) 2015 NetJets. All rights reserved.
 //
 
-#import "NJOPSettingsTableViewController.h"
-#import "NJOPLoginViewController.h"
-#import "NJOPOAuthClient.h"
+#import "NJOPDisplayUnitsTableViewController.h"
 
-@interface NJOPSettingsTableViewController ()
+@interface NJOPDisplayUnitsTableViewController ()
 
 @end
 
-@implementation NJOPSettingsTableViewController
+@implementation NJOPDisplayUnitsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,7 +22,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,35 +29,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)logoutTapped:(id)sender {
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    NJOPLoginViewController *loginVC = [storyboard instantiateInitialViewController];
-    
-    [self.navigationController presentViewController:loginVC animated:YES completion:^{
-        [[NJOPOAuthClient sharedInstance] resetCredential];
-    }];
-    
-//    
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        [self.navigationController pushViewController:loginVC animated:YES];
-//    }];
-    
-}
+#pragma mark - Table view data source
 
-//#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 0;
-//}
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
