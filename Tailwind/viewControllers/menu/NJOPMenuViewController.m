@@ -19,8 +19,14 @@
     // Do any additional setup after loading the view from its nib.
     self.hambergerViewController = nil; 
     self.OSViewController = nil;
+    
     [self setMenuSizesAndPositions];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -50,18 +56,23 @@
     if (self.buttonState == menuButtonNone) {
         [self expandHamburger];
     } else if (self.buttonState == menuButtonOwnerServices) {
-        [self contractOS];
         [self expandHamburger];
     } else {
         [self contractHamburger];
     }
+    
 }
 
 - (void) expandHamburger {
+    
+    [self contractOS];
+    
     if (self.hambergerViewController == nil) {
         self.hambergerViewController = [[NJOPHamburgerViewController alloc] initWithNibName:@"NJOPHamburgerViewController" bundle:nil];
         self.hambergerViewController.delegate = self;
     }
+    
+    
     //make sure we have the oright coordinates
     CGRect rect = self.view.frame;
     
@@ -84,10 +95,13 @@
     } completion:^(BOOL finished) {
         // eventually, do something here
         self.buttonState = menuBUttonHamburger;
+        self.hamburgerButton.backgroundColor = [UIColor blackColor];
+        [self.hamburgerButton setImage:[UIImage imageNamed:@"menu-hamburger-on"] forState:UIControlStateNormal];
     } ];
 }
 
 - (void) contractHamburger {
+    
     //make sure we have the oright coordinates
     CGRect rect = self.view.frame;
     
@@ -104,6 +118,8 @@
     } completion:^(BOOL finished) {
         // eventually, do something here
         self.buttonState = menuButtonNone;
+        self.hamburgerButton.backgroundColor = [UIColor whiteColor];
+        [self.hamburgerButton setImage:[UIImage imageNamed:@"menu-hamburger-off"] forState:UIControlStateNormal];
     } ];
 }
 
@@ -112,14 +128,15 @@
     if (self.buttonState == menuButtonNone) {
         [self expandOS];
     } else if (self.buttonState == menuBUttonHamburger) {
-        [self contractHamburger];
         [self expandOS];
     } else {
         [self contractOS];
     }
+    
 }
 
 - (void) contractOS {
+    
     CGRect rect = self.view.frame;
     
     float finalY = rect.origin.y;
@@ -129,14 +146,20 @@
         self.OSViewController.view.frame = final;
     } completion:^(BOOL finished) {
         self.buttonState = menuButtonNone;
+        self.ownerServicesButton.backgroundColor = [UIColor whiteColor];
+        [self.ownerServicesButton setImage:[UIImage imageNamed:@"menu-os-off"] forState:UIControlStateNormal];
     } ];
 }
 
 - (void) expandOS {
+    
+    [self contractHamburger];
+    
     if (self.OSViewController == nil) {
         self.OSViewController = [[NJOPOSViewController alloc] initWithNibName:@"NJOPOSViewController" bundle:nil];
         self.OSViewController.delegate = self;
     }
+    
     //make sure we have the oright coordinates
     CGRect rect = self.view.frame;
     
@@ -159,6 +182,8 @@
     } completion:^(BOOL finished) {
         // eventually, do something here
         self.buttonState = menuButtonOwnerServices;
+        self.ownerServicesButton.backgroundColor = [UIColor blackColor];
+        [self.ownerServicesButton setImage:[UIImage imageNamed:@"menu-os-on"] forState:UIControlStateNormal];
     } ];
 }
 

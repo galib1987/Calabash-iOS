@@ -17,6 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+//    @property (weak, nonatomic) IBOutlet UIButton *homeButton;
+//    @property (weak, nonatomic) IBOutlet UIButton *accountButton;
+//    @property (weak, nonatomic) IBOutlet UIButton *messagesButton;
+//    @property (weak, nonatomic) IBOutlet UIButton *flighteButton;
+//    @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+//    @property (weak, nonatomic) IBOutlet UIButton *bookButton;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+//    [self.homeButton setImage:[UIImage imageNamed:@"menu-btn-home-on"] forState:UIControlStateSelected | UIControlStateHighlighted];
+//    [self.accountButton setImage:[UIImage imageNamed:@"menu-btn-account-off"] forState:UIControlStateSelected | UIControlStateHighlighted];
+//    [self.messagesButton setImage:[UIImage imageNamed:@"menu-btn-messages-off"] forState:UIControlStateSelected | UIControlStateSelected];
 }
 
 - (void)didReceiveMemoryWarning {
