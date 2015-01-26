@@ -19,8 +19,14 @@
     // Do any additional setup after loading the view from its nib.
     self.hambergerViewController = nil; 
     self.OSViewController = nil;
+    
     [self setMenuSizesAndPositions];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -60,6 +66,7 @@
         [self contractOS];
         self.buttonState = menuButtonNone;
     }
+    
 }
 
 - (void) expandHamburger {
@@ -69,6 +76,8 @@
         self.hambergerViewController = [[NJOPHamburgerViewController alloc] initWithNibName:@"NJOPHamburgerViewController" bundle:nil];
         self.hambergerViewController.delegate = self;
     }
+    
+    
     //make sure we have the oright coordinates
     CGRect rect = self.view.frame;
     
@@ -129,6 +138,7 @@
         [self contractHamburger];
         self.buttonState = menuButtonNone;
     }
+    
 }
 
 - (void) contractOS {
@@ -157,6 +167,7 @@
         self.OSViewController = [[NJOPOSViewController alloc] initWithNibName:@"NJOPOSViewController" bundle:nil];
         self.OSViewController.delegate = self;
     }
+    
     //make sure we have the oright coordinates
     CGRect rect = self.view.frame;
     
