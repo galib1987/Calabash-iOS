@@ -9,7 +9,7 @@
 #import "NJOPWelcomeContentController.h"
 
 @interface NJOPWelcomeContentController ()
-
+@property (weak, nonatomic) IBOutlet UIImageView *dividerBar;
 @end
 
 @implementation NJOPWelcomeContentController
@@ -34,6 +34,10 @@
         [self.buttonB removeFromSuperview];
     }
     
+    if (!self.displayed) {
+        self.headerLabel.alpha = self.descLabel.alpha = self.dividerBar.alpha = self.buttonA.alpha = self.buttonB.alpha = 0;
+    }
+    
     self.view.backgroundColor = [UIColor clearColor];
     self.maskHole.layer.masksToBounds = true;
 }
@@ -55,10 +59,10 @@
     CGFloat offscreenHeight = self.bgImage.frame.origin.y;
     [self.bgImage setFrame:CGRectOffset(self.bgImage.bounds, (percentage-1)*150-offscreenWidth/2, offscreenHeight)];
     
-    if (!self.displayed) {
+    /*if (!self.displayed) {
         [self fadeInDownItem:self.headerLabel toPercentage:percentage];
         [self fadeInDownItem:self.descLabel toPercentage:percentage];
-    }
+    }*/
     
 }
 
@@ -68,7 +72,18 @@
     [item setTransform:CGAffineTransformMakeTranslation(0, (curvedPercentage-1)*15)];
 }
 
+- (void)animateFadeInUp {
+    self.headerLabel.transform = self.descLabel.transform = self.dividerBar.transform = self.buttonA.transform = self.buttonB.transform = CGAffineTransformMakeTranslation(0, 30);
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.headerLabel.alpha = self.descLabel.alpha = self.dividerBar.alpha = self.buttonA.alpha = self.buttonB.alpha = 1;
+        self.headerLabel.transform = self.descLabel.transform = self.dividerBar.transform = self.buttonA.transform = self.buttonB.transform = CGAffineTransformIdentity;
+    } completion: nil];
+}
+
 - (void)didFinishDisplay {
+    if (!self.displayed) {
+        [self animateFadeInUp];
+    }
     self.displayed = true;
 }
 
