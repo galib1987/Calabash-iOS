@@ -18,12 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-//    @property (weak, nonatomic) IBOutlet UIButton *homeButton;
-//    @property (weak, nonatomic) IBOutlet UIButton *accountButton;
-//    @property (weak, nonatomic) IBOutlet UIButton *messagesButton;
-//    @property (weak, nonatomic) IBOutlet UIButton *flighteButton;
-//    @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
-//    @property (weak, nonatomic) IBOutlet UIButton *bookButton;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
