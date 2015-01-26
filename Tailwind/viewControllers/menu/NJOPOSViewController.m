@@ -8,14 +8,14 @@
 
 #import "NJOPOSViewController.h"
 #import "NJOPFlightHTTPClient.h"
-#import "NJOPSession.h"
+#import "NJOPOAuthClient.h"
 #import "NJOPMenuViewController.h"
 
 @import MessageUI;
 
 @interface NJOPOSViewController () <MFMailComposeViewControllerDelegate>
 @property (nonatomic) NSArray *accounts;
-@property (nonatomic) NJOPSession *session;
+@property (nonatomic) NJOPOAuthClient *session;
 
 @end
 
@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view from its nib.
     [self configureSlider];
     
-    self.session = [NJOPSession sharedInstance];
+    self.session = [NJOPOAuthClient sharedInstance];
     
     self.latenessSlider.value = 20;
     
@@ -63,7 +63,8 @@
 }
 
 - (NSDictionary *)getOSRInfo {
-    NJOPSession *session = [NJOPSession sharedInstance];
+    
+    NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
     NSLog(@"%@",session.accounts);
     
     NSDictionary *accountDict = session.accounts[0];

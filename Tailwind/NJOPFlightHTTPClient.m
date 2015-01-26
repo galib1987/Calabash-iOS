@@ -10,7 +10,6 @@
 #import "NJOPOAuthClient.h"
 #import "NJOPIndividual.h"
 #import "NJOPReservation.h"
-#import "NJOPSession.h"
 #import "NJOPTailwindPM.h"
 #import "NJOPRequest2.h"
 #import "NJOPReservation2.h"
@@ -69,45 +68,110 @@
             NSError *jsonError = nil;
             NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
             
-            // parse & save to core data here
-            NSArray *requests = result[@"requests"];
-            NSArray *accounts = result[@"individual"][@"accounts"];
-            NSError *error = nil;
+            // set individual for session
+            NSDictionary *individualJSON = [result valueForKeyPath:@"individual"];
+            NJOPIndividual *individual = [NJOPIndividual individualWithDictionaryRepresentation:individualJSON];
+            [[NJOPOAuthClient sharedInstance] setIndividual:individual];
             
-            NJOPTailwindPM *persistenceManager = [NJOPTailwindPM sharedInstance];
-            NSManagedObjectContext *context = [persistenceManager mainMOC];
+            // set accounts for individual
+            NSArray *accountsJSON = [individualJSON valueForKeyPath:@"accounts"];
+            [[NJOPOAuthClient sharedInstance] setAccounts:accountsJSON];
             
-            for (NSDictionary *accountDict in accounts) {
-                NJOPAccount *newAccount = [NSEntityDescription insertNewObjectForEntityForName:@"Account"
-                                                                        inManagedObjectContext:context];
-                newAccount.accountID = accountDict[@"accountId"];
-                NSMutableSet *reservationsSet = [[NSMutableSet alloc] init];
-                
-                for (NSDictionary *requestDict in requests) {
-                    if ([requestDict[@"accountId"] isEqualToNumber:newAccount.accountID]) {
-                        NJOPReservation2 *newReservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation"
-                                                                                 inManagedObjectContext:context];
-                        [reservationsSet addObject:newReservation];
-
+            // set requests for account
+            NSMutableArray *reservationsArray = [NSMutableArray new];
+            NSString* jsonDateFormat = @"yyyy-MM-dd'T'HH:mm:ssZ";
+            NSDateFormatter* jsonDateFormatter = [NSDateFormatter new];
+            [jsonDateFormatter setDateFormat:jsonDateFormat];
+            NSString *jsonString = @"";
+            
+            NSArray *requestsJSON = [result valueForKeyPath:@"requests"];
+            if ([requestsJSON count] > 0) {
+                for (NSDictionary *requestDict in requestsJSON) {
+                    if (requestDict != nil) {
+                        NJOPReservation *reservation = [NJOPReservation new];
+                        
+                        reservation.reservationId = requestDict[@"reservationId"];
+                        reservation.aircraftType = requestDict[@"guaranteedAircraftTypeDescription"];
+                        reservation.departureTimeZone = [NSTimeZone timeZoneWithAbbreviation:requestDict[@"departureTimeZoneFormat"]];
+                        reservation.departureDate = [jsonDateFormatter dateFromString:requestDict[@"etdGmt"]];
+                        reservation.departureTime = [reservation.departureDate formattedDateWithFormat:@"hh:mma zzz"
+                                                                                              timeZone:reservation.departureTimeZone];
+                        
+                        reservation.arrivalTimeZone = [NSTimeZone timeZoneWithAbbreviation:requestDict[@"arrivalTimeZoneFormat"]];
+                        reservation.arrivalDate = [jsonDateFormatter dateFromString:requestDict[@"etaGmt"]];
+                        reservation.arrivalTime = [reservation.arrivalDate formattedDateWithFormat:@"hh:mma zzz"
+                                                                                          timeZone:reservation.arrivalTimeZone];
+                        
+                        reservation.departureDateString = [reservation.departureDate njop_spacialDate:@"MMM DD yyyy"
+                                                                                             timeZone:reservation.departureTimeZone];
+                        
+                        reservation.arrivalDateString = [reservation.arrivalDate njop_spacialDate:@"MMM DD yyyy"
+                                                                                         timeZone:reservation.departureTimeZone];
+                        
+                        reservation.arrivalAirportId = requestDict[@"arrivalAirportId"];
+                        reservation.departureAirportId = requestDict[@"departureAirportId"];
+                        
+                        reservation.tailNumber = requestDict[@"tailNumber"];
+                        
+                        reservation.departureFboName = requestDict[@"departureFboName"];
+                        reservation.arrivalFboName = requestDict[@"arrivalFboName"];
+                        
+                        reservation.departureAirportCity = requestDict[@"departureAirportCity"];
+                        reservation.arrivalAirportCity = requestDict[@"arrivalAirportCity"];
+                        
+                        reservation.estimatedTripTimeNumber = requestDict[@"estimatedTripTime"];
+                        reservation.travelHours = @(reservation.estimatedTripTimeNumber.integerValue);
+                        reservation.travelMinutes = @(ceilf((reservation.estimatedTripTimeNumber.floatValue - [reservation.travelHours floatValue])* 60));
+                        
+                        reservation.travelTime = [NSString stringWithFormat:@"%@h %@m",
+                                                  reservation.travelHours,
+                                                  reservation.travelMinutes];
+                        
+                        reservation.stops = @([requestDict[@"noOfFuelStops"] integerValue]);
+                        reservation.stopsText = [reservation.stops boolValue] ? @"" : @"Non Stop";
+//                        reservation.rawData = jsonString;
+                        reservation.passengers = requestDict[@"passengerManifest"][@"passengers"];
+                        reservation.cateringOrders = requestDict[@"cateringOrders"][0][@"cateringItems"];
+                        reservation.groundOrders = requestDict[@"groundOrders"];
+                        
+                        [reservationsArray addObject:reservation];
                     }
                 }
-                
-                [newAccount setReservations:reservationsSet];
             }
             
-            NSLog(@"%@", [context registeredObjects]);
+            [[NJOPOAuthClient sharedInstance] setReservations:reservationsArray];
             
+            if (completionHandler) {
+                completionHandler(reservationsArray, nil);
+            }
             
+            // parse & save to core data here
+//            NSArray *requests = result[@"requests"];
+//            NSArray *accounts = result[@"individual"][@"accounts"];
+//            NSError *error = nil;
+//            
+//            NJOPTailwindPM *persistenceManager = [NJOPTailwindPM sharedInstance];
+//            NSManagedObjectContext *context = [persistenceManager mainMOC];
+//            
 //            for (NSDictionary *accountDict in accounts) {
-//                [persistenceManager addAccountWithId:accountDict[@"accountId"]];
-//                NSLog(@"%@", [context registeredObjects]);
+//                NJOPAccount *newAccount = [NSEntityDescription insertNewObjectForEntityForName:@"Account"
+//                                                                        inManagedObjectContext:context];
+//                newAccount.accountID = accountDict[@"accountId"];
+//                NSMutableSet *reservationsSet = [[NSMutableSet alloc] init];
+//                
+//                for (NSDictionary *requestDict in requests) {
+//                    if ([requestDict[@"accountId"] isEqualToNumber:newAccount.accountID]) {
+//                        NJOPReservation2 *newReservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation"
+//                                                                                 inManagedObjectContext:context];
+//                        [reservationsSet addObject:newReservation];
+//
+//                    }
+//                }
+//                
+//                [newAccount setReservations:reservationsSet];
 //            }
 //            
-//            for (NSDictionary *requestDict in requests) {
-//                [persistenceManager addRequestWithId:requestDict[@"requestId"]];
-//                [persistenceManager addReservationWithId:requestDict[@"reservationId"]];
-//                NSLog(@"%@", [context registeredObjects]);
-//            }
+//            NSLog(@"%@", [context registeredObjects]);
             
         }
         

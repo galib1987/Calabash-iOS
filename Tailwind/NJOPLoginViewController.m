@@ -11,6 +11,7 @@
 #import "NCLInfoPresenter.h"
 #import "NJOPConfig.h"
 #import "NJOPOAuthClient.h"
+#import "NJOPFlightHTTPClient.h"
 
 @interface NJOPLoginViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) NJOPLoginViewUserInput* userInput;

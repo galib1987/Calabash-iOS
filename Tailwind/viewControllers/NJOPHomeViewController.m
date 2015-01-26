@@ -40,11 +40,10 @@
     [self.coverView setUserInteractionEnabled:NO];
     
     [NJOPResigner globalResignFirstResponder]; // temporary solution to keyboard on login
-    
-//    NJOPFlightHTTPClient *client = [NJOPFlightHTTPClient sharedInstance];
-//    [client loadBriefWithCompletion:nil];
-    
+
     [self.view addSubview:self.coverView];
+    
+    [self loadDataSource];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -65,7 +64,7 @@
     __weak NJOPHomeViewController* wself = self;
     
     NSDictionary *info = nil;
-    NJOPSession *session = [NJOPSession sharedInstance];
+    NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
     if ([session.reservations count] > 0) {
         [self updateWithReservations:session.reservations];
         [UIView animateWithDuration:0.2 animations:^{
@@ -76,20 +75,23 @@
     } else {
         if (USE_STATIC_DATA == 0) {
             //        NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
-            NSString *accessToken = [[NJOPOAuthClient sharedInstance] accessToken:nil];
-            NSString *urlString = [NSString stringWithFormat:@"https://%@%@?appAgent=%@&access_token=%@",API_HOSTNAME, URL_BRIEF,API_SOURCE_IDENTIFIER,accessToken];
-            if ([urlString length] > 20) {
-                info = [NSDictionary dictionaryWithObjectsAndKeys:urlString,@"apiURL", API_HOSTNAME, @"host",nil];
-            }
-        }
-        [NJOPClient GETReservationsWithInfo:info completion:^(NSArray *reservations, NSError *error) {
-            [wself updateWithReservations:reservations];
-            [UIView animateWithDuration:0.2 animations:^{
-                [self.coverView setAlpha:0.0];
-            } completion:^(BOOL finished) {
-                [self.coverView removeFromSuperview];
+//            NSString *accessToken = [[NJOPOAuthClient sharedInstance] accessToken:nil];
+//            NSString *urlString = [NSString stringWithFormat:@"https://%@%@?appAgent=%@&access_token=%@",API_HOSTNAME, URL_BRIEF,API_SOURCE_IDENTIFIER,accessToken];
+//            if ([urlString length] > 20) {
+//                info = [NSDictionary dictionaryWithObjectsAndKeys:urlString,@"apiURL", API_HOSTNAME, @"host",nil];
+//            }
+            NJOPFlightHTTPClient *client = [NJOPFlightHTTPClient sharedInstance];
+            [client loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
+                [wself updateWithReservations:reservations];
+                [UIView animateWithDuration:0.2 animations:^{
+                    [self.coverView setAlpha:0.0];
+                } completion:^(BOOL finished) {
+                    [self.coverView removeFromSuperview];
+                }];
             }];
-        }];
+        
+        }
+        
     }
 }
 
