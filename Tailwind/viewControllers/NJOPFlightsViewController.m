@@ -10,7 +10,7 @@
 #import "NJOPClient+flights.h"
 #import "NJOPReservation.h"
 #import "NJOPFlightsDetailViewController.h"
-#import "NJOPSession.h"
+#import "NJOPOAuthClient.h"
 
 @interface NJOPFlightsViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -58,7 +58,7 @@
 
 -(void)loadDataSource {
     
-    NJOPSession *session = [NJOPSession sharedInstance];
+    NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
     
     __weak NJOPFlightsViewController* wself = self;
     

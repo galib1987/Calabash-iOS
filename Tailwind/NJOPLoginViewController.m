@@ -11,6 +11,7 @@
 #import "NCLInfoPresenter.h"
 #import "NJOPConfig.h"
 #import "NJOPOAuthClient.h"
+#import "NJOPFlightHTTPClient.h"
 
 @interface NJOPLoginViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) NJOPLoginViewUserInput* userInput;
@@ -218,23 +219,18 @@
 }
 
 - (void) displayHome {
-    /*
-    if (USE_STATIC_DATA == 0) {
-        
-//        NNNOAuthClient *userSessoion = [NNNOAuthClient sharedInstance];
-//        NSLog(@"USER SESSION TOKEN: %@",userSessoion.credential.accessToken);
-//        NSLog(@"USER REFRESH TOKEN: %@",userSessoion.credential.refreshToken);
-//        NSLog(@"USER EXPIRATION: %@",userSessoion.credential.expiration);
-        NSString *accessToken = [[NJOPOAuthClient sharedInstance] accessToken:nil];
-//        [self presentMessage:accessInfo withTitle:@"Login Success!!"];
-        NSString *urlString = [NSString stringWithFormat:@"%@%@?appAgent=%@&access_token=%@",API_HOSTNAME, URL_BRIEF,API_SOURCE_IDENTIFIER,accessToken];
-        NSLog(@"get Brief: %@",urlString);
-        //[NJOPClient GETReservationWithInfo:<#(NSDictionary *)#> completion:<#^(NJOPReservation *reservation, NSError *error)completionHandler#>];
-    }
-     */
     
-    NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Home",menuStoryboardName,@"HomeViewController",menuViewControllerName, nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif]; // using NSNotifications for menu changes because we also need to do other things in other places
+    if (USE_STATIC_DATA == 0) {
+        NJOPFlightHTTPClient *client = [NJOPFlightHTTPClient sharedInstance];
+        [client loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
+            NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Home",menuStoryboardName,@"HomeViewController",menuViewControllerName, nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif];
+        }];
+        
+    }
+    
+//    NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Home",menuStoryboardName,@"HomeViewController",menuViewControllerName, nil];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif]; // using NSNotifications for menu changes because we also need to do other things in other places
     //UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
     //UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
     
