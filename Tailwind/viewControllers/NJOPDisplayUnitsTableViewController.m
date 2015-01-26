@@ -10,6 +10,8 @@
 
 @interface NJOPDisplayUnitsTableViewController ()
 
+@property (nonatomic, weak) IBOutlet UITableViewCell *dateFormatCell;
+
 @end
 
 @implementation NJOPDisplayUnitsTableViewController
