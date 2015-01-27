@@ -198,6 +198,7 @@
 		A7F2A21F1A773A5D003C4FC3 /* NJOPContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2A21E1A773A5D003C4FC3 /* NJOPContactViewController.m */; };
 		A7F2A2221A773CB6003C4FC3 /* NJOPContainerHolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2A2211A773CB6003C4FC3 /* NJOPContainerHolderViewController.m */; };
 		A7F2A2241A7741A9003C4FC3 /* Container.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F2A2231A7741A9003C4FC3 /* Container.storyboard */; };
+		A7ED8F9F1A770F5F003F9BBE /* advisorynotes.html in Resources */ = {isa = PBXBuildFile; fileRef = A7ED8F9E1A770F5F003F9BBE /* advisorynotes.html */; };
 		A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */; };
 		A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */; };
 		A7F2CA4C1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */; };
@@ -487,6 +488,7 @@
 		A7F2A2201A773CB6003C4FC3 /* NJOPContainerHolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPContainerHolderViewController.h; path = "Container ViewControllers/NJOPContainerHolderViewController.h"; sourceTree = "<group>"; };
 		A7F2A2211A773CB6003C4FC3 /* NJOPContainerHolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPContainerHolderViewController.m; path = "Container ViewControllers/NJOPContainerHolderViewController.m"; sourceTree = "<group>"; };
 		A7F2A2231A7741A9003C4FC3 /* Container.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Container.storyboard; sourceTree = "<group>"; };
+		A7ED8F9E1A770F5F003F9BBE /* advisorynotes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = advisorynotes.html; sourceTree = "<group>"; };
 		A7F2CA431A4DC9F400D78804 /* NJOPBookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPBookingViewController.h; sourceTree = "<group>"; };
 		A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBookingViewController.m; sourceTree = "<group>"; };
 		A7F2CA471A4DCBF700D78804 /* NJOPFlightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightsViewController.h; sourceTree = "<group>"; };
@@ -878,6 +880,7 @@
 				A7A03EC61A4301A3004BE417 /* brief-test.json */,
 				A7A03EAE1A42ECE7004BE417 /* mobile-api-reservations-response.json */,
 				5255D2551A5D85F9002638F8 /* welcome-items.json */,
+				A7ED8F9E1A770F5F003F9BBE /* advisorynotes.html */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -1313,6 +1316,7 @@
 				1E36BD1C1A4887D700221E7D /* Welcome.storyboard in Resources */,
 				A77680B91A40659D00B2E7CF /* Nimbus-Sans-D-Light.otf in Resources */,
 				A74CDC621A6F951800F10A0C /* past-flights.json in Resources */,
+				A7ED8F9F1A770F5F003F9BBE /* advisorynotes.html in Resources */,
 				A7E007881A70B52F007BE054 /* NJOPOSViewController.xib in Resources */,
 				A77680891A4062FE00B2E7CF /* Home.storyboard in Resources */,
 				A77680AE1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold-Italic.otf in Resources */,
