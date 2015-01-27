@@ -217,50 +217,58 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Today, Aug 28, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNX-61-2sj">
+                                                    <rect key="frame" x="112" y="62" width="160" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="kPD-Ko-Nzj" firstAttribute="top" secondItem="YF2-Nu-XWI" secondAttribute="bottom" constant="8" symbolic="YES" id="3gH-8D-U7t"/>
+                                                <constraint firstItem="kPD-Ko-Nzj" firstAttribute="top" secondItem="YF2-Nu-XWI" secondAttribute="bottom" constant="10" id="3gH-8D-U7t"/>
                                                 <constraint firstItem="9i0-nU-Rin" firstAttribute="leading" secondItem="qd5-WT-QTZ" secondAttribute="leading" constant="20" symbolic="YES" id="5rm-Om-41I"/>
                                                 <constraint firstItem="L4l-gg-i7s" firstAttribute="centerX" secondItem="9i0-nU-Rin" secondAttribute="centerX" id="7Vw-Ve-fCc"/>
-                                                <constraint firstItem="YF2-Nu-XWI" firstAttribute="top" secondItem="6ng-lj-mgX" secondAttribute="bottom" multiplier="1.5" constant="8" symbolic="YES" id="9TT-y6-UxW"/>
-                                                <constraint firstItem="5aG-0g-IPt" firstAttribute="top" secondItem="8ly-kd-xH8" secondAttribute="bottom" multiplier="1.2" constant="8" symbolic="YES" id="B0d-o9-c0n"/>
+                                                <constraint firstItem="YF2-Nu-XWI" firstAttribute="top" secondItem="pAU-c4-ahz" secondAttribute="bottom" constant="20" id="4fL-yC-auw"/>
+                                                <constraint firstItem="5aG-0g-IPt" firstAttribute="top" secondItem="jpi-H1-eV4" secondAttribute="bottom" constant="10" id="4Yv-gz-abg"/>
+                                                <constraint firstAttribute="centerX" secondItem="XNX-61-2sj" secondAttribute="centerX" id="8qr-EL-VOe"/>
                                                 <constraint firstAttribute="centerX" secondItem="6ng-lj-mgX" secondAttribute="centerX" id="Etd-yq-AhD"/>
                                                 <constraint firstAttribute="centerX" secondItem="m8s-cA-xoa" secondAttribute="centerX" id="JkY-fH-QUm"/>
-                                                <constraint firstItem="9cy-V4-ON3" firstAttribute="top" secondItem="xzc-VF-1ii" secondAttribute="bottom" constant="8" symbolic="YES" id="Ktr-9l-vD5"/>
+                                                <constraint firstItem="XNX-61-2sj" firstAttribute="top" secondItem="6ng-lj-mgX" secondAttribute="bottom" constant="30" id="Koi-xF-qWa"/>
+                                                <constraint firstItem="9cy-V4-ON3" firstAttribute="top" secondItem="xzc-VF-1ii" secondAttribute="bottom" constant="0" id="Ktr-9l-vD5"/>
                                                 <constraint firstAttribute="centerX" secondItem="w8T-0d-BdT" secondAttribute="centerX" id="LjH-ue-zuj"/>
-                                                <constraint firstItem="gpd-lz-VLW" firstAttribute="top" secondItem="JKh-HE-9cn" secondAttribute="bottom" constant="8" symbolic="YES" id="QA4-az-lCO"/>
+                                                <constraint firstItem="gpd-lz-VLW" firstAttribute="top" secondItem="JKh-HE-9cn" secondAttribute="bottom" constant="8" id="QA4-az-lCO"/>
                                                 <constraint firstAttribute="centerX" secondItem="5aG-0g-IPt" secondAttribute="centerX" id="QJb-Ar-II4"/>
                                                 <constraint firstItem="xzc-VF-1ii" firstAttribute="centerX" secondItem="JKh-HE-9cn" secondAttribute="centerX" id="QcA-Fx-mUR"/>
-                                                <constraint firstItem="jpi-H1-eV4" firstAttribute="top" secondItem="Ajs-rW-Hjx" secondAttribute="bottom" constant="8" symbolic="YES" id="Qsr-Xt-Mg2"/>
+                                                <constraint firstItem="jpi-H1-eV4" firstAttribute="top" secondItem="Ajs-rW-Hjx" secondAttribute="bottom" id="Qsr-Xt-Mg2"/>
                                                 <constraint firstAttribute="centerX" secondItem="0mN-TR-qnb" secondAttribute="centerX" id="QtB-qM-Hi1"/>
                                                 <constraint firstAttribute="centerX" secondItem="kPD-Ko-Nzj" secondAttribute="centerX" id="URo-IC-I2q"/>
                                                 <constraint firstAttribute="trailing" secondItem="FLw-gg-0xb" secondAttribute="trailing" constant="8" id="XPB-OT-bjz"/>
                                                 <constraint firstAttribute="centerX" secondItem="YF2-Nu-XWI" secondAttribute="centerX" id="Xbb-NN-wd7"/>
                                                 <constraint firstItem="xzc-VF-1ii" firstAttribute="centerY" secondItem="9i0-nU-Rin" secondAttribute="centerY" id="Y3j-cW-LFq"/>
                                                 <constraint firstAttribute="centerX" secondItem="8ly-kd-xH8" secondAttribute="centerX" id="YFi-P9-esR"/>
-                                                <constraint firstItem="L4l-gg-i7s" firstAttribute="top" secondItem="jpi-H1-eV4" secondAttribute="bottom" multiplier="1.1" constant="8" symbolic="YES" id="YRG-A1-8KK"/>
-                                                <constraint firstItem="m8s-cA-xoa" firstAttribute="top" secondItem="0mN-TR-qnb" secondAttribute="bottom" constant="8" symbolic="YES" id="Z7h-u7-TSa"/>
+                                                <constraint firstItem="L4l-gg-i7s" firstAttribute="top" secondItem="XNX-61-2sj" secondAttribute="bottom" constant="15" id="47a-oT-QcU"/>
+                                                <constraint firstItem="m8s-cA-xoa" firstAttribute="top" secondItem="0mN-TR-qnb" secondAttribute="bottom" constant="5" id="Z7h-u7-TSa"/>
                                                 <constraint firstItem="9cy-V4-ON3" firstAttribute="centerX" secondItem="xzc-VF-1ii" secondAttribute="centerX" id="c9D-sR-aa5"/>
                                                 <constraint firstItem="pAU-c4-ahz" firstAttribute="centerX" secondItem="9i0-nU-Rin" secondAttribute="centerX" id="gNL-JP-PLY"/>
                                                 <constraint firstAttribute="centerX" secondItem="Ajs-rW-Hjx" secondAttribute="centerX" id="h8w-Wc-bkj"/>
                                                 <constraint firstItem="FLw-gg-0xb" firstAttribute="leading" secondItem="qd5-WT-QTZ" secondAttribute="leading" constant="8" id="hqq-Pl-32Z"/>
-                                                <constraint firstItem="9i0-nU-Rin" firstAttribute="top" secondItem="owV-gh-gNt" secondAttribute="bottom" constant="8" symbolic="YES" id="hsL-ki-662"/>
+                                                <constraint firstItem="9i0-nU-Rin" firstAttribute="top" secondItem="owV-gh-gNt" secondAttribute="bottom" constant="5" id="hsL-ki-662"/>
                                                 <constraint firstAttribute="centerX" secondItem="jpi-H1-eV4" secondAttribute="centerX" id="mmn-qt-RNN"/>
                                                 <constraint firstItem="owV-gh-gNt" firstAttribute="centerY" secondItem="0mN-TR-qnb" secondAttribute="centerY" id="oKR-iy-pTf"/>
-                                                <constraint firstItem="owV-gh-gNt" firstAttribute="top" secondItem="L4l-gg-i7s" secondAttribute="bottom" constant="8" symbolic="YES" id="omu-Md-Mc3"/>
+                                                <constraint firstItem="owV-gh-gNt" firstAttribute="top" secondItem="L4l-gg-i7s" secondAttribute="bottom" constant="8" id="omu-Md-Mc3"/>
                                                 <constraint firstItem="xzc-VF-1ii" firstAttribute="centerX" secondItem="gpd-lz-VLW" secondAttribute="centerX" id="oxa-es-ceA"/>
-                                                <constraint firstItem="Ajs-rW-Hjx" firstAttribute="top" secondItem="w8T-0d-BdT" secondAttribute="bottom" constant="8" symbolic="YES" id="pR4-34-U6n"/>
-                                                <constraint firstItem="8ly-kd-xH8" firstAttribute="top" secondItem="kPD-Ko-Nzj" secondAttribute="bottom" constant="8" symbolic="YES" id="r8E-Zg-fet"/>
+                                                <constraint firstItem="Ajs-rW-Hjx" firstAttribute="top" secondItem="8ly-kd-xH8" secondAttribute="bottom" constant="20" id="PXN-mx-WMx"/>
+                                                <constraint firstItem="8ly-kd-xH8" firstAttribute="top" secondItem="kPD-Ko-Nzj" secondAttribute="bottom" id="r8E-Zg-fet"/>
                                                 <constraint firstAttribute="centerX" secondItem="m8s-cA-xoa" secondAttribute="centerX" id="v1F-eB-qns"/>
-                                                <constraint firstItem="pAU-c4-ahz" firstAttribute="top" secondItem="9i0-nU-Rin" secondAttribute="bottom" constant="8" symbolic="YES" id="vWh-YA-mRH"/>
+                                                <constraint firstItem="pAU-c4-ahz" firstAttribute="top" secondItem="9i0-nU-Rin" secondAttribute="bottom" constant="0" id="vWh-YA-mRH"/>
                                                 <constraint firstAttribute="trailing" secondItem="xzc-VF-1ii" secondAttribute="trailing" constant="20" symbolic="YES" id="vwH-Z3-ORE"/>
                                                 <constraint firstAttribute="bottom" secondItem="FLw-gg-0xb" secondAttribute="bottom" constant="8" id="wbh-Mu-vVH"/>
-                                                <constraint firstItem="6ng-lj-mgX" firstAttribute="top" secondItem="qd5-WT-QTZ" secondAttribute="top" constant="20" symbolic="YES" id="xmX-dB-4LQ"/>
+                                                <constraint firstItem="6ng-lj-mgX" firstAttribute="top" secondItem="qd5-WT-QTZ" secondAttribute="top" constant="15" id="xmX-dB-4LQ"/>
                                                 <constraint firstAttribute="centerX" secondItem="0mN-TR-qnb" secondAttribute="centerX" id="xog-aD-Lq5"/>
-                                                <constraint firstItem="xzc-VF-1ii" firstAttribute="top" secondItem="gpd-lz-VLW" secondAttribute="bottom" constant="8" symbolic="YES" id="yXU-i9-Keo"/>
-                                                <constraint firstItem="w8T-0d-BdT" firstAttribute="top" secondItem="5aG-0g-IPt" secondAttribute="bottom" constant="8" symbolic="YES" id="z3U-M3-adn"/>
-                                                <constraint firstItem="FLw-gg-0xb" firstAttribute="top" secondItem="pAU-c4-ahz" secondAttribute="bottom" constant="8" symbolic="YES" id="zSD-FP-50L"/>
+                                                <constraint firstItem="xzc-VF-1ii" firstAttribute="top" secondItem="gpd-lz-VLW" secondAttribute="bottom" constant="5" id="yXU-i9-Keo"/>
+                                                <constraint firstItem="w8T-0d-BdT" firstAttribute="top" secondItem="5aG-0g-IPt" secondAttribute="bottom" id="z3U-M3-adn"/>
+                                                <constraint firstItem="FLw-gg-0xb" firstAttribute="top" secondItem="w8T-0d-BdT" secondAttribute="bottom" constant="20" id="VD5-hI-6rn"/>
                                                 <constraint firstItem="owV-gh-gNt" firstAttribute="centerX" secondItem="9i0-nU-Rin" secondAttribute="centerX" id="znP-Ol-vcK"/>
                                             </constraints>
                                         </view>
