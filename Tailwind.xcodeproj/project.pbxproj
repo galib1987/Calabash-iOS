@@ -34,12 +34,13 @@
 		1E79C8971A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E79C8961A670ADF001B73B9 /* NJOPAirportResultTableViewCell.m */; };
 		1E7E55501A6F06DC00848E0B /* PDTSimpleCalendarViewWeekdayHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7E554F1A6F06DC00848E0B /* PDTSimpleCalendarViewWeekdayHeader.m */; };
 		276FF0641A76BB6B00F547F4 /* NJOPDisplayUnitsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0631A76BB6B00F547F4 /* NJOPDisplayUnitsTableViewController.m */; };
-		276FF0671A76BBA600F547F4 /* NJOPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0661A76BBA600F547F4 /* NJOPBaseTableViewController.m */; };
 		276FF06A1A76BD5000F547F4 /* NJOPSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0691A76BD5000F547F4 /* NJOPSettingsManager.m */; };
 		276FF06D1A76D56F00F547F4 /* NJOPDateFormatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF06C1A76D56F00F547F4 /* NJOPDateFormatTableViewController.m */; };
-		276FF0701A77D60500F547F4 /* NJOPPrivacyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF06F1A77D60500F547F4 /* NJOPPrivacyTableViewController.m */; };
 		276FF0731A77E25C00F547F4 /* NJOPSettingsBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0721A77E25C00F547F4 /* NJOPSettingsBaseViewController.m */; };
 		276FF0761A77E2D700F547F4 /* NJOPPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0751A77E2D700F547F4 /* NJOPPrivacyViewController.m */; };
+		276FF0791A780D8B00F547F4 /* NJOPSendFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0781A780D8B00F547F4 /* NJOPSendFeedbackViewController.m */; };
+		276FF07C1A7832B500F547F4 /* NJOPFeedbackSentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF07B1A7832B500F547F4 /* NJOPFeedbackSentViewController.m */; };
+		276FF07F1A783DA300F547F4 /* NJOPSettingsBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF07E1A783DA300F547F4 /* NJOPSettingsBaseTableViewController.m */; };
 		2AD96D2C90B7446D90304928 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 		30A4737F19D9E41A0045D7AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4737E19D9E41A0045D7AF /* main.m */; };
 		30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4738119D9E41A0045D7AF /* AppDelegate.m */; };
@@ -245,18 +246,20 @@
 		1E7E554F1A6F06DC00848E0B /* PDTSimpleCalendarViewWeekdayHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDTSimpleCalendarViewWeekdayHeader.m; sourceTree = "<group>"; };
 		276FF0621A76BB6B00F547F4 /* NJOPDisplayUnitsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDisplayUnitsTableViewController.h; sourceTree = "<group>"; };
 		276FF0631A76BB6B00F547F4 /* NJOPDisplayUnitsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDisplayUnitsTableViewController.m; sourceTree = "<group>"; };
-		276FF0651A76BBA600F547F4 /* NJOPBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPBaseTableViewController.h; sourceTree = "<group>"; };
-		276FF0661A76BBA600F547F4 /* NJOPBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBaseTableViewController.m; sourceTree = "<group>"; };
 		276FF0681A76BD5000F547F4 /* NJOPSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSettingsManager.h; sourceTree = "<group>"; };
 		276FF0691A76BD5000F547F4 /* NJOPSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsManager.m; sourceTree = "<group>"; };
 		276FF06B1A76D56F00F547F4 /* NJOPDateFormatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDateFormatTableViewController.h; sourceTree = "<group>"; };
 		276FF06C1A76D56F00F547F4 /* NJOPDateFormatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDateFormatTableViewController.m; sourceTree = "<group>"; };
-		276FF06E1A77D60500F547F4 /* NJOPPrivacyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPrivacyTableViewController.h; sourceTree = "<group>"; };
-		276FF06F1A77D60500F547F4 /* NJOPPrivacyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPrivacyTableViewController.m; sourceTree = "<group>"; };
 		276FF0711A77E25C00F547F4 /* NJOPSettingsBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSettingsBaseViewController.h; sourceTree = "<group>"; };
 		276FF0721A77E25C00F547F4 /* NJOPSettingsBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsBaseViewController.m; sourceTree = "<group>"; };
 		276FF0741A77E2D700F547F4 /* NJOPPrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPrivacyViewController.h; sourceTree = "<group>"; };
 		276FF0751A77E2D700F547F4 /* NJOPPrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPrivacyViewController.m; sourceTree = "<group>"; };
+		276FF0771A780D8B00F547F4 /* NJOPSendFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSendFeedbackViewController.h; sourceTree = "<group>"; };
+		276FF0781A780D8B00F547F4 /* NJOPSendFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSendFeedbackViewController.m; sourceTree = "<group>"; };
+		276FF07A1A7832B500F547F4 /* NJOPFeedbackSentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFeedbackSentViewController.h; sourceTree = "<group>"; };
+		276FF07B1A7832B500F547F4 /* NJOPFeedbackSentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFeedbackSentViewController.m; sourceTree = "<group>"; };
+		276FF07D1A783DA300F547F4 /* NJOPSettingsBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSettingsBaseTableViewController.h; sourceTree = "<group>"; };
+		276FF07E1A783DA300F547F4 /* NJOPSettingsBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsBaseTableViewController.m; sourceTree = "<group>"; };
 		30A4737919D9E41A0045D7AF /* Tailwind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tailwind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A4737D19D9E41A0045D7AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30A4737E19D9E41A0045D7AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -948,22 +951,24 @@
 			children = (
 				276FF0681A76BD5000F547F4 /* NJOPSettingsManager.h */,
 				276FF0691A76BD5000F547F4 /* NJOPSettingsManager.m */,
-				276FF0651A76BBA600F547F4 /* NJOPBaseTableViewController.h */,
-				276FF0661A76BBA600F547F4 /* NJOPBaseTableViewController.m */,
 				276FF0711A77E25C00F547F4 /* NJOPSettingsBaseViewController.h */,
 				276FF0721A77E25C00F547F4 /* NJOPSettingsBaseViewController.m */,
-				A7433C041A5311AE009BD3EB /* NJOPPushNotificationsTableViewController.h */,
-				A74C81841A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m */,
+				276FF07D1A783DA300F547F4 /* NJOPSettingsBaseTableViewController.h */,
+				276FF07E1A783DA300F547F4 /* NJOPSettingsBaseTableViewController.m */,
 				A7433C011A531184009BD3EB /* NJOPSettingsTableViewController.h */,
 				A7433C021A531184009BD3EB /* NJOPSettingsTableViewController.m */,
 				276FF0621A76BB6B00F547F4 /* NJOPDisplayUnitsTableViewController.h */,
 				276FF0631A76BB6B00F547F4 /* NJOPDisplayUnitsTableViewController.m */,
 				276FF06B1A76D56F00F547F4 /* NJOPDateFormatTableViewController.h */,
 				276FF06C1A76D56F00F547F4 /* NJOPDateFormatTableViewController.m */,
-				276FF06E1A77D60500F547F4 /* NJOPPrivacyTableViewController.h */,
-				276FF06F1A77D60500F547F4 /* NJOPPrivacyTableViewController.m */,
 				276FF0741A77E2D700F547F4 /* NJOPPrivacyViewController.h */,
 				276FF0751A77E2D700F547F4 /* NJOPPrivacyViewController.m */,
+				276FF0771A780D8B00F547F4 /* NJOPSendFeedbackViewController.h */,
+				276FF0781A780D8B00F547F4 /* NJOPSendFeedbackViewController.m */,
+				276FF07A1A7832B500F547F4 /* NJOPFeedbackSentViewController.h */,
+				276FF07B1A7832B500F547F4 /* NJOPFeedbackSentViewController.m */,
+				A7433C041A5311AE009BD3EB /* NJOPPushNotificationsTableViewController.h */,
+				A74C81841A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m */,
 			);
 			name = "Settings ViewControllers";
 			sourceTree = "<group>";
@@ -1463,6 +1468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276FF0791A780D8B00F547F4 /* NJOPSendFeedbackViewController.m in Sources */,
 				A786D6241A663B4A006EDA24 /* NJOPConfig.m in Sources */,
 				A7E0076A1A70B19F007BE054 /* NJOPPastFlightTableCell.m in Sources */,
 				A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */,
@@ -1476,7 +1482,6 @@
 				A77DBDFB1A725AD100B5F306 /* NetJetsCore.xcdatamodeld in Sources */,
 				A7E007481A70AFB1007BE054 /* NJOPMenuButton.m in Sources */,
 				55CA603B19E7FE22001E2FC6 /* NJOPValueTransformer.m in Sources */,
-				276FF0671A76BBA600F547F4 /* NJOPBaseTableViewController.m in Sources */,
 				A77680DB1A406C7D00B2E7CF /* NJOPReservation.m in Sources */,
 				A7CD0AFA1A5C868C00D45224 /* (null) in Sources */,
 				A7E0074B1A70AFBA007BE054 /* NJOPTableView.m in Sources */,
@@ -1519,10 +1524,12 @@
 				A7E007291A70AE3C007BE054 /* NJOPAdvisoryNotesCell.m in Sources */,
 				30A4737F19D9E41A0045D7AF /* main.m in Sources */,
 				A780A7F11A5E6392000911A7 /* NJOPPassengeManifestViewController.m in Sources */,
+				276FF07C1A7832B500F547F4 /* NJOPFeedbackSentViewController.m in Sources */,
 				A77DBDEA1A7257FB00B5F306 /* NJOPAircraftSpecMatrix.m in Sources */,
 				A7380F681A5881AA008AB5F6 /* NJOPTripCompleteCell.m in Sources */,
 				1E0D62291A69AA630076516F /* NJOPBookingReviewTableViewController.m in Sources */,
 				A7E007691A70B19F007BE054 /* NJOPMultilineTextField.m in Sources */,
+				276FF07F1A783DA300F547F4 /* NJOPSettingsBaseTableViewController.m in Sources */,
 				A7FC581F1A72AA3B00DE22B1 /* NJOPIntrospector.m in Sources */,
 				A77DBDEE1A7257FB00B5F306 /* NJOPFBO.m in Sources */,
 				A77DBDF31A7257FB00B5F306 /* NJOPRequest2.m in Sources */,
@@ -1585,7 +1592,6 @@
 				A7E007811A70B41F007BE054 /* NNNUserDefaultsManager.m in Sources */,
 				A77DBDEF1A7257FB00B5F306 /* NJOPFBOAddress.m in Sources */,
 				276FF0731A77E25C00F547F4 /* NJOPSettingsBaseViewController.m in Sources */,
-				276FF0701A77D60500F547F4 /* NJOPPrivacyTableViewController.m in Sources */,
 				A77DBDA81A72577300B5F306 /* NJOPNetJetsCorePM.m in Sources */,
 				A7E007351A70AE49007BE054 /* NJOPPassengerCell.m in Sources */,
 				A7E0076C1A70B19F007BE054 /* NJOPTextField.m in Sources */,

@@ -41,32 +41,43 @@
 		
 	} else if ([segue.identifier isEqualToString:@"privacySegue"]) {
 		UIViewController *destVC = segue.destinationViewController;
-		destVC.title = @"Privacy and Terms";
+		destVC.title = @"PRIVACY AND TERMS";
 	} else if ([segue.identifier isEqualToString:@"aboutSegue"]) {
 		UIViewController *destVC = segue.destinationViewController;
-		destVC.title = @"About this App";
+		destVC.title = @"ABOUT THIS APP";
 	}
 }
 
 - (IBAction)sendFeedbackTapped:(id)sender
 {
-	
+	[self performSegueWithIdentifier:@"feedbackSegue" sender:nil];
 }
 
 - (IBAction)logoutTapped:(id)sender {
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    NJOPLoginViewController *loginVC = [storyboard instantiateInitialViewController];
-    
-    [self.navigationController presentViewController:loginVC animated:YES completion:^{
-        [[NJOPOAuthClient sharedInstance] resetCredential];
-    }];
-    
-//    
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        [self.navigationController pushViewController:loginVC animated:YES];
-//    }];
-    
+	
+	__weak NJOPSettingsTableViewController *weakSelf = self;
+	
+	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+																			 message:@"Are you sure you want to log out?"
+																	  preferredStyle:UIAlertControllerStyleAlert];
+	[alertController addAction:[UIAlertAction actionWithTitle:@"GO BACK"
+														style:UIAlertActionStyleDefault
+													  handler:^(UIAlertAction *action) {
+														  //
+													  }]];
+	[alertController addAction:[UIAlertAction actionWithTitle:@"YES"
+														style:UIAlertActionStyleDefault
+													  handler:^(UIAlertAction *action) {
+														  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+														  NJOPLoginViewController *loginVC = [storyboard instantiateInitialViewController];
+														  
+														  [weakSelf.navigationController presentViewController:loginVC animated:YES completion:^{
+															  [[NJOPOAuthClient sharedInstance] resetCredential];
+														  }];
+													  }]];
+	[self presentViewController:alertController animated:YES completion:^{
+		//
+	}];
 }
 
 #pragma mark - UITableViewDelegate
