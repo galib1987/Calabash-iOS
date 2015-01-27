@@ -10,4 +10,6 @@
 
 @interface NJOPSettingsBaseViewController : UIViewController
 
+@property (nonatomic, assign) BOOL hideCustomBackButton;
+
 @end

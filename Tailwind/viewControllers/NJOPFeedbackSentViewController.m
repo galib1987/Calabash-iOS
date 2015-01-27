@@ -20,7 +20,7 @@
 {
 	[super viewDidLoad];
 	
-	self.navigationItem.backBarButtonItem = nil;
+	self.hideCustomBackButton = YES;
 }
 
 - (IBAction)goBackToSettingPressed:(id)sender

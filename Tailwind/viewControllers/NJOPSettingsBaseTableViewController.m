@@ -8,6 +8,12 @@
 
 #import "NJOPSettingsBaseTableViewController.h"
 
+@interface NJOPSettingsBaseTableViewController ()
+
+@property (nonatomic, strong) UIBarButtonItem *customBackButton;
+
+@end
+
 @implementation NJOPSettingsBaseTableViewController
 
 - (void)viewDidLoad {
@@ -27,7 +33,7 @@
 	self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
 	
 	UILabel *titleLabel = [[UILabel alloc] init];
-	titleLabel.text = self.navigationItem.title;// @"Settings";
+	titleLabel.text = self.navigationItem.title;
 	titleLabel.textColor = [UIColor whiteColor];
 	titleLabel.font = [UIFont boldSystemFontOfSize:16.0];
 	[titleLabel sizeToFit];
@@ -39,6 +45,35 @@
 	self.tableView.backgroundView = bgView;
 	
 	[self.tableView setSeparatorColor:[UIColor lightGrayColor]];
+	
+	if ([self.navigationController.viewControllers indexOfObject:self] > 0) {
+		UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 22.0, 17.0)];
+		[backBtn setBackgroundImage:[UIImage imageNamed:@"nav-back-button"] forState:UIControlStateNormal];
+		[backBtn addTarget:self action:@selector(backBtnTapped) forControlEvents:UIControlEventTouchUpInside];
+		self.customBackButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+		[self.navigationItem setLeftBarButtonItem:self.customBackButton];
+		self.navigationItem.hidesBackButton = YES;
+	}
+}
+
+- (void)setHideCustomBackButton:(BOOL)hideCustomBackButton
+{
+	_hideCustomBackButton = hideCustomBackButton;
+	
+	if ([self.navigationController.viewControllers indexOfObject:self] == 0) {
+		return;
+	}
+	
+	if (hideCustomBackButton) {
+		self.navigationItem.leftBarButtonItem = nil;
+	} else {
+		self.navigationItem.leftBarButtonItem = self.customBackButton;
+	}
+}
+
+- (void)backBtnTapped
+{
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
