@@ -8,6 +8,8 @@
 
 #import "NJOPDisplayUnitsTableViewController.h"
 
+#import "NJOPSettingsManager.h"
+
 @interface NJOPDisplayUnitsTableViewController ()
 
 @property (nonatomic, weak) IBOutlet UITableViewCell *dateFormatCell;
@@ -24,6 +26,28 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	switch ([NJOPSettingsManager sharedInstance].dateFormat) {
+		case NJOPSettingsManagerDateFormatUS:
+		{
+			self.dateFormatCell.detailTextLabel.text = @"US";
+		}
+			break;
+			
+		case NJOPSettingsManagerDateFormatEU:
+		{
+			self.dateFormatCell.detailTextLabel.text = @"EU";
+		}
+			break;
+			
+		default:
+			break;
+	}
 }
 
 - (void)didReceiveMemoryWarning {

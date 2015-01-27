@@ -44,13 +44,11 @@
 
 - (void)persistCurrentSettings
 {
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		NSDictionary *dic = @{
-							  kSettingsManagerUserDefaultsDateFormat : [NSNumber numberWithInteger:self.dateFormat]
-							  };
-		[[NSUserDefaults standardUserDefaults] setObject:dic forKey:kSettingsManagerUserDefaults];
-		[[NSUserDefaults standardUserDefaults] synchronize];
-	});
+	NSDictionary *dic = @{
+						  kSettingsManagerUserDefaultsDateFormat : [NSNumber numberWithInteger:self.dateFormat]
+						  };
+	[[NSUserDefaults standardUserDefaults] setObject:dic forKey:kSettingsManagerUserDefaults];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)setDateFormat:(NJOPSettingsManagerDateFormat)dateFormat
