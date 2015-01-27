@@ -72,6 +72,9 @@
 - (void) expandHamburger {
     self.hamburgerButton.selected = YES;
     self.hamburgerButton.backgroundColor = [UIColor mainNavButtonActiveColor];
+    
+    [self contractOS];
+    
     if (self.hambergerViewController == nil) {
         self.hambergerViewController = [[NJOPHamburgerViewController alloc] initWithNibName:@"NJOPHamburgerViewController" bundle:nil];
         self.hambergerViewController.delegate = self;
@@ -121,18 +124,17 @@
         self.hambergerViewController.view.frame = final;
     } completion:^(BOOL finished) {
         // eventually, do something here
-        self.buttonState = menuButtonNone;
     } ];
 }
 
 #pragma mark -- Owner Services button handling
 - (IBAction)ownerServiesPushed:(id)sender {
     if (self.buttonState == menuButtonNone) {
-        [self expandOS];
         [self contractHamburger];
+        [self expandOS];
     } else if (self.buttonState == menuBUttonHamburger) {
-        [self expandOS];
         [self contractHamburger];
+        [self expandOS];
     } else {
         [self contractOS];
         [self contractHamburger];
@@ -154,7 +156,6 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.OSViewController.view.frame = final;
     } completion:^(BOOL finished) {
-        self.buttonState = menuButtonNone;
     } ];
 }
 
@@ -162,6 +163,7 @@
     
     self.ownerServicesButton.selected = YES;
     self.ownerServicesButton.backgroundColor = [UIColor mainNavButtonActiveColor];
+    [self contractHamburger];
     
     if (self.OSViewController == nil) {
         self.OSViewController = [[NJOPOSViewController alloc] initWithNibName:@"NJOPOSViewController" bundle:nil];

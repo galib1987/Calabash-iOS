@@ -32,6 +32,14 @@
         self.automaticallyAdjustsScrollViewInsets=NO;
     }
     
+    
+    if( [self respondsToSelector:@selector(setEdgesForExtendedLayout:)] )
+    {
+        self.edgesForExtendedLayout=UIRectEdgeNone;
+        self.extendedLayoutIncludesOpaqueBars=NO;
+        self.automaticallyAdjustsScrollViewInsets=NO;
+    }
+    
     [self.tableView setContentInset:UIEdgeInsetsMake(-100,0,0,0)];
     
     // Do any additional setup after loading the view.
