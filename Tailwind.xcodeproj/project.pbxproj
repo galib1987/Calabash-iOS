@@ -37,6 +37,9 @@
 		276FF0671A76BBA600F547F4 /* NJOPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0661A76BBA600F547F4 /* NJOPBaseTableViewController.m */; };
 		276FF06A1A76BD5000F547F4 /* NJOPSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0691A76BD5000F547F4 /* NJOPSettingsManager.m */; };
 		276FF06D1A76D56F00F547F4 /* NJOPDateFormatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF06C1A76D56F00F547F4 /* NJOPDateFormatTableViewController.m */; };
+		276FF0701A77D60500F547F4 /* NJOPPrivacyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF06F1A77D60500F547F4 /* NJOPPrivacyTableViewController.m */; };
+		276FF0731A77E25C00F547F4 /* NJOPSettingsBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0721A77E25C00F547F4 /* NJOPSettingsBaseViewController.m */; };
+		276FF0761A77E2D700F547F4 /* NJOPPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0751A77E2D700F547F4 /* NJOPPrivacyViewController.m */; };
 		2AD96D2C90B7446D90304928 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
 		30A4737F19D9E41A0045D7AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4737E19D9E41A0045D7AF /* main.m */; };
 		30A4738219D9E41A0045D7AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4738119D9E41A0045D7AF /* AppDelegate.m */; };
@@ -248,6 +251,12 @@
 		276FF0691A76BD5000F547F4 /* NJOPSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsManager.m; sourceTree = "<group>"; };
 		276FF06B1A76D56F00F547F4 /* NJOPDateFormatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDateFormatTableViewController.h; sourceTree = "<group>"; };
 		276FF06C1A76D56F00F547F4 /* NJOPDateFormatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDateFormatTableViewController.m; sourceTree = "<group>"; };
+		276FF06E1A77D60500F547F4 /* NJOPPrivacyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPrivacyTableViewController.h; sourceTree = "<group>"; };
+		276FF06F1A77D60500F547F4 /* NJOPPrivacyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPrivacyTableViewController.m; sourceTree = "<group>"; };
+		276FF0711A77E25C00F547F4 /* NJOPSettingsBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSettingsBaseViewController.h; sourceTree = "<group>"; };
+		276FF0721A77E25C00F547F4 /* NJOPSettingsBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsBaseViewController.m; sourceTree = "<group>"; };
+		276FF0741A77E2D700F547F4 /* NJOPPrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPrivacyViewController.h; sourceTree = "<group>"; };
+		276FF0751A77E2D700F547F4 /* NJOPPrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPPrivacyViewController.m; sourceTree = "<group>"; };
 		30A4737919D9E41A0045D7AF /* Tailwind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tailwind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A4737D19D9E41A0045D7AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30A4737E19D9E41A0045D7AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -941,6 +950,8 @@
 				276FF0691A76BD5000F547F4 /* NJOPSettingsManager.m */,
 				276FF0651A76BBA600F547F4 /* NJOPBaseTableViewController.h */,
 				276FF0661A76BBA600F547F4 /* NJOPBaseTableViewController.m */,
+				276FF0711A77E25C00F547F4 /* NJOPSettingsBaseViewController.h */,
+				276FF0721A77E25C00F547F4 /* NJOPSettingsBaseViewController.m */,
 				A7433C041A5311AE009BD3EB /* NJOPPushNotificationsTableViewController.h */,
 				A74C81841A53146F001FF1A9 /* NJOPPushNotificationsTableViewController.m */,
 				A7433C011A531184009BD3EB /* NJOPSettingsTableViewController.h */,
@@ -949,6 +960,10 @@
 				276FF0631A76BB6B00F547F4 /* NJOPDisplayUnitsTableViewController.m */,
 				276FF06B1A76D56F00F547F4 /* NJOPDateFormatTableViewController.h */,
 				276FF06C1A76D56F00F547F4 /* NJOPDateFormatTableViewController.m */,
+				276FF06E1A77D60500F547F4 /* NJOPPrivacyTableViewController.h */,
+				276FF06F1A77D60500F547F4 /* NJOPPrivacyTableViewController.m */,
+				276FF0741A77E2D700F547F4 /* NJOPPrivacyViewController.h */,
+				276FF0751A77E2D700F547F4 /* NJOPPrivacyViewController.m */,
 			);
 			name = "Settings ViewControllers";
 			sourceTree = "<group>";
@@ -1555,6 +1570,7 @@
 				A7E007431A70AF58007BE054 /* NJOPFlightDetailCell.m in Sources */,
 				15EAFD7B1A6D4682003C3B8A /* NJOPFlightHTTPClient.m in Sources */,
 				A786D6111A66351F006EDA24 /* NJOPMenuViewController.m in Sources */,
+				276FF0761A77E2D700F547F4 /* NJOPPrivacyViewController.m in Sources */,
 				A77DBDC51A7257E000B5F306 /* _NJOPAircraftSpecMatrix.m in Sources */,
 				524417A01A6ECB7B00DA7868 /* PDTSimpleCalendarViewCell.m in Sources */,
 				1E7E55501A6F06DC00848E0B /* PDTSimpleCalendarViewWeekdayHeader.m in Sources */,
@@ -1568,6 +1584,8 @@
 				A77DBDA91A72577300B5F306 /* NJOPTailwindPM.m in Sources */,
 				A7E007811A70B41F007BE054 /* NNNUserDefaultsManager.m in Sources */,
 				A77DBDEF1A7257FB00B5F306 /* NJOPFBOAddress.m in Sources */,
+				276FF0731A77E25C00F547F4 /* NJOPSettingsBaseViewController.m in Sources */,
+				276FF0701A77D60500F547F4 /* NJOPPrivacyTableViewController.m in Sources */,
 				A77DBDA81A72577300B5F306 /* NJOPNetJetsCorePM.m in Sources */,
 				A7E007351A70AE49007BE054 /* NJOPPassengerCell.m in Sources */,
 				A7E0076C1A70B19F007BE054 /* NJOPTextField.m in Sources */,

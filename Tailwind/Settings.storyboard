@@ -54,6 +54,9 @@
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="sendFeedbackTapped:" destination="LEJ-BI-d5m" eventType="touchUpInside" id="FQm-36-dEA"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lET-Bp-Wgl">
                                     <rect key="frame" x="20" y="180" width="374" height="60"/>
@@ -117,7 +120,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <connections>
-                                            <segue destination="PZ9-kh-OGR" kind="show" id="zVf-nj-vGV"/>
+                                            <segue destination="PZ9-kh-OGR" kind="show" identifier="unitsSegue" id="ZJc-Aa-VB5"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="V40-oW-Smy" detailTextLabel="toO-tJ-Y6k" style="IBUITableViewCellStyleValue1" id="29n-Dp-4p1" userLabel="Privacy and Terms Cell">
@@ -141,7 +144,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <connections>
-                                            <segue destination="eOb-Ip-8kz" kind="show" id="wzz-yC-7cv"/>
+                                            <segue destination="JHO-Oh-rXM" kind="show" identifier="privacySegue" id="qbP-E0-CMY"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="1bm-Jy-bwN" detailTextLabel="CB4-l7-ebQ" style="IBUITableViewCellStyleValue1" id="hbK-8D-g7A" userLabel="About this App Cell">
@@ -164,6 +167,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <connections>
+                                            <segue destination="JHO-Oh-rXM" kind="show" identifier="aboutSegue" id="gB6-iG-BMM"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="L77-uY-evE" detailTextLabel="jrX-Rw-80n" style="IBUITableViewCellStyleValue1" id="f3O-xS-yN1" userLabel="Love this App Cell">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -228,11 +234,11 @@
             <objects>
                 <tableViewController title="Display Units" id="PZ9-kh-OGR" customClass="NJOPDisplayUnitsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MkN-g4-9qR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="7Bc-62-QBH" userLabel="Bogus Cell Hiding View">
-                            <rect key="frame" x="0.0" y="224" width="414" height="1"/>
+                            <rect key="frame" x="0.0" y="240" width="600" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -334,25 +340,26 @@
                             <outlet property="delegate" destination="PZ9-kh-OGR" id="ha5-fe-cAi"/>
                         </connections>
                     </tableView>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="dateFormatCell" destination="b1q-1h-5el" id="ErD-wA-Evb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dW6-FF-riB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="-10"/>
+            <point key="canvasLocation" x="1145" y="-643"/>
         </scene>
         <!--Date-->
         <scene sceneID="3l7-nJ-s7w">
             <objects>
                 <tableViewController title="Date" id="Plu-V0-ZpV" customClass="NJOPDateFormatTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Bqd-xa-RC1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="8gL-nh-Lb7" userLabel="Bogus Cell Hiding View">
-                            <rect key="frame" x="0.0" y="224" width="414" height="1"/>
+                            <rect key="frame" x="0.0" y="152" width="600" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -409,7 +416,8 @@
                             <outlet property="delegate" destination="Plu-V0-ZpV" id="mJg-TG-bBU"/>
                         </connections>
                     </tableView>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="euDateFormatCell" destination="cJj-jh-lTK" id="NXf-9S-cOy"/>
                         <outlet property="usDateFormatCell" destination="IjK-2Q-pL4" id="1M0-ga-Y31"/>
@@ -417,13 +425,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqK-gZ-ZoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1981" y="-10"/>
+            <point key="canvasLocation" x="1898" y="-643"/>
         </scene>
         <!--Privacy and Terms-->
         <scene sceneID="VUJ-Ot-SkD">
             <objects>
                 <tableViewController title="Privacy and Terms" id="eOb-Ip-8kz" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="408" sectionHeaderHeight="22" sectionFooterHeight="22" id="4or-Qc-MpB" customClass="NJOPTableView">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="408" sectionHeaderHeight="22" sectionFooterHeight="22" id="4or-Qc-MpB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -435,15 +443,17 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v7v-Dv-o0R" id="iBS-ym-Vh4">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PRIVACY AND TERMS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xsf-Q3-OdH">
-                                                    <rect key="frame" x="24" y="21" width="280" height="50"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="29"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tze-18-YJN">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tze-18-YJN">
                                                     <rect key="frame" x="24" y="74" width="350" height="6"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="6" id="RBc-oa-JAM"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="RBc-oa-JAM"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVs-UM-5tm">
                                                     <rect key="frame" x="24" y="88" width="350" height="262"/>
@@ -451,6 +461,24 @@
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="PRIVACY AND TERMS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xsf-Q3-OdH">
+                                                    <rect key="frame" x="24" y="21" width="281" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="8Pd-5U-sCa"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="MBK-ET-Q54"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="QOO-WU-FiI"/>
+                                                        <constraint firstAttribute="width" constant="281" id="svR-fE-3hE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="29"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="MBK-ET-Q54"/>
+                                                            <exclude reference="QOO-WU-FiI"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -494,7 +522,267 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="425-I2-Brm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="871"/>
+            <point key="canvasLocation" x="-69" y="1112"/>
+        </scene>
+        <!--Privacy and Terms-->
+        <scene sceneID="tYh-1n-arw">
+            <objects>
+                <tableViewController title="Privacy and Terms" id="3E3-cR-SB4" customClass="NJOPPrivacyTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VaM-K7-o0t">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection id="OgB-ln-Jeu">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="270" id="XkK-ha-k0U">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XkK-ha-k0U" id="0AK-jJ-hmI">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRIVACY AND TERMS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRh-40-Tl6">
+                                                    <rect key="frame" x="19" y="20" width="562" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="oSu-z7-gUf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxD-Xk-dUz">
+                                                    <rect key="frame" x="19" y="50" width="562" height="5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="5" id="jKu-iI-u7h"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59F-V7-7TC">
+                                                    <rect key="frame" x="19" y="65" width="562" height="186.5"/>
+                                                    <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum; Illa tamen simplicia, vestra versuta. Sin laboramus, quis est, qui alienae modum statuat industriae? Quamquam id quidem licebit iis existimare, qui legerint. Graece donan, Latine voluptatem vocant.
+
+Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. Maximas vero virtutes iacere omnis necesse est voluptate dominante. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere? Quae in controversiam veniunt, de iis, si placet, disseramus. Invidiosum nomen est, infame, suspectum. Egone quaeris, inquit, quid sentiam? Universa enim illorum ratione cum tota vestra confligendum puto.
+
+</mutableString>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="59F-V7-7TC" firstAttribute="top" secondItem="BxD-Xk-dUz" secondAttribute="bottom" constant="10" id="2jO-pK-jfC"/>
+                                                <constraint firstItem="59F-V7-7TC" firstAttribute="leading" secondItem="zRh-40-Tl6" secondAttribute="leading" id="KOJ-xo-36I"/>
+                                                <constraint firstItem="59F-V7-7TC" firstAttribute="trailing" secondItem="zRh-40-Tl6" secondAttribute="trailing" id="SUJ-cN-NBi"/>
+                                                <constraint firstItem="zRh-40-Tl6" firstAttribute="leading" secondItem="0AK-jJ-hmI" secondAttribute="leadingMargin" constant="11" id="XKk-0M-2cu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zRh-40-Tl6" secondAttribute="trailing" constant="11" id="Yph-rq-Ovv"/>
+                                                <constraint firstItem="zRh-40-Tl6" firstAttribute="trailing" secondItem="BxD-Xk-dUz" secondAttribute="trailing" id="Z9D-yY-a4j"/>
+                                                <constraint firstItem="zRh-40-Tl6" firstAttribute="top" secondItem="0AK-jJ-hmI" secondAttribute="topMargin" constant="12" id="aYS-gA-7JA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="59F-V7-7TC" secondAttribute="bottom" constant="10" id="hgX-cC-LZP"/>
+                                                <constraint firstItem="zRh-40-Tl6" firstAttribute="bottom" secondItem="BxD-Xk-dUz" secondAttribute="top" constant="-6" id="jAS-mo-VpF"/>
+                                                <constraint firstItem="zRh-40-Tl6" firstAttribute="leading" secondItem="BxD-Xk-dUz" secondAttribute="leading" id="voe-VU-LEx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="270" id="2t6-pw-2BQ">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2t6-pw-2BQ" id="4k8-TB-fci">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRIVACY AND TERMS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hh9-HL-l9F">
+                                                    <rect key="frame" x="19" y="20" width="562" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="uHE-sY-U7a"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgJ-mB-sle">
+                                                    <rect key="frame" x="19" y="50" width="562" height="5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="5" id="kF5-cF-OF3"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14R-aG-a5O">
+                                                    <rect key="frame" x="19" y="65" width="562" height="186.5"/>
+                                                    <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum; Illa tamen simplicia, vestra versuta. Sin laboramus, quis est, qui alienae modum statuat industriae? Quamquam id quidem licebit iis existimare, qui legerint. Graece donan, Latine voluptatem vocant.
+
+Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. Maximas vero virtutes iacere omnis necesse est voluptate dominante. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere? Quae in controversiam veniunt, de iis, si placet, disseramus. Invidiosum nomen est, infame, suspectum. Egone quaeris, inquit, quid sentiam? Universa enim illorum ratione cum tota vestra confligendum puto.
+
+</mutableString>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hh9-HL-l9F" firstAttribute="bottom" secondItem="PgJ-mB-sle" secondAttribute="top" constant="-6" id="AhN-sU-QqA"/>
+                                                <constraint firstItem="14R-aG-a5O" firstAttribute="top" secondItem="PgJ-mB-sle" secondAttribute="bottom" constant="10" id="CHx-it-IRT"/>
+                                                <constraint firstItem="14R-aG-a5O" firstAttribute="leading" secondItem="hh9-HL-l9F" secondAttribute="leading" id="MHs-e9-0NG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="14R-aG-a5O" secondAttribute="bottom" constant="10" id="NoY-FE-s0V"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hh9-HL-l9F" secondAttribute="trailing" constant="11" id="UJf-jF-dHu"/>
+                                                <constraint firstItem="hh9-HL-l9F" firstAttribute="leading" secondItem="4k8-TB-fci" secondAttribute="leadingMargin" constant="11" id="aRE-PB-a3f"/>
+                                                <constraint firstItem="14R-aG-a5O" firstAttribute="trailing" secondItem="hh9-HL-l9F" secondAttribute="trailing" id="agz-Q1-iD3"/>
+                                                <constraint firstItem="hh9-HL-l9F" firstAttribute="trailing" secondItem="PgJ-mB-sle" secondAttribute="trailing" id="hyX-KU-2DH"/>
+                                                <constraint firstItem="hh9-HL-l9F" firstAttribute="leading" secondItem="PgJ-mB-sle" secondAttribute="leading" id="mY7-Th-CCF"/>
+                                                <constraint firstItem="hh9-HL-l9F" firstAttribute="top" secondItem="4k8-TB-fci" secondAttribute="topMargin" constant="12" id="mcU-dc-rVD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="270" id="ppI-vt-4MC">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ppI-vt-4MC" id="exN-Il-c04">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRIVACY AND TERMS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K0-E4-UgH">
+                                                    <rect key="frame" x="19" y="20" width="562" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="ldG-O4-Zyf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sl3-EZ-57x">
+                                                    <rect key="frame" x="19" y="50" width="562" height="5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="5" id="gKn-RP-Ve8"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9Y-WU-liE">
+                                                    <rect key="frame" x="19" y="65" width="562" height="186.5"/>
+                                                    <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum; Illa tamen simplicia, vestra versuta. Sin laboramus, quis est, qui alienae modum statuat industriae? Quamquam id quidem licebit iis existimare, qui legerint. Graece donan, Latine voluptatem vocant.
+
+Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. Maximas vero virtutes iacere omnis necesse est voluptate dominante. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere? Quae in controversiam veniunt, de iis, si placet, disseramus. Invidiosum nomen est, infame, suspectum. Egone quaeris, inquit, quid sentiam? Universa enim illorum ratione cum tota vestra confligendum puto.
+
+</mutableString>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4K0-E4-UgH" secondAttribute="trailing" constant="11" id="1os-PJ-zux"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="m9Y-WU-liE" secondAttribute="bottom" constant="10" id="8SP-Cc-jJj"/>
+                                                <constraint firstItem="4K0-E4-UgH" firstAttribute="trailing" secondItem="sl3-EZ-57x" secondAttribute="trailing" id="F0u-Lp-Nog"/>
+                                                <constraint firstItem="4K0-E4-UgH" firstAttribute="top" secondItem="exN-Il-c04" secondAttribute="topMargin" constant="12" id="FcQ-zp-C3q"/>
+                                                <constraint firstItem="4K0-E4-UgH" firstAttribute="leading" secondItem="sl3-EZ-57x" secondAttribute="leading" id="G9v-cr-N4x"/>
+                                                <constraint firstItem="4K0-E4-UgH" firstAttribute="leading" secondItem="exN-Il-c04" secondAttribute="leadingMargin" constant="11" id="JSx-0I-WyC"/>
+                                                <constraint firstItem="m9Y-WU-liE" firstAttribute="trailing" secondItem="4K0-E4-UgH" secondAttribute="trailing" id="NkX-u7-55A"/>
+                                                <constraint firstItem="m9Y-WU-liE" firstAttribute="leading" secondItem="4K0-E4-UgH" secondAttribute="leading" id="QA8-he-ELe"/>
+                                                <constraint firstItem="m9Y-WU-liE" firstAttribute="top" secondItem="sl3-EZ-57x" secondAttribute="bottom" constant="10" id="dD6-wO-fV2"/>
+                                                <constraint firstItem="4K0-E4-UgH" firstAttribute="bottom" secondItem="sl3-EZ-57x" secondAttribute="top" constant="-6" id="iAM-JB-CBi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="3E3-cR-SB4" id="2cF-7W-8dk"/>
+                            <outlet property="delegate" destination="3E3-cR-SB4" id="Opg-ru-gWP"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Shd-Ph-8mj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="858"/>
+        </scene>
+        <!--Privacy and Terms-->
+        <scene sceneID="Gbs-cP-a0B">
+            <objects>
+                <viewController title="Privacy and Terms" id="JHO-Oh-rXM" customClass="NJOPPrivacyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yfr-SP-1SH"/>
+                        <viewControllerLayoutGuide type="bottom" id="A6s-ui-lAZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w7w-nX-hVC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="341" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IYk-0P-2o8">
+                                <rect key="frame" x="0.0" y="64" width="414" height="608"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="privacyCell" rowHeight="340" id="a9V-2I-Pc9">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a9V-2I-Pc9" id="tdw-Mt-5a0">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRIVACY AND TERMS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vq7-DO-WkW">
+                                                    <rect key="frame" x="12" y="12" width="390" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="zYV-xP-h0k"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5u-bl-DuR">
+                                                    <rect key="frame" x="12" y="42" width="390" height="5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="5" id="nsY-PU-oKq"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiF-ZW-YWP">
+                                                    <rect key="frame" x="12" y="57" width="390" height="270.5"/>
+                                                    <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum; Illa tamen simplicia, vestra versuta. Sin laboramus, quis est, qui alienae modum statuat industriae? Quamquam id quidem licebit iis existimare, qui legerint. Graece donan, Latine voluptatem vocant.
+
+Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. Maximas vero virtutes iacere omnis necesse est voluptate dominante. Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere? Quae in controversiam veniunt, de iis, si placet, disseramus. Invidiosum nomen est, infame, suspectum. Egone quaeris, inquit, quid sentiam? Universa enim illorum ratione cum tota vestra confligendum puto.
+
+</mutableString>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="M5u-bl-DuR" firstAttribute="leading" secondItem="wiF-ZW-YWP" secondAttribute="leading" id="02d-et-oRV"/>
+                                                <constraint firstItem="M5u-bl-DuR" firstAttribute="top" secondItem="Vq7-DO-WkW" secondAttribute="bottom" constant="6" id="1wM-c3-Rm8"/>
+                                                <constraint firstItem="Vq7-DO-WkW" firstAttribute="top" secondItem="tdw-Mt-5a0" secondAttribute="top" constant="12" id="Orz-pa-cz0"/>
+                                                <constraint firstItem="Vq7-DO-WkW" firstAttribute="leading" secondItem="tdw-Mt-5a0" secondAttribute="leading" constant="12" id="P5w-lP-1ki"/>
+                                                <constraint firstItem="M5u-bl-DuR" firstAttribute="trailing" secondItem="wiF-ZW-YWP" secondAttribute="trailing" id="asS-Hq-O4n"/>
+                                                <constraint firstAttribute="trailing" secondItem="Vq7-DO-WkW" secondAttribute="trailing" constant="12" id="cVC-e9-YXO"/>
+                                                <constraint firstItem="M5u-bl-DuR" firstAttribute="bottom" secondItem="wiF-ZW-YWP" secondAttribute="top" constant="-10" id="cuy-po-PyW"/>
+                                                <constraint firstItem="M5u-bl-DuR" firstAttribute="trailing" secondItem="Vq7-DO-WkW" secondAttribute="trailing" id="enQ-sj-whc"/>
+                                                <constraint firstAttribute="bottom" secondItem="wiF-ZW-YWP" secondAttribute="bottom" constant="12" id="rJV-W8-9qV"/>
+                                                <constraint firstItem="M5u-bl-DuR" firstAttribute="leading" secondItem="Vq7-DO-WkW" secondAttribute="leading" id="y3h-wF-Xxz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JHO-Oh-rXM" id="59t-c0-VPU"/>
+                                    <outlet property="delegate" destination="JHO-Oh-rXM" id="7jb-sN-c9w"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IYk-0P-2o8" firstAttribute="leading" secondItem="w7w-nX-hVC" secondAttribute="leading" id="L99-zf-pHv"/>
+                            <constraint firstAttribute="trailing" secondItem="IYk-0P-2o8" secondAttribute="trailing" id="SPl-5J-ynS"/>
+                            <constraint firstItem="IYk-0P-2o8" firstAttribute="top" secondItem="yfr-SP-1SH" secondAttribute="bottom" id="XNN-FB-V47"/>
+                            <constraint firstItem="A6s-ui-lAZ" firstAttribute="top" secondItem="IYk-0P-2o8" secondAttribute="bottom" constant="64" id="Zqh-Pw-IwI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="IYk-0P-2o8" id="zhp-dO-1dq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5f3-yb-cVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="110"/>
         </scene>
         <!--Push Notifications-->
         <scene sceneID="Cou-2t-w8Q">
@@ -587,4 +875,7 @@
             <point key="canvasLocation" x="-332" y="-10"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qbP-E0-CMY"/>
+    </inferredMetricsTieBreakers>
 </document>
