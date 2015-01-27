@@ -11,6 +11,7 @@
 #import "NJOPReservation.h"
 #import "NJOPFlightsDetailViewController.h"
 #import "NJOPOAuthClient.h"
+#import "NJOPFlightHTTPClient.h"
 
 @interface NJOPFlightsViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -21,6 +22,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    if( [self respondsToSelector:@selector(setEdgesForExtendedLayout:)] )
+    {
+        self.edgesForExtendedLayout=UIRectEdgeNone;
+        self.extendedLayoutIncludesOpaqueBars=NO;
+        self.automaticallyAdjustsScrollViewInsets=NO;
+    }
     
     [self.tableView setContentInset:UIEdgeInsetsMake(-100,0,0,0)];
     
@@ -141,8 +150,6 @@
     self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
     self.dataSource.title = @"FLIGHTS";
     
-    [NJOPClient GETPastFlightsForAccounts:@[]];
-    
     
 }
 
@@ -152,6 +159,7 @@
         [self loadDataSource];
         [self.tableView reloadData];
     } else if (self.segmentedControl.selectedSegmentIndex == 1) {
+        
         NSArray *sections = @[
                               @{
                                   kSimpleDataSourceSectionCellsKey : @[

@@ -18,6 +18,7 @@
 #import "NJOPValueTransformer.h"
 #import "NSDate+NJOP.h"
 #import "NSDateFormatter+Utility.h"
+#import "Defines.h"
 
 @implementation NJOPFlightHTTPClient
 
@@ -65,6 +66,10 @@
         }
         else
         {
+            if (USE_STATIC_DATA == 1) {
+                data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"brief-test" ofType:@"json"]];
+                
+            }
             NSError *jsonError = nil;
             NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
             
