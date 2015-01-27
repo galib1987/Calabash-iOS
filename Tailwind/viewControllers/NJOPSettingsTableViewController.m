@@ -33,12 +33,9 @@
 
 - (IBAction)logoutTapped:(id)sender {
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    NJOPLoginViewController *loginVC = [storyboard instantiateInitialViewController];
-    
-    [self.navigationController presentViewController:loginVC animated:YES completion:^{
-        [[NJOPOAuthClient sharedInstance] resetCredential];
-    }];
+    NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Main",menuStoryboardName,@"LoginVC",menuViewControllerName, [NSNumber numberWithInt:isLoginScreen], appStoryboardIdentifier, nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif]; // using NSNotifications for menu changes because we also need to do other things in other places
+    [[NJOPOAuthClient sharedInstance] resetCredential];
     
 //    
 //    [self dismissViewControllerAnimated:YES completion:^{

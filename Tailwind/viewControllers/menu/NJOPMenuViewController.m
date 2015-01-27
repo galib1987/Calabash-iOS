@@ -43,21 +43,28 @@
 
 - (void) resetButtonState {
     self.buttonState = menuButtonNone;
+    [self contractHamburger];
+    [self contractOS];
 }
 
 #pragma mark -- Hamburger button handling
 - (IBAction)hamburgerPushed:(id)sender {
     if (self.buttonState == menuButtonNone) {
         [self expandHamburger];
-    } else if (self.buttonState == menuButtonOwnerServices) {
         [self contractOS];
+    } else if (self.buttonState == menuButtonOwnerServices) {
         [self expandHamburger];
+        [self contractOS];
     } else {
         [self contractHamburger];
+        [self contractOS];
+        self.buttonState = menuButtonNone;
     }
 }
 
 - (void) expandHamburger {
+    self.hamburgerButton.selected = YES;
+    self.hamburgerButton.backgroundColor = [UIColor mainNavButtonActiveColor];
     if (self.hambergerViewController == nil) {
         self.hambergerViewController = [[NJOPHamburgerViewController alloc] initWithNibName:@"NJOPHamburgerViewController" bundle:nil];
         self.hambergerViewController.delegate = self;
@@ -88,6 +95,8 @@
 }
 
 - (void) contractHamburger {
+    self.hamburgerButton.selected = NO;
+    self.hamburgerButton.backgroundColor = [UIColor mainNavButtonInActiveColor];
     //make sure we have the oright coordinates
     CGRect rect = self.view.frame;
     
@@ -111,15 +120,22 @@
 - (IBAction)ownerServiesPushed:(id)sender {
     if (self.buttonState == menuButtonNone) {
         [self expandOS];
-    } else if (self.buttonState == menuBUttonHamburger) {
         [self contractHamburger];
+    } else if (self.buttonState == menuBUttonHamburger) {
         [self expandOS];
+        [self contractHamburger];
     } else {
         [self contractOS];
+        [self contractHamburger];
+        self.buttonState = menuButtonNone;
     }
 }
 
 - (void) contractOS {
+    
+    self.ownerServicesButton.selected = NO;
+    self.ownerServicesButton.backgroundColor = [UIColor mainNavButtonInActiveColor];
+    
     CGRect rect = self.view.frame;
     
     float finalY = rect.origin.y;
@@ -133,6 +149,10 @@
 }
 
 - (void) expandOS {
+    
+    self.ownerServicesButton.selected = YES;
+    self.ownerServicesButton.backgroundColor = [UIColor mainNavButtonActiveColor];
+    
     if (self.OSViewController == nil) {
         self.OSViewController = [[NJOPOSViewController alloc] initWithNibName:@"NJOPOSViewController" bundle:nil];
         self.OSViewController.delegate = self;

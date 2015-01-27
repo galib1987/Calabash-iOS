@@ -12,11 +12,15 @@
 // just setting some globals for the app.. mainly for NSNotification
 #define dismissKeyboard @"dismissKeyboard" // anytime you want to set a way to dismiss the keyboard when tapped out of the area
 #define changeScreen @"changeScreen"
+#define changeSubScreen @"changeSubScreen" // this is for the container viewController to change the subscreen
 #define goToLoginScreen @"goToLoginScreen"
 #define goToHomeScreen @"goToHomeScreen"
 #define menuStoryboardName @"menuStoryboardName" // this is used in the NSNotification to define the storyboard name to use to load the storyboard
 #define menuViewControllerName @"venuViewControlelrName" // this is used in the NSNotification to define the viewController name to use to get and add in a viewController
 #define menuShouldHideMenu @"menuShouldHideMenu" // this is to see if we should add in the menu or not. For example, Welcome screen and login screens don't need menus
+#define appStoryboardIdentifier @"appStoryboardIdentifier" // this is to hold an enum for which type of storyboard to use. See enum: screenTypeIdentifier
+#define requestedReservationObject @"requestedReservationObject" // passing the reservation object to the flight detail view
+#define containerShouldClearHistory @"containerShouldClearHistory" // whether we should clear history for navigation purposes
 
 
 // hostname and URL for different API calls
@@ -45,6 +49,13 @@ typedef NS_ENUM(NSInteger, FlightState) {
     noFlight
 };
 
+typedef enum {
+    isUndefinedScreen = 0, // if the main screen is undefined
+    isWelcomeScreen, // welcome screen
+    isLoginScreen,
+    isContainerScreen
+} screenTypeIdentifier;
+
 // temporarily until I figure out a better way to bypass having to VPN
 // 0 is use VPN
 // 1 is use JSON
@@ -52,3 +63,11 @@ typedef NS_ENUM(NSInteger, FlightState) {
 //#define USE_STATIC_DATA 1
 
 #endif
+
+// TAGS:
+// 1000 is for loginViewController
+// 1001 - login email field
+// 1002 - login password field
+// 1003 - login button
+// 30000 - Booking viewControllers
+

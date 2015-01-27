@@ -33,11 +33,9 @@
     [NJOPNetJetsCorePM sharedInstance].mainMOC;
     // Override point for customization after application launch.
     
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Home" bundle:[NSBundle mainBundle]];
-//    NJOPHomeViewController *vc = [storyboard instantiateInitialViewController];
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    self.window.rootViewController = vc;
-//    [self.window makeKeyAndVisible];
+    self.currentStoryboardTypeInt = isUndefinedScreen; // set the screen as unknown at first
+    self.selectedReservation = nil;
+    self.shouldClearHistory = [NSNumber numberWithInt:1];
 
     // listen for major menu changes
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goChangeScreen:) name:changeScreen object:nil];
@@ -49,12 +47,6 @@
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
     
-    // see if we need to load the welcome screen
-    
-    // TEST CODE TO DISPLAY BOOKING ON LAUNCH vvvvv
-    //NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Booking",menuStoryboardName,@"BookingSelectAccount",menuViewControllerName, nil];
-    //[[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif]; // using NSNotifications for menu changes because we also need to do other things in other places
-    // TEST CODE TO DISPLAY BOOKING ON LAUNCH ^^^^^
 
     // let's see if we need to show welcome screen
     if ([[NJOPConfig sharedInstance] shouldSeeWelcomeScreen] == YES) {
@@ -89,39 +81,101 @@
 
 - (void) goChangeScreen:(NSNotification *) aNotification {
     
+    // NOTE: we have added a container storyboard for most screens except for
+    //       Welcome screen
+    //       Login screen
+    // for the container storyboard, instead of navigation controller, it's a container viewController
+    
     NSString *storyboard = [[aNotification userInfo] objectForKey:menuStoryboardName];
     NSString *viewController = [[aNotification userInfo] objectForKey:menuViewControllerName];
     NSNumber *shouldDisplayMenu = [[aNotification userInfo] objectForKey:menuShouldHideMenu];
+    NSNumber *storyboardType = [[aNotification userInfo] objectForKey:appStoryboardIdentifier];
+    self.shouldClearHistory =[[aNotification userInfo] objectForKey:containerShouldClearHistory];
+    self.selectedReservation = [[aNotification userInfo] objectForKey:requestedReservationObject];
+    NSLog(@"selected Reservation: %@",self.selectedReservation);
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:storyboard bundle:nil];
     UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:viewController];
     
     
-    // also, we're going to create a navigation controller
-    UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:vc];
-    //[[UIApplication sharedApplication].keyWindow setRootViewController:vc];
-    self.window.rootViewController=navController;
     
-    if (self.njopMenuViewController == nil) {
-    
-        // we're also adding the global menu to all the storyboards
-        self.njopMenuViewController = [[NJOPMenuViewController alloc] initWithNibName:@"NJOPMenuViewController" bundle:nil];
-        
+    // we have some cases here
+    if (storyboardType == nil) {
+        storyboardType = [NSNumber numberWithInt:isUndefinedScreen];
     }
-
-    UIView *parentView = [self.window.rootViewController.view superview];
-    // see if we need to hide menu
-    if ([shouldDisplayMenu intValue] < 1) {
-        [parentView addSubview:self.njopMenuViewController.view];
-        [parentView bringSubviewToFront:self.njopMenuViewController.view];
-    }
-
+    int storyboardTypeInt = [storyboardType intValue];
+    BOOL needsNavController = NO;
+    BOOL needsMenuController = NO;
     
+    switch (storyboardTypeInt) {
+        case isContainerScreen:
+            // for the container screen
+            needsNavController = NO;
+            needsMenuController = NO;
+            break;
+        case isWelcomeScreen:
+            needsNavController = YES;
+            needsMenuController = NO;
+            break;
+        case isLoginScreen:
+            needsNavController = YES;
+            needsMenuController = NO;
+            break;
+        default:
+            // assuming it's the login screen
+            needsNavController = YES;
+            needsMenuController = NO;
+            break;
+    }
+    
+    // see if we need to create a navigation controller
+    if (needsNavController == YES) {
+        // also, we're going to create a navigation controller
+        UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:vc];
+        self.window.rootViewController=navController;
+        self.currentStoryboardTypeInt = storyboardTypeInt;
+        self.containerVC = nil; // we're going to clear the container viewController
+    } else {
+        // we don't need navigation controller, and probably it's a container view
+        if (storyboardTypeInt == isContainerScreen) {
+            self.subStoryboardName = storyboard;
+            self.subViewControllerName = viewController;
+            // we're going to replace main storyboard and firVieController for the container
+            mainStoryboard = [UIStoryboard storyboardWithName:@"Container" bundle:nil];
+            if (self.containerVC == nil) {
+                self.containerVC = (NJOPContainerHolderViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"MainContainerVC"];
+                self.containerVC.delegate = self;
+            }
+            // let's see if we're already here
+            if (self.currentStoryboardTypeInt != isContainerScreen) {
+                self.window.rootViewController = self.containerVC;
+                self.currentStoryboardTypeInt = isContainerScreen;
+                self.shouldClearHistory = [NSNumber numberWithInt:1];
+            } else {
+                [self notifySubStoryboard];
+            }
+            
+            
+        } else {
+            self.window.rootViewController = vc;
+            self.currentStoryboardTypeInt = storyboardTypeInt;
+            self.containerVC = nil; // we're going to clear the container viewController
+        }
+    }
     
 }
 
 - (void) hideKeyboard:(NSNotification *)aNotification {
     [self.window.rootViewController.view endEditing:YES];
+}
+
+
+#pragma mark - NJOPFullPageViewController Delegate
+- (void) notifySubStoryboard {
+    // sorry! we're going to use NSNotification here to load in the sub VCs
+    NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:self.subStoryboardName,menuStoryboardName,self.subViewControllerName,menuViewControllerName,[NSNumber numberWithBool:YES],menuShouldHideMenu, self.shouldClearHistory, containerShouldClearHistory, nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:changeSubScreen object:self userInfo:notif];
+    NSLog(@"change sub screen");
 }
 
 @end

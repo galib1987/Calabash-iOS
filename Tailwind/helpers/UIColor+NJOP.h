@@ -9,7 +9,14 @@
 @import UIKit;
 
 @interface UIColor (NJOP)
+
 + (UIColor *)colorFromHexString:(NSString *)hexString;
++ (UIColor *) navigationBarBackgroundColor;
++ (UIColor *) navigationBarTextColor;
++ (UIColor *) scrollViewBackgroundColor;
++ (UIColor *) mainNavButtonActiveColor;
++ (UIColor *) mainNavButtonInActiveColor;
+
 @end
 
 #define TOOLBAR_BACKGROUND_COLOR						[UIColor colorFromHexString:@/*"#2E2E2E"*/"#121212"]

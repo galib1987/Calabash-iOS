@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
     
     [self.tableView setContentInset:UIEdgeInsetsMake(-100,0,0,0)];
     

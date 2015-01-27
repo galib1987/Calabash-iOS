@@ -23,7 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
     // Do any additional setup after loading the view.
+    if (self.reservation == nil) {
+        // see if we can get reservation from appDelegate
+        AppDelegate *ad = (AppDelegate *)([UIApplication sharedApplication].delegate);
+        if (ad.selectedReservation != nil) {
+            self.reservation = ad.selectedReservation;
+        }
+    }
     [self loadDataSource];
 }
 
@@ -82,6 +90,16 @@
 
 
 - (void)loadDataSource {
+    
+    if (self.reservation == nil) {
+        // see if we can get reservation from appDelegate
+        AppDelegate *ad = (AppDelegate *)([UIApplication sharedApplication].delegate);
+        if (ad.selectedReservation != nil) {
+            self.reservation = ad.selectedReservation;
+        }
+    }
+    
+    NSLog(@"we have reservation: %@",self.reservation);
     NSUInteger passengerCount = self.reservation.passengers.count;
     NSString *passengerCountString = passengerCount <= 1? [NSString stringWithFormat:@"%lu passenger", (unsigned long)passengerCount] : [NSString stringWithFormat:@"%lu passengers", (unsigned long)passengerCount];
     
@@ -90,6 +108,7 @@
                                                 [self infoCellWithIdentifier:@"CrewInfoCell" topLabel:@"Your Crew" detailLabel:@"Captain Michael Chapman" icon:[UIImage imageNamed:@"crew"]],
                                                 [self infoCellWithIdentifier:@"PassengerManifestInfoCell" topLabel:@"Passenger Manifest" detailLabel:passengerCountString icon:[UIImage imageNamed:@"passengers"]],
                                                 nil];
+    NSLog(@"HERE!!!!!!");
     if ([NJOPIntrospector isObjectArray:_reservation.cateringOrders]) {
         [conditionalSectionsArray addObject:[self infoCellWithIdentifier:@"CateringInfoCell" topLabel:@"Catering" detailLabel:@"Details Enclosed" icon:[UIImage imageNamed:@"catering"]]];
     }

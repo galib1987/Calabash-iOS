@@ -8,6 +8,7 @@
 
 #import "SimpleDataSourceTableViewController.h"
 #import "NJOPReservation.h"
+#import "AppDelegate.h"
 
 @interface NJOPFlightsDetailViewController : SimpleDataSourceTableViewController
 

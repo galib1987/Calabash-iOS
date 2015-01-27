@@ -31,7 +31,8 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES];
+    //[self.navigationController setNavigationBarHidden:YES];
+    [self styleNavigationBar];
 	_userInput = [NJOPLoginViewUserInput new];
 	[_loginButton setEnabled:[self.userInput validateWithError:nil]];
 #if USE_BLUR
@@ -218,32 +219,38 @@
 }
 
 - (void) displayHome {
-    /*
-    if (USE_STATIC_DATA == 0) {
-        
-//        NNNOAuthClient *userSessoion = [NNNOAuthClient sharedInstance];
-//        NSLog(@"USER SESSION TOKEN: %@",userSessoion.credential.accessToken);
-//        NSLog(@"USER REFRESH TOKEN: %@",userSessoion.credential.refreshToken);
-//        NSLog(@"USER EXPIRATION: %@",userSessoion.credential.expiration);
-        NSString *accessToken = [[NJOPOAuthClient sharedInstance] accessToken:nil];
-//        [self presentMessage:accessInfo withTitle:@"Login Success!!"];
-        NSString *urlString = [NSString stringWithFormat:@"%@%@?appAgent=%@&access_token=%@",API_HOSTNAME, URL_BRIEF,API_SOURCE_IDENTIFIER,accessToken];
-        NSLog(@"get Brief: %@",urlString);
-        //[NJOPClient GETReservationWithInfo:<#(NSDictionary *)#> completion:<#^(NJOPReservation *reservation, NSError *error)completionHandler#>];
-    }
-     */
+
     
-    NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Home",menuStoryboardName,@"HomeViewController",menuViewControllerName, nil];
+    NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Home",menuStoryboardName,@"HomeViewController",menuViewControllerName, [NSNumber numberWithInt:isContainerScreen], appStoryboardIdentifier, nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif]; // using NSNotifications for menu changes because we also need to do other things in other places
-    //UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
-    //UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
-    
-    //[[UIApplication sharedApplication].keyWindow setRootViewController:vc];
+
 }
 
 - (void) tapGesture:(UIGestureRecognizer *) tap {
     // we're going to dismiss keyboard
     [[NJOPConfig sharedInstance] hideKeyboard];
+}
+
+#pragma mark - styling navigation bar
+
+- (void) styleNavigationBar {
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor clearColor]];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTranslucent:YES];
+    [[UINavigationBar appearance] setShadowImage:[UIImage new]];
+    
+    if (self.navigationController != nil)  {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+        [self.navigationController.navigationBar setTranslucent:YES];
+        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    }
+    if (self.navigationItem != nil) {
+        self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"netjets-logo"]];
+    }
+
 }
 
 @end
