@@ -7,7 +7,13 @@
 //
 
 #import "SimpleDataSourceTableViewController.h"
+#import "NJOPReservation.h"
 
 @interface NJOPAdvisoryNotesController : SimpleDataSourceTableViewController
 
+@property (nonatomic) NJOPReservation *reservation;
+
++ (NSString *)scanString:(NSString *)string
+                startTag:(NSString *)startTag
+                  endTag:(NSString *)endTag;
 @end

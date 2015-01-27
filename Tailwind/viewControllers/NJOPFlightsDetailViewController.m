@@ -14,6 +14,7 @@
 #import "NJOPCrewViewController.h"
 #import "NJOPPlaneViewController.h"
 #import "NJOPIntrospector.h"
+#import "NJOPAdvisoryNotesController.h"
 
 @interface NJOPFlightsDetailViewController ()
 
@@ -132,8 +133,30 @@
     } else if ([segue.identifier isEqualToString:@"showPlane"]) {
         NJOPPlaneViewController *vc = [segue destinationViewController];
         vc.reservation = self.reservation;
+    } else if ([segue.identifier isEqualToString:@"showAdvisoryNotes"]) {
+        NJOPAdvisoryNotesController *vc = [segue destinationViewController];
+        vc.reservation = self.reservation;
     }
 }
 
 
+- (IBAction)arrivalPinPressed:(id)sender {
+    NSString *arrivalFBO = self.reservation.arrivalFboName;
+    arrivalFBO = [arrivalFBO stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    NSString *urlString = @"http://maps.google.com/?q=";
+    urlString = [urlString stringByAppendingString:arrivalFBO];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+- (IBAction)departurePinPressed:(id)sender {
+    NSString *departureFBO = self.reservation.departureFboName;
+    departureFBO = [departureFBO stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    NSString *urlString = @"http://maps.google.com/?q=";
+    urlString = [urlString stringByAppendingString:departureFBO];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    [[UIApplication sharedApplication] openURL:url];
+}
 @end

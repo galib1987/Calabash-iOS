@@ -91,6 +91,7 @@
                         NJOPReservation *reservation = [NJOPReservation new];
                         
                         reservation.reservationId = requestDict[@"reservationId"];
+                        reservation.requestId = requestDict[@"requestId"];
                         reservation.aircraftType = requestDict[@"guaranteedAircraftTypeDescription"];
                         reservation.departureTimeZone = [NSTimeZone timeZoneWithAbbreviation:requestDict[@"departureTimeZoneFormat"]];
                         reservation.departureDate = [jsonDateFormatter dateFromString:requestDict[@"etdGmt"]];
@@ -271,7 +272,7 @@
 
 - (void)loadAdvisoryWithReservation:(NSString *)reservationId
                          andRequest:(NSString *)requestId
-                         completion:(void (^)(NSArray *advisoryNotes, NSError *))completionHandler {
+                         completion:(void (^)(NSString *advisoryNotes, NSError *))completionHandler {
     
     NCLURLRequest *request = [self urlRequestWithPath:@"/advisory"];
     NSDictionary *queryParams = @{@"reservationId":reservationId, @"requestId":requestId };
@@ -288,9 +289,14 @@
         else
         {
             NSError *jsonError = nil;
-            NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+            NSString *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
             
             // parse & save to core data here
+            
+            if (completionHandler) {
+                completionHandler(result,nil);
+            }
+            
         }
         
     }];

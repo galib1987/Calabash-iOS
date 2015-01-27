@@ -25,6 +25,6 @@
 
 - (void)loadAdvisoryWithReservation:(NSString *)reservationId
                          andRequest:(NSString *)requestId
-                         completion:(void (^)(NSArray *advisoryNotes, NSError *error))completionHandler;
+                         completion:(void (^)(NSString *advisoryNotes, NSError *error))completionHandler;
 
 @end

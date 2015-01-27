@@ -642,12 +642,6 @@ Teterboro-Naples</string>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBG-Tx-WAl">
-                                                    <rect key="frame" x="16" y="299" width="88" height="21"/>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="21"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KTEB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kL-cj-ePr">
                                                     <rect key="frame" x="16" y="328" width="88" height="35"/>
                                                     <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="35"/>
@@ -774,23 +768,33 @@ Teterboro-Naples</string>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="h42-DU-5h7">
                                                     <rect key="frame" x="296" y="596" width="36" height="36"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-pin" translatesAutoresizingMaskIntoConstraints="NO" id="IUp-3J-zNO">
-                                                    <rect key="frame" x="318" y="208.5" width="33" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="ixo-W7-WbW"/>
-                                                        <constraint firstAttribute="width" constant="33" id="vG6-YG-dO3"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-pin" translatesAutoresizingMaskIntoConstraints="NO" id="fU2-CD-Fgb">
-                                                    <rect key="frame" x="318" y="435.5" width="33" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="TEq-C9-RyM"/>
-                                                        <constraint firstAttribute="width" constant="33" id="paE-IQ-HIH"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="hr0-M6-E7g">
                                                     <rect key="frame" x="100" y="594" width="36" height="38"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBG-Tx-WAl">
+                                                    <rect key="frame" x="16" y="299" width="88" height="21"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="21"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyM-S7-Edq">
+                                                    <rect key="frame" x="333" y="215" width="9" height="22"/>
+                                                    <state key="normal" image="drop-pin">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="departurePinPressed:" destination="lU9-p4-Klb" eventType="touchUpInside" id="1ms-xz-k3c"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkJ-1A-hMa">
+                                                    <rect key="frame" x="323" y="436" width="9" height="22"/>
+                                                    <state key="normal" image="drop-pin">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="arrivalPinPressed:" destination="lU9-p4-Klb" eventType="touchUpInside" id="1nC-AJ-lOR"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -812,7 +816,7 @@ Teterboro-Naples</string>
                                                 <constraint firstItem="2Zf-XI-3uV" firstAttribute="top" secondItem="6Py-8L-Cti" secondAttribute="bottom" constant="8" id="6Pf-HK-kT0"/>
                                                 <constraint firstItem="hr0-M6-E7g" firstAttribute="trailing" secondItem="dwG-nV-Oha" secondAttribute="trailing" id="6iu-DH-FLd"/>
                                                 <constraint firstItem="gAz-Au-InV" firstAttribute="top" secondItem="B6p-gE-LqT" secondAttribute="bottom" constant="33" id="7H5-4B-276"/>
-                                                <constraint firstItem="fU2-CD-Fgb" firstAttribute="centerY" secondItem="PoD-n8-fS0" secondAttribute="centerY" id="7Wq-QF-NNz"/>
+                                                <constraint firstItem="uyM-S7-Edq" firstAttribute="centerY" secondItem="B6p-gE-LqT" secondAttribute="centerY" id="7Me-4d-7UY"/>
                                                 <constraint firstItem="WuA-ud-bBp" firstAttribute="centerX" secondItem="AIK-Mf-s56" secondAttribute="centerX" id="7lp-rv-Urk"/>
                                                 <constraint firstItem="qrq-Yp-Izy" firstAttribute="top" secondItem="Lo2-T8-Spa" secondAttribute="bottom" constant="8" id="843-8x-TfO"/>
                                                 <constraint firstItem="qrq-Yp-Izy" firstAttribute="top" secondItem="Lo2-T8-Spa" secondAttribute="bottom" constant="8" id="85l-VD-dwc"/>
@@ -824,7 +828,6 @@ Teterboro-Naples</string>
                                                 <constraint firstItem="bri-hi-fHZ" firstAttribute="centerX" secondItem="WuA-ud-bBp" secondAttribute="centerX" id="CKk-me-dGg"/>
                                                 <constraint firstAttribute="trailing" secondItem="B6p-gE-LqT" secondAttribute="trailing" constant="20" symbolic="YES" id="CST-Yi-yvp"/>
                                                 <constraint firstItem="bri-hi-fHZ" firstAttribute="top" secondItem="WuA-ud-bBp" secondAttribute="bottom" constant="8" id="DXG-Sg-edv"/>
-                                                <constraint firstItem="fU2-CD-Fgb" firstAttribute="leading" secondItem="PoD-n8-fS0" secondAttribute="trailing" constant="8" id="DrC-xp-ATt"/>
                                                 <constraint firstItem="y4A-qF-sGw" firstAttribute="top" secondItem="ZiB-G2-vDG" secondAttribute="bottom" constant="8" id="EW1-aF-zH4"/>
                                                 <constraint firstItem="9kL-cj-ePr" firstAttribute="leading" secondItem="7ff-fu-Rwq" secondAttribute="leading" constant="16" id="G4L-k8-vVC"/>
                                                 <constraint firstItem="BmM-dj-d0o" firstAttribute="top" secondItem="bri-hi-fHZ" secondAttribute="bottom" constant="8" symbolic="YES" id="GQq-FQ-S0f"/>
@@ -832,18 +835,21 @@ Teterboro-Naples</string>
                                                 <constraint firstItem="WuA-ud-bBp" firstAttribute="top" secondItem="PoD-n8-fS0" secondAttribute="bottom" constant="8" id="HCa-iu-w01"/>
                                                 <constraint firstItem="DXG-Vh-2jR" firstAttribute="centerX" secondItem="OQo-je-OO2" secondAttribute="centerX" id="HgF-rA-MkS"/>
                                                 <constraint firstAttribute="centerX" secondItem="PoD-n8-fS0" secondAttribute="centerX" id="KS6-aO-cfe"/>
-                                                <constraint firstItem="IUp-3J-zNO" firstAttribute="leading" secondItem="B6p-gE-LqT" secondAttribute="trailing" constant="8" id="Ldq-z0-JU4"/>
                                                 <constraint firstItem="9kL-cj-ePr" firstAttribute="centerX" secondItem="Qyx-gH-aUz" secondAttribute="centerX" id="Lxk-oO-uEN"/>
                                                 <constraint firstItem="hr0-M6-E7g" firstAttribute="centerX" secondItem="dwG-nV-Oha" secondAttribute="centerX" constant="21.25" id="Mzh-pJ-X8S"/>
                                                 <constraint firstItem="bri-hi-fHZ" firstAttribute="centerX" secondItem="AIK-Mf-s56" secondAttribute="centerX" id="NYg-oR-TEx"/>
+                                                <constraint firstAttribute="trailing" secondItem="pkJ-1A-hMa" secondAttribute="trailing" constant="20" symbolic="YES" id="OmK-9m-gTr"/>
                                                 <constraint firstItem="2Zf-XI-3uV" firstAttribute="centerY" secondItem="9kL-cj-ePr" secondAttribute="centerY" id="Ozn-aS-FZW"/>
                                                 <constraint firstItem="Lo2-T8-Spa" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7ff-fu-Rwq" secondAttribute="top" constant="8" id="RZH-18-W6o"/>
                                                 <constraint firstItem="bri-hi-fHZ" firstAttribute="centerX" secondItem="WuA-ud-bBp" secondAttribute="centerX" id="RkZ-7D-3kN"/>
                                                 <constraint firstItem="mQv-ML-tjV" firstAttribute="leading" secondItem="dwG-nV-Oha" secondAttribute="leading" id="Rm4-p0-2b3"/>
                                                 <constraint firstItem="h42-DU-5h7" firstAttribute="leading" secondItem="BmM-dj-d0o" secondAttribute="trailing" id="SIp-Wg-9X7"/>
+                                                <constraint firstItem="uyM-S7-Edq" firstAttribute="centerX" secondItem="B6p-gE-LqT" secondAttribute="centerX" constant="157.5" id="SMb-Dw-LFZ"/>
+                                                <constraint firstItem="PoD-n8-fS0" firstAttribute="centerX" secondItem="pkJ-1A-hMa" secondAttribute="centerX" id="STs-kf-zbW"/>
                                                 <constraint firstItem="3RB-4T-UKZ" firstAttribute="centerX" secondItem="qrq-Yp-Izy" secondAttribute="centerX" id="SdC-eI-TZv"/>
                                                 <constraint firstAttribute="trailing" secondItem="2Zf-XI-3uV" secondAttribute="trailing" constant="16" id="SpN-A3-ft9"/>
                                                 <constraint firstItem="DXG-Vh-2jR" firstAttribute="top" secondItem="DZk-0A-jAz" secondAttribute="bottom" constant="10" id="UtA-UD-NxZ"/>
+                                                <constraint firstItem="PoD-n8-fS0" firstAttribute="centerY" secondItem="pkJ-1A-hMa" secondAttribute="centerY" id="VI4-Dg-6HY"/>
                                                 <constraint firstItem="DZk-0A-jAz" firstAttribute="top" secondItem="PoD-n8-fS0" secondAttribute="bottom" constant="20" id="VSU-tw-JFn"/>
                                                 <constraint firstItem="Qyx-gH-aUz" firstAttribute="top" secondItem="PoD-n8-fS0" secondAttribute="bottom" constant="8" id="WKt-Yr-l6p"/>
                                                 <constraint firstItem="2Zf-XI-3uV" firstAttribute="centerX" secondItem="Oi7-Kb-YT5" secondAttribute="centerX" id="WU1-Eq-Mx6"/>
@@ -855,11 +861,9 @@ Teterboro-Naples</string>
                                                 <constraint firstItem="WuA-ud-bBp" firstAttribute="top" secondItem="AIK-Mf-s56" secondAttribute="bottom" constant="8" id="a4U-vU-SYO"/>
                                                 <constraint firstItem="Lo2-T8-Spa" firstAttribute="top" secondItem="7ff-fu-Rwq" secondAttribute="top" constant="8" id="a4a-kP-95o"/>
                                                 <constraint firstItem="mQv-ML-tjV" firstAttribute="centerX" secondItem="DXG-Vh-2jR" secondAttribute="centerX" id="b5M-zt-Vof"/>
-                                                <constraint firstAttribute="trailing" secondItem="fU2-CD-Fgb" secondAttribute="trailing" constant="8" id="bDU-1w-6JK"/>
                                                 <constraint firstItem="hr0-M6-E7g" firstAttribute="leading" secondItem="mQv-ML-tjV" secondAttribute="trailing" constant="8" symbolic="YES" id="buh-3i-GmH"/>
                                                 <constraint firstItem="BmM-dj-d0o" firstAttribute="centerX" secondItem="AIK-Mf-s56" secondAttribute="centerX" id="clq-xS-1TG"/>
                                                 <constraint firstItem="dwG-nV-Oha" firstAttribute="top" secondItem="OQo-je-OO2" secondAttribute="bottom" constant="8" id="cqz-W9-ICg"/>
-                                                <constraint firstAttribute="trailing" secondItem="IUp-3J-zNO" secondAttribute="trailing" constant="8" id="csX-Bf-USf"/>
                                                 <constraint firstAttribute="centerY" secondItem="Lo2-T8-Spa" secondAttribute="centerY" id="et3-ru-L5v"/>
                                                 <constraint firstItem="Lo2-T8-Spa" firstAttribute="top" secondItem="7ff-fu-Rwq" secondAttribute="top" constant="8" id="fGq-0q-eWe"/>
                                                 <constraint firstItem="bri-hi-fHZ" firstAttribute="leading" secondItem="BmM-dj-d0o" secondAttribute="leading" id="g1v-OS-mOo"/>
@@ -886,13 +890,13 @@ Teterboro-Naples</string>
                                                 <constraint firstAttribute="centerX" secondItem="qrq-Yp-Izy" secondAttribute="centerX" id="qwX-jb-O90"/>
                                                 <constraint firstAttribute="centerX" secondItem="Pcy-tk-lVd" secondAttribute="centerX" id="r9P-Ms-4Z0"/>
                                                 <constraint firstItem="EBG-Tx-WAl" firstAttribute="centerY" secondItem="gAz-Au-InV" secondAttribute="centerY" id="rK2-JY-8mI"/>
-                                                <constraint firstItem="IUp-3J-zNO" firstAttribute="centerY" secondItem="B6p-gE-LqT" secondAttribute="centerY" id="rN5-hQ-HtD"/>
                                                 <constraint firstItem="AIK-Mf-s56" firstAttribute="top" secondItem="DZk-0A-jAz" secondAttribute="bottom" constant="10" id="ruz-AQ-aI6"/>
                                                 <constraint firstItem="ZiB-G2-vDG" firstAttribute="top" secondItem="3RB-4T-UKZ" secondAttribute="bottom" constant="20" id="sX4-ct-vLs"/>
                                                 <constraint firstItem="Qyx-gH-aUz" firstAttribute="top" secondItem="9kL-cj-ePr" secondAttribute="bottom" constant="8" id="sjo-ws-xGz"/>
                                                 <constraint firstItem="OQo-je-OO2" firstAttribute="top" secondItem="dwG-nV-Oha" secondAttribute="bottom" constant="8" id="szV-JQ-tlv"/>
                                                 <constraint firstAttribute="centerX" secondItem="DZk-0A-jAz" secondAttribute="centerX" id="tA3-ZR-fyQ"/>
                                                 <constraint firstItem="8zC-kf-8zH" firstAttribute="centerX" secondItem="2Zf-XI-3uV" secondAttribute="centerX" id="tUT-ql-R6M"/>
+                                                <constraint firstAttribute="trailing" secondItem="uyM-S7-Edq" secondAttribute="trailing" constant="20" symbolic="YES" id="tWw-6r-XAG"/>
                                                 <constraint firstItem="h42-DU-5h7" firstAttribute="height" secondItem="BmM-dj-d0o" secondAttribute="height" id="tsm-kP-zhs"/>
                                                 <constraint firstItem="OQo-je-OO2" firstAttribute="leading" secondItem="7ff-fu-Rwq" secondAttribute="leading" constant="16" id="tzn-QG-FSY"/>
                                                 <constraint firstItem="h42-DU-5h7" firstAttribute="top" secondItem="bri-hi-fHZ" secondAttribute="bottom" constant="8" id="u97-qn-sPl"/>
@@ -932,16 +936,16 @@ Teterboro-Naples</string>
                                                     <exclude reference="z49-Cg-JiR"/>
                                                     <exclude reference="7H5-4B-276"/>
                                                     <exclude reference="WKt-Yr-l6p"/>
-                                                    <exclude reference="Ldq-z0-JU4"/>
                                                     <exclude reference="mA3-tI-a3E"/>
+                                                    <exclude reference="SMb-Dw-LFZ"/>
                                                     <exclude reference="5aW-Ts-90a"/>
                                                     <exclude reference="6Me-Si-tBD"/>
                                                     <exclude reference="KS6-aO-cfe"/>
+                                                    <exclude reference="STs-kf-zbW"/>
                                                     <exclude reference="ilg-pY-ZqY"/>
                                                     <exclude reference="xJl-qc-Mo2"/>
                                                     <exclude reference="i2A-Sm-zFm"/>
                                                     <exclude reference="zTf-Sf-Iku"/>
-                                                    <exclude reference="DrC-xp-ATt"/>
                                                     <exclude reference="szV-JQ-tlv"/>
                                                     <exclude reference="tzn-QG-FSY"/>
                                                     <exclude reference="ruz-AQ-aI6"/>

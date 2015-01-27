@@ -13,4 +13,7 @@
 
 @property (strong, nonatomic) NJOPReservation *reservation;
 
+- (IBAction)arrivalPinPressed:(id)sender;
+- (IBAction)departurePinPressed:(id)sender;
+
 @end
