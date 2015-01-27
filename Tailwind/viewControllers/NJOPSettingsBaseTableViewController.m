@@ -8,6 +8,9 @@
 
 #import "NJOPSettingsBaseTableViewController.h"
 
+
+
+
 @interface NJOPSettingsBaseTableViewController ()
 
 @property (nonatomic, strong) UIBarButtonItem *customBackButton;
@@ -40,8 +43,8 @@
 	
 	self.navigationItem.titleView = titleLabel;
 	
-	UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bkg-copy"]];
-	bgView.contentMode = UIViewContentModeCenter;
+	UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"settings-background"]];
+	bgView.contentMode = UIViewContentModeScaleToFill;
 	self.tableView.backgroundView = bgView;
 	
 	[self.tableView setSeparatorColor:[UIColor lightGrayColor]];

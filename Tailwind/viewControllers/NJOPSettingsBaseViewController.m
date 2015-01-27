@@ -35,8 +35,8 @@
 	
 	self.navigationItem.titleView = titleLabel;
 	
-	UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bkg-copy"]];
-	bgView.contentMode = UIViewContentModeCenter;
+	UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"settings-background"]];
+	bgView.contentMode = UIViewContentModeScaleToFill;
 	bgView.frame = self.view.bounds;
 	[self.view addSubview:bgView];
 	[self.view sendSubviewToBack:bgView];

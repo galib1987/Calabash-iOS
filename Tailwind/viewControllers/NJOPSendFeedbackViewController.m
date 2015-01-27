@@ -20,6 +20,7 @@ NSString * const NJOPFeedbackTypePlaceHolder = @"Select a Topic";
 
 @property (nonatomic, weak) IBOutlet UITextView *feedbackTypeTextView;
 @property (nonatomic, weak) IBOutlet UITextView *feedbackTextView;
+@property (nonatomic, weak) IBOutlet UIImageView *dropDownImView;
 
 @property (nonatomic, strong) NSArray *feedbackTypeStrings;
 @property (nonatomic, assign) NJOPFeedbackType feedbackType;
@@ -51,14 +52,13 @@ NSString * const NJOPFeedbackTypePlaceHolder = @"Select a Topic";
 		accessoryView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 44)];
 		accessoryView.backgroundColor = [UIColor whiteColor];
 		
-		UIBarButtonItem *prevBtn = [[UIBarButtonItem alloc] initWithTitle:@"<"
-																	style:UIBarButtonItemStylePlain
-																   target:nil
-																   action:nil];
-		UIBarButtonItem *nextBtn = [[UIBarButtonItem alloc] initWithTitle:@">"
-																	style:UIBarButtonItemStylePlain
-																   target:nil
-																   action:nil];
+		UIButton *prevBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 24.0, 18.0)];
+		[prevBtn setImage:[UIImage imageNamed:@"input-prev"] forState:UIControlStateNormal];
+		UIBarButtonItem *prevBarBtn = [[UIBarButtonItem alloc] initWithCustomView:prevBtn];
+									   
+		UIButton *nextBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 24.0, 18.0)];
+		[nextBtn setImage:[UIImage imageNamed:@"input-next"] forState:UIControlStateNormal];
+		UIBarButtonItem *nextBarBtn = [[UIBarButtonItem alloc] initWithCustomView:nextBtn];
 		
 		UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithTitle:@"Done"
 																	style:UIBarButtonItemStylePlain
@@ -68,7 +68,9 @@ NSString * const NJOPFeedbackTypePlaceHolder = @"Select a Topic";
 										  NSFontAttributeName: [UIFont boldSystemFontOfSize:14.0]} forState:UIControlStateNormal];
 		
 		// must style the buttons properly and then add them here
-		[accessoryView setItems:@[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+		[accessoryView setItems:@[prevBarBtn,
+								  nextBarBtn,
+								  [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
 																				target:nil
 																				action:nil],
 								  doneBtn]];
@@ -91,9 +93,14 @@ NSString * const NJOPFeedbackTypePlaceHolder = @"Select a Topic";
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+	[super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
 	[self.feedbackTypeTextView removeObserver:self forKeyPath:@"contentSize"];
 	
-	[super viewWillDisappear:animated];
+	[super viewDidDisappear:animated];
 }
 
 - (void)setFeedbackType:(NJOPFeedbackType)feedbackType {
@@ -115,12 +122,14 @@ NSString * const NJOPFeedbackTypePlaceHolder = @"Select a Topic";
 	}
 	
 	[self.feedbackTypeTextView becomeFirstResponder];
+	self.dropDownImView.hidden = YES;
 }
 
 - (void)doneEditingField
 {
 	if (self.feedbackTypeTextView.isFirstResponder) {
 		[self.feedbackTypeTextView resignFirstResponder];
+		self.dropDownImView.hidden = NO;
 	} else if (self.feedbackTextView.isFirstResponder) {
 		
 		[self.view endEditing:YES];
@@ -182,5 +191,12 @@ numberOfRowsInComponent:(NSInteger)component {
 }
 
 #pragma mark - UITextViewDelegate
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+	self.dropDownImView.hidden = NO;
+	
+	return YES;
+}
 
 @end

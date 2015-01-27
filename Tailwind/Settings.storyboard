@@ -358,7 +358,7 @@
                         <sections>
                             <tableViewSection id="aOr-9a-kgJ">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Cvo-0j-aGd" detailTextLabel="12M-7S-t8s" style="IBUITableViewCellStyleValue1" id="IjK-2Q-pL4" userLabel="US Date Cell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Cvo-0j-aGd" detailTextLabel="12M-7S-t8s" style="IBUITableViewCellStyleValue1" id="IjK-2Q-pL4" userLabel="US Date Cell" customClass="PickTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IjK-2Q-pL4" id="f6C-k6-uNB">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -379,7 +379,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="0.95000000000000007" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Yns-8k-M05" detailTextLabel="YQA-tg-HX3" style="IBUITableViewCellStyleValue1" id="cJj-jh-lTK" userLabel="EU Date Cell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Yns-8k-M05" detailTextLabel="YQA-tg-HX3" style="IBUITableViewCellStyleValue1" id="cJj-jh-lTK" userLabel="EU Date Cell" customClass="PickTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJj-jh-lTK" id="hK1-7d-aF8">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -543,9 +543,16 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
-                                    <outlet property="delegate" destination="t0k-Yt-yp9" id="zFZ-bo-C7L"/>
+                                    <outlet property="delegate" destination="t0k-Yt-yp9" id="Jag-vY-jNd"/>
                                 </connections>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picker-dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="Lki-80-Doi">
+                                <rect key="frame" x="360" y="129" width="18" height="9"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="9" id="5UP-9a-vSB"/>
+                                    <constraint firstAttribute="width" constant="18" id="RRB-As-jGT"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -556,12 +563,15 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
                             <constraint firstItem="Bd7-H3-YwG" firstAttribute="leading" secondItem="jJM-Cm-4jJ" secondAttribute="leading" id="dPN-lk-aT5"/>
                             <constraint firstItem="Bd7-H3-YwG" firstAttribute="trailing" secondItem="jJM-Cm-4jJ" secondAttribute="trailing" id="dVb-ph-DrD"/>
                             <constraint firstItem="oqr-Ci-wxs" firstAttribute="leading" secondItem="bbx-AE-TKu" secondAttribute="leading" constant="16" id="gR4-Ip-Rc7"/>
+                            <constraint firstItem="Lki-80-Doi" firstAttribute="centerY" secondItem="jJM-Cm-4jJ" secondAttribute="centerY" id="jqk-Mr-53J"/>
+                            <constraint firstItem="Lki-80-Doi" firstAttribute="trailing" secondItem="jJM-Cm-4jJ" secondAttribute="trailing" constant="-20" id="kLb-vS-ND8"/>
                             <constraint firstAttribute="trailing" secondItem="oqr-Ci-wxs" secondAttribute="trailing" constant="16" id="qvg-87-rXM"/>
                             <constraint firstItem="les-kl-Mkt" firstAttribute="top" secondItem="Bd7-H3-YwG" secondAttribute="bottom" constant="80" id="w70-G8-sLD"/>
                             <constraint firstItem="oqr-Ci-wxs" firstAttribute="trailing" secondItem="jJM-Cm-4jJ" secondAttribute="trailing" id="wmz-wo-sIE"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dropDownImView" destination="Lki-80-Doi" id="ase-xh-O12"/>
                         <outlet property="feedbackTextView" destination="Bd7-H3-YwG" id="AtN-tS-SCE"/>
                         <outlet property="feedbackTypeTextView" destination="jJM-Cm-4jJ" id="ErM-I3-UvU"/>
                         <segue destination="ysw-XC-PDi" kind="show" identifier="submitFeedback" id="HIe-Y8-pIT"/>
@@ -670,6 +680,9 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
             <point key="canvasLocation" x="-332" y="-10"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="picker-dropdown" width="18" height="9"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qbP-E0-CMY"/>
     </inferredMetricsTieBreakers>

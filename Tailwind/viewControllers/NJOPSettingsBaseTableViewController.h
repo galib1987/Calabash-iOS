@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface NJOPSettingsBaseTableViewController : UITableViewController
 
 @property (nonatomic, assign) BOOL hideCustomBackButton;
