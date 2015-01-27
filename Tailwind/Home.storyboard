@@ -284,6 +284,7 @@
                                 <connections>
                                     <outlet property="arrivalLabel" destination="JKh-HE-9cn" id="SvS-VD-KIq"/>
                                     <outlet property="departureLabel" destination="L4l-gg-i7s" id="DRH-rH-RI2"/>
+                                    <outlet property="flightDateLabel" destination="XNX-61-2sj" id="0Ce-c0-vpm"/>
                                     <outlet property="fromFBOAirpotCodeLabel" destination="9i0-nU-Rin" id="brO-5j-fyq"/>
                                     <outlet property="fromFBOLocationLabel" destination="pAU-c4-ahz" id="vle-ux-p8T"/>
                                     <outlet property="fromFBOTailNumberLabel" destination="8ly-kd-xH8" id="ESC-jY-UQy"/>

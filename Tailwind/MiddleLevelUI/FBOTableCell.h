@@ -9,6 +9,7 @@
 #import "NJOPTableViewCell.h"
 
 @interface FBOTableCell : NJOPTableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *flightDateLabel;
 
 @property (nonatomic, weak) IBOutlet UILabel *departureLabel;
 
