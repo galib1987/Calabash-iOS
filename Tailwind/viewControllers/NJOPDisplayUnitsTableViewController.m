@@ -13,6 +13,9 @@
 @interface NJOPDisplayUnitsTableViewController ()
 
 @property (nonatomic, weak) IBOutlet UITableViewCell *dateFormatCell;
+@property (nonatomic, weak) IBOutlet UITableViewCell *timeFormatCell;
+@property (nonatomic, weak) IBOutlet UITableViewCell *temperatureFormatCell;
+@property (nonatomic, weak) IBOutlet UITableViewCell *distanceFormatCell;
 
 @end
 
@@ -33,6 +36,8 @@
 	[super viewWillAppear:animated];
 	
 	self.dateFormatCell.detailTextLabel.text = [NJOPSettingsManager sharedInstance].dateFormatDisplay;
+	self.temperatureFormatCell.detailTextLabel.text = [NJOPSettingsManager sharedInstance].temperatureFormatDisplay;
+	self.distanceFormatCell.detailTextLabel.text = [NJOPSettingsManager sharedInstance].distanceFormatDisplay;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -18,7 +18,7 @@
 
 - (void)awakeFromNib
 {
-	self.backgroundColor = [UIColor clearColor];
+	self.contentView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setChoiceOption:(NSString *)choiceOption
