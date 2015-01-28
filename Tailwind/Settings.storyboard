@@ -545,6 +545,70 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbt-gS-90x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+=======
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="ghW-eS-grp" userLabel="Message View">
+                            <rect key="frame" x="0.0" y="306" width="414" height="116"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Toggle to the right to enable push notifications on your phone. You can always come back and change it on this page." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivO-9b-Ixl">
+                                    <rect key="frame" x="8" y="8" width="398" height="51"/>
+                                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="ivO-9b-Ixl" firstAttribute="top" secondItem="ghW-eS-grp" secondAttribute="topMargin" id="eJq-fJ-4vY"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="ivO-9b-Ixl" secondAttribute="trailing" id="fJ4-In-sMu"/>
+                                <constraint firstAttribute="centerX" secondItem="ivO-9b-Ixl" secondAttribute="centerX" id="k2Z-Ls-ib2"/>
+                                <constraint firstItem="ivO-9b-Ixl" firstAttribute="leading" secondItem="ghW-eS-grp" secondAttribute="leadingMargin" id="nd0-8t-YAC"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="6Mf-6i-eoY" userLabel="Bogus Cell Hiding View">
+                            <rect key="frame" x="0.0" y="224" width="414" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <sections>
+                            <tableViewSection id="6MS-wf-R6t">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Oy9-tP-3w6" userLabel="Push Notifications Toggle Cell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oy9-tP-3w6" id="o2J-zP-QQw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Push Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze6-SD-cfU">
+                                                    <rect key="frame" x="16" y="14" width="127" height="17"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGu-Vw-2xj">
+                                                    <rect key="frame" x="349" y="6" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="TGu-Vw-2xj" secondAttribute="trailing" constant="8" id="Bvq-Cg-FTc"/>
+                                                <constraint firstAttribute="centerY" secondItem="Ze6-SD-cfU" secondAttribute="centerY" id="IUy-nb-Wnw"/>
+                                                <constraint firstAttribute="centerY" secondItem="TGu-Vw-2xj" secondAttribute="centerY" id="nAW-4C-4Gz"/>
+                                                <constraint firstItem="Ze6-SD-cfU" firstAttribute="leading" secondItem="o2J-zP-QQw" secondAttribute="leadingMargin" constant="8" id="q4H-5M-tKU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="0.95000000000000007" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="f76-gJ-muq" id="YfQ-v4-9ZT"/>
+                            <outlet property="delegate" destination="f76-gJ-muq" id="7LF-Va-fPA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Squ-Bd-2ea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+>>>>>>> local
             </objects>
             <point key="canvasLocation" x="859" y="584"/>
         </scene>
