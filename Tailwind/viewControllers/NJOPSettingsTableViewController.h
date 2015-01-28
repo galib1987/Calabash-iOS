@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 NetJets. All rights reserved.
 //
 
-#import "NJOPSettingsBaseTableViewController.h"
+#import "NJOPSettingsBaseStaticTableViewController.h"
 
-@interface NJOPSettingsTableViewController : NJOPSettingsBaseTableViewController
+@interface NJOPSettingsTableViewController : NJOPSettingsBaseStaticTableViewController
 
 @end

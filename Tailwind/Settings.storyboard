@@ -20,22 +20,22 @@
             <objects>
                 <tableViewController storyboardIdentifier="SettingsTVC" title="SETTINGS" id="LEJ-BI-d5m" customClass="NJOPSettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lWb-iY-osS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="IlC-4b-HpO" userLabel="Message View">
-                            <rect key="frame" x="0.0" y="284" width="414" height="260"/>
+                            <rect key="frame" x="0.0" y="284" width="600" height="260"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to comment on a recent flight? Is there a feature that you would like to see in the next release of this app?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwv-dN-sof">
-                                    <rect key="frame" x="20" y="20" width="374" height="68"/>
+                                    <rect key="frame" x="20" y="20" width="560" height="68"/>
                                     <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoV-D1-hj1">
-                                    <rect key="frame" x="20" y="104" width="374" height="60"/>
+                                    <rect key="frame" x="20" y="104" width="560" height="60"/>
                                     <color key="backgroundColor" red="0.69803921568627447" green="0.95686274509803915" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="WhT-OR-hMV"/>
@@ -50,7 +50,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lET-Bp-Wgl">
-                                    <rect key="frame" x="20" y="180" width="374" height="60"/>
+                                    <rect key="frame" x="20" y="180" width="560" height="60"/>
                                     <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="p2x-tP-Yxd"/>
@@ -111,7 +111,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <connections>
-                                            <segue destination="PZ9-kh-OGR" kind="show" identifier="unitsSegue" id="ZJc-Aa-VB5"/>
+                                            <segue destination="PZ9-kh-OGR" kind="show" id="C1B-NR-6qG"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="V40-oW-Smy" detailTextLabel="toO-tJ-Y6k" style="IBUITableViewCellStyleValue1" id="29n-Dp-4p1" userLabel="Privacy and Terms Cell">
@@ -214,25 +214,25 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="SETTINGS" id="Uzi-gp-B8P"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="736"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <segue destination="t0k-Yt-yp9" kind="show" identifier="feedbackSegue" id="aFO-1W-B6W"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5R-b8-2Tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="-10"/>
+            <point key="canvasLocation" x="142" y="-10"/>
         </scene>
         <!--DISPLAY UNITS-->
         <scene sceneID="dB3-yw-GpK">
             <objects>
                 <tableViewController title="DISPLAY UNITS" id="PZ9-kh-OGR" customClass="NJOPDisplayUnitsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MkN-g4-9qR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="7Bc-62-QBH" userLabel="Bogus Cell Hiding View">
-                            <rect key="frame" x="0.0" y="240" width="414" height="1"/>
+                            <rect key="frame" x="0.0" y="176" width="600" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -260,7 +260,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="0.95000000000000007" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="Plu-V0-ZpV" kind="show" id="vqQ-d2-CnX"/>
+                                            <segue destination="d4c-i7-tMv" kind="show" id="jXq-Cd-K7C"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="4gy-Mh-yqf" detailTextLabel="uht-bR-RGh" style="IBUITableViewCellStyleValue1" id="hVb-oC-8IH" userLabel="Time Cell">
@@ -340,18 +340,51 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dW6-FF-riB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="-1078"/>
+            <point key="canvasLocation" x="859" y="-1066"/>
+        </scene>
+        <!--DATE-->
+        <scene sceneID="csh-l3-HL4">
+            <objects>
+                <viewController title="DATE" id="d4c-i7-tMv" customClass="NJOPChooseDateFormatTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iil-xM-sic"/>
+                        <viewControllerLayoutGuide type="bottom" id="VGU-Zs-90K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XFz-2x-4Vr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UiM-IH-au5">
+                                <rect key="frame" x="6" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="UiM-IH-au5" secondAttribute="bottom" id="ESS-YW-97N"/>
+                            <constraint firstItem="UiM-IH-au5" firstAttribute="leading" secondItem="XFz-2x-4Vr" secondAttribute="leading" id="MVv-dG-UKF"/>
+                            <constraint firstItem="UiM-IH-au5" firstAttribute="top" secondItem="Iil-xM-sic" secondAttribute="bottom" id="dQh-w0-sdO"/>
+                            <constraint firstAttribute="trailing" secondItem="UiM-IH-au5" secondAttribute="trailing" id="pSI-fh-7mg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="UiM-IH-au5" id="Pmf-NI-6Cb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xhf-AY-2Ky" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1608" y="-1066"/>
         </scene>
         <!--DATE-->
         <scene sceneID="3l7-nJ-s7w">
             <objects>
-                <tableViewController title="DATE" id="Plu-V0-ZpV" customClass="NJOPDateFormatTableViewController" sceneMemberID="viewController">
+                <tableViewController title="DATE" id="Plu-V0-ZpV" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Bqd-xa-RC1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="8gL-nh-Lb7" userLabel="Bogus Cell Hiding View">
-                            <rect key="frame" x="0.0" y="152" width="414" height="1"/>
+                            <rect key="frame" x="0.0" y="88" width="600" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -415,7 +448,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqK-gZ-ZoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1370" y="-1078"/>
+            <point key="canvasLocation" x="2368" y="-1066"/>
         </scene>
         <!--PRIVACY AND TERMS-->
         <scene sceneID="Gbs-cP-a0B">
@@ -426,11 +459,11 @@
                         <viewControllerLayoutGuide type="bottom" id="A6s-ui-lAZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="w7w-nX-hVC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="341" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IYk-0P-2o8">
-                                <rect key="frame" x="0.0" y="64" width="414" height="608"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="472"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="privacyCell" rowHeight="340" id="a9V-2I-Pc9">
@@ -439,7 +472,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a9V-2I-Pc9" id="tdw-Mt-5a0">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRIVACY AND TERMS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vq7-DO-WkW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PRIVACY AND TERMS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vq7-DO-WkW">
                                                     <rect key="frame" x="12" y="12" width="390" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="zYV-xP-h0k"/>
@@ -448,14 +481,14 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5u-bl-DuR">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M5u-bl-DuR">
                                                     <rect key="frame" x="12" y="42" width="390" height="5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="5" id="nsY-PU-oKq"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiF-ZW-YWP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiF-ZW-YWP">
                                                     <rect key="frame" x="12" y="57" width="390" height="270.5"/>
                                                     <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum; Illa tamen simplicia, vestra versuta. Sin laboramus, quis est, qui alienae modum statuat industriae? Quamquam id quidem licebit iis existimare, qui legerint. Graece donan, Latine voluptatem vocant.
 
@@ -515,11 +548,11 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
                         <viewControllerLayoutGuide type="bottom" id="les-kl-Mkt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bbx-AE-TKu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUBJECT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqr-Ci-wxs">
-                                <rect key="frame" x="16" y="84" width="382" height="18"/>
+                                <rect key="frame" x="16" y="84" width="568" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="IoU-lg-ofH"/>
                                 </constraints>
@@ -528,7 +561,7 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJM-Cm-4jJ">
-                                <rect key="frame" x="16" y="106" width="382" height="56"/>
+                                <rect key="frame" x="16" y="106" width="568" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="uuy-YZ-XEG"/>
@@ -538,7 +571,7 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bd7-H3-YwG">
-                                <rect key="frame" x="16" y="172" width="382" height="484"/>
+                                <rect key="frame" x="16" y="172" width="568" height="348"/>
                                 <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -547,7 +580,7 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
                                 </connections>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picker-dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="Lki-80-Doi">
-                                <rect key="frame" x="360" y="129" width="18" height="9"/>
+                                <rect key="frame" x="546" y="129" width="18" height="9"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="9" id="5UP-9a-vSB"/>
                                     <constraint firstAttribute="width" constant="18" id="RRB-As-jGT"/>
@@ -590,11 +623,11 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
                         <viewControllerLayoutGuide type="bottom" id="pln-OA-zU5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="okO-eZ-k9K">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drA-0P-HRy">
-                                <rect key="frame" x="12" y="88" width="390" height="24"/>
+                                <rect key="frame" x="12" y="88" width="576" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Ebc-vk-czQ"/>
                                 </constraints>
@@ -603,14 +636,14 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENh-1c-dCw">
-                                <rect key="frame" x="12" y="117" width="390" height="5"/>
+                                <rect key="frame" x="12" y="117" width="576" height="5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="4eV-sW-kEs"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMS-WT-Vpi">
-                                <rect key="frame" x="12" y="132" width="390" height="264"/>
+                                <rect key="frame" x="12" y="132" width="576" height="264"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="264" id="c91-Zx-eK3"/>
                                 </constraints>
@@ -624,7 +657,7 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdI-d2-Sw2">
-                                <rect key="frame" x="12" y="476" width="390" height="60"/>
+                                <rect key="frame" x="12" y="340" width="576" height="60"/>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="yeL-1u-bP2"/>
@@ -659,7 +692,7 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0HP-rX-Wwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1370" y="584"/>
+            <point key="canvasLocation" x="1608" y="584"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fWu-K0-521">
@@ -677,7 +710,7 @@ Nam Pyrrho, Aristo, Erillus iam diu abiecti. Duo Reges: constructio interrete. M
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIP-dH-sQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-332" y="-10"/>
+            <point key="canvasLocation" x="-604" y="-10"/>
         </scene>
     </scenes>
     <resources>

@@ -1,5 +1,5 @@
 //
-//  NJOPSettingsBaseTableViewController.h
+//  NJOPSettingsBaseStaticTableViewController.h
 //  Tailwind
 //
 //  Created by Amin Heidari on 1/27/15.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface NJOPSettingsBaseTableViewController : UITableViewController
+@interface NJOPSettingsBaseStaticTableViewController : UITableViewController
 
 @property (nonatomic, assign) BOOL hideCustomBackButton;
 

@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, NJOPSettingsManagerDateFormat) {
 @interface NJOPSettingsManager : NSObject
 
 @property (nonatomic, assign) NJOPSettingsManagerDateFormat dateFormat;
+@property (nonatomic, assign) NSString *dateFormatDisplay;
 
 + (instancetype)sharedInstance;
 

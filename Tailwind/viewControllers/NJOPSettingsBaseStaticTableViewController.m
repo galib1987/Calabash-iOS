@@ -1,32 +1,24 @@
 //
-//  NJOPSettingsBaseTableViewController.m
+//  NJOPSettingsBaseStaticTableViewController.m
 //  Tailwind
 //
 //  Created by Amin Heidari on 1/27/15.
 //  Copyright (c) 2015 NetJets. All rights reserved.
 //
 
-#import "NJOPSettingsBaseTableViewController.h"
+#import "NJOPSettingsBaseStaticTableViewController.h"
 
-
-
-
-@interface NJOPSettingsBaseTableViewController ()
+@interface NJOPSettingsBaseStaticTableViewController ()
 
 @property (nonatomic, strong) UIBarButtonItem *customBackButton;
 
 @end
 
-@implementation NJOPSettingsBaseTableViewController
+@implementation NJOPSettingsBaseStaticTableViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
-	// Uncomment the following line to preserve selection between presentations.
-	// self.clearsSelectionOnViewWillAppear = NO;
-	
-	// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-	// self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	// Do any additional setup after loading the view.
 	
 	[self.navigationController.navigationBar setTranslucent:YES];
 	self.navigationController.navigationBar.shadowImage = [UIImage new];
@@ -36,7 +28,7 @@
 	self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
 	
 	UILabel *titleLabel = [[UILabel alloc] init];
-	titleLabel.text = self.navigationItem.title;
+	titleLabel.text = self.navigationItem.title;// @"Settings";
 	titleLabel.textColor = [UIColor whiteColor];
 	titleLabel.font = [UIFont boldSystemFontOfSize:16.0];
 	[titleLabel sizeToFit];
@@ -45,9 +37,8 @@
 	
 	UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"settings-background"]];
 	bgView.contentMode = UIViewContentModeScaleToFill;
-	self.tableView.backgroundView = bgView;
-	
-	[self.tableView setSeparatorColor:[UIColor lightGrayColor]];
+	bgView.frame = self.view.bounds;
+	[self.tableView setBackgroundView:bgView];
 	
 	if ([self.navigationController.viewControllers indexOfObject:self] > 0) {
 		UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 22.0, 17.0)];
@@ -57,6 +48,8 @@
 		[self.navigationItem setLeftBarButtonItem:self.customBackButton];
 		self.navigationItem.hidesBackButton = YES;
 	}
+	
+	self.tableView.scrollEnabled = NO;
 }
 
 - (void)setHideCustomBackButton:(BOOL)hideCustomBackButton
@@ -65,7 +58,7 @@
 	
 	if ([self.navigationController.viewControllers indexOfObject:self] == 0) {
 		return;
-	}
+	};
 	
 	if (hideCustomBackButton) {
 		self.navigationItem.leftBarButtonItem = nil;
@@ -79,4 +72,25 @@
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
+
+
+
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

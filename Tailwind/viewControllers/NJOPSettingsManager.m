@@ -57,4 +57,24 @@
 	[self persistCurrentSettings];
 }
 
+- (NSString *)dateFormatDisplay
+{
+	switch (self.dateFormat) {
+		case NJOPSettingsManagerDateFormatUS:
+		{
+			return @"US";
+		}
+			break;
+			
+		case NJOPSettingsManagerDateFormatEU:
+		{
+			return @"EU";
+		}
+			break;
+			
+		default:
+			break;
+	}
+}
+
 @end
