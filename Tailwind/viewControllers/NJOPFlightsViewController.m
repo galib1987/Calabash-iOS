@@ -12,8 +12,11 @@
 #import "NJOPFlightsDetailViewController.h"
 #import "NJOPOAuthClient.h"
 #import "NJOPFlightHTTPClient.h"
+#import "NJOPSelectAccountViewController.h"
+#import "NJOPAccountViewController.h"
 
-@interface NJOPFlightsViewController ()
+@interface NJOPFlightsViewController () <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (strong, nonatomic) NSArray *cellsForReservations;
 @end
@@ -24,27 +27,25 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
     
-    
-    if( [self respondsToSelector:@selector(setEdgesForExtendedLayout:)] )
-    {
-        self.edgesForExtendedLayout=UIRectEdgeNone;
-        self.extendedLayoutIncludesOpaqueBars=NO;
-        self.automaticallyAdjustsScrollViewInsets=NO;
-    }
-    
-    
-    if( [self respondsToSelector:@selector(setEdgesForExtendedLayout:)] )
-    {
-        self.edgesForExtendedLayout=UIRectEdgeNone;
-        self.extendedLayoutIncludesOpaqueBars=NO;
-        self.automaticallyAdjustsScrollViewInsets=NO;
-    }
-    
-    [self.tableView setContentInset:UIEdgeInsetsMake(-100,0,0,0)];
+    [self hideRefreshControl];
     
     // Do any additional setup after loading the view.
     [self setupRefreshControl];
 
+}
+
+- (void)hideRefreshControl {
+    CGFloat containerInset = -(self.topView.frame.size.height * 2/3) + 0.8f;
+    [self.tableView setContentInset:UIEdgeInsetsMake(containerInset, 0.0f, 0.0f, 0.0f)];
+}
+
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    CGFloat currentOffset = self.tableView.contentOffset.y;
+    
+    if (currentOffset >= self.topView.frame.size.height/3) {
+        [self.tableView setContentInset:UIEdgeInsetsZero];
+    }
 }
 
 - (void)setupRefreshControl {
@@ -145,7 +146,10 @@
     return sectionsArray;
 }
 
+
 -(void)updateWithReservation:(NSArray *)reservations {
+    
+    
     
     self.cellsForReservations = [self sectionsFromReservations:reservations];
     
@@ -161,6 +165,8 @@
     
     
 }
+
+#pragma mark -- BUTTON ACTIONS
 
 - (IBAction)segmentedControlAction:(id)sender {
     /* need to load contract flights vs individual's booked flights */
@@ -182,6 +188,22 @@
         self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
         [self.tableView reloadData];
     }
+}
+
+- (IBAction)viewPastFlightsPressed:(id)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Account" bundle:nil];
+    NJOPAccountViewController *pastFlightsVC = [storyboard instantiateInitialViewController];
+    
+    [self.navigationController pushViewController:pastFlightsVC animated:YES];
+}
+
+- (IBAction)bookNewFlightPressed:(id)sender {
+    NSLog(@"BEING PRESSED.");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Booking" bundle:nil];
+    NJOPSelectAccountViewController *selectAccountVC = [storyboard instantiateViewControllerWithIdentifier:@"BookingSelectAccount"];
+    
+    [self.navigationController pushViewController:selectAccountVC animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -74,6 +74,8 @@
 		A74CDC631A6F951800F10A0C /* weather-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A74CDC601A6F951800F10A0C /* weather-test.json */; };
 		A750999B1A6357C00091D7E3 /* NJOPMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75099981A6357C00091D7E3 /* NJOPMessagesViewController.m */; };
 		A750999D1A63587D0091D7E3 /* NJOPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A750999C1A63587D0091D7E3 /* NJOPHomeViewController.m */; };
+		A75F554A1A786D8500395CE3 /* NJOPTitleSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75F55481A786D8500395CE3 /* NJOPTitleSummaryViewController.m */; };
+		A75F554B1A786D8500395CE3 /* NJOPTitleSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75F55491A786D8500395CE3 /* NJOPTitleSummaryViewController.xib */; };
 		A762F9791A6665BE002065EB /* NJOPCateringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762F9781A6665BE002065EB /* NJOPCateringViewController.m */; };
 		A762F97C1A6665D0002065EB /* NJOPCrewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762F97B1A6665D0002065EB /* NJOPCrewViewController.m */; };
 		A7647F131A78F1F600475CE8 /* _NJOPLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = A7647F101A78F1F600475CE8 /* _NJOPLeg.m */; };
@@ -332,6 +334,9 @@
 		A75099971A6357C00091D7E3 /* NJOPMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPMessagesViewController.h; sourceTree = "<group>"; };
 		A75099981A6357C00091D7E3 /* NJOPMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPMessagesViewController.m; sourceTree = "<group>"; };
 		A750999C1A63587D0091D7E3 /* NJOPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPHomeViewController.m; sourceTree = "<group>"; };
+		A75F55471A786D8500395CE3 /* NJOPTitleSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPTitleSummaryViewController.h; sourceTree = SOURCE_ROOT; };
+		A75F55481A786D8500395CE3 /* NJOPTitleSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPTitleSummaryViewController.m; sourceTree = SOURCE_ROOT; };
+		A75F55491A786D8500395CE3 /* NJOPTitleSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPTitleSummaryViewController.xib; sourceTree = SOURCE_ROOT; };
 		A762F9771A6665BE002065EB /* NJOPCateringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCateringViewController.h; sourceTree = "<group>"; };
 		A762F9781A6665BE002065EB /* NJOPCateringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCateringViewController.m; sourceTree = "<group>"; };
 		A762F97A1A6665D0002065EB /* NJOPCrewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCrewViewController.h; sourceTree = "<group>"; };
@@ -1186,6 +1191,9 @@
 				A7E007231A70ADE9007BE054 /* NJOPInfoCell.h */,
 				A7E007241A70ADE9007BE054 /* NJOPInfoCell.m */,
 				A7E007261A70AE0D007BE054 /* Info Views */,
+				A75F55471A786D8500395CE3 /* NJOPTitleSummaryViewController.h */,
+				A75F55481A786D8500395CE3 /* NJOPTitleSummaryViewController.m */,
+				A75F55491A786D8500395CE3 /* NJOPTitleSummaryViewController.xib */,
 			);
 			name = "Flight Detail Views";
 			sourceTree = "<group>";
@@ -1342,7 +1350,7 @@
 				TargetAttributes = {
 					30A4737819D9E41A0045D7AF = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = LCC6EUU9EK;
+						DevelopmentTeam = 47M87T34Y6;
 					};
 					30A4739119D9E41B0045D7AF = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -1420,6 +1428,7 @@
 				A77680891A4062FE00B2E7CF /* Home.storyboard in Resources */,
 				A77680AE1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold-Italic.otf in Resources */,
 				A77680B61A40659D00B2E7CF /* Nimbus-Sans-D-Bold-Italic.otf in Resources */,
+				A75F554B1A786D8500395CE3 /* NJOPTitleSummaryViewController.xib in Resources */,
 				A7A03E991A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.xib in Resources */,
 				A77680B11A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Light.otf in Resources */,
 				A77680AF1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold.otf in Resources */,
@@ -1635,6 +1644,7 @@
 				A7E007771A70B2CB007BE054 /* NJOPClient+flights.m in Sources */,
 				A77DBDC61A7257E000B5F306 /* _NJOPAircraftType.m in Sources */,
 				A7A03E9C1A42E523004BE417 /* NJOPNavigationBar.m in Sources */,
+				A75F554A1A786D8500395CE3 /* NJOPTitleSummaryViewController.m in Sources */,
 				A7BFBB571A6D4EDC00368E12 /* NJOPPlaneViewController.m in Sources */,
 				A7A03EA61A42E626004BE417 /* UIView+NJOPStyle.m in Sources */,
 				A786D6131A66351F006EDA24 /* NJOPOSViewController.m in Sources */,
@@ -1839,7 +1849,7 @@
 			baseConfigurationReference = 03307E6D414420F7D9C0477B /* Pods.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
@@ -1938,7 +1948,7 @@
 			baseConfigurationReference = 93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
@@ -2020,7 +2030,7 @@
 			baseConfigurationReference = 553EE494A15E7540C63F4EE6 /* Pods.qa.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
