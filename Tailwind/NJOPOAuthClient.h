@@ -21,5 +21,4 @@
 
 + (NJOPOAuthClient*)sharedInstance;
 
-- (void) login:(NSString *)username withPassword:(NSString *) passwd;
 @end

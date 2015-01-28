@@ -10,12 +10,13 @@
 #import "NJOPClient+Login.h"
 #import "NCLInfoPresenter.h"
 #import "NJOPConfig.h"
-#import "NJOPOAuthClient.h"
+#import "NJOPUser.h"
 #import "NJOPFlightHTTPClient.h"
 
 @interface NJOPLoginViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) NJOPLoginViewUserInput* userInput;
 @property (nonatomic, strong) id<Task>loginTask;
+@property (nonatomic, strong) UIView *coverView;
 @end
 
 @implementation NJOPLoginViewController
@@ -47,6 +48,8 @@
 	_userNameTextField.delegate = self;
 	_passwordTextField.delegate = self;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(displayHome) name:kBriefLoadSuccessNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentError:) name:kBriefLoadFailureNotification object:nil];
     
     // tap gesture to dismiss keyboard
     // we put this on any UIView that we want to be able to dismiss keyboard from
@@ -57,6 +60,11 @@
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
 
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 -(BOOL)shouldAutorotate {
@@ -117,13 +125,18 @@
 
 #pragma mark - Actions
 
--(void)presentError:(NSError*)error {
-
-	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:error.localizedDescription message:error.localizedFailureReason preferredStyle:UIAlertControllerStyleAlert];
-	UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-	}];
-	[alertController addAction:dismissAction];
-	[self presentViewController:alertController animated:YES completion:nil];
+- (void)presentError:(NSNotification*)notification
+{
+    NSError *error = (NSError*)notification.object;
+    NSLog(@"log in error %ld : %@", error.code, error.description);
+    
+    [self presentMessage:@"Error" withTitle:@"Login Failed. Please try again."];
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.coverView setAlpha:0.0];
+    } completion:^(BOOL finished) {
+        [self.coverView removeFromSuperview];
+    }];
 }
 
 - (void) presentMessage:(NSString *) message withTitle:(NSString *) title {
@@ -140,83 +153,37 @@
     if (USE_STATIC_DATA == 1) {
         [self displayHome];
     } else {
-	if (!self.loginTask) {
 
-		UIView* coverView = [UIView new];
-		coverView.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.7];
-		coverView.frame = self.view.bounds;
+		self.coverView = [UIView new];
+		self.coverView.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.7];
+		self.coverView.frame = self.view.bounds;
 		UILabel* label = [UILabel new];
 		label.textColor = [UIColor whiteColor];
 		label.text = @"Loading";
 		label.textAlignment = NSTextAlignmentCenter;
-		label.frame = coverView.bounds;
-		[coverView addSubview:label];
-		[coverView setUserInteractionEnabled:NO];
-		[self.view addSubview:coverView];
+		label.frame = self.coverView.bounds;
+		[self.coverView addSubview:label];
+		[self.coverView setUserInteractionEnabled:NO];
+		[self.view addSubview:self.coverView];
         [[NJOPConfig sharedInstance] hideKeyboard];
-        
-        coverView.alpha = 0.0;
-        [UIView animateWithDuration:0.2 animations:^{
-            [coverView setAlpha:1.0];
-        } completion:^(BOOL finished) {
-        
-            // login should be synchronous. we can't really do anything if login fails for any reason
-            NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
-            [session login:self.userNameTextField.text withPassword:self.passwordTextField.text];
-            if (session.isLoggedIn == YES) {
-                /*
-                [UIView animateWithDuration:0.2 animations:^{
-                    [coverView setAlpha:0.0];
-                } completion:^(BOOL finished) {
-                    [coverView removeFromSuperview];
-                    [self displayHome];
-                }];
-                 */
-                
-                [self displayHome];
-            } else {
-                [self presentMessage:@"Error" withTitle:@"Login Failed. Please try again."];
-                [UIView animateWithDuration:0.2 animations:^{
-                    [coverView setAlpha:0.0];
-                } completion:^(BOOL finished) {
-                    [coverView removeFromSuperview];
-                }];
-            } // end isLoggedIn
-            
-        }]; // end loading animation
-        
-        
-        /*
-		__weak NJOPLoginViewController* wself = self;
-		self.loginTask = [[NJOPClient loginWithUserInputs:self.userInput] continueWithBlock:^id(id result) {
-			NJOPLoginViewController* self = wself;
+        self.coverView.alpha = 0.0;
 
-			NSError* error = [(id<Task>)result error];
-			if (error) {
-				self.loginTask = nil;
-				[self presentError:error];
-				[UIView animateWithDuration:0.2 animations:^{
-					[coverView setAlpha:0.0];
-				} completion:^(BOOL finished) {
-					[coverView removeFromSuperview];
-				}];
-			} else {
-				label.text = @"Done";
-                self.loginTask = nil;
-				[UIView animateWithDuration:0.2 animations:^{
-					[coverView setAlpha:0.0];
-				} completion:^(BOOL finished) {
-					[coverView removeFromSuperview];
-                    [self displayHome];
-				}];
-				//NSAssert(self.completionHandler, @"");
-				//self.completionHandler(self);
-			}
-			return nil;
-		}];
-        */
-	} // end if loginTask
-    } // end else static
+        [UIView animateWithDuration:0.2 animations:^{
+            [self.coverView setAlpha:1.0];
+        } completion:^(BOOL finished) {
+
+            // update the user & password
+            NSString *username = [self.userNameTextField.text stringByTrimmingWhiteSpaceAndNewLines];
+            NSString *password = [self.passwordTextField.text stringByTrimmingWhiteSpaceAndNewLines];
+
+            NCLUserPassword *userPass = [[NCLUserPassword alloc] initWithUsername:username password:password host:API_HOSTNAME];
+            [NCLKeychainStorage saveUserPassword:userPass error:nil];
+            [NJOPUser sharedInstance].username = username;
+            
+            // load & save account & flight data
+            [[NJOPFlightHTTPClient sharedInstance] loadBrief];
+        }];
+    }
 }
 
 - (void) displayHome {

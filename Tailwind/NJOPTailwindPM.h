@@ -10,18 +10,18 @@
 #import "NJOPAccount.h"
 #import "NJOPReservation2.h"
 #import "NJOPRequest2.h"
+#import "NJOPLocation.h"
 
 @interface NJOPTailwindPM : NCLPersistenceManager
 
-@property (strong, nonatomic) NSArray *accounts;
-@property (strong, nonatomic) NSArray *reservations;
-@property (strong, nonatomic) NSArray *requests;
-
 + (NJOPTailwindPM*)sharedInstance;
-- (void)fetchCoreData;
-- (void)addReservationWithId:(NSNumber *)reservationId;
-- (void)addAccountWithId:(NSNumber *)accountId;
-- (void)addRequestWithId:(NSNumber *)requestId;
-+ (BOOL)coreDataEmptyForEntityName:(NSString *)entityName inContext:(NSManagedObjectContext *)context;
+
+- (NJOPAccount*)accountForID:(NSNumber*)accountID createIfNeeded:(BOOL)createIfNeeded moc:(NSManagedObjectContext*)moc;
+- (NJOPReservation2*)reservationForID:(NSNumber*)reservationID createIfNeeded:(BOOL)createIfNeeded moc:(NSManagedObjectContext*)moc;
+- (NJOPLeg*)legForID:(NSNumber*)legID createIfNeeded:(BOOL)createIfNeeded moc:(NSManagedObjectContext*)moc;
+- (NJOPLocation*)locationForID:(NSNumber*)fboID createIfNeeded:(BOOL)createIfNeeded moc:(NSManagedObjectContext*)moc;
+
+- (NJOPAccount*)updateAccount:(NSDictionary*)accountDict moc:(NSManagedObjectContext*)moc;
+- (NJOPRequest2*)updateRequest:(NSDictionary*)requestDict moc:(NSManagedObjectContext*)moc;
 
 @end

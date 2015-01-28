@@ -17,13 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-//    [self.homeButton setImage:[UIImage imageNamed:@"menu-btn-home-on"] forState:UIControlStateSelected | UIControlStateHighlighted];
-//    [self.accountButton setImage:[UIImage imageNamed:@"menu-btn-account-off"] forState:UIControlStateSelected | UIControlStateHighlighted];
-//    [self.messagesButton setImage:[UIImage imageNamed:@"menu-btn-messages-off"] forState:UIControlStateSelected | UIControlStateSelected];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -30,7 +30,6 @@
     [[NCLNetworking sharedInstance] setStandardHeaders:projectHeaders forDomain:@"netjets.com"];
     
     
-    [NJOPNetJetsCorePM sharedInstance].mainMOC;
     // Override point for customization after application launch.
     
     self.currentStoryboardTypeInt = isUndefinedScreen; // set the screen as unknown at first

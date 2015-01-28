@@ -8,9 +8,15 @@
 
 #import "NJOPFlightHTTPClient.h"
 
+extern NSString * const kBriefLoadSuccessNotification;
+extern NSString * const kBriefLoadFailureNotification;
+
 @interface NJOPFlightHTTPClient : NCLHTTPClient
 
 + (NJOPFlightHTTPClient*)sharedInstance;
+
+- (void)loadBrief;
+- (void)loadFlightsForAccounts:(NSArray*)accountIDs;
 
 - (void)loadBriefWithCompletion:(void (^)(NSArray *reservations, NSError *error))completionHandler;
 
