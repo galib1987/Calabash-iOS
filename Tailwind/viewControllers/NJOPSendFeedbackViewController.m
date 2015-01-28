@@ -22,6 +22,9 @@ NSString * const NJOPFeedbackTypePlaceHolder = @"Select a Topic";
 @property (nonatomic, weak) IBOutlet UITextView *feedbackTextView;
 @property (nonatomic, weak) IBOutlet UIImageView *dropDownImView;
 
+@property (nonatomic, strong) UIButton *nextBtn;
+@property (nonatomic, strong) UIButton *prevBtn;
+
 @property (nonatomic, strong) NSArray *feedbackTypeStrings;
 @property (nonatomic, assign) NJOPFeedbackType feedbackType;
 @property (nonatomic, strong) UIPickerView *feedbackTypePicker;
@@ -54,10 +57,14 @@ NSString * const NJOPFeedbackTypePlaceHolder = @"Select a Topic";
 		
 		UIButton *prevBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 24.0, 18.0)];
 		[prevBtn setImage:[UIImage imageNamed:@"input-prev"] forState:UIControlStateNormal];
+		[prevBtn addTarget:self action:@selector(prevInputTapped) forControlEvents:UIControlEventTouchUpInside];
+		self.prevBtn = prevBtn;
 		UIBarButtonItem *prevBarBtn = [[UIBarButtonItem alloc] initWithCustomView:prevBtn];
 									   
 		UIButton *nextBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 24.0, 18.0)];
 		[nextBtn setImage:[UIImage imageNamed:@"input-next"] forState:UIControlStateNormal];
+		[nextBtn addTarget:self action:@selector(nextInputTapped) forControlEvents:UIControlEventTouchUpInside];
+		self.nextBtn = nextBtn;
 		UIBarButtonItem *nextBarBtn = [[UIBarButtonItem alloc] initWithCustomView:nextBtn];
 		
 		UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithTitle:@"Done"
@@ -75,17 +82,24 @@ NSString * const NJOPFeedbackTypePlaceHolder = @"Select a Topic";
 																				action:nil],
 								  doneBtn]];
 	}
-	
 	self.feedbackTypeTextView.inputAccessoryView = accessoryView;
 	self.feedbackTextView.inputAccessoryView = accessoryView;
 	
-	UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(beginEditingFeedbackType)];
-	[self.feedbackTypeTextView addGestureRecognizer:tapGR];
+	{
+		UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(beginEditingFeedbackType)];
+		[self.feedbackTypeTextView addGestureRecognizer:tapGR];
+	}
+	
+	{
+		UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped)];
+		[self.view addGestureRecognizer:tapGR];
+	}
 	
 	self.feedbackTypeTextView.text = NJOPFeedbackTypePlaceHolder;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
 	[super viewWillAppear:animated];
 	
 	[self.feedbackTypeTextView addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:NULL];
@@ -111,6 +125,14 @@ NSString * const NJOPFeedbackTypePlaceHolder = @"Select a Topic";
 
 #pragma mark - private
 
+- (void)viewTapped
+{
+	self.dropDownImView.hidden = NO;
+	[self displayDarkOverlay:NO];
+	
+	[self.view endEditing:YES];
+}
+
 - (void)beginEditingFeedbackType
 {
 	if (self.feedbackTypeTextView.isFirstResponder) {
@@ -121,8 +143,12 @@ NSString * const NJOPFeedbackTypePlaceHolder = @"Select a Topic";
 		self.feedbackType = NJOPFeedbackTypeApp;
 	}
 	
+	self.nextBtn.enabled = YES;
+	self.prevBtn.enabled = NO;
+	
 	[self.feedbackTypeTextView becomeFirstResponder];
 	self.dropDownImView.hidden = YES;
+	[self displayDarkOverlay:YES];
 }
 
 - (void)doneEditingField
@@ -130,6 +156,7 @@ NSString * const NJOPFeedbackTypePlaceHolder = @"Select a Topic";
 	if (self.feedbackTypeTextView.isFirstResponder) {
 		[self.feedbackTypeTextView resignFirstResponder];
 		self.dropDownImView.hidden = NO;
+		[self displayDarkOverlay:NO];
 	} else if (self.feedbackTextView.isFirstResponder) {
 		
 		[self.view endEditing:YES];
@@ -160,10 +187,33 @@ NSString * const NJOPFeedbackTypePlaceHolder = @"Select a Topic";
 	}
 }
 
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
 	UITextView *tv = object;
 	CGFloat topCorrect = ([tv bounds].size.height - [tv contentSize].height * [tv zoomScale])/2.0;
 	tv.contentOffset = CGPointMake(0.0, -( topCorrect < 0.0 ? 0.0 : topCorrect ));
+}
+
+- (void)prevInputTapped
+{
+	[self.feedbackTypeTextView becomeFirstResponder];
+	
+	self.nextBtn.enabled = YES;
+	self.prevBtn.enabled = NO;
+	
+	self.dropDownImView.hidden = YES;
+	[self displayDarkOverlay:YES];
+}
+
+- (void)nextInputTapped
+{
+	[self.feedbackTextView becomeFirstResponder];
+	
+	self.nextBtn.enabled = NO;
+	self.prevBtn.enabled = YES;
+	
+	self.dropDownImView.hidden = NO;
+	[self displayDarkOverlay:NO];
 }
 
 #pragma mark - UIPickerViewDataSource
@@ -181,7 +231,8 @@ numberOfRowsInComponent:(NSInteger)component {
 
 - (NSString *)pickerView:(UIPickerView *)pickerView
 			 titleForRow:(NSInteger)row
-			forComponent:(NSInteger)component {
+			forComponent:(NSInteger)component
+{
 	return self.feedbackTypeStrings[row];
 }
 
@@ -194,7 +245,11 @@ numberOfRowsInComponent:(NSInteger)component {
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
+	self.nextBtn.enabled = NO;
+	self.prevBtn.enabled = YES;
+	
 	self.dropDownImView.hidden = NO;
+	[self displayDarkOverlay:NO];
 	
 	return YES;
 }

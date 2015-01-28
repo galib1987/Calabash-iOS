@@ -12,4 +12,6 @@
 
 @property (nonatomic, assign) BOOL hideCustomBackButton;
 
+- (void)displayDarkOverlay:(BOOL)show;
+
 @end

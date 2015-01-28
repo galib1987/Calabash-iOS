@@ -12,11 +12,14 @@
 
 @property (nonatomic, strong) UIBarButtonItem *customBackButton;
 
+@property (nonatomic, strong) UIView *darkOverlay;
+
 @end
 
 @implementation NJOPSettingsBaseViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	
@@ -69,6 +72,36 @@
 - (void)backBtnTapped
 {
 	[self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)displayDarkOverlay:(BOOL)show
+{
+	if (show) {
+		if (self.darkOverlay) {
+			return;
+		} else {
+			self.darkOverlay = [[UIView alloc] initWithFrame:self.view.bounds];
+			self.darkOverlay.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.4];
+			self.darkOverlay.alpha = 0.0;
+			[self.view addSubview:self.darkOverlay];
+			[UIView animateWithDuration:0.25 animations:^{
+				self.darkOverlay.alpha = 1.0;
+			} completion:^(BOOL finished) {
+				//
+			}];
+		}
+	} else {
+		if (!self.darkOverlay) {
+			return;
+		} else {
+			[UIView animateWithDuration:0.25 animations:^{
+				self.darkOverlay.alpha = 0.0;
+			} completion:^(BOOL finished) {
+				[self.darkOverlay removeFromSuperview];
+				self.darkOverlay = nil;
+			}];
+		}
+	}
 }
 
 @end
