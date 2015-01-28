@@ -10,4 +10,6 @@
 
 @interface NJOPContactViewController : UIViewController
 
+- (void) styleNavigationBar;
+
 @end

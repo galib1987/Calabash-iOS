@@ -19,9 +19,15 @@
     // Do any additional setup after loading the view from its nib.
     self.hambergerViewController = nil; 
     self.OSViewController = nil;
+    
     [self setMenuSizesAndPositions];
 	
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -44,25 +50,38 @@
 
 - (void) resetButtonState {
     self.buttonState = menuButtonNone;
+    [self contractHamburger];
+    [self contractOS];
 }
 
 #pragma mark -- Hamburger button handling
 - (IBAction)hamburgerPushed:(id)sender {
     if (self.buttonState == menuButtonNone) {
         [self expandHamburger];
-    } else if (self.buttonState == menuButtonOwnerServices) {
         [self contractOS];
+    } else if (self.buttonState == menuButtonOwnerServices) {
         [self expandHamburger];
+        [self contractOS];
     } else {
         [self contractHamburger];
+        [self contractOS];
+        self.buttonState = menuButtonNone;
     }
+    
 }
 
 - (void) expandHamburger {
+    self.hamburgerButton.selected = YES;
+    self.hamburgerButton.backgroundColor = [UIColor mainNavButtonActiveColor];
+    
+    [self contractOS];
+    
     if (self.hambergerViewController == nil) {
         self.hambergerViewController = [[NJOPHamburgerViewController alloc] initWithNibName:@"NJOPHamburgerViewController" bundle:nil];
         self.hambergerViewController.delegate = self;
     }
+    
+    
     //make sure we have the oright coordinates
     CGRect rect = self.view.frame;
     
@@ -89,6 +108,8 @@
 }
 
 - (void) contractHamburger {
+    self.hamburgerButton.selected = NO;
+    self.hamburgerButton.backgroundColor = [UIColor mainNavButtonInActiveColor];
     //make sure we have the oright coordinates
     CGRect rect = self.view.frame;
     
@@ -104,23 +125,30 @@
         self.hambergerViewController.view.frame = final;
     } completion:^(BOOL finished) {
         // eventually, do something here
-        self.buttonState = menuButtonNone;
     } ];
 }
 
 #pragma mark -- Owner Services button handling
 - (IBAction)ownerServiesPushed:(id)sender {
     if (self.buttonState == menuButtonNone) {
+        [self contractHamburger];
         [self expandOS];
     } else if (self.buttonState == menuBUttonHamburger) {
         [self contractHamburger];
         [self expandOS];
     } else {
         [self contractOS];
+        [self contractHamburger];
+        self.buttonState = menuButtonNone;
     }
+    
 }
 
 - (void) contractOS {
+    
+    self.ownerServicesButton.selected = NO;
+    self.ownerServicesButton.backgroundColor = [UIColor mainNavButtonInActiveColor];
+    
     CGRect rect = self.view.frame;
     
     float finalY = rect.origin.y;
@@ -129,15 +157,20 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.OSViewController.view.frame = final;
     } completion:^(BOOL finished) {
-        self.buttonState = menuButtonNone;
     } ];
 }
 
 - (void) expandOS {
+    
+    self.ownerServicesButton.selected = YES;
+    self.ownerServicesButton.backgroundColor = [UIColor mainNavButtonActiveColor];
+    [self contractHamburger];
+    
     if (self.OSViewController == nil) {
         self.OSViewController = [[NJOPOSViewController alloc] initWithNibName:@"NJOPOSViewController" bundle:nil];
         self.OSViewController.delegate = self;
     }
+    
     //make sure we have the oright coordinates
     CGRect rect = self.view.frame;
     

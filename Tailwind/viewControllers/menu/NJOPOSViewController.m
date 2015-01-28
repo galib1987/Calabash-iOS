@@ -8,14 +8,14 @@
 
 #import "NJOPOSViewController.h"
 #import "NJOPFlightHTTPClient.h"
-#import "NJOPSession.h"
+#import "NJOPOAuthClient.h"
 #import "NJOPMenuViewController.h"
 
 @import MessageUI;
 
 @interface NJOPOSViewController () <MFMailComposeViewControllerDelegate>
 @property (nonatomic) NSArray *accounts;
-@property (nonatomic) NJOPSession *session;
+@property (nonatomic) NJOPOAuthClient *session;
 
 @end
 
@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view from its nib.
     [self configureSlider];
     
-    self.session = [NJOPSession sharedInstance];
+    self.session = [NJOPOAuthClient sharedInstance];
     
     self.latenessSlider.value = 20;
     
@@ -57,12 +57,14 @@
 
 - (IBAction)sliderChanged:(id)sender {
     int intValue = (int)ceil(self.latenessSlider.value);
-    [_latenessNotificationButton setTitle:[NSString stringWithFormat:@"I'LL BE %d MINUTES LATE", intValue] forState:UIControlStateNormal];
+    [_latenessNotificationButton setTitle:[NSString stringWithFormat:@"I'LL BE %d MINUTES LATE", intValue]
+                                 forState:UIControlStateNormal];
     
 }
 
 - (NSDictionary *)getOSRInfo {
-    NJOPSession *session = [NJOPSession sharedInstance];
+    
+    NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
     NSLog(@"%@",session.accounts);
     
     NSDictionary *accountDict = session.accounts[0];
@@ -77,8 +79,8 @@
     
     MFMailComposeViewController *composeController = [[MFMailComposeViewController alloc] init];
     composeController.mailComposeDelegate = self;
+    
     if ([MFMailComposeViewController canSendMail]) {
-        composeController.mailComposeDelegate = self;
         [composeController setSubject:@"Running Late"];
         [composeController setToRecipients:@[teamEmail]];
         [composeController setMessageBody:[NSString stringWithFormat:@"I am running %d minutes late. \n - %@", (int)self.latenessSlider.value, clientName] isHTML:NO];
@@ -111,7 +113,7 @@
         NSLog(@"GO TEAM GO!");
     }
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)callPressed:(id)sender {

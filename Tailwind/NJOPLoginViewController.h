@@ -28,4 +28,7 @@
 
 - (void) tapGesture:(UIGestureRecognizer *) tap; // for dismissing keyboard and stuff
 
+
+- (void) styleNavigationBar;
+
 @end

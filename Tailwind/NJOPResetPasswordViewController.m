@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self styleNavigationBar];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     // tap gesture to dismiss keyboard
     // we put this on any UIView that we want to be able to dismiss keyboard from
@@ -95,6 +96,19 @@
 - (void) tapGesture:(UIGestureRecognizer *) tap {
     // we're going to dismiss keyboard
     [[NJOPConfig sharedInstance] hideKeyboard];
+}
+
+
+#pragma mark - styling navigation bar
+
+- (void) styleNavigationBar {
+    if (self.navigationController != nil)  {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
+    if (self.navigationItem != nil) {
+        self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"netjets-logo"]];
+    }
+    [[UINavigationBar appearance] setBarTintColor:[UIColor clearColor]];
 }
 
 @end

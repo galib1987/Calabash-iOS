@@ -50,7 +50,7 @@
 	[super layoutSubviews];
 	_tile.layer.cornerRadius  = _tileCornerRadius ? : DEFAULT_CELL_CORENER_RADIUS;
 	_tile.backgroundColor = _tileColor;
-
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -8,17 +8,17 @@
 
 #import "NJOPNavigationBar.h"
 
-#define kAppNavBarHeight 84.0
+#define kAppNavBarHeight 50.0
 
 
 @implementation NJOPNavigationBar
 
 -(void)awakeFromNib {
-	[self setBarTintColor:NAVIGATIONBAR_BACKGORUND_COLOR];
-	[self setTintColor:NAVIGATIONBAR_TINT_COLOR];
-	[self setTitleTextAttributes:@{NSForegroundColorAttributeName : NAVIGATIONBAR_TEXT_COLOR}];
+	[self setBarTintColor:[UIColor navigationBarBackgroundColor]];
+	[self setTintColor:[UIColor navigationBarBackgroundColor]];
+	[self setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor navigationBarTextColor]}];
     
-    UIImage *backBtn = [UIImage imageNamed:@"back arrow.png"];
+    UIImage *backBtn = [UIImage imageNamed:@"back arrow"];
     backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     [self setBackIndicatorImage:backBtn];

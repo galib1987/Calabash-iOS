@@ -32,5 +32,7 @@
 - (IBAction)settingsButtonPressed:(id)sender;
 - (IBAction)bookButtonPressed:(id)sender;
 
+- (void) setSelectedState:(id)sender;
+
 
 @end

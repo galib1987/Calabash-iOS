@@ -585,6 +585,7 @@
                         <outlet property="buttonA" destination="tvY-pg-rSy" id="kXB-OL-Efh"/>
                         <outlet property="buttonB" destination="3Um-or-nVY" id="BJG-t9-Y0y"/>
                         <outlet property="descLabel" destination="RDH-cf-Mq8" id="4Hs-t2-zNt"/>
+                        <outlet property="dividerBar" destination="mfc-QZ-oMd" id="RaC-oq-oAF"/>
                         <outlet property="headerLabel" destination="Zpg-rn-qUQ" id="Cep-RB-JLo"/>
                         <outlet property="maskHole" destination="IJv-xs-ssd" id="fY5-Yh-UrD"/>
                         <outlet property="titleTopSpace" destination="sWi-LF-y2t" id="i3J-bC-keg"/>

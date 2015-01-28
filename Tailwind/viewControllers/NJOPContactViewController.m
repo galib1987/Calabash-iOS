@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self styleNavigationBar];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,5 +52,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - styling navigation bar
+
+- (void) styleNavigationBar {
+    if (self.navigationController != nil)  {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
+    if (self.navigationItem != nil) {
+        self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"netjets-logo"]];
+    }
+    [[UINavigationBar appearance] setBarTintColor:[UIColor clearColor]];
+}
 
 @end

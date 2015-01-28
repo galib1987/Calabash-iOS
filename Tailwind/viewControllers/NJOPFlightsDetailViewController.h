@@ -8,9 +8,13 @@
 
 #import "SimpleDataSourceTableViewController.h"
 #import "NJOPReservation.h"
+#import "AppDelegate.h"
 
 @interface NJOPFlightsDetailViewController : SimpleDataSourceTableViewController
 
 @property (strong, nonatomic) NJOPReservation *reservation;
+
+- (IBAction)arrivalPinPressed:(id)sender;
+- (IBAction)departurePinPressed:(id)sender;
 
 @end

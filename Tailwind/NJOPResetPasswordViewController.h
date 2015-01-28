@@ -20,4 +20,7 @@
 - (IBAction)submitAction:(id)sender;
 
 - (void) tapGesture:(UIGestureRecognizer *) tap;
+
+- (void) styleNavigationBar;
+
 @end

@@ -23,18 +23,22 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNG-EM-osr" userLabel="Button - hamburger">
                             <rect key="frame" x="0.0" y="0.0" width="207" height="55"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <state key="normal" image="menu-hamburger-off">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="selected" image="menu-hamburger-on"/>
                             <connections>
                                 <action selector="hamburgerPushed:" destination="-1" eventType="touchUpInside" id="mm6-r4-qU5"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0L9-ix-I3K" userLabel="Button - Owner Services">
                             <rect key="frame" x="207" y="0.0" width="207" height="55"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <state key="normal" image="menu-os-off">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="selected" image="menu-os-on"/>
                             <connections>
                                 <action selector="ownerServiesPushed:" destination="-1" eventType="touchUpInside" id="K2S-yT-vUl"/>
                             </connections>
@@ -67,6 +71,8 @@
     </objects>
     <resources>
         <image name="menu-hamburger-off" width="25" height="9"/>
+        <image name="menu-hamburger-on" width="25" height="9"/>
         <image name="menu-os-off" width="23" height="12"/>
+        <image name="menu-os-on" width="23" height="12"/>
     </resources>
 </document>

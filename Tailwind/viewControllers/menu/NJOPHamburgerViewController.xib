@@ -43,10 +43,14 @@
                             <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="13"/>
                             <inset key="titleEdgeInsets" minX="-27" minY="40" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="40" minY="-20" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="HOME" image="menu-btn-home-on">
+                            <state key="normal" title="HOME" image="menu-btn-home-off">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="selected" title="HOME" image="menu-btn-home-on">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" title="HOME" image="menu-btn-home-off"/>
                             <connections>
                                 <action selector="homeButtonPressed:" destination="-1" eventType="touchUpInside" id="ZeD-no-YwI"/>
                             </connections>
@@ -63,6 +67,9 @@
                             <state key="normal" title="ACCOUNT" image="menu-btn-account-off">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" title="ACCOUNT" image="menu-btn-account-on">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="accountButtonPressed:" destination="-1" eventType="touchUpInside" id="9SF-Rs-ktJ"/>
@@ -81,6 +88,9 @@
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="selected" title="FLIGHTS" image="menu-btn-flights-on">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
                             <connections>
                                 <action selector="filghtsButtonPressed:" destination="-1" eventType="touchUpInside" id="wFm-Tk-oh4"/>
                             </connections>
@@ -97,6 +107,9 @@
                             <state key="normal" title="SETTINGS" image="menu-btn-settings-off">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" title="SETTINGS" image="menu-btn-settings-on">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="settingsButtonPressed:" destination="-1" eventType="touchUpInside" id="s9V-to-YhI"/>
@@ -115,6 +128,9 @@
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="selected" title="BOOK" image="menu-btn-book-on">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
                             <connections>
                                 <action selector="bookButtonPressed:" destination="-1" eventType="touchUpInside" id="cBw-d2-yMZ"/>
                             </connections>
@@ -123,7 +139,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MENU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgD-Ts-8Cd">
-                                    <rect key="frame" x="184" y="14" width="46.5" height="17"/>
+                                    <rect key="frame" x="184" y="14" width="47" height="17"/>
                                     <fontDescription key="fontDescription" name="NimbusSanD-Reg" family="Nimbus Sans D" pointSize="17"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
@@ -148,6 +164,9 @@
                             <state key="normal" title="MESSAGES" image="menu-btn-messages-off">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" title="MESSAGES" image="menu-btn-messages-on">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="messagesButtonPressed:" destination="-1" eventType="touchUpInside" id="gsf-7y-yJ0"/>
@@ -210,10 +229,16 @@
     </objects>
     <resources>
         <image name="menu-btn-account-off" width="28" height="27"/>
+        <image name="menu-btn-account-on" width="28" height="27"/>
         <image name="menu-btn-book-off" width="24" height="25"/>
+        <image name="menu-btn-book-on" width="24" height="25"/>
         <image name="menu-btn-flights-off" width="34" height="34"/>
+        <image name="menu-btn-flights-on" width="34" height="34"/>
+        <image name="menu-btn-home-off" width="29" height="28"/>
         <image name="menu-btn-home-on" width="29" height="28"/>
         <image name="menu-btn-messages-off" width="30" height="28"/>
+        <image name="menu-btn-messages-on" width="30" height="28"/>
         <image name="menu-btn-settings-off" width="29" height="29"/>
+        <image name="menu-btn-settings-on" width="29" height="29"/>
     </resources>
 </document>

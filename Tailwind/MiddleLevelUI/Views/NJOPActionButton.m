@@ -28,7 +28,7 @@
 -(void)layoutSubviews {
 	CGRect imageViewFrame = self.imageView.frame;
 	imageViewFrame.origin.x = CGRectGetMaxX(self.titleLabel.frame);
-	self.layer.borderColor = [UIColor blackColor].CGColor;
+	self.layer.borderColor = [UIColor darkGrayColor].CGColor;
 	self.layer.borderWidth = 1.0;
 	[super layoutSubviews];
 }
