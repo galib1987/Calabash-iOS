@@ -127,14 +127,14 @@
         <attribute name="typeGroupNameForNJE" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="AircraftSpecMatrix" positionX="45" positionY="90" width="128" height="253"/>
         <element name="AircraftType" positionX="-36" positionY="9" width="128" height="493"/>
         <element name="AircraftTypeGroup" positionX="0" positionY="45" width="128" height="223"/>
         <element name="Airport" positionX="27" positionY="72" width="128" height="283"/>
-        <element name="MasterAircraftType" positionX="54" positionY="99" width="128" height="103"/>
-        <element name="MasterAircraftTypeGroup" positionX="9" positionY="54" width="128" height="73"/>
         <element name="FBO" positionX="18" positionY="63" width="128" height="178"/>
         <element name="FBOAddress" positionX="27" positionY="72" width="128" height="238"/>
         <element name="FBOPhone" positionX="36" positionY="81" width="128" height="148"/>
-        <element name="AircraftSpecMatrix" positionX="45" positionY="90" width="128" height="253"/>
+        <element name="MasterAircraftType" positionX="54" positionY="99" width="128" height="103"/>
+        <element name="MasterAircraftTypeGroup" positionX="9" positionY="54" width="128" height="73"/>
     </elements>
 </model>

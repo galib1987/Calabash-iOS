@@ -7,6 +7,7 @@
 //
 
 #import "NJOPOAuthClient.h"
+#import "NJOPUser.h"
 
 @implementation NJOPOAuthClient
 
@@ -25,14 +26,12 @@
 
 - (NSString*)user
 {
-    return self._username;
-    //return @"kbrown@email.com";
+    return [NJOPUser sharedInstance].username;
 }
 
 - (NSString*)password
 {
-    return self._password;
-    //return @"abc123ABC";
+    return [NCLKeychainStorage userPasswordForUser:self.user host:self.host].password;
 }
 
 - (NSString*)clientID
@@ -55,29 +54,6 @@
 - (NSString*)basePath
 {
     return @"/auth/oauth/v2/token";
-}
-
-// login is really just getting a session token. If we have one, then we're logged in
-// also, we'll do stuff with keychain here
-- (void) login:(NSString *)username withPassword:(NSString *) passwd {
-    NSLog(@"Logging in username: %@ / password: %@", username, passwd);
-    // if we are storing login in keychain
-    self.isLoggedIn = NO;
-    NSError *error;
-    NCLUserPassword *userPass = nil;
-    userPass = [NCLKeychainStorage userPasswordForUser:username host:self.host];
-    [userPass setPassword:passwd];
-    [NCLKeychainStorage saveUserPassword:userPass error:nil];
-    NSLog(@"saved login in keychain");
-    self._username = username;
-    self._password = passwd;
-    NSString *token = [self accessToken:&error];
-    NSLog(@"access Token is: %@",token);
-    if (token != nil && [token length] > 0) {
-        self.isLoggedIn = YES;
-    } else {
-        self.isLoggedIn = NO;
-    }
 }
 
 @end

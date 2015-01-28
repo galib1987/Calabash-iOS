@@ -4,10 +4,16 @@
 #import "_NJOPRequest2.h"
 
 const struct NJOPRequest2Attributes NJOPRequest2Attributes = {
+	.paxJSON = @"paxJSON",
 	.requestID = @"requestID",
+	.requestedAircraft = @"requestedAircraft",
+	.status = @"status",
 };
 
 const struct NJOPRequest2Relationships NJOPRequest2Relationships = {
+	.firstLeg = @"firstLeg",
+	.lastLeg = @"lastLeg",
+	.legs = @"legs",
 	.reservation = @"reservation",
 };
 
@@ -46,6 +52,8 @@ const struct NJOPRequest2Relationships NJOPRequest2Relationships = {
 	return keyPaths;
 }
 
+@dynamic paxJSON;
+
 @dynamic requestID;
 
 - (int32_t)requestIDValue {
@@ -64,6 +72,25 @@ const struct NJOPRequest2Relationships NJOPRequest2Relationships = {
 
 - (void)setPrimitiveRequestIDValue:(int32_t)value_ {
 	[self setPrimitiveRequestID:@(value_)];
+}
+
+@dynamic requestedAircraft;
+
+@dynamic status;
+
+@dynamic firstLeg;
+
+@dynamic lastLeg;
+
+@dynamic legs;
+
+- (NSMutableSet*)legsSet {
+	[self willAccessValueForKey:@"legs"];
+
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"legs"];
+
+	[self didAccessValueForKey:@"legs"];
+	return result;
 }
 
 @dynamic reservation;
