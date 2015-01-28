@@ -178,7 +178,7 @@
 }
 
 - (IBAction)departurePinPressed:(id)sender {
-    [self testCoreDataFetch];
+//    [self testCoreDataFetch];
     
     NSString *departureFBO = self.reservation.departureFboName;
     departureFBO = [departureFBO stringByReplacingOccurrencesOfString:@" " withString:@"+"];

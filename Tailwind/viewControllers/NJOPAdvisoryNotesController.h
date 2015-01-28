@@ -6,14 +6,11 @@
 //  Copyright (c) 2015 NetJets. All rights reserved.
 //
 
-#import "SimpleDataSourceTableViewController.h"
+//#import "SimpleDataSourceTableViewController.h"
 #import "NJOPReservation.h"
 
-@interface NJOPAdvisoryNotesController : SimpleDataSourceTableViewController
+@interface NJOPAdvisoryNotesController : UIViewController
 
 @property (nonatomic) NJOPReservation *reservation;
 
-+ (NSString *)scanString:(NSString *)string
-                startTag:(NSString *)startTag
-                  endTag:(NSString *)endTag;
 @end
