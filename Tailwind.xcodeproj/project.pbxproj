@@ -42,10 +42,8 @@
 		276FF0861A785EC700F547F4 /* NJOPSettingsBaseChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0851A785EC700F547F4 /* NJOPSettingsBaseChooseTableViewController.m */; };
 		276FF0891A78630700F547F4 /* NJOPSettingsBaseStaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0881A78630700F547F4 /* NJOPSettingsBaseStaticTableViewController.m */; };
 		276FF08E1A7866B800F547F4 /* NJOPChooseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF08D1A7866B800F547F4 /* NJOPChooseTableViewCell.m */; };
-		276FF0901A7866D200F547F4 /* NJOPChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276FF08F1A7866D200F547F4 /* NJOPChooseTableViewCell.xib */; };
 		276FF0931A786B4000F547F4 /* NJOPChooseDateFormatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0921A786B4000F547F4 /* NJOPChooseDateFormatTableViewController.m */; };
 		276FF0961A78730200F547F4 /* NJOPChooseTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF0951A78730200F547F4 /* NJOPChooseTableViewHeader.m */; };
-		276FF0981A78731300F547F4 /* NJOPChooseTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276FF0971A78731300F547F4 /* NJOPChooseTableViewHeader.xib */; };
 		276FF09B1A78804900F547F4 /* NJOPChooseTemperatureFormatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF09A1A78804900F547F4 /* NJOPChooseTemperatureFormatTableViewController.m */; };
 		276FF09E1A78806400F547F4 /* NJOPChooseDistanceFormatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FF09D1A78806400F547F4 /* NJOPChooseDistanceFormatTableViewController.m */; };
 		2AD96D2C90B7446D90304928 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
@@ -276,12 +274,10 @@
 		276FF0881A78630700F547F4 /* NJOPSettingsBaseStaticTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsBaseStaticTableViewController.m; sourceTree = "<group>"; };
 		276FF08C1A7866B800F547F4 /* NJOPChooseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPChooseTableViewCell.h; sourceTree = "<group>"; };
 		276FF08D1A7866B800F547F4 /* NJOPChooseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPChooseTableViewCell.m; sourceTree = "<group>"; };
-		276FF08F1A7866D200F547F4 /* NJOPChooseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPChooseTableViewCell.xib; sourceTree = "<group>"; };
 		276FF0911A786B4000F547F4 /* NJOPChooseDateFormatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPChooseDateFormatTableViewController.h; sourceTree = "<group>"; };
 		276FF0921A786B4000F547F4 /* NJOPChooseDateFormatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPChooseDateFormatTableViewController.m; sourceTree = "<group>"; };
 		276FF0941A78730200F547F4 /* NJOPChooseTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPChooseTableViewHeader.h; sourceTree = "<group>"; };
 		276FF0951A78730200F547F4 /* NJOPChooseTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPChooseTableViewHeader.m; sourceTree = "<group>"; };
-		276FF0971A78731300F547F4 /* NJOPChooseTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPChooseTableViewHeader.xib; sourceTree = "<group>"; };
 		276FF0991A78804900F547F4 /* NJOPChooseTemperatureFormatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPChooseTemperatureFormatTableViewController.h; sourceTree = "<group>"; };
 		276FF09A1A78804900F547F4 /* NJOPChooseTemperatureFormatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPChooseTemperatureFormatTableViewController.m; sourceTree = "<group>"; };
 		276FF09C1A78806400F547F4 /* NJOPChooseDistanceFormatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPChooseDistanceFormatTableViewController.h; sourceTree = "<group>"; };
@@ -629,10 +625,8 @@
 			children = (
 				276FF08C1A7866B800F547F4 /* NJOPChooseTableViewCell.h */,
 				276FF08D1A7866B800F547F4 /* NJOPChooseTableViewCell.m */,
-				276FF08F1A7866D200F547F4 /* NJOPChooseTableViewCell.xib */,
 				276FF0941A78730200F547F4 /* NJOPChooseTableViewHeader.h */,
 				276FF0951A78730200F547F4 /* NJOPChooseTableViewHeader.m */,
-				276FF0971A78731300F547F4 /* NJOPChooseTableViewHeader.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -1379,7 +1373,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A77680B21A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Regular-Italic.otf in Resources */,
-				276FF0901A7866D200F547F4 /* NJOPChooseTableViewCell.xib in Resources */,
 				A776808B1A40631F00B2E7CF /* Flights.storyboard in Resources */,
 				30A4738819D9E41A0045D7AF /* Main.storyboard in Resources */,
 				A77680BE1A40659D00B2E7CF /* Nimbus-Sans-Extd-D-Bold.otf in Resources */,
@@ -1416,7 +1409,6 @@
 				A74CDC621A6F951800F10A0C /* past-flights.json in Resources */,
 				A7ED8F9F1A770F5F003F9BBE /* advisorynotes.html in Resources */,
 				A7E007881A70B52F007BE054 /* NJOPOSViewController.xib in Resources */,
-				276FF0981A78731300F547F4 /* NJOPChooseTableViewHeader.xib in Resources */,
 				A77680891A4062FE00B2E7CF /* Home.storyboard in Resources */,
 				A77680AE1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold-Italic.otf in Resources */,
 				A77680B61A40659D00B2E7CF /* Nimbus-Sans-D-Bold-Italic.otf in Resources */,
