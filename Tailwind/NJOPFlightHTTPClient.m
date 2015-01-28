@@ -139,6 +139,7 @@
                         reservation.passengers = requestDict[@"passengerManifest"][@"passengers"];
                         reservation.cateringOrders = requestDict[@"cateringOrders"][0][@"cateringItems"];
                         reservation.groundOrders = requestDict[@"groundOrders"];
+                        reservation.departureFBOId = requestDict[@"departureFboId"];
                         
                         [reservationsArray addObject:reservation];
                     }
