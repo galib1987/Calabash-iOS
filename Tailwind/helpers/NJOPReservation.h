@@ -49,4 +49,6 @@
 @property (nonatomic, copy) NSArray *groundOrders;
 @property (nonatomic, copy) NSArray *cateringOrders;
 
+@property (nonatomic, strong) NSNumber *departureFBOId;
+
 @end

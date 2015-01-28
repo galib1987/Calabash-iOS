@@ -16,6 +16,8 @@
 #import "NJOPIntrospector.h"
 #import "NJOPAdvisoryNotesController.h"
 #import "NJOPTitleSummaryViewController.h"
+#import "NJOPNetJetsCorePM.h"
+#import <NCLPersistenceUtil.h>
 
 @interface NJOPFlightsDetailViewController ()
 
@@ -176,6 +178,8 @@
 }
 
 - (IBAction)departurePinPressed:(id)sender {
+    [self testCoreDataFetch];
+    
     NSString *departureFBO = self.reservation.departureFboName;
     departureFBO = [departureFBO stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     NSString *urlString = @"http://maps.google.com/?q=";
@@ -183,5 +187,17 @@
     
     NSURL *url = [NSURL URLWithString:urlString];
     [[UIApplication sharedApplication] openURL:url];
+}
+
+- (void)testCoreDataFetch {
+    
+    NJOPNetJetsCorePM *persistenceManager = [NJOPNetJetsCorePM sharedInstance];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"fbo_id == @5677"];;
+    NSArray *address = [NCLPersistenceUtil executeFetchRequestForEntityName:@"FBOAddress"
+                                               predicate:pred
+                                                 context:persistenceManager.mainMOC
+                                                   error:nil];
+    NSLog(@"%@", address);
+    
 }
 @end
