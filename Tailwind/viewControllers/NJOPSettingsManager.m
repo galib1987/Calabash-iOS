@@ -15,6 +15,17 @@
 
 @implementation NJOPSettingsManager
 
+static NSDateFormatter *us_dateFormatter;
+static NSDateFormatter *eu_dateFormatter;
+
++ (void)initialize
+{
+	us_dateFormatter = [[NSDateFormatter alloc] init];
+	us_dateFormatter.dateFormat = @"EEEE MMM dd yyyy";
+	eu_dateFormatter = [[NSDateFormatter alloc] init];
+	eu_dateFormatter.dateFormat = @"EEEE dd MMM yyyy";
+}
+
 + (instancetype)sharedInstance
 {
 	static NJOPSettingsManager *instance;
@@ -135,6 +146,50 @@
 		default:
 			break;
 	}
+}
+
+- (NSDateFormatter *)dateFormatterForDateFormat:(NJOPSettingsManagerDateFormat)aFormat
+{
+	switch (self.dateFormat) {
+		case NJOPSettingsManagerDateFormatUS:
+		{
+			return us_dateFormatter;
+		}
+			break;
+			
+		case NJOPSettingsManagerDateFormatEU:
+		{
+			return eu_dateFormatter;
+		}
+			break;
+			
+		default:
+			break;
+	}
+	
+	return nil;
+}
+
+- (NSString *)formatDate:(NSDate *)aDate
+{
+	switch (self.dateFormat) {
+		case NJOPSettingsManagerDateFormatUS:
+		{
+			return [us_dateFormatter stringFromDate:aDate];
+		}
+			break;
+			
+		case NJOPSettingsManagerDateFormatEU:
+		{
+			return [eu_dateFormatter stringFromDate:aDate];
+		}
+			break;
+			
+		default:
+			break;
+	}
+	
+	return nil;
 }
 
 @end

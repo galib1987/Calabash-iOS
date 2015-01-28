@@ -15,24 +15,15 @@
 
 @implementation NJOPChooseDateFormatTableViewController
 
-static NSDateFormatter *us_dateFormatter;
-static NSDateFormatter *eu_dateFormatter;
-
-+ (void)initialize
-{
-	us_dateFormatter = [[NSDateFormatter alloc] init];
-	us_dateFormatter.dateFormat = @"EEEE MMM dd yyyy";
-	eu_dateFormatter = [[NSDateFormatter alloc] init];
-	eu_dateFormatter.dateFormat = @"EEEE dd MMM yyyy";
-}
-
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-
+	[super viewDidLoad];
+	// Do any additional setup after loading the view.
+	
 	//
-	self.cellTitles = @[[NSString stringWithFormat:@"US: %@", [us_dateFormatter stringFromDate:[NSDate date]]],
-						[NSString stringWithFormat:@"EU: %@", [eu_dateFormatter stringFromDate:[NSDate date]]]];
+	self.cellTitles = @[[NSString stringWithFormat:@"US: %@",
+						 [[[NJOPSettingsManager sharedInstance] dateFormatterForDateFormat:NJOPSettingsManagerDateFormatUS] stringFromDate:[NSDate date]]],
+						[NSString stringWithFormat:@"EU: %@",
+						 [[[NJOPSettingsManager sharedInstance] dateFormatterForDateFormat:NJOPSettingsManagerDateFormatEU] stringFromDate:[NSDate date]]]];
 	
 	//
 	self.checkedInd = [NJOPSettingsManager sharedInstance].dateFormat;
@@ -40,8 +31,8 @@ static NSDateFormatter *eu_dateFormatter;
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	[super didReceiveMemoryWarning];
+	// Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view delegate

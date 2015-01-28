@@ -36,4 +36,8 @@ typedef NS_ENUM(NSInteger, NJOPSettingsManagerDistanceFormat) {
 
 + (instancetype)sharedInstance;
 
+- (NSDateFormatter *)dateFormatterForDateFormat:(NJOPSettingsManagerDateFormat)aFormat;
+
+- (NSString *)formatDate:(NSDate *)aDate;
+
 @end
