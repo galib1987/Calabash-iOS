@@ -10,7 +10,6 @@
 #import "NJOPAdvisoryNotesCell.h"
 #import "NJOPOAuthClient.h"
 #import "NJOPFlightHTTPClient.h"
-#import "HTMLReader.h"
 
 @interface NJOPAdvisoryNotesController ()
 
@@ -29,8 +28,7 @@
     [apiClient loadAdvisoryWithReservation:reservationId
                                 andRequest:requestId
                                 completion:^(NSString *advisoryNotes, NSError *error) {
-                                    HTMLDocument *document = [HTMLDocument documentWithString:advisoryNotes];
-                                    NSLog(@"%@", [document firstNodeMatchingSelector:@"span"].textContent);
+                                    
                                 }];
     
     
