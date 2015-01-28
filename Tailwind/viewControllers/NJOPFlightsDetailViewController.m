@@ -15,6 +15,7 @@
 #import "NJOPPlaneViewController.h"
 #import "NJOPIntrospector.h"
 #import "NJOPAdvisoryNotesController.h"
+#import "NJOPTitleSummaryViewController.h"
 
 @interface NJOPFlightsDetailViewController ()
 
@@ -33,6 +34,11 @@
             self.reservation = ad.selectedReservation;
         }
     }
+    
+//    NJOPTitleSummaryViewController *titleSummaryVC = [[NJOPTitleSummaryViewController alloc] initWithNibName:@"NJOPTitleSummaryViewController" bundle:nil];
+//    [self.tableView addSubview:titleSummaryVC.view];
+//    [self.tableView setTableHeaderView:titleSummaryVC.view];
+//    
     [self loadDataSource];
 }
 
