@@ -315,6 +315,7 @@
                                                         <constraint firstItem="XNX-61-2sj" firstAttribute="top" secondItem="qd5-WT-QTZ" secondAttribute="top" id="00q-OB-HER"/>
                                                         <constraint firstAttribute="leadingMargin" secondItem="xGD-O1-ECq" secondAttribute="leading" id="4Am-xA-Fhj"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="jNs-Re-tr7" secondAttribute="trailing" id="5C2-8m-Ymq"/>
+                                                        <constraint firstItem="YF2-Nu-XWI" firstAttribute="top" secondItem="wSz-tU-vyA" secondAttribute="bottom" constant="22" id="5OO-IJ-yfV"/>
                                                         <constraint firstItem="jNs-Re-tr7" firstAttribute="top" secondItem="k1c-Bb-Tle" secondAttribute="bottom" constant="10" id="Bjn-sk-sLo"/>
                                                         <constraint firstItem="wSz-tU-vyA" firstAttribute="top" secondItem="XNX-61-2sj" secondAttribute="bottom" constant="15" id="CfC-bp-Fz5"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="XNX-61-2sj" secondAttribute="trailing" id="DLN-uV-py8"/>
@@ -329,16 +330,25 @@
                                                         <constraint firstItem="m8s-cA-xoa" firstAttribute="top" secondItem="0mN-TR-qnb" secondAttribute="bottom" constant="5" id="XfY-na-BYB"/>
                                                         <constraint firstItem="xGD-O1-ECq" firstAttribute="top" secondItem="YF2-Nu-XWI" secondAttribute="bottom" constant="10" id="Yei-uE-XSa"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="k1c-Bb-Tle" secondAttribute="trailing" id="aiU-8z-LLA"/>
-                                                        <constraint firstItem="YF2-Nu-XWI" firstAttribute="top" secondItem="wSz-tU-vyA" secondAttribute="bottom" constant="22" id="bgP-UN-CJI"/>
+                                                        <constraint firstItem="YF2-Nu-XWI" firstAttribute="top" secondItem="wSz-tU-vyA" secondAttribute="bottom" constant="50" id="bgP-UN-CJI"/>
                                                         <constraint firstItem="owV-gh-gNt" firstAttribute="bottom" secondItem="0mN-TR-qnb" secondAttribute="bottom" id="dCZ-9N-gaj"/>
                                                         <constraint firstAttribute="leadingMargin" secondItem="jNs-Re-tr7" secondAttribute="leading" id="gWu-9o-zyV"/>
+                                                        <constraint firstItem="k1c-Bb-Tle" firstAttribute="top" secondItem="YF2-Nu-XWI" secondAttribute="bottom" constant="20" id="ga4-Nj-1Ky"/>
                                                         <constraint firstAttribute="width" secondItem="wSz-tU-vyA" secondAttribute="width" multiplier="3" id="ikw-Ql-JUO"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="xGD-O1-ECq" secondAttribute="trailing" id="inC-ha-pgW"/>
                                                         <constraint firstAttribute="leadingMargin" secondItem="XNX-61-2sj" secondAttribute="leading" id="krq-lP-0kC"/>
                                                         <constraint firstItem="m8s-cA-xoa" firstAttribute="centerX" secondItem="0mN-TR-qnb" secondAttribute="centerX" id="mso-wb-1gs"/>
+                                                        <constraint firstItem="wSz-tU-vyA" firstAttribute="top" secondItem="XNX-61-2sj" secondAttribute="bottom" constant="50" id="plj-5o-N0E"/>
                                                         <constraint firstAttribute="trailing" secondItem="oXy-Q5-2wP" secondAttribute="trailing" constant="13" id="xyk-qD-TNs"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="YF2-Nu-XWI" secondAttribute="trailing" id="zCm-sd-2EG"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="plj-5o-N0E"/>
+                                                            <exclude reference="bgP-UN-CJI"/>
+                                                            <exclude reference="ga4-Nj-1Ky"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLw-gg-0xb">
                                                     <rect key="frame" x="15" y="438" width="354" height="67"/>
@@ -385,13 +395,26 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="allInfoContractDepartureMargin" destination="Yei-uE-XSa" id="wla-4l-lD5"/>
+                                    <outlet property="allInfoDateTimeMargin" destination="CfC-bp-Fz5" id="25Z-Xm-er3"/>
+                                    <outlet property="allInfoTimeContractMargin" destination="5OO-IJ-yfV" id="sg4-Xf-6UC"/>
                                     <outlet property="arrivalLabel" destination="JKh-HE-9cn" id="SvS-VD-KIq"/>
+                                    <outlet property="contentTopMargin" destination="3nN-7C-wVg" id="GOS-Sd-nbw"/>
+                                    <outlet property="contractLabel" destination="YF2-Nu-XWI" id="VIL-nb-Oeu"/>
                                     <outlet property="departureLabel" destination="L4l-gg-i7s" id="DRH-rH-RI2"/>
                                     <outlet property="flightDateLabel" destination="XNX-61-2sj" id="0Ce-c0-vpm"/>
                                     <outlet property="fromFBOAirpotCodeLabel" destination="9i0-nU-Rin" id="brO-5j-fyq"/>
                                     <outlet property="fromFBOLocationLabel" destination="pAU-c4-ahz" id="vle-ux-p8T"/>
                                     <outlet property="fromFBOTailNumberLabel" destination="8ly-kd-xH8" id="ESC-jY-UQy"/>
                                     <outlet property="fromFBOTimeLabel" destination="owV-gh-gNt" id="2Vt-1a-Vwx"/>
+                                    <outlet property="groundTransportLabel" destination="w8T-0d-BdT" id="wwE-IW-lyl"/>
+                                    <outlet property="groupDeparture" destination="k1c-Bb-Tle" id="r4Q-pN-RUV"/>
+                                    <outlet property="groupFlightTime" destination="wSz-tU-vyA" id="nhd-2Z-6Pm"/>
+                                    <outlet property="groupGroundTransport" destination="jNs-Re-tr7" id="UNt-HA-TVP"/>
+                                    <outlet property="groupTailNumber" destination="xGD-O1-ECq" id="TM1-yl-ylx"/>
+                                    <outlet property="noTailNoGroundContractDepartureMargin" destination="ga4-Nj-1Ky" id="cTW-HU-3UU"/>
+                                    <outlet property="noTailNoGroundDateTimeMargin" destination="plj-5o-N0E" id="gCM-rn-Vtq"/>
+                                    <outlet property="noTailNoGroundTimeContractMargin" destination="bgP-UN-CJI" id="xLc-bI-SZX"/>
                                     <outlet property="tile" destination="QYF-bo-1z5" id="x9J-VJ-lP7"/>
                                     <outlet property="toFBOAirpotCodeLabel" destination="xzc-VF-1ii" id="AFj-Co-giV"/>
                                     <outlet property="toFBOLocationLabel" destination="9cy-V4-ON3" id="5yI-9B-KF5"/>

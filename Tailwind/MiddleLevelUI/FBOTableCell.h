@@ -8,6 +8,11 @@
 
 #import "NJOPTableViewCell.h"
 
+typedef enum {
+    tailNumber = 1,
+    groundTransport = 1 << 1
+} FlightInfoAvailable;
+
 @interface FBOTableCell : NJOPTableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *flightDateLabel;
 
@@ -28,6 +33,14 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *travelTimeLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *groundTransportLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *contractLabel;
+
 @property (weak, nonatomic) IBOutlet UIButton *viewFlightDetailsButton;
+
+@property (nonatomic) int flightInfoAvailable;
+
+- (void)useNoTailNoGroundLayout;
 
 @end
