@@ -23,15 +23,9 @@
     self.headerLabel.text = [self.headerLabel.text uppercaseString];
     
     if (self.showButtons) {
-        self.titleTopSpace.constant = 20;
         [self.buttonA setTitle:[self.buttonAText uppercaseString] forState:UIControlStateNormal];
         [self.buttonB setTitle:[self.buttonBText uppercaseString] forState:UIControlStateNormal];
         self.buttonA.layer.borderColor = [[UIColor whiteColor] CGColor];
-    } else {
-        self.buttonA.hidden = true;
-        self.buttonB.hidden = true;
-        [self.buttonA removeFromSuperview];
-        [self.buttonB removeFromSuperview];
     }
     
     if (!self.displayed) {
@@ -73,10 +67,10 @@
 }
 
 - (void)animateFadeInUp {
-    self.headerLabel.transform = self.descLabel.transform = self.buttonA.transform = self.buttonB.transform = CGAffineTransformMakeTranslation(0, 30);
+    self.headerLabel.transform = self.descLabel.transform = CGAffineTransformMakeTranslation(0, 30);
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.headerLabel.alpha = self.descLabel.alpha = self.buttonA.alpha = self.buttonB.alpha = 1;
-        self.headerLabel.transform = self.descLabel.transform = self.buttonA.transform = self.buttonB.transform = CGAffineTransformIdentity;
+        self.headerLabel.alpha = self.descLabel.alpha = 1;
+        self.headerLabel.transform = self.descLabel.transform = CGAffineTransformIdentity;
     } completion: nil];
 }
 
@@ -85,6 +79,24 @@
         [self animateFadeInUp];
     }
     self.displayed = true;
+    
+    if (self.showButtons) {
+        
+        self.buttonA.transform = self.buttonB.transform = CGAffineTransformMakeTranslation(0, 30);
+        self.titleTopSpace.constant = 20;
+        
+        [UIView animateWithDuration:1.5 delay:0.75 usingSpringWithDamping:0.9 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.buttonA.alpha = self.buttonB.alpha = 1;
+            self.buttonA.transform = self.buttonB.transform = CGAffineTransformIdentity;
+            [self.view layoutIfNeeded];
+        } completion: nil];
+        
+    } else {
+        self.buttonA.hidden = true;
+        self.buttonB.hidden = true;
+        [self.buttonA removeFromSuperview];
+        [self.buttonB removeFromSuperview];
+    }
 }
 
 @end
