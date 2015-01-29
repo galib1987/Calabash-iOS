@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="-74" y="-191"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="VdY-jy-i0K">
             <objects>
-                <viewController id="hix-kI-52f" sceneMemberID="viewController">
+                <viewController id="hix-kI-52f" customClass="NJOPProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yag-PW-3J4"/>
                         <viewControllerLayoutGuide type="bottom" id="WQQ-jK-pby"/>
