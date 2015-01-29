@@ -21,7 +21,7 @@
 #import "NJOPTailwindPM.h"
 
 @interface NJOPFlightsDetailViewController ()
-
+@property (nonatomic) CGFloat affixedY;
 @end
 
 @implementation NJOPFlightsDetailViewController
@@ -40,12 +40,33 @@
     
     [self getInfoForDropdown];
     
-    NJOPTitleSummaryViewController *titleSummaryVC = [[NJOPTitleSummaryViewController alloc] initWithNibName:@"NJOPTitleSummaryViewController" bundle:nil];
-    [self.tableView addSubview:titleSummaryVC.view];
-    [self.tableView setTableHeaderView:titleSummaryVC.view];
+//    NJOPTitleSummaryViewController *titleSummaryVC = [[NJOPTitleSummaryViewController alloc] initWithNibName:@"NJOPTitleSummaryViewController" bundle:nil];
+//    [self.tableView addSubview:titleSummaryVC.view];
+//    [self.tableView setTableHeaderView:titleSummaryVC.view];
 
+    UIView *reservationView = [[UIView alloc] init];
+    reservationView.frame = CGRectMake(0, 0, self.view.frame.size.width, 50.0f);
+    reservationView.backgroundColor = [UIColor grayColor];
+    _affixedY = reservationView.frame.size.height;
+    [self.tableView setContentInset:UIEdgeInsetsMake(_affixedY, 0, 0, 0)];
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addView)];
+    [reservationView addGestureRecognizer:tapGesture];
+
+    [self.parentViewController.view addSubview:reservationView];
     
     [self loadDataSource];
+}
+
+- (void)addView {
+    UIView *additionalView = [[UIView alloc] init];
+    additionalView.frame = CGRectMake(0, _affixedY, self.view.frame.size.width, 44.0f);
+    additionalView.backgroundColor = [UIColor blackColor];
+    additionalView.layer.opacity = 0.8;
+    _affixedY = _affixedY + additionalView.frame.size.height;
+    [self.tableView setContentInset:UIEdgeInsetsMake(_affixedY, 0, 0, 0)];
+    [self.parentViewController.view addSubview:additionalView];
+    
 }
 
 - (void)getInfoForDropdown {
@@ -218,4 +239,5 @@
 //    NSLog(@"%@", address);
     
 }
+
 @end
