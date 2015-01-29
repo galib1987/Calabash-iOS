@@ -35,7 +35,7 @@
     }
     
     if (!self.displayed) {
-        self.headerLabel.alpha = self.descLabel.alpha = self.dividerBar.alpha = self.buttonA.alpha = self.buttonB.alpha = 0;
+        self.headerLabel.alpha = self.descLabel.alpha = self.buttonA.alpha = self.buttonB.alpha = 0;
     }
     
     self.view.backgroundColor = [UIColor clearColor];
@@ -73,10 +73,10 @@
 }
 
 - (void)animateFadeInUp {
-    self.headerLabel.transform = self.descLabel.transform = self.dividerBar.transform = self.buttonA.transform = self.buttonB.transform = CGAffineTransformMakeTranslation(0, 30);
+    self.headerLabel.transform = self.descLabel.transform = self.buttonA.transform = self.buttonB.transform = CGAffineTransformMakeTranslation(0, 30);
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.headerLabel.alpha = self.descLabel.alpha = self.dividerBar.alpha = self.buttonA.alpha = self.buttonB.alpha = 1;
-        self.headerLabel.transform = self.descLabel.transform = self.dividerBar.transform = self.buttonA.transform = self.buttonB.transform = CGAffineTransformIdentity;
+        self.headerLabel.alpha = self.descLabel.alpha = self.buttonA.alpha = self.buttonB.alpha = 1;
+        self.headerLabel.transform = self.descLabel.transform = self.buttonA.transform = self.buttonB.transform = CGAffineTransformIdentity;
     } completion: nil];
 }
 
