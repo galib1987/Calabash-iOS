@@ -22,6 +22,7 @@
 
 @interface NJOPFlightsDetailViewController ()
 @property (nonatomic) CGFloat affixedY;
+@property (nonatomic) NSMutableArray *viewsToRemoveOnPush;
 @end
 
 @implementation NJOPFlightsDetailViewController
@@ -44,16 +45,17 @@
 //    [self.tableView addSubview:titleSummaryVC.view];
 //    [self.tableView setTableHeaderView:titleSummaryVC.view];
 
-    UIView *reservationView = [[UIView alloc] init];
-    reservationView.frame = CGRectMake(0, 0, self.view.frame.size.width, 50.0f);
-    reservationView.backgroundColor = [UIColor grayColor];
-    _affixedY = reservationView.frame.size.height;
-    [self.tableView setContentInset:UIEdgeInsetsMake(_affixedY, 0, 0, 0)];
-    
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addView)];
-    [reservationView addGestureRecognizer:tapGesture];
-
-    [self.parentViewController.view addSubview:reservationView];
+//    UIView *reservationView = [[UIView alloc] init];
+//    reservationView.frame = CGRectMake(0, 0, self.view.frame.size.width, 50.0f);
+//    reservationView.backgroundColor = [UIColor grayColor];
+//    _affixedY = reservationView.frame.size.height;
+//    _viewsToRemoveOnPush = reservationView;
+//    [self.tableView setContentInset:UIEdgeInsetsMake(_affixedY, 0, 0, 0)];
+//    
+//    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addView)];
+//    [reservationView addGestureRecognizer:tapGesture];
+//
+//    [self.parentViewController.view addSubview:reservationView];
     
     [self loadDataSource];
 }
@@ -64,6 +66,7 @@
     additionalView.backgroundColor = [UIColor blackColor];
     additionalView.layer.opacity = 0.8;
     _affixedY = _affixedY + additionalView.frame.size.height;
+    _viewsToRemoveOnPush = additionalView;
     [self.tableView setContentInset:UIEdgeInsetsMake(_affixedY, 0, 0, 0)];
     [self.parentViewController.view addSubview:additionalView];
     
@@ -189,6 +192,7 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     if ([segue.identifier isEqualToString:@"showManifest"]) {
         NJOPPassengeManifestViewController *vc = [segue destinationViewController];
         vc.reservation = self.reservation;
@@ -231,6 +235,7 @@
     NSURL *url = [NSURL URLWithString:urlString];
     [[UIApplication sharedApplication] openURL:url];
 }
+
 
 - (void)testCoreDataFetch {
     
