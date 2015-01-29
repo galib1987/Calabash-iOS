@@ -10,11 +10,11 @@
 
 @interface NJOPUser : NSObject
 
-@property (atomic, copy) NSString *username;
-@property (atomic, copy) NSNumber *individualID;
-@property (atomic, copy) NSNumber *defaultAccountID;
-@property (atomic, copy) NSString *firstName;
-@property (atomic, copy) NSString *lastName;
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, strong) NSNumber *individualID;
+@property (nonatomic, strong) NSNumber *defaultAccountID;
+@property (nonatomic, copy) NSString *firstName;
+@property (nonatomic, copy) NSString *lastName;
 
 + (NJOPUser*)sharedInstance;
 

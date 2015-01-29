@@ -9,10 +9,20 @@
 
 @implementation NJOPRequest2
 
+- (NSString*)tailNumber
+{
+    return [self lastLeg].tailNumber;
+}
+
+- (NSString*)aircraftName
+{
+    NJOPLeg *lastLeg = [self lastLeg];
+    
+    return lastLeg.actualAircraft ?: self.requestedAircraft;
+}
+
 - (NJOPLeg*)firstLeg
 {
-    [self willAccessValueForKey:@"legs"];
-
     __block NJOPLeg *firstLeg = nil;
     
     [self.legsSet enumerateObjectsUsingBlock:^(NJOPLeg *leg, BOOL *stop) {
@@ -24,15 +34,11 @@
         }
     }];
     
-    [self didAccessValueForKey:@"legs"];
-    
     return firstLeg;
 }
 
 - (NJOPLeg*)lastLeg
 {
-    [self willAccessValueForKey:@"legs"];
-    
     __block NJOPLeg *lastLeg = nil;
     
     [self.legsSet enumerateObjectsUsingBlock:^(NJOPLeg *leg, BOOL *stop) {
@@ -43,8 +49,6 @@
             lastLeg = leg;
         }
     }];
-    
-    [self didAccessValueForKey:@"legs"];
     
     return lastLeg;
 }

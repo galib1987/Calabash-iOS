@@ -4,6 +4,8 @@
 @import CoreData;
 
 extern const struct NJOPRequest2Attributes {
+	__unsafe_unretained NSString *arrTime;
+	__unsafe_unretained NSString *depTime;
 	__unsafe_unretained NSString *paxJSON;
 	__unsafe_unretained NSString *requestID;
 	__unsafe_unretained NSString *requestedAircraft;
@@ -11,14 +13,14 @@ extern const struct NJOPRequest2Attributes {
 } NJOPRequest2Attributes;
 
 extern const struct NJOPRequest2Relationships {
-	__unsafe_unretained NSString *firstLeg;
-	__unsafe_unretained NSString *lastLeg;
+	__unsafe_unretained NSString *arrLocation;
+	__unsafe_unretained NSString *depLocation;
 	__unsafe_unretained NSString *legs;
 	__unsafe_unretained NSString *reservation;
 } NJOPRequest2Relationships;
 
-@class NJOPLeg;
-@class NJOPLeg;
+@class NJOPLocation;
+@class NJOPLocation;
 @class NJOPLeg;
 @class NJOPReservation2;
 
@@ -32,6 +34,14 @@ extern const struct NJOPRequest2Relationships {
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) NJOPRequest2ID* objectID;
+
+@property (nonatomic, strong) NSDate* arrTime;
+
+//- (BOOL)validateArrTime:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSDate* depTime;
+
+//- (BOOL)validateDepTime:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) id paxJSON;
 
@@ -53,13 +63,13 @@ extern const struct NJOPRequest2Relationships {
 
 //- (BOOL)validateStatus:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NJOPLeg *firstLeg;
+@property (nonatomic, strong) NJOPLocation *arrLocation;
 
-//- (BOOL)validateFirstLeg:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateArrLocation:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NJOPLeg *lastLeg;
+@property (nonatomic, strong) NJOPLocation *depLocation;
 
-//- (BOOL)validateLastLeg:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateDepLocation:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSSet *legs;
 
@@ -81,6 +91,12 @@ extern const struct NJOPRequest2Relationships {
 
 @interface _NJOPRequest2 (CoreDataGeneratedPrimitiveAccessors)
 
+- (NSDate*)primitiveArrTime;
+- (void)setPrimitiveArrTime:(NSDate*)value;
+
+- (NSDate*)primitiveDepTime;
+- (void)setPrimitiveDepTime:(NSDate*)value;
+
 - (id)primitivePaxJSON;
 - (void)setPrimitivePaxJSON:(id)value;
 
@@ -96,11 +112,11 @@ extern const struct NJOPRequest2Relationships {
 - (NSString*)primitiveStatus;
 - (void)setPrimitiveStatus:(NSString*)value;
 
-- (NJOPLeg*)primitiveFirstLeg;
-- (void)setPrimitiveFirstLeg:(NJOPLeg*)value;
+- (NJOPLocation*)primitiveArrLocation;
+- (void)setPrimitiveArrLocation:(NJOPLocation*)value;
 
-- (NJOPLeg*)primitiveLastLeg;
-- (void)setPrimitiveLastLeg:(NJOPLeg*)value;
+- (NJOPLocation*)primitiveDepLocation;
+- (void)setPrimitiveDepLocation:(NJOPLocation*)value;
 
 - (NSMutableSet*)primitiveLegs;
 - (void)setPrimitiveLegs:(NSMutableSet*)value;

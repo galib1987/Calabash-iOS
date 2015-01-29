@@ -4,6 +4,8 @@
 #import "_NJOPRequest2.h"
 
 const struct NJOPRequest2Attributes NJOPRequest2Attributes = {
+	.arrTime = @"arrTime",
+	.depTime = @"depTime",
 	.paxJSON = @"paxJSON",
 	.requestID = @"requestID",
 	.requestedAircraft = @"requestedAircraft",
@@ -11,8 +13,8 @@ const struct NJOPRequest2Attributes NJOPRequest2Attributes = {
 };
 
 const struct NJOPRequest2Relationships NJOPRequest2Relationships = {
-	.firstLeg = @"firstLeg",
-	.lastLeg = @"lastLeg",
+	.arrLocation = @"arrLocation",
+	.depLocation = @"depLocation",
 	.legs = @"legs",
 	.reservation = @"reservation",
 };
@@ -52,6 +54,10 @@ const struct NJOPRequest2Relationships NJOPRequest2Relationships = {
 	return keyPaths;
 }
 
+@dynamic arrTime;
+
+@dynamic depTime;
+
 @dynamic paxJSON;
 
 @dynamic requestID;
@@ -78,9 +84,9 @@ const struct NJOPRequest2Relationships NJOPRequest2Relationships = {
 
 @dynamic status;
 
-@dynamic firstLeg;
+@dynamic arrLocation;
 
-@dynamic lastLeg;
+@dynamic depLocation;
 
 @dynamic legs;
 

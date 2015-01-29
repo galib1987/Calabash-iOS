@@ -15,6 +15,7 @@ const struct NJOPAccountAttributes NJOPAccountAttributes = {
 };
 
 const struct NJOPAccountRelationships NJOPAccountRelationships = {
+	.contracts = @"contracts",
 	.reservations = @"reservations",
 };
 
@@ -155,6 +156,17 @@ const struct NJOPAccountRelationships NJOPAccountRelationships = {
 @dynamic osrTeamName;
 
 @dynamic osrTeamPhone;
+
+@dynamic contracts;
+
+- (NSMutableSet*)contractsSet {
+	[self willAccessValueForKey:@"contracts"];
+
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"contracts"];
+
+	[self didAccessValueForKey:@"contracts"];
+	return result;
+}
 
 @dynamic reservations;
 

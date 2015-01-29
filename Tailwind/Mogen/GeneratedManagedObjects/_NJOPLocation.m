@@ -8,12 +8,16 @@ const struct NJOPLocationAttributes NJOPLocationAttributes = {
 	.airportName = @"airportName",
 	.fboID = @"fboID",
 	.fboName = @"fboName",
+	.latitude = @"latitude",
+	.longitude = @"longitude",
 	.timeZone = @"timeZone",
 };
 
 const struct NJOPLocationRelationships NJOPLocationRelationships = {
 	.arrivalLegs = @"arrivalLegs",
+	.arrivalRequests = @"arrivalRequests",
 	.departureLegs = @"departureLegs",
+	.departureRequests = @"departureRequests",
 };
 
 @implementation NJOPLocationID
@@ -77,6 +81,10 @@ const struct NJOPLocationRelationships NJOPLocationRelationships = {
 
 @dynamic fboName;
 
+@dynamic latitude;
+
+@dynamic longitude;
+
 @dynamic timeZone;
 
 @dynamic arrivalLegs;
@@ -90,6 +98,17 @@ const struct NJOPLocationRelationships NJOPLocationRelationships = {
 	return result;
 }
 
+@dynamic arrivalRequests;
+
+- (NSMutableSet*)arrivalRequestsSet {
+	[self willAccessValueForKey:@"arrivalRequests"];
+
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"arrivalRequests"];
+
+	[self didAccessValueForKey:@"arrivalRequests"];
+	return result;
+}
+
 @dynamic departureLegs;
 
 - (NSMutableSet*)departureLegsSet {
@@ -98,6 +117,17 @@ const struct NJOPLocationRelationships NJOPLocationRelationships = {
 	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"departureLegs"];
 
 	[self didAccessValueForKey:@"departureLegs"];
+	return result;
+}
+
+@dynamic departureRequests;
+
+- (NSMutableSet*)departureRequestsSet {
+	[self willAccessValueForKey:@"departureRequests"];
+
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"departureRequests"];
+
+	[self didAccessValueForKey:@"departureRequests"];
 	return result;
 }
 

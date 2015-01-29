@@ -8,16 +8,22 @@ extern const struct NJOPLocationAttributes {
 	__unsafe_unretained NSString *airportName;
 	__unsafe_unretained NSString *fboID;
 	__unsafe_unretained NSString *fboName;
+	__unsafe_unretained NSString *latitude;
+	__unsafe_unretained NSString *longitude;
 	__unsafe_unretained NSString *timeZone;
 } NJOPLocationAttributes;
 
 extern const struct NJOPLocationRelationships {
 	__unsafe_unretained NSString *arrivalLegs;
+	__unsafe_unretained NSString *arrivalRequests;
 	__unsafe_unretained NSString *departureLegs;
+	__unsafe_unretained NSString *departureRequests;
 } NJOPLocationRelationships;
 
 @class NJOPLeg;
+@class NJOPRequest2;
 @class NJOPLeg;
+@class NJOPRequest2;
 
 @interface NJOPLocationID : NSManagedObjectID {}
 @end
@@ -48,6 +54,14 @@ extern const struct NJOPLocationRelationships {
 
 //- (BOOL)validateFboName:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSDecimalNumber* latitude;
+
+//- (BOOL)validateLatitude:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSDecimalNumber* longitude;
+
+//- (BOOL)validateLongitude:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSString* timeZone;
 
 //- (BOOL)validateTimeZone:(id*)value_ error:(NSError**)error_;
@@ -56,9 +70,17 @@ extern const struct NJOPLocationRelationships {
 
 - (NSMutableSet*)arrivalLegsSet;
 
+@property (nonatomic, strong) NSSet *arrivalRequests;
+
+- (NSMutableSet*)arrivalRequestsSet;
+
 @property (nonatomic, strong) NSSet *departureLegs;
 
 - (NSMutableSet*)departureLegsSet;
+
+@property (nonatomic, strong) NSSet *departureRequests;
+
+- (NSMutableSet*)departureRequestsSet;
 
 @end
 
@@ -70,11 +92,27 @@ extern const struct NJOPLocationRelationships {
 
 @end
 
+@interface _NJOPLocation (ArrivalRequestsCoreDataGeneratedAccessors)
+- (void)addArrivalRequests:(NSSet*)value_;
+- (void)removeArrivalRequests:(NSSet*)value_;
+- (void)addArrivalRequestsObject:(NJOPRequest2*)value_;
+- (void)removeArrivalRequestsObject:(NJOPRequest2*)value_;
+
+@end
+
 @interface _NJOPLocation (DepartureLegsCoreDataGeneratedAccessors)
 - (void)addDepartureLegs:(NSSet*)value_;
 - (void)removeDepartureLegs:(NSSet*)value_;
 - (void)addDepartureLegsObject:(NJOPLeg*)value_;
 - (void)removeDepartureLegsObject:(NJOPLeg*)value_;
+
+@end
+
+@interface _NJOPLocation (DepartureRequestsCoreDataGeneratedAccessors)
+- (void)addDepartureRequests:(NSSet*)value_;
+- (void)removeDepartureRequests:(NSSet*)value_;
+- (void)addDepartureRequestsObject:(NJOPRequest2*)value_;
+- (void)removeDepartureRequestsObject:(NJOPRequest2*)value_;
 
 @end
 
@@ -95,13 +133,25 @@ extern const struct NJOPLocationRelationships {
 - (NSString*)primitiveFboName;
 - (void)setPrimitiveFboName:(NSString*)value;
 
+- (NSDecimalNumber*)primitiveLatitude;
+- (void)setPrimitiveLatitude:(NSDecimalNumber*)value;
+
+- (NSDecimalNumber*)primitiveLongitude;
+- (void)setPrimitiveLongitude:(NSDecimalNumber*)value;
+
 - (NSString*)primitiveTimeZone;
 - (void)setPrimitiveTimeZone:(NSString*)value;
 
 - (NSMutableSet*)primitiveArrivalLegs;
 - (void)setPrimitiveArrivalLegs:(NSMutableSet*)value;
 
+- (NSMutableSet*)primitiveArrivalRequests;
+- (void)setPrimitiveArrivalRequests:(NSMutableSet*)value;
+
 - (NSMutableSet*)primitiveDepartureLegs;
 - (void)setPrimitiveDepartureLegs:(NSMutableSet*)value;
+
+- (NSMutableSet*)primitiveDepartureRequests;
+- (void)setPrimitiveDepartureRequests:(NSMutableSet*)value;
 
 @end

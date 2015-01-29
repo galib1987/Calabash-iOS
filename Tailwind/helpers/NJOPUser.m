@@ -8,6 +8,7 @@
 
 #import "NJOPUser.h"
 #import "NJOPTailwindPM.h"
+#import "NJOPOAuthClient.h"
 
 @implementation NJOPUser
 
@@ -61,6 +62,8 @@ static NSString *kLastName = @"lastName";
     self.lastName = @"";
     
     [self saveToDisk];
+    
+    [[NJOPOAuthClient sharedInstance] resetCredential];
     
     // clear the database in background thread, utilizing the built-in networking queue to make sure any subsequent "brief"
     // network calls wait for this to complete

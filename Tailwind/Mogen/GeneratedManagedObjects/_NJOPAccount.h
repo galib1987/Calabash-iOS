@@ -15,9 +15,11 @@ extern const struct NJOPAccountAttributes {
 } NJOPAccountAttributes;
 
 extern const struct NJOPAccountRelationships {
+	__unsafe_unretained NSString *contracts;
 	__unsafe_unretained NSString *reservations;
 } NJOPAccountRelationships;
 
+@class NJOPContract2;
 @class NJOPReservation2;
 
 @interface NJOPAccountID : NSManagedObjectID {}
@@ -77,9 +79,21 @@ extern const struct NJOPAccountRelationships {
 
 //- (BOOL)validateOsrTeamPhone:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSSet *contracts;
+
+- (NSMutableSet*)contractsSet;
+
 @property (nonatomic, strong) NSSet *reservations;
 
 - (NSMutableSet*)reservationsSet;
+
+@end
+
+@interface _NJOPAccount (ContractsCoreDataGeneratedAccessors)
+- (void)addContracts:(NSSet*)value_;
+- (void)removeContracts:(NSSet*)value_;
+- (void)addContractsObject:(NJOPContract2*)value_;
+- (void)removeContractsObject:(NJOPContract2*)value_;
 
 @end
 
@@ -128,6 +142,9 @@ extern const struct NJOPAccountRelationships {
 
 - (NSString*)primitiveOsrTeamPhone;
 - (void)setPrimitiveOsrTeamPhone:(NSString*)value;
+
+- (NSMutableSet*)primitiveContracts;
+- (void)setPrimitiveContracts:(NSMutableSet*)value;
 
 - (NSMutableSet*)primitiveReservations;
 - (void)setPrimitiveReservations:(NSMutableSet*)value;

@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		1585FD841A79657300197696 /* _NJOPContract2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1585FD831A79657300197696 /* _NJOPContract2.m */; };
+		1585FD871A79657E00197696 /* NJOPContract2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1585FD861A79657E00197696 /* NJOPContract2.m */; };
 		15EAFD7B1A6D4682003C3B8A /* NJOPFlightHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EAFD781A6D4682003C3B8A /* NJOPFlightHTTPClient.m */; };
 		15EAFD7C1A6D4682003C3B8A /* NJOPOAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EAFD7A1A6D4682003C3B8A /* NJOPOAuthClient.m */; };
 		1E0D62291A69AA630076516F /* NJOPBookingReviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D62281A69AA630076516F /* NJOPBookingReviewTableViewController.m */; };
@@ -237,6 +239,10 @@
 
 /* Begin PBXFileReference section */
 		03307E6D414420F7D9C0477B /* Pods.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.production.xcconfig; path = "Pods/Target Support Files/Pods/Pods.production.xcconfig"; sourceTree = SOURCE_ROOT; };
+		1585FD821A79657300197696 /* _NJOPContract2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _NJOPContract2.h; sourceTree = "<group>"; };
+		1585FD831A79657300197696 /* _NJOPContract2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _NJOPContract2.m; sourceTree = "<group>"; };
+		1585FD851A79657E00197696 /* NJOPContract2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPContract2.h; sourceTree = "<group>"; };
+		1585FD861A79657E00197696 /* NJOPContract2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPContract2.m; sourceTree = "<group>"; };
 		15EAFD771A6D4682003C3B8A /* NJOPFlightHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightHTTPClient.h; sourceTree = "<group>"; };
 		15EAFD781A6D4682003C3B8A /* NJOPFlightHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightHTTPClient.m; sourceTree = "<group>"; };
 		15EAFD791A6D4682003C3B8A /* NJOPOAuthClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPOAuthClient.h; sourceTree = "<group>"; };
@@ -884,6 +890,8 @@
 		A77DBDAB1A7257E000B5F306 /* GeneratedManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
+				1585FD821A79657300197696 /* _NJOPContract2.h */,
+				1585FD831A79657300197696 /* _NJOPContract2.m */,
 				A7647F0F1A78F1F600475CE8 /* _NJOPLeg.h */,
 				A7647F101A78F1F600475CE8 /* _NJOPLeg.m */,
 				A7647F111A78F1F600475CE8 /* _NJOPLocation.h */,
@@ -920,6 +928,8 @@
 		A77DBDD01A7257FA00B5F306 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
+				1585FD851A79657E00197696 /* NJOPContract2.h */,
+				1585FD861A79657E00197696 /* NJOPContract2.m */,
 				A7647F151A78F20D00475CE8 /* NJOPLeg.h */,
 				A7647F161A78F20D00475CE8 /* NJOPLeg.m */,
 				A7647F171A78F20D00475CE8 /* NJOPLocation.h */,
@@ -1350,7 +1360,7 @@
 				TargetAttributes = {
 					30A4737819D9E41A0045D7AF = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = 47M87T34Y6;
+						DevelopmentTeam = LCC6EUU9EK;
 					};
 					30A4739119D9E41B0045D7AF = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -1615,6 +1625,7 @@
 				A77DBDC71A7257E000B5F306 /* _NJOPAircraftTypeGroup.m in Sources */,
 				15EAFD7C1A6D4682003C3B8A /* NJOPOAuthClient.m in Sources */,
 				6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */,
+				1585FD841A79657300197696 /* _NJOPContract2.m in Sources */,
 				A7A03EA91A42E7BC004BE417 /* UICollectionReusableView+NJOPHelpers.m in Sources */,
 				A7E007291A70AE3C007BE054 /* NJOPAdvisoryNotesCell.m in Sources */,
 				276FF09B1A78804900F547F4 /* NJOPChooseTemperatureFormatTableViewController.m in Sources */,
@@ -1648,6 +1659,7 @@
 				A7BFBB571A6D4EDC00368E12 /* NJOPPlaneViewController.m in Sources */,
 				A7A03EA61A42E626004BE417 /* UIView+NJOPStyle.m in Sources */,
 				A786D6131A66351F006EDA24 /* NJOPOSViewController.m in Sources */,
+				1585FD871A79657E00197696 /* NJOPContract2.m in Sources */,
 				1E1A592E1A48CDD70048A9C9 /* NJOPFullPageViewController.m in Sources */,
 				A77DBDF11A7257FB00B5F306 /* NJOPMasterAircraftType.m in Sources */,
 				A77DBDA71A72577300B5F306 /* (null) in Sources */,
@@ -1849,7 +1861,7 @@
 			baseConfigurationReference = 03307E6D414420F7D9C0477B /* Pods.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
@@ -1948,7 +1960,7 @@
 			baseConfigurationReference = 93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";
@@ -2030,7 +2042,7 @@
 			baseConfigurationReference = 553EE494A15E7540C63F4EE6 /* Pods.qa.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/$(TARGET_NAME)-Prefix.pch";

@@ -4,4 +4,10 @@
 
 @interface NJOPRequest2 : _NJOPRequest2 {}
 
+- (NSString*)tailNumber;
+- (NSString*)aircraftName;
+
+- (NJOPLeg*)firstLeg;
+- (NJOPLeg*)lastLeg;
+
 @end

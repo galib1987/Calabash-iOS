@@ -163,15 +163,27 @@
         depLocation.airportName = [NSString stringFromObject:[legDict objectForKey:@"departureAirportName"]];
         depLocation.timeZone = [NSString stringFromObject:[legDict objectForKey:@"departureTimeZoneId"]];
         leg.depLocation = depLocation;
-        
+
         NJOPLocation *arrLocation = [self locationForID:[NSNumber numberFromObject:[legDict objectForKey:@"arrivalFBOId"]] createIfNeeded:YES moc:moc];
         arrLocation.fboName = [NSString stringFromObject:[legDict objectForKey:@"arrivalFBOName"]];
         arrLocation.airportID = [NSString stringFromObject:[legDict objectForKey:@"arrivalAirportId"]];
         arrLocation.airportName = [NSString stringFromObject:[legDict objectForKey:@"arrivalAirportName"]];
         arrLocation.timeZone = [NSString stringFromObject:[legDict objectForKey:@"arrivalTimeZoneId"]];
         leg.arrLocation = arrLocation;
+
+        // set denormalized departure info on the request object
+        if (idx == 0)
+        {
+            request.depTime = leg.depTime;
+            request.depLocation = leg.depLocation;
+        }
         
-        NSLog(@"leg: %@", leg);
+        // set denormalized arrival info on the request object
+        if (idx == legs.count-1)
+        {
+            request.arrTime = leg.arrTime;
+            request.arrLocation = leg.arrLocation;
+        }
         
         [legSet removeObject:legID];
     }];
