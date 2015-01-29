@@ -2543,7 +2543,7 @@ Typical Flight: Los Angeles to Dallas</string>
                         <viewControllerLayoutGuide type="top" id="p1e-aO-1FF"/>
                         <viewControllerLayoutGuide type="bottom" id="dXa-e1-pNd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CoL-Yg-KDA">
+                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="CoL-Yg-KDA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2567,6 +2567,24 @@ Typical Flight: Los Angeles to Dallas</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iaq-0j-Qdo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6897" y="-2580"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mOl-Kq-3er">
+            <objects>
+                <viewController id="mzQ-Iy-OTD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jut-ah-f9d"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Kg-Gv-IFZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1lb-m3-bOF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jBU-pQ-AhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7399" y="-2590"/>
         </scene>
     </scenes>
     <resources>
