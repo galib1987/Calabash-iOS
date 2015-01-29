@@ -130,7 +130,7 @@
     NSError *error = (NSError*)notification.object;
     NSLog(@"log in error %ld : %@", error.code, error.description);
     
-    [self presentMessage:@"Error" withTitle:@"Login Failed. Please try again."];
+    [self presentMessage:@"Error" withTitle:@"Incorrect log in credentials for this account."];
     
     [UIView animateWithDuration:0.2 animations:^{
         [self.coverView setAlpha:0.0];
