@@ -286,8 +286,8 @@ NSString * const kBriefLoadFailureNotification = @"BriefLoadFailureNotification"
         }
         else
         {
-            NSError *jsonError = nil;
-            NSString *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+
+            NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             
             // parse & save to core data here
             
