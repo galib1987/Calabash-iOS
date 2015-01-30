@@ -4,6 +4,7 @@
 #import "_NJOPLocation.h"
 
 const struct NJOPLocationAttributes NJOPLocationAttributes = {
+	.airportCity = @"airportCity",
 	.airportID = @"airportID",
 	.airportName = @"airportName",
 	.fboID = @"fboID",
@@ -54,6 +55,8 @@ const struct NJOPLocationRelationships NJOPLocationRelationships = {
 
 	return keyPaths;
 }
+
+@dynamic airportCity;
 
 @dynamic airportID;
 

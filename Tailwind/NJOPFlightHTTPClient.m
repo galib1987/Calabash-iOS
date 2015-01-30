@@ -97,6 +97,17 @@ NSString * const kBriefLoadFailureNotification = @"BriefLoadFailureNotification"
                     }
                 }
                 
+                // update contracts
+                NSArray *contracts = [result objectForKey:@"contracts"];
+                
+                if (contracts)
+                {
+                    [contracts enumerateObjectsUsingBlock:^(NSDictionary *contractDict, NSUInteger idx, BOOL *stop) {
+                        
+                        [[NJOPTailwindPM sharedInstance] updateContract:contractDict moc:moc];
+                    }];
+                }
+                
                 // update requests
                 NSArray *requests = [result objectForKey:@"requests"];
                 
