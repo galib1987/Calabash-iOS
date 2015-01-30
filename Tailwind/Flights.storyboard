@@ -587,12 +587,12 @@ If you need assistance, please call the owner services team. </string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S36-U3-beM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360.5" y="42"/>
+            <point key="canvasLocation" x="1942.5" y="-1558"/>
         </scene>
         <!--Flights Detail View Controller-->
         <scene sceneID="sfb-mK-0Ig">
             <objects>
-                <tableViewController storyboardIdentifier="FlightDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lU9-p4-Klb" customClass="NJOPFlightsDetailViewController" sceneMemberID="viewController">
+                <tableViewController id="lU9-p4-Klb" customClass="NJOPFlightsDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="p3z-sN-wJB" customClass="NJOPTableView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1131,7 +1131,6 @@ If you need assistance, please call the owner services team. </string>
                                     <outlet property="imageView" destination="bHf-HR-oNY" id="wH5-Ai-Am1"/>
                                     <outlet property="tile" destination="pfK-KP-4g6" id="goo-rr-epr"/>
                                     <outlet property="topLabel" destination="EVq-UA-GlP" id="F9D-Il-VIc"/>
-                                    <segue destination="Lpn-Ct-UyO" kind="show" identifier="showAdvisoryNotes" id="P8j-8t-o1T"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CateringInfoCell" rowHeight="100" id="BZy-AZ-gwp" customClass="NJOPInfoCell">
@@ -1211,7 +1210,6 @@ If you need assistance, please call the owner services team. </string>
                                     <outlet property="imageView" destination="PF4-gU-KYI" id="eRQ-w3-sYo"/>
                                     <outlet property="tile" destination="eIL-9h-Olm" id="JUZ-R9-8TX"/>
                                     <outlet property="topLabel" destination="pwV-f0-nKh" id="ku2-5X-b1N"/>
-                                    <segue destination="u3L-wO-v1v" kind="show" identifier="showCatering" id="ijv-jl-Nwv"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CrewInfoCell" rowHeight="100" id="W33-4S-sSP" customClass="NJOPInfoCell">
@@ -1291,7 +1289,6 @@ If you need assistance, please call the owner services team. </string>
                                     <outlet property="imageView" destination="wQp-Cg-S5p" id="ff3-cH-Ihk"/>
                                     <outlet property="tile" destination="PZd-Ce-9dv" id="ZGe-mW-sHW"/>
                                     <outlet property="topLabel" destination="Hzb-ci-xv3" id="BG6-f4-cKI"/>
-                                    <segue destination="L6P-Tw-bix" kind="show" identifier="showCrew" id="KH5-G4-S6b"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PassengerManifestInfoCell" rowHeight="100" id="yWu-GS-v01" customClass="NJOPInfoCell">
@@ -1371,7 +1368,6 @@ If you need assistance, please call the owner services team. </string>
                                     <outlet property="imageView" destination="f7g-1z-Tnc" id="txd-ss-j1g"/>
                                     <outlet property="tile" destination="JY0-FD-35n" id="CDH-Ks-mEA"/>
                                     <outlet property="topLabel" destination="avf-lm-NGO" id="9JH-iI-yqR"/>
-                                    <segue destination="MdR-TU-Rfu" kind="show" identifier="showManifest" id="2cl-7a-RhS"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroundInfoCell" rowHeight="100" id="m8h-Vd-GHb" customClass="NJOPInfoCell">
@@ -1451,7 +1447,6 @@ If you need assistance, please call the owner services team. </string>
                                     <outlet property="imageView" destination="nft-EC-oUa" id="vFZ-Xs-xjU"/>
                                     <outlet property="tile" destination="XyK-mr-CVF" id="dQE-gz-rnr"/>
                                     <outlet property="topLabel" destination="xLZ-2U-Bvy" id="hjT-aj-VhK"/>
-                                    <segue destination="rD0-A9-HS3" kind="show" identifier="showGround" id="4Xk-2v-6jU"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YourPlaneInfoCell" rowHeight="100" id="zP0-UW-7wT" customClass="NJOPInfoCell">
@@ -1531,7 +1526,6 @@ If you need assistance, please call the owner services team. </string>
                                     <outlet property="imageView" destination="1rF-9s-xhj" id="SQe-PO-vBS"/>
                                     <outlet property="tile" destination="I3g-uh-SQq" id="e7I-jI-W8d"/>
                                     <outlet property="topLabel" destination="8v0-WB-uLB" id="PwT-bz-GXg"/>
-                                    <segue destination="xIl-Eg-9Hc" kind="show" identifier="showPlane" id="W0d-TX-erl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1710,7 +1704,7 @@ Brooklyn, NY 11238</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HbH-bS-fBp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3897.5" y="-2634.5"/>
+            <point key="canvasLocation" x="2997.5" y="-1580.5"/>
         </scene>
         <!--Catering View Controller-->
         <scene sceneID="T57-gB-S6a">
@@ -1836,7 +1830,7 @@ Don’t see what you want?</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiG-36-8RA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4308.5" y="-2635.5"/>
+            <point key="canvasLocation" x="3408.5" y="-1581.5"/>
         </scene>
         <!--Crew View Controller-->
         <scene sceneID="26d-x2-HKI">
@@ -1921,7 +1915,7 @@ Don’t see what you want?</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GEy-fW-nuF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4722.5" y="-2634.5"/>
+            <point key="canvasLocation" x="3822.5" y="-1580.5"/>
         </scene>
         <!--Passenge Manifest View Controller-->
         <scene sceneID="ewN-0p-mLQ">
@@ -2061,7 +2055,7 @@ passenger will be under 18 years of age.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yVS-d6-JTR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5194" y="-2600"/>
+            <point key="canvasLocation" x="4294" y="-1546"/>
         </scene>
         <!--Plane View Controller-->
         <scene sceneID="Sml-4g-aby">
@@ -2579,7 +2573,7 @@ Typical Flight: Los Angeles to Dallas</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NvS-xX-bQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5699" y="-2600"/>
+            <point key="canvasLocation" x="4799" y="-1546"/>
         </scene>
         <!--Advisory Notes Controller-->
         <scene sceneID="fvT-ZR-g00">
@@ -2590,11 +2584,11 @@ Typical Flight: Los Angeles to Dallas</string>
                         <viewControllerLayoutGuide type="bottom" id="dXa-e1-pNd"/>
                     </layoutGuides>
                     <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="CoL-Yg-KDA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleAspectFit" scalesPageToFit="YES" suppressesIncrementalRendering="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Vz-Xw-fxI">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            <webView contentMode="scaleAspectFit" misplaced="YES" scalesPageToFit="YES" suppressesIncrementalRendering="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Vz-Xw-fxI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
@@ -2612,25 +2606,25 @@ Typical Flight: Los Angeles to Dallas</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iaq-0j-Qdo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6897" y="-2580"/>
+            <point key="canvasLocation" x="5997" y="-1526"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="mOl-Kq-3er">
             <objects>
-                <viewController id="mzQ-Iy-OTD" customClass="NJOPDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FlightDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mzQ-Iy-OTD" customClass="NJOPDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jut-ah-f9d"/>
                         <viewControllerLayoutGuide type="bottom" id="8Kg-Gv-IFZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1lb-m3-bOF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1285"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3H-Dn-mFh">
-                                <rect key="frame" x="0.0" y="64" width="375" height="1221"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3H-Dn-mFh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="1336"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7L4-rQ-efi">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1290"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1460"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-O8-ACa" customClass="NJOPDropdownView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -2934,6 +2928,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                                             </state>
                                                                             <connections>
                                                                                 <action selector="departurePinPressed:" destination="lU9-p4-Klb" eventType="touchUpInside" id="Izy-mU-Utt"/>
+                                                                                <action selector="departurePinPressed:" destination="mzQ-Iy-OTD" eventType="touchUpInside" id="prl-tF-g0j"/>
                                                                             </connections>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRq-cl-xwL">
@@ -2946,6 +2941,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </state>
                                                                             <connections>
+                                                                                <action selector="arrivalPinPressed:" destination="mzQ-Iy-OTD" eventType="touchUpInside" id="5RO-Qt-JDv"/>
                                                                                 <action selector="arrivalPinPressed:" destination="lU9-p4-Klb" eventType="touchUpInside" id="qMt-0h-XZl"/>
                                                                             </connections>
                                                                         </button>
@@ -3255,6 +3251,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                             <outlet property="imageView" destination="spa-WC-8ce" id="f95-Qq-EP3"/>
                                                             <outlet property="tile" destination="052-mS-xFT" id="k7G-C9-P9c"/>
                                                             <outlet property="topLabel" destination="6Ck-7Y-DSS" id="Tyd-g1-SEV"/>
+                                                            <segue destination="Lpn-Ct-UyO" kind="show" identifier="showAdvisoryNotes" id="ANe-R0-19j"/>
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CateringInfoCell" rowHeight="100" id="enV-uY-nOe" customClass="NJOPInfoCell">
@@ -3334,6 +3331,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                             <outlet property="imageView" destination="gEY-1M-DkN" id="MXo-KI-V3d"/>
                                                             <outlet property="tile" destination="kJl-XZ-pKW" id="jLy-xt-zhT"/>
                                                             <outlet property="topLabel" destination="hj8-yN-Cex" id="t8J-yh-pAO"/>
+                                                            <segue destination="u3L-wO-v1v" kind="show" identifier="showCatering" id="SeA-ru-D8C"/>
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CrewInfoCell" rowHeight="100" id="C7X-m4-EWX" customClass="NJOPInfoCell">
@@ -3413,6 +3411,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                             <outlet property="imageView" destination="tuX-GQ-auc" id="Cvk-gH-m1r"/>
                                                             <outlet property="tile" destination="xaa-qg-WzW" id="rDv-bk-sDi"/>
                                                             <outlet property="topLabel" destination="WGL-Hz-ZAo" id="8Jr-qa-Gog"/>
+                                                            <segue destination="L6P-Tw-bix" kind="show" identifier="showCrew" id="utD-cf-Pzr"/>
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PassengerManifestInfoCell" rowHeight="100" id="qNg-yW-QR0" customClass="NJOPInfoCell">
@@ -3492,6 +3491,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                             <outlet property="imageView" destination="aNm-62-qqF" id="EOa-JW-CaS"/>
                                                             <outlet property="tile" destination="d4D-K1-Qu3" id="RlA-uv-bxF"/>
                                                             <outlet property="topLabel" destination="KUd-u8-zXK" id="phY-Ib-POL"/>
+                                                            <segue destination="MdR-TU-Rfu" kind="show" identifier="showManifest" id="s3M-9E-NkH"/>
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroundInfoCell" rowHeight="100" id="2qd-la-Flq" customClass="NJOPInfoCell">
@@ -3571,6 +3571,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                             <outlet property="imageView" destination="3qw-zW-Sdn" id="lHL-dv-ZYH"/>
                                                             <outlet property="tile" destination="OZl-aL-Cug" id="CwH-Ck-k8C"/>
                                                             <outlet property="topLabel" destination="tiM-tr-DKZ" id="1m0-kh-EXl"/>
+                                                            <segue destination="rD0-A9-HS3" kind="show" identifier="showGround" id="Dj7-8H-FuT"/>
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YourPlaneInfoCell" rowHeight="100" id="AbK-gs-Mqz" customClass="NJOPInfoCell">
@@ -3650,6 +3651,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                                             <outlet property="imageView" destination="aly-gs-Pt0" id="zsM-io-eAd"/>
                                                             <outlet property="tile" destination="uGZ-CS-Qtg" id="REC-D6-Fa5"/>
                                                             <outlet property="topLabel" destination="4tD-HV-KUt" id="K4L-c3-sEF"/>
+                                                            <segue destination="xIl-Eg-9Hc" kind="show" identifier="showPlane" id="Sz3-92-zX6"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -3663,7 +3665,7 @@ Typical Flight: Los Angeles to Dallas</string>
                                         <constraints>
                                             <constraint firstItem="ROn-O8-ACa" firstAttribute="top" secondItem="7L4-rQ-efi" secondAttribute="top" id="3Ff-C3-1Yx"/>
                                             <constraint firstAttribute="height" constant="1216" id="AHG-VZ-V8j"/>
-                                            <constraint firstAttribute="height" constant="1290" id="AZJ-vj-OOQ"/>
+                                            <constraint firstAttribute="height" constant="1460" id="AZJ-vj-OOQ"/>
                                             <constraint firstItem="pvT-FX-gNG" firstAttribute="top" secondItem="ROn-O8-ACa" secondAttribute="bottom" id="Hm1-GY-Izw"/>
                                             <constraint firstAttribute="trailing" secondItem="wUy-Ei-ziX" secondAttribute="trailing" id="ILa-2l-oo7"/>
                                             <constraint firstItem="wUy-Ei-ziX" firstAttribute="top" secondItem="ROn-O8-ACa" secondAttribute="bottom" id="MGy-Za-kFm"/>
@@ -3725,7 +3727,7 @@ Typical Flight: Los Angeles to Dallas</string>
                         </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1285"/>
+                    <size key="freeformSize" width="375" height="1350"/>
                     <connections>
                         <outlet property="requestDropdownView" destination="wUy-Ei-ziX" id="7fe-c9-iny"/>
                         <outlet property="reservationDropdownView" destination="ROn-O8-ACa" id="eRE-K9-YB2"/>
@@ -3735,7 +3737,7 @@ Typical Flight: Los Angeles to Dallas</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBU-pQ-AhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7535.5" y="-2806.5"/>
+            <point key="canvasLocation" x="2566.5" y="-1558.5"/>
         </scene>
     </scenes>
     <resources>

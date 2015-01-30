@@ -10,7 +10,7 @@
 #import "NCLInfoPresenter.h"
 #import "NJOPReservation.h"
 #import "NJOPClient.h"
-#import "NJOPFlightsDetailViewController.h"
+#import "NJOPDetailViewController.h"
 #import "NJOPNavigationBar.h"
 #import <DateTools/NSDate+DateTools.h>
 #import "NJOPSummaryViewTopHeaderView.h"
@@ -219,7 +219,7 @@
 - (IBAction)viewFlightDetailsTapped:(id)sender {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Flights" bundle:nil];
-    NJOPFlightsDetailViewController *flightDetailVC = [storyboard instantiateViewControllerWithIdentifier:@"FlightDetailVC"];
+    NJOPDetailViewController *flightDetailVC = [storyboard instantiateViewControllerWithIdentifier:@"FlightDetailVC"];
     
     CGPoint touchPoint = [sender convertPoint:CGPointZero toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touchPoint];
