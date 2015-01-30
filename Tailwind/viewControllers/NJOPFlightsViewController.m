@@ -9,7 +9,7 @@
 #import "NJOPFlightsViewController.h"
 #import "NJOPClient+flights.h"
 #import "NJOPReservation.h"
-#import "NJOPFlightsDetailViewController.h"
+#import "NJOPDetailViewController.h"
 #import "NJOPOAuthClient.h"
 #import "NJOPFlightHTTPClient.h"
 #import "NJOPSelectAccountViewController.h"
@@ -213,7 +213,7 @@
     
     if ([segue.identifier isEqualToString:@"showDetail"] ) {
         
-        NJOPFlightsDetailViewController *viewController = segue.destinationViewController;
+        NJOPDetailViewController *viewController = segue.destinationViewController;
         viewController.reservation = representationDict[@"CellItem"];
     }
 }
