@@ -132,6 +132,7 @@ NSString * const kBriefLoadFailureNotification = @"BriefLoadFailureNotification"
                 // set individual for session
                 NSDictionary *individualJSON = [result valueForKeyPath:@"individual"];
                 NJOPIndividual *individual = [NJOPIndividual individualWithDictionaryRepresentation:individualJSON];
+                [individual setAccounts:individualJSON[@"accounts"]];
                 [[NJOPOAuthClient sharedInstance] setIndividual:individual];
                 
                 // set accounts for individual

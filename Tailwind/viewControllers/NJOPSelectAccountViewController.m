@@ -7,6 +7,7 @@
 //
 
 #import "NJOPSelectAccountViewController.h"
+#import "NJOPOAuthClient.h"
 
 @interface NJOPSelectAccountViewController ()
 
@@ -17,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,24 +29,27 @@
 -(void)loadDataSource {
     // STUB to load accounts
     
+    
+    NJOPOAuthClient *authClient = [NJOPOAuthClient sharedInstance];
+    NSLog(@"%@", authClient.accounts);
+    
+    NSMutableArray *sectionsArray = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *account in authClient.accounts) {
+        NSDictionary *cellRepresentation = @{
+                                             kSimpleDataSourceCellIdentifierKey			: @"NJOPAccountTableCell",
+                                             kSimpleDataSourceCellKeypaths					: @{
+                                                     @"accountNameLabel.text" : account[@"accountName"],
+                                                     @"principalNameLabel.text" : [NSString stringWithFormat:@"%@ %@", authClient.individual.firstName, authClient.individual.lastName],
+                                                     }
+                                             };
+        
+        [sectionsArray addObject:cellRepresentation];
+    }
+    
     NSArray* sections = @[
                           @{
-                              kSimpleDataSourceSectionCellsKey : @[
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPAccountTableCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"accountNameLabel.text" : @"Company LLC",
-                                                  @"principalNameLabel.text" : @"Douglas Richardson",
-                                                  }
-                                          },
-                                      @{
-                                          kSimpleDataSourceCellIdentifierKey			: @"NJOPAccountTableCell",
-                                          kSimpleDataSourceCellKeypaths					: @{
-                                                  @"accountNameLabel.text" : @"Other Company",
-                                                  @"principalNameLabel.text" : @"Martin Crieff",
-                                                  }
-                                          }
-                                      ]
+                              kSimpleDataSourceSectionCellsKey : sectionsArray
                               }
                           ];
     
