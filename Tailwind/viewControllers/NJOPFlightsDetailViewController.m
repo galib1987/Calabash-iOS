@@ -18,9 +18,11 @@
 #import "NJOPTitleSummaryViewController.h"
 #import "NJOPNetJetsCorePM.h"
 #import <NCLPersistenceUtil.h>
+#import "NJOPTailwindPM.h"
 
 @interface NJOPFlightsDetailViewController ()
-
+@property (nonatomic) CGFloat affixedY;
+@property (nonatomic) NSMutableArray *viewsToRemoveOnPush;
 @end
 
 @implementation NJOPFlightsDetailViewController
@@ -37,11 +39,57 @@
         }
     }
     
+    [self getInfoForDropdown];
+    
 //    NJOPTitleSummaryViewController *titleSummaryVC = [[NJOPTitleSummaryViewController alloc] initWithNibName:@"NJOPTitleSummaryViewController" bundle:nil];
 //    [self.tableView addSubview:titleSummaryVC.view];
 //    [self.tableView setTableHeaderView:titleSummaryVC.view];
+
+//    UIView *reservationView = [[UIView alloc] init];
+//    reservationView.frame = CGRectMake(0, 0, self.view.frame.size.width, 50.0f);
+//    reservationView.backgroundColor = [UIColor grayColor];
+//    _affixedY = reservationView.frame.size.height;
+//    _viewsToRemoveOnPush = reservationView;
+//    [self.tableView setContentInset:UIEdgeInsetsMake(_affixedY, 0, 0, 0)];
 //    
+//    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addView)];
+//    [reservationView addGestureRecognizer:tapGesture];
+//
+//    [self.parentViewController.view addSubview:reservationView];
+    
     [self loadDataSource];
+}
+
+- (void)addView {
+    UIView *additionalView = [[UIView alloc] init];
+    additionalView.frame = CGRectMake(0, _affixedY, self.view.frame.size.width, 44.0f);
+    additionalView.backgroundColor = [UIColor blackColor];
+    additionalView.layer.opacity = 0.8;
+    _affixedY = _affixedY + additionalView.frame.size.height;
+    _viewsToRemoveOnPush = additionalView;
+    [self.tableView setContentInset:UIEdgeInsetsMake(_affixedY, 0, 0, 0)];
+    [self.parentViewController.view addSubview:additionalView];
+    
+}
+
+- (void)getInfoForDropdown {
+    NJOPTailwindPM *persistenceManager = [NJOPTailwindPM sharedInstance];
+    NJOPReservation2 *reservation = [persistenceManager reservationForID:self.reservation.reservationId createIfNeeded:NO moc:persistenceManager.mainMOC];
+    NSLog(@"%@", reservation.reservationID); // reservation id
+    
+    NSArray* requestsForReservation = [reservation.requests allObjects];
+    NSLog(@"%lu", (unsigned long)[requestsForReservation count]); // how many requests
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"EE MMM dd, YYYY"];
+    
+    for (NJOPRequest2 *request in requestsForReservation) {
+        NSArray *legsArray = [request.legs allObjects];
+        for (NJOPLeg *leg in legsArray) {
+            NSLog(@"%@ %@ %@", [formatter stringFromDate:leg.depTime], leg.depLocation.airportName, leg.arrLocation.airportName);
+            
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -108,7 +156,6 @@
         }
     }
     
-    NSLog(@"we have reservation: %@",self.reservation);
     NSUInteger passengerCount = self.reservation.passengers.count;
     NSString *passengerCountString = passengerCount <= 1? [NSString stringWithFormat:@"%lu passenger", (unsigned long)passengerCount] : [NSString stringWithFormat:@"%lu passengers", (unsigned long)passengerCount];
     
@@ -117,7 +164,7 @@
                                                 [self infoCellWithIdentifier:@"CrewInfoCell" topLabel:@"Your Crew" detailLabel:@"Captain Michael Chapman" icon:[UIImage imageNamed:@"crew"]],
                                                 [self infoCellWithIdentifier:@"PassengerManifestInfoCell" topLabel:@"Passenger Manifest" detailLabel:passengerCountString icon:[UIImage imageNamed:@"passengers"]],
                                                 nil];
-    NSLog(@"HERE!!!!!!");
+    
     if ([NJOPIntrospector isObjectArray:_reservation.cateringOrders]) {
         [conditionalSectionsArray addObject:[self infoCellWithIdentifier:@"CateringInfoCell" topLabel:@"Catering" detailLabel:@"Details Enclosed" icon:[UIImage imageNamed:@"catering"]]];
     }
@@ -145,6 +192,7 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     if ([segue.identifier isEqualToString:@"showManifest"]) {
         NJOPPassengeManifestViewController *vc = [segue destinationViewController];
         vc.reservation = self.reservation;
@@ -178,7 +226,6 @@
 }
 
 - (IBAction)departurePinPressed:(id)sender {
-//    [self testCoreDataFetch];
     
     NSString *departureFBO = self.reservation.departureFboName;
     departureFBO = [departureFBO stringByReplacingOccurrencesOfString:@" " withString:@"+"];
@@ -189,15 +236,13 @@
     [[UIApplication sharedApplication] openURL:url];
 }
 
+
 - (void)testCoreDataFetch {
     
-    NJOPNetJetsCorePM *persistenceManager = [NJOPNetJetsCorePM sharedInstance];
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"fbo_id == @5677"];;
-    NSArray *address = [NCLPersistenceUtil executeFetchRequestForEntityName:@"FBOAddress"
-                                               predicate:pred
-                                                 context:persistenceManager.mainMOC
-                                                   error:nil];
-    NSLog(@"%@", address);
+//    NJOPNetJetsCorePM *persistenceManager = [NJOPNetJetsCorePM sharedInstance];
+//    NSArray *address = [NCLPersistenceUtil executeFetchRequestForEntityName:<#(NSString *)#> predicate:<#(NSPredicate *)#> context:<#(NSManagedObjectContext *)#> error:<#(NSError *__autoreleasing *)#>]
+//    NSLog(@"%@", address);
     
 }
+
 @end
