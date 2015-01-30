@@ -37,6 +37,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController setNavigationBarHidden:YES];
+    // Do any additional setup after loading the view.
+    if (self.reservation == nil) {
+        // see if we can get reservation from appDelegate
+        AppDelegate *ad = (AppDelegate *)([UIApplication sharedApplication].delegate);
+        if (ad.selectedReservation != nil) {
+            self.reservation = ad.selectedReservation;
+        }
+    }
+    
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.scrollView.delegate = self;
@@ -310,6 +321,47 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
+    if ([segue.identifier isEqualToString:@"showManifest"]) {
+        NJOPPassengeManifestViewController *vc = [segue destinationViewController];
+        vc.reservation = self.reservation;
+    } else if ([segue.identifier isEqualToString:@"showGround"]) {
+        NJOPGroundViewController *vc = [segue destinationViewController];
+        vc.reservation = self.reservation;
+    } else if ([segue.identifier isEqualToString:@"showCatering"]) {
+        NJOPCateringViewController *vc = [segue destinationViewController];
+        vc.reservation = self.reservation;
+    } else if ([segue.identifier isEqualToString:@"showCrew"]) {
+        NJOPCrewViewController *vc = [segue destinationViewController];
+        vc.reservation = self.reservation;
+    } else if ([segue.identifier isEqualToString:@"showPlane"]) {
+        NJOPPlaneViewController *vc = [segue destinationViewController];
+        vc.reservation = self.reservation;
+    } else if ([segue.identifier isEqualToString:@"showAdvisoryNotes"]) {
+        NJOPAdvisoryNotesController *vc = [segue destinationViewController];
+        vc.reservation = self.reservation;
+    }
+}
+
+
+- (IBAction)arrivalPinPressed:(id)sender {
+    NSString *arrivalFBO = self.reservation.arrivalFboName;
+    arrivalFBO = [arrivalFBO stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    NSString *urlString = @"http://maps.google.com/?q=";
+    urlString = [urlString stringByAppendingString:arrivalFBO];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+- (IBAction)departurePinPressed:(id)sender {
+    
+    NSString *departureFBO = self.reservation.departureFboName;
+    departureFBO = [departureFBO stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    NSString *urlString = @"http://maps.google.com/?q=";
+    urlString = [urlString stringByAppendingString:departureFBO];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 @end
