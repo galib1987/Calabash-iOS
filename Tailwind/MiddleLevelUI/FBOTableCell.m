@@ -9,17 +9,13 @@
 #import "FBOTableCell.h"
 
 @interface FBOTableCell ()
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentTopMargin;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *allInfoDateTimeMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *allInfoTimeContractMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *allInfoContractDepartureMargin;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintDateTimeMargin;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTimeContractMargin;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintContractTailMargin;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintDepartureGroundMargin;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *noTailNoGroundDateTimeMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *noTailNoGroundTimeContractMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *noTailNoGroundContractDepartureMargin;
-
-@property (weak, nonatomic) IBOutlet UIView *groupFlightTime;
+@property (weak, nonatomic) IBOutlet UIView *groupContent;
 @property (weak, nonatomic) IBOutlet UIView *groupTailNumber;
 @property (weak, nonatomic) IBOutlet UIView *groupGroundTransport;
 @property (weak, nonatomic) IBOutlet UIView *groupDeparture;
@@ -31,7 +27,6 @@ NSArray *allInfoConstraints;
 
 - (void)awakeFromNib {
     // Initialization code
-    allInfoConstraints = @[self.allInfoDateTimeMargin, self.allInfoTimeContractMargin, self.allInfoContractDepartureMargin];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -45,26 +40,54 @@ NSArray *allInfoConstraints;
     
     if (!(flightInfoAvailable & (tailNumber | groundTransport))) { // if neither available
         [self useNoTailNoGroundLayout];
+    } else if (!(flightInfoAvailable & groundTransport)) {
+        [self useNoGroundLayout];
+    } else if (!(flightInfoAvailable & tailNumber)) {
+        [self useNoTailLayout];
     }
 }
 
 - (void)useNoTailNoGroundLayout {
     
-    NSLayoutConstraint *dateTimeMargin = [NSLayoutConstraint constraintWithItem:self.flightDateLabel attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.groupFlightTime attribute:NSLayoutAttributeTop multiplier:1 constant:-50];
-    
-    NSLayoutConstraint *timeContractMargin = [NSLayoutConstraint constraintWithItem:self.groupFlightTime attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.contractLabel attribute:NSLayoutAttributeTop multiplier:1 constant:-50];
+    self.constraintDateTimeMargin.constant = 50;
+    self.constraintTimeContractMargin.constant = 50;
+    self.constraintContractTailMargin.active = false;
     
     NSLayoutConstraint *contractDepartureMargin = [NSLayoutConstraint constraintWithItem:self.contractLabel attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.groupDeparture attribute:NSLayoutAttributeTop multiplier:1 constant:-20];
+    NSLayoutConstraint *departureContentMargin = [NSLayoutConstraint constraintWithItem:self.groupContent attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.groupDeparture attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
     
-    
-    NSArray *noTailNoGroundConstraints = @[dateTimeMargin, timeContractMargin, contractDepartureMargin];
-    
-    self.contentTopMargin.constant = 40;
+    NSArray *additionalConstraints = @[contractDepartureMargin, departureContentMargin];
+    [NSLayoutConstraint activateConstraints:additionalConstraints];
     
     self.groupTailNumber.hidden = self.groupGroundTransport.hidden = true;
+}
+
+- (void)useNoGroundLayout {
     
-    [NSLayoutConstraint deactivateConstraints:allInfoConstraints];
-    [NSLayoutConstraint activateConstraints:noTailNoGroundConstraints];
+    self.constraintDateTimeMargin.constant = 28;
+    self.constraintTimeContractMargin.constant = 33;
+    
+    NSLayoutConstraint *departureContentMargin = [NSLayoutConstraint constraintWithItem:self.groupDeparture attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.groupContent attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+    
+    NSArray *additionalConstraints = @[departureContentMargin];
+    [NSLayoutConstraint activateConstraints:additionalConstraints];
+    
+    self.groupGroundTransport.hidden = true;
+}
+
+- (void)useNoTailLayout {
+    
+    self.constraintDateTimeMargin.constant = 28;
+    self.constraintTimeContractMargin.constant = 33;
+    self.constraintDepartureGroundMargin.constant = 22;
+    self.constraintContractTailMargin.active = false;
+    
+    NSLayoutConstraint *contractDepartureMargin = [NSLayoutConstraint constraintWithItem:self.contractLabel attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.groupDeparture attribute:NSLayoutAttributeTop multiplier:1 constant:-27];
+    
+    NSArray *additionalConstraints = @[contractDepartureMargin];
+    [NSLayoutConstraint activateConstraints:additionalConstraints];
+    
+    self.groupTailNumber.hidden = true;
 }
 
 @end

@@ -129,6 +129,7 @@
               @"toFBOLocationLabel.text" : [[NSString stringWithFormat:@"%@", reservation.arrivalAirportCity] capitalizedString],
               }
                                        };
+    // NOTE: Layout of FBOTableCell can be changed by setting its property 'flightInfoAvailable' to a combination of the flags 'tailNumber' and 'groundTransport'
     
     NSDictionary *dataSourceCellDict =
     @{
