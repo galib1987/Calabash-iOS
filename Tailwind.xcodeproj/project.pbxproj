@@ -76,6 +76,8 @@
 		A74CDC631A6F951800F10A0C /* weather-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A74CDC601A6F951800F10A0C /* weather-test.json */; };
 		A750999B1A6357C00091D7E3 /* NJOPMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75099981A6357C00091D7E3 /* NJOPMessagesViewController.m */; };
 		A750999D1A63587D0091D7E3 /* NJOPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A750999C1A63587D0091D7E3 /* NJOPHomeViewController.m */; };
+		A75BCE561A7B45BD0094C94F /* NJOPDropdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = A75BCE551A7B45BD0094C94F /* NJOPDropdownView.m */; };
+		A75BCE591A7B4B9A0094C94F /* NJOPDropdownRequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = A75BCE581A7B4B9A0094C94F /* NJOPDropdownRequestView.m */; };
 		A75F554A1A786D8500395CE3 /* NJOPTitleSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75F55481A786D8500395CE3 /* NJOPTitleSummaryViewController.m */; };
 		A75F554B1A786D8500395CE3 /* NJOPTitleSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75F55491A786D8500395CE3 /* NJOPTitleSummaryViewController.xib */; };
 		A762F9791A6665BE002065EB /* NJOPCateringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762F9781A6665BE002065EB /* NJOPCateringViewController.m */; };
@@ -341,6 +343,10 @@
 		A75099971A6357C00091D7E3 /* NJOPMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPMessagesViewController.h; sourceTree = "<group>"; };
 		A75099981A6357C00091D7E3 /* NJOPMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPMessagesViewController.m; sourceTree = "<group>"; };
 		A750999C1A63587D0091D7E3 /* NJOPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPHomeViewController.m; sourceTree = "<group>"; };
+		A75BCE541A7B45BD0094C94F /* NJOPDropdownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDropdownView.h; sourceTree = "<group>"; };
+		A75BCE551A7B45BD0094C94F /* NJOPDropdownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDropdownView.m; sourceTree = "<group>"; };
+		A75BCE571A7B4B9A0094C94F /* NJOPDropdownRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDropdownRequestView.h; sourceTree = "<group>"; };
+		A75BCE581A7B4B9A0094C94F /* NJOPDropdownRequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDropdownRequestView.m; sourceTree = "<group>"; };
 		A75F55471A786D8500395CE3 /* NJOPTitleSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPTitleSummaryViewController.h; sourceTree = SOURCE_ROOT; };
 		A75F55481A786D8500395CE3 /* NJOPTitleSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPTitleSummaryViewController.m; sourceTree = SOURCE_ROOT; };
 		A75F55491A786D8500395CE3 /* NJOPTitleSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPTitleSummaryViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -1209,6 +1215,10 @@
 				A75F55471A786D8500395CE3 /* NJOPTitleSummaryViewController.h */,
 				A75F55481A786D8500395CE3 /* NJOPTitleSummaryViewController.m */,
 				A75F55491A786D8500395CE3 /* NJOPTitleSummaryViewController.xib */,
+				A75BCE541A7B45BD0094C94F /* NJOPDropdownView.h */,
+				A75BCE551A7B45BD0094C94F /* NJOPDropdownView.m */,
+				A75BCE571A7B4B9A0094C94F /* NJOPDropdownRequestView.h */,
+				A75BCE581A7B4B9A0094C94F /* NJOPDropdownRequestView.m */,
 			);
 			name = "Flight Detail Views";
 			sourceTree = "<group>";
@@ -1608,6 +1618,7 @@
 				524417A21A6ECB7B00DA7868 /* PDTSimpleCalendarViewFlowLayout.m in Sources */,
 				A7F2CA4C1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m in Sources */,
 				A7CD0AF21A5C82B700D45224 /* (null) in Sources */,
+				A75BCE561A7B45BD0094C94F /* NJOPDropdownView.m in Sources */,
 				524417A11A6ECB7B00DA7868 /* PDTSimpleCalendarViewController.m in Sources */,
 				1E79C8801A6481CA001B73B9 /* NJOPAirportSearchViewController.m in Sources */,
 				A7E0073E1A70AEB8007BE054 /* NJOPNOFBOTableCell.m in Sources */,
@@ -1697,6 +1708,7 @@
 				15EAFD7B1A6D4682003C3B8A /* NJOPFlightHTTPClient.m in Sources */,
 				276FF0891A78630700F547F4 /* NJOPSettingsBaseStaticTableViewController.m in Sources */,
 				A786D6111A66351F006EDA24 /* NJOPMenuViewController.m in Sources */,
+				A75BCE591A7B4B9A0094C94F /* NJOPDropdownRequestView.m in Sources */,
 				276FF0761A77E2D700F547F4 /* NJOPPrivacyViewController.m in Sources */,
 				A77DBDC51A7257E000B5F306 /* _NJOPAircraftSpecMatrix.m in Sources */,
 				524417A01A6ECB7B00DA7868 /* PDTSimpleCalendarViewCell.m in Sources */,

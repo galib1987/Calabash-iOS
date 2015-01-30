@@ -19,12 +19,16 @@
 #import "NJOPNetJetsCorePM.h"
 #import <NCLPersistenceUtil.h>
 #import "NJOPTailwindPM.h"
+#import "NJOPDropdownView.h"
+#import "NJOPDropdownRequestView.h"
 
 @interface NJOPDetailViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (nonatomic) SimpleDataSource *dataSource;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIView *reservationDropdownView;
+@property (weak, nonatomic) IBOutlet NJOPDropdownView *reservationDropdownView;
+@property (weak, nonatomic) IBOutlet NJOPDropdownRequestView *requestDropdownView;
+@property (nonatomic) CGFloat affixedY;
 
 @end
 
@@ -43,8 +47,19 @@
     self.tableView.scrollEnabled = NO;
     self.tableView.scrollsToTop = NO;
     
+    for (UIView *view in self.view.subviews) {
+        view.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    
+    CGRect contentRect = CGRectZero;
+    for (UIView *view in self.scrollView.subviews) {
+        contentRect = CGRectUnion(contentRect, view.frame);
+    }
+    self.scrollView.contentSize = contentRect.size;
+    
     [self loadDataSource];
     [self registerReusableViews];
+    [self updateDropdownLabels];
     
     self.title = self.dataSource.title ? : self.title;
     NSArray* headerFooters = [self.dataSource headerFooterCellIdentifiers];
@@ -69,22 +84,56 @@
     }
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    CGFloat scrollViewHeight = 0.0f;
-    CGFloat scrollViewWidth = 0.0f;
+
+- (void)updateDropdownLabels {
+    NJOPTailwindPM *persistenceManager = [NJOPTailwindPM sharedInstance];
+    NJOPReservation2 *reservation = [persistenceManager reservationForID:self.reservation.reservationId createIfNeeded:NO moc:persistenceManager.mainMOC];
+    NSLog(@"%@", reservation.reservationID); // reservation id
+    self.affixedY = self.reservationDropdownView.frame.size.height;
+    self.reservationDropdownView.reservationIdLabel.text = [NSString stringWithFormat:@"Reservation: %@", reservation.reservationID];
     
-    for (UIView *view in self.scrollView.subviews) {
-        CGFloat height = view.frame.size.height + view.frame.origin.y;
-        scrollViewHeight = ((height > scrollViewHeight) ? height : scrollViewHeight);
-        
-        CGFloat width = view.frame.size.width + view.frame.origin.x;
-        scrollViewWidth = ((width > scrollViewWidth) ? width : scrollViewWidth);
-        
-    }
+    NSArray* requestsForReservation = [reservation.requests allObjects];
+    NSLog(@"%lu", (unsigned long)[requestsForReservation count]); // how many requests
     
-    [self.scrollView setContentSize:CGSizeMake(scrollViewWidth, scrollViewHeight)];
+    self.reservationDropdownView.ofRequestsLabel.text = [NSString stringWithFormat:@"1 of %lu Requests", (unsigned long)[requestsForReservation count]];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"EE MMM dd, YYYY"];
+    
+    
+//    for (NJOPRequest2 *request in requestsForReservation) {
+//        
+//        NJOPDropdownRequestView *requestView = [[NJOPDropdownRequestView alloc] init];
+//        requestView.backgroundColor = [UIColor blackColor];
+//        requestView.requestIdLabel.text = [NSString stringWithFormat:@"Request: %@", request.requestID];
+//        requestView.dateLabel.text = [formatter stringFromDate:request.depTime];
+//        requestView.airportLabel.text = @"HERE - THERE";
+//        self.affixedY = self.affixedY + requestView.frame.size.height;
+//        [self.view addSubview:requestView];
+//        NSArray *legsArray = [request.legs allObjects];
+//        for (NJOPLeg *leg in legsArray) {
+//            NSLog(@"%@ %@ %@", [formatter stringFromDate:leg.depTime], leg.depLocation.airportName, leg.arrLocation.airportName);
+//            
+//        }
+//    }
 }
+
+//-(void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    CGFloat scrollViewHeight = 0.0f;
+//    CGFloat scrollViewWidth = 0.0f;
+//    
+//    for (UIView *view in self.scrollView.subviews) {
+//        CGFloat height = view.frame.size.height + view.frame.origin.y;
+//        scrollViewHeight = ((height > scrollViewHeight) ? height : scrollViewHeight);
+//        
+//        CGFloat width = view.frame.size.width + view.frame.origin.x;
+//        scrollViewWidth = ((width > scrollViewWidth) ? width : scrollViewWidth);
+//        
+//    }
+//    
+//    [self.scrollView setContentSize:CGSizeMake(scrollViewWidth, scrollViewHeight)];
+//}
 
 #pragma mark - Subclass
 
