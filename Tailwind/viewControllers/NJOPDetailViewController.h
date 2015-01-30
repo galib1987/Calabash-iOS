@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SimpleDataSource.h"
+#import "NJOPReservation.h"
+#import "AppDelegate.h"
 
-@interface NJOPDetailViewController : UIViewController
+@interface NJOPDetailViewController : UIViewController 
+
+@property (nonatomic) NJOPReservation *reservation;
 
 @end
