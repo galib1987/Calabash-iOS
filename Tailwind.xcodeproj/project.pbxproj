@@ -76,6 +76,7 @@
 		A74CDC631A6F951800F10A0C /* weather-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A74CDC601A6F951800F10A0C /* weather-test.json */; };
 		A750999B1A6357C00091D7E3 /* NJOPMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75099981A6357C00091D7E3 /* NJOPMessagesViewController.m */; };
 		A750999D1A63587D0091D7E3 /* NJOPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A750999C1A63587D0091D7E3 /* NJOPHomeViewController.m */; };
+		A75BCE5C1A7B77550094C94F /* NJOPAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A75BCE5B1A7B77550094C94F /* NJOPAccountCell.m */; };
 		A75F554A1A786D8500395CE3 /* NJOPTitleSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75F55481A786D8500395CE3 /* NJOPTitleSummaryViewController.m */; };
 		A75F554B1A786D8500395CE3 /* NJOPTitleSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75F55491A786D8500395CE3 /* NJOPTitleSummaryViewController.xib */; };
 		A762F9791A6665BE002065EB /* NJOPCateringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762F9781A6665BE002065EB /* NJOPCateringViewController.m */; };
@@ -341,6 +342,8 @@
 		A75099971A6357C00091D7E3 /* NJOPMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPMessagesViewController.h; sourceTree = "<group>"; };
 		A75099981A6357C00091D7E3 /* NJOPMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPMessagesViewController.m; sourceTree = "<group>"; };
 		A750999C1A63587D0091D7E3 /* NJOPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPHomeViewController.m; sourceTree = "<group>"; };
+		A75BCE5A1A7B77550094C94F /* NJOPAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAccountCell.h; sourceTree = "<group>"; };
+		A75BCE5B1A7B77550094C94F /* NJOPAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAccountCell.m; sourceTree = "<group>"; };
 		A75F55471A786D8500395CE3 /* NJOPTitleSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPTitleSummaryViewController.h; sourceTree = SOURCE_ROOT; };
 		A75F55481A786D8500395CE3 /* NJOPTitleSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPTitleSummaryViewController.m; sourceTree = SOURCE_ROOT; };
 		A75F55491A786D8500395CE3 /* NJOPTitleSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPTitleSummaryViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -1034,6 +1037,8 @@
 				A74C81871A53150C001FF1A9 /* NJOPAccountViewController.m */,
 				A79BF7CD1A7AC55E00176B87 /* NJOPProfileViewController.h */,
 				A79BF7CE1A7AC55E00176B87 /* NJOPProfileViewController.m */,
+				A75BCE5A1A7B77550094C94F /* NJOPAccountCell.h */,
+				A75BCE5B1A7B77550094C94F /* NJOPAccountCell.m */,
 			);
 			name = "Account ViewControllers";
 			sourceTree = "<group>";
@@ -1630,6 +1635,7 @@
 				1E636E951A5F299C002B3E8C /* NJOPSelectAccountViewController.m in Sources */,
 				A77DBDC71A7257E000B5F306 /* _NJOPAircraftTypeGroup.m in Sources */,
 				15EAFD7C1A6D4682003C3B8A /* NJOPOAuthClient.m in Sources */,
+				A75BCE5C1A7B77550094C94F /* NJOPAccountCell.m in Sources */,
 				6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */,
 				1585FD841A79657300197696 /* _NJOPContract2.m in Sources */,
 				A7A03EA91A42E7BC004BE417 /* UICollectionReusableView+NJOPHelpers.m in Sources */,
