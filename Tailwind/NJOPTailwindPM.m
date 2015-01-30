@@ -33,7 +33,8 @@
 {
     NJOPAccount *account = [moc executeUniqueFetchRequestForEntityName:[NJOPAccount entityName] predicateKey:@"accountID" predicateValue:accountID error:nil];
     
-    if (!account)
+    if (!account &&
+        createIfNeeded)
     {
         account = [NSEntityDescription insertNewObjectForEntityForName:[NJOPAccount entityName] inManagedObjectContext:moc];
         account.accountID = accountID;
@@ -42,11 +43,26 @@
     return account;
 }
 
+- (NJOPContract2*)contractForID:(NSNumber*)contractID createIfNeeded:(BOOL)createIfNeeded moc:(NSManagedObjectContext*)moc
+{
+    NJOPContract2 *contract = [moc executeUniqueFetchRequestForEntityName:[NJOPContract2 entityName] predicateKey:@"contractID" predicateValue:contractID error:nil];
+    
+    if (!contract &&
+        createIfNeeded)
+    {
+        contract = [NSEntityDescription insertNewObjectForEntityForName:[NJOPContract2 entityName] inManagedObjectContext:moc];
+        contract.contractID = contractID;
+    }
+    
+    return contract;
+}
+
 - (NJOPReservation2*)reservationForID:(NSNumber*)reservationID createIfNeeded:(BOOL)createIfNeeded moc:(NSManagedObjectContext*)moc
 {
     NJOPReservation2 *reservation = [moc executeUniqueFetchRequestForEntityName:[NJOPReservation2 entityName] predicateKey:@"reservationID" predicateValue:reservationID error:nil];
     
-    if (!reservation)
+    if (!reservation &&
+        createIfNeeded)
     {
         reservation = [NSEntityDescription insertNewObjectForEntityForName:[NJOPReservation2 entityName] inManagedObjectContext:moc];
         reservation.reservationID = reservationID;
@@ -59,7 +75,8 @@
 {
     NJOPLeg *leg = [moc executeUniqueFetchRequestForEntityName:[NJOPLeg entityName] predicateKey:@"legID" predicateValue:legID error:nil];
     
-    if (!leg)
+    if (!leg &&
+        createIfNeeded)
     {
         leg = [NSEntityDescription insertNewObjectForEntityForName:[NJOPLeg entityName] inManagedObjectContext:moc];
         leg.legID = legID;
@@ -72,7 +89,8 @@
 {
     NJOPLocation *location = [moc executeUniqueFetchRequestForEntityName:[NJOPLocation entityName] predicateKey:@"fboID" predicateValue:fboID error:nil];
     
-    if (!location)
+    if (!location &&
+        createIfNeeded)
     {
         location = [NSEntityDescription insertNewObjectForEntityForName:[NJOPLocation entityName] inManagedObjectContext:moc];
         location.fboID = fboID;
@@ -95,6 +113,23 @@
     account.isPrincipal = [NSNumber numberFromObject:[accountDict objectForKey:@"isPrincipal"]];
     
     return account;
+}
+
+- (NJOPContract2*)updateContract:(NSDictionary*)contractDict moc:(NSManagedObjectContext*)moc
+{
+    NSNumber *contractID = [NSNumber numberFromObject:[contractDict objectForKey:@"contractId"]];
+    NJOPContract2 *contract = [self contractForID:contractID createIfNeeded:YES moc:moc];
+    
+    contract.aircraftType = [NSString stringFromObject:[contractDict objectForKey:@"aircraftType"]];
+    contract.aircraftName = [NSString stringFromObject:[contractDict objectForKey:@"aircraftTypeName"]];
+    contract.cardNumber = [NSString stringFromObject:[contractDict objectForKey:@"cardNumber"]];
+    contract.contractType = [NSString stringFromObject:[contractDict objectForKey:@"contractTypeDescription"]];
+    contract.remainingHoursActual = [NSDecimalNumber decimalNumberFromObject:[contractDict objectForKey:@"actualRemainingHours"] shouldUseZeroDefault:YES scale:1];
+    contract.remainingHoursProjected = [NSDecimalNumber decimalNumberFromObject:[contractDict objectForKey:@"projectedRemainingHours"] shouldUseZeroDefault:YES scale:1];
+    contract.tailNumber = [NSString stringFromObject:[contractDict objectForKey:@"tailNumber"]];
+    contract.peakDates = [contractDict objectForKey:@"peakDates"];
+    
+    return contract;
 }
 
 - (NJOPRequest2*)updateRequest:(NSDictionary*)requestDict moc:(NSManagedObjectContext*)moc
@@ -156,19 +191,30 @@
         leg.arrTime = [NSDate dateFromISOString:[legDict objectForKey:@"eta"]];
         leg.actualAircraft = [NSString stringFromObject:[legDict objectForKey:@"actualAircraftType"]];
         leg.tailNumber = [NSString stringFromObject:[legDict objectForKey:@"tailNumber"]];
+        leg.crewJSON = [legDict objectForKey:@"crew"];
         
         NJOPLocation *depLocation = [self locationForID:[NSNumber numberFromObject:[legDict objectForKey:@"departureFBOId"]] createIfNeeded:YES moc:moc];
         depLocation.fboName = [NSString stringFromObject:[legDict objectForKey:@"departureFBOName"]];
         depLocation.airportID = [NSString stringFromObject:[legDict objectForKey:@"departureAirportId"]];
         depLocation.airportName = [NSString stringFromObject:[legDict objectForKey:@"departureAirportName"]];
+        depLocation.airportCity = [NSString stringFromObject:[legDict objectForKey:@"departureAirportCity"]];
         depLocation.timeZone = [NSString stringFromObject:[legDict objectForKey:@"departureTimeZoneId"]];
+        NSNumber *lat = [NSNumber numberWithDouble:[[NSNumber numberFromObject:[legDict objectForKey:@"departureAirportLatitudeQuantity"]] doubleValue] / 3600.0];
+        NSNumber *lon = [NSNumber numberWithDouble:[[NSNumber numberFromObject:[legDict objectForKey:@"departureAirportLongitudeQuantity"]] doubleValue] / 3600.0];
+        depLocation.latitude = [NSDecimalNumber decimalNumberFromObject:lat shouldUseZeroDefault:NO scale:6];
+        depLocation.longitude = [NSDecimalNumber decimalNumberFromObject:lon shouldUseZeroDefault:NO scale:6];
         leg.depLocation = depLocation;
 
         NJOPLocation *arrLocation = [self locationForID:[NSNumber numberFromObject:[legDict objectForKey:@"arrivalFBOId"]] createIfNeeded:YES moc:moc];
         arrLocation.fboName = [NSString stringFromObject:[legDict objectForKey:@"arrivalFBOName"]];
         arrLocation.airportID = [NSString stringFromObject:[legDict objectForKey:@"arrivalAirportId"]];
         arrLocation.airportName = [NSString stringFromObject:[legDict objectForKey:@"arrivalAirportName"]];
+        arrLocation.airportCity = [NSString stringFromObject:[legDict objectForKey:@"arrivalAirportCity"]];
         arrLocation.timeZone = [NSString stringFromObject:[legDict objectForKey:@"arrivalTimeZoneId"]];
+        NSNumber *lat2 = [NSNumber numberWithDouble:[[NSNumber numberFromObject:[legDict objectForKey:@"arrivalAirportLatitudeQuantity"]] doubleValue] / 3600.0];
+        NSNumber *lon2 = [NSNumber numberWithDouble:[[NSNumber numberFromObject:[legDict objectForKey:@"arrivalAirportLongitudeQuantity"]] doubleValue] / 3600.0];
+        arrLocation.latitude = [NSDecimalNumber decimalNumberFromObject:lat2 shouldUseZeroDefault:NO scale:6];
+        arrLocation.longitude = [NSDecimalNumber decimalNumberFromObject:lon2 shouldUseZeroDefault:NO scale:6];
         leg.arrLocation = arrLocation;
 
         // set denormalized departure info on the request object
@@ -176,6 +222,8 @@
         {
             request.depTime = leg.depTime;
             request.depLocation = leg.depLocation;
+            
+            leg.cateringJSON = [requestDict objectForKey:@"cateringOrders"]; // TODO: temporary solution
         }
         
         // set denormalized arrival info on the request object
@@ -183,6 +231,8 @@
         {
             request.arrTime = leg.arrTime;
             request.arrLocation = leg.arrLocation;
+            
+            leg.groundJSON = [requestDict objectForKey:@"groundOrders"]; // TODO: temporary solution
         }
         
         [legSet removeObject:legID];

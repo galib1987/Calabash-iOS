@@ -354,6 +354,9 @@
         NSDictionary *resourcedStoreMetadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType URL:resourcedStoreURL error:&resourcedStoreMetadataError];
         resourcedStoreIsCompatible = [[_persistentStoreCoordinator managedObjectModel] isConfiguration:nil compatibleWithStoreMetadata:resourcedStoreMetadata];
         
+        if (!resourcedStoreIsCompatible)
+            INFOLog(@"resourced data store is NOT compatible with model %@", [self modelName]);
+        
         // determine if this is a new DB
         isFirstRunForDB = [self isFirstRunForSQLiteDB:resourcedStoreURL];
     }

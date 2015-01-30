@@ -4,6 +4,7 @@
 @import CoreData;
 
 extern const struct NJOPLocationAttributes {
+	__unsafe_unretained NSString *airportCity;
 	__unsafe_unretained NSString *airportID;
 	__unsafe_unretained NSString *airportName;
 	__unsafe_unretained NSString *fboID;
@@ -33,6 +34,10 @@ extern const struct NJOPLocationRelationships {
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) NJOPLocationID* objectID;
+
+@property (nonatomic, strong) NSString* airportCity;
+
+//- (BOOL)validateAirportCity:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* airportID;
 
@@ -117,6 +122,9 @@ extern const struct NJOPLocationRelationships {
 @end
 
 @interface _NJOPLocation (CoreDataGeneratedPrimitiveAccessors)
+
+- (NSString*)primitiveAirportCity;
+- (void)setPrimitiveAirportCity:(NSString*)value;
 
 - (NSString*)primitiveAirportID;
 - (void)setPrimitiveAirportID:(NSString*)value;

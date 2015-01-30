@@ -40,6 +40,7 @@
         <relationship name="request" maxCount="1" deletionRule="Nullify" destinationEntity="Request" inverseName="legs" inverseEntity="Request" syncable="YES"/>
     </entity>
     <entity name="Location" representedClassName="NJOPLocation" syncable="YES">
+        <attribute name="airportCity" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="airportID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="airportName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fboID" attributeType="Integer 32" syncable="YES"/>
@@ -73,7 +74,7 @@
         <element name="Account" positionX="-1098" positionY="-342" width="128" height="193"/>
         <element name="Contract" positionX="-1116" positionY="-94" width="128" height="193"/>
         <element name="Leg" positionX="-785" positionY="104" width="128" height="238"/>
-        <element name="Location" positionX="-1089" positionY="140" width="128" height="208"/>
+        <element name="Location" positionX="-1089" positionY="140" width="128" height="223"/>
         <element name="Request" positionX="-783" positionY="-198" width="128" height="193"/>
         <element name="Reservation" positionX="-794" positionY="-342" width="128" height="88"/>
     </elements>
