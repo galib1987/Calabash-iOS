@@ -90,13 +90,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBOTableCell" rowHeight="528" id="VUh-YU-oTJ" customClass="FBOTableCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBOTableCell" rowHeight="518" id="VUh-YU-oTJ" customClass="FBOTableCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VUh-YU-oTJ" id="X4d-Bg-aTH">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYF-bo-1z5">
-                                            <rect key="frame" x="15" y="4" width="384" height="520"/>
+                                            <rect key="frame" x="15" y="4" width="384" height="510"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR NEXT FLIGHT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ng-lj-mgX">
                                                     <rect key="frame" x="8" y="15" width="368" height="17"/>
@@ -112,7 +112,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qd5-WT-QTZ">
-                                                    <rect key="frame" x="0.0" y="61" width="384" height="346"/>
+                                                    <rect key="frame" x="0.0" y="60" width="384" height="346"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today, Aug 28, 2014" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNX-61-2sj">
                                                             <rect key="frame" x="8" y="0.0" width="368" height="18"/>
@@ -351,12 +351,12 @@
                                                     </variation>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLw-gg-0xb">
-                                                    <rect key="frame" x="15" y="438" width="354" height="67"/>
+                                                    <rect key="frame" x="15" y="428" width="354" height="67"/>
                                                     <color key="backgroundColor" red="0.69803921570000005" green="0.95686274510000002" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="67" id="UTD-er-RHO"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="NimbusSanD-Bol" family="Nimbus Sans D" pointSize="16"/>
                                                     <state key="normal" title="VIEW FLIGHT DETAILS">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -368,16 +368,15 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="qd5-WT-QTZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0NM-pt-Xj1" secondAttribute="bottom" constant="20" id="3nN-7C-wVg"/>
                                                 <constraint firstItem="6ng-lj-mgX" firstAttribute="top" secondItem="QYF-bo-1z5" secondAttribute="top" constant="15" id="4ot-wy-9U6"/>
                                                 <constraint firstItem="6ng-lj-mgX" firstAttribute="leading" secondItem="QYF-bo-1z5" secondAttribute="leadingMargin" id="9PE-Fj-xY8"/>
-                                                <constraint firstAttribute="centerY" secondItem="qd5-WT-QTZ" secondAttribute="centerY" constant="26" id="Kjm-eW-sqO"/>
+                                                <constraint firstAttribute="centerY" secondItem="qd5-WT-QTZ" secondAttribute="centerY" constant="22" id="Kjm-eW-sqO"/>
                                                 <constraint firstAttribute="trailing" secondItem="FLw-gg-0xb" secondAttribute="trailing" constant="15" id="Opz-rs-Aoo"/>
                                                 <constraint firstItem="6ng-lj-mgX" firstAttribute="trailing" secondItem="QYF-bo-1z5" secondAttribute="trailingMargin" id="T7f-9h-m1V"/>
                                                 <constraint firstAttribute="bottom" secondItem="FLw-gg-0xb" secondAttribute="bottom" constant="15" id="Wyl-cI-cRN"/>
+                                                <constraint firstAttribute="height" constant="510" id="Yb5-bF-IHv"/>
                                                 <constraint firstAttribute="trailing" secondItem="qd5-WT-QTZ" secondAttribute="trailing" id="ayZ-Iv-YUD"/>
                                                 <constraint firstItem="FLw-gg-0xb" firstAttribute="leading" secondItem="QYF-bo-1z5" secondAttribute="leading" constant="15" id="imu-NP-4gC"/>
-                                                <constraint firstItem="FLw-gg-0xb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qd5-WT-QTZ" secondAttribute="bottom" constant="15" id="mlx-A9-3gb"/>
                                                 <constraint firstItem="qd5-WT-QTZ" firstAttribute="leading" secondItem="QYF-bo-1z5" secondAttribute="leading" id="r8E-0N-tBB"/>
                                                 <constraint firstItem="0NM-pt-Xj1" firstAttribute="top" secondItem="6ng-lj-mgX" secondAttribute="bottom" constant="8" id="ugk-OW-rGQ"/>
                                                 <constraint firstItem="0NM-pt-Xj1" firstAttribute="leading" secondItem="QYF-bo-1z5" secondAttribute="leading" id="yac-Bx-QYE"/>
@@ -395,11 +394,11 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="allInfoContractDepartureMargin" destination="Yei-uE-XSa" id="wla-4l-lD5"/>
-                                    <outlet property="allInfoDateTimeMargin" destination="CfC-bp-Fz5" id="25Z-Xm-er3"/>
-                                    <outlet property="allInfoTimeContractMargin" destination="5OO-IJ-yfV" id="sg4-Xf-6UC"/>
                                     <outlet property="arrivalLabel" destination="JKh-HE-9cn" id="SvS-VD-KIq"/>
-                                    <outlet property="contentTopMargin" destination="3nN-7C-wVg" id="GOS-Sd-nbw"/>
+                                    <outlet property="constraintContractTailMargin" destination="Yei-uE-XSa" id="wla-4l-lD5"/>
+                                    <outlet property="constraintDateTimeMargin" destination="CfC-bp-Fz5" id="25Z-Xm-er3"/>
+                                    <outlet property="constraintDepartureGroundMargin" destination="Bjn-sk-sLo" id="17g-UN-v5Z"/>
+                                    <outlet property="constraintTimeContractMargin" destination="5OO-IJ-yfV" id="sg4-Xf-6UC"/>
                                     <outlet property="contractLabel" destination="YF2-Nu-XWI" id="VIL-nb-Oeu"/>
                                     <outlet property="departureLabel" destination="L4l-gg-i7s" id="DRH-rH-RI2"/>
                                     <outlet property="flightDateLabel" destination="XNX-61-2sj" id="0Ce-c0-vpm"/>
@@ -408,13 +407,10 @@
                                     <outlet property="fromFBOTailNumberLabel" destination="8ly-kd-xH8" id="ESC-jY-UQy"/>
                                     <outlet property="fromFBOTimeLabel" destination="owV-gh-gNt" id="2Vt-1a-Vwx"/>
                                     <outlet property="groundTransportLabel" destination="w8T-0d-BdT" id="wwE-IW-lyl"/>
+                                    <outlet property="groupContent" destination="qd5-WT-QTZ" id="JZf-N0-4C2"/>
                                     <outlet property="groupDeparture" destination="k1c-Bb-Tle" id="r4Q-pN-RUV"/>
-                                    <outlet property="groupFlightTime" destination="wSz-tU-vyA" id="nhd-2Z-6Pm"/>
                                     <outlet property="groupGroundTransport" destination="jNs-Re-tr7" id="UNt-HA-TVP"/>
                                     <outlet property="groupTailNumber" destination="xGD-O1-ECq" id="TM1-yl-ylx"/>
-                                    <outlet property="noTailNoGroundContractDepartureMargin" destination="ga4-Nj-1Ky" id="cTW-HU-3UU"/>
-                                    <outlet property="noTailNoGroundDateTimeMargin" destination="plj-5o-N0E" id="gCM-rn-Vtq"/>
-                                    <outlet property="noTailNoGroundTimeContractMargin" destination="bgP-UN-CJI" id="xLc-bI-SZX"/>
                                     <outlet property="tile" destination="QYF-bo-1z5" id="x9J-VJ-lP7"/>
                                     <outlet property="toFBOAirpotCodeLabel" destination="xzc-VF-1ii" id="AFj-Co-giV"/>
                                     <outlet property="toFBOLocationLabel" destination="9cy-V4-ON3" id="5yI-9B-KF5"/>
