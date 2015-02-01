@@ -76,11 +76,9 @@
 		A74CDC631A6F951800F10A0C /* weather-test.json in Resources */ = {isa = PBXBuildFile; fileRef = A74CDC601A6F951800F10A0C /* weather-test.json */; };
 		A750999B1A6357C00091D7E3 /* NJOPMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75099981A6357C00091D7E3 /* NJOPMessagesViewController.m */; };
 		A750999D1A63587D0091D7E3 /* NJOPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A750999C1A63587D0091D7E3 /* NJOPHomeViewController.m */; };
-		A75BCE5C1A7B77550094C94F /* NJOPAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A75BCE5B1A7B77550094C94F /* NJOPAccountCell.m */; };
 		A75BCE561A7B45BD0094C94F /* NJOPDropdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = A75BCE551A7B45BD0094C94F /* NJOPDropdownView.m */; };
 		A75BCE591A7B4B9A0094C94F /* NJOPDropdownRequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = A75BCE581A7B4B9A0094C94F /* NJOPDropdownRequestView.m */; };
-		A75F554A1A786D8500395CE3 /* NJOPTitleSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75F55481A786D8500395CE3 /* NJOPTitleSummaryViewController.m */; };
-		A75F554B1A786D8500395CE3 /* NJOPTitleSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75F55491A786D8500395CE3 /* NJOPTitleSummaryViewController.xib */; };
+		A75BCE5C1A7B77550094C94F /* NJOPAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A75BCE5B1A7B77550094C94F /* NJOPAccountCell.m */; };
 		A762F9791A6665BE002065EB /* NJOPCateringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762F9781A6665BE002065EB /* NJOPCateringViewController.m */; };
 		A762F97C1A6665D0002065EB /* NJOPCrewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762F97B1A6665D0002065EB /* NJOPCrewViewController.m */; };
 		A7647F131A78F1F600475CE8 /* _NJOPLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = A7647F101A78F1F600475CE8 /* _NJOPLeg.m */; };
@@ -169,8 +167,8 @@
 		A786D6271A664562006EDA24 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A786D6261A664562006EDA24 /* Settings.storyboard */; };
 		A786D6281A664562006EDA24 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A786D6261A664562006EDA24 /* Settings.storyboard */; };
 		A78DA90E1A7468D900DD8091 /* NSDictionary+ObjectForKeyOrNil.m in Sources */ = {isa = PBXBuildFile; fileRef = A78DA90D1A7468D900DD8091 /* NSDictionary+ObjectForKeyOrNil.m */; };
-		A79BF7CF1A7AC55E00176B87 /* NJOPProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79BF7CE1A7AC55E00176B87 /* NJOPProfileViewController.m */; };
 		A79BF7CC1A7AC1DA00176B87 /* NJOPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79BF7CB1A7AC1DA00176B87 /* NJOPDetailViewController.m */; };
+		A79BF7CF1A7AC55E00176B87 /* NJOPProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79BF7CE1A7AC55E00176B87 /* NJOPProfileViewController.m */; };
 		A7A03E941A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03E931A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.m */; };
 		A7A03E981A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A03E961A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.m */; };
 		A7A03E991A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A03E971A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.xib */; };
@@ -345,15 +343,12 @@
 		A75099971A6357C00091D7E3 /* NJOPMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPMessagesViewController.h; sourceTree = "<group>"; };
 		A75099981A6357C00091D7E3 /* NJOPMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPMessagesViewController.m; sourceTree = "<group>"; };
 		A750999C1A63587D0091D7E3 /* NJOPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPHomeViewController.m; sourceTree = "<group>"; };
-		A75BCE5A1A7B77550094C94F /* NJOPAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAccountCell.h; sourceTree = "<group>"; };
-		A75BCE5B1A7B77550094C94F /* NJOPAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAccountCell.m; sourceTree = "<group>"; };
 		A75BCE541A7B45BD0094C94F /* NJOPDropdownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDropdownView.h; sourceTree = "<group>"; };
 		A75BCE551A7B45BD0094C94F /* NJOPDropdownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDropdownView.m; sourceTree = "<group>"; };
 		A75BCE571A7B4B9A0094C94F /* NJOPDropdownRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDropdownRequestView.h; sourceTree = "<group>"; };
 		A75BCE581A7B4B9A0094C94F /* NJOPDropdownRequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDropdownRequestView.m; sourceTree = "<group>"; };
-		A75F55471A786D8500395CE3 /* NJOPTitleSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPTitleSummaryViewController.h; sourceTree = SOURCE_ROOT; };
-		A75F55481A786D8500395CE3 /* NJOPTitleSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPTitleSummaryViewController.m; sourceTree = SOURCE_ROOT; };
-		A75F55491A786D8500395CE3 /* NJOPTitleSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPTitleSummaryViewController.xib; sourceTree = SOURCE_ROOT; };
+		A75BCE5A1A7B77550094C94F /* NJOPAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAccountCell.h; sourceTree = "<group>"; };
+		A75BCE5B1A7B77550094C94F /* NJOPAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAccountCell.m; sourceTree = "<group>"; };
 		A762F9771A6665BE002065EB /* NJOPCateringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCateringViewController.h; sourceTree = "<group>"; };
 		A762F9781A6665BE002065EB /* NJOPCateringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCateringViewController.m; sourceTree = "<group>"; };
 		A762F97A1A6665D0002065EB /* NJOPCrewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCrewViewController.h; sourceTree = "<group>"; };
@@ -478,10 +473,10 @@
 		A786D6261A664562006EDA24 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A78DA90C1A7468D900DD8091 /* NSDictionary+ObjectForKeyOrNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ObjectForKeyOrNil.h"; sourceTree = "<group>"; };
 		A78DA90D1A7468D900DD8091 /* NSDictionary+ObjectForKeyOrNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ObjectForKeyOrNil.m"; sourceTree = "<group>"; };
-		A79BF7CD1A7AC55E00176B87 /* NJOPProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPProfileViewController.h; sourceTree = "<group>"; };
-		A79BF7CE1A7AC55E00176B87 /* NJOPProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPProfileViewController.m; sourceTree = "<group>"; };
 		A79BF7CA1A7AC1DA00176B87 /* NJOPDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDetailViewController.h; sourceTree = "<group>"; };
 		A79BF7CB1A7AC1DA00176B87 /* NJOPDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDetailViewController.m; sourceTree = "<group>"; };
+		A79BF7CD1A7AC55E00176B87 /* NJOPProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPProfileViewController.h; sourceTree = "<group>"; };
+		A79BF7CE1A7AC55E00176B87 /* NJOPProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPProfileViewController.m; sourceTree = "<group>"; };
 		A7A03E921A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPSummaryViewTopHeaderView.h; path = Tailwind/MiddleLevelUI/Views/NJOPSummaryViewTopHeaderView.h; sourceTree = SOURCE_ROOT; };
 		A7A03E931A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPSummaryViewTopHeaderView.m; path = Tailwind/MiddleLevelUI/Views/NJOPSummaryViewTopHeaderView.m; sourceTree = SOURCE_ROOT; };
 		A7A03E951A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPSummaryNavigationTitleView.h; path = Tailwind/MiddleLevelUI/Views/NJOPSummaryNavigationTitleView.h; sourceTree = SOURCE_ROOT; };
@@ -1222,9 +1217,6 @@
 				A7E007231A70ADE9007BE054 /* NJOPInfoCell.h */,
 				A7E007241A70ADE9007BE054 /* NJOPInfoCell.m */,
 				A7E007261A70AE0D007BE054 /* Info Views */,
-				A75F55471A786D8500395CE3 /* NJOPTitleSummaryViewController.h */,
-				A75F55481A786D8500395CE3 /* NJOPTitleSummaryViewController.m */,
-				A75F55491A786D8500395CE3 /* NJOPTitleSummaryViewController.xib */,
 				A75BCE541A7B45BD0094C94F /* NJOPDropdownView.h */,
 				A75BCE551A7B45BD0094C94F /* NJOPDropdownView.m */,
 				A75BCE571A7B4B9A0094C94F /* NJOPDropdownRequestView.h */,
@@ -1463,7 +1455,6 @@
 				A77680891A4062FE00B2E7CF /* Home.storyboard in Resources */,
 				A77680AE1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold-Italic.otf in Resources */,
 				A77680B61A40659D00B2E7CF /* Nimbus-Sans-D-Bold-Italic.otf in Resources */,
-				A75F554B1A786D8500395CE3 /* NJOPTitleSummaryViewController.xib in Resources */,
 				A7A03E991A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.xib in Resources */,
 				A77680B11A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Light.otf in Resources */,
 				A77680AF1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold.otf in Resources */,
@@ -1684,7 +1675,6 @@
 				A7E007771A70B2CB007BE054 /* NJOPClient+flights.m in Sources */,
 				A77DBDC61A7257E000B5F306 /* _NJOPAircraftType.m in Sources */,
 				A7A03E9C1A42E523004BE417 /* NJOPNavigationBar.m in Sources */,
-				A75F554A1A786D8500395CE3 /* NJOPTitleSummaryViewController.m in Sources */,
 				A7BFBB571A6D4EDC00368E12 /* NJOPPlaneViewController.m in Sources */,
 				A7A03EA61A42E626004BE417 /* UIView+NJOPStyle.m in Sources */,
 				A786D6131A66351F006EDA24 /* NJOPOSViewController.m in Sources */,

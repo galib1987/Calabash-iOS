@@ -12,4 +12,5 @@
 
 @property (nonatomic) IBOutlet UILabel *reservationIdLabel;
 @property (nonatomic) IBOutlet UILabel *ofRequestsLabel;
+
 @end
