@@ -31,7 +31,7 @@
 //																									 }
 //																								 }];
         NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
-        NSLog(@"logging in");
+        //NSLog(@"logging in");
         //NSString *sessionToken = [session login:userInput.username withPassword:userInput.password];
         //session.user = userInput.username;
         //session.password = userInput.password;

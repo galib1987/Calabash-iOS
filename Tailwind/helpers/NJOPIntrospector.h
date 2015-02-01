@@ -11,5 +11,6 @@
 @interface NJOPIntrospector : NSObject
 
 + (BOOL)isObjectArray:(id)object;
++ (BOOL)isObjectDictionary:(id)object;
 
 @end

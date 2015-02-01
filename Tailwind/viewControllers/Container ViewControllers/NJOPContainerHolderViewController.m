@@ -60,7 +60,7 @@
 #pragma mark - subscreen lifecycle
 
 - (void) goChangeSubScreen:(NSNotification *)aNotification {
-    NSLog(@"adding subscreen");
+    //NSLog(@"adding subscreen");
     NSString *storyboard = [[aNotification userInfo] objectForKey:menuStoryboardName];
     NSString *viewController = [[aNotification userInfo] objectForKey:menuViewControllerName];
     NSNumber *shouldDisplayMenu = [[aNotification userInfo] objectForKey:menuShouldHideMenu];
@@ -90,7 +90,6 @@
 - (void) presentSubScreenViewController:(UIViewController *)vc {
     //0. Remove the current Detail View Controller showed
     if(self.currentViewController){
-        NSLog(@"removing old viewController");
         [self removeCurrentSubScreenViewController];
     }
     

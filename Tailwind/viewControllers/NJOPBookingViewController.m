@@ -187,7 +187,7 @@ UIView *calendarLegend;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM d, yyyy"];
     NSString *newDate = [dateFormatter stringFromDate:date];
-    NSLog(@"%@ %@", [date description],newDate);
+    //NSLog(@"%@ %@", [date description],newDate);
     self.flightDate.text = newDate;
     [self.keyboardControls focusNext:self];
     [self updatePassengerCount];

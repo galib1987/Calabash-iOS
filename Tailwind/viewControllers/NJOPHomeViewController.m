@@ -47,9 +47,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    NSLog(@"NJOPHomeViewController view Did Appear");
-    CGRect f = self.view.frame;
-    NSLog(@"main view is: %f / %f / %f / %f",f.origin.x,f.origin.y,f.size.width,f.size.height);
+    //
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,16 +71,6 @@
             [self.coverView removeFromSuperview];
         }];
     } else {
-        if (USE_STATIC_DATA == 0) {
-            //        NNNOAuthClient *userSession = [NNNOAuthClient sharedInstance];
-            NSString *accessToken = [[NJOPOAuthClient sharedInstance] accessToken:nil];
-            NSString *urlString = [NSString stringWithFormat:@"https://%@%@?appAgent=%@&access_token=%@",API_HOSTNAME, URL_BRIEF,API_SOURCE_IDENTIFIER,accessToken];
-            if ([urlString length] > 20) {
-                info = [NSDictionary dictionaryWithObjectsAndKeys:urlString,@"apiURL", API_HOSTNAME, @"host",nil];
-            }
-            
-        }
-        
         NJOPFlightHTTPClient *client = [NJOPFlightHTTPClient sharedInstance];
         [client loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
             
@@ -185,6 +173,7 @@
     NSDictionary *cardDisplayedRepresentation = [[NSDictionary alloc] init];
     
     if ([NJOPIntrospector isObjectArray:reservations]) {
+        NSLog(@"reservations is: %@:",reservations);
         NJOPReservation *reservation = reservations[0]; // only interested in the next flight schedule
         
         if ([self hasUpcomingFlight:reservation]) {

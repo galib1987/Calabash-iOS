@@ -25,6 +25,7 @@
     self = [super init];
     if (self) {
         // initialization code goes in here
+        self.loadStaticJSON = NO;
     }
     return self;
 }

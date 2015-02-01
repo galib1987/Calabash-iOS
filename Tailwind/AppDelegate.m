@@ -31,6 +31,9 @@
     
     
     // Override point for customization after application launch.
+    // some config items
+    NJOPConfig *conf = [NJOPConfig sharedInstance];
+    conf.loadStaticJSON = USE_STATIC_DATA; // see if we're just loading static JSON or not
     
     self.currentStoryboardTypeInt = isUndefinedScreen; // set the screen as unknown at first
     self.selectedReservation = nil;
@@ -90,8 +93,7 @@
     NSNumber *shouldDisplayMenu = [[aNotification userInfo] objectForKey:menuShouldHideMenu];
     NSNumber *storyboardType = [[aNotification userInfo] objectForKey:appStoryboardIdentifier];
     self.shouldClearHistory =[[aNotification userInfo] objectForKey:containerShouldClearHistory];
-    self.selectedReservation = [[aNotification userInfo] objectForKey:requestedReservationObject];
-    NSLog(@"selected Reservation: %@",self.selectedReservation);
+    self.selectedReservation = [[aNotification userInfo] objectForKey:requestedReservationObject]; // this will get deprecated once we have CoreData
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:storyboard bundle:nil];
     UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:viewController];
@@ -174,7 +176,7 @@
     // sorry! we're going to use NSNotification here to load in the sub VCs
     NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:self.subStoryboardName,menuStoryboardName,self.subViewControllerName,menuViewControllerName,[NSNumber numberWithBool:YES],menuShouldHideMenu, self.shouldClearHistory, containerShouldClearHistory, nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:changeSubScreen object:self userInfo:notif];
-    NSLog(@"change sub screen");
+    //NSLog(@"change sub screen");
 }
 
 @end
