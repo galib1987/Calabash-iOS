@@ -67,6 +67,7 @@
 		6CC829B01A40B4A900991949 /* NJOPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC829AF1A40B4A900991949 /* NJOPLoginViewController.m */; };
 		6CC829B31A40B4C900991949 /* NJOPResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */; };
 		976105A2CFBE420BB8BEC60E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B98AFA8D41C092D41CCC /* libPods.a */; };
+		A708DF2C1A7F51A000A2D08E /* NJOPDropdownRequestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A708DF2B1A7F51A000A2D08E /* NJOPDropdownRequestView.xib */; };
 		A72DF6EC1A792D93000B9998 /* NJOPChooseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A72DF6E71A792D93000B9998 /* NJOPChooseTableViewCell.m */; };
 		A72DF6ED1A792D93000B9998 /* NJOPChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A72DF6E81A792D93000B9998 /* NJOPChooseTableViewCell.xib */; };
 		A72DF6EE1A792D93000B9998 /* NJOPChooseTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A72DF6EA1A792D93000B9998 /* NJOPChooseTableViewHeader.m */; };
@@ -320,6 +321,7 @@
 		6CC829B11A40B4C900991949 /* NJOPResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPResetPasswordViewController.h; path = Tailwind/NJOPResetPasswordViewController.h; sourceTree = SOURCE_ROOT; };
 		6CC829B21A40B4C900991949 /* NJOPResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPResetPasswordViewController.m; path = Tailwind/NJOPResetPasswordViewController.m; sourceTree = SOURCE_ROOT; };
 		93D47FE2CA57F0513622133A /* Pods.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.beta.xcconfig; path = "Pods/Target Support Files/Pods/Pods.beta.xcconfig"; sourceTree = SOURCE_ROOT; };
+		A708DF2B1A7F51A000A2D08E /* NJOPDropdownRequestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPDropdownRequestView.xib; sourceTree = "<group>"; };
 		A72DF6E61A792D93000B9998 /* NJOPChooseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPChooseTableViewCell.h; sourceTree = "<group>"; };
 		A72DF6E71A792D93000B9998 /* NJOPChooseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPChooseTableViewCell.m; sourceTree = "<group>"; };
 		A72DF6E81A792D93000B9998 /* NJOPChooseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJOPChooseTableViewCell.xib; sourceTree = "<group>"; };
@@ -1175,6 +1177,7 @@
 				A75BCE541A7B45BD0094C94F /* NJOPDropdownView.h */,
 				A75BCE551A7B45BD0094C94F /* NJOPDropdownView.m */,
 				A75BCE571A7B4B9A0094C94F /* NJOPDropdownRequestView.h */,
+				A708DF2B1A7F51A000A2D08E /* NJOPDropdownRequestView.xib */,
 				A75BCE581A7B4B9A0094C94F /* NJOPDropdownRequestView.m */,
 			);
 			name = "Flight Detail Views";
@@ -1408,6 +1411,7 @@
 				A7ED8F9F1A770F5F003F9BBE /* advisorynotes.html in Resources */,
 				A7E007881A70B52F007BE054 /* NJOPOSViewController.xib in Resources */,
 				A77680891A4062FE00B2E7CF /* Home.storyboard in Resources */,
+				A708DF2C1A7F51A000A2D08E /* NJOPDropdownRequestView.xib in Resources */,
 				A77680AE1A40659D00B2E7CF /* Nimbus-Sans-Cond-D-Bold-Italic.otf in Resources */,
 				A77680B61A40659D00B2E7CF /* Nimbus-Sans-D-Bold-Italic.otf in Resources */,
 				A7A03E991A42E4E8004BE417 /* NJOPSummaryNavigationTitleView.xib in Resources */,
