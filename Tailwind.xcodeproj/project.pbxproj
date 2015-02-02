@@ -272,8 +272,8 @@
 		1E7E554F1A6F06DC00848E0B /* PDTSimpleCalendarViewWeekdayHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDTSimpleCalendarViewWeekdayHeader.m; sourceTree = "<group>"; };
 		276FF0621A76BB6B00F547F4 /* NJOPDisplayUnitsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPDisplayUnitsTableViewController.h; sourceTree = "<group>"; };
 		276FF0631A76BB6B00F547F4 /* NJOPDisplayUnitsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPDisplayUnitsTableViewController.m; sourceTree = "<group>"; };
-		276FF0681A76BD5000F547F4 /* NJOPSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSettingsManager.h; sourceTree = "<group>"; };
-		276FF0691A76BD5000F547F4 /* NJOPSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsManager.m; sourceTree = "<group>"; };
+		276FF0681A76BD5000F547F4 /* NJOPSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPSettingsManager.h; path = ../viewControllers/NJOPSettingsManager.h; sourceTree = "<group>"; };
+		276FF0691A76BD5000F547F4 /* NJOPSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPSettingsManager.m; path = ../viewControllers/NJOPSettingsManager.m; sourceTree = "<group>"; };
 		276FF0711A77E25C00F547F4 /* NJOPSettingsBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPSettingsBaseViewController.h; sourceTree = "<group>"; };
 		276FF0721A77E25C00F547F4 /* NJOPSettingsBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPSettingsBaseViewController.m; sourceTree = "<group>"; };
 		276FF0741A77E2D700F547F4 /* NJOPPrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPPrivacyViewController.h; sourceTree = "<group>"; };
@@ -748,6 +748,8 @@
 		55CA603319E7FD4A001E2FC6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				276FF0681A76BD5000F547F4 /* NJOPSettingsManager.h */,
+				276FF0691A76BD5000F547F4 /* NJOPSettingsManager.m */,
 				A7647F1E1A78F52200475CE8 /* NJOPUser.h */,
 				A7647F1F1A78F52200475CE8 /* NJOPUser.m */,
 				A77680C11A406C7D00B2E7CF /* Defines.h */,
@@ -1065,8 +1067,6 @@
 		A7E0071E1A70ACDE007BE054 /* Settings ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				276FF0681A76BD5000F547F4 /* NJOPSettingsManager.h */,
-				276FF0691A76BD5000F547F4 /* NJOPSettingsManager.m */,
 				276FF0711A77E25C00F547F4 /* NJOPSettingsBaseViewController.h */,
 				276FF0721A77E25C00F547F4 /* NJOPSettingsBaseViewController.m */,
 				276FF0841A785EC700F547F4 /* NJOPSettingsBaseChooseTableViewController.h */,
