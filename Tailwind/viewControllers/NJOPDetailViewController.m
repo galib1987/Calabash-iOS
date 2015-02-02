@@ -39,6 +39,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    dropdownExpanded = NO;
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self.navigationController setNavigationBarHidden:YES];
@@ -103,13 +105,12 @@
 
 - (IBAction)expandDropdownPressed:(id)sender {
     
-    dropdownExpanded = NO;
-    
     if (!dropdownExpanded) {
         [self expandView];
         dropdownExpanded = YES;
     } else {
         [self collapseView];
+        dropdownExpanded = NO;
     }
 }
 
@@ -175,7 +176,6 @@
     for (NJOPRequest2 *request in requestsForReservation) {
         // create a bunch of request tabs
         NJOPDropdownRequestView *view = [[[NSBundle mainBundle] loadNibNamed:@"NJOPDropdownRequestView" owner:self options:nil] objectAtIndex:0];
-        
         view.frame = CGRectMake(0, originYcoordinate, self.contentView.frame.size.width, 44);
         view.backgroundColor = [UIColor darkGrayColor];
         view.dateLabel.text = [NSString stringFromDate:request.depTime formatType:NCLDateFormatOptionIncludeWeekday];
