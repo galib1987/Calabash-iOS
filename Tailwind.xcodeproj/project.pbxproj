@@ -82,6 +82,7 @@
 		A75E4E391A7FA5B20011412A /* Airport.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A75E4E381A7FA5B20011412A /* Airport.sqlite */; };
 		A75E4E3E1A7FA5E70011412A /* Airport.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A75E4E3A1A7FA5E70011412A /* Airport.xcdatamodeld */; };
 		A75E4E3F1A7FA5E70011412A /* NJOPAirportPM.m in Sources */ = {isa = PBXBuildFile; fileRef = A75E4E3D1A7FA5E70011412A /* NJOPAirportPM.m */; };
+		A75E4E461A7FB8E10011412A /* NJOPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75E4E451A7FB8E10011412A /* NJOPNavigationController.m */; };
 		A762F9791A6665BE002065EB /* NJOPCateringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762F9781A6665BE002065EB /* NJOPCateringViewController.m */; };
 		A762F97C1A6665D0002065EB /* NJOPCrewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762F97B1A6665D0002065EB /* NJOPCrewViewController.m */; };
 		A7647F131A78F1F600475CE8 /* _NJOPLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = A7647F101A78F1F600475CE8 /* _NJOPLeg.m */; };
@@ -353,6 +354,8 @@
 		A75E4E3B1A7FA5E70011412A /* Airport.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Airport.xcdatamodel; sourceTree = "<group>"; };
 		A75E4E3C1A7FA5E70011412A /* NJOPAirportPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPAirportPM.h; sourceTree = "<group>"; };
 		A75E4E3D1A7FA5E70011412A /* NJOPAirportPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPAirportPM.m; sourceTree = "<group>"; };
+		A75E4E441A7FB8E10011412A /* NJOPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPNavigationController.h; sourceTree = "<group>"; };
+		A75E4E451A7FB8E10011412A /* NJOPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPNavigationController.m; sourceTree = "<group>"; };
 		A762F9771A6665BE002065EB /* NJOPCateringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCateringViewController.h; sourceTree = "<group>"; };
 		A762F9781A6665BE002065EB /* NJOPCateringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPCateringViewController.m; sourceTree = "<group>"; };
 		A762F97A1A6665D0002065EB /* NJOPCrewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPCrewViewController.h; sourceTree = "<group>"; };
@@ -764,6 +767,7 @@
 		55CA603419E7FD4A001E2FC6 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A75E4E431A7FB8E10011412A /* NavigationController */,
 				A7E0075D1A70B0EA007BE054 /* Simple DataSource */,
 				A7E0076D1A70B1B2007BE054 /* Container ViewControllers */,
 				A70FDB571A5C0A3E00C549CF /* Menu ViewControllers */,
@@ -819,6 +823,15 @@
 				A72DF6EB1A792D93000B9998 /* NJOPChooseTableViewHeader.xib */,
 			);
 			path = "Settings Views";
+			sourceTree = "<group>";
+		};
+		A75E4E431A7FB8E10011412A /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				A75E4E441A7FB8E10011412A /* NJOPNavigationController.h */,
+				A75E4E451A7FB8E10011412A /* NJOPNavigationController.m */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 		A77680941A4063EC00B2E7CF /* Storyboards */ = {
@@ -1707,6 +1720,7 @@
 				A762F97C1A6665D0002065EB /* NJOPCrewViewController.m in Sources */,
 				A7D6F4C01A64B74900B9E7B4 /* (null) in Sources */,
 				5559ACA719E8064D002CA7D2 /* NJOPRequest.m in Sources */,
+				A75E4E461A7FB8E10011412A /* NJOPNavigationController.m in Sources */,
 				A7E007431A70AF58007BE054 /* NJOPFlightDetailCell.m in Sources */,
 				15EAFD7B1A6D4682003C3B8A /* NJOPFlightHTTPClient.m in Sources */,
 				276FF0891A78630700F547F4 /* NJOPSettingsBaseStaticTableViewController.m in Sources */,

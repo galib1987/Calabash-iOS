@@ -15,8 +15,10 @@
 #define changeSubScreen @"changeSubScreen" // this is for the container viewController to change the subscreen
 #define goToLoginScreen @"goToLoginScreen"
 #define goToHomeScreen @"goToHomeScreen"
+#define goBackSubScreen @"goBackSubScreen" // this is for popping the viewController for subscreen seques
 #define menuStoryboardName @"menuStoryboardName" // this is used in the NSNotification to define the storyboard name to use to load the storyboard
 #define menuViewControllerName @"venuViewControlelrName" // this is used in the NSNotification to define the viewController name to use to get and add in a viewController
+#define menuIsSubScreen @"menuIsSubScreen" // set a value whether this is a sub screen versis a parent container
 #define menuShouldHideMenu @"menuShouldHideMenu" // this is to see if we should add in the menu or not. For example, Welcome screen and login screens don't need menus
 #define appStoryboardIdentifier @"appStoryboardIdentifier" // this is to hold an enum for which type of storyboard to use. See enum: screenTypeIdentifier
 #define requestedReservationObject @"requestedReservationObject" // passing the reservation object to the flight detail view
@@ -59,8 +61,8 @@ typedef enum {
 // temporarily until I figure out a better way to bypass having to VPN
 // 0 is use VPN
 // 1 is use JSON
-#define USE_STATIC_DATA 0
-//#define USE_STATIC_DATA 1
+//#define USE_STATIC_DATA 0
+#define USE_STATIC_DATA 1
 
 #endif
 

@@ -326,13 +326,14 @@ NSString * const kBriefLoadFailureNotification = @"BriefLoadFailureNotification"
         if (data) {
             NSDictionary* payload = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSArray *reservationJSON = [payload valueForKeyPath:@"requests"];
-            reservationsArray = [self loadReservationJSONArray:[reservationJSON valueForKeyPath:@"requests"]];
+            reservationsArray = [self loadReservationJSONArray:reservationJSON];
             
             [[NJOPOAuthClient sharedInstance] setReservations:reservationsArray]; // this should be deprecated
 
         }
         
         if (completionHandler) {
+            NSLog(@"reservations - final: %@",reservationsArray);
             completionHandler(reservationsArray, nil);
         }
         

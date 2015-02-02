@@ -69,21 +69,24 @@
     if ([shouldClearHistory intValue] > 0) {
         [self.subScreenHistory removeAllObjects];
     }
+
+    
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:storyboard bundle:nil];
-    
-    UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:viewController];
     if ([storyboard isEqualToString:@"Flights"] || [storyboard isEqualToString:@"Settings"] || [storyboard isEqualToString:@"Booking"]) {
         UIViewController *viewcont = [mainStoryboard instantiateViewControllerWithIdentifier:viewController];
-        vc = [[UINavigationController alloc]initWithRootViewController:viewcont];
+        NJOPNavigationController *vc = [[NJOPNavigationController alloc]initWithRootViewController:viewcont];
+        vc.delegate = self;
+        [self presentSubScreenViewController:vc];
+    } else {
+        UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:viewController];
+        [self presentSubScreenViewController:vc];
     }
-    //UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:vc];
-    //[[UIApplication sharedApplication].keyWindow setRootViewController:vc];
-    //[self.containerView addSubview:vc.view];
+    
     [self updateHeaderLabel:storyboard];
-    [self presentSubScreenViewController:vc];
     [self pushViewController:storyboard withVC:viewController];
     [self displayBackButton];
+
     
 }
 
@@ -158,22 +161,43 @@
 }
 
 - (IBAction)goBack:(id)sender {
-    NSDictionary *current = [self popViewController]; // this is the current
+    //NSDictionary *current = [self popViewController]; // this is the current
+    //NSLog(@"current: %@",current);
     NSDictionary *last = [self popViewController]; // this should be the last one
+    NSLog(@"last: %@",last);
     if (last != nil) {
         NSString *storyboard = [last objectForKey:menuStoryboardName];
         NSString *viewController = [last objectForKey:menuViewControllerName];
-        if ([storyboard length] > 0 && [viewController length] > 0) {
-            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:storyboard bundle:nil];
-            UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:viewController];
-            //UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:vc];
-            //[[UIApplication sharedApplication].keyWindow setRootViewController:vc];
-            //[self.containerView addSubview:vc.view];
-            [self updateHeaderLabel:storyboard];
-            [self presentSubScreenViewController:vc];
+        NSNumber *isSubScreenNum = [last objectForKey:menuIsSubScreen];
+        BOOL isSubscreen = NO;
+        if (isSubScreenNum != nil && [isSubScreenNum isKindOfClass:[NSNumber class]]) {
+            isSubscreen = [isSubScreenNum boolValue];
         }
+        if (isSubscreen == YES) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            if ([storyboard length] > 0 && [viewController length] > 0) {
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:storyboard bundle:nil];
+                UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:viewController];
+                //UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:vc];
+                //[[UIApplication sharedApplication].keyWindow setRootViewController:vc];
+                //[self.containerView addSubview:vc.view];
+                [self updateHeaderLabel:storyboard];
+                [self presentSubScreenViewController:vc];
+            }
+        }
+
     }
     [self displayBackButton];
     
 }
+
+
+#pragma mark - NJOPNavigationController Delegate methods
+
+- (void) pushScreen:(NSDictionary *) screenData {
+    NSLog(@"pushScreen: %@",screenData);
+    [self.subScreenHistory addObject:screenData];
+}
+
 @end

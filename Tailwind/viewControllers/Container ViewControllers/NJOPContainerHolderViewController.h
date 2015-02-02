@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "NJOPReservation.h"
 #import "NJOPMenuViewController.h"
+#import "NJOPNavigationController.h"
 
 @protocol NJOPContainerHolderViewControllerDelegate <NSObject>
 - (void) notifySubStoryboard; // this is the delegate to send notification to the storyboard
 @end
 
 
-@interface NJOPContainerHolderViewController : UIViewController
+@interface NJOPContainerHolderViewController : UIViewController <NJOPNavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *parallaxBackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
