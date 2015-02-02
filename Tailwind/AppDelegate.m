@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 //#import "NJOPHomeViewController.h"
-#import "NJOPNetJetsCorePM.h"
+#import "NJOPAirportPM.h"
 #import "NCLAppOverlayWindow.h"
 #import "NJOPConfig.h"
 
@@ -29,6 +29,7 @@
     [projectHeaders setObject:API_SOURCE_IDENTIFIER forKey:@"AppAgent"];
     [[NCLNetworking sharedInstance] setStandardHeaders:projectHeaders forDomain:@"netjets.com"];
     
+    [NJOPAirportPM sharedInstance].mainMOC;
     
     // Override point for customization after application launch.
     // some config items

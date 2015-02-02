@@ -12,9 +12,6 @@
 
 @interface NJOPOAuthClient : NCLOAuthClient
 
-@property (nonatomic, strong, readwrite) NSString *_username;
-@property (nonatomic, strong, readwrite) NSString *_password;
-@property (nonatomic, assign) BOOL isLoggedIn;
 @property (nonatomic, strong) NSArray *reservations;
 @property (nonatomic, strong) NJOPIndividual *individual;
 @property (nonatomic, strong) NSArray *accounts;

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Airport" representedClassName="NFDAirport" syncable="YES">
+        <attribute name="airport_name" attributeType="String" defaultValueString="N/A" indexed="YES" syncable="YES"/>
+        <attribute name="airportid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="city_name" optional="YES" attributeType="String" defaultValueString="N/A" indexed="YES" syncable="YES"/>
+        <attribute name="closest_airportid" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="country_cd" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="customs_available" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="elevation_qty" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fuel_available" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="iata_cd" optional="YES" attributeType="String" defaultValueString="N/A" indexed="YES" syncable="YES"/>
+        <attribute name="instrument_approach_flag" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="latitude_qty" optional="YES" attributeType="Decimal" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="longest_runway_length_qty" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude_qty" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="slots_required" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="state_cd" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="timezone_cd" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+    </entity>
+    <entity name="FBO" representedClassName="NFDFBO" syncable="YES">
+        <attribute name="airportid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="fbo_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="fbo_ranking_qty" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="summer_operating_hour_desc" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="sys_last_changed_ts" optional="YES" attributeType="Date" defaultDateTimeInterval="0" syncable="YES"/>
+        <attribute name="vendor_name" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="winter_operating_hour_desc" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fboaddress" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="FBOAddress" inverseName="fboAddressParent" inverseEntity="FBOAddress" syncable="YES"/>
+    </entity>
+    <entity name="FBOAddress" representedClassName="NFDFBOAddress" syncable="YES">
+        <attribute name="address_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="address_line1_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="address_line2_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="address_line3_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="address_line4_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="address_line5_txt" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="city_name" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="country_cd" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="fbo_id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="postal_cd" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="state_province_name" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="sys_last_changed_ts" optional="YES" attributeType="Date" defaultDateTimeInterval="0" syncable="YES"/>
+        <relationship name="fboAddressParent" optional="YES" minCount="1" maxCount="1" deletionRule="No Action" destinationEntity="FBO" inverseName="fboaddress" inverseEntity="FBO" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Airport" positionX="-54" positionY="-9" width="128" height="285"/>
+        <element name="FBO" positionX="-36" positionY="9" width="128" height="163"/>
+        <element name="FBOAddress" positionX="-9" positionY="144" width="128" height="238"/>
+    </elements>
+</model>

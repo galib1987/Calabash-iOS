@@ -1,5 +1,5 @@
 #import "NJOPRequest2.h"
-#import "NJOPNetJetsCorePM.h"
+//#import "NJOPNetJetsCorePM.h"
 
 @interface NJOPRequest2 ()
 

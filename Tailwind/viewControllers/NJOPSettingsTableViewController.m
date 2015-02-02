@@ -8,7 +8,7 @@
 
 #import "NJOPSettingsTableViewController.h"
 #import "NJOPLoginViewController.h"
-#import "NJOPOAuthClient.h"
+#import "NJOPUser.h"
 
 @interface NJOPSettingsTableViewController ()
 
@@ -118,7 +118,7 @@
 														  NJOPLoginViewController *loginVC = [storyboard instantiateInitialViewController];
 														  
 														  [weakSelf.navigationController presentViewController:loginVC animated:YES completion:^{
-															  [[NJOPOAuthClient sharedInstance] resetCredential];
+															  [NJOPUser sharedInstance].username = @"";
 														  }];
 													  }]];
 	[self presentViewController:alertController animated:YES completion:^{

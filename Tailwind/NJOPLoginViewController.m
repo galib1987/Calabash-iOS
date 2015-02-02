@@ -182,7 +182,8 @@
             
             // load & save account & flight data
             //[[NJOPFlightHTTPClient sharedInstance] loadBrief];
-            // NOTE: Chad changed this to just loadBrief. But, the loadBrief he wrote doesn't go anywhere and do anything. So, we are calling loadBrief with completion
+            // NOTE: The loadBrief method doesn't go anywhere and do anything. So, we are calling loadBrief with completion
+	    //	     There is an NSNotification associated with loadBrief, we need to think about whethet this is useful or not
             [[NJOPFlightHTTPClient sharedInstance] loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
                 
                 if (error) {

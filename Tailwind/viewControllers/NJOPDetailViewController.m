@@ -15,7 +15,6 @@
 #import "NJOPPlaneViewController.h"
 #import "NJOPIntrospector.h"
 #import "NJOPAdvisoryNotesController.h"
-#import "NJOPNetJetsCorePM.h"
 #import <NCLPersistenceUtil.h>
 #import "NJOPTailwindPM.h"
 #import "NJOPDropdownView.h"
