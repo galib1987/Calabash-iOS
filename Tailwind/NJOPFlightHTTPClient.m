@@ -329,6 +329,18 @@ NSString * const kBriefLoadFailureNotification = @"BriefLoadFailureNotification"
             reservationsArray = [self loadReservationJSONArray:reservationJSON];
             
             [[NJOPOAuthClient sharedInstance] setReservations:reservationsArray]; // this should be deprecated
+            
+            // set individual for session
+            NSDictionary *individualJSON = [payload valueForKeyPath:@"individual"];
+            NJOPIndividual *individual = [NJOPIndividual individualWithDictionaryRepresentation:individualJSON];
+            [[NJOPOAuthClient sharedInstance] setIndividual:individual];
+            
+            // set accounts for individual
+            NSArray *accountsJSON = [individualJSON valueForKeyPath:@"accounts"];
+            [[NJOPOAuthClient sharedInstance] setAccounts:accountsJSON];
+            
+            NSArray *contractsJSON = [payload valueForKeyPath:@"contracts"];
+            [[NJOPOAuthClient sharedInstance] setContracts:contractsJSON];
 
         }
         

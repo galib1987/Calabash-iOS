@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray *customBlackoutDates;
 @property (nonatomic, strong) NSArray *customPeakDates;
 @property (nonatomic, strong) NSArray *customDates;
+@property (nonatomic, strong) NSArray *contractAircrafts;
 @property (strong, nonatomic) PDTSimpleCalendarViewController *calendarViewController;
 @end
 
@@ -58,6 +59,8 @@ UIView *calendarLegend;
     tap.numberOfTouchesRequired = 1;
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
+    
+    // temporary code to load aircrafts from Contracts JSON
     
 }
 
@@ -402,17 +405,26 @@ UIView *calendarLegend;
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     // STUB to return number of aircrafts
-    return 5;
+    return [self.contracts count];
 }
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     // STUB to return aircraft name of row
-    return [NSString stringWithFormat:@"Aircraft%lu", (long)row];
+    
+    NSMutableArray *contractAircrafts = [[NSMutableArray alloc] init];
+    for (NSDictionary *contractDict in self.contracts) {
+        NSString *aircraftName = contractDict[@"aircraftTypeName"];
+        [contractAircrafts addObject:aircraftName];
+    }
+    
+    self.contractAircrafts = contractAircrafts;
+    
+    return self.contractAircrafts[row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     // STUB to set text field to selected aircraft
-    self.aircraftInput.text = [NSString stringWithFormat:@"Aircraft%lu", (long)row];
+    self.aircraftInput.text = self.contractAircrafts[row];
 }
 
 #pragma mark - Time Picker

@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSArray *reservations;
 @property (nonatomic, strong) NJOPIndividual *individual;
 @property (nonatomic, strong) NSArray *accounts;
+@property (nonatomic, strong) NSArray *contracts;
 
 + (NJOPOAuthClient*)sharedInstance;
 

@@ -8,9 +8,10 @@
 
 #import "NJOPSelectAccountViewController.h"
 #import "NJOPOAuthClient.h"
+#import "NJOPBookingViewController.h"
 
 @interface NJOPSelectAccountViewController ()
-
+@property (nonatomic) NSArray *contracts;
 @end
 
 @implementation NJOPSelectAccountViewController
@@ -33,6 +34,8 @@
     NJOPOAuthClient *authClient = [NJOPOAuthClient sharedInstance];
     NSLog(@"%@", authClient.accounts);
     
+    self.contracts = authClient.contracts;
+    
     NSMutableArray *sectionsArray = [[NSMutableArray alloc] init];
     
     for (NSDictionary *account in authClient.accounts) {
@@ -41,7 +44,7 @@
                                              kSimpleDataSourceCellKeypaths					: @{
                                                      @"accountNameLabel.text" : account[@"accountName"],
                                                      @"principalNameLabel.text" : [NSString stringWithFormat:@"%@ %@", authClient.individual.firstName, authClient.individual.lastName],
-                                                     }
+                                                     },
                                              };
         
         [sectionsArray addObject:cellRepresentation];
@@ -57,14 +60,15 @@
     self.dataSource.title = [@"Book a Flight" uppercaseString];
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showBooking"]) {
+        NJOPBookingViewController *vc = segue.destinationViewController;
+        vc.contracts = self.contracts;
+    }
 }
-*/
+
 
 @end

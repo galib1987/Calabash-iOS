@@ -24,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UIButton *minusButton;
 
+@property (nonatomic, strong) NSArray *contracts;
+
 - (IBAction)subtractPassenger:(UIButton *)sender;
 - (IBAction)addPassenger:(UIButton *)sender;
 
