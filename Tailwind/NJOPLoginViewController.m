@@ -181,7 +181,32 @@
             [NJOPUser sharedInstance].username = username;
             
             // load & save account & flight data
-            [[NJOPFlightHTTPClient sharedInstance] loadBrief];
+            //[[NJOPFlightHTTPClient sharedInstance] loadBrief];
+            // NOTE: Chad changed this to just loadBrief. But, the loadBrief he wrote doesn't go anywhere and do anything. So, we are calling loadBrief with completion
+            [[NJOPFlightHTTPClient sharedInstance] loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
+                
+                if (error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [UIView animateWithDuration:0.2 animations:^{
+                            [self.coverView setAlpha:0.0];
+                        } completion:^(BOOL finished) {
+                            [self.coverView removeFromSuperview];
+                            [self presentMessage:error.localizedDescription withTitle:error.localizedFailureReason ];
+                        }];
+                    });
+                    
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        [UIView animateWithDuration:0.2 animations:^{
+                            [self.coverView setAlpha:0.0];
+                        } completion:^(BOOL finished) {
+                            [self.coverView removeFromSuperview];
+                            [self displayHome];
+                        }];
+                    });
+                } // end else error
+            }]; // end loadBriefWithCompletion
         }];
     }
 }
