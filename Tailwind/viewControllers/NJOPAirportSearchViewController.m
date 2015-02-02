@@ -24,6 +24,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Booking" bundle:nil];
     NJOPAirportSearchTableViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BookingAirportResults"];
     self.resultsTable = vc;
+    self.resultsTable.editingDeparture = self.editingDeparture;
     
     [self.view addSubview:self.resultsTable.view];
     

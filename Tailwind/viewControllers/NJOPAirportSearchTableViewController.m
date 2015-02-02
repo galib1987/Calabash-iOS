@@ -9,10 +9,11 @@
 #import "NJOPAirportSearchTableViewController.h"
 #import "NJOPAirportPM.h"
 #import <NCLPersistenceUtil.h>
-#import "NJOPAirport.h"
+#import "NJOPBookingViewController.h"
+#import "NJOPAirportResultTableViewCell.h"
 
 @interface NJOPAirportSearchTableViewController ()
-
+@property (nonatomic) NSArray *airportsResults;
 @end
 
 @implementation NJOPAirportSearchTableViewController
@@ -86,11 +87,13 @@
                                                  kSimpleDataSourceCellKeypaths					: @{
                                                          @"locationLabel.text" : [NSString stringWithFormat:@"%@ , %@", airport.city_name, airport.country_cd],
                                                          @"airportNameLabel.text" : [NSString stringWithFormat:@"%@ \n %@", airport.airportid, [airport.airport_name lowercaseString]],
-                                                         }
+                                                         },
+                                                 kSimpleDataSourceCellItem : airport,
                                                  };
             [airportsToStage addObject:cellRepresentation];
         }
         
+        self.airportsResults = airportsToStage;
         
     
         self.headerLabel.text = @"Search results:";
@@ -105,14 +108,17 @@
     [self.tableView reloadData];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NJOPAirportResultTableViewCell *cell = (NJOPAirportResultTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    if (self.editingDeparture == YES) {
+        self.chosenDepartureAirport = cell.airportNameLabel.text;
+    } else if (self.editingDeparture == NO) {
+        self.chosenArrivalAirport = cell.airportNameLabel.text;
+    }
+    
+    [self performSegueWithIdentifier:@"unwindToBooking" sender:self];
 }
-*/
+
 
 @end

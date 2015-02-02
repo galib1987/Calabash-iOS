@@ -10,6 +10,8 @@
 #import "NJOPKeyboardControls.h"
 #import "UIColor+NJOP.h"
 #import "NJOPConfig.h"
+#import "NJOPAirportSearchTableViewController.h"
+#import "NJOPAirportSearchViewController.h"
 
 @interface NJOPBookingViewController () <PDTSimpleCalendarViewDelegate>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
@@ -248,13 +250,15 @@ UIView *calendarLegend;
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     if (textField == self.departureAirport || textField == self.destinationAirport) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Booking" bundle:nil];
-        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BookingSelectAirport"];
+        NJOPAirportSearchViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BookingSelectAirport"];
         if (textField == self.departureAirport) {
             vc.title = @"Departing From";
+            vc.editingDeparture = YES;
             // "STUB" / test code to populate field
             textField.text = @"LAS: McCarran Intl";
         } else if (textField == self.destinationAirport) {
             vc.title = @"Arriving At";
+            vc.editingDeparture = NO;
             textField.text = @"JFK: John F Kennedy Intl";
         }
         CATransition* transition = [CATransition animation];
@@ -459,6 +463,21 @@ UIView *calendarLegend;
         self.arrivalTime.text = @"";//[timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:60*60*2]];
     }*/
     
+    
+    
+}
+
+- (void)unwindToBookingView:(UIStoryboardSegue *)segue {
+    if ([segue.sourceViewController isKindOfClass:[NJOPAirportSearchTableViewController class]]) {
+        NJOPAirportSearchTableViewController *searchTableController = segue.sourceViewController;
+        if (searchTableController.chosenDepartureAirport) {
+            self.chosenDepartureAirport = searchTableController.chosenDepartureAirport;
+            self.departureAirport.text = self.chosenDepartureAirport;
+        } else if (searchTableController.chosenArrivalAirport) {
+            self.chosenArrivalAirport = searchTableController.chosenArrivalAirport;
+            self.destinationAirport.text = self.chosenArrivalAirport;
+        }
+    }
 }
 
 @end
