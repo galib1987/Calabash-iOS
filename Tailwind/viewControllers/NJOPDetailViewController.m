@@ -120,6 +120,9 @@
     CGRect newFrame = self.expandableView.frame;
     newFrame.size.height = originYcoordinate;
     
+    CGRect newContentViewFrame = self.contentView.frame;
+    newContentViewFrame.size.height += newFrame.size.height;
+    
     CGRect newTableFrame = self.tableView.frame;
     newTableFrame.origin.y += self.expandableView.frame.size.height;
     
@@ -133,7 +136,22 @@
 
 - (void)collapseView {
 
-    [self.expandableView removeFromSuperview];
+    CGRect newFrame = self.expandableView.frame;
+    newFrame.size.height = 0;
+    
+    CGRect newContentViewFrame = self.contentView.frame;
+    newContentViewFrame.size.height -= newFrame.size.height;
+    
+    CGRect newTableFrame = self.tableView.frame;
+    newTableFrame.origin.y -= self.expandableView.frame.size.height;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.expandableView.frame = newFrame;
+        self.expandableView.alpha = 0;
+        self.tableView.frame = newTableFrame;
+        [self.expandableView removeFromSuperview];
+    }];
+
 }
 
 
@@ -151,9 +169,11 @@
     self.reservationDropdownView.reservationIdLabel.text = [NSString stringWithFormat:@"Reservation: %@", reservation.reservationID];
     self.reservationDropdownView.ofRequestsLabel.text = [NSString stringWithFormat:@"1 of %lu Requests", (unsigned long)[requestsForReservation count]];
     
+    // create the expandable view
     self.expandableView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     
     for (NJOPRequest2 *request in requestsForReservation) {
+        // create a bunch of request tabs
         NJOPDropdownRequestView *view = [[[NSBundle mainBundle] loadNibNamed:@"NJOPDropdownRequestView" owner:self options:nil] objectAtIndex:0];
         
         view.frame = CGRectMake(0, originYcoordinate, self.contentView.frame.size.width, 44);
@@ -163,7 +183,10 @@
         view.requestIdLabel.text = [NSString stringWithFormat:@"Request: %@", request.requestID];
         
         originYcoordinate += view.frame.size.height;
+        
+        // add the request tab to the expandable view
         [self.expandableView addSubview:view];
+    
     }
 }
 
