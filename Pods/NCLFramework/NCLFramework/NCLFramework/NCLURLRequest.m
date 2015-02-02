@@ -141,10 +141,10 @@
                 if (json)
                 {
                     NSString *prettyPrintJSON = [json description];
-                    NSString *moreBytes = prettyPrintJSON.length > maxDisplayBytes ? [NSString stringWithFormat:@"... < %i MORE BYTES >", prettyPrintJSON.length - maxDisplayBytes] : @"";
-                    prettyPrintJSON = prettyPrintJSON.length > maxDisplayBytes ? [prettyPrintJSON substringToIndex:maxDisplayBytes] : prettyPrintJSON;
+//                    NSString *moreBytes = prettyPrintJSON.length > maxDisplayBytes ? [NSString stringWithFormat:@"... < %i MORE BYTES >", prettyPrintJSON.length - maxDisplayBytes] : @"";
+//                    prettyPrintJSON = prettyPrintJSON.length > maxDisplayBytes ? [prettyPrintJSON substringToIndex:maxDisplayBytes] : prettyPrintJSON;
                     
-                    INFOLog(@"JSON payload:\n%@%@", prettyPrintJSON, moreBytes);
+                    INFOLog(@"JSON payload:\n@", prettyPrintJSON);
                 }
             }
         }

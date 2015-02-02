@@ -7,6 +7,9 @@
 //
 
 #import "NJOPAirportSearchTableViewController.h"
+#import "NJOPAirportPM.h"
+#import <NCLPersistenceUtil.h>
+#import "NJOPAirport.h"
 
 @interface NJOPAirportSearchTableViewController ()
 
@@ -62,6 +65,7 @@
 
 -(void)searchWith:(NSString *)term {
     
+    
     // STUB TO SHOW ABILITY TO RECEIVE TEXTFIELD TEXT
     
     if ([term isEmptyOrWhitespace]) {
@@ -70,27 +74,29 @@
         [self loadDataSource];
         
     } else {
+        NJOPAirportPM *persistenceManager = [NJOPAirportPM sharedInstance];
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"airport_name contains[cd] %@ OR airportid contains[cd] %@ OR city_name contains[cd] %@", term, term, term];
+        NSArray *airportsFound = [NCLPersistenceUtil executeFetchRequestForEntityName:@"Airport" predicate:pred context:persistenceManager.mainMOC error:nil];
+        
+        NSMutableArray *airportsToStage = [[NSMutableArray alloc] init];
+        
+        for (NJOPAirport *airport in airportsFound) {
+            NSDictionary *cellRepresentation = @{
+                                                 kSimpleDataSourceCellIdentifierKey			: @"resultItem",
+                                                 kSimpleDataSourceCellKeypaths					: @{
+                                                         @"locationLabel.text" : [NSString stringWithFormat:@"%@ , %@", airport.city_name, airport.country_cd],
+                                                         @"airportNameLabel.text" : [NSString stringWithFormat:@"%@ \n %@", airport.airportid, [airport.airport_name lowercaseString]],
+                                                         }
+                                                 };
+            [airportsToStage addObject:cellRepresentation];
+        }
+        
+        
     
         self.headerLabel.text = @"Search results:";
         NSArray* sections = @[
                               @{
-                                  kSimpleDataSourceSectionCellsKey : @[
-                                          @{
-                                              kSimpleDataSourceCellIdentifierKey			: @"resultItem",
-                                              kSimpleDataSourceCellKeypaths					: @{
-                                                      @"locationLabel.text" : [@"AUstin, TX, US" uppercaseString],
-                                                      @"airportNameLabel.text" : @"KAUS: Austin-Bergstrom\nInternational",
-                                                      }
-                                              },
-                                          @{
-                                              kSimpleDataSourceCellIdentifierKey			: @"resultItem",
-                                              kSimpleDataSourceCellKeypaths					: @{
-                                                      @"locationLabel.text" : [@"Green bay, wi, us" uppercaseString],
-                                                      @"airportNameLabel.text" : @"KGRB\nAustin Straubel International",
-                                                      }
-                                              }
-                                          ]
-                                  }
+                                  kSimpleDataSourceSectionCellsKey : airportsToStage                                  }
                               ];
         
         self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
