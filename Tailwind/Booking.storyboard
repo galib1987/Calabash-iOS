@@ -828,9 +828,11 @@ McCarran International</string>
                     </tableView>
                     <connections>
                         <outlet property="headerLabel" destination="i2Q-vK-mtY" id="WbB-5o-6QI"/>
+                        <segue destination="4s4-YO-eQ5" kind="unwind" identifier="unwindToBooking" unwindAction="unwindToBookingView:" id="OWq-5b-Imf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0NG-Zm-JhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4s4-YO-eQ5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="932" y="333"/>
         </scene>
