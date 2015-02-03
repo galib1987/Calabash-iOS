@@ -51,4 +51,5 @@ extern NSString * const kBookReservationFailureNotification;
 
 - (NSMutableArray *) loadReservationJSONArray:(NSArray *)JSONArray; // loads an NSArray of NSDictionaries and make into and NSArray of NJOPReservations
 - (void) initializeUserData:(NSDictionary *)data; // loads data into the NJOPUser sharedInstance
+
 @end

@@ -496,77 +496,116 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
         
 
     } else {
-        
+        /*CHAD'S AWESOME CORE DATA STUFF LIVES HERE TEMPORARILY UNTIL WE CAN GET HIS WORKING AGAIN.*/
         NCLURLRequest *request = [self urlRequestWithPath:@"/brief"];
+        request.notificationNameOnSuccess = kBriefLoadSuccessNotification;
+        request.notificationNameOnFailure = kBriefLoadFailureNotification;
+        request.shouldUseSerialDispatchQueue = YES;
         //    request.shouldOutputTraceLog = YES;
         
         [self GET:request parameters:nil completionBlock:^(NSData *data, NSError *error) {
-            
-            // ***** this block is executed on a background thread
-            
-            if (error)
+            NSLog(@"getting data");
+            if (!error)
             {
-                
-            }
-            else
-            {
+                NSManagedObjectContext *moc = [[NJOPTailwindPM sharedInstance] mainMOC];
                 NSError *jsonError = nil;
                 NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
                 
-                NJOPTailwindPM *tailwindPM = [NJOPTailwindPM sharedInstance];
-                
-                // set individual for session
-                NSDictionary *individualJSON = [result valueForKeyPath:@"individual"];
-                NJOPIndividual *individual = [NJOPIndividual individualWithDictionaryRepresentation:individualJSON];
-                [[NJOPOAuthClient sharedInstance] setIndividual:individual];
-                
-                // set accounts for individual
-                NSArray *accountsJSON = [individualJSON valueForKeyPath:@"accounts"];
-                [[NJOPOAuthClient sharedInstance] setAccounts:accountsJSON];
-                
-                // save to Core Data temporarily
-                for (NSDictionary *accountDict in accountsJSON) {
-                    NSNumber *accountID = [NSNumber numberFromObject:[accountDict objectForKey:@"accountId"]];
-                    NJOPAccount *account = [NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:tailwindPM.mainMOC];
-                    account.accountID = accountID;
-                    account.accountName = [NSString stringFromObject:[accountDict objectForKey:@"accountName"]];
-                    account.osrTeamEmail = [NSString stringFromObject:[accountDict objectForKey:@"accountOSRTeamEmail"]];
-                    account.osrTeamName = [NSString stringFromObject:[accountDict objectForKey:@"accountOSRTeamName"]];
-                    account.osrTeamPhone = [NSString stringFromObject:[accountDict objectForKey:@"accountOSRTeamPhone"]];
-                    account.hasBookAuthorization = [NSNumber numberFromObject:[accountDict objectForKey:@"allowedToBookFlight"]];
-                    account.hasFlyAuthorization = [NSNumber numberFromObject:[accountDict objectForKey:@"allowedToFly"]];
-                    account.isPrincipal = [NSNumber numberFromObject:[accountDict objectForKey:@"isPrincipal"]];
+                if (!jsonError)
+                {
+                    NSDictionary *individualDict = [result objectForKey:@"individual"];
                     
+                    if (individualDict)
+                    {
+                        // update user
+                        [NJOPUser sharedInstance].individualID = [NSNumber numberFromObject:[individualDict objectForKey:@"individualId"]];
+                        [NJOPUser sharedInstance].defaultAccountID = [NSNumber numberFromObject:[individualDict objectForKey:@"defaultAccountId"]];
+                        [NJOPUser sharedInstance].firstName = [NSString stringFromObject:[individualDict objectForKey:@"firstName"]];
+                        [NJOPUser sharedInstance].lastName = [NSString stringFromObject:[individualDict objectForKey:@"lastName"]];
+                        [[NJOPUser sharedInstance] saveToDisk];
+                        
+                        // update accounts
+                        NSArray *accounts = [[result objectForKey:@"individual"] objectForKey:@"accounts"];
+                        
+                        if (accounts)
+                        {
+                            [accounts enumerateObjectsUsingBlock:^(NSDictionary *accountDict, NSUInteger idx, BOOL *stop) {
+                                
+                                [[NJOPTailwindPM sharedInstance] updateAccount:accountDict moc:moc];
+                            }];
+                        }
+                    }
                     
-                }
-                
-                // sanity check
-                NSLog(@"%@", [tailwindPM.mainMOC registeredObjects]);
-                
-                // set requests for account
-                NSMutableArray *reservationsArray = [NSMutableArray new];
-                
-                NSArray *contractsJSON = [result valueForKeyPath:@"contracts"];
-                [[NJOPOAuthClient sharedInstance] setContracts:contractsJSON];
+                    // update contracts
+                    NSArray *contracts = [result objectForKey:@"contracts"];
+                    
+                    if (contracts)
+                    {
+                        [contracts enumerateObjectsUsingBlock:^(NSDictionary *contractDict, NSUInteger idx, BOOL *stop) {
+                            
+                            [[NJOPTailwindPM sharedInstance] updateContract:contractDict moc:moc];
+                        }];
+                    }
+                    
+                    // update requests
+                    NSArray *requests = [result objectForKey:@"requests"];
+                    
+                    if (requests)
+                    {
+                        [requests enumerateObjectsUsingBlock:^(NSDictionary *requestDict, NSUInteger idx, BOOL *stop) {
+                            
+                            [[NJOPTailwindPM sharedInstance] updateRequest:requestDict moc:moc];
+                        }];
+                    }
+                    
+                    NSLog(@"SANITY CHECK: %@", [[NJOPTailwindPM sharedInstance].mainMOC registeredObjects]);
+                    
+                    if (jsonError ||
+                        ![moc save:nil])
+                    {
+                        NSLog(@"error saving brief");
+                        
+                    } // end if it's a saving error or other json error
+                    
+                    /*THIS STUFF IS GOING TO BE DEPRECATED IN THE NEXT FEW BUILDS. */
+                    // set individual for session
+                    NSDictionary *individualJSON = [result valueForKeyPath:@"individual"];
+                    NJOPIndividual *individual = [NJOPIndividual individualWithDictionaryRepresentation:individualJSON];
+                    [[NJOPOAuthClient sharedInstance] setIndividual:individual];
+                    
+                    // set accounts for individual
+                    NSArray *accountsJSON = [individualJSON valueForKeyPath:@"accounts"];
+                    [[NJOPOAuthClient sharedInstance] setAccounts:accountsJSON];
+                    
+                    // set requests for account
+                    NSMutableArray *reservationsArray = [NSMutableArray new];
+                    
+                    NSArray *contractsJSON = [result valueForKeyPath:@"contracts"];
+                    [[NJOPOAuthClient sharedInstance] setContracts:contractsJSON];
+                    
+                    NSArray *requestsJSON = [result valueForKeyPath:@"requests"];
+                    // make sure it's an array and that it actually has something in it
+                    if ([NJOPIntrospector isObjectArray:requestsJSON]) {
+                        reservationsArray = [self loadReservationJSONArray:requestsJSON];
+                    } else {
+                        reservationsArray = [NSMutableArray array]; // make sure we have an empty array
+                    }
+                    
+                    [[NJOPOAuthClient sharedInstance] setReservations:reservationsArray];
+                    
+                    if (completionHandler) {
+                        completionHandler(reservationsArray, nil);
+                    }
 
-                NSArray *requestsJSON = [result valueForKeyPath:@"requests"];
-                // make sure it's an array and that it actually has something in it
-                if ([NJOPIntrospector isObjectArray:requestsJSON]) {
-                    reservationsArray = [self loadReservationJSONArray:requestsJSON];
-                } else {
-                    reservationsArray = [NSMutableArray array]; // make sure we have an empty array
-                }
+                    
+                } // !jsonError
                 
-                [[NJOPOAuthClient sharedInstance] setReservations:reservationsArray];
                 
-                if (completionHandler) {
-                    completionHandler(reservationsArray, nil);
-                }
-                
-            }
+            } // end !error
             
         }];
-    } // end else static
+        
+    }
 
 }
 
