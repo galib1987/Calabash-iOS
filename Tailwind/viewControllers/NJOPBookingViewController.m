@@ -158,12 +158,35 @@ UIView *calendarLegend;
     
 }
 
+- (NSArray *)getPeakDates {
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd";
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    
+    NSMutableArray *peakDatesArray = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *contractDict in self.contracts) {
+        NSArray *peakDates = contractDict[@"peakDates"];
+        
+        for (NSDictionary *date in peakDates) {
+            NSString *dateString = date[@"eventDate"];
+            NSDate *formattedDate =  [dateFormatter dateFromString:dateString];
+            [peakDatesArray addObject:formattedDate];
+        }
+    }
+    
+    [peakDatesArray addObject:[NSDate dateWithDaysFromNow:10]]; // TEST
+    
+    return peakDatesArray;
+}
+
 -(UIView*)getCalendar{
     if (self.calendarViewController == nil) {
         NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateFormat = @"dd/MM/yyyy";
         self.customBlackoutDates = @[[dateFormatter dateFromString:@"22/01/2015"], [dateFormatter dateFromString:@"23/01/2015"], [dateFormatter dateFromString:@"24/01/2015"]];
-        self.customPeakDates =  @[[dateFormatter dateFromString:@"27/01/2015"], [dateFormatter dateFromString:@"26/01/2015"], [dateFormatter dateFromString:@"25/01/2015"]];
+        self.customPeakDates =  [self getPeakDates];
         [[PDTSimpleCalendarViewHeader appearance] setSeparatorColor:[UIColor blackColor]];
         [[PDTSimpleCalendarViewHeader appearance] setSeparatorHeight:[NSNumber numberWithFloat:6]];
         self.calendarViewController = [[PDTSimpleCalendarViewController alloc] init];
@@ -238,7 +261,7 @@ UIView *calendarLegend;
 
 - (UIColor *)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller circleColorForPeakDate:(NSDate *)date
 {
-    return [UIColor colorWithRed:236/255.0f green:66/255.0f blue:66/255.0f alpha:1.0f];
+    return [UIColor redColor];
 }
 
 - (UIColor *)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller textColorForPeakDate:(NSDate *)date
@@ -324,73 +347,6 @@ UIView *calendarLegend;
     }
 }
 
-//#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 0;
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark - Aircraft Picker
 
@@ -467,6 +423,10 @@ UIView *calendarLegend;
     
 }
 
+#pragma mark -- unwinding Segue
+
+/*
+*/
 - (void)unwindToBookingView:(UIStoryboardSegue *)segue {
     if ([segue.sourceViewController isKindOfClass:[NJOPAirportSearchTableViewController class]]) {
         NJOPAirportSearchTableViewController *searchTableController = segue.sourceViewController;
