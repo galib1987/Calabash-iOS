@@ -10,6 +10,8 @@ extern const struct NJOPRequest2Attributes {
 	__unsafe_unretained NSString *requestID;
 	__unsafe_unretained NSString *requestedAircraft;
 	__unsafe_unretained NSString *status;
+	__unsafe_unretained NSString *weatherJSON;
+	__unsafe_unretained NSString *weatherLastUpdated;
 } NJOPRequest2Attributes;
 
 extern const struct NJOPRequest2Relationships {
@@ -23,6 +25,8 @@ extern const struct NJOPRequest2Relationships {
 @class NJOPLocation;
 @class NJOPLeg;
 @class NJOPReservation2;
+
+@class NSObject;
 
 @class NSObject;
 
@@ -62,6 +66,14 @@ extern const struct NJOPRequest2Relationships {
 @property (nonatomic, strong) NSString* status;
 
 //- (BOOL)validateStatus:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) id weatherJSON;
+
+//- (BOOL)validateWeatherJSON:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSDate* weatherLastUpdated;
+
+//- (BOOL)validateWeatherLastUpdated:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NJOPLocation *arrLocation;
 
@@ -111,6 +123,12 @@ extern const struct NJOPRequest2Relationships {
 
 - (NSString*)primitiveStatus;
 - (void)setPrimitiveStatus:(NSString*)value;
+
+- (id)primitiveWeatherJSON;
+- (void)setPrimitiveWeatherJSON:(id)value;
+
+- (NSDate*)primitiveWeatherLastUpdated;
+- (void)setPrimitiveWeatherLastUpdated:(NSDate*)value;
 
 - (NJOPLocation*)primitiveArrLocation;
 - (void)setPrimitiveArrLocation:(NJOPLocation*)value;

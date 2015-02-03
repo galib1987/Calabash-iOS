@@ -26,7 +26,7 @@
         <attribute name="sys_last_changed_ts" optional="YES" attributeType="Date" defaultDateTimeInterval="0" syncable="YES"/>
         <attribute name="vendor_name" attributeType="String" defaultValueString="N/A" syncable="YES"/>
         <attribute name="winter_operating_hour_desc" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="fboaddress" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="FBOAddress" inverseName="fboAddressParent" inverseEntity="FBOAddress" syncable="YES"/>
+        <relationship name="fboaddress" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FBOAddress" inverseName="fboAddressParent" inverseEntity="FBOAddress" syncable="YES"/>
     </entity>
     <entity name="FBOAddress" representedClassName="NFDFBOAddress" syncable="YES">
         <attribute name="address_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -41,7 +41,7 @@
         <attribute name="postal_cd" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
         <attribute name="state_province_name" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
         <attribute name="sys_last_changed_ts" optional="YES" attributeType="Date" defaultDateTimeInterval="0" syncable="YES"/>
-        <relationship name="fboAddressParent" optional="YES" minCount="1" maxCount="1" deletionRule="No Action" destinationEntity="FBO" inverseName="fboaddress" inverseEntity="FBO" syncable="YES"/>
+        <relationship name="fboAddressParent" optional="YES" minCount="1" maxCount="1" deletionRule="Deny" destinationEntity="FBO" inverseName="fboaddress" inverseEntity="FBO" syncable="YES"/>
     </entity>
     <elements>
         <element name="Airport" positionX="-54" positionY="-9" width="128" height="285"/>

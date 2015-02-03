@@ -48,8 +48,8 @@
 	_userNameTextField.delegate = self;
 	_passwordTextField.delegate = self;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(displayHome) name:kBriefLoadSuccessNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentError:) name:kBriefLoadFailureNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(displayHome) name:kAuthenticationSuccessNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentError:) name:kAuthenticationFailureNotification object:nil];
     
     // tap gesture to dismiss keyboard
     // we put this on any UIView that we want to be able to dismiss keyboard from
@@ -180,34 +180,36 @@
             [NCLKeychainStorage saveUserPassword:userPass error:nil];
             [NJOPUser sharedInstance].username = username;
             
+            [[NJOPFlightHTTPClient sharedInstance] authenticate];
+            
             // load & save account & flight data
             //[[NJOPFlightHTTPClient sharedInstance] loadBrief];
             // NOTE: The loadBrief method doesn't go anywhere and do anything. So, we are calling loadBrief with completion
 	    //	     There is an NSNotification associated with loadBrief, we need to think about whethet this is useful or not
-            [[NJOPFlightHTTPClient sharedInstance] loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
-                
-                if (error) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [UIView animateWithDuration:0.2 animations:^{
-                            [self.coverView setAlpha:0.0];
-                        } completion:^(BOOL finished) {
-                            [self.coverView removeFromSuperview];
-                            [self presentMessage:error.localizedDescription withTitle:error.localizedFailureReason ];
-                        }];
-                    });
-                    
-                } else {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        [UIView animateWithDuration:0.2 animations:^{
-                            [self.coverView setAlpha:0.0];
-                        } completion:^(BOOL finished) {
-                            [self.coverView removeFromSuperview];
-                            [self displayHome];
-                        }];
-                    });
-                } // end else error
-            }]; // end loadBriefWithCompletion
+//            [[NJOPFlightHTTPClient sharedInstance] loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
+//                
+//                if (error) {
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        [UIView animateWithDuration:0.2 animations:^{
+//                            [self.coverView setAlpha:0.0];
+//                        } completion:^(BOOL finished) {
+//                            [self.coverView removeFromSuperview];
+//                            [self presentMessage:error.localizedDescription withTitle:error.localizedFailureReason ];
+//                        }];
+//                    });
+//                    
+//                } else {
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        
+//                        [UIView animateWithDuration:0.2 animations:^{
+//                            [self.coverView setAlpha:0.0];
+//                        } completion:^(BOOL finished) {
+//                            [self.coverView removeFromSuperview];
+//                            [self displayHome];
+//                        }];
+//                    });
+//                } // end else error
+//            }]; // end loadBriefWithCompletion
         }];
     }
 }

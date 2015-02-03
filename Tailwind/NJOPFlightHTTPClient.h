@@ -9,15 +9,27 @@
 #import "NJOPFlightHTTPClient.h"
 #import "NJOPConfig.h"
 
+extern NSString * const kAuthenticationSuccessNotification;
+extern NSString * const kAuthenticationFailureNotification;
 extern NSString * const kBriefLoadSuccessNotification;
 extern NSString * const kBriefLoadFailureNotification;
+extern NSString * const kWeatherSuccessNotification;
+extern NSString * const kWeatherFailureNotification;
+extern NSString * const kBookReservationSuccessNotification;
+extern NSString * const kBookReservationFailureNotification;
 
 @interface NJOPFlightHTTPClient : NCLHTTPClient
 
 + (NJOPFlightHTTPClient*)sharedInstance;
 
+- (void)authenticate;
 - (void)loadBrief;
-- (void)loadFlightsForAccounts:(NSArray*)accountIDs;
+- (void)loadWeatherForRequestID:(NSNumber*)requestID;
+- (void)bookReservation:(NSDictionary*)reservationDict;
+
+// ******************** HAVAS SECTION ********************
+
+- (void)loadBriefInMemory;
 
 - (void)loadBriefWithCompletion:(void (^)(NSArray *reservations, NSError *error))completionHandler;
 

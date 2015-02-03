@@ -10,6 +10,8 @@ const struct NJOPRequest2Attributes NJOPRequest2Attributes = {
 	.requestID = @"requestID",
 	.requestedAircraft = @"requestedAircraft",
 	.status = @"status",
+	.weatherJSON = @"weatherJSON",
+	.weatherLastUpdated = @"weatherLastUpdated",
 };
 
 const struct NJOPRequest2Relationships NJOPRequest2Relationships = {
@@ -83,6 +85,10 @@ const struct NJOPRequest2Relationships NJOPRequest2Relationships = {
 @dynamic requestedAircraft;
 
 @dynamic status;
+
+@dynamic weatherJSON;
+
+@dynamic weatherLastUpdated;
 
 @dynamic arrLocation;
 

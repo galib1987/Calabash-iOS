@@ -28,6 +28,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // listen for data
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadDataSource) name:kBriefLoadSuccessNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadDataSource) name:kBriefLoadSuccessNotification object:nil];
+    
     self.coverView = [UIView new];
     self.coverView.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.7];
     self.coverView.frame = self.view.bounds;
@@ -42,8 +47,12 @@
     [NJOPResigner globalResignFirstResponder]; // temporary solution to keyboard on login
 
     [self.view addSubview:self.coverView];
-    
-    [self loadDataSource];
+    NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
+    if (session.reservations == nil) {
+        [self start]; // we're going to start by seeing if we need to load stuff
+    } else {
+        [self loadDataSource];
+    }
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -55,37 +64,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - actually loading the data in
+- (void) start {
+    NJOPFlightHTTPClient *client = [NJOPFlightHTTPClient sharedInstance];
+    [client loadBrief];
+}
+
 #pragma mark -- SimpleDataSource
 
 -(void)loadDataSource {
-    
-    __weak NJOPHomeViewController* wself = self;
-    
-    NSDictionary *info = nil;
     NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
-    if ([session.reservations count] > 0) {
-        [self updateWithReservations:session.reservations];
-        [UIView animateWithDuration:0.2 animations:^{
-            [self.coverView setAlpha:0.0];
-        } completion:^(BOOL finished) {
-            [self.coverView removeFromSuperview];
-        }];
-    } else {
-        NJOPFlightHTTPClient *client = [NJOPFlightHTTPClient sharedInstance];
-        [client loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [wself updateWithReservations:reservations];
-                [self.tableView reloadData];
-                [UIView animateWithDuration:0.2 animations:^{
-                    [self.coverView setAlpha:0.0];
-                } completion:^(BOOL finished) {
-                    [self.coverView removeFromSuperview];
-                }];
-            });
-        }];
-        
-    }
+    [self updateWithReservations:session.reservations];
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.coverView setAlpha:0.0];
+    } completion:^(BOOL finished) {
+        [self.coverView removeFromSuperview];
+    }];
 }
 
 - (BOOL)hasUpcomingFlight:(NJOPReservation *)reservation {
