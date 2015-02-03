@@ -8,7 +8,6 @@
 
 #import "SimpleDataSourceTableViewController.h"
 #import "UIColor+NJOP.h"
-#import "NJOPFlightsDetailViewController.h"
 
 @interface SimpleDataSourceTableViewController ()
 @property (nonatomic, strong) NSArray* sections;

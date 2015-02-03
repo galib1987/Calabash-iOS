@@ -219,7 +219,6 @@
 		A7F2A2241A7741A9003C4FC3 /* Container.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F2A2231A7741A9003C4FC3 /* Container.storyboard */; };
 		A7F2CA451A4DC9F400D78804 /* NJOPBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */; };
 		A7F2CA491A4DCBF700D78804 /* NJOPFlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */; };
-		A7F2CA4C1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */; };
 		A7FC581F1A72AA3B00DE22B1 /* NJOPIntrospector.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FC581E1A72AA3B00DE22B1 /* NJOPIntrospector.m */; };
 		A7FC58251A732F6800DE22B1 /* NJOPResigner.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FC58241A732F6800DE22B1 /* NJOPResigner.m */; };
 /* End PBXBuildFile section */
@@ -539,8 +538,6 @@
 		A7F2CA441A4DC9F400D78804 /* NJOPBookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPBookingViewController.m; sourceTree = "<group>"; };
 		A7F2CA471A4DCBF700D78804 /* NJOPFlightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightsViewController.h; sourceTree = "<group>"; };
 		A7F2CA481A4DCBF700D78804 /* NJOPFlightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightsViewController.m; sourceTree = "<group>"; };
-		A7F2CA4A1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPFlightsDetailViewController.h; sourceTree = "<group>"; };
-		A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPFlightsDetailViewController.m; sourceTree = "<group>"; };
 		A7FC581D1A72AA3B00DE22B1 /* NJOPIntrospector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPIntrospector.h; sourceTree = "<group>"; };
 		A7FC581E1A72AA3B00DE22B1 /* NJOPIntrospector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJOPIntrospector.m; sourceTree = "<group>"; };
 		A7FC58231A732F6800DE22B1 /* NJOPResigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJOPResigner.h; sourceTree = "<group>"; };
@@ -968,8 +965,6 @@
 		A7CD0AEF1A5C825F00D45224 /* Detail ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A7F2CA4A1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.h */,
-				A7F2CA4B1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m */,
 				A7C07DBF1A5B3FD30055126B /* Info ViewControllers */,
 				A79BF7CA1A7AC1DA00176B87 /* NJOPDetailViewController.h */,
 				A79BF7CB1A7AC1DA00176B87 /* NJOPDetailViewController.m */,
@@ -1575,7 +1570,6 @@
 				A7A03E941A42E4C3004BE417 /* NJOPSummaryViewTopHeaderView.m in Sources */,
 				A7C07DC21A5B3FFF0055126B /* NJOPAdvisoryNotesController.m in Sources */,
 				524417A21A6ECB7B00DA7868 /* PDTSimpleCalendarViewFlowLayout.m in Sources */,
-				A7F2CA4C1A4DCC2B00D78804 /* NJOPFlightsDetailViewController.m in Sources */,
 				A7CD0AF21A5C82B700D45224 /* (null) in Sources */,
 				A75BCE561A7B45BD0094C94F /* NJOPDropdownView.m in Sources */,
 				524417A11A6ECB7B00DA7868 /* PDTSimpleCalendarViewController.m in Sources */,
