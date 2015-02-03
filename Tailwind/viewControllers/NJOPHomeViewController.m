@@ -63,29 +63,14 @@
     
     NSDictionary *info = nil;
     NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
-    if ([session.reservations count] > 0) {
-        [self updateWithReservations:session.reservations];
-        [UIView animateWithDuration:0.2 animations:^{
-            [self.coverView setAlpha:0.0];
-        } completion:^(BOOL finished) {
-            [self.coverView removeFromSuperview];
-        }];
-    } else {
-        NJOPFlightHTTPClient *client = [NJOPFlightHTTPClient sharedInstance];
-        [client loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [wself updateWithReservations:reservations];
-                [self.tableView reloadData];
-                [UIView animateWithDuration:0.2 animations:^{
-                    [self.coverView setAlpha:0.0];
-                } completion:^(BOOL finished) {
-                    [self.coverView removeFromSuperview];
-                }];
-            });
-        }];
-        
-    }
+
+//    NSLog(@"loading from: %@",session.reservations);
+    [self updateWithReservations:session.reservations];
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.coverView setAlpha:0.0];
+    } completion:^(BOOL finished) {
+        [self.coverView removeFromSuperview];
+    }];
 }
 
 - (BOOL)hasUpcomingFlight:(NJOPReservation *)reservation {
