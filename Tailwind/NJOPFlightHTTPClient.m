@@ -513,6 +513,8 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
                 NSError *jsonError = nil;
                 NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
                 
+                NJOPTailwindPM *tailwindPM = [NJOPTailwindPM sharedInstance];
+                
                 // set individual for session
                 NSDictionary *individualJSON = [result valueForKeyPath:@"individual"];
                 NJOPIndividual *individual = [NJOPIndividual individualWithDictionaryRepresentation:individualJSON];
@@ -521,6 +523,25 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
                 // set accounts for individual
                 NSArray *accountsJSON = [individualJSON valueForKeyPath:@"accounts"];
                 [[NJOPOAuthClient sharedInstance] setAccounts:accountsJSON];
+                
+                // save to Core Data temporarily
+                for (NSDictionary *accountDict in accountsJSON) {
+                    NSNumber *accountID = [NSNumber numberFromObject:[accountDict objectForKey:@"accountId"]];
+                    NJOPAccount *account = [NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:tailwindPM.mainMOC];
+                    account.accountID = accountID;
+                    account.accountName = [NSString stringFromObject:[accountDict objectForKey:@"accountName"]];
+                    account.osrTeamEmail = [NSString stringFromObject:[accountDict objectForKey:@"accountOSRTeamEmail"]];
+                    account.osrTeamName = [NSString stringFromObject:[accountDict objectForKey:@"accountOSRTeamName"]];
+                    account.osrTeamPhone = [NSString stringFromObject:[accountDict objectForKey:@"accountOSRTeamPhone"]];
+                    account.hasBookAuthorization = [NSNumber numberFromObject:[accountDict objectForKey:@"allowedToBookFlight"]];
+                    account.hasFlyAuthorization = [NSNumber numberFromObject:[accountDict objectForKey:@"allowedToFly"]];
+                    account.isPrincipal = [NSNumber numberFromObject:[accountDict objectForKey:@"isPrincipal"]];
+                    
+                    
+                }
+                
+                // sanity check
+                NSLog(@"%@", [tailwindPM.mainMOC registeredObjects]);
                 
                 // set requests for account
                 NSMutableArray *reservationsArray = [NSMutableArray new];
