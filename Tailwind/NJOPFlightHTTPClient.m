@@ -558,7 +558,7 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
                         }];
                     }
                     
-                    NSLog(@"SANITY CHECK: %@", [[NJOPTailwindPM sharedInstance].mainMOC registeredObjects]);
+//                    NSLog(@"SANITY CHECK: %@", [[NJOPTailwindPM sharedInstance].mainMOC registeredObjects]);
                     
                     if (jsonError ||
                         ![moc save:nil])
@@ -684,6 +684,48 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
         } // end for each
     }
     return reservationsArray;
+}
+
+- (NJOPRequest2 *)loadNextRequest {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Request"];
+    NSSortDescriptor *dateSorter = [[NSSortDescriptor alloc] initWithKey:@"depTime" ascending:NO];
+    [fetchRequest setSortDescriptors:@[dateSorter]];
+    [fetchRequest setFetchLimit:1];
+    
+    NSManagedObjectContext *context = [NJOPTailwindPM sharedInstance].mainMOC;
+    
+    NJOPRequest2 *request = [[context executeFetchRequest:fetchRequest error:nil] objectAtIndex:0];
+    return request;
+}
+
+- (NSArray *)loadAllRequests {
+    NSArray *requests = [NCLPersistenceUtil executeFetchRequestForEntityName:@"Request" predicate:nil context:[NJOPTailwindPM sharedInstance].mainMOC error:nil];
+    return requests;
+}
+
+- (NSArray *)loadPastRequests {
+    /*GET PAST REQUESTS*/
+    NSDate *currentDate = [NSDate date];
+    NSPredicate *pastPredicate = [NSPredicate predicateWithFormat:@"depTime <= %@", currentDate];
+    NSArray *pastRequests = [NCLPersistenceUtil executeFetchRequestForEntityName:@"Request" predicate:pastPredicate context:[NJOPTailwindPM sharedInstance].mainMOC error:nil];
+    
+    return pastRequests;
+    
+}
+- (NSArray *)loadFutureRequests {
+    /*GET FUTURE REQUESTS*/
+    NSDate *currentDate = [NSDate date];
+    NSPredicate *futurePredicate = [NSPredicate predicateWithFormat:@"depTime >= %@", currentDate];
+    NSArray *futureRequests = [NCLPersistenceUtil executeFetchRequestForEntityName:@"Request" predicate:futurePredicate context:[NJOPTailwindPM sharedInstance].mainMOC error:nil];
+    
+    return futureRequests;
+}
+
+- (NSArray *)loadAccounts {
+    NSArray *accounts = [NCLPersistenceUtil executeFetchRequestForEntityName:@"Account" predicate:nil context:[NJOPTailwindPM sharedInstance].mainMOC error:nil];
+    
+    return accounts;
+    
 }
 
 @end

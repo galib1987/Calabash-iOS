@@ -75,7 +75,7 @@
 -(void)loadDataSource {
     
     NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
-    NSLog(@"loading from: %@",session.reservations);
+//    NSLog(@"loading from: %@",session.reservations);
     [self updateWithReservations:session.reservations];
     [UIView animateWithDuration:0.2 animations:^{
         [self.coverView setAlpha:0.0];

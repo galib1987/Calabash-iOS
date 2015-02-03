@@ -8,6 +8,7 @@
 
 #import "NJOPFlightHTTPClient.h"
 #import "NJOPConfig.h"
+#import "NJOPRequest2.h"
 
 extern NSString * const kAuthenticationSuccessNotification;
 extern NSString * const kAuthenticationFailureNotification;
@@ -51,5 +52,13 @@ extern NSString * const kBookReservationFailureNotification;
 
 - (NSMutableArray *) loadReservationJSONArray:(NSArray *)JSONArray; // loads an NSArray of NSDictionaries and make into and NSArray of NJOPReservations
 - (void) initializeUserData:(NSDictionary *)data; // loads data into the NJOPUser sharedInstance
+
+
+#pragma mark - some temporary fetches
+- (NJOPRequest2 *)loadNextRequest;
+- (NSArray *)loadAllRequests;
+- (NSArray *)loadPastRequests;
+- (NSArray *)loadFutureRequests;
+- (NSArray *)loadAccounts;
 
 @end
