@@ -37,26 +37,20 @@ NSString *actionButtonText = @"EDIT FLIGHT DETAILS";
                                           kSimpleDataSourceCellIdentifierKey		: @"NJOPPastFlightTableCell",
                                           kSimpleDataSourceCellKeypaths					: @{
                                                   @"actionButtonLabel" : actionButtonText,
-                                                  @"accountNameLabel.text" : @"Big Skies LLC",
-                                                  @"hoursUsedLabel.text" : @"6 Hours",
-                                                  @"hoursLeftLabel.text" : @"150 Hours",
-                                                  
-                                                  @"departureTimeLabel.text" : @"12:00 PM",
-                                                  @"departureAirportCodeLabel.text" : @"KTEB",
-                                                  @"departureLocationLabel.text" : @"Teterboro",
-                                                  
-                                                  @"flightDurationLabel.text" : @"2h 54m,\nNon Stop",
-                                                  
-                                                  @"arrivalTimeLabel.text" : @"2:45PM",
-                                                  @"arrivalAirportCodeLabel.text" : @"KAPF",
-                                                  @"arrivalLocationLabel.text" : @"Naples",
-                                                  
-                                                  @"passengerNumberLabel.text" : @"3 People",
-                                                  
-                                                  @"aircraftNameLabel.text" : @"Bombardier",
+                                                  @"accountNameLabel.text" : self.formInputs[@"accountName"],
+                                                  @"hoursUsedLabel.text" : self.formInputs[@"hoursUsed"],
+                                                  @"hoursLeftLabel.text" : self.formInputs[@"hoursLeft"],
+                                                  @"departureTimeLabel.text" : self.formInputs[@"departureTime"],
+                                                  @"departureAirportCodeLabel.text" : [self.formInputs[@"departureAirportCode"] substringToIndex:3],
+                                                  @"departureLocationLabel.text" : [self.formInputs[@"departureLocation"] substringFromIndex:4],
+                                                  @"flightDurationLabel.text" : self.formInputs[@"flightDuration"],
+                                                  @"arrivalTimeLabel.text" : self.formInputs[@"arrivalTime"],
+                                                  @"arrivalAirportCodeLabel.text" : [self.formInputs[@"arrivalAirportCode"] substringToIndex:3],
+                                                  @"arrivalLocationLabel.text" : [self.formInputs[@"arrivalLocation"] substringFromIndex:4],
+                                                  @"passengerNumberLabel.text" : self.formInputs[@"passengerNumber"],
+                                                  @"aircraftNameLabel.text" : self.formInputs[@"aircraftName"],
                                                   @"upgradedLabel.hidden" : @false,
-                                                  
-                                                  @"specialInstructionsLabel.text" : @"Lorem ipsum dolor ito. Lorem ipsum dolor ito. Lorem ipsum dolor ito. Ito lorem ipsum dolor ito lorem dolor ito."
+                                                  @"specialInstructionsLabel.text" : self.formInputs[@"specialInstructions"],
                                                   }
                                           },
                                       @{
@@ -130,63 +124,5 @@ NSString *actionButtonText = @"EDIT FLIGHT DETAILS";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view data source
-
-/*- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 2;
-}*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

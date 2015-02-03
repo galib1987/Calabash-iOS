@@ -12,6 +12,7 @@
 #import "NJOPConfig.h"
 #import "NJOPAirportSearchTableViewController.h"
 #import "NJOPAirportSearchViewController.h"
+#import "NJOPBookingReviewTableViewController.h"
 
 @interface NJOPBookingViewController () <PDTSimpleCalendarViewDelegate>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
@@ -436,6 +437,28 @@ UIView *calendarLegend;
             self.chosenArrivalAirport = searchTableController.chosenArrivalAirport;
             self.destinationAirport.text = self.chosenArrivalAirport;
         }
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showBookingReview"]) {
+        NSDictionary *formInputs = @{
+                                     @"accountName" : @"Big Skies LLC",
+                                     @"hoursUsed" : [NSString stringWithFormat:@"%@ Hours", self.contracts[0][@"actualRemainingHours"]],
+                                     @"hoursLeft" : [NSString stringWithFormat:@"%@ Hours", self.contracts[0][@"projectedRemainingHours"]],
+                                     @"departureTime" : self.departTime.text,
+                                     @"departureAirportCode" : self.departureAirport.text,
+                                     @"departureLocation" : self.departureAirport.text,
+                                     @"flightDuration" : @"2h 54m \n Non Stop",
+                                     @"arrivalTime" : @"2:45PM",
+                                     @"arrivalAirportCode" : self.destinationAirport.text,
+                                     @"arrivalLocation" : self.destinationAirport.text,
+                                     @"passengerNumber" : self.numberOfPassengers.text,
+                                     @"aircraftName" : self.aircraftInput.text,
+                                     @"specialInstructions" : self.bookingComment.text
+                                     };
+        NJOPBookingReviewTableViewController *vc = segue.destinationViewController;
+        vc.formInputs = formInputs;
     }
 }
 
