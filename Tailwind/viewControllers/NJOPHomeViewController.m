@@ -73,7 +73,9 @@
 #pragma mark -- SimpleDataSource
 
 -(void)loadDataSource {
+    
     NJOPOAuthClient *session = [NJOPOAuthClient sharedInstance];
+    NSLog(@"loading from: %@",session.reservations);
     [self updateWithReservations:session.reservations];
     [UIView animateWithDuration:0.2 animations:^{
         [self.coverView setAlpha:0.0];
@@ -163,7 +165,7 @@
 
 
 -(void)updateWithReservations:(NSArray*)reservations {
-    
+    NSLog(@"updateWithReservations");
     NSDictionary *cardDisplayedRepresentation = [[NSDictionary alloc] init];
     
     if ([NJOPIntrospector isObjectArray:reservations]) {
