@@ -186,30 +186,30 @@
             //[[NJOPFlightHTTPClient sharedInstance] loadBrief];
             // NOTE: The loadBrief method doesn't go anywhere and do anything. So, we are calling loadBrief with completion
 	    //	     There is an NSNotification associated with loadBrief, we need to think about whethet this is useful or not
-//            [[NJOPFlightHTTPClient sharedInstance] loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
-//                
-//                if (error) {
-//                    dispatch_async(dispatch_get_main_queue(), ^{
-//                        [UIView animateWithDuration:0.2 animations:^{
-//                            [self.coverView setAlpha:0.0];
-//                        } completion:^(BOOL finished) {
-//                            [self.coverView removeFromSuperview];
-//                            [self presentMessage:error.localizedDescription withTitle:error.localizedFailureReason ];
-//                        }];
-//                    });
-//                    
-//                } else {
-//                    dispatch_async(dispatch_get_main_queue(), ^{
-//                        
-//                        [UIView animateWithDuration:0.2 animations:^{
-//                            [self.coverView setAlpha:0.0];
-//                        } completion:^(BOOL finished) {
-//                            [self.coverView removeFromSuperview];
-//                            [self displayHome];
-//                        }];
-//                    });
-//                } // end else error
-//            }]; // end loadBriefWithCompletion
+            [[NJOPFlightHTTPClient sharedInstance] loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
+                
+                if (error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [UIView animateWithDuration:0.2 animations:^{
+                            [self.coverView setAlpha:0.0];
+                        } completion:^(BOOL finished) {
+                            [self.coverView removeFromSuperview];
+                            [self presentMessage:error.localizedDescription withTitle:error.localizedFailureReason ];
+                        }];
+                    });
+                    
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        [UIView animateWithDuration:0.2 animations:^{
+                            [self.coverView setAlpha:0.0];
+                        } completion:^(BOOL finished) {
+                            [self.coverView removeFromSuperview];
+                            [self displayHome];
+                        }];
+                    });
+                } // end else error
+            }]; // end loadBriefWithCompletion
         }];
     }
 }
