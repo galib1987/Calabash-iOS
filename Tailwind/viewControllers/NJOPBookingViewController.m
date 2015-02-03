@@ -372,6 +372,7 @@ UIView *calendarLegend;
     // STUB to return aircraft name of row
     
     NSMutableArray *contractAircrafts = [[NSMutableArray alloc] init];
+    
     for (NSDictionary *contractDict in self.contracts) {
         NSString *aircraftName = contractDict[@"aircraftTypeName"];
         [contractAircrafts addObject:aircraftName];
@@ -418,9 +419,7 @@ UIView *calendarLegend;
     } else if (sender == self.departTime) {
         self.arrivalTime.text = @"";//[timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:60*60*2]];
     }*/
-    
-    
-    
+
 }
 
 #pragma mark -- unwinding Segue

@@ -62,7 +62,7 @@ typedef enum {
 // 0 is use VPN
 // 1 is use JSON
 //#define USE_STATIC_DATA 0
-#define USE_STATIC_DATA 1
+#define USE_STATIC_DATA 0
 
 #endif
 
