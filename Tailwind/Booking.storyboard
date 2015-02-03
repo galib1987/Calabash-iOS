@@ -642,7 +642,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="QLS-NT-ueR" kind="show" id="sRg-av-NCF"/>
+                                                        <segue destination="QLS-NT-ueR" kind="show" identifier="showBookingReview" id="sRg-av-NCF"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
