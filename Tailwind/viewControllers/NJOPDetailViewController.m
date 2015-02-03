@@ -322,7 +322,7 @@
 - (IBAction)arrivalPinPressed:(id)sender {
     NSString *arrivalFBO = self.reservation.arrivalFboName;
     arrivalFBO = [arrivalFBO stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    NSString *urlString = @"http://maps.google.com/?q=";
+    NSString *urlString = @"http://maps.apple.com/?q=";
     urlString = [urlString stringByAppendingString:arrivalFBO];
     
     NSURL *url = [NSURL URLWithString:urlString];
@@ -333,7 +333,7 @@
     
     NSString *departureFBO = self.reservation.departureFboName;
     departureFBO = [departureFBO stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    NSString *urlString = @"http://maps.google.com/?q=";
+    NSString *urlString = @"http://maps.apple.com/?q=";
     urlString = [urlString stringByAppendingString:departureFBO];
     
     NSURL *url = [NSURL URLWithString:urlString];

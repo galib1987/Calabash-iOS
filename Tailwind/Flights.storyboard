@@ -1875,6 +1875,9 @@ Typical Flight: Los Angeles to Dallas</string>
                                                                             <state key="normal" image="drop-pin">
                                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </state>
+                                                                            <connections>
+                                                                                <action selector="arrivalPinPressed:" destination="mzQ-Iy-OTD" eventType="touchUpInside" id="ZHE-dV-msw"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9B-4O-9dG">
                                                                             <rect key="frame" x="323" y="436" width="9" height="22"/>
@@ -1885,6 +1888,9 @@ Typical Flight: Los Angeles to Dallas</string>
                                                                             <state key="normal" image="drop-pin">
                                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </state>
+                                                                            <connections>
+                                                                                <action selector="departurePinPressed:" destination="mzQ-Iy-OTD" eventType="touchUpInside" id="sOk-lw-vQF"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
