@@ -86,7 +86,7 @@
                                                  kSimpleDataSourceCellIdentifierKey			: @"resultItem",
                                                  kSimpleDataSourceCellKeypaths					: @{
                                                          @"locationLabel.text" : [NSString stringWithFormat:@"%@ , %@", airport.city_name, airport.country_cd],
-                                                         @"airportNameLabel.text" : [NSString stringWithFormat:@"%@ \n %@", airport.airportid, [airport.airport_name lowercaseString]],
+                                                         @"airportNameLabel.text" : [NSString stringWithFormat:@"%@\n%@", airport.airportid, [airport.airport_name capitalizedString]],
                                                          },
                                                  kSimpleDataSourceCellItem : airport,
                                                  };

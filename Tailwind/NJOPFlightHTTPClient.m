@@ -332,6 +332,11 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
                     NSDateFormatter* jsonDateFormatter = [NSDateFormatter new];
                     [jsonDateFormatter setDateFormat:jsonDateFormat];
                     
+                    NSArray *contractsJSON = [result valueForKeyPath:@"contracts"];
+                    [[NJOPOAuthClient sharedInstance] setContracts:contractsJSON];
+                    
+                    
+                    
                     NSArray *requestsJSON = [result valueForKeyPath:@"requests"];
                     if ([requestsJSON count] > 0) {
                         for (NSDictionary *requestDict in requestsJSON) {
@@ -520,6 +525,9 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
                 // set requests for account
                 NSMutableArray *reservationsArray = [NSMutableArray new];
                 
+                NSArray *contractsJSON = [result valueForKeyPath:@"contracts"];
+                [[NJOPOAuthClient sharedInstance] setContracts:contractsJSON];
+
                 NSArray *requestsJSON = [result valueForKeyPath:@"requests"];
                 // make sure it's an array and that it actually has something in it
                 if ([NJOPIntrospector isObjectArray:requestsJSON]) {
