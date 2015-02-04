@@ -566,6 +566,20 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
 
 }
 
+- (void) initializeUserData:(NSDictionary *)data {
+    
+    if ([data isKindOfClass:[NSDictionary class]])
+    {
+        // update user
+        [NJOPUser sharedInstance].individualID = [NSNumber numberFromObject:[data objectForKey:@"individualId"]];
+        [NJOPUser sharedInstance].defaultAccountID = [NSNumber numberFromObject:[data objectForKey:@"defaultAccountId"]];
+        [NJOPUser sharedInstance].firstName = [NSString stringFromObject:[data objectForKey:@"firstName"]];
+        [NJOPUser sharedInstance].lastName = [NSString stringFromObject:[data objectForKey:@"lastName"]];
+        [[NJOPUser sharedInstance] saveToDisk];
+    }
+
+}
+
 - (NSMutableArray *) loadReservationJSONArray:(NSArray *)JSONArray {
     
     // set requests for account
