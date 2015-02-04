@@ -20,14 +20,17 @@
 #import "NJOPDropdownView.h"
 #import "NJOPDropdownRequestView.h"
 
-@interface NJOPDetailViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
+@interface NJOPDetailViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate> {
+    BOOL dropdownExpanded;
+    CGFloat originYcoordinate;
+}
+
 @property (nonatomic) SimpleDataSource *dataSource;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet NJOPDropdownView *reservationDropdownView;
-
-@property (nonatomic) CGFloat affixedY;
+@property (nonatomic) UIView *expandableView;
 
 @end
 
@@ -35,6 +38,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    dropdownExpanded = NO;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -91,9 +96,6 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    CGRect scrollViewBounds = self.scrollView.bounds;
-    CGRect containerViewBounds = self.contentView.bounds;
-    
     UIEdgeInsets scrollViewInsets = UIEdgeInsetsZero;
     
     scrollViewInsets.top = 0.0f;
@@ -103,22 +105,89 @@
 
 - (IBAction)expandDropdownPressed:(id)sender {
     
+    if (!dropdownExpanded) {
+        [self expandView];
+        dropdownExpanded = YES;
+    } else {
+        [self collapseView];
+        dropdownExpanded = NO;
+    }
 }
 
+
+- (void)expandView {
+    [self.contentView addSubview:self.expandableView];
+    
+    CGRect newFrame = self.expandableView.frame;
+    newFrame.size.height = originYcoordinate;
+    
+    CGRect newContentViewFrame = self.contentView.frame;
+    newContentViewFrame.size.height += newFrame.size.height;
+    
+    CGRect newTableFrame = self.tableView.frame;
+    newTableFrame.origin.y += self.expandableView.frame.size.height;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.expandableView.frame = newFrame;
+        self.expandableView.alpha = 1;
+        self.tableView.frame = newTableFrame;
+    }];
+    
+}
+
+- (void)collapseView {
+
+    CGRect newFrame = self.expandableView.frame;
+    newFrame.size.height = 0;
+    
+    CGRect newContentViewFrame = self.contentView.frame;
+    newContentViewFrame.size.height -= newFrame.size.height;
+    
+    CGRect newTableFrame = self.tableView.frame;
+    newTableFrame.origin.y -= self.expandableView.frame.size.height;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.expandableView.frame = newFrame;
+        self.expandableView.alpha = 0;
+        self.tableView.frame = newTableFrame;
+        [self.expandableView removeFromSuperview];
+    }];
+
+}
+
+
 - (void)updateDropdownLabels {
-    NJOPTailwindPM *persistenceManager = [NJOPTailwindPM sharedInstance];
-    NJOPReservation2 *reservation = [persistenceManager reservationForID:self.reservation.reservationId createIfNeeded:NO moc:persistenceManager.mainMOC];
-    NSLog(@"%@", reservation.reservationID); // reservation id
-    self.affixedY = self.reservationDropdownView.frame.size.height;
-    self.reservationDropdownView.reservationIdLabel.text = [NSString stringWithFormat:@"Reservation: %@", reservation.reservationID];
-    
-    NSArray* requestsForReservation = [reservation.requests allObjects];
-    NSLog(@"%lu", (unsigned long)[requestsForReservation count]); // how many requests
-    
-    self.reservationDropdownView.ofRequestsLabel.text = [NSString stringWithFormat:@"1 of %lu Requests", (unsigned long)[requestsForReservation count]];
-    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"EE MMM dd, YYYY"];
+    
+    NJOPTailwindPM *persistenceManager = [NJOPTailwindPM sharedInstance];
+    
+    NJOPReservation2 *reservation = [persistenceManager reservationForID:self.reservation.reservationId createIfNeeded:NO moc:persistenceManager.mainMOC];
+    
+    NSArray* requestsForReservation = [reservation.requests allObjects];
+    
+    originYcoordinate = self.reservationDropdownView.frame.size.height;
+    self.reservationDropdownView.reservationIdLabel.text = [NSString stringWithFormat:@"Reservation: %@", reservation.reservationID];
+    self.reservationDropdownView.ofRequestsLabel.text = [NSString stringWithFormat:@"1 of %lu Requests", (unsigned long)[requestsForReservation count]];
+    
+    // create the expandable view
+    self.expandableView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    
+    for (NJOPRequest2 *request in requestsForReservation) {
+        // create a bunch of request tabs
+        NJOPDropdownRequestView *view = [[[NSBundle mainBundle] loadNibNamed:@"NJOPDropdownRequestView" owner:self options:nil] objectAtIndex:0];
+        view.frame = CGRectMake(0, originYcoordinate, self.contentView.frame.size.width, 44);
+        view.backgroundColor = [UIColor darkGrayColor];
+        view.dateLabel.text = [NSString stringFromDate:request.depTime formatType:NCLDateFormatOptionIncludeWeekday];
+        view.routeLabel.text = [NSString stringWithFormat:@"%@ - %@", request.depLocation.airportCity, request.arrLocation.airportCity];
+        view.requestIdLabel.text = [NSString stringWithFormat:@"Request: %@", request.requestID];
+        
+        originYcoordinate += view.frame.size.height;
+        
+        // add the request tab to the expandable view
+        [self.expandableView addSubview:view];
+    
+    }
 }
 
 
@@ -139,21 +208,40 @@
     
     NSMutableArray *conditionalSectionsArray = [[NSMutableArray alloc] initWithObjects:
                                                 [self detailCellFromReservation:_reservation],
-                                                [self infoCellWithIdentifier:@"CrewInfoCell" topLabel:@"Your Crew" detailLabel:@"Captain Michael Chapman" icon:[UIImage imageNamed:@"crew"]],
-                                                [self infoCellWithIdentifier:@"PassengerManifestInfoCell" topLabel:@"Passenger Manifest" detailLabel:passengerCountString icon:[UIImage imageNamed:@"passengers"]],
+                                                [self infoCellWithIdentifier:@"CrewInfoCell"
+                                                                    topLabel:@"Your Crew"
+                                                                 detailLabel:@"Captain Michael Chapman"
+                                                                        icon:[UIImage imageNamed:@"crew"]],
+                                                [self infoCellWithIdentifier:@"PassengerManifestInfoCell"
+                                                                    topLabel:@"Passenger Manifest"
+                                                                 detailLabel:passengerCountString
+                                                                        icon:[UIImage imageNamed:@"passengers"]],
                                                 nil];
     
     if ([NJOPIntrospector isObjectArray:_reservation.cateringOrders]) {
-        [conditionalSectionsArray addObject:[self infoCellWithIdentifier:@"CateringInfoCell" topLabel:@"Catering" detailLabel:@"Details Enclosed" icon:[UIImage imageNamed:@"catering"]]];
+        [conditionalSectionsArray addObject:[self infoCellWithIdentifier:@"CateringInfoCell"
+                                                                topLabel:@"Catering"
+                                                             detailLabel:@"Details Enclosed"
+                                                                    icon:[UIImage imageNamed:@"catering"]]];
     }
     
     if ([NJOPIntrospector isObjectArray:_reservation.groundOrders]) {
-        [conditionalSectionsArray addObject:[self infoCellWithIdentifier:@"GroundInfoCell" topLabel:@"Ground Transportation" detailLabel:@"On Departure & Arrival" icon:[UIImage imageNamed:@"ground-transportation"]]];
+        [conditionalSectionsArray addObject:[self infoCellWithIdentifier:@"GroundInfoCell"
+                                                                topLabel:@"Ground Transportation"
+                                                             detailLabel:@"On Departure & Arrival"
+                                                                    icon:[UIImage imageNamed:@"ground-transportation"]]];
+        
     }
     
     [conditionalSectionsArray addObjectsFromArray:@[
-                                                    [self infoCellWithIdentifier:@"AdvisoryNotesInfoCell" topLabel:@"Advisory Notes" detailLabel:@"Details Enclosed" icon:[UIImage imageNamed:@"advisory-notes"]],
-                                                    [self infoCellWithIdentifier:@"YourPlaneInfoCell" topLabel:@"Your Plane" detailLabel:@"Cessna Citation Encore+" icon:[UIImage imageNamed:@"plane"]]
+                                                    [self infoCellWithIdentifier:@"AdvisoryNotesInfoCell"
+                                                                        topLabel:@"Advisory Notes"
+                                                                     detailLabel:@"Details Enclosed"
+                                                                            icon:[UIImage imageNamed:@"advisory-notes"]],
+                                                    [self infoCellWithIdentifier:@"YourPlaneInfoCell"
+                                                                        topLabel:@"Your Plane"
+                                                                     detailLabel:@"Cessna Citation Encore+"
+                                                                            icon:[UIImage imageNamed:@"plane"]]
                                                     ]];
     
     
@@ -184,20 +272,24 @@
                                                  @"tailNumberLabel.text" : @"N618QS",
                                                  @"departureDateLabel.text" : [departureFormatter stringFromDate:_reservation.departureDate],
                                                  @"departureFBONameLabel.text" : _reservation.departureFboName,
-                                                 @"departureTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                                 @"departureTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime]
+                                                                               substringWithRange:NSMakeRange(0, 7)],
                                                  @"departureAirportIdLabel.text" : _reservation.departureAirportId,
                                                  @"departureAirportCityLabel.text" : [_reservation.departureAirportCity capitalizedString],
-                                                 @"arrivalTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                                 @"arrivalTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime]
+                                                                             substringWithRange:NSMakeRange(0, 7)],
                                                  @"arrivalAirportIdLabel.text" : _reservation.arrivalAirportId,
                                                  @"arrivalAirportCityLabel.text" : [_reservation.arrivalAirportCity capitalizedString],
                                                  @"arrivalFBONameLabel.text" : _reservation.arrivalFboName,
                                                  @"departureWeatherDateLabel.text" : [weatherFormatter stringFromDate:_reservation.departureDate],
                                                  @"departureAirportCityAndStateLabel.text" : [_reservation.departureAirportCity capitalizedString],
-                                                 @"departureWeatherTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime] substringWithRange:NSMakeRange(0, 7)],
+                                                 @"departureWeatherTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.departureTime]
+                                                                                      substringWithRange:NSMakeRange(0, 7)],
                                                  @"departureTemperatureLabel.text" : @"39°",
                                                  @"arrivalWeatherDateLabel.text" : [weatherFormatter stringFromDate:_reservation.arrivalDate],
                                                  @"arrivalAirportCityAndStateLabel.text" : [_reservation.arrivalAirportCity capitalizedString],
-                                                 @"arrivalWeatherTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime] substringWithRange:NSMakeRange(0, 7)],
+                                                 @"arrivalWeatherTimeLabel.text" : [[NSString stringWithFormat:@"%@",_reservation.arrivalTime]
+                                                                                    substringWithRange:NSMakeRange(0, 7)],
                                                  @"arrivalTemperatureLabel.text" : @"85°",
                                                  }
                                          };
@@ -322,7 +414,7 @@
 - (IBAction)arrivalPinPressed:(id)sender {
     NSString *arrivalFBO = self.reservation.arrivalFboName;
     arrivalFBO = [arrivalFBO stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    NSString *urlString = @"http://maps.google.com/?q=";
+    NSString *urlString = @"http://maps.apple.com/?q=";
     urlString = [urlString stringByAppendingString:arrivalFBO];
     
     NSURL *url = [NSURL URLWithString:urlString];
@@ -333,7 +425,7 @@
     
     NSString *departureFBO = self.reservation.departureFboName;
     departureFBO = [departureFBO stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    NSString *urlString = @"http://maps.google.com/?q=";
+    NSString *urlString = @"http://maps.apple.com/?q=";
     urlString = [urlString stringByAppendingString:departureFBO];
     
     NSURL *url = [NSURL URLWithString:urlString];

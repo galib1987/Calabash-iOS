@@ -12,6 +12,7 @@
 @interface NJOPAirportSearchViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *searchInput;
 @property (weak, nonatomic) IBOutlet UILabel *resultsSectionTitle;
+@property (nonatomic) BOOL editingDeparture;
 
 @property (strong, nonatomic) NJOPAirportSearchTableViewController *resultsTable;
 @property (weak, nonatomic) IBOutlet UIView *resultsPlaceholder;

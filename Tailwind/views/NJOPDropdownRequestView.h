@@ -10,12 +10,10 @@
 
 @interface NJOPDropdownRequestView : UIView
 
-@property (nonatomic) IBOutlet UILabel *requestLabel1;
-@property (nonatomic) IBOutlet UILabel *dateLabel1;
-@property (nonatomic) IBOutlet UILabel *routeLabel1;
-@property (nonatomic) IBOutlet UILabel *requestLabel2;
-@property (nonatomic) IBOutlet UILabel *dateLabel2;
-@property (nonatomic) IBOutlet UILabel *routeLabel2;
+@property (nonatomic) IBOutlet UILabel *dateLabel;
+@property (nonatomic) IBOutlet UILabel *routeLabel;
+@property (nonatomic) IBOutlet UILabel *requestIdLabel;
+
 @end
 
 

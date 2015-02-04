@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -119,7 +119,7 @@
                                 <connections>
                                     <outlet property="accountNameLabel" destination="LZN-2k-Ya4" id="IiG-sM-fIL"/>
                                     <outlet property="principalNameLabel" destination="Dk5-JF-yhD" id="hYA-5O-VCo"/>
-                                    <segue destination="pWK-K7-4l2" kind="show" id="Gp3-Ib-uCq"/>
+                                    <segue destination="pWK-K7-4l2" kind="show" identifier="showBooking" id="Gp3-Ib-uCq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -642,7 +642,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="QLS-NT-ueR" kind="show" id="sRg-av-NCF"/>
+                                                        <segue destination="QLS-NT-ueR" kind="show" identifier="showBookingReview" id="sRg-av-NCF"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -828,9 +828,11 @@ McCarran International</string>
                     </tableView>
                     <connections>
                         <outlet property="headerLabel" destination="i2Q-vK-mtY" id="WbB-5o-6QI"/>
+                        <segue destination="4s4-YO-eQ5" kind="unwind" identifier="unwindToBooking" unwindAction="unwindToBookingView:" id="OWq-5b-Imf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0NG-Zm-JhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4s4-YO-eQ5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="932" y="333"/>
         </scene>

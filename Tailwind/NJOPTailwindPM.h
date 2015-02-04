@@ -18,6 +18,7 @@
 + (NJOPTailwindPM*)sharedInstance;
 
 - (NJOPAccount*)accountForID:(NSNumber*)accountID createIfNeeded:(BOOL)createIfNeeded moc:(NSManagedObjectContext*)moc;
+- (NSArray *)accountsMOC:(NSManagedObjectContext*)moc;
 - (NJOPContract2*)contractForID:(NSNumber*)contractID createIfNeeded:(BOOL)createIfNeeded moc:(NSManagedObjectContext*)moc;
 - (NJOPReservation2*)reservationForID:(NSNumber*)reservationID createIfNeeded:(BOOL)createIfNeeded moc:(NSManagedObjectContext*)moc;
 - (NJOPLeg*)legForID:(NSNumber*)legID createIfNeeded:(BOOL)createIfNeeded moc:(NSManagedObjectContext*)moc;
