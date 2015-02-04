@@ -10,9 +10,6 @@
 #import "NJOPKeyboardControls.h"
 #import "UIColor+NJOP.h"
 #import "NJOPConfig.h"
-#import "NJOPAirportSearchTableViewController.h"
-#import "NJOPAirportSearchViewController.h"
-#import "NJOPBookingReviewTableViewController.h"
 
 @interface NJOPBookingViewController () <PDTSimpleCalendarViewDelegate>
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
@@ -20,7 +17,6 @@
 @property (nonatomic, strong) NSArray *customBlackoutDates;
 @property (nonatomic, strong) NSArray *customPeakDates;
 @property (nonatomic, strong) NSArray *customDates;
-@property (nonatomic, strong) NSArray *contractAircrafts;
 @property (strong, nonatomic) PDTSimpleCalendarViewController *calendarViewController;
 @end
 
@@ -62,8 +58,6 @@ UIView *calendarLegend;
     tap.numberOfTouchesRequired = 1;
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
-    
-    // temporary code to load aircrafts from Contracts JSON
     
 }
 
@@ -159,35 +153,12 @@ UIView *calendarLegend;
     
 }
 
-- (NSArray *)getPeakDates {
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"yyyy-MM-dd";
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-    
-    NSMutableArray *peakDatesArray = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *contractDict in self.contracts) {
-        NSArray *peakDates = contractDict[@"peakDates"];
-        
-        for (NSDictionary *date in peakDates) {
-            NSString *dateString = date[@"eventDate"];
-            NSDate *formattedDate =  [dateFormatter dateFromString:dateString];
-            [peakDatesArray addObject:formattedDate];
-        }
-    }
-    
-    [peakDatesArray addObject:[NSDate dateWithDaysFromNow:10]]; // TEST
-    
-    return peakDatesArray;
-}
-
 -(UIView*)getCalendar{
     if (self.calendarViewController == nil) {
         NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateFormat = @"dd/MM/yyyy";
         self.customBlackoutDates = @[[dateFormatter dateFromString:@"22/01/2015"], [dateFormatter dateFromString:@"23/01/2015"], [dateFormatter dateFromString:@"24/01/2015"]];
-        self.customPeakDates =  [self getPeakDates];
+        self.customPeakDates =  @[[dateFormatter dateFromString:@"27/01/2015"], [dateFormatter dateFromString:@"26/01/2015"], [dateFormatter dateFromString:@"25/01/2015"]];
         [[PDTSimpleCalendarViewHeader appearance] setSeparatorColor:[UIColor blackColor]];
         [[PDTSimpleCalendarViewHeader appearance] setSeparatorHeight:[NSNumber numberWithFloat:6]];
         self.calendarViewController = [[PDTSimpleCalendarViewController alloc] init];
@@ -262,7 +233,7 @@ UIView *calendarLegend;
 
 - (UIColor *)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller circleColorForPeakDate:(NSDate *)date
 {
-    return [UIColor redColor];
+    return [UIColor colorWithRed:236/255.0f green:66/255.0f blue:66/255.0f alpha:1.0f];
 }
 
 - (UIColor *)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller textColorForPeakDate:(NSDate *)date
@@ -274,15 +245,13 @@ UIView *calendarLegend;
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     if (textField == self.departureAirport || textField == self.destinationAirport) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Booking" bundle:nil];
-        NJOPAirportSearchViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BookingSelectAirport"];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BookingSelectAirport"];
         if (textField == self.departureAirport) {
             vc.title = @"Departing From";
-            vc.editingDeparture = YES;
             // "STUB" / test code to populate field
             textField.text = @"LAS: McCarran Intl";
         } else if (textField == self.destinationAirport) {
             vc.title = @"Arriving At";
-            vc.editingDeparture = NO;
             textField.text = @"JFK: John F Kennedy Intl";
         }
         CATransition* transition = [CATransition animation];
@@ -348,6 +317,73 @@ UIView *calendarLegend;
     }
 }
 
+//#pragma mark - Table view data source
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Potentially incomplete method implementation.
+//    // Return the number of sections.
+//    return 0;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete method implementation.
+//    // Return the number of rows in the section.
+//    return 0;
+//}
+
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+*/
+
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
+
+/*
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
+
+/*
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 #pragma mark - Aircraft Picker
 
@@ -366,27 +402,17 @@ UIView *calendarLegend;
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     // STUB to return number of aircrafts
-    return [self.contracts count];
+    return 5;
 }
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     // STUB to return aircraft name of row
-    
-    NSMutableArray *contractAircrafts = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *contractDict in self.contracts) {
-        NSString *aircraftName = contractDict[@"aircraftTypeName"];
-        [contractAircrafts addObject:aircraftName];
-    }
-    
-    self.contractAircrafts = contractAircrafts;
-    
-    return self.contractAircrafts[row];
+    return [NSString stringWithFormat:@"Aircraft%lu", (long)row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     // STUB to set text field to selected aircraft
-    self.aircraftInput.text = self.contractAircrafts[row];
+    self.aircraftInput.text = [NSString stringWithFormat:@"Aircraft%lu", (long)row];
 }
 
 #pragma mark - Time Picker
@@ -420,46 +446,7 @@ UIView *calendarLegend;
     } else if (sender == self.departTime) {
         self.arrivalTime.text = @"";//[timeFormatter stringFromDate:[dateFromString dateByAddingTimeInterval:60*60*2]];
     }*/
-
-}
-
-#pragma mark -- unwinding Segue
-
-/*
-*/
-- (void)unwindToBookingView:(UIStoryboardSegue *)segue {
-    if ([segue.sourceViewController isKindOfClass:[NJOPAirportSearchTableViewController class]]) {
-        NJOPAirportSearchTableViewController *searchTableController = segue.sourceViewController;
-        if (searchTableController.chosenDepartureAirport) {
-            self.chosenDepartureAirport = searchTableController.chosenDepartureAirport;
-            self.departureAirport.text = self.chosenDepartureAirport;
-        } else if (searchTableController.chosenArrivalAirport) {
-            self.chosenArrivalAirport = searchTableController.chosenArrivalAirport;
-            self.destinationAirport.text = self.chosenArrivalAirport;
-        }
-    }
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showBookingReview"]) {
-        NSDictionary *formInputs = @{
-                                     @"accountName" : @"Big Skies LLC",
-                                     @"hoursUsed" : [NSString stringWithFormat:@"%@ Hours", self.contracts[0][@"actualRemainingHours"]],
-                                     @"hoursLeft" : [NSString stringWithFormat:@"%@ Hours", self.contracts[0][@"projectedRemainingHours"]],
-                                     @"departureTime" : self.departTime.text,
-                                     @"departureAirportCode" : self.departureAirport.text,
-                                     @"departureLocation" : self.departureAirport.text,
-                                     @"flightDuration" : @"2h 54m \n Non Stop",
-                                     @"arrivalTime" : @"2:45PM",
-                                     @"arrivalAirportCode" : self.destinationAirport.text,
-                                     @"arrivalLocation" : self.destinationAirport.text,
-                                     @"passengerNumber" : self.numberOfPassengers.text,
-                                     @"aircraftName" : self.aircraftInput.text,
-                                     @"specialInstructions" : self.bookingComment.text
-                                     };
-        NJOPBookingReviewTableViewController *vc = segue.destinationViewController;
-        vc.formInputs = formInputs;
-    }
+    
 }
 
 @end

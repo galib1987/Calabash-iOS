@@ -8,11 +8,9 @@
 
 #import "NJOPSelectAccountViewController.h"
 #import "NJOPOAuthClient.h"
-#import "NJOPBookingViewController.h"
 
 @interface NJOPSelectAccountViewController ()
-@property (nonatomic) NSArray *accountContracts;
-@property (nonatomic) NSArray *userAccounts;
+
 @end
 
 @implementation NJOPSelectAccountViewController
@@ -28,29 +26,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 -(void)loadDataSource {
     // STUB to load accounts
     
-    NJOPOAuthClient *authClient = [NJOPOAuthClient sharedInstance];
-    self.userAccounts = authClient.accounts;
-    self.accountContracts = authClient.contracts;
     
+    NJOPOAuthClient *authClient = [NJOPOAuthClient sharedInstance];
+    NSLog(@"%@", authClient.accounts);
     
     NSMutableArray *sectionsArray = [[NSMutableArray alloc] init];
     
-    for (NSDictionary *account in self.userAccounts) {
+    for (NSDictionary *account in authClient.accounts) {
         NSDictionary *cellRepresentation = @{
-                                              kSimpleDataSourceCellIdentifierKey			: @"NJOPAccountTableCell",
-                                              kSimpleDataSourceCellKeypaths					: @{
-                                                      @"accountNameLabel.text" : account[@"accountName"],
-                                                      @"principalNameLabel.text" : [NSString stringWithFormat:@"%@ %@", authClient.individual.firstName, authClient.individual.lastName],
-                                                      },
-                                              };
+                                             kSimpleDataSourceCellIdentifierKey			: @"NJOPAccountTableCell",
+                                             kSimpleDataSourceCellKeypaths					: @{
+                                                     @"accountNameLabel.text" : account[@"accountName"],
+                                                     @"principalNameLabel.text" : [NSString stringWithFormat:@"%@ %@", authClient.individual.firstName, authClient.individual.lastName],
+                                                     }
+                                             };
+        
         [sectionsArray addObject:cellRepresentation];
     }
-    
-    
     
     NSArray* sections = @[
                           @{
@@ -62,15 +57,14 @@
     self.dataSource.title = [@"Book a Flight" uppercaseString];
 }
 
-
+/*
 #pragma mark - Navigation
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showBooking"]) {
-        NJOPBookingViewController *vc = segue.destinationViewController;
-        vc.contracts = self.accountContracts;
-    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
-
+*/
 
 @end

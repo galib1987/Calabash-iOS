@@ -15,7 +15,6 @@
 @property (nonatomic, strong) NSNumber *defaultAccountID;
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *lastName;
-@property (nonatomic, retain) NSArray *accounts;
 
 + (NJOPUser*)sharedInstance;
 

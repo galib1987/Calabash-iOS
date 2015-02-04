@@ -97,101 +97,75 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
 
 - (void)loadBrief
 {
-    NJOPConfig *conf = [NJOPConfig sharedInstance];
-    if (conf.loadStaticJSON == YES) {
-        NSLog(@"loading from static");
-        NSMutableArray *reservationsArray = [NSMutableArray array];
-        NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"brief-test" ofType:@"json"]];
-        if (data) {
-            NSDictionary* payload = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            
-            NSDictionary *individualDict = [payload objectForKey:@"individual"];
-            [self initializeUserData:individualDict];
-            NSArray *reservationJSON = [payload valueForKeyPath:@"requests"];
-            reservationsArray = [self loadReservationJSONArray:reservationJSON];
-            
-            [[NJOPOAuthClient sharedInstance] setReservations:reservationsArray]; // this should be deprecated
-            
-        }
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:kBriefLoadSuccessNotification object:self userInfo:nil];
-    } else {
+    NCLURLRequest *request = [self urlRequestWithPath:@"/brief"];
+    request.notificationNameOnSuccess = kBriefLoadSuccessNotification;
+    request.notificationNameOnFailure = kBriefLoadFailureNotification;
+    request.shouldUseSerialDispatchQueue = YES;
+    //    request.shouldOutputTraceLog = YES;
     
-        NCLURLRequest *request = [self urlRequestWithPath:@"/brief"];
-        request.notificationNameOnSuccess = kBriefLoadSuccessNotification;
-        request.notificationNameOnFailure = kBriefLoadFailureNotification;
-        request.shouldUseSerialDispatchQueue = YES;
-        //    request.shouldOutputTraceLog = YES;
+    [self GET:request parameters:nil completionBlock:^(NSData *data, NSError *error) {
         
-        [self GET:request parameters:nil completionBlock:^(NSData *data, NSError *error) {
-            NSLog(@"getting data");
-            if (!error)
+        if (!error)
+        {
+            NSManagedObjectContext *moc = [[NJOPTailwindPM sharedInstance] privateMOC];
+            NSError *jsonError = nil;
+            NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+            
+            if (!jsonError)
             {
-                NSManagedObjectContext *moc = [[NJOPTailwindPM sharedInstance] privateMOC];
-                NSError *jsonError = nil;
-                NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+                NSDictionary *individualDict = [result objectForKey:@"individual"];
                 
-                if (!jsonError)
+                if (individualDict)
                 {
-                    NSDictionary *individualDict = [result objectForKey:@"individual"];
+                    // update user
+                    [NJOPUser sharedInstance].individualID = [NSNumber numberFromObject:[individualDict objectForKey:@"individualId"]];
+                    [NJOPUser sharedInstance].defaultAccountID = [NSNumber numberFromObject:[individualDict objectForKey:@"defaultAccountId"]];
+                    [NJOPUser sharedInstance].firstName = [NSString stringFromObject:[individualDict objectForKey:@"firstName"]];
+                    [NJOPUser sharedInstance].lastName = [NSString stringFromObject:[individualDict objectForKey:@"lastName"]];
+                    [[NJOPUser sharedInstance] saveToDisk];
                     
-                    if (individualDict)
+                    // update accounts
+                    NSArray *accounts = [[result objectForKey:@"individual"] objectForKey:@"accounts"];
+                    
+                    if (accounts)
                     {
-                        // update user
-                        [NJOPUser sharedInstance].individualID = [NSNumber numberFromObject:[individualDict objectForKey:@"individualId"]];
-                        [NJOPUser sharedInstance].defaultAccountID = [NSNumber numberFromObject:[individualDict objectForKey:@"defaultAccountId"]];
-                        [NJOPUser sharedInstance].firstName = [NSString stringFromObject:[individualDict objectForKey:@"firstName"]];
-                        [NJOPUser sharedInstance].lastName = [NSString stringFromObject:[individualDict objectForKey:@"lastName"]];
-                        [[NJOPUser sharedInstance] saveToDisk];
-                        
-                        // update accounts
-                        NSArray *accounts = [[result objectForKey:@"individual"] objectForKey:@"accounts"];
-                        
-                        if (accounts)
-                        {
-                            [accounts enumerateObjectsUsingBlock:^(NSDictionary *accountDict, NSUInteger idx, BOOL *stop) {
-                                
-                                [[NJOPTailwindPM sharedInstance] updateAccount:accountDict moc:moc];
-                            }];
-                        }
-                    }
-                    
-                    // update contracts
-                    NSArray *contracts = [result objectForKey:@"contracts"];
-                    
-                    if (contracts)
-                    {
-                        [contracts enumerateObjectsUsingBlock:^(NSDictionary *contractDict, NSUInteger idx, BOOL *stop) {
+                        [accounts enumerateObjectsUsingBlock:^(NSDictionary *accountDict, NSUInteger idx, BOOL *stop) {
                             
-                            [[NJOPTailwindPM sharedInstance] updateContract:contractDict moc:moc];
+                            [[NJOPTailwindPM sharedInstance] updateAccount:accountDict moc:moc];
                         }];
                     }
-                    
-                    // update requests
-                    NSArray *requests = [result objectForKey:@"requests"];
-                    
-                    if (requests)
-                    {
-                        [requests enumerateObjectsUsingBlock:^(NSDictionary *requestDict, NSUInteger idx, BOOL *stop) {
-                            
-                            [[NJOPTailwindPM sharedInstance] updateRequest:requestDict moc:moc];
-                        }];
-                    }
-                    
-                    if (jsonError ||
-                        ![moc save:nil])
-                    {
-                        NSLog(@"error saving brief");
-                        
-                    } // end if it's a saving error or other json error
-                    
-                } // !jsonError
+                }
                 
-            } // end !error
-            
-        }];
-    
-    }
+                // update contracts
+                NSArray *contracts = [result objectForKey:@"contracts"];
+                
+                if (contracts)
+                {
+                    [contracts enumerateObjectsUsingBlock:^(NSDictionary *contractDict, NSUInteger idx, BOOL *stop) {
+                        
+                        [[NJOPTailwindPM sharedInstance] updateContract:contractDict moc:moc];
+                    }];
+                }
+                
+                // update requests
+                NSArray *requests = [result objectForKey:@"requests"];
+                
+                if (requests)
+                {
+                    [requests enumerateObjectsUsingBlock:^(NSDictionary *requestDict, NSUInteger idx, BOOL *stop) {
+                        
+                        [[NJOPTailwindPM sharedInstance] updateRequest:requestDict moc:moc];
+                    }];
+                }
+                
+                if (jsonError ||
+                    ![moc save:nil])
+                {
+                    NSLog(@"error saving brief");
+                }
+            }
+        }
+    }];
 }
 
 - (void)loadWeatherForRequestID:(NSNumber*)requestID
@@ -332,11 +306,6 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
                     NSDateFormatter* jsonDateFormatter = [NSDateFormatter new];
                     [jsonDateFormatter setDateFormat:jsonDateFormat];
                     
-                    NSArray *contractsJSON = [result valueForKeyPath:@"contracts"];
-                    [[NJOPOAuthClient sharedInstance] setContracts:contractsJSON];
-                    
-                    
-                    
                     NSArray *requestsJSON = [result valueForKeyPath:@"requests"];
                     if ([requestsJSON count] > 0) {
                         for (NSDictionary *requestDict in requestsJSON) {
@@ -475,18 +444,6 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
             reservationsArray = [self loadReservationJSONArray:[reservationJSON valueForKeyPath:@"requests"]];
             
             [[NJOPOAuthClient sharedInstance] setReservations:reservationsArray]; // this should be deprecated
-            
-            // set individual for session
-            NSDictionary *individualJSON = [payload valueForKeyPath:@"individual"];
-            NJOPIndividual *individual = [NJOPIndividual individualWithDictionaryRepresentation:individualJSON];
-            [[NJOPOAuthClient sharedInstance] setIndividual:individual];
-            
-            // set accounts for individual
-            NSArray *accountsJSON = [individualJSON valueForKeyPath:@"accounts"];
-            [[NJOPOAuthClient sharedInstance] setAccounts:accountsJSON];
-            
-            NSArray *contractsJSON = [payload valueForKeyPath:@"contracts"];
-            [[NJOPOAuthClient sharedInstance] setContracts:contractsJSON];
 
         }
         
@@ -525,9 +482,6 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
                 // set requests for account
                 NSMutableArray *reservationsArray = [NSMutableArray new];
                 
-                NSArray *contractsJSON = [result valueForKeyPath:@"contracts"];
-                [[NJOPOAuthClient sharedInstance] setContracts:contractsJSON];
-
                 NSArray *requestsJSON = [result valueForKeyPath:@"requests"];
                 // make sure it's an array and that it actually has something in it
                 if ([NJOPIntrospector isObjectArray:requestsJSON]) {
@@ -547,19 +501,6 @@ NSString * const kBookReservationFailureNotification = @"BookReservationFailureN
         }];
     } // end else static
 
-}
-
-- (void) initializeUserData:(NSDictionary *)data {
-    
-    if ([data isKindOfClass:[NSDictionary class]])
-    {
-        // update user
-        [NJOPUser sharedInstance].individualID = [NSNumber numberFromObject:[data objectForKey:@"individualId"]];
-        [NJOPUser sharedInstance].defaultAccountID = [NSNumber numberFromObject:[data objectForKey:@"defaultAccountId"]];
-        [NJOPUser sharedInstance].firstName = [NSString stringFromObject:[data objectForKey:@"firstName"]];
-        [NJOPUser sharedInstance].lastName = [NSString stringFromObject:[data objectForKey:@"lastName"]];
-        [[NJOPUser sharedInstance] saveToDisk];
-    }
 }
 
 - (NSMutableArray *) loadReservationJSONArray:(NSArray *)JSONArray {

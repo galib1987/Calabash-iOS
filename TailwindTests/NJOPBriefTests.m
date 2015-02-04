@@ -29,9 +29,16 @@
 	[super setUp];
 	// Put setup code here. This method is called before the invocation of each test method in the class.
 	
-	self.validEmail = @"dave@email.com";
+	self.validEmail = @"srahman@email.com";
 	self.validPassword = @"abc123ABC";
-
+	self.validAccountId = @(1399142);
+	
+	NCLUserPassword *userPass = [[NCLUserPassword alloc] initWithUsername:self.validEmail password:self.validPassword host:API_HOSTNAME];
+	[NCLKeychainStorage saveUserPassword:userPass error:nil];
+	[NJOPUser sharedInstance].username = self.validEmail;
+	
+	[[NJOPOAuthClient sharedInstance] resetCredential];
+	[[NJOPOAuthClient sharedInstance] accessToken:nil];
 }
 
 - (void)tearDown {
@@ -42,109 +49,43 @@
 	[super tearDown];
 }
 
-- (void)test_networking_callBrief_individualID {
-    XCTestExpectation *expectation = [self expectationWithDescription:@""];
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:kBriefLoadSuccessNotification object:nil queue:nil usingBlock:^(NSNotification *notification)
-     {
-         NSNumber *individualID = [NJOPUser sharedInstance].individualID;
-         
-         XCTAssertNotNil(individualID,@"got Invdividual ID");
-         [expectation fulfill];
-     }];
-    
-    NCLUserPassword *userPass = [[NCLUserPassword alloc] initWithUsername:self.validEmail password:self.validPassword host:API_HOSTNAME];
-    [NCLKeychainStorage saveUserPassword:userPass error:nil];
-    [NJOPUser sharedInstance].username = self.validEmail;
-    
-    [[NJOPFlightHTTPClient sharedInstance] loadBrief];
-    
-    
-    [self waitForExpectationsWithTimeout:40 handler:nil];
+
+- (void)test_caching_callBrief_accountIdNotNil
+{
+	XCTestExpectation *expectation = [self expectationWithDescription:@"call in progress"];
+	
+	[[NJOPFlightHTTPClient sharedInstance] loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
+		
+		//
+		NJOPAccount *account = [[NJOPTailwindPM sharedInstance] accountForID:self.validAccountId createIfNeeded:NO moc:[[NJOPTailwindPM sharedInstance] mainMOC]];
+		
+		XCTAssertNotNil(account.accountID, @"The account name should not be nil after a brief call");
+		
+		[expectation fulfill];
+	}];
+	
+	[self waitForExpectationsWithTimeout:10.0 handler:^(NSError *error) {
+		//
+	}];
 }
 
-- (void)test_networking_callBrief_defaultAccountId {
-    XCTestExpectation *expectation = [self expectationWithDescription:@""];
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:kBriefLoadSuccessNotification object:nil queue:nil usingBlock:^(NSNotification *notification)
-     {
-         NSNumber *defaultAccountId = [NJOPUser sharedInstance].defaultAccountID;
-         
-         XCTAssertNotNil(defaultAccountId,@"got default Account ID");
-         [expectation fulfill];
-     }];
-    
-    NCLUserPassword *userPass = [[NCLUserPassword alloc] initWithUsername:self.validEmail password:self.validPassword host:API_HOSTNAME];
-    [NCLKeychainStorage saveUserPassword:userPass error:nil];
-    [NJOPUser sharedInstance].username = self.validEmail;
-    
-    [[NJOPFlightHTTPClient sharedInstance] loadBrief];
-    
-    
-    [self waitForExpectationsWithTimeout:40 handler:nil];
-}
-
-- (void)test_networking_callBrief_firstName {
-    XCTestExpectation *expectation = [self expectationWithDescription:@""];
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:kBriefLoadSuccessNotification object:nil queue:nil usingBlock:^(NSNotification *notification)
-     {
-         NSString *firstName = [NJOPUser sharedInstance].firstName;
-         
-         XCTAssertNotNil(firstName,@"got first name");
-         [expectation fulfill];
-     }];
-    
-    NCLUserPassword *userPass = [[NCLUserPassword alloc] initWithUsername:self.validEmail password:self.validPassword host:API_HOSTNAME];
-    [NCLKeychainStorage saveUserPassword:userPass error:nil];
-    [NJOPUser sharedInstance].username = self.validEmail;
-    
-    [[NJOPFlightHTTPClient sharedInstance] loadBrief];
-    
-    
-    [self waitForExpectationsWithTimeout:40 handler:nil];
-}
-
-- (void)test_networking_callBrief_accounts {
-    XCTestExpectation *expectation = [self expectationWithDescription:@""];
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:kBriefLoadSuccessNotification object:nil queue:nil usingBlock:^(NSNotification *notification)
-     {
-         NSArray *accounts = [NJOPUser sharedInstance].accounts;
-         
-         XCTAssert([accounts count] > 0,@"has at least one account");
-         [expectation fulfill];
-     }];
-    
-    NCLUserPassword *userPass = [[NCLUserPassword alloc] initWithUsername:self.validEmail password:self.validPassword host:API_HOSTNAME];
-    [NCLKeychainStorage saveUserPassword:userPass error:nil];
-    [NJOPUser sharedInstance].username = self.validEmail;
-    
-    [[NJOPFlightHTTPClient sharedInstance] loadBrief];
-    
-    
-    [self waitForExpectationsWithTimeout:40 handler:nil];
-}
-
-- (void)test_networking_callBrief_reservations {
-    XCTestExpectation *expectation = [self expectationWithDescription:@""];
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:kBriefLoadSuccessNotification object:nil queue:nil usingBlock:^(NSNotification *notification)
-     {
-         NSArray *accounts = [NJOPUser sharedInstance].accounts;
-         
-         XCTAssert([accounts count] > 0,@"has at least one account");
-         [expectation fulfill];
-     }];
-    
-    NCLUserPassword *userPass = [[NCLUserPassword alloc] initWithUsername:self.validEmail password:self.validPassword host:API_HOSTNAME];
-    [NCLKeychainStorage saveUserPassword:userPass error:nil];
-    [NJOPUser sharedInstance].username = self.validEmail;
-    
-    [[NJOPFlightHTTPClient sharedInstance] loadBrief];
-    
-    
-    [self waitForExpectationsWithTimeout:40 handler:nil];
+- (void)test_caching_callBrief_accountNameNotNil
+{
+	XCTestExpectation *expectation = [self expectationWithDescription:@"call in progress"];
+	
+	[[NJOPFlightHTTPClient sharedInstance] loadBriefWithCompletion:^(NSArray *reservations, NSError *error) {
+		
+		//
+		NJOPAccount *account = [[NJOPTailwindPM sharedInstance] accountForID:self.validAccountId createIfNeeded:NO moc:[[NJOPTailwindPM sharedInstance] mainMOC]];
+		
+		XCTAssertNotNil(account.accountName, @"The account name should not be nil after a brief call");
+		
+		[expectation fulfill];
+	}];
+	
+	[self waitForExpectationsWithTimeout:10.0 handler:^(NSError *error) {
+		//
+	}];
 }
 
 

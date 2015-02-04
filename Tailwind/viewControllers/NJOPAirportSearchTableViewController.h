@@ -7,14 +7,10 @@
 //
 
 #import "SimpleDataSourceTableViewController.h"
-#import "NJOPAirport.h"
 
 @interface NJOPAirportSearchTableViewController : SimpleDataSourceTableViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *headerLabel;
-@property (nonatomic) NSString *chosenDepartureAirport;
-@property (nonatomic) NSString *chosenArrivalAirport;
-@property (nonatomic) BOOL editingDeparture;
 
 - (void)searchWith:(NSString*) term;
 

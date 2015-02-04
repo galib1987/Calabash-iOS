@@ -7,13 +7,9 @@
 //
 
 #import "NJOPAirportSearchTableViewController.h"
-#import "NJOPAirportPM.h"
-#import <NCLPersistenceUtil.h>
-#import "NJOPBookingViewController.h"
-#import "NJOPAirportResultTableViewCell.h"
 
 @interface NJOPAirportSearchTableViewController ()
-@property (nonatomic) NSArray *airportsResults;
+
 @end
 
 @implementation NJOPAirportSearchTableViewController
@@ -66,7 +62,6 @@
 
 -(void)searchWith:(NSString *)term {
     
-    
     // STUB TO SHOW ABILITY TO RECEIVE TEXTFIELD TEXT
     
     if ([term isEmptyOrWhitespace]) {
@@ -75,31 +70,27 @@
         [self loadDataSource];
         
     } else {
-        NJOPAirportPM *persistenceManager = [NJOPAirportPM sharedInstance];
-        NSPredicate *pred = [NSPredicate predicateWithFormat:@"airport_name contains[cd] %@ OR airportid contains[cd] %@ OR city_name contains[cd] %@", term, term, term];
-        NSArray *airportsFound = [NCLPersistenceUtil executeFetchRequestForEntityName:@"Airport" predicate:pred context:persistenceManager.mainMOC error:nil];
-        
-        NSMutableArray *airportsToStage = [[NSMutableArray alloc] init];
-        
-        for (NJOPAirport *airport in airportsFound) {
-            NSDictionary *cellRepresentation = @{
-                                                 kSimpleDataSourceCellIdentifierKey			: @"resultItem",
-                                                 kSimpleDataSourceCellKeypaths					: @{
-                                                         @"locationLabel.text" : [NSString stringWithFormat:@"%@ , %@", airport.city_name, airport.country_cd],
-                                                         @"airportNameLabel.text" : [NSString stringWithFormat:@"%@\n%@", airport.airportid, [airport.airport_name capitalizedString]],
-                                                         },
-                                                 kSimpleDataSourceCellItem : airport,
-                                                 };
-            [airportsToStage addObject:cellRepresentation];
-        }
-        
-        self.airportsResults = airportsToStage;
-        
     
         self.headerLabel.text = @"Search results:";
         NSArray* sections = @[
                               @{
-                                  kSimpleDataSourceSectionCellsKey : airportsToStage                                  }
+                                  kSimpleDataSourceSectionCellsKey : @[
+                                          @{
+                                              kSimpleDataSourceCellIdentifierKey			: @"resultItem",
+                                              kSimpleDataSourceCellKeypaths					: @{
+                                                      @"locationLabel.text" : [@"AUstin, TX, US" uppercaseString],
+                                                      @"airportNameLabel.text" : @"KAUS: Austin-Bergstrom\nInternational",
+                                                      }
+                                              },
+                                          @{
+                                              kSimpleDataSourceCellIdentifierKey			: @"resultItem",
+                                              kSimpleDataSourceCellKeypaths					: @{
+                                                      @"locationLabel.text" : [@"Green bay, wi, us" uppercaseString],
+                                                      @"airportNameLabel.text" : @"KGRB\nAustin Straubel International",
+                                                      }
+                                              }
+                                          ]
+                                  }
                               ];
         
         self.dataSource = [SimpleDataSource dataSourceWithSections:sections];
@@ -108,17 +99,14 @@
     [self.tableView reloadData];
 }
 
--(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NJOPAirportResultTableViewCell *cell = (NJOPAirportResultTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-    if (self.editingDeparture == YES) {
-        self.chosenDepartureAirport = cell.airportNameLabel.text;
-    } else if (self.editingDeparture == NO) {
-        self.chosenArrivalAirport = cell.airportNameLabel.text;
-    }
-    
-    [self performSegueWithIdentifier:@"unwindToBooking" sender:self];
-}
+/*
+#pragma mark - Navigation
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

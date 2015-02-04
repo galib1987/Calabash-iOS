@@ -10,6 +10,4 @@
 
 @interface NJOPBookingReviewTableViewController : SimpleDataSourceTableViewController
 
-@property (nonatomic) NSDictionary *formInputs;
-
 @end
