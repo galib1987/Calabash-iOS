@@ -12,6 +12,8 @@
 #import "NCLAppOverlayWindow.h"
 #import "NJOPConfig.h"
 
+#import "MainTabBarController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -29,8 +31,8 @@
     [projectHeaders setObject:API_SOURCE_IDENTIFIER forKey:@"AppAgent"];
     [[NCLNetworking sharedInstance] setStandardHeaders:projectHeaders forDomain:@"netjets.com"];
     
-    [NJOPAirportPM sharedInstance].mainMOC;
-    
+//    [NJOPAirportPM sharedInstance].mainMOC;
+	
     // Override point for customization after application launch.
     // some config items
     NJOPConfig *conf = [NJOPConfig sharedInstance];
@@ -41,21 +43,28 @@
     self.shouldClearHistory = [NSNumber numberWithInt:1];
 
     // listen for major menu changes
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goChangeScreen:) name:changeScreen object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goChangeScreen:) name:changeScreen object:nil];
     // listen for releasing the keyboard focus
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideKeyboard:) name:dismissKeyboard object:nil];
-    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideKeyboard:) name:dismissKeyboard object:nil];
+	
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
-                                                         forBarMetrics:UIBarMetricsDefault];
-    
+//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+//                                                         forBarMetrics:UIBarMetricsDefault];
+	
 
     // let's see if we need to show welcome screen
-    if ([[NJOPConfig sharedInstance] shouldSeeWelcomeScreen] == YES) {
-        NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Welcome",menuStoryboardName,@"WelcomeRootVC",menuViewControllerName,[NSNumber numberWithBool:YES],menuShouldHideMenu, nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif];
-    }
+//    if ([[NJOPConfig sharedInstance] shouldSeeWelcomeScreen] == YES) {
+//        NSDictionary *notif = [NSDictionary dictionaryWithObjectsAndKeys:@"Welcome",menuStoryboardName,@"WelcomeRootVC",menuViewControllerName,[NSNumber numberWithBool:YES],menuShouldHideMenu, nil];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:changeScreen object:self userInfo:notif];
+//    }
+	
+	
+	//
+	MainTabBarController *mainController = [[MainTabBarController alloc] init];
+	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	self.window.rootViewController = mainController;
+	[self.window makeKeyAndVisible];
 
     return YES;
 }
