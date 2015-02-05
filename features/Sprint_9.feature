@@ -1,4 +1,4 @@
-Feature: Running a test for SPRINT 6
+Feature: Welcome Screen, Share Flight Details and Add to Calendar
 
   ############################################################
   #                      Welcome Screen                      #
