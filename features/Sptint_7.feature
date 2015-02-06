@@ -18,7 +18,7 @@ Feature: Booking a flight
     Then :  User should be able to reset the form
 
 
-  Scenario: user is able Copy information from past flights by selecting an account.
+  Scenario: user is able Copy information from past flights.
 
     Given:  User is Logged in With a valid UserId And Password
     And  :  User has selected an account associated with user
@@ -26,8 +26,20 @@ Feature: Booking a flight
     Then :  User should be able to copy from past flight and ake a new reservation.
 
 
+Scenarios: User is able to add a flight date to the calendar
 
-  #### Manual steps ##################################################
+   Given:  User is Logged in With a valid UserId And Password
+   And  :  User has selected an account associated with user
+   And  :  User Book a flight
+   When :  User try to add the fly date to the calendar
+   Then :  Date should be added to the calendar
+
+
+
+
+
+
+  #### Manual steps #################################################
 
 
 
