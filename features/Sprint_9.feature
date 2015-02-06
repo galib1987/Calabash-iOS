@@ -4,43 +4,71 @@ Feature: Welcome Screen, Share Flight Details and Add to Calendar
   #                      Welcome Screen                      #
   ############################################################
 
-  Scenario: iPhone - Welcome Screen
-    #Given I am on the Account Screen
+  Scenario: iPhone - User See the Welcome Screen at the very first login after downloading the app
+
+    Given: User download the NetJet-iOS app
+    Then : User See a Welcome screen
+
+
+  Scenario: iPhone - User Skip the Welcome screen
+
+    Given:  User download the NetJet-iOS app
+    And  :  User See a Welcome screen
+    When :  User try to Skip the welcome Screen
+    Then :  User should be taken to login screen
+
+
+  Scenario: iPhone - User swipe through different Welcome screen
+
+    Given: User download the NetJet-iOS app
+    Then : User See a Welcome screen
+    When : User Swipe left
+    Then : User should be taken to next Welcome pages.
+
+
+
+
+
+
+
+
+
+#Given I am on the Account Screen
     Given I enter "user_email_id" into the "EMAIL" text field
-    And I enter "user_password" into the "PASSWORD" text field
-    When I press "LOGIN"
-    Then I should see "NETJETS"
-    And I wait for "Skip" to appear
-    And I should see "flight_around_image"
-    And I should see "WELCOME TO NETJETS"
-    And I should see "line_image"
-    And I should see "Let us show you around."
-    When I swipe left
-    Then I should see "Skip"
-    And I should see "flights_list_image"
-    And I should see "FLIGHTS"
-    And I should see "line_image"
-    And I should see "See all your upcoming flights in one place."
-    When I swipe left
-    Then I should see "Skip"
-    And I should see "contact_owner_service_image"
-    And I should see "YOUR OWNER SERVICES TEAM"
-    And I should see "line_image"
-    And I should see "Your team is now just a tap away-24 hours a day, seven days a week."
-    When I swipe left
-    Then I should see "Skip"
-    And I should see "quick_booking_image"
-    And I should see "QUICK BOOKING"
-    And I should see "line_image"
-    And I should see "You can submit a flight request in just a few taps. Then our Owner Services team will call you to iron out the details."
-    When I swipe left
-    Then I should see "Skip"
-    And I should see "notification_image"
-    And I should see "NOTIFICATIONS"
-    And I should see "line_image"
-    And I should see "Allow us to notify you of important flight updates, without answering a phone call."
-    And I should see "NO THANKS"
-    And I should see "ALLOW"
+    And   I enter "user_password" into the "PASSWORD" text field
+    When  I press "LOGIN"
+    Then  I should see "NETJETS"
+    And   I wait for "Skip" to appear
+    And   I should see "flight_around_image"
+    And   I should see "WELCOME TO NETJETS"
+    And   I should see "line_image"
+    And   I should see "Let us show you around."
+    When  I swipe left
+    Then  I should see "Skip"
+    And   I should see "flights_list_image"
+    And   I should see "FLIGHTS"
+    And   I should see "line_image"
+    And   I should see "See all your upcoming flights in one place."
+    When  I swipe left
+    Then  I should see "Skip"
+    And   I should see "contact_owner_service_image"
+    And   I should see "YOUR OWNER SERVICES TEAM"
+    And   I should see "line_image"
+    And   I should see "Your team is now just a tap away-24 hours a day, seven days a week."
+    When  I swipe left
+    Then  I should see "Skip"
+    And   I should see "quick_booking_image"
+    And   I should see "QUICK BOOKING"
+    And   I should see "line_image"
+    And   I should see "You can submit a flight request in just a few taps. Then our Owner Services team will call you to iron out the details."
+    When  I swipe left
+    Then  I should see "Skip"
+    And   I should see "notification_image"
+    And   I should see "NOTIFICATIONS"
+    And   I should see "line_image"
+    And   I should see "Allow us to notify you of important flight updates, without answering a phone call."
+    And   I should see "NO THANKS"
+    And   I should see "ALLOW"
 
 
   ############################################################

@@ -41,6 +41,8 @@ After do |scenario|
   end
 end
 
+
+
 at_exit do
   launcher = Calabash::Cucumber::Launcher.new
   if launcher.simulator_target?
