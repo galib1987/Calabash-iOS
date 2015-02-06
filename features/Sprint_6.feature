@@ -457,4 +457,4 @@ Feature: Login, Navigation, Flight List, Flight Details
     Then   I scroll down
     Then   I scroll down
     Then   I touch "Ground Transportation"
-    Then   I wait and wait
+    
